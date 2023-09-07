@@ -1,0 +1,22 @@
+@use "../../styles" as *;
+@use "@baka/design-core" as *;
+
+.baka-dialog {
+  display: flex;
+  flex-direction: column;
+  border-radius: 28px;
+
+  color: $on-surface;
+  background-color: $surface-container-high;
+
+  gap: 24px;
+  padding: 24px;
+
+  @include variant(basic, true) {
+    box-shadow: map-get($elevation, 3);
+  }
+
+  @include variant(full-screen) {
+    box-shadow: none;
+  }
+}

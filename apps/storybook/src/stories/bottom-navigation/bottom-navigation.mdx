@@ -1,0 +1,93 @@
+## BottomNavigation
+
+The `BottomNavigation` component is used to create a navigation bar typically placed at the bottom of a mobile app. It allows users to switch between different sections or views within the app.
+
+### Usage
+
+```jsx
+import { BakaBottomNavigation, BakaBottomNavigationItem, BakaIcon, BakaLabel, BakaBadge } from "@baka/react";
+
+// Inside your component
+<BakaBottomNavigation style={{ width: 400, display: "flex", justifyContent: "space-between" }}>
+  <BakaBottomNavigationItem selected={true}>
+    <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
+    <BakaLabel>BakaLabel</BakaLabel>
+  </BakaBottomNavigationItem>
+  {/* Add more BottomNavigationItems as needed */}
+</BakaBottomNavigation>;
+```
+
+### Props
+
+#### style (optional)
+
+- Type: `object`
+- Default: `null`
+
+The `style` prop allows you to apply custom CSS styles to the BottomNavigation component, controlling its width, height, or any other styling properties.
+
+### BakaBottomNavigationItem
+
+The `BakaBottomNavigationItem` component represents an individual item within the BottomNavigation.
+
+#### Props
+
+#### selected (optional)
+
+- Type: `boolean`
+- Default: `false`
+
+Indicates whether this item is selected. When set to `true`, it highlights the item as the currently active or selected option.
+
+### Examples
+
+#### Basic BottomNavigation
+
+```jsx
+import { BakaBottomNavigation, BakaBottomNavigationItem, BakaIcon, BakaLabel } from "@baka/react";
+
+<BakaBottomNavigation style={{ width: 400, display: "flex", justifyContent: "space-between" }}>
+  <BakaBottomNavigationItem selected={true}>
+    <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
+    <BakaLabel>Home</BakaLabel>
+  </BakaBottomNavigationItem>
+  <BakaBottomNavigationItem>
+    <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
+    <BakaLabel>Profile</BakaLabel>
+  </BakaBottomNavigationItem>
+  <BakaBottomNavigationItem>
+    <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
+    <BakaLabel>Settings</BakaLabel>
+  </BakaBottomNavigationItem>
+</BakaBottomNavigation>;
+```
+
+This will render a basic BottomNavigation bar with three selectable items.
+
+### Advanced BottomNavigation
+
+```jsx
+import { BakaBottomNavigation, BakaBottomNavigationItem, BakaIcon, BakaLabel, BakaBadge } from "@baka/react";
+
+<BakaBottomNavigation style={{ width: 400, display: "flex", justifyContent: "space-between" }}>
+  <BakaBottomNavigationItem selected={true}>
+    <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
+    <BakaLabel>Home</BakaLabel>
+  </BakaBottomNavigationItem>
+  <BakaBottomNavigationItem>
+    <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
+    <BakaLabel>Profile</BakaLabel>
+  </BakaBottomNavigationItem>
+  <BakaBottomNavigationItem>
+    <BakaIcon variant={"filled"}>
+      fiber_manual_record
+      <BakaBadge variant={"small"} style={{ position: "absolute", right: 16, top: 2 }}>
+        3
+      </BakaBadge>
+    </BakaIcon>
+    <BakaLabel>Notifications</BakaLabel>
+  </BakaBottomNavigationItem>
+</BakaBottomNavigation>;
+```
+
+This example demonstrates a BottomNavigation bar with badge notifications on one of the items.

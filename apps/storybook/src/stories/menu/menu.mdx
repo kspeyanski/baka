@@ -1,0 +1,55 @@
+## Menu
+
+The `Menu` component provides a list of selectable options or actions that can be triggered by the user. It's often used in conjunction with other UI components like text fields or buttons.
+
+### Usage
+
+```jsx
+import { BakaMenu, BakaMenuItem } from "@baka/react";
+
+// Inside your component
+<div>
+  <BakaMenu style={{ width: 360 }}>
+    <BakaMenuItem>{/* Content for Menu Item 1 */}</BakaMenuItem>
+    <BakaMenuItem>{/* Content for Menu Item 2 */}</BakaMenuItem>
+    {/* Add more MenuItems as needed */}
+  </BakaMenu>
+</div>;
+```
+
+### Props
+
+#### style (optional)
+
+- Type: `object`
+- Default: `null`
+
+The `style` prop allows you to apply custom CSS styles to the Menu component, controlling its width, height, or any other styling properties.
+
+### MenuItem
+
+The `MenuItem` component represents an individual item within the Menu.
+
+#### Usage
+
+```jsx
+import { BakaMenuItem } from "@baka/react";
+
+<BakaMenuItem>{/* Content for Menu Item */}</BakaMenuItem>;
+```
+
+### Examples
+
+#### Basic Menu
+
+```jsx
+import { BakaMenu, BakaMenuItem } from "@baka/react";
+
+<BakaMenu style={{ width: 360 }}>
+  <BakaMenuItem>Option 1</BakaMenuItem>
+  <BakaMenuItem>Option 2</BakaMenuItem>
+  <BakaMenuItem>Option 3</BakaMenuItem>
+</BakaMenu>;
+```
+
+This will render a basic menu with three selectable options.

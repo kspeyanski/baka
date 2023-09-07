@@ -1,0 +1,61 @@
+# Divider
+
+The Divider component in the Baka UI library is a simple horizontal or vertical line that can be used to separate content or create visual divisions in your user interface.
+
+### Installation
+
+Before using the Divider component, make sure you have the Baka UI library installed in your project:
+
+```bash
+npm install @baka/react
+# or
+yarn add @baka/react
+```
+
+### Basic Usage
+
+You can use the Divider component by importing it from `@baka/react` and adding it to your JSX code:
+
+```jsx
+import { BakaDivider } from "@baka/react";
+
+function MyComponent() {
+  return (
+    <div>
+      {/* Horizontal Divider */}
+      <BakaDivider />
+
+      {/* Vertical Divider */}
+      <BakaDivider variant="vertical" />
+    </div>
+  );
+}
+```
+
+### Props
+
+The Divider component supports the following props:
+
+- `variant` (optional): Specifies the variant of the divider. It can be either "horizontal" (default) or "vertical."
+
+### Examples
+
+Here are some examples of using the Divider component:
+
+```jsx
+import { BakaDivider } from "@baka/react";
+
+function MyComponent() {
+  return (
+    <div>
+      {/* Horizontal Divider */}
+      <BakaDivider />
+
+      {/* Vertical Divider */}
+      <BakaDivider variant="vertical" />
+    </div>
+  );
+}
+```
+
+The Divider component is a simple yet effective way to add visual separation and structure to your user interface elements. You can customize its appearance to match your design requirements.

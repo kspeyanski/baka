@@ -1,0 +1,19 @@
+@use "@baka/design-core" as *;
+@use "../../styles/" as *;
+
+.baka-container {
+  @include container();
+
+  @each $size, $breakpoint in $breakpoints {
+    $_gutter: map-get($breakpoint, gutter);
+    $_screen: map-get($breakpoint, screen);
+    $_width: map-get($breakpoint, width);
+    $_margin: map-get($breakpoint, margin);
+
+    @media screen and (min-width: $_screen) {
+      max-width: $_width;
+      width: 100%;
+      margin-inline: auto;
+    }
+  }
+}

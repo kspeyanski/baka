@@ -1,0 +1,9 @@
+@mixin column {
+  display: flex;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.baka-column {
+  @include column();
+}

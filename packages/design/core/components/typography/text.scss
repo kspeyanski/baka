@@ -1,0 +1,8 @@
+@mixin text {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.baka-text {
+  @include text();
+}

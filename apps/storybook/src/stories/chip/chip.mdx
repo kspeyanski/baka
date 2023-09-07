@@ -1,0 +1,55 @@
+# Chip
+
+The Chip component in the Baka UI library is a versatile element that can display labels and icons in a compact format. Chips are commonly used to represent tags, categories, or actions in your web application.
+
+### Installation
+
+Before using the Chip component, make sure you have the Baka UI library installed in your project:
+
+```bash
+npm install @baka/react
+# or
+yarn add @baka/react
+```
+
+### Basic Usage
+
+You can use the Chip component by importing it from `@baka/react` and adding it to your JSX code:
+
+```jsx
+import { BakaChip } from "@baka/react";
+
+function MyComponent() {
+  return <BakaChip>BakaLabel</BakaChip>;
+}
+```
+
+### Props
+
+The Chip component supports the following props:
+
+- `variant`: An array of strings representing different variants such as "elevated," "selected," "hovered," "focused," "dragged," etc.
+- `selected`: A boolean that highlights the chip when set to `true`.
+- `hovered`: A boolean that changes the chip's appearance when hovered.
+- `focused`: A boolean that changes the chip's appearance when focused.
+- `dragged`: A boolean that changes the chip's appearance when dragged.
+
+### Examples
+
+Here are some examples of using the Chip component with different props:
+
+```jsx
+import { BakaChip } from "@baka/react";
+
+function MyComponent() {
+  return (
+    <div>
+      <BakaChip>BakaLabel</BakaChip> {/* Default Chip */}
+      <BakaChip selected={true}>BakaLabel</BakaChip> {/* Selected Chip */}
+      <BakaChip hovered={true}>BakaLabel</BakaChip> {/* Hovered Chip */}
+      <BakaChip focused={true}>BakaLabel</BakaChip> {/* Focused Chip */}
+      <BakaChip dragged={true}>BakaLabel</BakaChip> {/* Dragged Chip */}
+    </div>
+  );
+}
+```

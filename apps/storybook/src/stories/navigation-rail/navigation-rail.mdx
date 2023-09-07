@@ -1,0 +1,99 @@
+## NavigationRail
+
+The `NavigationRail` component is used to create a vertical navigation rail typically placed on the side of a web page or app. It provides navigation links and can include icons and labels to guide users through different sections or views.
+
+### Usage
+
+```jsx
+import { BakaNavigationRail, BakaNavigationRailItem, BakaIcon, BakaLabel } from "@baka/react";
+
+// Inside your component
+<BakaNavigationRail>
+  {/* Top section */}
+  <div
+    style={{
+      display: "flex",
+      gap: 4,
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "stretch",
+    }}
+  >
+    {/* Custom buttons or icons */}
+    <BakaButton variant="icon">
+      <BakaIcon>menu</BakaIcon>
+    </BakaButton>
+    <BakaButton variant={["fab", "tertiary"]}>
+      <BakaIcon>mode_edit</BakaIcon>
+    </BakaButton>
+  </div>
+
+  {/* NavigationRailItems */}
+  <div>
+    <BakaNavigationRailItem selected={true}>
+      <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
+      <BakaLabel>BakaLabel</BakaLabel>
+    </BakaNavigationRailItem>
+    {/* Add more NavigationRailItems as needed */}
+  </div>
+</BakaNavigationRail>;
+```
+
+### Props
+
+#### None for NavigationRail
+
+---
+
+### NavigationRailItem
+
+The `NavigationRailItem` component represents an individual item within the `NavigationRail`.
+
+#### Props
+
+#### selected (optional)
+
+- Type: `boolean`
+- Default: `false`
+
+Indicates whether this item is selected. When set to `true`, it highlights the item as the currently active or selected option.
+
+### Examples
+
+#### Basic NavigationRail
+
+```jsx
+import { BakaNavigationRail, BakaNavigationRailItem, BakaIcon, BakaLabel } from "@baka/react";
+
+<BakaNavigationRail>
+  <div
+    style={{
+      display: "flex",
+      gap: 4,
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "stretch",
+    }}
+  >
+    <BakaButton variant="icon">
+      <BakaIcon>menu</BakaIcon>
+    </BakaButton>
+    <BakaButton variant={["fab", "tertiary"]}>
+      <BakaIcon>mode_edit</BakaIcon>
+    </BakaButton>
+  </div>
+  <div>
+    <BakaNavigationRailItem selected={true}>
+      <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
+      <BakaLabel>Home</BakaLabel>
+    </BakaNavigationRailItem>
+    <BakaNavigationRailItem>
+      <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
+      <BakaLabel>Profile</BakaLabel>
+    </BakaNavigationRailItem>
+    {/* Add more NavigationRailItems as needed */}
+  </div>
+</BakaNavigationRail>;
+```
+
+This will render a basic NavigationRail with custom buttons or icons in the top section and selectable items in the main section.

@@ -1,0 +1,200 @@
+# Button
+
+Welcome to the documentation for the "Button" component in the Baka UI Library. The "Button" component is a fundamental building block for user interactions in your web applications. It offers various styles and states to cater to different use cases.
+
+## Introduction
+
+The "Button" component in Baka UI provides a versatile set of button styles, allowing you to choose the right appearance for your application. Whether you need a filled, outlined, text, elevated, tonal, or a Floating Action Button (FAB), this component has you covered.
+
+### Usage
+
+To use the "Button" component, import it from `@baka/react` and include it in your JSX code. Here's a basic example:
+
+```jsx
+import { BakaButton } from "@baka/react";
+
+// Inside your component:
+<BakaButton>Click Me</BakaButton>
+```
+
+### Variants
+
+| Variant  | Description                          |
+|----------|--------------------------------------|
+| Filled   | Solid background, suitable for primary actions. |
+| Outlined | Transparent background with a visible border, great for secondary actions. |
+| Text     | No background, ideal for non-destructive actions. |
+| Elevated | Subtle shadow for a visual elevation effect, perfect for prominent calls to action. |
+| Tonal    | Background color matches the primary color of your application, emphasizing brand actions. |
+| FAB      | Floating Action Button, a circular button typically used for a promoted action. |
+
+### States
+
+Buttons can have different states to provide visual feedback to users:
+
+- **Hovered**: Adds a hover effect to the button.
+- **Focused**: Highlights the button to indicate focus.
+- **Activated**: Renders the button as active, typically when clicked.
+- **Disabled**: Disables the button, preventing user interaction.
+
+### IconButton
+
+In addition to the primary button variants, Baka UI also provides an "IconButton" variant for situations where you need an icon as the primary element within a button. This is useful when you want to emphasize the visual representation of an action.
+
+```jsx
+import { BakaButton, BakaIcon } from "@baka/react";
+
+// IconButton example:
+<BakaButton variant="icon">
+  <BakaIcon>settings</BakaIcon>
+</BakaButton>
+```
+
+### FAB (Floating Action Button)
+
+The "Floating Action Button" (FAB) is a circular button that typically represents a promoted action in your application. It stands out from other elements and is often used for primary actions.
+
+#### Small FABs
+
+Small FABs are suitable for situations where space is limited. They come in three primary variants: surface, primary, and secondary.
+
+```jsx
+import { BakaButton, BakaIcon } from "@baka/react";
+
+// Small FAB examples:
+<BakaButton variant={["fab", "small"]}>
+  <BakaIcon>edit</BakaIcon>
+</BakaButton>
+<BakaButton variant={["fab", "small", "primary"]}>
+  <BakaIcon>edit</BakaIcon>
+</BakaButton>
+<BakaButton variant={["fab", "small", "secondary"]}>
+  <BakaIcon>edit</BakaIcon>
+</BakaButton>
+```
+
+#### Medium FABs
+
+Medium FABs are the default size and come in the same three primary variants: surface, primary, and secondary.
+
+```jsx
+import { BakaButton, BakaIcon } from "@baka/react";
+
+// Medium FAB examples:
+<BakaButton variant={"fab"}>
+  <BakaIcon>edit</BakaIcon>
+</BakaButton>
+<BakaButton variant={["fab", "primary"]}>
+  <BakaIcon>edit</BakaIcon>
+</BakaButton>
+<BakaButton variant={["fab", "secondary"]}>
+  <BakaIcon>edit</BakaIcon>
+</BakaButton>
+```
+
+#### Large FABs
+
+Large FABs are suitable for situations where you want to make the FAB more prominent. They also come in the same three primary variants: surface, primary, and secondary.
+
+```jsx
+import { BakaButton, BakaIcon } from "@baka/react";
+
+// Large FAB examples:
+<BakaButton variant={["fab", "large"]}>
+  <BakaIcon>edit</BakaIcon>
+</BakaButton>
+<BakaButton variant={["fab", "large", "primary"]}>
+  <BakaIcon>edit</BakaIcon>
+</BakaButton>
+<BakaButton variant={["fab", "large", "secondary"]}>
+  <BakaIcon>edit</BakaIcon>
+</BakaButton>
+```
+
+#### Extended FABs
+
+Extended FABs combine an icon and a label to provide more context about the action. They come in the same three primary variants: surface, primary, and secondary.
+
+```jsx
+import { BakaButton, BakaIcon } from "@baka/react";
+
+// Extended FAB examples:
+<BakaButton variant={["fab", "extended"]}>
+  <BakaIcon>edit</BakaIcon>
+  BakaLabel
+</BakaButton>
+<BakaButton variant={["fab", "extended", "primary"]}>
+  <BakaIcon>edit</BakaIcon>
+  BakaLabel
+</BakaButton>
+<BakaButton variant={["fab", "extended", "secondary"]}>
+  <BakaIcon>edit</BakaIcon>
+  BakaLabel
+</BakaButton>
+```
+
+### Usage Guidelines
+
+When choosing a button style for your application, consider the following guidelines:
+
+- **Button Variants**: Select the appropriate button variant based on the action's importance and context within your application.
+- **States**: Utilize the various button states (hovered, focused, activated) to provide visual feedback to users and enhance user experience.
+- **Disabled Buttons**: Disable buttons when the associated action is unavailable or invalid to prevent user interaction.
+
+## Real-World Examples
+
+Here are some real-world examples of using different button variants in various contexts:
+
+#### Form Submission
+
+In a form, you can use a "filled" button for the "Submit" action to make it stand out as the primary action.
+
+```jsx
+<BakaButton variant="filled">Submit</BakaButton>
+```
+
+#### Secondary Action
+
+For secondary actions, like canceling an operation, you can use an "outlined" button.
+
+```jsx
+<BakaButton variant="outlined">Cancel</BakaButton>
+```
+
+#### Non-Destructive Action
+
+When you have a non-destructive action, such as "Read More," consider using a "text" button.
+
+```jsx
+<BakaButton variant="text">Read More</BakaButton>
+```
+
+#### Elevated Call to Action
+
+An elevated button can be used for a prominent call to action, like "Sign Up Now."
+
+```jsx
+<BakaButton variant="elevated">Sign Up Now</BakaButton>
+```
+
+#### Brand Color Action
+
+If you want to emphasize a brand color action, use a "tonal" button.
+
+```jsx
+<BakaButton variant="tonal">Learn More</BakaButton>
+```
+
+#### Floating Action Button (FAB)
+
+Floating Action Buttons (FABs) are typically used for promoting a primary action within your application. They are available in small, medium, large, and extended sizes.
+
+```jsx
+<BakaButton variant={["fab", "small"]}>
+  <BakaIcon>edit</BakaIcon>
+</BakaButton>
+<BakaButton variant={"fab"}>
+  <BakaIcon>edit</BakaIcon>
+</BakaButton>
+```
+

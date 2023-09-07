@@ -1,0 +1,29 @@
+{
+  "name": "baka",
+  "private": true,
+  "license": "MIT",
+  "aut": {
+    "name": "Kiril Stefanov Peyanski",
+    "email": "kspeyanski@gmail.com"
+  },
+  "workspaces": [
+    "packages/*",
+    "packages/design/*",
+    "apps/*",
+    "misc/build",
+    "misc/eslint"
+  ],
+  "devDependencies": {
+    "eslint": "^8.39.0",
+    "eslint-config-prettier": "^8.8.0",
+    "prettier": "^2.8.8"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "resolutions": {
+    "jackspeak": "2.1.1"
+  }
+}

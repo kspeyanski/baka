@@ -1,0 +1,21 @@
+@use "../../utils" as *;
+
+@mixin switch {
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  margin: 0;
+  text-rendering: auto;
+
+  @include disabled {
+    pointer-events: none;
+  }
+}
+
+.baka-switch {
+  @include switch();
+}

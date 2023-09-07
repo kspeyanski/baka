@@ -1,0 +1,45 @@
+@use "./motion" as *;
+@use "../../core" as *;
+
+@mixin state-layer {
+  &::before {
+    box-sizing: border-box;
+
+    pointer-events: none;
+    user-select: none;
+    z-index: 1;
+    @content;
+  }
+}
+
+@mixin ripple($color, $scale: 20) {
+  @include editable {
+    &::after {
+      content: "";
+      box-sizing: border-box;
+      user-select: none;
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      background-image: radial-gradient(circle, #{$color} 10%, transparent 10.01%);
+      background-repeat: no-repeat;
+      background-position: 50%;
+      transform: scale($scale, $scale);
+      opacity: 0;
+      // TODO: motion variables
+      transition: transform 0.25s, opacity 1s;
+    }
+
+    @include active {
+      &::after {
+        transform: scale(0, 0);
+        opacity: 0.2;
+        transition: 0s;
+      }
+    }
+  }
+}

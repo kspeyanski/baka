@@ -1,0 +1,11 @@
+{
+  "name": "eslint-config-baka",
+  "version": "0.0.1",
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-prettier": "^8"
+  },
+  "peerDependencies": {
+    "eslint": "^8"
+  }
+}

@@ -1,0 +1,16 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "cSpell.words": [
+        "Antialliasing",
+        "baka",
+        "clsx",
+        "contentlayer",
+        "liga",
+        "opsz",
+        "srgb",
+        "wght"
+    ]
+}

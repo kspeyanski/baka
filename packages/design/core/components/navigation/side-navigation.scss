@@ -1,0 +1,8 @@
+@mixin side-navigation {
+  display: flex;
+  flex-direction: column;
+}
+
+.baka-side-navigation {
+  @include side-navigation();
+}

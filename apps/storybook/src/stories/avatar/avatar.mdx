@@ -1,0 +1,104 @@
+# Avatar
+
+Welcome to the documentation for the "Avatar" component in the Baka UI Library. The "Avatar" component is used to represent a user's profile image or initials in a compact, visually appealing manner.
+
+## Introduction
+
+The "Avatar" component is a versatile element that can be used to display user profile images, initials, or icons. It's a crucial part of creating user-friendly interfaces, providing visual context to user identities.
+
+### Usage
+
+To use the "Avatar" component, import it from `@baka/react` and include it in your JSX code. Here's a basic example:
+
+```jsx
+import { BakaAvatar } from "@baka/react";
+
+// Inside your component:
+<BakaAvatar>A</BakaAvatar>
+```
+
+### Variants
+
+The "Avatar" component can be customized in various ways:
+
+- **BakaIcon Avatar**: You can place an icon or any content inside the "Avatar" component to represent the user.
+
+```jsx
+<BakaAvatar>
+  <BakaIcon>check</BakaIcon>
+</BakaAvatar>
+```
+
+- **Text Avatar**: You can use initials or any text to create a simple text-based avatar.
+
+```jsx
+<BakaAvatar>A</BakaAvatar>
+```
+
+- **Image Avatar**: If you have user profile images, you can use an image as the avatar.
+
+```jsx
+<BakaAvatar>
+  <BakaIcon as="img" src="/avatar.svg" />
+</BakaAvatar>
+```
+
+### Usage Guidelines
+
+When using the "Avatar" component, consider the following guidelines:
+
+- **BakaIcon Avatars**: These are suitable for representing actions or states associated with the user. For example, you can use a checkmark icon to indicate a verified user.
+
+```jsx
+<BakaAvatar>
+  <BakaIcon>check</BakaIcon>
+</BakaAvatar>
+```
+
+- **Text Avatars**: Use text avatars when you want a simple and clean representation of the user, such as displaying their initials.
+
+```jsx
+<BakaAvatar>A</BakaAvatar>
+```
+
+- **Image Avatars**: When you have user profile images, use image avatars to provide a visual representation of the user.
+
+```jsx
+<BakaAvatar>
+  <BakaIcon as="img" src="/avatar.svg" />
+</BakaAvatar>
+```
+
+## Real-World Examples
+
+Here are some real-world examples of using different "Avatar" variants:
+
+#### Verified User BakaIcon Avatar
+
+You can use an icon avatar to indicate a verified user with a checkmark icon.
+
+```jsx
+<BakaAvatar>
+  <BakaIcon>check</BakaIcon>
+</BakaAvatar>
+```
+
+#### Initials Text Avatar
+
+For users without profile images, you can use text avatars to display their initials.
+
+```jsx
+<BakaAvatar>A</BakaAvatar>
+```
+
+#### Image Avatar
+
+When you have user profile images, use image avatars to display user photos.
+
+```jsx
+<BakaAvatar>
+  <BakaIcon as="img" src="/avatar.svg" />
+</BakaAvatar>
+```
+
+The "Avatar" component is a versatile tool for representing user profiles in a visually appealing and informative way. You can mix and match different variants to best suit your application's design and user experience needs.

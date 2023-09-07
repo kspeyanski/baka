@@ -1,0 +1,116 @@
+# Switch
+
+The Switch component allows users to toggle between two states: on and off. It is a common UI element used for binary choices.
+
+## Installation
+
+To use the Switch component in your project, make sure you have the `@baka/react` package installed. You can install it using npm or yarn:
+
+```bash
+npm install @baka/react
+```
+
+or
+
+```bash
+yarn add @baka/react
+```
+
+## Usage
+
+Import the `BakaSwitch` component from `@baka/react` in your JavaScript or TypeScript file.
+
+```jsx
+import { BakaSwitch } from "@baka/react";
+```
+
+### Basic Usage
+
+```jsx
+<BakaSwitch checked={true} />
+```
+
+### Variants
+
+The Switch component comes in two variants: default and icon.
+
+#### Default Variant
+
+The default variant of the Switch is used for simple binary choices.
+
+```jsx
+<BakaSwitch  />
+```
+
+#### BakaIcon Variant
+
+The icon variant of the Switch is used when you want to represent the on and off states with icons.
+
+```jsx
+<BakaSwitch variant={"icon"} />
+```
+
+### States
+
+The Switch component supports several states, including hovered, focused, activated, and disabled.
+
+#### Hovered
+
+```jsx
+<BakaSwitch hovered={true} />
+```
+
+#### Focused
+
+```jsx
+<BakaSwitch focused={true} />
+```
+
+#### Activated
+
+```jsx
+<BakaSwitch activated={true} />
+```
+
+#### Disabled
+
+```jsx
+<BakaSwitch disabled={true} />
+```
+
+### Controlled vs. Uncontrolled
+
+The `BakaSwitch` component can be used in controlled or uncontrolled mode. In controlled mode, you provide the `checked` prop to specify the state of the switch. In uncontrolled mode, you omit the `checked` prop, and the component manages its state internally.
+
+### Events
+
+The Switch component does not emit any custom events. You can handle changes in its state by listening to the `onChange` event if you are using it in a controlled mode.
+
+```jsx
+<BakaSwitch onChange={(event) => console.log(event.target.checked)} />
+```
+
+## Props
+
+| Name         | Type       | Default | Description                                                |
+| ------------ | ---------- | ------- | ---------------------------------------------------------- |
+| checked      | boolean    | false   | Determines whether the switch is in the "on" or "off" state. |
+| hovered      | boolean    | false   | Indicates whether the switch is being hovered over.       |
+| focused      | boolean    | false   | Indicates whether the switch is currently focused.        |
+| activated    | boolean    | false   | Indicates whether the switch is activated (pressed).      |
+| disabled     | boolean    | false   | Disables the switch, preventing user interaction.         |
+| variant      | string     | "default" | Specifies the variant of the switch ("default" or "icon"). |
+
+## Examples
+
+### Basic Usage
+
+```jsx
+<BakaSwitch checked={true} />
+```
+
+### BakaIcon Variant
+
+```jsx
+<BakaSwitch checked={true} variant={"icon"} />
+```

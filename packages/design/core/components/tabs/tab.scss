@@ -1,0 +1,5 @@
+@mixin tab {
+}
+.baka-tab {
+  @include tab();
+}

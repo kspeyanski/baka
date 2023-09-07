@@ -1,0 +1,47 @@
+## BakaList
+
+The `BakaList` component is used to display a collection of items in a list format.
+
+### Usage
+
+```jsx
+import { BakaList, BakaListItem } from "@baka/react";
+
+// Inside your component
+<BakaList style={{ width: 360 }}>
+  <BakaListItem>{/* Content for List Item 1 */}</BakaListItem>
+  <BakaListItem>{/* Content for List Item 2 */}</BakaListItem>
+  {/* Add more ListItems as needed */}
+</BakaList>;
+```
+
+### BakaListItem
+
+The `BakaListItem` component is used to define individual items within the BakaList.
+
+#### Usage
+
+```jsx
+import { BakaListItem } from "@baka/react";
+
+<BakaListItem>{/* Content for List Item */}</BakaListItem>;
+```
+
+### Examples
+
+#### Basic BakaList
+
+```jsx
+import { BakaList, BakaListItem } from "@baka/react";
+
+<BakaList style={{ width: 360 }}>
+  <BakaListItem>
+    <span>Item 1</span>
+  </BakaListItem>
+  <BakaListItem>
+    <span>Item 2</span>
+  </BakaListItem>
+</BakaList>;
+```
+
+This will render a basic list with two items.

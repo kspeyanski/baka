@@ -1,0 +1,101 @@
+@use "../../styles" as *;
+@use "@baka/design-core" as *;
+
+.baka-tab {
+  --padding: var(--group-padding, 16px);
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  padding: 14px var(--padding);
+  min-width: min-content;
+  display: flex;
+  flex-direction: var(--flex-direction, column);
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 0;
+  gap: var(--gap, 2px);
+
+  @include ripple(var(--ripple), $scale: 10);
+
+  .baka-label {
+    @include title-small();
+    color: var(--color);
+  }
+
+  .baka-icon {
+    margin: -2px 0;
+    color: var(--color);
+  }
+
+  .baka-icon + .baka-label {
+    margin-bottom: var(--margin-bottom, -6px);
+  }
+
+  @include state-layer {
+    content: "";
+    user-select: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+
+    @include motion-transition-TBD(background);
+  }
+
+  @include hover {
+    @include state-layer {
+      background: rgba(var(--state), 0.08);
+    }
+  }
+
+  @include focus {
+    @include state-layer {
+      background: rgba(var(--state), 0.12);
+    }
+  }
+
+  @include selected {
+    --state: #{$primary-rgb};
+    --color: var(--group-selected-color, #{$primary});
+    --ripple: #{$primary};
+    position: relative;
+
+    :last-child {
+      position: var(--position);
+
+      &:after {
+        position: absolute;
+        border-top-left-radius: var(--group-radius, 100px);
+        border-top-right-radius: var(--group-radius, 100px);
+        height: var(--group-height, 3px);
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: $primary;
+      }
+
+      &:is(.baka-icon) {
+        &:after {
+          content: "";
+          bottom: var(--group-bottom, -12px);
+        }
+      }
+
+      &:is(.baka-label) {
+        &:after {
+          content: "";
+          bottom: var(--group-bottom, -14px);
+        }
+      }
+
+      &:is(.baka-icon + .baka-label) {
+        &:after {
+          content: "";
+          bottom: var(--group-bottom, -8px);
+        }
+      }
+    }
+  }
+}

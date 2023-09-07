@@ -1,0 +1,42 @@
+@use "../../styles" as *;
+@use "@baka/design-core" as *;
+
+.baka-tab-group {
+  --color: #{$on-surface-variant};
+  --state: #{$on-surface-rgb};
+  --ripple: #{$on-surface};
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: stretch;
+
+  @include variant(primary, true) {
+    --position: relative;
+  }
+
+  @include variant(overflow) {
+    overflow: auto;
+    --group-padding: 32px;
+
+    & {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  @include variant(secondary) {
+    --position: initial;
+    --group-bottom: 0;
+    --group-selected-color: #{$on-surface};
+    --group-radius: 0;
+    --group-height: 2px;
+    --flex-direction: row;
+    --margin-bottom: 0;
+    --gap: 8px;
+  }
+}

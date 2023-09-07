@@ -1,0 +1,57 @@
+@use "../../styles" as *;
+@use "@baka/design-core" as *;
+
+.baka-list-item {
+  --state: transparent;
+  --ripple: #{$on-surface};
+  min-height: 56px;
+
+  @include body-large;
+
+  gap: 16px;
+  padding: 12px 24px 12px 16px;
+
+  @include state-layer {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--state);
+
+    @include motion-transition-TBD(background);
+  }
+
+  @include ripple(var(--ripple), $scale: 10);
+
+  @include hover($readonly: false) {
+    --state: rgba(#{$on-surface-rgb}, 0.08);
+  }
+
+  @include focus($readonly: false) {
+    --state: rgba(#{$on-surface-rgb}, 0.12);
+  }
+
+  @include active($readonly: false) {
+    --state: rgba(#{$on-surface-rgb}, 0.12);
+  }
+
+  @include dragged {
+    box-shadow: map-get($elevation, 3);
+  }
+
+  @include disabled {
+    opacity: 0.38;
+  }
+
+  @include variant(multi-line) {
+    align-items: flex-start;
+  }
+
+  @include variant(video) {
+    padding-inline-start: 0;
+  }
+}

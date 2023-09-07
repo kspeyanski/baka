@@ -1,0 +1,87 @@
+# Card Component
+
+The Card component is a versatile component for displaying content with a consistent and visually appealing design. It can be customized with different variants to match the style of your application.
+
+## Usage
+
+To use the Card component, import it from `@baka/react`:
+
+```tsx
+import { BakaCard } from "@baka/react";
+```
+
+Then, you can create a Card with different variants and content as needed.
+
+```tsx
+<BakaCard variant={"outlined"}>
+  {/* Content goes here */}
+</BakaCard>
+```
+
+### Variants
+
+The Card component supports the following variants:
+
+- `"outlined"`: A card with an outlined border.
+- `"elevated"`: A card with elevated (raised) appearance.
+- `"filled"`: A card with a filled background color.
+
+You can also combine variants to create unique card styles, such as `"["outlined", "horizontal"]"` for an outlined horizontal card.
+
+## Content
+
+The content of a Card can be customized based on your needs. You can include text, images, buttons, and other components within the Card to display your content effectively.
+
+### Example
+
+Here's an example of how to create a Card with some content:
+
+```tsx
+<BakaCard variant={"outlined"} style={{ width: 360 }}>
+  <div>
+    {/* Your content goes here */}
+  </div>
+</BakaCard>
+```
+
+## Examples
+
+### Basic Card
+
+A basic Card with outlined variant:
+
+```tsx
+<BakaCard variant={"outlined"} style={{ width: 360 }}>
+  {/* Your content goes here */}
+</BakaCard>
+```
+
+### Elevated Card
+
+An elevated Card with filled variant:
+
+```tsx
+<BakaCard variant={"elevated"} style={{ width: 360 }}>
+  {/* Your content goes here */}
+</BakaCard>
+```
+
+### Horizontal Card
+
+A horizontal Card with filled variant:
+
+```tsx
+<BakaCard variant={["filled", "horizontal"]} style={{ width: 360 }}>
+  {/* Your content goes here */}
+</BakaCard>
+```
+
+## Props
+
+- `variant`: Specifies the visual style of the Card. It accepts a string or an array of strings for combining variants.
+- `style`: Customizes the styling of the Card, such as width and height.
+
+## Notes
+
+- Be creative with the content you place inside the Card to make it visually appealing and informative.
+

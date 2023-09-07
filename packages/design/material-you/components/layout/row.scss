@@ -1,0 +1,17 @@
+@use "@baka/design-core" as *;
+@use "../../styles/" as *;
+
+.baka-row {
+  @include row();
+
+  @each $size, $breakpoint in $breakpoints {
+    $_gutter: map-get($breakpoint, gutter);
+    $_screen: map-get($breakpoint, screen);
+    $_margin: map-get($breakpoint, margin);
+
+    @media screen and (min-width: $_screen) {
+      gap: $_gutter;
+      padding-inline: $_margin;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@mixin avatar {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.baka-avatar {
+  @include avatar();
+}

@@ -1,0 +1,26 @@
+@use "../../utils" as *;
+
+@mixin chip {
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  user-select: none;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+
+  @include disabled {
+    pointer-events: none;
+  }
+}
+
+.baka-chip {
+  @include chip();
+}

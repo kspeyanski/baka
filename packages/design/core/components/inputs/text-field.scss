@@ -1,0 +1,13 @@
+@use "../../utils" as *;
+
+@mixin text-field {
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.baka-text-field {
+  @include text-field();
+}

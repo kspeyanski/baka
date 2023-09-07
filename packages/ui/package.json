@@ -1,0 +1,36 @@
+{
+  "name": "@baka/react",
+  "version": "0.0.1",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/baka-ui.umd.cjs",
+  "module": "./dist/baka-ui.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/baka-ui.js",
+      "require": "./dist/baka-ui.umd.js"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "watch": "vite build --watch"
+  },
+  "devDependencies": {
+    "@baka/design-core": "^0.0.1",
+    "clsx": "^1.2.1",
+    "fast-glob": "^3.3.1",
+    "react": "^18",
+    "react-dom": "^18",
+    "rimraf": "^5.0.1",
+    "vite": "^4.4.9",
+    "vite-plugin-dts": "^3.6.0"
+  },
+  "peerDependencies": {
+    "react": "^18",
+    "react-dom": "^18"
+  }
+}

@@ -1,0 +1,64 @@
+# Layout Module Documentation
+
+The Layout module in the "@baka/react" library provides a set of components for building responsive and flexible layouts. These components help in organizing your content within containers, rows, and columns, allowing you to create dynamic and visually appealing designs. Below are the details of the available layout components.
+
+## Installation
+
+Before using the Layout module, ensure you have the "@baka/react" library installed in your project:
+
+```bash
+npm install @baka/react
+```
+
+## Importing
+
+You can import the Layout components as follows:
+
+```javascript
+import { BakaContainer, BakaRow, BakaColumn } from "@baka/react";
+```
+
+## Container
+
+The `BakaContainer` component provides a container to hold your layout elements. It helps in maintaining consistent spacing and alignment for the content inside it.
+
+### Usage
+
+```jsx
+<BakaContainer>{/* Your content goes here */}</BakaContainer>
+```
+
+## Row
+
+The `BakaRow` component is used to create horizontal rows within a container. It allows you to organize content from left to right.
+
+### Usage
+
+```jsx
+<BakaRow>{/* BakaColumn components or other elements */}</BakaRow>
+```
+
+## Column
+
+The `BakaColumn` component is used to create columns within a row. It allows you to divide the row into a specified number of columns.
+
+### Usage
+
+```jsx
+<BakaColumn count={4} style={{ background: "red" }}>
+  {/* Column content */}
+</BakaColumn>
+```
+
+### Props
+
+- `count`: (Required) The number of columns to divide the row into.
+- `style`: (Optional) Custom styles to be applied to the column.
+
+## Additional Notes
+
+- The Layout module simplifies the process of creating responsive layouts in your web application.
+- Use `BakaContainer` to encapsulate sections of your UI, ensuring consistent spacing and alignment.
+- Combine `BakaRow` and `BakaColumn` to create grid-based layouts, organizing content into rows and columns.
+- Customize the number of columns and apply styles to create visually appealing designs.
+- Utilize responsive design principles to ensure your layouts adapt well to different screen sizes and devices.
