@@ -7,6 +7,7 @@
     "email": "kspeyanski@gmail.com"
   },
   "scripts": {
+    "build-packages": "lerna run build --no-private",
     "build-storybook": "build-storybook -c .storybook -o .out"
   },
   "workspaces": [
