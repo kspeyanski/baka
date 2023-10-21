@@ -1,4 +1,4 @@
-import type { BakaTooltipVariant } from "@baka/design-core";
+import type { BakaTooltipVariant } from "baka--core";
 import clsx from "clsx";
 
 import { BakaComponent, BakaProps, BakaVariant } from "../../../src/models";

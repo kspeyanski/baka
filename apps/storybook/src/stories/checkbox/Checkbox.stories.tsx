@@ -1,6 +1,6 @@
-/// <reference types="@baka/design-material-you" />
+/// <reference types="baka-material-you" />
 
-import { BakaCheckbox } from "@baka/react";
+import { BakaCheckbox } from "baka-ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import Docs from "./checkbox.mdx";
 

@@ -8,7 +8,7 @@ import {
   BakaIcon,
   BakaListItem,
   BakaParagraph,
-} from "@baka/react";
+} from "baka-ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import Docs from "./dialog.mdx";
 

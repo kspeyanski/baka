@@ -1,4 +1,4 @@
-/// <reference types="@baka/design-material-you" />
+/// <reference types="baka-material-you" />
 
 import {
   BakaButton,
@@ -9,7 +9,7 @@ import {
   BakaInput,
   BakaLabel,
   BakaTextField,
-} from "@baka/react";
+} from "baka-ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import Docs from "./menu.mdx";
 

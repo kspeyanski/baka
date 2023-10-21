@@ -1,6 +1,6 @@
-/// <reference types="@baka/design-material-you" />
+/// <reference types="baka-material-you" />
 
-import { BakaAvatar, BakaChip, BakaIcon } from "@baka/react";
+import { BakaAvatar, BakaChip, BakaIcon } from "baka-ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import Docs from "./chip.mdx";
 

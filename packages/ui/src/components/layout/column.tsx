@@ -1,4 +1,4 @@
-import type { BakaColumnVariant } from "@baka/design-core";
+import type { BakaColumnVariant } from "baka--core";
 import clsx from "clsx";
 
 import { BakaComponent, BakaProps, BakaVariant } from "../../../src/models";

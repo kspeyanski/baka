@@ -4,7 +4,7 @@ import {
   BakaParagraph,
   BakaLabel,
   BakaTooltipProps,
-} from "@baka/react";
+} from "baka-ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import Docs from "./tooltip.mdx";
 

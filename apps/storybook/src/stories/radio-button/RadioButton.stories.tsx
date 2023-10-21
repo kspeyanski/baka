@@ -1,4 +1,4 @@
-import { BakaRadioButton } from "@baka/react";
+import { BakaRadioButton } from "baka-ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import Docs from "./radio-button.mdx";
 

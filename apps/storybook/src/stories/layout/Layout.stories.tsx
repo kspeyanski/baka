@@ -1,6 +1,6 @@
-/// <reference types="@baka/design-material-you" />
+/// <reference types="baka-material-you" />
 
-import { BakaColumn, BakaContainer, BakaRow, BakaText } from "@baka/react";
+import { BakaColumn, BakaContainer, BakaRow, BakaText } from "baka-ui";
 import type { Meta } from "@storybook/react";
 import Docs from "./layout.mdx";
 

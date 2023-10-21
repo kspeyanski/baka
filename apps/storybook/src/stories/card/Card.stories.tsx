@@ -1,6 +1,6 @@
-/// <reference types="@baka/design-material-you" />
+/// <reference types="baka-material-you" />
 
-import { BakaAvatar, BakaButton, BakaCard, BakaText, BakaIcon, BakaLabel, BakaParagraph } from "@baka/react";
+import { BakaAvatar, BakaButton, BakaCard, BakaText, BakaIcon, BakaLabel, BakaParagraph } from "baka-ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import Docs from "./card.mdx";
 import "./styles.scss";

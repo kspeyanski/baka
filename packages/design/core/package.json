@@ -1,10 +1,11 @@
 {
-  "name": "@baka/design-core",
-  "version": "0.0.1-alpha.0",
+  "name": "baka--core",
+  "version": "0.0.0",
   "types": "./types/index.d.ts",
   "scripts": {
     "build": "sass ./_index.scss ./dist/index.css",
     "watch": "sass --watch ./_index.scss ./dist/index.css"
   },
-  "sass": "./_index.scss"
+  "sass": "./_index.scss",
+  "gitHead": "532e6985e8208e2dc614d825bcb0cf81b579f331"
 }

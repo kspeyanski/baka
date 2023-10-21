@@ -1,4 +1,4 @@
-/// <reference types="@baka/design-material-you" />
+/// <reference types="baka-material-you" />
 
 import type { Meta, StoryObj } from "@storybook/react";
 import {
@@ -8,7 +8,7 @@ import {
   BakaText,
   BakaIcon,
   BakaLabel,
-} from "@baka/react";
+} from "baka-ui";
 import Docs from "./side-navigation.mdx";
 
 const meta = {

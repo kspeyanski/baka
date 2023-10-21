@@ -1,6 +1,6 @@
 {
-  "name": "@baka/design-material-you",
-  "version": "0.0.1-alpha.0",
+  "name": "baka-material-you",
+  "version": "0.0.0",
   "types": "./types/index.d.ts",
   "sass": "./_index.scss",
   "scripts": {
@@ -8,10 +8,11 @@
     "watch": "sass --watch --load-path=../../../node_modules ./_index.scss ./dist/index.css"
   },
   "devDependencies": {
-    "@baka/design-core": "^0.0.1-alpha.0",
+    "baka--core": "^0.0.0",
     "sass": "^1.68.0"
   },
   "peerDependencies": {
-    "@baka/design-core": "*"
-  }
+    "baka--core": "*"
+  },
+  "gitHead": "532e6985e8208e2dc614d825bcb0cf81b579f331"
 }

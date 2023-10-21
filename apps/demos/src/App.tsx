@@ -1,6 +1,6 @@
-import { BakaInput, BakaTextField } from "@baka/react";
+import { BakaInput, BakaTextField } from "baka-ui";
 
-import "@baka/design-material-you/dist/index.css";
+import "baka-material-you/dist/index.css";
 
 function App() {
   return (

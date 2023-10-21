@@ -7,7 +7,7 @@ import {
   BakaIcon,
   BakaRadioButton,
   BakaSwitch,
-} from "@baka/react";
+} from "baka-ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import Docs from "./list.mdx";
 

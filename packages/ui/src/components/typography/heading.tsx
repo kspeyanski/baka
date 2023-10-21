@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
 import { BakaComponent, BakaProps, BakaVariant } from "../../../src/models";
-import { BakaHeadingVariant } from "@baka/design-core";
+import { BakaHeadingVariant } from "baka--core";
 import { variantClassNames } from "../../utils";
 
 export interface BakaHeadingProps extends React.HTMLAttributes<HTMLHeadingElement>, BakaProps {

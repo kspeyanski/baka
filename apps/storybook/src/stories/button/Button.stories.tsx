@@ -1,7 +1,7 @@
-/// <reference types="@baka/design-material-you" />
+/// <reference types="baka-material-you" />
 
-import { ButtonVariant } from "@baka/design-core";
-import { BakaButton, BakaButtonProps, BakaIcon } from "@baka/react";
+import { ButtonVariant } from "baka--core";
+import { BakaButton, BakaButtonProps, BakaIcon } from "baka-ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import Docs from "./button.mdx";
 

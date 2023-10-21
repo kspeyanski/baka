@@ -1,4 +1,4 @@
-import { BakaDivider } from "@baka/react";
+import { BakaDivider } from "baka-ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import Docs from "./divider.mdx";
 

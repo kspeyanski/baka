@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { BakaListItemVariant } from "@baka/design-core";
+import { BakaListItemVariant } from "baka--core";
 import { BakaComponent, BakaProps, BakaStates, BakaVariant } from "../../../src/models";
 import { stateClassNames, variantClassNames } from "../../utils";
 

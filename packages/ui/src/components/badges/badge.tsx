@@ -1,4 +1,4 @@
-import type { BakaBadgeVariant } from "@baka/design-core";
+import type { BakaBadgeVariant } from "baka--core";
 import clsx from "clsx";
 
 import { BakaComponent, BakaProps, BakaVariant } from "../../../src/models";

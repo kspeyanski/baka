@@ -1,6 +1,6 @@
 declare var __baka_DESIGN: string;
 
-declare module "@baka/design-core" {
+declare module "baka--core" {
   type BakaAvatarVariant = string;
   type BakaBadgeVariant = string;
 

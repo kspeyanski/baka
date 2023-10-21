@@ -1,6 +1,6 @@
 import { BakaStates } from "../../models/states";
 import clsx from "clsx";
-import { BakaIconVariant } from "@baka/design-core";
+import { BakaIconVariant } from "baka--core";
 import { BakaVariant } from "../../models/variant";
 import { variantClassNames } from "../../utils";
 import { BakaComponent } from "../../models/component";

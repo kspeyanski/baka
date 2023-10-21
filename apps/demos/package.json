@@ -1,5 +1,5 @@
 {
-  "name": "demos",
+  "name": "baka-demos",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,8 +12,8 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@baka/react": "*",
-    "@baka/design-material-you": "*"
+    "baka-ui": "file:../../packages/ui",
+    "baka-material-you": "file:../../packages/design/material-you"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

@@ -1,4 +1,4 @@
-import type { BakaChipVariant } from "@baka/design-core";
+import type { BakaChipVariant } from "baka--core";
 import clsx from "clsx";
 
 import { BakaComponent, BakaProps, BakaStates, BakaVariant } from "../../../src/models";

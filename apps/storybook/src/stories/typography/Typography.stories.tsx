@@ -1,4 +1,4 @@
-/// <reference types="@baka/design-material-you" />
+/// <reference types="baka-material-you" />
 
 import {
   BakaCard,
@@ -10,7 +10,7 @@ import {
   BakaParagraphProps,
   BakaText,
   BakaTextProps,
-} from "@baka/react";
+} from "baka-ui";
 import type { Meta } from "@storybook/react";
 import Docs from "./typography.mdx";
 

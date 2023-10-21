@@ -1,7 +1,7 @@
-/// <reference types="@baka/design-material-you" />
+/// <reference types="baka-material-you" />
 
 import type { Meta, StoryObj } from "@storybook/react";
-import { BakaBottomBar, BakaButton, BakaText, BakaTopBar, BakaIcon } from "@baka/react";
+import { BakaBottomBar, BakaButton, BakaText, BakaTopBar, BakaIcon } from "baka-ui";
 import Docs from "./bars.mdx";
 
 const meta = {

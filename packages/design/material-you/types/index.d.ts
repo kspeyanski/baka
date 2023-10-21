@@ -1,4 +1,4 @@
-declare module "@baka/design-core" {
+declare module "baka--core" {
   type BakaAvatarVariant = "small" | "medium" | "large";
   type BakaBadgeVariant = "small" | "single-digit" | "multi-digit";
   type ButtonStates = {

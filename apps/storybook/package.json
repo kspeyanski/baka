@@ -12,8 +12,8 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@baka/design-material-you": "*",
-    "@baka/react": "*",
+    "baka-ui": "file:../../packages/ui",
+    "baka-material-you": "file:../../packages/design/material-you",
     "@storybook/addon-docs": "^7.4.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

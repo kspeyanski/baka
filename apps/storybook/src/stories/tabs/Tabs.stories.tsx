@@ -1,4 +1,4 @@
-import { BakaTabGroup, BakaTab, BakaLabel, BakaDivider, BakaIcon } from "@baka/react";
+import { BakaTabGroup, BakaTab, BakaLabel, BakaDivider, BakaIcon } from "baka-ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import Docs from "./tabs.mdx";
 
