@@ -6,6 +6,9 @@
     "name": "Kiril Stefanov Peyanski",
     "email": "kspeyanski@gmail.com"
   },
+  "scripts": {
+    "build-storybook": "build-storybook -c .storybook -o .out"
+  },
   "workspaces": [
     "packages/*",
     "packages/design/*",
