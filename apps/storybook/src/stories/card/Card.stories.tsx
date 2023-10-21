@@ -50,7 +50,7 @@ export const Basic: Story = {
       </div>
       <div>
         <img
-          src="/media.png"
+          src="./media.png"
           alt="media"
           width={720}
           height={376}
@@ -107,7 +107,7 @@ export const Horizontal: Story = {
         </div>
       </div>
 
-      <img src="/media-small.png" alt="media" width={80} height={80} />
+      <img src="./media-small.png" alt="media" width={80} height={80} />
     </BakaCard>
   ),
   args: {

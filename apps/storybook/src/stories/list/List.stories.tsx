@@ -104,10 +104,10 @@ export const Items: Story = {
             {args.prefix === "avatar" && <BakaAvatar>A</BakaAvatar>}
             {args.prefix === "icon" && <BakaIcon>person</BakaIcon>}
             {args.prefix === "image" && (
-              <img style={{ width: 56, height: 56 }} src="/media-small.png" />
+              <img style={{ width: 56, height: 56 }} src="./media-small.png" />
             )}
             {args.suffix === "checkbox" ? <BakaCheckbox readOnly={true} checked={true} /> : null}
-            {args.prefix === "video" && <img style={{ width: 114, height: 64 }} src="/media.png" />}
+            {args.prefix === "video" && <img style={{ width: 114, height: 64 }} src="./media.png" />}
             {args.prefix === "radio" && <BakaRadioButton checked={true} readOnly={true} />}
             {args.prefix === "switch" && <BakaSwitch checked={false} readOnly={true} />}
             <div

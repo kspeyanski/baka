@@ -43,7 +43,7 @@ export const IconBakaAvatar: Story = {
 
 export const ImageBakaAvatar: Story = {
   args: {
-    children: <BakaIcon as="img" src="/avatar.svg" />,
+    children: <BakaIcon as="img" src="./avatar.svg" />,
     ...defaultArgs,
   },
 };

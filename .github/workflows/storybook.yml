@@ -11,6 +11,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      GH_PAGES: true
 
     steps:
       - name: Checkout code

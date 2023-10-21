@@ -62,7 +62,7 @@ export const Basic: Story = {
               {props.selected ? (
                 <BakaIcon variant={["filled"]}>check</BakaIcon>
               ) : (
-                <img src="/avatar-light.svg" />
+                <img src="./avatar-light.svg" />
               )}
             </BakaAvatar>
             <span>BakaLabel</span>
@@ -75,7 +75,7 @@ export const Basic: Story = {
               {props.selected ? (
                 <BakaIcon variant={["filled"]}>check</BakaIcon>
               ) : (
-                <img src="/avatar-light.svg" />
+                <img src="./avatar-light.svg" />
               )}
             </BakaAvatar>
             <span>BakaLabel</span>
