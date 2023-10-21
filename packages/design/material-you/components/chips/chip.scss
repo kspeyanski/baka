@@ -1,5 +1,5 @@
 @use "../../styles" as *;
-@use "baka--core" as *;
+@use "baka-core" as *;
 
 .baka-chip {
   @include label-large;

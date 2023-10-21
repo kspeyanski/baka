@@ -1,7 +1,7 @@
 import { BakaSwitch } from "baka-ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import Docs from "./switch.mdx";
-import { BakaSwitchVariant } from "baka--core";
+import { BakaSwitchVariant } from "baka-core";
 
 const meta = {
   title: "Material You/Primitives/Switch",

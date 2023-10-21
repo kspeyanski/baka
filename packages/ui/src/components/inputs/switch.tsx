@@ -1,4 +1,4 @@
-import type { BakaSwitchStates, BakaSwitchVariant } from "baka--core";
+import type { BakaSwitchStates, BakaSwitchVariant } from "baka-core";
 import clsx from "clsx";
 
 import { BakaComponent, BakaProps, BakaVariant } from "../../../src/models";

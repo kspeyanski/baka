@@ -1,5 +1,5 @@
 {
-  "name": "baka--core",
+  "name": "baka-core",
   "version": "0.0.0",
   "types": "./types/index.d.ts",
   "scripts": {

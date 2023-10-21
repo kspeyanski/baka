@@ -1,4 +1,4 @@
-import type { BakaTextFieldVariant } from "baka--core";
+import type { BakaTextFieldVariant } from "baka-core";
 import clsx from "clsx";
 
 import { BakaComponent, BakaStates, BakaVariant } from "../../../src/models";

@@ -1,5 +1,5 @@
 @use "../../styles" as *;
-@use "baka--core" as *;
+@use "baka-core" as *;
 
 .baka-radio-button {
   --background: #{$on-surface-variant};

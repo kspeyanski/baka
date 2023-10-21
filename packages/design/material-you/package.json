@@ -8,11 +8,11 @@
     "watch": "sass --watch --load-path=../../../node_modules ./_index.scss ./dist/index.css"
   },
   "devDependencies": {
-    "baka--core": "^0.0.0",
+    "baka-core": "^0.0.0",
     "sass": "^1.68.0"
   },
   "peerDependencies": {
-    "baka--core": "*"
+    "baka-core": "*"
   },
   "gitHead": "532e6985e8208e2dc614d825bcb0cf81b579f331"
 }

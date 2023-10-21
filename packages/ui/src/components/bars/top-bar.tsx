@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
 import { BakaComponent, BakaProps, BakaVariant } from "../../../src/models";
-import { BakaTopBarVariant } from "baka--core";
+import { BakaTopBarVariant } from "baka-core";
 import { variantClassNames } from "../../utils";
 
 export interface BakaTopBarProps extends React.HTMLAttributes<HTMLDivElement>, BakaProps {

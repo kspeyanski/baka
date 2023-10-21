@@ -1,4 +1,4 @@
-import type { BakaButtonStates, BakaButtonVariant } from "baka--core";
+import type { BakaButtonStates, BakaButtonVariant } from "baka-core";
 import clsx from "clsx";
 import { BakaComponent, BakaProps, BakaStates, BakaVariant } from "../../../src/models";
 import { stateClassNames, variantClassNames } from "../../utils";

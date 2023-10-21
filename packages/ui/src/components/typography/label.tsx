@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
 import { BakaComponent, BakaProps, BakaVariant } from "../../../src/models";
-import { BakaLabelVariant } from "baka--core";
+import { BakaLabelVariant } from "baka-core";
 import { variantClassNames } from "../../utils";
 
 export interface BakaLabelProps extends React.HTMLAttributes<HTMLLabelElement>, BakaProps {

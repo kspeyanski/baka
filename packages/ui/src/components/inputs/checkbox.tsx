@@ -1,4 +1,4 @@
-import type { BakaCheckboxStates, BakaCheckboxVariant } from "baka--core";
+import type { BakaCheckboxStates, BakaCheckboxVariant } from "baka-core";
 import clsx from "clsx";
 
 import { BakaComponent, BakaVariant } from "../../../src/models";
