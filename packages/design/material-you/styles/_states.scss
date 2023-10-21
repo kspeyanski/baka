@@ -1,5 +1,5 @@
 @use "./motion" as *;
-@use "../../core" as *;
+@use "baka-core" as *;
 
 @mixin state-layer {
   &::before {

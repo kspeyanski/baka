@@ -30,3 +30,17 @@ import "baka-material-you/dist/index.css";
 
 const App = () => <BakaButton>Click me</BakaButton>;
 ```
+
+### Typescript
+
+This project is written in Typescript and publishes its types to npm. This means you don't need to install any additional packages to use the types.
+
+However, it's design to have design-specific types for the `variant` property of the components. To use it, reference the `index.d.ts` file of the corresponding design in your `tsconfig.json` file.
+
+```json
+{
+  "compilerOptions": {
+    "types": ["baka-material-you/index.d.ts"]
+  }
+}
+```

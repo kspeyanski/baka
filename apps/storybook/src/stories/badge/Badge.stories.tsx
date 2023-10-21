@@ -1,5 +1,3 @@
-/// <reference types="baka-material-you" />
-
 import type { Meta, StoryObj } from "@storybook/react";
 import { BakaBadge } from "baka-ui";
 import Docs from "./badge.mdx";
@@ -27,7 +25,7 @@ type Story = StoryObj<typeof meta>;
 export const Basic: Story = {
   render: (props) => {
     return (
-      <BakaBadge {...props}>
+      <BakaBadge {...props} variant={"single-digit"}>
         {(() => {
           switch (props.variant) {
             case "dot":
