@@ -2,6 +2,7 @@
   "name": "baka-core",
   "version": "0.0.2-alpha.0",
   "types": "./types/index.d.ts",
+  "license": "MIT",
   "scripts": {
     "build": "sass ./_index.scss ./dist/index.css",
     "watch": "sass --watch ./_index.scss ./dist/index.css"

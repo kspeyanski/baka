@@ -16,7 +16,7 @@ A super _dummy_ set of design system primitives
 npm install baka-ui
 ```
 
-1. Install the a `styles` package
+2. Install the a `styles` package
 
 ```bash
 npm install baka-material-you

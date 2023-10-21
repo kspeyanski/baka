@@ -3,6 +3,7 @@
   "version": "0.0.2-alpha.0",
   "types": "./types/index.d.ts",
   "sass": "./_index.scss",
+  "license": "MIT",
   "scripts": {
     "build": "sass --load-path=../../../node_modules ./_index.scss ./dist/index.css",
     "watch": "sass --watch --load-path=../../../node_modules ./_index.scss ./dist/index.css"
