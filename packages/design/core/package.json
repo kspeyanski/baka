@@ -1,0 +1,10 @@
+{
+  "name": "@baka/design-core",
+  "version": "0.0.1",
+  "types": "./types/index.d.ts",
+  "scripts": {
+    "build": "sass ./_index.scss ./dist/index.css",
+    "watch": "sass --watch ./_index.scss ./dist/index.css"
+  },
+  "sass": "./_index.scss"
+}

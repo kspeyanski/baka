@@ -1,0 +1,61 @@
+@use "sass:meta";
+
+@mixin variant($variant, $default: false, $global: false) {
+  @if ($default) {
+    @if (meta.type-of($variant) == "list") {
+      @if ($global) {
+        &,
+        &:global(#{chain-variants($variant, ".variant--")}) {
+          @content;
+        }
+      } @else {
+        &,
+        &#{chain-variants($variant, ".variant--")} {
+          @content;
+        }
+      }
+    } @else {
+      @if ($global) {
+        &,
+        &:global(.variant--#{$variant}) {
+          @content;
+        }
+      } @else {
+        &,
+        &.variant--#{$variant} {
+          @content;
+        }
+      }
+    }
+  } @else {
+    @if (meta.type-of($variant) == "list") {
+      @if ($global) {
+        &:global(#{chain-variants($variant, ".variant--")}) {
+          @content;
+        }
+      } @else {
+        &#{chain-variants($variant, ".variant--")} {
+          @content;
+        }
+      }
+    } @else {
+      @if ($global) {
+        &:global(.variant--#{$variant}) {
+          @content;
+        }
+      } @else {
+        &.variant--#{$variant} {
+          @content;
+        }
+      }
+    }
+  }
+}
+
+@function chain-variants($map, $prefix: "") {
+  $chain: "";
+  @each $value in $map {
+    $chain: $chain + $prefix + $value;
+  }
+  @return $chain;
+}

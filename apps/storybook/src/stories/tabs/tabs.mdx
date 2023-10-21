@@ -1,0 +1,129 @@
+# Tabs
+
+The TabGroup component is used to organize content into tabs, allowing users to switch between different sections of the interface.
+
+## Installation
+
+To use the TabGroup component in your project, make sure you have the `@baka/react` package installed. You can install it using npm or yarn:
+
+```bash
+npm install @baka/react
+```
+
+or
+
+```bash
+yarn add @baka/react
+```
+
+## Usage
+
+Import the `BakaTabGroup` and `BakaTab` components from `@baka/react` in your JavaScript or TypeScript file.
+
+```jsx
+import { BakaTabGroup, BakaTab } from "@baka/react";
+```
+
+### Basic Usage
+
+```jsx
+<BakaTabGroup>
+  <BakaTab selected={true}>Tab 1</BakaTab>
+  <BakaTab>Tab 2</BakaTab>
+  <BakaTab>Tab 3</BakaTab>
+</BakaTabGroup>
+```
+
+### Variants
+
+The TabGroup component supports different variants: default, overflow, and secondary.
+
+#### Default Variant
+
+The default variant is used for regular tab navigation.
+
+```jsx
+<BakaTabGroup>{/* Tabs go here */}</BakaTabGroup>
+```
+
+#### Overflow Variant
+
+The overflow variant is used when there are too many tabs to fit within the container, and it provides a way to scroll or navigate through the tabs.
+
+```jsx
+<BakaTabGroup variant={"overflow"}>{/* Tabs go here */}</BakaTabGroup>
+```
+
+#### Secondary Variant
+
+The secondary variant is used for secondary navigation, such as within a card or panel.
+
+```jsx
+<BakaTabGroup variant={"secondary"}>{/* Tabs go here */}</BakaTabGroup>
+```
+
+### States
+
+The Tab component supports the `selected`, `hovered`, and `disabled` states.
+
+#### Selected
+
+```jsx
+<BakaTab selected={true}>Selected Tab</BakaTab>
+```
+
+#### Hovered
+
+```jsx
+<BakaTab hovered={true}>Hovered Tab</BakaTab>
+```
+
+#### Disabled
+
+```jsx
+<BakaTab disabled={true}>Disabled Tab</BakaTab>
+```
+
+# Tab
+
+The Tab component represents an individual tab within a TabGroup.
+
+## Usage
+
+The Tab component should be used within a TabGroup.
+
+### Basic Usage
+
+```jsx
+<BakaTab>Tab 1</BakaTab>
+```
+
+### States
+
+The Tab component supports the `selected`, `hovered`, and `disabled` states.
+
+#### Selected
+
+```jsx
+<BakaTab selected={true}>Selected Tab</BakaTab>
+```
+
+#### Hovered
+
+```jsx
+<BakaTab hovered={true}>Hovered Tab</BakaTab>
+```
+
+#### Disabled
+
+```jsx
+<BakaTab disabled={true}>Disabled Tab</BakaTab>
+```
+
+## Props (Tab)
+
+| Name     | Type    | Default | Description                                      |
+| -------- | ------- | ------- | ------------------------------------------------ |
+| selected | boolean | false   | Indicates whether the tab is currently selected. |
+| hovered  | boolean | false   | Indicates whether the tab is being hovered over. |
+| disabled | boolean | false   | Disables the tab, preventing user interaction.   |

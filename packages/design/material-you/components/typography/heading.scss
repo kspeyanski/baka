@@ -1,0 +1,30 @@
+@use "../../styles" as *;
+@use "@baka/design-core" as *;
+
+.baka-heading {
+  color: inherit;
+
+  @include variant(display-large) {
+    @include display-large;
+  }
+
+  @include variant(display-medium) {
+    @include display-medium;
+  }
+
+  @include variant(display-small) {
+    @include display-small;
+  }
+
+  @include variant(headline-large) {
+    @include headline-large;
+  }
+
+  @include variant(headline-medium, true) {
+    @include headline-medium;
+  }
+
+  @include variant(headline-small) {
+    @include headline-small;
+  }
+}

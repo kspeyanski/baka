@@ -1,0 +1,112 @@
+## SideNavigation
+
+The `SideNavigation` component is used to create a vertical navigation menu typically placed on the side of a web page or app. It helps users navigate through different sections or views.
+
+### Usage
+
+```jsx
+import {
+  BakaSideNavigation,
+  BakaSideNavigationItem,
+  BakaIcon,
+  BakaLabel,
+  BakaText,
+  BakaDivider,
+} from "@baka/react";
+
+// Inside your component
+<BakaSideNavigation style={{ width: 300 }}>
+  {/* Section header */}
+  <div style={{ padding: "18px 16px" }}>
+    <BakaText variant={"title-small"}>Title</BakaText>
+  </div>
+
+  {/* SideNavigation items */}
+  <BakaSideNavigationItem selected={true}>
+    <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
+    <BakaLabel>BakaLabel</BakaLabel>
+    <BakaText>100+</BakaText>
+  </BakaSideNavigationItem>
+  {/* Add more SideNavigationItems as needed */}
+
+  {/* Divider */}
+  <BakaDivider />
+
+  {/* Section header */}
+  <div style={{ padding: "18px 16px" }}>
+    <BakaText variant={"title-small"}>Section header</BakaText>
+  </div>
+
+  {/* SideNavigation items */}
+  <BakaSideNavigationItem>
+    <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
+    <BakaLabel>BakaLabel</BakaLabel>
+    <BakaText>100+</BakaText>
+  </BakaSideNavigationItem>
+  {/* Add more SideNavigationItems as needed */}
+</BakaSideNavigation>;
+```
+
+### Props
+
+#### style (optional)
+
+- Type: `object`
+- Default: `null`
+
+The `style` prop allows you to apply custom CSS styles to the SideNavigation component, controlling its width, height, or any other styling properties.
+
+### BakaSideNavigationItem
+
+The `BakaSideNavigationItem` component represents an individual item within the SideNavigation.
+
+#### Props
+
+#### selected (optional)
+
+- Type: `boolean`
+- Default: `false`
+
+Indicates whether this item is selected. When set to `true`, it highlights the item as the currently active or selected option.
+
+### Examples
+
+#### Basic SideNavigation
+
+```jsx
+import {
+  BakaSideNavigation,
+  BakaSideNavigationItem,
+  BakaIcon,
+  BakaLabel,
+  BakaText,
+  BakaDivider,
+} from "@baka/react";
+
+<BakaSideNavigation style={{ width: 300 }}>
+  <div style={{ padding: "18px 16px" }}>
+    <BakaText variant={"title-small"}>Explore</BakaText>
+  </div>
+  <BakaSideNavigationItem selected={true}>
+    <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
+    <BakaLabel>Home</BakaLabel>
+    <BakaText>100+</BakaText>
+  </BakaSideNavigationItem>
+  <BakaSideNavigationItem>
+    <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
+    <BakaLabel>Profile</BakaLabel>
+    <BakaText>100+</BakaText>
+  </BakaSideNavigationItem>
+  <BakaDivider />
+  <div style={{ padding: "18px 16px" }}>
+    <BakaText variant={"title-small"}>Settings</BakaText>
+  </div>
+  <BakaSideNavigationItem>
+    <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
+    <BakaLabel>General</BakaLabel>
+    <BakaText>100+</BakaText>
+  </BakaSideNavigationItem>
+</BakaSideNavigation>;
+```
+
+This will render a basic SideNavigation menu with section headers, selectable items, and a divider.

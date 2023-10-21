@@ -1,0 +1,7 @@
+@use "../../styles" as *;
+@use "@baka/design-core" as *;
+
+.baka-divider {
+  flex: 1 1 auto;
+  background-color: $outline-variant;
+}

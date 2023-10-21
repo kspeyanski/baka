@@ -1,0 +1,19 @@
+@use "../../utils" as *;
+
+@mixin divider {
+  margin: 0;
+
+  @include variant(horizontal, true) {
+    height: 1px;
+    width: 100%;
+  }
+
+  @include variant(vertical) {
+    width: 1px;
+    height: 100%;
+  }
+}
+
+.baka-divider {
+  @include divider();
+}

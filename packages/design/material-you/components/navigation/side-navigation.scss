@@ -1,0 +1,7 @@
+@use "../../styles" as *;
+@use "@baka/design-core" as *;
+
+.baka-side-navigation {
+  background: $surface-container;
+  padding: 12px;
+}

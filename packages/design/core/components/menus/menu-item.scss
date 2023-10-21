@@ -1,0 +1,15 @@
+@mixin menu-item {
+  cursor: pointer;
+  box-sizing: border-box;
+
+  overflow: hidden;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.baka-menu-item {
+  @include menu-item();
+}

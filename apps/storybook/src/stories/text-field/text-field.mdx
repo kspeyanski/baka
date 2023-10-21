@@ -1,0 +1,65 @@
+# TextField Component Documentation
+
+The TextField component in the "@baka/react" library provides a flexible and customizable text input field with various visual styles and configurations.
+
+## Installation
+
+Before using the TextField component, make sure you have the "@baka/react" library installed in your project.
+
+```bash
+npm install @baka/react
+```
+
+## Importing
+
+You can import the TextField component like this:
+
+```javascript
+import { BakaTextField, BakaLabel, BakaInput, BakaIcon, BakaButton } from "@baka/react";
+```
+
+## Usage
+
+### Basic Usage
+
+```jsx
+<BakaTextField>
+  <BakaLabel variant={"body-small"}>BakaLabel</BakaLabel>
+  <BakaInput defaultValue="BakaInput" type="text" />
+  <BakaButton variant={"icon"}>
+    <BakaIcon>cancel</BakaIcon>
+  </BakaButton>
+</BakaTextField>
+```
+
+### Visual Variations
+
+The TextField component supports various visual styles and states:
+
+- `focused`: Indicates a focused input field.
+- `hovered`: Indicates a hovered input field.
+- `invalid`: Indicates an invalid input field.
+- `disabled`: Disables the input field.
+- `empty`: Indicates an empty input field.
+- `variant={"outlined"}`: Provides an outlined appearance.
+
+### Example
+
+```jsx
+<BakaTextField focused={true} variant={"outlined"}>
+  <BakaLabel variant={"body-small"}>BakaLabel</BakaLabel>
+  <BakaInput defaultValue="BakaInput" type="text" />
+  <BakaButton variant={"icon"}>
+    <BakaIcon>cancel</BakaIcon>
+  </BakaButton>
+</BakaTextField>
+```
+
+## Props
+
+- `focused` (boolean): Set to `true` to indicate a focused input field.
+- `hovered` (boolean): Set to `true` to indicate a hovered input field.
+- `invalid` (boolean): Set to `true` to indicate an invalid input field.
+- `disabled` (boolean): Set to `true` to disable the input field.
+- `empty` (boolean): Set to `true` to indicate an empty input field.
+- `variant` (string): Specifies the visual style of the input field. Options include "outlined" and others as needed.

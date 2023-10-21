@@ -1,0 +1,100 @@
+# Typography
+
+The Typography module in the "@baka/react" library provides a range of typographic components for styling text elements. These components allow you to apply consistent typography throughout your web application. Below are the details of the available typography components.
+
+## Installation
+
+Before using the Typography module, ensure you have the "@baka/react" library installed in your project:
+
+```bash
+npm install @baka/react
+```
+
+## Importing
+
+You can import the Typography components as follows:
+
+```javascript
+import { BakaHeading, BakaText, BakaLabel, BakaParagraph } from "@baka/react";
+```
+
+## BakaHeading
+
+The `BakaHeading` component is used for headings in various sizes. It allows you to apply different styles to text elements.
+
+### Usage
+
+```jsx
+<BakaHeading as="h1" variant={"display-large"}>
+  Display Large - Roboto 57/64 -0.25
+</BakaHeading>
+```
+
+### Available Variants
+
+- `display-large`: Display Large - Roboto 57/64 -0.25
+- `display-medium`: Display Medium - Roboto 57/64 -0.25
+- `display-small`: Display Small - Roboto 57/64 -0.25
+- `headline-large`: Headline Large - Roboto 32/40 . 0
+- `headline-medium`: Headline Medium - Roboto 28/36 . 0
+- `headline-small`: Headline Small - Roboto 24/32 . 0
+
+## BakaText
+
+The `BakaText` component is a versatile text component for styling various types of text elements.
+
+### Usage
+
+```jsx
+<BakaText as="span" variant={"title-large"}>
+  Title Large - Roboto Regular 22/28 . 0
+</BakaText>
+```
+
+### Available Variants
+
+- `title-large`: Title Large - Roboto Regular 22/28 . 0
+- `title-medium`: Title Medium - Roboto Medium 16/24 . +0.15
+- `title-small`: Title Small - Roboto Medium 14/20 . +0.1
+
+## BakaLabel
+
+The `BakaLabel` component is designed for labeling elements in your application.
+
+### Usage
+
+```jsx
+<BakaLabel as="label" variant={"label-large"}>
+  BakaLabel Large - Roboto Medium 14/20 . +0.1
+</BakaLabel>
+```
+
+### Available Variants
+
+- `label-large`: BakaLabel Large - Roboto Medium 14/20 . +0.1
+- `label-medium`: BakaLabel Medium - Roboto Medium 12/16 . +0.5
+- `label-small`: BakaLabel Small - Roboto Medium 11/16 . +0.5
+
+## BakaParagraph
+
+The `BakaParagraph` component is used for styling body text and paragraphs.
+
+### Usage
+
+```jsx
+<BakaParagraph as="p" variant={"body-large"}>
+  Body Large - Roboto 16/24 . +0.5
+</BakaParagraph>
+```
+
+### Available Variants
+
+- `body-large`: Body Large - Roboto 16/24 . +0.5
+- `body-medium`: Body Medium - Roboto 14/20 . +0.25
+- `body-small`: Body Small - Roboto 12/16 . +0.4
+
+## Additional Notes
+
+- The Typography module provides consistent and flexible typography styles for your application's text elements.
+- You can easily apply different styles to headings, text, labels, and paragraphs using the provided variants.
+- Customize the typography to match your design requirements while maintaining a consistent look and feel throughout your application.

@@ -1,0 +1,8 @@
+@mixin top-bar {
+  display: flex;
+  align-items: center;
+}
+
+.baka-top-bar {
+  @include top-bar();
+}

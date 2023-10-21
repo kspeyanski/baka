@@ -1,0 +1,24 @@
+@use "../../styles" as *;
+@use "@baka/design-core" as *;
+
+.baka-navigation-rail {
+  height: 100%;
+  gap: 40px;
+  padding: 44px 0 56px 0;
+
+  & .baka-button.variant--fab {
+    box-shadow: none;
+
+    @include hover {
+      box-shadow: none;
+    }
+
+    @include focus {
+      box-shadow: none;
+    }
+
+    @include active {
+      box-shadow: none;
+    }
+  }
+}

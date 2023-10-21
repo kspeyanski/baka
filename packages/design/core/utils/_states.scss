@@ -1,0 +1,124 @@
+@mixin editable {
+  &:not([readonly]):not(.baka-state--readonly) {
+    @content;
+  }
+}
+
+@mixin hover($readonly: false) {
+  @if ($readonly) {
+    &:hover,
+    &.baka-state--hover {
+      @content;
+    }
+  } @else {
+    @include editable {
+      &:hover,
+      &.baka-state--hover {
+        @content;
+      }
+    }
+  }
+}
+
+$selector--focus: ".baka-state--focus";
+
+@mixin focus($readonly: false) {
+  @if ($readonly) {
+    &:focus,
+    &:focus-within,
+    &:focus-visible,
+    &#{$selector--focus} {
+      @content;
+    }
+  } @else {
+    @include editable {
+      &:focus,
+      &:focus-within,
+      &:focus-visible,
+      &#{$selector--focus} {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin active($readonly: false) {
+  @if ($readonly) {
+    &:active,
+    &.baka-state--active {
+      @content;
+    }
+  } @else {
+    @include editable {
+      &:active,
+      &.baka-state--active {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin disabled {
+  &:disabled,
+  &.baka-state--disabled {
+    @content;
+  }
+}
+
+@mixin selected {
+  &.baka-state--selected {
+    @content;
+  }
+}
+
+@mixin checked {
+  &:checked,
+  &.baka-state--checked {
+    @content;
+  }
+}
+
+@mixin indeterminate {
+  &:indeterminate,
+  &.baka-state--indeterminate {
+    @content;
+  }
+}
+
+@mixin invalid ($readonly: false) {
+  @if ($readonly) {
+    &:invalid,
+    &.baka-state--invalid {
+      @content;
+    }
+  } @else {
+    @include editable {
+      &:invalid,
+      &.baka-state--invalid {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin valid {
+  &:valid,
+  &.baka-state--valid {
+    @content;
+  }
+}
+
+@mixin dragged {
+  &.baka-state--dragged {
+    @content;
+  }
+}
+
+$selector--empty: ".baka-state--empty";
+
+@mixin empty {
+  &:empty,
+  &#{$selector--empty} {
+    @content;
+  }
+}

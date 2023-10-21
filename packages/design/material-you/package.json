@@ -1,0 +1,17 @@
+{
+  "name": "@baka/design-material-you",
+  "version": "0.0.1",
+  "types": "./types/index.d.ts",
+  "sass": "./_index.scss",
+  "scripts": {
+    "build": "sass --load-path=../../../node_modules ./_index.scss ./dist/index.css",
+    "watch": "sass --watch --load-path=../../../node_modules ./_index.scss ./dist/index.css"
+  },
+  "devDependencies": {
+    "@baka/design-core": "*",
+    "sass": "^1.68.0"
+  },
+  "peerDependencies": {
+    "@baka/design-core": "*"
+  }
+}

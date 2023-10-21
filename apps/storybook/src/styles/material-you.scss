@@ -1,0 +1,15 @@
+@forward "@baka/design-material-you";
+@use "@baka/design-material-you" as *;
+
+body,
+.docs-story {
+  background-color: $surface;
+
+  &:has(.container-high) {
+    background-color: $surface-container-high;
+  }
+
+  &:has(.container-low) {
+    background-color: $surface-container-low;
+  }
+}

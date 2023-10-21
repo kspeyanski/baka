@@ -1,0 +1,24 @@
+@use "../../utils" as *;
+
+@mixin button {
+  cursor: pointer;
+  box-sizing: border-box;
+  user-select: none;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+
+  @include disabled {
+    pointer-events: none;
+  }
+}
+
+.baka-button {
+  @include button();
+}

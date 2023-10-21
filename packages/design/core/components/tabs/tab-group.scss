@@ -1,0 +1,5 @@
+@mixin tab-group {
+}
+.baka-tab-group {
+  @include tab-group();
+}

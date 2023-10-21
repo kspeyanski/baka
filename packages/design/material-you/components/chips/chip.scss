@@ -1,0 +1,103 @@
+@use "../../styles" as *;
+@use "@baka/design-core" as *;
+
+.baka-chip {
+  @include label-large;
+  --state: #{$on-surface-variant-rgb};
+  --color: #{$on-surface-variant};
+  --outline: #{$outline};
+  --ripple: #{$on-surface};
+  --elevation: none;
+  --background: transparent;
+
+  gap: 8px;
+  padding: 6px 12px;
+
+  outline-style: solid;
+  outline-width: 1px;
+  outline-color: var(--outline);
+  border-radius: 8px;
+
+  color: var(--color);
+  background: var(--background);
+
+  box-shadow: var(--elevation);
+
+  @include motion-transition-TBD(box-shadow);
+  @include ripple(var(--ripple), $scale: 15);
+
+  @include state-layer {
+    content: "";
+    outline-radius: 8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    margin-left: -1px;
+    margin-top: -1px;
+    background: var(--state);
+
+    @include motion-transition-TBD(background);
+  }
+
+  & > .baka-icon {
+    font-size: 18px;
+  }
+
+  & > .baka-icon:first-child {
+    margin-inline-start: -4px;
+  }
+
+  & > .baka-icon:last-child {
+    margin-inline-end: -4px;
+  }
+
+  // TODO: double-check when we have avatar
+  & > .baka-avatar {
+    margin-inline-start: -8px;
+    margin-top: -4px;
+    margin-bottom: -4px;
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+  }
+
+  @include variant(elevated) {
+    --outline: transparent;
+    --elevation: #{map-get($elevation, 1)};
+  }
+
+  @include hover {
+    outline-color: var(--outline);
+
+    @include state-layer {
+      background: #{rgba(var(--state), 0.08)};
+    }
+  }
+
+  @include focus {
+    --outline: #{$on-surface-variant-rgb};
+
+    @include state-layer {
+      background: #{rgba(var(--state), 0.12)};
+    }
+  }
+
+  @include dragged {
+    --elevation: #{map-get($elevation, 2)};
+
+    @include state-layer {
+      background: #{rgba(var(--state), 0.16)};
+    }
+  }
+
+  @include selected {
+    --color: #{$on-secondary-container};
+    --background: #{$secondary-container};
+    --state: #{$on-secondary-container-rgb};
+    --outline: transparent;
+  }
+}

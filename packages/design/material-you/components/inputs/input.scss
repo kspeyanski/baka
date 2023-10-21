@@ -1,0 +1,12 @@
+@use "../../styles" as *;
+@use "@baka/design-core" as *;
+
+.baka-input {
+  @include body-large;
+  border: none;
+  background: none;
+  outline: none;
+
+  color: $on-surface;
+  caret-color: $primary;
+}

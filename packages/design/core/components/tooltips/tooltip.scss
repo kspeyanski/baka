@@ -1,0 +1,5 @@
+@mixin tooltip {
+}
+.baka-tooltip {
+  @include tooltip();
+}

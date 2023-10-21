@@ -1,0 +1,24 @@
+@use "../../styles" as *;
+@use "@baka/design-core" as *;
+
+.baka-bottom-bar {
+  background: $surface-container;
+  padding: 0px 16px 0px 4px;
+  height: 80px;
+
+  & .baka-button.variant--fab {
+    box-shadow: none;
+
+    @include hover {
+      box-shadow: none;
+    }
+
+    @include focus {
+      box-shadow: none;
+    }
+
+    @include active {
+      box-shadow: none;
+    }
+  }
+}

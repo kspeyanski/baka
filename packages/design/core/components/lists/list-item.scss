@@ -1,0 +1,15 @@
+@mixin list-item {
+  cursor: pointer;
+  box-sizing: border-box;
+
+  overflow: hidden;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.baka-list-item {
+  @include list-item();
+}

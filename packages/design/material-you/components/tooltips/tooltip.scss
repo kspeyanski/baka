@@ -1,0 +1,27 @@
+@use "../../styles" as *;
+@use "@baka/design-core" as *;
+
+.baka-tooltip {
+  @include body-small;
+
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  border-radius: 12px;
+
+  @include variant(rich, true) {
+    box-shadow: map-get($elevation, 2);
+    background: $surface-container;
+    gap: 8px;
+    padding-bottom: 8px;
+  }
+
+  @include variant(plain) {
+    padding: 4px 8px;
+    gap: 10px;
+    border-radius: 4px;
+    color: $inverse-on-surface;
+    background: $inverse-surface;
+    box-shadow: none;
+  }
+}

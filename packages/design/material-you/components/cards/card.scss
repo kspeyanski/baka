@@ -1,0 +1,34 @@
+@use "../../styles" as *;
+@use "@baka/design-core" as *;
+
+.baka-card {
+  border-radius: 12px;
+  border-color: transparent;
+  border-width: 1px;
+  border-style: solid;
+
+  display: flex;
+  flex-direction: column;
+
+  @include variant(outlined, true) {
+    border-color: $outline-variant;
+    background: $surface;
+  }
+
+  @include variant(elevated) {
+    border-width: 0;
+    background: $surface-container-low;
+    box-shadow: map-get($elevation, 1);
+  }
+
+  @include variant(filled) {
+    border-width: 0;
+    background: $surface-container-highest;
+  }
+
+  @include variant(horizontal) {
+    border-color: $outline-variant;
+    border-width: 1px;
+    flex-direction: row;
+  }
+}
