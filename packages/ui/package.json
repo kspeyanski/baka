@@ -1,6 +1,6 @@
 {
   "name": "@baka/react",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha.0",
   "type": "module",
   "files": [
     "dist"
@@ -20,7 +20,7 @@
     "watch": "vite build --watch"
   },
   "devDependencies": {
-    "@baka/design-core": "^0.0.1",
+    "@baka/design-core": "^0.0.1-alpha.0",
     "clsx": "^1.2.1",
     "fast-glob": "^3.3.1",
     "react": "^18",

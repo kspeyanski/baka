@@ -1,6 +1,6 @@
 {
   "name": "@baka/design-core",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha.0",
   "types": "./types/index.d.ts",
   "scripts": {
     "build": "sass ./_index.scss ./dist/index.css",
