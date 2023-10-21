@@ -12,8 +12,8 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "baka-ui": "file:../../packages/ui",
-    "baka-material-you": "file:../../packages/design/material-you"
+    "baka-ui": "0.0.3-alpha.0",
+    "baka-material-you": "0.0.3-alpha.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

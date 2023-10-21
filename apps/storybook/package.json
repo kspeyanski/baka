@@ -10,8 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "baka-ui": "file:../../packages/ui",
-    "baka-material-you": "file:../../packages/design/material-you",
+    "baka-ui": "0.0.3-alpha.0",
+    "baka-material-you": "0.0.3-alpha.0",
     "@storybook/addon-docs": "~7.4.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
