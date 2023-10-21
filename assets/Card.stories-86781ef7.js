@@ -54,7 +54,7 @@ import{j as e}from"./jsx-runtime-ed146b25.js";import{y as s,m as u,O as v,w as i
 `,e.jsx(n.h2,{id:"notes",children:"Notes"}),`
 `,e.jsxs(n.ul,{children:[`
 `,e.jsx(n.li,{children:"Be creative with the content you place inside the Card to make it visually appealing and informative."}),`
-`]})]})}function f(a={}){const{wrapper:n}=Object.assign({},g(),a.components);return n?e.jsx(n,Object.assign({},a,{children:e.jsx(l,a)})):l(a)}const w={title:"Material You/Primitives/Card",component:a=>e.jsx(s,{...a}),parameters:{layout:"centered",docs:{page:f}},args:{variant:"outlined"},tags:["autodocs"]},t={render:a=>e.jsxs(s,{...a,style:{width:360},children:[e.jsxs("div",{style:{display:"flex",padding:"12px 4px 12px 16px",alignSelf:"stretch",justifyContent:"space-between",alignItems:"center"},children:[e.jsxs("div",{style:{display:"flex",alignItems:"center",gap:16},children:[e.jsx(u,{children:e.jsx("span",{children:"A"})}),e.jsxs(v,{style:{display:"flex",flexDirection:"column",gap:4},children:[e.jsx(i,{variant:"title-medium",children:"Header"}),e.jsx(i,{variant:"body-medium",children:"Subhead"})]})]}),e.jsx(d,{variant:["icon"],children:e.jsx(j,{children:"more_vert"})})]}),e.jsx("div",{children:e.jsx("img",{src:"/media.png",alt:"media",width:720,height:376,style:{maxWidth:"100%",height:"auto"}})}),e.jsxs("div",{style:{display:"flex",alignSelf:"stretch",flexDirection:"column",gap:32,padding:16},children:[e.jsxs("div",{style:{display:"flex",flexDirection:"column"},children:[e.jsx(i,{variant:"body-large",children:"Title"}),e.jsx(i,{variant:"body-medium",children:"Subhead"})]}),e.jsx(y,{variant:"body-medium",children:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"}),e.jsxs("div",{style:{display:"flex",alignSelf:"stretch",justifyContent:"flex-end",gap:8},children:[e.jsx(d,{variant:["outlined"],children:"Enabled"}),e.jsx(d,{variant:["filled"],children:"Enabled"})]})]})]}),args:{variant:"outlined"},argTypes:{variant:{control:"radio",options:["outlined","elevated","filled"]}}},r={render:a=>e.jsxs(s,{variant:["horizontal",a.variant],style:{width:360},children:[e.jsxs("div",{style:{display:"flex",flexGrow:1,gap:16,padding:16,alignItems:"center"},children:[e.jsx(u,{children:e.jsx("span",{children:"A"})}),e.jsxs("div",{style:{display:"flex",flexGrow:1,flexDirection:"column",gap:4},children:[e.jsx(i,{variant:"title-medium",children:"Header"}),e.jsx(i,{variant:"body-medium",children:"Subhead"})]})]}),e.jsx("img",{src:"/media-small.png",alt:"media",width:80,height:80})]}),args:{variant:"outlined"},argTypes:{variant:{control:"radio",options:["outlined","elevated","filled"]}},parameters:{docs:{storyDescription:"A card displaying product information."}}};var o,c,h;t.parameters={...t.parameters,docs:{...(o=t.parameters)==null?void 0:o.docs,source:{originalSource:`{
+`]})]})}function f(a={}){const{wrapper:n}=Object.assign({},g(),a.components);return n?e.jsx(n,Object.assign({},a,{children:e.jsx(l,a)})):l(a)}const w={title:"Material You/Primitives/Card",component:a=>e.jsx(s,{...a}),parameters:{layout:"centered",docs:{page:f}},args:{variant:"outlined"},tags:["autodocs"]},t={render:a=>e.jsxs(s,{...a,style:{width:360},children:[e.jsxs("div",{style:{display:"flex",padding:"12px 4px 12px 16px",alignSelf:"stretch",justifyContent:"space-between",alignItems:"center"},children:[e.jsxs("div",{style:{display:"flex",alignItems:"center",gap:16},children:[e.jsx(u,{children:e.jsx("span",{children:"A"})}),e.jsxs(v,{style:{display:"flex",flexDirection:"column",gap:4},children:[e.jsx(i,{variant:"title-medium",children:"Header"}),e.jsx(i,{variant:"body-medium",children:"Subhead"})]})]}),e.jsx(d,{variant:["icon"],children:e.jsx(j,{children:"more_vert"})})]}),e.jsx("div",{children:e.jsx("img",{src:"./media.png",alt:"media",width:720,height:376,style:{maxWidth:"100%",height:"auto"}})}),e.jsxs("div",{style:{display:"flex",alignSelf:"stretch",flexDirection:"column",gap:32,padding:16},children:[e.jsxs("div",{style:{display:"flex",flexDirection:"column"},children:[e.jsx(i,{variant:"body-large",children:"Title"}),e.jsx(i,{variant:"body-medium",children:"Subhead"})]}),e.jsx(y,{variant:"body-medium",children:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"}),e.jsxs("div",{style:{display:"flex",alignSelf:"stretch",justifyContent:"flex-end",gap:8},children:[e.jsx(d,{variant:["outlined"],children:"Enabled"}),e.jsx(d,{variant:["filled"],children:"Enabled"})]})]})]}),args:{variant:"outlined"},argTypes:{variant:{control:"radio",options:["outlined","elevated","filled"]}}},r={render:a=>e.jsxs(s,{variant:["horizontal",a.variant],style:{width:360},children:[e.jsxs("div",{style:{display:"flex",flexGrow:1,gap:16,padding:16,alignItems:"center"},children:[e.jsx(u,{children:e.jsx("span",{children:"A"})}),e.jsxs("div",{style:{display:"flex",flexGrow:1,flexDirection:"column",gap:4},children:[e.jsx(i,{variant:"title-medium",children:"Header"}),e.jsx(i,{variant:"body-medium",children:"Subhead"})]})]}),e.jsx("img",{src:"./media-small.png",alt:"media",width:80,height:80})]}),args:{variant:"outlined"},argTypes:{variant:{control:"radio",options:["outlined","elevated","filled"]}},parameters:{docs:{storyDescription:"A card displaying product information."}}};var o,c,h;t.parameters={...t.parameters,docs:{...(o=t.parameters)==null?void 0:o.docs,source:{originalSource:`{
   render: args => <BakaCard {...args} style={{
     width: 360
   }}>
@@ -87,7 +87,7 @@ import{j as e}from"./jsx-runtime-ed146b25.js";import{y as s,m as u,O as v,w as i
         </BakaButton>
       </div>
       <div>
-        <img src="/media.png" alt="media" width={720} height={376} style={{
+        <img src="./media.png" alt="media" width={720} height={376} style={{
         maxWidth: "100%",
         height: "auto"
       }} />
@@ -154,7 +154,7 @@ import{j as e}from"./jsx-runtime-ed146b25.js";import{y as s,m as u,O as v,w as i
         </div>
       </div>
 
-      <img src="/media-small.png" alt="media" width={80} height={80} />
+      <img src="./media-small.png" alt="media" width={80} height={80} />
     </BakaCard>,
   args: {
     variant: "outlined"
@@ -171,4 +171,4 @@ import{j as e}from"./jsx-runtime-ed146b25.js";import{y as s,m as u,O as v,w as i
     }
   }
 }`,...(m=(x=r.parameters)==null?void 0:x.docs)==null?void 0:m.source}}};const A=["Basic","Horizontal"];export{t as Basic,r as Horizontal,A as __namedExportsOrder,w as default};
-//# sourceMappingURL=Card.stories-106f66df.js.map
+//# sourceMappingURL=Card.stories-86781ef7.js.map

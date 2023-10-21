@@ -38,7 +38,7 @@ function MyComponent() {
     </div>
   );
 }
-`})})]})}function k(e={}){const{wrapper:n}=Object.assign({},p(),e.components);return n?a.jsx(n,Object.assign({},e,{children:a.jsx(c,e)})):c(e)}const g={hovered:!1,focused:!1,activated:!1,dragged:!1,selected:!1},x={title:"Material You/Primitives/Chip",component:e=>a.jsx(l,{...e}),parameters:{layout:"centered",docs:{page:k}},args:{},tags:["autodocs"]},o={render:e=>{const{configuration:n,...r}=e;switch(n){case"BakaLabel & trailing icon":return a.jsxs(l,{...r,label:"BakaLabel & trailing icon",children:[a.jsx("span",{children:"BakaLabel"}),a.jsx(i,{children:"close"})]});case"Leading BakaIcon & label":return a.jsxs(l,{...r,label:"Leading BakaIcon & label",children:[a.jsx(i,{variant:"primary",children:"local_taxi"}),a.jsx("span",{children:"BakaLabel"})]});case"Leading icon, label & trailing icon":return a.jsxs(l,{...r,label:"Leading icon, label & trailing icon",children:[a.jsx(i,{variant:"primary",children:"local_taxi"}),a.jsx("span",{children:"BakaLabel"}),a.jsx(i,{children:"close"})]});case"BakaLabel & Avatar":return a.jsxs(l,{...r,label:"BakaLabel & Avatar",children:[a.jsx(t,{children:e.selected?a.jsx(i,{variant:["filled"],children:"check"}):a.jsx("img",{src:"/avatar-light.svg"})}),a.jsx("span",{children:"BakaLabel"})]});case"BakaLabel, avatar & icon":return a.jsxs(l,{...r,label:"BakaLabel, avatar & icon",children:[a.jsx(t,{children:e.selected?a.jsx(i,{variant:["filled"],children:"check"}):a.jsx("img",{src:"/avatar-light.svg"})}),a.jsx("span",{children:"BakaLabel"}),a.jsx(i,{children:"close"})]});default:return a.jsx(l,{...r,children:"BakaLabel"})}},args:{variant:"normal",configuration:"BakaLabel only",...g},argTypes:{configuration:{control:"radio",map:{"BakaLabel only":null,"BakaLabel & trailing icon":"trailing-icon","Leading BakaIcon & label":"leading-icon","Leading icon, label & trailing icon":"leading-icon-trailing-icon","BakaLabel & Avatar":"avatar","BakaLabel, avatar & trailing icon":"avatar-trailing-icon"},options:["BakaLabel only","BakaLabel & trailing icon","Leading BakaIcon & label","Leading icon, label & trailing icon","BakaLabel & Avatar","BakaLabel, avatar & icon"]},variant:{control:"radio",map:{normal:null,elevated:"elevated"},options:["normal","elevated"]}}};var s,d,h;o.parameters={...o.parameters,docs:{...(s=o.parameters)==null?void 0:s.docs,source:{originalSource:`{
+`})})]})}function k(e={}){const{wrapper:n}=Object.assign({},p(),e.components);return n?a.jsx(n,Object.assign({},e,{children:a.jsx(c,e)})):c(e)}const g={hovered:!1,focused:!1,activated:!1,dragged:!1,selected:!1},x={title:"Material You/Primitives/Chip",component:e=>a.jsx(l,{...e}),parameters:{layout:"centered",docs:{page:k}},args:{},tags:["autodocs"]},o={render:e=>{const{configuration:n,...r}=e;switch(n){case"BakaLabel & trailing icon":return a.jsxs(l,{...r,label:"BakaLabel & trailing icon",children:[a.jsx("span",{children:"BakaLabel"}),a.jsx(i,{children:"close"})]});case"Leading BakaIcon & label":return a.jsxs(l,{...r,label:"Leading BakaIcon & label",children:[a.jsx(i,{variant:"primary",children:"local_taxi"}),a.jsx("span",{children:"BakaLabel"})]});case"Leading icon, label & trailing icon":return a.jsxs(l,{...r,label:"Leading icon, label & trailing icon",children:[a.jsx(i,{variant:"primary",children:"local_taxi"}),a.jsx("span",{children:"BakaLabel"}),a.jsx(i,{children:"close"})]});case"BakaLabel & Avatar":return a.jsxs(l,{...r,label:"BakaLabel & Avatar",children:[a.jsx(t,{children:e.selected?a.jsx(i,{variant:["filled"],children:"check"}):a.jsx("img",{src:"./avatar-light.svg"})}),a.jsx("span",{children:"BakaLabel"})]});case"BakaLabel, avatar & icon":return a.jsxs(l,{...r,label:"BakaLabel, avatar & icon",children:[a.jsx(t,{children:e.selected?a.jsx(i,{variant:["filled"],children:"check"}):a.jsx("img",{src:"./avatar-light.svg"})}),a.jsx("span",{children:"BakaLabel"}),a.jsx(i,{children:"close"})]});default:return a.jsx(l,{...r,children:"BakaLabel"})}},args:{variant:"normal",configuration:"BakaLabel only",...g},argTypes:{configuration:{control:"radio",map:{"BakaLabel only":null,"BakaLabel & trailing icon":"trailing-icon","Leading BakaIcon & label":"leading-icon","Leading icon, label & trailing icon":"leading-icon-trailing-icon","BakaLabel & Avatar":"avatar","BakaLabel, avatar & trailing icon":"avatar-trailing-icon"},options:["BakaLabel only","BakaLabel & trailing icon","Leading BakaIcon & label","Leading icon, label & trailing icon","BakaLabel & Avatar","BakaLabel, avatar & icon"]},variant:{control:"radio",map:{normal:null,elevated:"elevated"},options:["normal","elevated"]}}};var s,d,h;o.parameters={...o.parameters,docs:{...(s=o.parameters)==null?void 0:s.docs,source:{originalSource:`{
   render: props => {
     const {
       configuration,
@@ -64,14 +64,14 @@ function MyComponent() {
       case "BakaLabel & Avatar":
         return <BakaChip {...other} label="BakaLabel & Avatar">
             <BakaAvatar>
-              {props.selected ? <BakaIcon variant={["filled"]}>check</BakaIcon> : <img src="/avatar-light.svg" />}
+              {props.selected ? <BakaIcon variant={["filled"]}>check</BakaIcon> : <img src="./avatar-light.svg" />}
             </BakaAvatar>
             <span>BakaLabel</span>
           </BakaChip>;
       case "BakaLabel, avatar & icon":
         return <BakaChip {...other} label="BakaLabel, avatar & icon">
             <BakaAvatar>
-              {props.selected ? <BakaIcon variant={["filled"]}>check</BakaIcon> : <img src="/avatar-light.svg" />}
+              {props.selected ? <BakaIcon variant={["filled"]}>check</BakaIcon> : <img src="./avatar-light.svg" />}
             </BakaAvatar>
             <span>BakaLabel</span>
             <BakaIcon>close</BakaIcon>
@@ -109,4 +109,4 @@ function MyComponent() {
     }
   }
 }`,...(h=(d=o.parameters)==null?void 0:d.docs)==null?void 0:h.source}}};const v=["Basic"];export{o as Basic,v as __namedExportsOrder,x as default};
-//# sourceMappingURL=Chip.stories-e74a403e.js.map
+//# sourceMappingURL=Chip.stories-bdc1a70f.js.map

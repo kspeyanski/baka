@@ -27,7 +27,7 @@ import{j as a}from"./jsx-runtime-ed146b25.js";import{m as c,R as j}from"./baka-u
 `,a.jsxs(e.li,{children:[a.jsx(e.strong,{children:"Image Avatar"}),": If you have user profile images, you can use an image as the avatar."]}),`
 `]}),`
 `,a.jsx(e.pre,{children:a.jsx(e.code,{className:"language-jsx",children:`<BakaAvatar>
-  <BakaIcon as="img" src="/avatar.svg" />
+  <BakaIcon as="img" src="./avatar.svg" />
 </BakaAvatar>
 `})}),`
 `,a.jsx(e.h3,{id:"usage-guidelines",children:"Usage Guidelines"}),`
@@ -48,7 +48,7 @@ import{j as a}from"./jsx-runtime-ed146b25.js";import{m as c,R as j}from"./baka-u
 `,a.jsxs(e.li,{children:[a.jsx(e.strong,{children:"Image Avatars"}),": When you have user profile images, use image avatars to provide a visual representation of the user."]}),`
 `]}),`
 `,a.jsx(e.pre,{children:a.jsx(e.code,{className:"language-jsx",children:`<BakaAvatar>
-  <BakaIcon as="img" src="/avatar.svg" />
+  <BakaIcon as="img" src="./avatar.svg" />
 </BakaAvatar>
 `})}),`
 `,a.jsx(e.h2,{id:"real-world-examples",children:"Real-World Examples"}),`
@@ -66,10 +66,10 @@ import{j as a}from"./jsx-runtime-ed146b25.js";import{m as c,R as j}from"./baka-u
 `,a.jsx(e.h4,{id:"image-avatar",children:"Image Avatar"}),`
 `,a.jsx(e.p,{children:"When you have user profile images, use image avatars to display user photos."}),`
 `,a.jsx(e.pre,{children:a.jsx(e.code,{className:"language-jsx",children:`<BakaAvatar>
-  <BakaIcon as="img" src="/avatar.svg" />
+  <BakaIcon as="img" src="./avatar.svg" />
 </BakaAvatar>
 `})}),`
-`,a.jsx(e.p,{children:`The "Avatar" component is a versatile tool for representing user profiles in a visually appealing and informative way. You can mix and match different variants to best suit your application's design and user experience needs.`})]})}function k(n={}){const{wrapper:e}=Object.assign({},A(),n.components);return e?a.jsx(e,Object.assign({},n,{children:a.jsx(o,n)})):o(n)}const t={},b={title:"Material You/Primitives/Avatar",component:n=>a.jsx(c,{...n}),render:n=>a.jsx(c,{...n}),parameters:{layout:"centered",docs:{page:k}},tags:["autodocs"],argTypes:{children:{table:{disable:!0}}}},r={args:{children:"A",...t}},s={args:{children:a.jsx(j,{children:"check"}),...t}},i={args:{children:a.jsx(j,{as:"img",src:"/avatar.svg"}),...t}};var l,d,h;r.parameters={...r.parameters,docs:{...(l=r.parameters)==null?void 0:l.docs,source:{originalSource:`{
+`,a.jsx(e.p,{children:`The "Avatar" component is a versatile tool for representing user profiles in a visually appealing and informative way. You can mix and match different variants to best suit your application's design and user experience needs.`})]})}function k(n={}){const{wrapper:e}=Object.assign({},A(),n.components);return e?a.jsx(e,Object.assign({},n,{children:a.jsx(o,n)})):o(n)}const t={},b={title:"Material You/Primitives/Avatar",component:n=>a.jsx(c,{...n}),render:n=>a.jsx(c,{...n}),parameters:{layout:"centered",docs:{page:k}},tags:["autodocs"],argTypes:{children:{table:{disable:!0}}}},r={args:{children:"A",...t}},s={args:{children:a.jsx(j,{children:"check"}),...t}},i={args:{children:a.jsx(j,{as:"img",src:"./avatar.svg"}),...t}};var l,d,h;r.parameters={...r.parameters,docs:{...(l=r.parameters)==null?void 0:l.docs,source:{originalSource:`{
   args: {
     children: "A",
     ...defaultArgs
@@ -81,8 +81,8 @@ import{j as a}from"./jsx-runtime-ed146b25.js";import{m as c,R as j}from"./baka-u
   }
 }`,...(p=(x=s.parameters)==null?void 0:x.docs)==null?void 0:p.source}}};var m,g,v;i.parameters={...i.parameters,docs:{...(m=i.parameters)==null?void 0:m.docs,source:{originalSource:`{
   args: {
-    children: <BakaIcon as="img" src="/avatar.svg" />,
+    children: <BakaIcon as="img" src="./avatar.svg" />,
     ...defaultArgs
   }
 }`,...(v=(g=i.parameters)==null?void 0:g.docs)==null?void 0:v.source}}};const w=["Basic","IconBakaAvatar","ImageBakaAvatar"];export{r as Basic,s as IconBakaAvatar,i as ImageBakaAvatar,w as __namedExportsOrder,b as default};
-//# sourceMappingURL=Avatar.stories-8105b36e.js.map
+//# sourceMappingURL=Avatar.stories-d5f2ae3d.js.map
