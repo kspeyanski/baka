@@ -1,4 +1,5 @@
 import { create } from "@storybook/theming/create";
+// @ts-expect-error
 import logo from "../images/logo-dark.png";
 
 export default create({

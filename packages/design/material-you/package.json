@@ -1,5 +1,10 @@
 {
   "name": "baka-material-you",
+  "homepage": "https://baka-ui.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kspeyanski/baka"
+  },
   "version": "0.0.3-alpha.0",
   "types": "./types/index.d.ts",
   "sass": "./_index.scss",

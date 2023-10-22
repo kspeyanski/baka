@@ -1,5 +1,5 @@
 import type { StorybookConfig } from "@storybook/react-vite";
-import remarkGfm from 'remark-gfm';
+import remarkGfm from "remark-gfm";
 
 import { join, dirname } from "path";
 
@@ -35,5 +35,10 @@ const config: StorybookConfig = {
     autodocs: "tag",
   },
   staticDirs: ["../public", "../fonts"], //👈 Configures the static asset folder in Storybook
+  managerHead: (head) => `
+  ${head}
+  <link rel="icon" type="image/svg" href="./favicon.svg" />
+  `,
 };
+
 export default config;
