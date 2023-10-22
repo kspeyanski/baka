@@ -28,7 +28,7 @@ jobs:
         run: yarn workspace baka-storybook build
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: actions/upload-pages-artifact@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./apps/storybook/storybook-static
+          path: ./apps/storybook/storybook-static
