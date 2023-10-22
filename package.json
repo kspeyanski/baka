@@ -13,8 +13,7 @@
   "scripts": {
     "build-packages": "lerna run build --no-private",
     "build-storybook": "build-storybook -c .storybook -o .out",
-    "prepare": "node ./scripts/prepare.mjs",
-    "publish": "lerna publish --no-private --no-push"
+    "prepare": "node ./scripts/prepare.mjs"
   },
   "workspaces": [
     "packages/*",
