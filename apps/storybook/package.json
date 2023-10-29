@@ -11,13 +11,13 @@
   },
   "dependencies": {
     "@storybook/addon-docs": "~7.4.5",
-    "baka-material-you": "0.0.3-alpha.0",
-    "baka-ui": "0.0.3-alpha.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "remark-gfm": "3",
     "storybook": "~7.4.5",
-    "vite-plugin-svgr": "^4.1.0"
+    "vite-plugin-svgr": "^4.1.0",
+    "baka-ui": "latest",
+    "baka-material-you": "latest"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "~7.4.5",
