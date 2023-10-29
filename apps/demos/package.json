@@ -1,7 +1,7 @@
 {
   "name": "baka-demos",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.5-alpha.0",
   "type": "module",
   "scripts": {
     "dev": "vite --port 3000",
@@ -10,10 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "baka-material-you": "latest",
     "baka-ui": "latest",
-    "baka-material-you": "latest"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
