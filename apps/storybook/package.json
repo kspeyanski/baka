@@ -11,8 +11,8 @@
   },
   "dependencies": {
     "@storybook/addon-docs": "~7.4.5",
-    "baka-material-you": "latest",
-    "baka-ui": "latest",
+    "baka-material-you": "0.0.4-alpha.0",
+    "baka-ui": "0.0.4-alpha.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "remark-gfm": "3",
