@@ -1,7 +1,7 @@
 {
   "name": "baka-storybook",
   "private": true,
-  "version": "0.0.5-alpha.0",
+  "version": "0.0.6-alpha.0",
   "type": "module",
   "scripts": {
     "dev": "storybook dev -p 6006 --no-open",
