@@ -5,7 +5,7 @@
     "type": "git",
     "url": "https://github.com/kspeyanski/baka"
   },
-  "version": "0.0.4-alpha.0",
+  "version": "0.0.7-alpha.0",
   "type": "module",
   "license": "MIT",
   "files": [
@@ -26,16 +26,16 @@
     "watch": "vite build --watch"
   },
   "devDependencies": {
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@vitejs/plugin-react": "^4.0.3",
     "clsx": "^1.2.1",
     "fast-glob": "^3.3.1",
     "react": "^18",
     "react-dom": "^18",
     "rimraf": "^5.0.1",
     "vite": "^4.4.9",
-    "vite-plugin-dts": "^3.6.0",
-    "@vitejs/plugin-react": "^4.0.3",
-    "@types/react": "^18",
-    "@types/react-dom": "^18"
+    "vite-plugin-dts": "^3.6.0"
   },
   "peerDependencies": {
     "react": "^18",
