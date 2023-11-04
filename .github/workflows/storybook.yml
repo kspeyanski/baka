@@ -18,6 +18,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Setup package manger
+        uses: pnpm/action-setup@v2
+        with: 
+          version: 8
+          run_install: false
+
       - name: Install dependencies
         run: pnpm install
 
