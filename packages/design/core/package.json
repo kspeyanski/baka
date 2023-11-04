@@ -8,6 +8,9 @@
   "version": "0.0.4-alpha.0",
   "types": "./types/index.d.ts",
   "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.68.0"
+  },
   "scripts": {
     "build": "sass ./_index.scss ./dist/index.css",
     "watch": "sass --watch ./_index.scss ./dist/index.css"

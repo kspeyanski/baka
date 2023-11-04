@@ -10,15 +10,15 @@
   "sass": "./_index.scss",
   "license": "MIT",
   "scripts": {
-    "build": "sass --load-path=../../../node_modules ./_index.scss ./dist/index.css",
-    "watch": "sass --watch --load-path=../../../node_modules ./_index.scss ./dist/index.css"
+    "build": "sass --load-path=./node_modules ./_index.scss ./dist/index.css",
+    "watch": "sass --watch --load-path=./node_modules ./_index.scss ./dist/index.css"
   },
   "devDependencies": {
-    "baka-core": "^0.0.4-alpha.0",
+    "baka-core": "workspace:*",
     "sass": "^1.68.0"
   },
   "peerDependencies": {
-    "baka-core": "*"
+    "baka-core": "workspace:*"
   },
   "gitHead": "532e6985e8208e2dc614d825bcb0cf81b579f331"
 }
