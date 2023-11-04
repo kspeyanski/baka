@@ -1,211 +1,110 @@
 @use "../colors" as *;
-@use "baka-core" as *;
 
-// Primary
-$primary: map-get(
-  $map: $royal-purple,
-  $key: 40,
-);
-$primary-rgb: var(--primary-rgb, hex-to-rgb($primary));
-$on-primary: map-get(
-  $map: $royal-purple,
-  $key: 100,
-);
-$on-primary-rgb: var(--on-primary-rgb, hex-to-rgb($on-primary));
-$primary-container: map-get(
-  $map: $royal-purple,
-  $key: 90,
-);
-$primary-container-rgb: var(--primary-container-rgb, hex-to-rgb($primary-container));
-$on-primary-container: map-get(
-  $map: $royal-purple,
-  $key: 10,
-);
-$on-primary-container-rgb: var(--on-primary-container-rgb, hex-to-rgb($on-primary-container));
-$primary-fixed: map-get(
-  $map: $royal-purple,
-  $key: 90,
-);
-$primary-fixed-dim: map-get(
-  $map: $royal-purple,
-  $key: 80,
-);
-$on-primary-fixed: map-get(
-  $map: $royal-purple,
-  $key: 10,
-);
-$on-primary-fixed-variant: map-get(
-  $map: $royal-purple,
-  $key: 30,
-);
-
-// Secondary
-$secondary: map-get(
-  $map: $black-coral,
-  $key: 40,
-);
-$on-secondary: map-get(
-  $map: $black-coral,
-  $key: 100,
-);
-$secondary-container: map-get(
-  $map: $black-coral,
-  $key: 90,
-);
-$secondary-container-rgb: var(--secondary-container-rgb, hex-to-rgb($secondary-container));
-$on-secondary-container: map-get(
-  $map: $black-coral,
-  $key: 10,
-);
-$on-secondary-container-rgb: var(--on-secondary-container-rgb, hex-to-rgb($on-secondary-container));
-$secondary-fixed: map-get(
-  $map: $black-coral,
-  $key: 90,
-);
-$secondary-fixed-dim: map-get(
-  $map: $black-coral,
-  $key: 80,
-);
-$on-secondary-fixed: map-get(
-  $map: $black-coral,
-  $key: 10,
-);
-$on-secondary-fixed-variant: map-get(
-  $map: $black-coral,
-  $key: 30,
+$_default-swatch: (
+  primary: map-get($royal-purple, 40),
+  on-primary: map-get($royal-purple, 100),
+  primary-container: map-get($royal-purple, 90),
+  on-primary-container: map-get($royal-purple, 10),
+  primary-fixed: map-get($royal-purple, 90),
+  primary-fixed-dim: map-get($royal-purple, 80),
+  on-primary-fixed: map-get($royal-purple, 10),
+  on-primary-fixed-variant: map-get($royal-purple, 30),
+  secondary: map-get($black-coral, 40),
+  on-secondary: map-get($black-coral, 100),
+  secondary-container: map-get($black-coral, 90),
+  on-secondary-container: map-get($black-coral, 10),
+  secondary-fixed: map-get($black-coral, 90),
+  secondary-fixed-dim: map-get($black-coral, 80),
+  on-secondary-fixed: map-get($black-coral, 10),
+  on-secondary-fixed-variant: map-get($black-coral, 30),
+  tertiary: map-get($deep-taupe, 40),
+  on-tertiary: map-get($deep-taupe, 100),
+  tertiary-container: map-get($deep-taupe, 90),
+  on-tertiary-container: map-get($deep-taupe, 10),
+  error: map-get($firebrick, 40),
+  on-error: map-get($firebrick, 100),
+  error-container: map-get($firebrick, 90),
+  on-error-container: map-get($firebrick, 10),
+  error-fixed: map-get($firebrick, 90),
+  error-fixed-dim: map-get($firebrick, 80),
+  on-error-fixed: map-get($firebrick, 10),
+  on-error-fixed-variant: map-get($firebrick, 30),
+  surface-dim: map-get($granite, 87),
+  surface: map-get($granite, 98),
+  surface-bright: map-get($granite, 24),
+  surface-container-lowest: map-get($granite, 100),
+  surface-container-low: map-get($granite, 96),
+  surface-container: map-get($granite, 94),
+  surface-container-highest: map-get($granite, 90),
+  surface-container-high: map-get($granite, 92),
+  on-surface: map-get($granite, 10),
+  on-surface-variant: map-get($granite-variant, 30),
+  outline: map-get($granite-variant, 50),
+  outline-variant: map-get($granite-variant, 80),
+  inverse-surface: map-get($granite, 20),
+  inverse-on-surface: map-get($granite, 95),
+  inverse-primary: map-get($royal-purple, 80),
+  scrim: map-get($granite, 0),
+  shadow: map-get($granite, 0),
 );
 
-// Tertiary
-$tertiary: map-get(
-  $map: $deep-taupe,
-  $key: 40,
-);
-$tertiary-rgb: var(--tertiary-rgb, hex-to-rgb($tertiary));
-$on-tertiary: map-get(
-  $map: $deep-taupe,
-  $key: 100,
-);
-$on-tertiary-rgb: var(--on-tertiary-rgb, hex-to-rgb($on-tertiary));
-$tertiary-container: map-get(
-  $map: $deep-taupe,
-  $key: 90,
-);
-$tertiary-container-rgb: var(--tertiary-container-rgb, hex-to-rgb($tertiary-container));
-$on-tertiary-container: map-get(
-  $map: $deep-taupe,
-  $key: 10,
-);
-$on-tertiary-container-rgb: var(--on-tertiary-container-rgb, hex-to-rgb($on-tertiary-container));
+$swatch: () !default;
+$swatch: map-merge($_default-swatch, $swatch);
 
-// Error
-$error: map-get(
-  $map: $firebrick,
-  $key: 40,
+$primary: var(--primary, map-get($swatch, primary));
+$on-primary: var(--on-primary, map-get($swatch, on-primary));
+$primary-container: var(--primary-container, map-get($swatch, primary-container));
+$on-primary-container: var(--on-primary-container, map-get($swatch, on-primary-container));
+$primary-fixed: var(--primary-fixed, map-get($swatch, primary-fixed));
+$primary-fixed-dim: var(--primary-fixed-dim, map-get($swatch, primary-fixed-dim));
+$on-primary-fixed: var(--on-primary-fixed, map-get($swatch, on-primary-fixed));
+$on-primary-fixed-variant: var(
+  --on-primary-fixed-variant,
+  map-get($swatch, on-primary-fixed-variant)
 );
-$error-rgb: var(--error-rgb, hex-to-rgb($error));
-$on-error: map-get(
-  $map: $firebrick,
-  $key: 100,
+$secondary: var(--secondary, map-get($swatch, secondary));
+$on-secondary: var(--on-secondary, map-get($swatch, on-secondary));
+$secondary-container: var(--secondary-container, map-get($swatch, secondary-container));
+$on-secondary-container: var(--on-secondary-container, map-get($swatch, on-secondary-container));
+$secondary-fixed: var(--secondary-fixed, map-get($swatch, secondary-fixed));
+$secondary-fixed-dim: var(--secondary-fixed-dim, map-get($swatch, secondary-fixed-dim));
+$on-secondary-fixed: var(--on-secondary-fixed, map-get($swatch, on-secondary-fixed));
+$on-secondary-fixed-variant: var(
+  --on-secondary-fixed-variant,
+  map-get($swatch, on-secondary-fixed-variant)
 );
-$on-error-rgb: var(--on-error-rgb, hex-to-rgb($on-error));
-$error-container: map-get(
-  $map: $firebrick,
-  $key: 90,
+$tertiary: var(--tertiary, map-get($swatch, tertiary));
+$on-tertiary: var(--on-tertiary, map-get($swatch, on-tertiary));
+$tertiary-container: var(--tertiary-container, map-get($swatch, tertiary-container));
+$on-tertiary-container: var(--on-tertiary-container, map-get($swatch, on-tertiary-container));
+$error: var(--error, map-get($swatch, error));
+$on-error: var(--on-error, map-get($swatch, on-error));
+$error-container: var(--error-container, map-get($swatch, error-container));
+$on-error-container: var(--on-error-container, map-get($swatch, on-error-container));
+$error-fixed: var(--error-fixed, map-get($swatch, error-fixed));
+$error-fixed-dim: var(--error-fixed-dim, map-get($swatch, error-fixed-dim));
+$on-error-fixed: var(--on-error-fixed, map-get($swatch, on-error-fixed));
+$on-error-fixed-variant: var(--on-error-fixed-variant, map-get($swatch, on-error-fixed-variant));
+$surface-dim: var(--surface-dim, map-get($swatch, surface-dim));
+$surface: var(--surface, map-get($swatch, surface));
+$surface-bright: var(--surface-bright, map-get($swatch, surface-bright));
+$surface-container-lowest: var(
+  --surface-container-lowest,
+  map-get($swatch, surface-container-lowest)
 );
-$error-container-rgb: var(--error-container-rgb, hex-to-rgb($error-container));
-$on-error-container: map-get(
-  $map: $firebrick,
-  $key: 10,
+$surface-container-low: var(--surface-container-low, map-get($swatch, surface-container-low));
+$surface-container: var(--surface-container, map-get($swatch, surface-container));
+$surface-container-highest: var(
+  --surface-container-highest,
+  map-get($swatch, surface-container-highest)
 );
-$on-error-container-rgb: var(--on-error-container-rgb, hex-to-rgb($on-error-container));
-$error-fixed: map-get(
-  $map: $firebrick,
-  $key: 90,
-);
-$error-fixed-dim: map-get(
-  $map: $firebrick,
-  $key: 80,
-);
-$on-error-fixed: map-get(
-  $map: $firebrick,
-  $key: 10,
-);
-$on-error-fixed-variant: map-get(
-  $map: $firebrick,
-  $key: 30,
-);
-
-// Surface
-$surface-dim: map-get(
-  $map: $granite,
-  $key: 87,
-);
-$surface: map-get(
-  $map: $granite,
-  $key: 98,
-);
-$surface-rgb: var(--surface-rgb, hex-to-rgb($surface));
-$surface-container-lowest: map-get(
-  $map: $granite,
-  $key: 100,
-);
-$surface-container-low: map-get(
-  $map: $granite,
-  $key: 96,
-);
-$surface-container: map-get(
-  $map: $granite,
-  $key: 94,
-);
-$surface-container-highest: map-get(
-  $map: $granite,
-  $key: 90,
-);
-$surface-container-high: map-get(
-  $map: $granite,
-  $key: 92,
-);
-$on-surface: map-get(
-  $map: $granite,
-  $key: 10,
-);
-$on-surface-rgb: var(--on-surface-rgb, hex-to-rgb($on-surface));
-
-$on-surface-variant: map-get(
-  $map: $granite-variant,
-  $key: 30,
-);
-$on-surface-variant-rgb: var(--on-surface-variant-rgb, hex-to-rgb($on-surface-variant));
-
-$outline: map-get(
-  $map: $granite-variant,
-  $key: 50,
-);
-$outline-rgb: var(--outline-rgb, hex-to-rgb($outline));
-$outline-variant: map-get(
-  $map: $granite-variant,
-  $key: 80,
-);
-
-// Inverse
-$inverse-surface: map-get(
-  $map: $granite,
-  $key: 20,
-);
-$inverse-on-surface: map-get(
-  $map: $granite,
-  $key: 95,
-);
-$inverse-on-surface-rgb: var(--inverse-on-surface-rgb, hex-to-rgb($inverse-on-surface));
-$inverse-primary: map-get(
-  $map: $royal-purple,
-  $key: 80,
-);
-$scrim: map-get(
-  $map: $granite,
-  $key: 0,
-);
-$shadow: map-get(
-  $map: $granite,
-  $key: 0,
-);
+$surface-container-high: var(--surface-container-high, map-get($swatch, surface-container-high));
+$on-surface: var(--on-surface, map-get($swatch, on-surface));
+$on-surface-variant: var(--on-surface-variant, map-get($swatch, on-surface-variant));
+$outline: var(--outline, map-get($swatch, outline));
+$outline-variant: var(--outline-variant, map-get($swatch, outline-variant));
+$inverse-surface: var(--inverse-surface, map-get($swatch, inverse-surface));
+$inverse-on-surface: var(--inverse-on-surface, map-get($swatch, inverse-on-surface));
+$inverse-primary: var(--inverse-primary, map-get($swatch, inverse-primary));
+$scrim: var(--scrim, map-get($swatch, scrim));
+$shadow: var(--shadow, map-get($swatch, shadow));

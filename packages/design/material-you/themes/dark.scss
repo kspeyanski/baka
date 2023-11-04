@@ -1,0 +1,55 @@
+@use "../colors" as *;
+
+$swatch: (
+  primary: map-get($royal-purple, 80),
+  on-primary: map-get($royal-purple, 20),
+  primary-container: map-get($royal-purple, 30),
+  on-primary-container: map-get($royal-purple, 90),
+  primary-fixed: map-get($royal-purple, 90),
+  primary-fixed-dim: map-get($royal-purple, 80),
+  on-primary-fixed: map-get($royal-purple, 10),
+  on-primary-fixed-variant: map-get($royal-purple, 30),
+  secondary: map-get($black-coral, 80),
+  on-secondary: map-get($black-coral, 20),
+  secondary-container: map-get($black-coral, 30),
+  on-secondary-container: map-get($black-coral, 90),
+  secondary-fixed: map-get($black-coral, 90),
+  secondary-fixed-dim: map-get($black-coral, 80),
+  on-secondary-fixed: map-get($black-coral, 10),
+  on-secondary-fixed-variant: map-get($black-coral, 30),
+  tertiary: map-get($deep-taupe, 80),
+  on-tertiary: map-get($deep-taupe, 20),
+  tertiary-container: map-get($deep-taupe, 30),
+  on-tertiary-container: map-get($deep-taupe, 90),
+  error: map-get($firebrick, 80),
+  on-error: map-get($firebrick, 20),
+  error-container: map-get($firebrick, 30),
+  on-error-container: map-get($firebrick, 90),
+  error-fixed: map-get($firebrick, 90),
+  error-fixed-dim: map-get($firebrick, 80),
+  on-error-fixed: map-get($firebrick, 10),
+  on-error-fixed-variant: map-get($firebrick, 30),
+  surface-dim: map-get($granite, 6),
+  surface: map-get($granite, 6),
+  surface-bright: map-get($granite, 24),
+  surface-container-lowest: map-get($granite, 4),
+  surface-container-low: map-get($granite, 12),
+  surface-container: map-get($granite, 12),
+  surface-container-highest: map-get($granite, 17),
+  surface-container-high: map-get($granite, 22),
+  on-surface: map-get($granite, 90),
+  on-surface-variant: map-get($granite-variant, 80),
+  outline: map-get($granite-variant, 60),
+  outline-variant: map-get($granite-variant, 30),
+  inverse-surface: map-get($granite, 90),
+  inverse-on-surface: map-get($granite, 20),
+  inverse-primary: map-get($royal-purple, 40),
+  scrim: map-get($granite, 0),
+  shadow: map-get($granite, 0),
+);
+
+@mixin styles {
+  @each $key, $value in $swatch {
+    --#{$key}: #{$value};
+  }
+}

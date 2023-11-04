@@ -1,0 +1,16 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Material You/Color System" />
+
+## Dark Mode
+
+```scss
+@use "baka-material-you/themes/dark" as dark-swatch;
+@use "baka-material-you" as *;
+
+body.dark {
+  @include dark-swatch.styles();
+}
+```
+
+

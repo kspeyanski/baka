@@ -1,0 +1,9 @@
+@use "./hex-to-rgb" as *;
+
+@function baka-color-var($name, $value, $rgb: false) {
+  @if ($rgb) {
+    @return var(--baka-color-#{$name}-rgb, hex-to-rgb($value));
+  } @else {
+    @return var(--baka-color-#{$name}, $value);
+  }
+}

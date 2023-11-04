@@ -3,7 +3,7 @@
 
 .baka-chip {
   @include label-large;
-  --state: #{$on-surface-variant-rgb};
+  --state: #{$on-surface-variant};
   --color: #{$on-surface-variant};
   --outline: #{$outline};
   --ripple: #{$on-surface};
@@ -38,7 +38,7 @@
     height: calc(100% + 2px);
     margin-left: -1px;
     margin-top: -1px;
-    background: var(--state);
+    background: #{color-mix(in srgb, var(--state) 0 * 100%, transparent)};
 
     @include motion-transition-TBD(background);
   }
@@ -74,15 +74,15 @@
     outline-color: var(--outline);
 
     @include state-layer {
-      background: #{rgba(var(--state), 0.08)};
+      background: #{color-mix(in srgb, var(--state) 0.08 * 100%, transparent)};
     }
   }
 
   @include focus {
-    --outline: #{$on-surface-variant-rgb};
+    --outline: #{$on-surface-variant};
 
     @include state-layer {
-      background: #{rgba(var(--state), 0.12)};
+      background: #{color-mix(in srgb, var(--state) 0.12 * 100%, transparent)};
     }
   }
 
@@ -90,14 +90,14 @@
     --elevation: #{map-get($elevation, 2)};
 
     @include state-layer {
-      background: #{rgba(var(--state), 0.16)};
+      background: #{color-mix(in srgb, var(--state) 0.16 * 100%, transparent)};
     }
   }
 
   @include selected {
     --color: #{$on-secondary-container};
     --background: #{$secondary-container};
-    --state: #{$on-secondary-container-rgb};
+    --state: #{$on-secondary-container};
     --outline: transparent;
   }
 }

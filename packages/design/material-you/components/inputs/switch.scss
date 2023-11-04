@@ -5,7 +5,7 @@
   --background: #{$surface-container-highest};
   --outline: #{$outline};
   --border: #{$outline};
-  --state: #{$on-surface-rgb};
+  --state: #{$on-surface};
   --disabled: transparent;
   --content: "close";
   --left: 16px;
@@ -16,6 +16,7 @@
   width: 52px;
   height: 32px;
 
+  color: $on-surface;
   background: var(--background);
 
   outline-style: solid;
@@ -47,14 +48,14 @@
   @include hover {
     --outline: #{$on-surface-variant};
     @include state-layer {
-      background: rgba(var(--state), 0.08);
+      background: color-mix(in srgb, var(--state) 0.08 * 100%, transparent);
     }
   }
 
   @include focus {
     --outline: #{$on-surface-variant};
     @include state-layer {
-      background: rgba(var(--state), 0.12);
+      background: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
     }
   }
 
@@ -62,7 +63,7 @@
     --outline: #{$on-surface-variant};
 
     @include state-layer {
-      background: rgba(var(--state), 0.12);
+      background: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
 
       outline-width: 15px;
       outline-offset: -22px;
@@ -70,12 +71,12 @@
   }
 
   @include disabled {
-    --border: rgba(#{$on-surface-rgb}, 0.12);
+    --border: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
     background: var(--disabled);
   }
 
   @include checked {
-    --state: #{$primary-rgb};
+    --state: #{$primary};
     --background: #{$primary};
     --border: #{$primary};
     --outline: #{$on-primary};
@@ -108,9 +109,9 @@
 
     @include disabled {
       outline-offset: 0;
-      --border: rgba(#{$on-surface-rgb}, 0.12);
+      --border: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
       --outline: #{$on-primary};
-      --disabled: rgba(#{$on-surface-rgb}, 0.12);
+      --disabled: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
 
       &::after {
         opacity: 0.38;

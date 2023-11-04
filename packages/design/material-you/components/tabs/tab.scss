@@ -46,18 +46,18 @@
 
   @include hover {
     @include state-layer {
-      background: rgba(var(--state), 0.08);
+      background: color-mix(in srgb, var(--state) 0.08 * 100%, transparent);
     }
   }
 
   @include focus {
     @include state-layer {
-      background: rgba(var(--state), 0.12);
+      background: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
     }
   }
 
   @include selected {
-    --state: #{$primary-rgb};
+    --state: #{$primary};
     --color: var(--group-selected-color, #{$primary});
     --ripple: #{$primary};
     position: relative;

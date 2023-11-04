@@ -5,7 +5,7 @@
   --color: #{$on-primary};
   --state: ;
   --border: #{$on-surface-variant};
-  --state: #{$on-surface-rgb};
+  --state: #{$on-surface};
   --background: transparent;
   --ripple: #{$on-surface};
 
@@ -46,7 +46,7 @@
 
   @include checked {
     --content: "check";
-    --state: #{$primary-rgb};
+    --state: #{$primary};
     --border: #{$primary};
     --color: #{$on-primary};
     --background: #{$primary};
@@ -59,7 +59,7 @@
 
   @include indeterminate {
     --content: "check_indeterminate_small";
-    --state: #{$primary-rgb};
+    --state: #{$primary};
     --border: #{$primary};
     --color: #{$on-primary};
     --background: #{$primary};
@@ -72,26 +72,26 @@
 
   @include hover($readonly: false) {
     @include state-layer {
-      background-color: rgba(var(--state), 0.08);
+      background-color: color-mix(in srgb, var(--state) 0.08 * 100%, transparent);
     }
   }
 
   @include focus($readonly: false) {
     outline: none;
     @include state-layer {
-      background-color: rgba(var(--state), 0.12);
+      background-color: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
     }
   }
 
   @include active($readonly: false) {
     @include state-layer {
-      background-color: rgba(var(--state), 0.12);
+      background-color: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
     }
   }
 
   @include variant(error) {
     --border: #{$error};
-    --state: #{$error-rgb};
+    --state: #{$error};
     --color: #{$on-error};
     --ripple: #{$error};
 

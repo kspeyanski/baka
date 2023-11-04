@@ -60,29 +60,29 @@
 
     @include hover {
       @include state-layer {
-        background: rgba($on-primary-rgb, 0.08);
+        background: color-mix(in srgb, $on-primary 0.08 * 100%, transparent);
       }
       box-shadow: map-get($elevation, 1);
     }
 
     @include focus {
       @include state-layer {
-        background: rgba($on-primary-rgb, 0.12);
+        background: color-mix(in srgb, $on-primary 0.12 * 100%, transparent);
       }
     }
 
     @include active {
       @include state-layer {
-        background: rgba($on-primary-rgb, 0.12);
+        background: color-mix(in srgb, $on-primary 0.12 * 100%, transparent);
       }
     }
 
     @include disabled {
-      color: rgba($on-surface-rgb, 0.38);
+      color: color-mix(in srgb, $on-surface 0.38 * 100%, transparent);
       background: none;
 
       @include state-layer {
-        background: rgba($on-surface-rgb, 0.12);
+        background: color-mix(in srgb, $on-surface 0.12 * 100%, transparent);
       }
     }
   }
@@ -95,26 +95,26 @@
 
     @include hover {
       @include state-layer {
-        background: rgba($primary-rgb, 0.08);
+        background: color-mix(in srgb, $primary 0.08 * 100%, transparent);
       }
       box-shadow: none;
     }
 
     @include focus {
       @include state-layer {
-        background: rgba($primary-rgb, 0.12);
+        background: color-mix(in srgb, $primary 0.12 * 100%, transparent);
       }
     }
 
     @include active {
       @include state-layer {
-        background: rgba($primary-rgb, 0.12);
+        background: color-mix(in srgb, $primary 0.12 * 100%, transparent);
       }
     }
 
     @include disabled {
-      color: rgba($on-surface-rgb, 0.38);
-      border-color: rgba($on-surface-rgb, 0.12);
+      color: color-mix(in srgb, $on-surface 0.38 * 100%, transparent);
+      border-color: color-mix(in srgb, $on-surface 0.12 * 100%, transparent);
 
       @include state-layer {
         background: transparent;
@@ -129,25 +129,25 @@
 
     @include hover {
       @include state-layer {
-        background: rgba($primary-rgb, 0.08);
+        background: color-mix(in srgb, $primary 0.08 * 100%, transparent);
       }
       box-shadow: none;
     }
 
     @include focus {
       @include state-layer {
-        background: rgba($primary-rgb, 0.12);
+        background: color-mix(in srgb, $primary 0.12 * 100%, transparent);
       }
     }
 
     @include active {
       @include state-layer {
-        background: rgba($primary-rgb, 0.12);
+        background: color-mix(in srgb, $primary 0.12 * 100%, transparent);
       }
     }
 
     @include disabled {
-      color: rgba($on-surface-rgb, 0.38);
+      color: color-mix(in srgb, $on-surface 0.38 * 100%, transparent);
 
       @include state-layer {
         background: transparent;
@@ -173,30 +173,30 @@
 
     @include hover {
       @include state-layer {
-        background: rgba($primary-rgb, 0.08);
+        background: color-mix(in srgb, $primary 0.08 * 100%, transparent);
       }
       box-shadow: map-get($elevation, 2);
     }
 
     @include focus {
       @include state-layer {
-        background: rgba($primary-rgb, 0.12);
+        background: color-mix(in srgb, $primary 0.12 * 100%, transparent);
       }
     }
 
     @include active {
       @include state-layer {
-        background: rgba($primary-rgb, 0.12);
+        background: color-mix(in srgb, $primary 0.12 * 100%, transparent);
       }
     }
 
     @include disabled {
-      color: rgba($on-surface-rgb, 0.38);
+      color: color-mix(in srgb, $on-surface 0.38 * 100%, transparent);
       box-shadow: none;
       background: none;
 
       @include state-layer {
-        background: rgba($on-surface-rgb, 0.12);
+        background: color-mix(in srgb, $on-surface 0.12 * 100%, transparent);
       }
     }
   }
@@ -209,29 +209,29 @@
 
     @include hover {
       @include state-layer {
-        background: rgba($on-secondary-container-rgb, 0.08);
+        background: color-mix(in srgb, $on-secondary-container 0.08 * 100%, transparent);
       }
       box-shadow: map-get($elevation, 1);
     }
 
     @include focus {
       @include state-layer {
-        background: rgba($on-secondary-container-rgb, 0.12);
+        background: color-mix(in srgb, $on-secondary-container 0.12 * 100%, transparent);
       }
     }
 
     @include active {
       @include state-layer {
-        background: rgba($on-secondary-container-rgb, 0.12);
+        background: color-mix(in srgb, $on-secondary-container 0.12 * 100%, transparent);
       }
     }
 
     @include disabled {
-      color: rgba($on-surface-rgb, 0.38);
+      color: color-mix(in srgb, $on-surface 0.38 * 100%, transparent);
       background: none;
 
       @include state-layer {
-        background: rgba($on-surface-rgb, 0.12);
+        background: color-mix(in srgb, $on-surface 0.12 * 100%, transparent);
       }
     }
   }
@@ -246,7 +246,7 @@
 
     @include hover {
       @include state-layer {
-        background: rgba($on-surface-variant-rgb, 0.08);
+        background: color-mix(in srgb, $on-surface-variant 0.08 * 100%, transparent);
       }
 
       box-shadow: none;
@@ -254,18 +254,18 @@
 
     @include focus {
       @include state-layer {
-        background: rgba($on-surface-variant-rgb, 0.12);
+        background: color-mix(in srgb, $on-surface-variant 0.12 * 100%, transparent);
       }
     }
 
     @include active {
       @include state-layer {
-        background: rgba($on-surface-variant-rgb, 0.12);
+        background: color-mix(in srgb, $on-surface-variant 0.12 * 100%, transparent);
       }
     }
 
     @include disabled {
-      color: rgba($on-surface-rgb, 0.38);
+      color: color-mix(in srgb, $on-surface 0.38 * 100%, transparent);
     }
   }
 
@@ -273,7 +273,7 @@
     color: $on-primary;
 
     @include disabled {
-      color: rgba($on-surface-rgb, 0.38);
+      color: color-mix(in srgb, $on-surface 0.38 * 100%, transparent);
     }
   }
 
@@ -289,7 +289,7 @@
     @include hover {
       @include selected {
         @include state-layer {
-          background: rgba($primary-rgb, 0.08);
+          background: color-mix(in srgb, $primary 0.08 * 100%, transparent);
         }
       }
     }
@@ -297,7 +297,7 @@
     @include focus {
       @include selected {
         @include state-layer {
-          background: rgba($primary-rgb, 0.12);
+          background: color-mix(in srgb, $primary 0.12 * 100%, transparent);
         }
       }
     }
@@ -305,13 +305,13 @@
     @include active {
       @include selected {
         @include state-layer {
-          background: rgba($primary-rgb, 0.12);
+          background: color-mix(in srgb, $primary 0.12 * 100%, transparent);
         }
       }
     }
 
     @include disabled {
-      color: rgba($on-surface-rgb, 0.38);
+      color: color-mix(in srgb, $on-surface 0.38 * 100%, transparent);
     }
   }
 
@@ -329,16 +329,16 @@
     }
 
     @include disabled {
-      color: rgba($on-surface-rgb, 0.38);
-      background-color: rgba($on-surface-rgb, 0.12);
+      color: color-mix(in srgb, $on-surface 0.38 * 100%, transparent);
+      background-color: color-mix(in srgb, $on-surface 0.12 * 100%, transparent);
 
       @include state-layer {
-        background: rgba($on-surface-rgb, 0.12);
+        background: color-mix(in srgb, $on-surface 0.12 * 100%, transparent);
       }
 
       @include selected {
-        color: rgba($on-surface-rgb, 0.38);
-        background: rgba($on-surface-rgb, 0.12);
+        color: color-mix(in srgb, $on-surface 0.38 * 100%, transparent);
+        background: color-mix(in srgb, $on-surface 0.12 * 100%, transparent);
       }
     }
   }
@@ -357,16 +357,16 @@
     }
 
     @include disabled {
-      color: rgba($on-surface-rgb, 0.38);
-      background-color: rgba($on-surface-rgb, 0.12);
+      color: color-mix(in srgb, $on-surface 0.38 * 100%, transparent);
+      background-color: color-mix(in srgb, $on-surface 0.12 * 100%, transparent);
 
       @include state-layer {
-        background: rgba($on-surface-rgb, 0.12);
+        background: color-mix(in srgb, $on-surface 0.12 * 100%, transparent);
       }
 
       @include selected {
-        color: rgba($on-surface-rgb, 0.38);
-        background: rgba($on-surface-rgb, 0.12);
+        color: color-mix(in srgb, $on-surface 0.38 * 100%, transparent);
+        background: color-mix(in srgb, $on-surface 0.12 * 100%, transparent);
       }
     }
   }
@@ -379,28 +379,28 @@
 
       @include hover {
         @include state-layer {
-          background: rgba($inverse-on-surface-rgb, 0.08);
+          background: color-mix(in srgb, $inverse-on-surface 0.08 * 100%, transparent);
         }
       }
 
       @include focus {
         @include state-layer {
-          background: rgba($inverse-on-surface-rgb, 0.12);
+          background: color-mix(in srgb, $inverse-on-surface 0.12 * 100%, transparent);
         }
       }
 
       @include active {
         @include state-layer {
-          background: rgba($inverse-on-surface-rgb, 0.12);
+          background: color-mix(in srgb, $inverse-on-surface 0.12 * 100%, transparent);
         }
       }
 
       @include disabled {
-        color: rgba($on-surface-rgb, 0.38);
+        color: color-mix(in srgb, $on-surface 0.38 * 100%, transparent);
         background: none;
 
         @include state-layer {
-          background: rgba($on-surface-rgb, 0.12);
+          background: color-mix(in srgb, $on-surface 0.12 * 100%, transparent);
         }
       }
     }
@@ -431,19 +431,19 @@
 
     @include hover {
       @include state-layer {
-        background: rgba($on-primary-container-rgb, 0.08);
+        background: color-mix(in srgb, $on-primary-container 0.08 * 100%, transparent);
       }
     }
 
     @include focus {
       @include state-layer {
-        background: rgba($on-primary-container-rgb, 0.12);
+        background: color-mix(in srgb, $on-primary-container 0.12 * 100%, transparent);
       }
     }
 
     @include active {
       @include state-layer {
-        background: rgba($on-primary-container-rgb, 0.12);
+        background: color-mix(in srgb, $on-primary-container 0.12 * 100%, transparent);
       }
     }
   }
@@ -454,19 +454,19 @@
 
     @include hover {
       @include state-layer {
-        background: rgba($on-secondary-container-rgb, 0.08);
+        background: color-mix(in srgb, $on-secondary-container 0.08 * 100%, transparent);
       }
     }
 
     @include focus {
       @include state-layer {
-        background: rgba($on-secondary-container-rgb, 0.12);
+        background: color-mix(in srgb, $on-secondary-container 0.12 * 100%, transparent);
       }
     }
 
     @include active {
       @include state-layer {
-        background: rgba($on-secondary-container-rgb, 0.12);
+        background: color-mix(in srgb, $on-secondary-container 0.12 * 100%, transparent);
       }
     }
   }
@@ -477,19 +477,19 @@
 
     @include hover {
       @include state-layer {
-        background: rgba($on-tertiary-container-rgb, 0.08);
+        background: color-mix(in srgb, $on-tertiary-container 0.08 * 100%, transparent);
       }
     }
 
     @include focus {
       @include state-layer {
-        background: rgba($on-tertiary-container-rgb, 0.12);
+        background: color-mix(in srgb, $on-tertiary-container 0.12 * 100%, transparent);
       }
     }
 
     @include active {
       @include state-layer {
-        background: rgba($on-tertiary-container-rgb, 0.12);
+        background: color-mix(in srgb, $on-tertiary-container 0.12 * 100%, transparent);
       }
     }
   }
@@ -515,5 +515,5 @@
   @include variant((fab, extended)) {
     padding-right: 20px;
     gap: 12px;
-  }
+ } 
 }

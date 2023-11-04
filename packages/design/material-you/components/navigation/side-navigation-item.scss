@@ -3,7 +3,7 @@
 
 .baka-side-navigation-item {
   --color: #{$on-surface-variant};
-  --state: #{$on-surface-rgb};
+  --state: #{$on-surface};
 
   cursor: pointer;
 
@@ -37,25 +37,25 @@
 
   @include hover {
     @include state-layer {
-      background: rgba(var(--state), 0.08);
+      background: color-mix(in srgb, var(--state) 0.08 * 100%, transparent);
     }
   }
 
   @include focus {
     @include state-layer {
-      background: rgba(var(--state), 0.12);
+      background: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
     }
   }
 
   @include active {
     @include state-layer {
-      background: rgba(var(--state), 0.12);
+      background: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
     }
   }
 
   @include selected {
     --color: #{$on-secondary-container};
-    --state: #{$on-secondary-container-rgb};
+    --state: #{$on-secondary-container};
 
     background: $secondary-container;
   }

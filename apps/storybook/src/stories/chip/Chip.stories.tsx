@@ -33,10 +33,10 @@ export const Basic: Story = {
     const { configuration, ...other } = props;
 
     switch (configuration) {
-      case "BakaLabel & trailing icon":
+      case "Label & trailing icon":
         return (
-          <BakaChip {...other} label="BakaLabel & trailing icon">
-            <span>BakaLabel</span>
+          <BakaChip {...other} label="Label & trailing icon">
+            <span>Label</span>
             <BakaIcon>close</BakaIcon>
           </BakaChip>
         );
@@ -44,20 +44,20 @@ export const Basic: Story = {
         return (
           <BakaChip {...other} label="Leading BakaIcon & label">
             <BakaIcon variant={"primary"}>local_taxi</BakaIcon>
-            <span>BakaLabel</span>
+            <span>Label</span>
           </BakaChip>
         );
       case "Leading icon, label & trailing icon":
         return (
           <BakaChip {...other} label="Leading icon, label & trailing icon">
             <BakaIcon variant={"primary"}>local_taxi</BakaIcon>
-            <span>BakaLabel</span>
+            <span>Label</span>
             <BakaIcon>close</BakaIcon>
           </BakaChip>
         );
-      case "BakaLabel & Avatar":
+      case "Label & Avatar":
         return (
-          <BakaChip {...other} label="BakaLabel & Avatar">
+          <BakaChip {...other} label="Label & Avatar">
             <BakaAvatar>
               {props.selected ? (
                 <BakaIcon variant={["filled"]}>check</BakaIcon>
@@ -65,12 +65,12 @@ export const Basic: Story = {
                 <img src="./avatar-light.svg" />
               )}
             </BakaAvatar>
-            <span>BakaLabel</span>
+            <span>Label</span>
           </BakaChip>
         );
-      case "BakaLabel, avatar & icon":
+      case "Label, avatar & icon":
         return (
-          <BakaChip {...other} label="BakaLabel, avatar & icon">
+          <BakaChip {...other} label="Label, avatar & icon">
             <BakaAvatar>
               {props.selected ? (
                 <BakaIcon variant={["filled"]}>check</BakaIcon>
@@ -78,38 +78,38 @@ export const Basic: Story = {
                 <img src="./avatar-light.svg" />
               )}
             </BakaAvatar>
-            <span>BakaLabel</span>
+            <span>Label</span>
             <BakaIcon>close</BakaIcon>
           </BakaChip>
         );
       default:
-        return <BakaChip {...other}>BakaLabel</BakaChip>;
+        return <BakaChip {...other}>Label</BakaChip>;
     }
   },
   args: {
     // @ts-expect-error - `normal` is the default value
     variant: "normal",
-    configuration: "BakaLabel only",
+    configuration: "Label only",
     ...defaultArgs,
   },
   argTypes: {
     configuration: {
       control: "radio",
       map: {
-        "BakaLabel only": null,
-        "BakaLabel & trailing icon": "trailing-icon",
+        "Label only": null,
+        "Label & trailing icon": "trailing-icon",
         "Leading BakaIcon & label": "leading-icon",
         "Leading icon, label & trailing icon": "leading-icon-trailing-icon",
-        "BakaLabel & Avatar": "avatar",
-        "BakaLabel, avatar & trailing icon": "avatar-trailing-icon",
+        "Label & Avatar": "avatar",
+        "Label, avatar & trailing icon": "avatar-trailing-icon",
       },
       options: [
-        "BakaLabel only",
-        "BakaLabel & trailing icon",
+        "Label only",
+        "Label & trailing icon",
         "Leading BakaIcon & label",
         "Leading icon, label & trailing icon",
-        "BakaLabel & Avatar",
-        "BakaLabel, avatar & icon",
+        "Label & Avatar",
+        "Label, avatar & icon",
       ],
     },
     variant: {

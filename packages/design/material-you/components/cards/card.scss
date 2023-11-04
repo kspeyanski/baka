@@ -10,6 +10,8 @@
   display: flex;
   flex-direction: column;
 
+  color: $on-surface-variant;
+
   @include variant(outlined, true) {
     border-color: $outline-variant;
     background: $surface;

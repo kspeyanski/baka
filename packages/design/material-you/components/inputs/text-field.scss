@@ -5,10 +5,10 @@
   @include body-large;
   --accent: #{$on-surface-variant};
   --outline-height: 1px;
-  --state: #{$on-surface-rgb};
+  --state: #{$on-surface};
   --label-offset: 0;
 
-  gap: 10px;
+  gap: 8px;
   height: 40px;
   padding: 8px 0 8px 16px;
 
@@ -146,7 +146,7 @@
   @include hover {
     --accent: #{$on-surface};
     @include state-layer {
-      background: rgba(var(--state), 0.08);
+      background: color-mix(in srgb, var(--state) 0.08 * 100%, transparent);
     }
   }
 

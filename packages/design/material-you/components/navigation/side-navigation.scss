@@ -2,6 +2,7 @@
 @use "baka-core" as *;
 
 .baka-side-navigation {
+  color: $on-surface;
   background: $surface-container;
   padding: 12px;
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import type { Preview } from "@storybook/react";
-import '../src/styles/material-you.scss';
+import "../src/styles/material-you.scss";
 
 const preview: Preview = {
   parameters: {
@@ -10,8 +10,37 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    options: {
+      storySort: {
+        method: "alphabetical",
+        order: ["Material You", ["Overview", "*"]],
+        locales: "en-US",
+      },
+    },
+  },
+  globalTypes: {
+    theme: {
+      name: "Theme",
+      description: "Global theme for components",
+      defaultValue: "light",
+      toolbar: {
+        name: "Theme",
+        icon: "circlehollow",
+        items: [
+          { value: "light", icon: "sun", title: "Light (default)" },
+          { value: "dark", icon: "moon", title: "Dark" },
+        ],
+        // Property that specifies if the name of the item will be displayed
+        dynamicTitle: true,
+      },
+    },
   },
   decorators: [
+    (Story, context) => {
+      const theme = context.globals.theme;
+      document.body.setAttribute("data-theme", theme);
+      return <Story />;
+    },
     (Story) => (
       <>
         <link rel="preconnect" href="https://fonts.googleapis.com" />

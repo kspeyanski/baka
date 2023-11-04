@@ -3,7 +3,7 @@
 
 .baka-radio-button {
   --background: #{$on-surface-variant};
-  --state: #{$on-surface-rgb};
+  --state: #{$on-surface};
   --ripple: #{$on-surface};
 
   width: 24px;
@@ -22,7 +22,7 @@
     width: 48px;
     height: 48px;
     transform: translate(-50%, -50%);
-    background: var(--state);
+    background: color-mix(in srgb, var(--state) 0 * 100%, transparent);
     border-radius: 100px;
 
     @include motion-transition-TBD(background-color, color);
@@ -33,26 +33,26 @@
 
   @include hover {
     @include state-layer {
-      background-color: rgba(var(--state), 0.08);
+      background-color: color-mix(in srgb, var(--state) 0.08 * 100%, transparent);
     }
   }
 
   @include focus {
     @include state-layer {
-      background-color: rgba(var(--state), 0.12);
+      background-color: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
     }
   }
 
   @include active {
     @include state-layer {
-      background-color: rgba(var(--state), 0.12);
+      background-color: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
     }
   }
 
   @include checked {
     --background: #{$primary};
     --ripple: #{$primary};
-    --state: #{$primary-rgb};
+    --state: #{$primary};
 
     outline: 3px solid $surface;
     outline-offset: -5px;

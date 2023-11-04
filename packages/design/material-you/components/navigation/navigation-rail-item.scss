@@ -2,7 +2,7 @@
 @use "baka-core" as *;
 
 .baka-navigation-rail-item {
-  --state: #{$on-surface-rgb};
+  --state: #{$on-surface};
   --vertical-padding: 16px;
 
   cursor: pointer;
@@ -41,7 +41,7 @@
   @include hover {
     .baka-icon {
       @include state-layer {
-        background: rgba(var(--state), 0.08);
+        background: color-mix(in srgb, var(--state) 0.08 * 100%, transparent);
       }
     }
   }
@@ -49,13 +49,13 @@
   @include focus {
     .baka-icon {
       @include state-layer {
-        background: rgba(var(--state), 0.12);
+        background: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
       }
     }
   }
 
   @include selected {
-    --state: #{$on-secondary-container-rgb};
+    --state: #{$on-secondary-container};
     .baka-label {
       color: $on-surface;
     }

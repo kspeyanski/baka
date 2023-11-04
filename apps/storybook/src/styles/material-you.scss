@@ -1,9 +1,19 @@
-@forward "baka-material-you";
+@use "baka-material-you/themes/dark" as dark-swatch;
 @use "baka-material-you" as *;
+@forward "baka-material-you";
 
 body,
 .docs-story {
+  color: $on-surface;
   background-color: $surface;
+
+  &[data-theme="dark"] {
+    @include dark-swatch.styles;
+  }
+
+  pre {
+    color: black !important;
+  }
 
   &:has(.container-high) {
     background-color: $surface-container-high;

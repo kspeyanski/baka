@@ -3,7 +3,8 @@
 
 .baka-menu {
   padding: 8px 0;
-  background-color: $surface-container;
+  color: $on-surface;
+  background-color: $surface-container-highest;
   border-radius: 4px;
   box-shadow: map-get($elevation, 2);
 }
