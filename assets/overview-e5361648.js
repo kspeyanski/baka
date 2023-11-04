@@ -1,4 +1,4 @@
-import{j as e}from"./jsx-runtime-9c4ae004.js";import{M as t}from"./index-82fe66f5.js";import{u as r}from"./index-2ef8b458.js";import"./index-1b03fe98.js";import"./iframe-d54e5879.js";import"../sb-preview/runtime.js";import"./index-91af8003.js";import"./index-d37d4223.js";import"./index-356e4a49.js";function o(s){const n=Object.assign({h2:"h2",p:"p",code:"code",a:"a",pre:"pre",ol:"ol",li:"li"},r(),s.components);return e.jsxs(e.Fragment,{children:[e.jsx(t,{title:"Material You/Overview"}),`
+import{j as e}from"./jsx-runtime-9c4ae004.js";import{M as t}from"./index-166f8d62.js";import{u as r}from"./index-2ef8b458.js";import"./index-1b03fe98.js";import"./iframe-adba3d4e.js";import"../sb-preview/runtime.js";import"./index-91af8003.js";import"./index-d37d4223.js";import"./index-356e4a49.js";function o(s){const n=Object.assign({h2:"h2",p:"p",code:"code",a:"a",pre:"pre",ol:"ol",li:"li"},r(),s.components);return e.jsxs(e.Fragment,{children:[e.jsx(t,{title:"Material You/Overview",args:{position:-10},position:-10}),`
 `,e.jsx(n.h2,{id:"overview",children:"Overview"}),`
 `,e.jsxs(n.p,{children:["The ",e.jsx(n.code,{children:"baka-material-you"})," package represents the Google's ",e.jsx(n.a,{href:"https://m3.material.io/",target:"_blank",rel:"nofollow noopener noreferrer",children:"Material You"})," design system implemented through the ",e.jsx(n.a,{href:"https://www.npmjs.com/package/baka-ui",target:"_blank",rel:"nofollow noopener noreferrer",children:e.jsx(n.code,{children:"baka-ui"})})," primitives."]}),`
 `,e.jsx(n.h2,{id:"installation",children:"Installation"}),`
@@ -30,4 +30,4 @@ import{j as e}from"./jsx-runtime-9c4ae004.js";import{M as t}from"./index-82fe66f
   href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
 />
 `})})]})}function x(s={}){const{wrapper:n}=Object.assign({},r(),s.components);return n?e.jsx(n,Object.assign({},s,{children:e.jsx(o,s)})):o(s)}export{x as default};
-//# sourceMappingURL=overview-d5b2a0ab.js.map
+//# sourceMappingURL=overview-e5361648.js.map
