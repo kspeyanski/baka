@@ -1,0 +1,2 @@
+import{c as e}from"./variant-class-names-08f4b07b.js";const t=a=>e({"baka-state--selected":a.selected,"baka-state--checked":a.checked,"baka-state--readonly":a.readOnly,"baka-state--indeterminate":a.indeterminate,"baka-state--hover":a.hovered,"baka-state--focus":a.focused,"baka-state--active":a.activated,"baka-state--disabled":a.disabled,"baka-state--empty":a.empty,"baka-state--valid":a.valid,"baka-state--invalid":a.invalid,"baka-state--dragged":a.dragged});export{t as s};
+//# sourceMappingURL=state-attributes-f1b2bd32.js.map

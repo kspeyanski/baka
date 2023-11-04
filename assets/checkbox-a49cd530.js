@@ -1,0 +1,2 @@
+import{j as m}from"./jsx-runtime-9c4ae004.js";import{c as n,v as i}from"./variant-class-names-08f4b07b.js";import{s as d}from"./state-attributes-f1b2bd32.js";const u=a=>{const{as:e="input",checked:s,indeterminate:x,hovered:l,focused:h,activated:k,disabled:p,variant:t,className:o,readOnly:c,...r}=a;return m.jsx(e,{type:"checkbox",checked:s,readOnly:c,className:n("baka-checkbox",o,d(a),i(t)),...r})};export{u as B};
+//# sourceMappingURL=checkbox-a49cd530.js.map

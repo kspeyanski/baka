@@ -1,0 +1,2 @@
+import{j as n}from"./jsx-runtime-9c4ae004.js";import{c as m,v as d}from"./variant-class-names-08f4b07b.js";import{s as c}from"./state-attributes-f1b2bd32.js";const h=a=>{const{as:s="input",checked:t,indeterminate:l,hovered:p,focused:u,activated:v,disabled:x,variant:e,className:o,readOnly:r,...i}=a;return n.jsx(s,{type:"radio",checked:t,readOnly:r,className:m("baka-radio-button",o,c(a),d(e)),...i})};export{h as B};
+//# sourceMappingURL=radio-button-63059f31.js.map
