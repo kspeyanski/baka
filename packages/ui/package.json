@@ -26,14 +26,16 @@
     "watch": "vite build --watch"
   },
   "devDependencies": {
-    "baka-core": "^0.0.4-alpha.0",
     "clsx": "^1.2.1",
     "fast-glob": "^3.3.1",
     "react": "^18",
     "react-dom": "^18",
     "rimraf": "^5.0.1",
     "vite": "^4.4.9",
-    "vite-plugin-dts": "^3.6.0"
+    "vite-plugin-dts": "^3.6.0",
+    "@vitejs/plugin-react": "^4.0.3",
+    "@types/react": "^18",
+    "@types/react-dom": "^18"
   },
   "peerDependencies": {
     "react": "^18",

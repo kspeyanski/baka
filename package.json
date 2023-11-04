@@ -15,12 +15,6 @@
     "build-storybook": "build-storybook -c .storybook -o .out",
     "prepare": "node ./scripts/prepare.mjs"
   },
-  "workspaces": [
-    "packages/*",
-    "packages/design/*",
-    "apps/*",
-    "misc/eslint"
-  ],
   "devDependencies": {
     "eslint": "^8.39.0",
     "eslint-config-prettier": "^8.8.0",
@@ -35,5 +29,9 @@
   },
   "resolutions": {
     "jackspeak": "2.1.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
   }
 }

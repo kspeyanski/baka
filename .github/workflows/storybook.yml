@@ -19,13 +19,13 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install dependencies
-        run: yarn
+        run: pnpm install
 
       - name: Build packages
-        run: yarn build-packages
+        run: pnpm build-packages
 
       - name: Build Storybook
-        run: yarn workspace baka-storybook build
+        run: pnpm --filter baka-storybook run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
