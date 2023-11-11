@@ -1,0 +1,19 @@
+$spacing: (
+  xxs: 2px,
+  xs: 4px,
+  sm: 8px,
+  md: 16px,
+  lg: 24px,
+  xl: 32px,
+  xxl: 40px,
+);
+
+@function spacing($size: md) {
+  @return var(--spacing-#{size}, map-get($spacing, $size));
+}
+
+@mixin spacing-styles() {
+  @each $key, $value in $spacing {
+    --spacing-#{$key}: #{$value};
+  }
+}

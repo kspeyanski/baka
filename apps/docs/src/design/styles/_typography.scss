@@ -1,0 +1,124 @@
+$font-family: (
+  sans:
+    'var(--font-geist-sans, "Geist","Inter",-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif)',
+  mono:
+    'var(--font-geist-mono, "Geist Mono","Inter",-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif)',
+);
+
+$font-size: (
+  base: 16px,
+  h1: 40px,
+  h2: 32px,
+  h3: 24px,
+  h4: 20px,
+  h5: 18px,
+  h6: 16px,
+  body-large: 16px,
+  body: 14px,
+  body-small: 12px,
+);
+
+$line-height: (
+  heading: 1.2,
+  body: 1.5,
+);
+
+$typography: (
+  h1: (
+    font-size: map-get($font-size, h1),
+    font-family: map-get($font-family, sans),
+    line-height: map-get($line-height, heading),
+    font-weight: 600,
+  ),
+  h2: (
+    font-size: map-get($font-size, h2),
+    font-family: map-get($font-family, sans),
+    line-height: map-get($line-height, heading),
+    font-weight: 600,
+  ),
+  h3: (
+    font-size: map-get($font-size, h3),
+    font-family: map-get($font-family, sans),
+    line-height: map-get($line-height, heading),
+    font-weight: 600,
+  ),
+  h4: (
+    font-size: map-get($font-size, h4),
+    font-family: map-get($font-family, sans),
+    line-height: map-get($line-height, heading),
+    font-weight: 600,
+  ),
+  h5: (
+    font-size: map-get($font-size, h5),
+    font-family: map-get($font-family, sans),
+    line-height: map-get($line-height, heading),
+    font-weight: 600,
+  ),
+  h6: (
+    font-size: map-get($font-size, h6),
+    font-family: map-get($font-family, sans),
+    line-height: map-get($line-height, heading),
+    font-weight: 600,
+  ),
+  body-large: (
+    font-size: map-get($font-size, body-large),
+    font-family: map-get($font-family, sans),
+    line-height: map-get($line-height, body),
+    font-weight: 400,
+  ),
+  body: (
+    font-size: map-get($font-size, body),
+    font-family: map-get($font-family, sans),
+    line-height: map-get($line-height, body),
+    font-weight: 400,
+  ),
+  body-small: (
+    font-size: map-get($font-size, body-small),
+    font-family: map-get($font-family, sans),
+    line-height: map-get($line-height, body),
+    font-weight: 400,
+  ),
+  link: (
+    font-weight: 400,
+  ),
+  button: (
+    font-size: map-get($font-size, body),
+    font-family: map-get($font-family, sans),
+    line-height: map-get($line-height, body),
+    font-weight: 600,
+  ),
+  label: (
+    font-size: map-get($font-size, body),
+    font-family: map-get($font-family, sans),
+    line-height: map-get($line-height, body),
+    font-weight: 600,
+  ),
+  code: (
+    font-family: map-get($font-family, mono),
+    font-size: map-get($font-size, body-small),
+    line-height: map-get($line-height, body),
+    font-weight: 400,
+  ),
+);
+
+@mixin typography($key) {
+  @debug $key;
+  @if map-has-key($typography, $key) {
+    $value: map-get($typography, $key);
+    @each $property, $property-value in $value {
+      #{$property}: #{$property-value};
+    }
+  }
+}
+
+@mixin typography-styles() {
+  @each $key, $value in $font-family {
+    --typography-font-family-#{$key}: #{$value};
+  }
+  @each $key, $value in $font-size {
+    --typography-font-size-#{$key}: #{$value};
+  }
+  @each $key, $value in $line-height {
+    --typography-line-height-#{$key}: #{$value};
+  }
+}

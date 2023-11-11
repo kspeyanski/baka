@@ -1,0 +1,8 @@
+@use "./styles/" as *;
+@forward "./components/";
+@forward "baka-core";
+
+:root {
+  @include spacing-styles();
+  @include typography-styles();
+}

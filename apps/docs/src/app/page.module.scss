@@ -1,0 +1,13 @@
+@use "@/design" as *;
+
+.highlight {
+  --color-gradient: linear-gradient(
+    153deg,
+    rgba(220, 20, 60, 1) 0%,
+    rgba(95, 154, 142, 1) 90%,
+    rgba(0, 255, 203, 1) 100%
+  );
+  background: var(--color-gradient);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

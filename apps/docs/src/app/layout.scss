@@ -1,0 +1,6 @@
+@use "../design/styles/" as *;
+
+body {
+  color: swatch(foreground);
+  background-color: swatch(background);
+}
