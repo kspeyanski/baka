@@ -1,0 +1,25 @@
+{
+    "name": "baka-tailwind",
+    "private": true,
+    "homepage": "https://baka-ui.com",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/kspeyanski/baka"
+    },
+    "version": "0.0.7-alpha.0",
+    "types": "./types/index.d.ts",
+    "sass": "./_index.scss",
+    "license": "MIT",
+    "scripts": {
+        "build": "sass --load-path=./node_modules ./_index.scss ./dist/index.css",
+        "watch": "sass --watch --load-path=./node_modules ./_index.scss ./dist/index.css"
+    },
+    "devDependencies": {
+        "baka-core": "workspace:*",
+        "sass": "^1.68.0"
+    },
+    "peerDependencies": {
+        "baka-core": "workspace:*"
+    },
+    "gitHead": "532e6985e8208e2dc614d825bcb0cf81b579f331"
+}
