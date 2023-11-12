@@ -1,6 +1,4 @@
-@use "./styles/" as *;
-@forward "./components/";
-@forward "baka-core";
+@use "./index.scss" as *;
 
 :root {
   @include spacing-styles();

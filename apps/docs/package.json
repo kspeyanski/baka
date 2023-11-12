@@ -11,6 +11,7 @@
   "dependencies": {
     "autoprefixer": "^10.4.16",
     "baka-core": "workspace:0.0.7-alpha.0",
+    "baka-material-you": "workspace:0.0.7-alpha.0",
     "baka-ui": "workspace:0.0.7-alpha.0",
     "clsx": "^1.2.1",
     "geist": "^1.1.0",

@@ -45,6 +45,9 @@ importers:
       baka-core:
         specifier: workspace:0.0.7-alpha.0
         version: link:../../packages/design/core
+      baka-material-you:
+        specifier: workspace:0.0.7-alpha.0
+        version: link:../../packages/design/material-you
       baka-ui:
         specifier: workspace:0.0.7-alpha.0
         version: link:../../packages/ui
