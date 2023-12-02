@@ -8,7 +8,7 @@ export interface BakaSwitchProps
   extends React.HTMLAttributes<HTMLInputElement>,
     BakaProps,
     BakaSwitchStates {
-  variant?: BakaVariant<BakaSwitchVariant>; 
+  variant?: BakaVariant<BakaDesign["SwitchVariant"]>; 
 }
 
 export const BakaSwitch: BakaComponent<"input", BakaSwitchProps> = (props) => {

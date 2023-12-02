@@ -1,0 +1,20 @@
+@use "../../styles.scss" as *;
+
+.pre {
+  background: $surface-container;
+  padding: 16px;
+  border-radius: 4px;
+  box-shadow: map-get($elevation, 1);
+  overflow-x: auto;
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.code {
+  font-size: map-get($font-size, body-medium);
+  font-family: map-get($font-family, mono);
+}

@@ -1,6 +1,14 @@
-@use "./index.scss" as *;
+$font-family: (
+  sans: var(--font-family--sans),
+  serif: var(--font-family--serif),
+  mono: var(--font-family--mono),
+);
+
+@use "baka-material-you" as material-you with (
+  $font-family: $font-family
+);
+@forward "baka-material-you";
 
 :root {
-  // @include spacing-styles();
-  // @include typography-styles();
+  @include material-you.styles();
 }

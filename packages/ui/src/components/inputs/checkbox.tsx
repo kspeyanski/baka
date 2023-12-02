@@ -7,7 +7,7 @@ import { stateClassNames, variantClassNames } from "../../utils";
 export interface BakaCheckboxProps
   extends React.HTMLAttributes<HTMLInputElement>,
     BakaCheckboxStates {
-  variant?: BakaVariant<BakaCheckboxVariant>;
+  variant?: BakaVariant<BakaDesign["CheckboxVariant"]>;
 }
 
 export const BakaCheckbox: BakaComponent<"input", BakaCheckboxProps> = (props) => {

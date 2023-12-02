@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { BakaListItemVariant } from "baka-core";
+import { BakaDesign } from "baka-core";
 import { BakaComponent, BakaProps, BakaStates, BakaVariant } from "../../../src/models";
 import { stateClassNames, variantClassNames } from "../../utils";
 
@@ -7,7 +7,7 @@ export interface BakaListItemProps
   extends React.HTMLAttributes<HTMLLIElement>,
     BakaProps,
     BakaStates {
-  variant?: BakaVariant<BakaListItemVariant>;
+  variant?: BakaVariant<BakaDesign["ListItemVariant"]>;
 }
 
 export const BakaListItem: BakaComponent<"li", BakaListItemProps> = (props) => {

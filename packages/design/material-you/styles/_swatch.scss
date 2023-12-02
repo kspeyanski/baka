@@ -108,3 +108,9 @@ $inverse-on-surface: var(--inverse-on-surface, map-get($swatch, inverse-on-surfa
 $inverse-primary: var(--inverse-primary, map-get($swatch, inverse-primary));
 $scrim: var(--scrim, map-get($swatch, scrim));
 $shadow: var(--shadow, map-get($swatch, shadow));
+
+@mixin swatch--styles() {
+  @each $key, $value in $swatch {
+    --swatch--#{$key}: #{$value};
+  }
+}

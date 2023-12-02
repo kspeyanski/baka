@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": ".",
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -13,6 +15,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "composite": true,
     "plugins": [
       {
         "name": "next"
@@ -21,15 +24,10 @@
     "paths": {
       "@/*": ["./src/*"],
       "baka-ui": ["../../packages/ui/src/index.ts"],
-      "baka-core": ["../../packages/design/core/_index.scss"]
+      "baka-core": ["../../packages/design/core/_index.scss"],
+      "contentlayer/generated": ["./.contentlayer/generated"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    "./src/design/types/katana.d.ts"
-  ],
+  "include": ["next-env.d.ts", "src/**/*.tsx", ".next/types/**/*.ts", ".contentlayer/generated"],
   "exclude": ["node_modules"]
 }

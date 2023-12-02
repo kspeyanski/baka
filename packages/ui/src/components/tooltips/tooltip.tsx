@@ -1,11 +1,11 @@
-import type { BakaTooltipVariant } from "baka-core";
+import type { BakaDesign } from "baka-core";
 import clsx from "clsx";
 
 import { BakaComponent, BakaProps, BakaVariant } from "../../../src/models";
 import { variantClassNames } from "../../utils";
 
 export interface BakaTooltipProps extends React.HTMLAttributes<HTMLDivElement>, BakaProps {
-  variant?: BakaVariant<BakaTooltipVariant>; 
+  variant?: BakaVariant<BakaDesign["TooltipVariant"]>; 
 }
 
 export const BakaTooltip: BakaComponent<"div", BakaTooltipProps> = (props) => {

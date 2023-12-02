@@ -1,18 +1,16 @@
-declare var __baka_DESIGN: string;
+export type BakaDesign = {
+  AvatarVariant: string;
+  BadgeVariant: string;
 
-declare module "baka-core" {
-  type BakaAvatarVariant = string;
-  type BakaBadgeVariant = string;
-
-  type BakaButtonVariant = string;
-  type BakaButtonStates = {
+  ButtonVariant: string;
+  ButtonStates: {
     hovered?: boolean;
     focused?: boolean;
     activated?: boolean;
     disabled?: boolean;
   };
 
-  type BakaRadioButtonStates = {
+  RadioButtonStates: {
     hovered?: boolean;
     focused?: boolean;
     activated?: boolean;
@@ -20,12 +18,12 @@ declare module "baka-core" {
     checked?: boolean;
   };
 
-  type BakaBottomSheetVariant = string;
-  type BakaCardVariant = string;
-  type BakaChipVariant = string;
+  BottomSheetVariant: string;
+  CardVariant: string;
+  ChipVariant: string;
 
-  type BakaCheckboxVariant = string;
-  type BakaCheckboxStates = {
+  CheckboxVariant: string;
+  CheckboxStates: {
     hovered?: boolean;
     focused?: boolean;
     activated?: boolean;
@@ -33,7 +31,7 @@ declare module "baka-core" {
     disabled?: boolean;
   };
 
-  type BakaSwitchStates = {
+  SwitchStates: {
     hovered?: boolean;
     focused?: boolean;
     activated?: boolean;
@@ -41,27 +39,26 @@ declare module "baka-core" {
     disabled?: boolean;
   };
 
-  type BakaTextFieldStates = {
+  TextFieldStates: {
     hovered?: boolean;
     focused?: boolean;
     activated?: boolean;
     disabled?: boolean;
   };
 
-  type BakaDialogVariant = string;
-  type BakaDividerVariant = string;
-  type BakaDividerVariant = "horizontal" | "vertical";
-  type BakaHeadingVariant = string;
-  type BakaParagraphVariant = string;
-  type BakaListItemVariant = string;
-  type BakaTextVariant = string;
-  type BakaSwitchVariant = string;
-  type BakaIconVariant = string;
-  type BakaTextFieldVariant = string;
-  type BakaLabelVariant = string;
-  type BakaTabGroupVariant = string;
-  type BakaTooltipVariant = string;
-  type BakaTopBarVariant = string;
-  type BakaContainerVariant = string;
-  type BakaColumnVariant = string;
-}
+  DialogVariant: string;
+  DividerVariant: "horizontal" | "vertical";
+  HeadingVariant: string;
+  ParagraphVariant: string;
+  ListItemVariant: string;
+  TextVariant: string;
+  SwitchVariant: string;
+  IconVariant: string;
+  TextFieldVariant: string;
+  LabelVariant: string;
+  TabGroupVariant: string;
+  TooltipVariant: string;
+  TopBarVariant: string;
+  ContainerVariant: string;
+  ColumnVariant: string;
+};

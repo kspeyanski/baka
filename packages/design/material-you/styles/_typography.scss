@@ -1,128 +1,247 @@
+$font-family: (
+  sans: '"Roboto"',
+  serif: '"Roboto Serif"',
+  mono: '"Roboto Mono"',
+) !default;
+
+@mixin font-family($key) {
+  @if (map-has-key($font-family, $key)) {
+    font-family: var(--typography--font-family--#{$key}, map-get($font-family, $key));
+  }
+}
+
+$font-size: (
+  display-large: 57px,
+  display-medium: 45px,
+  display-small: 36px,
+  headline-large: 32px,
+  headline-medium: 28px,
+  headline-small: 24px,
+  title-large: 22px,
+  title-medium: 16px,
+  title-small: 14px,
+  label-large: 14px,
+  label-medium: 12px,
+  label-small: 11px,
+  body-large: 16px,
+  body-medium: 14px,
+  body-small: 12px,
+);
+
+@mixin font-size($key) {
+  @if (map-has-key($font-size, $key)) {
+    font-size: var(--typography--font-size--#{$key}, map-get($font-size, $key));
+  }
+}
+
+$letter-spacing: (
+  display-large: -0.25px,
+  display-medium: 0px,
+  display-small: 0px,
+  headline-large: 0px,
+  headline-medium: 0px,
+  headline-small: 0px,
+  title-large: 0px,
+  title-medium: 0.15px,
+  title-small: 0.1px,
+  body-large: 0.5px,
+  body-medium: 0.25px,
+  body-small: 0.4px,
+  label-large: 0.1px,
+  label-medium: 0.5px,
+  label-small: 0.5px,
+);
+
+@mixin letter-spacing($key) {
+  @if (map-has-key($letter-spacing, $key)) {
+    letter-spacing: var(--typography--letter-spacing--#{$key}, map-get($letter-spacing, $key));
+  }
+}
+
+$line-height: (
+  display-large: 64px,
+  display-medium: 52px,
+  display-small: 44px,
+  headline-large: 40px,
+  headline-medium: 36px,
+  headline-small: 32px,
+  title-large: 28px,
+  title-medium: 24px,
+  title-small: 20px,
+  label-large: 20px,
+  label-medium: 16px,
+  label-small: 16px,
+  body-large: 24px,
+  body-medium: 20px,
+  body-small: 16px,
+);
+
+@mixin line-height($key) {
+  @if (map-has-key($line-height, $key)) {
+    line-height: var(--typography--line-height--#{$key}, map-get($line-height, $key));
+  }
+}
+
 @mixin display-large {
-  font-family: "Roboto";
+  @include font-size(display-large);
+  @include font-family(sans);
+  @include letter-spacing(display-large);
+  @include line-height(display-large);
+
   font-style: normal;
   font-weight: 400;
-  font-size: 57px;
-  line-height: 64px;
-  letter-spacing: -0.25px;
 }
 
 @mixin display-medium {
-  font-family: "Roboto";
+  @include font-size(display-medium);
+  @include font-family(sans);
+  @include letter-spacing(display-medium);
+  @include line-height(display-medium);
+
   font-style: normal;
   font-weight: 400;
-  font-size: 45px;
-  line-height: 52px;
 }
 
 @mixin display-small {
-  font-family: "Roboto";
+  @include font-size(display-small);
+  @include font-family(sans);
+  @include letter-spacing(display-small);
+  @include line-height(display-small);
+
   font-style: normal;
   font-weight: 400;
-  font-size: 36px;
-  line-height: 44px;
 }
 
 @mixin headline-large {
-  font-family: "Roboto";
+  @include font-size(headline-large);
+  @include font-family(sans);
+
   font-style: normal;
   font-weight: 400;
-  font-size: 32px;
   line-height: 40px;
 }
 
 @mixin headline-medium {
-  font-family: "Roboto";
+  @include font-size(headline-medium);
+  @include font-family(sans);
+  @include letter-spacing(headline-medium);
+
   font-style: normal;
   font-weight: 400;
-  font-size: 28px;
   line-height: 36px;
 }
 
 @mixin headline-small {
-  font-family: "Roboto";
+  @include font-size(headline-small);
+  @include font-family(sans);
+  @include letter-spacing(headline-small);
+  @include line-height(headline-small);
+
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 32px;
 }
 
 @mixin title-large {
-  font-family: "Roboto";
+  @include font-size(title-large);
+  @include font-family(sans);
+  @include letter-spacing(title-large);
+  @include line-height(title-large);
+
   font-style: normal;
   font-weight: 500;
-  font-size: 22px;
-  line-height: 28px;
 }
 
 @mixin title-medium {
-  font-family: "Roboto";
+  @include font-size(title-medium);
+  @include font-family(sans);
+  @include letter-spacing(title-medium);
+  @include line-height(title-medium);
+
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.15px;
 }
 
 @mixin title-small {
-  font-family: "Roboto";
+  @include font-size(title-small);
+  @include font-family(sans);
+  @include letter-spacing(title-small);
+  @include line-height(title-small);
+
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 0.1px;
 }
 
 @mixin label-large {
-  font-family: "Roboto";
+  @include font-size(label-large);
+  @include font-family(sans);
+  @include letter-spacing(label-large);
+  @include line-height(label-large);
+
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 0.1px;
 }
 
 @mixin label-medium {
-  font-family: "Roboto";
+  @include font-size(label-medium);
+  @include font-family(sans);
+  @include letter-spacing(label-medium);
+  @include line-height(label-medium);
+
   font-style: normal;
   font-weight: 500;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0.5px;
 }
 
 @mixin label-small {
-  font-family: "Roboto";
+  @include font-size(label-small);
+  @include font-family(sans);
+  @include letter-spacing(label-small);
+  @include line-height(label-small);
+
   font-style: normal;
   font-weight: 500;
-  font-size: 11px;
-  line-height: 16px;
-  letter-spacing: 0.5px;
 }
 
 @mixin body-large {
-  font-family: "Roboto";
+  @include font-size(body-large);
+  @include font-family(sans);
+  @include letter-spacing(body-large);
+  @include line-height(body-large);
+
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.5px;
 }
 
 @mixin body-medium {
-  font-family: "Roboto";
+  @include font-size(body-medium);
+  @include font-family(sans);
+  @include letter-spacing(body-medium);
+  @include line-height(body-medium);
+
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 0.25px;
 }
 
 @mixin body-small {
-  font-family: "Roboto";
+  @include font-size(body-small);
+  @include font-family(sans);
+  @include letter-spacing(body-small);
+  @include line-height(body-small);
+
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0.4px;
+}
+
+@mixin typography--styles {
+  @each $name, $value in $font-family {
+    --typography--font-family--#{$name}: #{$value};
+  }
+  @each $key, $value in $font-size {
+    --typography--font-size--#{$key}: #{$value};
+  }
+  @each $key, $value in $letter-spacing {
+    --typography--letter-spacing--#{$key}: #{$value};
+  }
+  @each $key, $value in $line-height {
+    --typography--line-height--#{$key}: #{$value};
+  }
 }

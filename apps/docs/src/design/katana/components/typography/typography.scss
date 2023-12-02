@@ -1,7 +1,7 @@
 @use "baka-core" as *;
 @use "../../styles/" as *;
 
-.katana-heading {
+.heading {
   color: swatch(emphasis);
 
   @include variant(hero) {
@@ -35,7 +35,7 @@
   }
 }
 
-.katana-paragraph {
+.paragraph {
   @include typography(body);
 
   @include variant(sub-hero) {
@@ -52,7 +52,7 @@
   }
 }
 
-.katana-text {
+.text {
   @include typography(body);
 
   @include variant(body-large) {
@@ -68,7 +68,7 @@
   }
 }
 
-.katana-label {
+.label {
   @include typography(body-small);
 
   @include variant(body) {

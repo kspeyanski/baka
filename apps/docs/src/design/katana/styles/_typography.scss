@@ -102,7 +102,6 @@ $typography: (
 );
 
 @mixin typography($key) {
-  @debug $key;
   @if map-has-key($typography, $key) {
     $value: map-get($typography, $key);
     @each $property, $property-value in $value {
@@ -113,12 +112,12 @@ $typography: (
 
 @mixin typography-styles() {
   @each $key, $value in $font-family {
-    --typography-font-family-#{$key}: #{$value};
+    --typography--font-family--#{$key}: #{$value};
   }
   @each $key, $value in $font-size {
-    --typography-font-size-#{$key}: #{$value};
+    --typography--font-size--#{$key}: #{$value};
   }
   @each $key, $value in $line-height {
-    --typography-line-height-#{$key}: #{$value};
+    --typography--line-height--#{$key}: #{$value};
   }
 }

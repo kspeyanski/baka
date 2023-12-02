@@ -1,12 +1,12 @@
 import { BakaStates } from "../../models/states";
 import clsx from "clsx";
-import { BakaIconVariant } from "baka-core";
+import { BakaDesign } from "baka-core";
 import { BakaVariant } from "../../models/variant";
 import { variantClassNames } from "../../utils";
 import { BakaComponent } from "../../models/component";
 
 export interface BakaIconProps extends React.HTMLAttributes<HTMLElement>, BakaStates {
-  variant?: BakaVariant<BakaIconVariant>;
+  variant?: BakaVariant<BakaDesign["IconVariant"]>;
 }
 
 export const BakaIcon: BakaComponent<"i", BakaIconProps> = (props) => {

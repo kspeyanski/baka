@@ -1,0 +1,28 @@
+@use "baka-core" as *;
+
+.heading {
+  @include variant("display-medium") {
+    font-weight: 500;
+  }
+
+  @include variant("article") {
+    &:not(:first-child) {
+      margin-top: 2rem;
+    }
+    margin-bottom: 1rem;
+  }
+}
+
+.text {
+  @include variant("article") {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+}
+
+.paragraph {
+  @include variant("article") {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}

@@ -1,4 +1,11 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const { withContentlayer } = require("next-contentlayer");
+const withMDX = require("@next/mdx")();
 
-module.exports = nextConfig
+const nextConfig = withContentlayer(
+  withMDX({
+    pageExtensions: ["js", "jsx", "mdx", "md", "ts", "tsx"],
+  })
+);
+
+module.exports = nextConfig;

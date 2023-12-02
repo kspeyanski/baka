@@ -1,6 +1,6 @@
 @use "./index.scss" as *;
 
 :root {
-  @include spacing-styles();
+  @include spacing--styles();
   @include typography-styles();
 }

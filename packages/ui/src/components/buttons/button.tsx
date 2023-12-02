@@ -7,7 +7,7 @@ export interface BakaButtonProps
   extends React.HTMLAttributes<HTMLButtonElement>,
     BakaProps,
     BakaButtonStates {
-  variant?: BakaVariant<BakaButtonVariant>;
+  variant?: BakaVariant<BakaDesign["ButtonVariant"]>;
 }
 
 export const BakaButton: BakaComponent<"button", BakaButtonProps> = (props) => {

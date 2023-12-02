@@ -1,11 +1,11 @@
-import type { BakaTextFieldVariant } from "baka-core";
+import type { BakaDesign } from "baka-core";
 import clsx from "clsx";
 
 import { BakaComponent, BakaStates, BakaVariant } from "../../../src/models";
 import { stateClassNames, variantClassNames } from "../../utils";
 
 export interface BakaTextFieldProps extends React.HTMLAttributes<HTMLInputElement>, BakaStates {
-  variant?: BakaVariant<BakaTextFieldVariant>;
+  variant?: BakaVariant<BakaDesign["TextFieldVariant"]>;
 }
 
 export const BakaTextField: BakaComponent<"span", BakaTextFieldProps> = (props) => {

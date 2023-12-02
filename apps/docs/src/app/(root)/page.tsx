@@ -2,14 +2,12 @@ import styles from "./page.module.scss";
 import { Container } from "@/components/layout/container";
 import { Row } from "@/components/layout/row";
 import { Column } from "@/components/layout/column";
-import { Header } from "@/templates/header";
 import { Heading, Paragraph, Text } from "@/components/typography";
 import { Button } from "@/components/buttons/button";
 
 export default function Home() {
   return (
     <>
-      <Header />
       <Container>
         <Row>
           <Column>

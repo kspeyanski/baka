@@ -36,7 +36,7 @@ $breakpoints: (
     width: 880px,
     columns: 12,
     gutter: 24px,
-    margin: 80px,
+    margin: 24px,
     regions: (
       left: (
         width: 72px,
@@ -48,7 +48,7 @@ $breakpoints: (
     width: 1128px,
     columns: 12,
     gutter: 24px,
-    margin: 80px,
+    margin: 24px,
     regions: (
       left: (
         width: 72px,
@@ -56,3 +56,9 @@ $breakpoints: (
     ),
   ),
 );
+
+@mixin layout--styles {
+  @each $breakpoint, $properties in $breakpoints {
+    --layout--screen--#{$breakpoint}: #{map-get($properties, screen)};
+  }
+}

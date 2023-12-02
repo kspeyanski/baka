@@ -1,11 +1,11 @@
-import type { BakaColumnVariant } from "baka-core";
+import type { BakaDesign } from "baka-core";
 import clsx from "clsx";
 
 import { BakaComponent, BakaProps, BakaVariant } from "../../../src/models";
 import { variantClassNames } from "../../utils";
 
 export interface BakaColumnProps extends React.HTMLAttributes<HTMLDivElement>, BakaProps {
-  variant?: BakaVariant<BakaColumnVariant>; 
+  variant?: BakaVariant<BakaDesign["ColumnVariant"]>; 
   count?: number;
 }
 

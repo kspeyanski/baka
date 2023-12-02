@@ -1,6 +1,6 @@
 @use "../../styles/" as *;
 
-.katana-row {
+.row {
   @each $size, $breakpoint in $breakpoints {
     $_gutter: map-get($breakpoint, gutter);
     $_screen: map-get($breakpoint, screen);

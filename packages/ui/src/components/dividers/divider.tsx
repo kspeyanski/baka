@@ -1,11 +1,11 @@
-import type { BakaDividerVariant } from "baka-core";
+import type { BakaDesign } from "baka-core";
 import clsx from "clsx";
 
 import { BakaComponent, BakaProps, BakaVariant } from "../../../src/models";
 import { variantClassNames } from "../../utils";
 
 export interface BakaDividerProps extends React.HTMLAttributes<HTMLDivElement>, BakaProps {
-  variant?: BakaVariant<BakaDividerVariant>; 
+  variant?: BakaVariant<BakaDesign["DividerVariant"]>; 
 }
 
 export const BakaDivider: BakaComponent<"div", BakaDividerProps> = (props) => {

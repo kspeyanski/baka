@@ -1,4 +1,4 @@
-import type { BakaChipVariant } from "baka-core";
+import type { BakaDesign } from "baka-core";
 import clsx from "clsx";
 
 import { BakaComponent, BakaProps, BakaStates, BakaVariant } from "../../../src/models";
@@ -8,7 +8,7 @@ export interface BakaChipProps
   extends React.HTMLAttributes<HTMLSpanElement>,
     BakaProps,
     BakaStates {
-  variant?: BakaVariant<BakaChipVariant>; 
+  variant?: BakaVariant<BakaDesign["ChipVariant"]>; 
 }
 
 export const BakaChip: BakaComponent<"span", BakaChipProps> = (props) => {

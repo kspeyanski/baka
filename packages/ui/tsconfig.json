@@ -18,6 +18,6 @@
       "@models": ["./src/models/index.ts"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.json", "./types/*.d.ts"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.json", "./types/*.d.ts", "src/models/design.ts"],
   "exclude": ["node_modules", "dist"]
 }

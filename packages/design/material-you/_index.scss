@@ -1,3 +1,10 @@
 @forward "baka-core";
 @forward "./styles";
+@use "./styles/" as *;
 @forward "./components";
+
+@mixin styles {
+  @include swatch--styles();
+  @include typography--styles();
+  @include layout--styles();
+}

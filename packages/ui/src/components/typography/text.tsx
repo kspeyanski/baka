@@ -1,11 +1,11 @@
 import clsx from "clsx";
 
 import { BakaComponent, BakaProps, BakaVariant } from "../../../src/models";
-import { BakaTextVariant } from "baka-core";
+import { BakaDesign } from "baka-core";
 import { variantClassNames } from "../../utils";
 
 export interface BakaTextProps extends React.HTMLAttributes<HTMLSpanElement>, BakaProps {
-  variant?: BakaVariant<BakaTextVariant>;
+  variant?: BakaVariant<BakaDesign["TextVariant"]>;
 }
 
 export const BakaText: BakaComponent<"span", BakaTextProps> = (props) => {

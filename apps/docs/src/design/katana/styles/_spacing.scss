@@ -9,11 +9,11 @@ $spacing: (
 );
 
 @function spacing($size: md) {
-  @return var(--spacing-#{size}, map-get($spacing, $size));
+  @return var(--spacing--#{size}, map-get($spacing, $size));
 }
 
-@mixin spacing-styles() {
+@mixin spacing--styles() {
   @each $key, $value in $spacing {
-    --spacing-#{$key}: #{$value};
+    --spacing--#{$key}: #{$value};
   }
 }

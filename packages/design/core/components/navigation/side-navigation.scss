@@ -1,6 +1,7 @@
 @mixin side-navigation {
   display: flex;
   flex-direction: column;
+  min-height: min-content;
 }
 
 .baka-side-navigation {

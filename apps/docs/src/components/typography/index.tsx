@@ -13,20 +13,20 @@ import clsx from "clsx";
 
 export type HeadingProps = BakaHeadingProps;
 export const Heading: BakaComponent<"h1", HeadingProps> = (props) => {
-  return <BakaHeading {...props} className={clsx("katana-heading", props.className)} />;
+  return <BakaHeading {...props} className={clsx("heading", props.className)} />;
 };
 
 export type TextProps = BakaTextProps;
 export const Text: BakaComponent<"p", TextProps> = (props) => {
-  return <BakaText {...props} className={clsx("katana-text", props.className)} />;
+  return <BakaText {...props} className={clsx("text", props.className)} />;
 };
 
 export type LabelProps = BakaLabelProps;
 export const Label: BakaComponent<"label", LabelProps> = (props) => {
-  return <BakaLabel {...props} className={clsx("katana-label", props.className)} />;
+  return <BakaLabel {...props} className={clsx("label", props.className)} />;
 };
 
 export type ParagraphProps = BakaParagraphProps;
 export const Paragraph: BakaComponent<"p", ParagraphProps> = (props) => {
-  return <BakaParagraph {...props} className={clsx("katana-paragraph", props.className)} />;
+  return <BakaParagraph {...props} className={clsx("paragraph", props.className)} />;
 };

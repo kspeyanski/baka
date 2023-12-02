@@ -5,8 +5,6 @@
   --color: #{$on-surface-variant};
   --state: #{$on-surface};
 
-  cursor: pointer;
-
   gap: 12px;
   border-radius: 100px;
   padding: 16px 24px 16px 16px;
@@ -35,7 +33,9 @@
     @include motion-transition-TBD(color, background);
   }
 
-  @include hover {
+  @include hover(false) {
+    cursor: pointer;
+
     @include state-layer {
       background: color-mix(in srgb, var(--state) 0.08 * 100%, transparent);
     }
@@ -58,5 +58,11 @@
     --state: #{$on-secondary-container};
 
     background: $secondary-container;
+  }
+
+  :last-child {
+    &:is(.baka-icon) {
+      margin-right: -16px;
+    }
   }
 }

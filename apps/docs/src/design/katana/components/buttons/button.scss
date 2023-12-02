@@ -1,7 +1,7 @@
 @use "baka-core" as *;
 @use "../../styles/" as *;
 
-.katana-button {
+.button {
   --color-gradient: linear-gradient(
     153deg,
     #{swatch(brand)} 0%,

@@ -1,6 +1,6 @@
 @use "../../styles/" as *;
 
-.katana-column {
+.column {
   @each $size, $breakpoint in $breakpoints {
     $_width: map-get($breakpoint, width);
     $_screen: map-get($breakpoint, screen);

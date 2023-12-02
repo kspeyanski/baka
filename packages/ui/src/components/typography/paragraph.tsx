@@ -1,11 +1,11 @@
 import clsx from "clsx";
 
 import { BakaComponent, BakaProps, BakaVariant } from "../../../src/models";
-import { BakaParagraphVariant } from "baka-core";
+import { BakaDesign } from "baka-core";
 import { variantClassNames } from "../../utils";
 
 export interface BakaParagraphProps extends React.HTMLAttributes<HTMLParagraphElement>, BakaProps {
-  variant?: BakaVariant<BakaParagraphVariant>;
+  variant?: BakaVariant<BakaDesign["ParagraphVariant"]>;
 }
 
 export const BakaParagraph: BakaComponent<"p", BakaParagraphProps> = (props) => {

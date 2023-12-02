@@ -1,11 +1,11 @@
-import type { BakaCardVariant } from "baka-core";
+import type { BakaDesign } from "baka-core";
 import clsx from "clsx";
 
 import { BakaComponent, BakaProps, BakaVariant } from "../../../src/models";
 import { variantClassNames } from "../../utils";
 
 export interface BakaCardProps extends React.HTMLAttributes<HTMLDivElement>, BakaProps {
-  variant?: BakaVariant<BakaCardVariant>; 
+  variant?: BakaVariant<BakaDesign["CardVariant"]>; 
 }
 
 export const BakaCard: BakaComponent<"div", BakaCardProps> = (props) => {
