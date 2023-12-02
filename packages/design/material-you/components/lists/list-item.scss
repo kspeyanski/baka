@@ -28,6 +28,7 @@
   @include ripple(var(--ripple), $scale: 10);
 
   @include hover($readonly: false) {
+    cursor: pointer;
     --state: color-mix(in srgb, var(--state) 0.08 * 100%, transparent);
   }
 

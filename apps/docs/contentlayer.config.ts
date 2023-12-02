@@ -3,6 +3,7 @@ import p from "path";
 import highlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import GithubSlugger from "github-slugger";
+import remarkGfm from "remark-gfm";
 
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
 
@@ -59,6 +60,7 @@ export default makeSource({
   contentDirPath: "./data",
   documentTypes: [Docs],
   mdx: {
+    remarkPlugins: [remarkGfm],
     // @ts-expect-error
     rehypePlugins: [highlight, rehypeSlug],
   },

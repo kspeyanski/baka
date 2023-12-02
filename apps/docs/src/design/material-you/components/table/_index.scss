@@ -1,0 +1,10 @@
+@use "../../styles.scss" as *;
+
+.table {
+  @include body-medium;
+}
+
+.table-header-cell {
+  display: table-cell;
+  font-weight: bold;
+}

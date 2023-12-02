@@ -1,5 +1,6 @@
 import { Label, Text } from "@/components/typography";
 import { BakaDivider } from "baka-ui";
+import clsx from "clsx";
 import Link from "next/link";
 
 export type TableOfContentsProps = {
@@ -19,7 +20,12 @@ export const TableOfContents = ({ data }: TableOfContentsProps) => {
         {data.map((item) =>
           item.level > 1 ? (
             <li key={item.slug}>
-              <Text as={Link} href={`#${item.slug}`} variant={"title-small"} className="text-on-surface-variant">
+              <Text
+                as={Link}
+                href={`#${item.slug}`}
+                variant={"title-small"}
+                className={clsx(`text-on-surface-variant`)}
+              >
                 {item.text}
               </Text>
             </li>

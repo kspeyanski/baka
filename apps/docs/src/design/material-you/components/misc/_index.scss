@@ -1,0 +1,11 @@
+@use "../../styles.scss" as *;
+
+.ul {
+  @include body-medium;
+}
+
+.li {
+  & + & {
+    margin-top: 4px;
+  }
+}
