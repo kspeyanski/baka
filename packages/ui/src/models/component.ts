@@ -16,4 +16,4 @@ export type BakaComponent<DE extends React.ElementType | React.ComponentType, P 
   E extends React.ElementType | React.ComponentType = DE
 >(
   props: BakaComponentProps<E, P>
-) => React.ReactElement;
+) => React.ReactElement | Promise<React.ReactElement>;
