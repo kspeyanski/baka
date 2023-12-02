@@ -1,5 +1,5 @@
-import "@/design/material-you/global.css";
 import "./layout.scss";
+import "@/design/material-you/global.css";
 
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -53,12 +53,7 @@ export default function MaterialYouLayout({ children }: { children: React.ReactN
               <Column count={3} className="hidden md:flex sticky top-[100px] h-[calc(100%-100px)] ">
                 <Sidenav />
               </Column>
-              <Column count={7} className="pt-[45px]">
-                {children}
-              </Column>
-              <Column count={2} className="hidden lg:flex sticky top-[100px] h-[calc(100%-100px)]">
-                TableOfContents
-              </Column>
+              {children}
             </Row>
           </Container>
         </main>

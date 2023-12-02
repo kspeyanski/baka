@@ -6,6 +6,8 @@ import { allDocs } from "contentlayer/generated";
 import { Heading, Paragraph, Text } from "@/components/typography";
 import { Pre } from "@/components/code/pre";
 import { Code } from "@/components/code/code";
+import { Column } from "@/components/layout/column";
+import { TableOfContents } from "@/templates/table-of-contents";
 
 const mdxComponents = {
   h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
@@ -43,10 +45,17 @@ export default function MaterialYouIndex(props: any) {
   const MDXContent = useMDXComponent(doc.body.code);
 
   return (
-    <article className="max-w-[100%]">
-      <React.Suspense fallback={<div>loading</div>}>
-        <MDXContent components={mdxComponents} />
-      </React.Suspense>
-    </article>
+    <>
+      <Column count={8} className="pt-[45px]">
+        <article className="max-w-[100%]">
+          <React.Suspense fallback={<div>loading</div>}>
+            <MDXContent components={mdxComponents} />
+          </React.Suspense>
+        </article>
+      </Column>
+      <Column count={2} className="hidden lg:flex sticky top-[100px] h-[calc(100%-100px)]">
+        <TableOfContents data={doc.toc} />
+      </Column>
+    </>
   );
 }

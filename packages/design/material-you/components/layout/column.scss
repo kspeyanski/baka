@@ -10,10 +10,18 @@
     $_columns: map-get($breakpoint, columns);
     $_gutter: map-get($breakpoint, gutter);
 
-    @media screen and (min-width: $_screen) {
+    @if ($_screen == 0) {
       @for $i from 1 through $_columns {
-        &[data-count="#{$i}"] {
+        & {
           width: calc(($i / $_columns) * 100% - $_gutter);
+        }
+      }
+    } @else {
+      @media screen and (min-width: $_screen) {
+        @for $i from 1 through $_columns {
+          &[data-count="#{$i}"] {
+            width: calc(($i / $_columns) * 100% - $_gutter);
+          }
         }
       }
     }
