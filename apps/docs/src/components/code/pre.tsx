@@ -1,5 +1,6 @@
 import { BakaComponent } from "baka-ui";
 import clsx from "clsx";
+import React from "react";
 
 export type PreProps = React.HTMLAttributes<HTMLPreElement> & {};
 

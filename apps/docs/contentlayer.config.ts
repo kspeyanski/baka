@@ -1,5 +1,6 @@
 import fs from "fs";
 import p from "path";
+import highlight from "rehype-highlight";
 
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
 
@@ -34,4 +35,11 @@ export const Docs = defineDocumentType(() => ({
   },
 }));
 
-export default makeSource({ contentDirPath: "./data", documentTypes: [Docs] });
+export default makeSource({
+  contentDirPath: "./data",
+  documentTypes: [Docs],
+  mdx: {
+    // @ts-expect-error
+    rehypePlugins: [highlight],
+  },
+});

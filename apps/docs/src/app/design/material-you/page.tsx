@@ -1,3 +1,4 @@
+import React from "react";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { notFound } from "next/navigation";
 
@@ -29,7 +30,7 @@ const mdxComponents = {
     <Paragraph {...props} variant={["body-large", "article"]} />
   ),
   pre: Pre,
-  code: Code
+  code: Code,
 };
 
 export default function MaterialYouIndex(props: any) {
@@ -43,7 +44,9 @@ export default function MaterialYouIndex(props: any) {
 
   return (
     <article className="max-w-[100%]">
-      <MDXContent components={mdxComponents} />
+      <React.Suspense fallback={<div>loading</div>}>
+        <MDXContent components={mdxComponents} />
+      </React.Suspense>
     </article>
   );
 }
