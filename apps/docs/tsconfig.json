@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "rootDir": "../..",
+    "rootDir": ".",
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -23,14 +23,13 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "baka-ui": ["../../packages/ui/src/index.ts"],
-      "baka-core": ["../../packages/design/core/_index.scss"],
+      "baka-ui": ["./node_modules/baka-ui/src/index.ts"],
+      "baka-core": ["./node_modules/baka-core/_index.scss"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     }
   },
   "include": [
     "next-env.d.ts",
-    "../../packages/ui/src/index.ts",
     "src/**/*.tsx",
     ".next/types/**/*.ts",
     ".contentlayer/generated"

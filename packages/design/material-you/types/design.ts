@@ -79,6 +79,9 @@ export interface BakaDesignMaterialYou {
   };
   TextFieldVariant: "filled" | "outlined";
   TabGroupVariant: "primary" | "secondary" | "overflow";
+  TabState: {
+    selected?: boolean;
+  };
   TooltipVariant: "rich" | "plain";
   TopBarVariant: "small" | "medium" | "large" | "elevated";
 }

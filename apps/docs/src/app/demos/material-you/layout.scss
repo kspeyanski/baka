@@ -1,0 +1,26 @@
+@use "baka-material-you" as *;
+@use "baka-material-you/themes/dark" as dark-swatch;
+
+body {
+  @include styles();
+
+  margin: 0;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+
+  color: $on-surface;
+  background-color: $surface;
+
+  // TODO: enable later
+  // @media screen and (prefers-color-scheme: dark) {
+  //   @include dark-swatch.styles();
+  // }
+}
+
+.root {
+  box-sizing: border-box;
+  margin: auto;
+  padding: 1rem;
+  max-height: 100%;
+}

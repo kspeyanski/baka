@@ -9,6 +9,10 @@
   "types": "./types/index.d.ts",
   "main": "./_index.scss",
   "sass": "./_index.scss",
+  "files": [
+    "dist",
+    "types"
+  ],
   "license": "MIT",
   "scripts": {
     "build": "sass --load-path=./node_modules ./_index.scss ./dist/index.css",

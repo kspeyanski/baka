@@ -50,6 +50,6 @@ $swatch: (
 
 @mixin styles {
   @each $key, $value in $swatch {
-    --#{$key}: #{$value};
+    --swatch--#{$key}: #{$value};
   }
 }

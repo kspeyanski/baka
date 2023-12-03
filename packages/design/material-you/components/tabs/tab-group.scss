@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: stretch;
+  justify-content: flex-start;
 
   @include variant(primary, true) {
     --position: relative;

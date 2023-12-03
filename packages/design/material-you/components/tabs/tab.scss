@@ -2,6 +2,7 @@
 @use "baka-core" as *;
 
 .baka-tab {
+  @include body-medium;
   --padding: var(--group-padding, 16px);
   cursor: pointer;
   overflow: hidden;
@@ -12,7 +13,8 @@
   flex-direction: var(--flex-direction, column);
   justify-content: center;
   align-items: center;
-  flex: 1 0 0;
+  white-space: nowrap;
+  flex: 0;
   gap: var(--gap, 2px);
 
   @include ripple(var(--ripple), $scale: 10);

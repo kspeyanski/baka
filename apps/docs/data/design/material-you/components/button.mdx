@@ -2,9 +2,13 @@
 title: Button
 ---
 
+import { Demo } from "@/app/design/material-you/templates/demo";
+
 # Button
 
 Welcome to the documentation for the "Button" component in the Baka UI Library. The "Button" component is a fundamental building block for user interactions in your web applications. It offers various styles and states to cater to different use cases.
+
+<Demo src="/demos/material-you/button" />
 
 ## Introduction
 
@@ -18,19 +22,19 @@ To use the "Button" component, import it from `baka-ui` and include it in your J
 import { BakaButton } from "baka-ui";
 
 // Inside your component:
-<BakaButton>Click Me</BakaButton>
+<BakaButton>Click Me</BakaButton>;
 ```
 
 ### Variants
 
-| Variant  | Description                          |
-|----------|--------------------------------------|
-| Filled   | Solid background, suitable for primary actions. |
-| Outlined | Transparent background with a visible border, great for secondary actions. |
-| Text     | No background, ideal for non-destructive actions. |
-| Elevated | Subtle shadow for a visual elevation effect, perfect for prominent calls to action. |
+| Variant  | Description                                                                                |
+| -------- | ------------------------------------------------------------------------------------------ |
+| Filled   | Solid background, suitable for primary actions.                                            |
+| Outlined | Transparent background with a visible border, great for secondary actions.                 |
+| Text     | No background, ideal for non-destructive actions.                                          |
+| Elevated | Subtle shadow for a visual elevation effect, perfect for prominent calls to action.        |
 | Tonal    | Background color matches the primary color of your application, emphasizing brand actions. |
-| FAB      | Floating Action Button, a circular button typically used for a promoted action. |
+| FAB      | Floating Action Button, a circular button typically used for a promoted action.            |
 
 ### States
 
@@ -51,7 +55,7 @@ import { BakaButton, BakaIcon } from "baka-ui";
 // IconButton example:
 <BakaButton variant="icon">
   <BakaIcon>settings</BakaIcon>
-</BakaButton>
+</BakaButton>;
 ```
 
 ### FAB (Floating Action Button)
@@ -201,4 +205,3 @@ Floating Action Buttons (FABs) are typically used for promoting a primary action
   <BakaIcon>edit</BakaIcon>
 </BakaButton>
 ```
-
