@@ -7,7 +7,7 @@ import { stateClassNames, variantClassNames } from "../../utils";
 export interface BakaChipProps
   extends React.HTMLAttributes<HTMLSpanElement>,
     BakaProps,
-    BakaStates {
+    BakaStates<BakaDesign["ChipState"]> {
   variant?: BakaVariant<BakaDesign["ChipVariant"]>; 
 }
 

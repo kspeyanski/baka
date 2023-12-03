@@ -1,7 +1,7 @@
-export type BakaDesignMaterialYou = {
+export interface BakaDesignMaterialYou {
   AvatarVariant: "small" | "medium" | "large";
   BadgeVariant: "small" | "single-digit" | "multi-digit";
-  ButtonStates: {
+  ButtonState: {
     hovered?: boolean;
     focused?: boolean;
     activated?: boolean;
@@ -25,7 +25,7 @@ export type BakaDesignMaterialYou = {
     | "large"
     | "extended";
 
-  CheckboxStates: {
+  CheckboxState: {
     checked?: boolean;
     indeterminate?: boolean;
     hovered?: boolean;
@@ -70,7 +70,7 @@ export type BakaDesignMaterialYou = {
   IconVariant: "primary" | "small" | "medium" | "large" | "filled" | "error";
   SwitchVariant: "icon";
 
-  TextFieldStates: {
+  TextFieldState: {
     hovered?: boolean;
     focused?: boolean;
     activated?: boolean;
@@ -81,4 +81,4 @@ export type BakaDesignMaterialYou = {
   TabGroupVariant: "primary" | "secondary" | "overflow";
   TooltipVariant: "rich" | "plain";
   TopBarVariant: "small" | "medium" | "large" | "elevated";
-};
+}

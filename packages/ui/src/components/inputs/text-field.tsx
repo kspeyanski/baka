@@ -4,7 +4,9 @@ import clsx from "clsx";
 import { BakaComponent, BakaStates, BakaVariant } from "../../../src/models";
 import { stateClassNames, variantClassNames } from "../../utils";
 
-export interface BakaTextFieldProps extends React.HTMLAttributes<HTMLInputElement>, BakaStates {
+export interface BakaTextFieldProps
+  extends React.HTMLAttributes<HTMLInputElement>,
+    BakaStates<BakaDesign["TextFieldState"]> {
   variant?: BakaVariant<BakaDesign["TextFieldVariant"]>;
 }
 

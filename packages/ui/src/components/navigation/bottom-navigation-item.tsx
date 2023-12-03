@@ -1,14 +1,19 @@
 import clsx from "clsx";
 
-import { BakaComponent, BakaProps, BakaStates } from "../../../src/models";
+import { BakaComponent, BakaProps, BakaStates, BakaVariant } from "../../../src/models";
 import { stateClassNames } from "../../utils";
+import { BakaDesign } from "baka-core";
 
 export interface BakaBottomNavigationItemProps
   extends React.HTMLAttributes<HTMLDivElement>,
     BakaProps,
-    BakaStates {}
+    BakaStates<BakaDesign["BottomNavigationItemState"]> {
+  variant?: BakaVariant<BakaDesign["BottomNavigationItemVariant"]>;
+}
 
-export const BakaBottomNavigationItem: BakaComponent<"div", BakaBottomNavigationItemProps> = (props) => {
+export const BakaBottomNavigationItem: BakaComponent<"div", BakaBottomNavigationItemProps> = (
+  props
+) => {
   const { as: Component = "div", selected, ...other } = props;
 
   return (

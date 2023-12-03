@@ -2,11 +2,14 @@ import clsx from "clsx";
 
 import { BakaComponent, BakaProps, BakaStates, BakaVariant } from "../../../src/models";
 import { stateClassNames } from "../../utils";
+import { BakaDesign } from "baka-core";
 
 export interface BakaMenuItemProps
   extends React.HTMLAttributes<HTMLLIElement>,
     BakaProps,
-    BakaStates {}
+    BakaStates<BakaDesign["MenuItemState"]> {
+  variant?: BakaVariant<BakaDesign["MenuItemVariant"]>;
+}
 
 export const BakaMenuItem: BakaComponent<"li", BakaMenuItemProps> = (props) => {
   const { as: Component = "li", readOnly, disabled, ...other } = props;

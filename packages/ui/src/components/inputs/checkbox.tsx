@@ -1,12 +1,12 @@
-import type { BakaCheckboxStates, BakaCheckboxVariant } from "baka-core";
+import type { BakaDesign } from "baka-core";
 import clsx from "clsx";
 
-import { BakaComponent, BakaVariant } from "../../../src/models";
+import { BakaComponent, BakaStates, BakaVariant } from "../../../src/models";
 import { stateClassNames, variantClassNames } from "../../utils";
 
 export interface BakaCheckboxProps
   extends React.HTMLAttributes<HTMLInputElement>,
-    BakaCheckboxStates {
+    BakaStates<BakaDesign["CheckboxState"]> {
   variant?: BakaVariant<BakaDesign["CheckboxVariant"]>;
 }
 

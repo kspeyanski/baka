@@ -1,13 +1,15 @@
 import clsx from "clsx";
 
-import { BakaComponent, BakaProps } from "../../../src/models";
+import { BakaComponent, BakaProps, BakaStates } from "../../../src/models";
 import { stateClassNames, variantClassNames } from "../../utils";
-import { BakaRadioButtonStates } from "baka-core";
+import { BakaDesign } from "baka-core";
 
 export interface BakaRadioButtonProps
   extends React.HTMLAttributes<HTMLInputElement>,
     BakaProps,
-    BakaRadioButtonStates {}
+    BakaStates<BakaDesign["RadioButtonState"]> {
+      variant?: BakaDesign["RadioButtonVariant"];
+    }
 
 export const BakaRadioButton: BakaComponent<"input", BakaRadioButtonProps> = (props) => {
   const {

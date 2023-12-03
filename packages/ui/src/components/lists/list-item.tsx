@@ -6,7 +6,7 @@ import { stateClassNames, variantClassNames } from "../../utils";
 export interface BakaListItemProps
   extends React.HTMLAttributes<HTMLElement>,
     BakaProps,
-    BakaStates {
+    BakaStates<BakaDesign["ListItemState"]> {
   variant?: BakaVariant<BakaDesign["ListItemVariant"]>;
 }
 

@@ -1,10 +1,13 @@
 import clsx from "clsx";
 
-import { BakaComponent, BakaProps, BakaVariant } from "../../../src/models";
+import { BakaComponent, BakaProps, BakaStates, BakaVariant } from "../../../src/models";
 import { BakaDesign } from "baka-core";
 import { variantClassNames } from "../../utils";
 
-export interface BakaDialogProps extends React.HTMLAttributes<HTMLDivElement>, BakaProps {
+export interface BakaDialogProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    BakaProps,
+    BakaStates<BakaDesign["DialogState"]> {
   variant?: BakaVariant<BakaDesign["DialogVariant"]>;
 }
 

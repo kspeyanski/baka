@@ -1,10 +1,13 @@
 import clsx from "clsx";
 
-import { BakaComponent, BakaProps, BakaVariant } from "../../../src/models";
+import { BakaComponent, BakaProps, BakaStates, BakaVariant } from "../../../src/models";
 import { BakaDesign } from "baka-core";
 import { variantClassNames } from "../../utils";
 
-export interface BakaLabelProps extends React.HTMLAttributes<HTMLLabelElement>, BakaProps {
+export interface BakaLabelProps
+  extends React.HTMLAttributes<HTMLLabelElement>,
+    BakaProps,
+    BakaStates<BakaDesign["LabelState"]> {
   variant?: BakaVariant<BakaDesign["LabelVariant"]>;
 }
 

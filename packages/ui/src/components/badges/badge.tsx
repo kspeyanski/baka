@@ -1,10 +1,13 @@
 import type { BakaDesign } from "baka-core";
 import clsx from "clsx";
 
-import { BakaComponent, BakaProps, BakaVariant } from "../../../src/models";
+import { BakaComponent, BakaProps, BakaStates, BakaVariant } from "../../../src/models";
 import { variantClassNames } from "../../utils";
 
-export interface BakaBadgeProps extends React.HTMLAttributes<HTMLSpanElement>, BakaProps {
+export interface BakaBadgeProps
+  extends React.HTMLAttributes<HTMLSpanElement>,
+    BakaProps,
+    BakaStates<BakaDesign["BadgeState"]> {
   variant?: BakaVariant<BakaDesign["BadgeVariant"]>;
 }
 

@@ -1,10 +1,13 @@
 import clsx from "clsx";
 
-import { BakaComponent, BakaProps, BakaVariant } from "../../../src/models";
+import { BakaComponent, BakaProps, BakaStates, BakaVariant } from "../../../src/models";
 import { variantClassNames } from "../../utils";
 import { BakaDesign } from "baka-core";
 
-export interface BakaTabGroupProps extends React.HTMLAttributes<HTMLDivElement>, BakaProps {
+export interface BakaTabGroupProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    BakaProps,
+    BakaStates<BakaDesign["TabGroupState"]> {
   variant?: BakaVariant<BakaDesign["TabGroupVariant"]>;
 }
 

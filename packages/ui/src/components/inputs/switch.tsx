@@ -1,14 +1,14 @@
-import type { BakaSwitchStates, BakaSwitchVariant } from "baka-core";
+import type { BakaDesign } from "baka-core";
 import clsx from "clsx";
 
-import { BakaComponent, BakaProps, BakaVariant } from "../../../src/models";
+import { BakaComponent, BakaProps, BakaStates, BakaVariant } from "../../../src/models";
 import { stateClassNames, variantClassNames } from "../../utils";
 
 export interface BakaSwitchProps
   extends React.HTMLAttributes<HTMLInputElement>,
     BakaProps,
-    BakaSwitchStates {
-  variant?: BakaVariant<BakaDesign["SwitchVariant"]>; 
+    BakaStates<BakaDesign["SwitchState"]> {
+  variant?: BakaVariant<BakaDesign["SwitchVariant"]>;
 }
 
 export const BakaSwitch: BakaComponent<"input", BakaSwitchProps> = (props) => {

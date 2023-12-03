@@ -5,7 +5,9 @@ import { BakaVariant } from "../../models/variant";
 import { variantClassNames } from "../../utils";
 import { BakaComponent } from "../../models/component";
 
-export interface BakaIconProps extends React.HTMLAttributes<HTMLElement>, BakaStates {
+export interface BakaIconProps
+  extends React.HTMLAttributes<HTMLElement>,
+    BakaStates<BakaDesign["IconState"]> {
   variant?: BakaVariant<BakaDesign["IconVariant"]>;
 }
 

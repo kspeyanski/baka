@@ -1,4 +1,4 @@
-import type { BakaButtonStates, BakaButtonVariant } from "baka-core";
+import type { BakaDesign } from "baka-core";
 import clsx from "clsx";
 import { BakaComponent, BakaProps, BakaStates, BakaVariant } from "../../../src/models";
 import { stateClassNames, variantClassNames } from "../../utils";
@@ -6,7 +6,7 @@ import { stateClassNames, variantClassNames } from "../../utils";
 export interface BakaButtonProps
   extends React.HTMLAttributes<HTMLButtonElement>,
     BakaProps,
-    BakaButtonStates {
+    BakaStates<BakaDesign["ButtonState"]> {
   variant?: BakaVariant<BakaDesign["ButtonVariant"]>;
 }
 

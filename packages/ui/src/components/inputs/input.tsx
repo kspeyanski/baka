@@ -1,12 +1,15 @@
 import clsx from "clsx";
 
-import { BakaComponent, BakaProps, BakaStates } from "../../../src/models";
+import { BakaComponent, BakaProps, BakaStates, BakaVariant } from "../../../src/models";
 import { stateClassNames, variantClassNames } from "../../utils";
+import { BakaDesign } from "baka-core";
 
 export interface BakaInputProps
   extends React.HTMLAttributes<HTMLInputElement>,
     BakaProps,
-    BakaStates {}
+    BakaStates<BakaDesign["InputState"]> {
+  variant?: BakaVariant<BakaDesign["InputVariant"]>;
+}
 
 export const BakaInput: BakaComponent<"input", BakaInputProps> = (props) => {
   const {
