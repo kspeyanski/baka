@@ -1,4 +1,5 @@
 @mixin tab {
+  user-select: none;
 }
 .baka-tab {
   @include tab();

@@ -15,6 +15,8 @@ import { TableHeaderCell } from "@/components/table/table-header-cell";
 import { UL } from "@/components/misc/ul";
 import { LI } from "@/components/misc/li";
 
+import { Demo } from "../templates/demo";
+
 const mdxComponents = {
   h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <Heading {...props} as="h2" variant={["display-medium", "article"]} />
@@ -45,6 +47,7 @@ const mdxComponents = {
   code: Code,
   ul: UL,
   li: LI,
+  Demo: Demo,
 };
 
 export default function MaterialYouPage(props: { params?: { slug?: string[] } }) {
