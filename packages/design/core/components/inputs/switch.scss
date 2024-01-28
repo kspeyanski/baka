@@ -1,6 +1,6 @@
 @use "../../utils" as *;
 
-@mixin switch {
+@mixin core-switch--styles {
   cursor: pointer;
   position: relative;
   display: inline-flex;
@@ -16,6 +16,3 @@
   }
 }
 
-.baka-switch {
-  @include switch();
-}

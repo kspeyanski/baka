@@ -1,10 +1,7 @@
-@mixin card {
+@mixin core-card--styles {
   display: flex;
   align-items: flex-start;
   flex-shrink: 0;
   overflow: hidden;
 }
 
-.baka-card {
-  @include card();
-}

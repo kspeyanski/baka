@@ -1,6 +1,6 @@
 @use "../../utils" as *;
 
-@mixin checkbox {
+@mixin core-checkbox--styles {
   cursor: pointer;
   position: relative;
   appearance: none;
@@ -15,6 +15,3 @@
   }
 }
 
-.baka-checkbox {
-  @include checkbox();
-}

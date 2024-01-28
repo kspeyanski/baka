@@ -1,10 +1,13 @@
-@use "../../styles" as *;
+@use "../../design" as *;
 @use "baka-core" as *;
 
-.baka-menu {
-  padding: 8px 0;
-  color: $on-surface;
-  background-color: $surface-container-highest;
-  border-radius: 4px;
-  box-shadow: map-get($elevation, 2);
+@mixin menu--styles {
+  .baka-menu {
+    @include core-menu--styles;
+    padding: 8px 0;
+    color: $on-surface;
+    background-color: $surface-container-highest;
+    border-radius: 4px;
+    box-shadow: map-get($elevation, 2);
+  }
 }

@@ -14,7 +14,7 @@ $breakpoints: (
     margin: 32px,
     regions: (
       left: (
-        width: 72px,
+        width: 80px,
         offset: -16px,
       ),
     ),
@@ -27,7 +27,7 @@ $breakpoints: (
     margin: 32px,
     regions: (
       left: (
-        width: 72px,
+        width: 80px,
       ),
     ),
   ),
@@ -39,19 +39,19 @@ $breakpoints: (
     margin: 24px,
     regions: (
       left: (
-        width: 72px,
+        width: 80px,
       ),
     ),
   ),
   xl: (
     screen: 1440px,
     width: 1128px,
-    columns: 12,
+    columns: 12, 
     gutter: 24px,
     margin: 24px,
     regions: (
       left: (
-        width: 72px,
+        width: 360px,
       ),
     ),
   ),

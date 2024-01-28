@@ -1,10 +1,54 @@
 @forward "baka-core";
-@forward "./styles";
-@use "./styles/" as *;
-@forward "./components";
 
-@mixin styles {
+@forward "./design";
+@use "./design/" as *;
+
+@forward "./components";
+@use "./components/" as *;
+
+@mixin variables {
   @include swatch--styles();
   @include typography--styles();
   @include layout--styles();
+  @include elevation--styles();
+}
+
+@mixin styles {
+  @include avatar--styles();
+  @include badge--styles();
+  @include bottom-bar--styles();
+  @include top-bar--styles();
+  @include button--styles();
+  @include card--styles();
+  @include chip--styles();
+  @include dialog--styles();
+  @include divider--styles();
+  @include icon--styles();
+  @include checkbox--styles();
+  @include checkbox--styles();
+  @include input--styles();
+  @include radio-button--styles();
+  @include switch--styles();
+  @include text-field--styles();
+  @include list--styles();
+  @include list-item--styles();
+  @include menu--styles();
+  @include menu-item--styles();
+  @include bottom-navigation--styles();
+  @include bottom-navigation-item--styles();
+  @include side-navigation--styles();
+  @include side-navigation-item--styles();
+  @include navigation-rail--styles();
+  @include navigation-rail-item--styles();
+  @include bottom-sheet--styles();
+  @include tab-group--styles();
+  @include tab--styles();
+  @include tooltip--styles();
+  @include heading--styles();
+  @include label--styles();
+  @include paragraph--styles();
+  @include text--styles();
+  @include container--styles();
+  @include column--styles();
+  @include row--styles();
 }

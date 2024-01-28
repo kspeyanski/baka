@@ -1,6 +1,6 @@
 @use "../../utils" as *;
 
-@mixin button {
+@mixin core-button--styles {
   cursor: pointer;
   box-sizing: border-box;
   user-select: none;
@@ -19,6 +19,3 @@
   }
 }
 
-.baka-button {
-  @include button();
-}

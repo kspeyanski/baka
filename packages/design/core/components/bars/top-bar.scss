@@ -1,9 +1,6 @@
-@mixin top-bar {
+@mixin core-top-bar--styles {
   display: flex;
   width: 100%;
   align-items: center;
 }
 
-.baka-top-bar {
-  @include top-bar();
-}

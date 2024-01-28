@@ -1,14 +1,12 @@
-$font-family: (
-  sans: var(--font-family--sans),
-  serif: var(--font-family--serif),
-  mono: var(--font-family--mono),
-);
-
-@use "baka-material-you" as material-you with (
-  $font-family: $font-family
-);
-@forward "baka-material-you";
+@use "./index" as material-you;
+@use "./components/" as extended;
 
 :root {
-  @include material-you.styles();
+  @include material-you.variables();
 }
+@include material-you.styles();
+
+@include extended.misc--styles();
+@include extended.code--styles();
+@include extended.table--styles();
+@include extended.typography--styles();

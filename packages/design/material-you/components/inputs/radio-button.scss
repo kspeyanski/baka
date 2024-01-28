@@ -1,68 +1,71 @@
-@use "../../styles" as *;
+@use "../../design" as *;
 @use "baka-core" as *;
 
-.baka-radio-button {
-  --background: #{$on-surface-variant};
-  --state: #{$on-surface};
-  --ripple: #{$on-surface};
+@mixin radio-button--styles {
+  .baka-radio-button {
+    @include core-radio-button--styles;
+    --background: #{$on-surface-variant};
+    --state: #{$on-surface};
+    --ripple: #{$on-surface};
 
-  width: 24px;
-  height: 24px;
-  
-  border-width: 2px;
-  border-style: solid;
-  border-color: var(--background);
-  border-radius: 100px;
+    width: 24px;
+    height: 24px;
 
-  @include state-layer {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 48px;
-    height: 48px;
-    transform: translate(-50%, -50%);
-    background: color-mix(in srgb, var(--state) 0 * 100%, transparent);
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--background);
     border-radius: 100px;
 
-    @include motion-transition-TBD(background-color, color);
-    transition-delay: 0.05s, 0s;
-  }
-
-  @include ripple(var(--ripple), $scale: 17);
-
-  @include hover {
     @include state-layer {
-      background-color: color-mix(in srgb, var(--state) 0.08 * 100%, transparent);
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 48px;
+      height: 48px;
+      transform: translate(-50%, -50%);
+      background: color-mix(in srgb, var(--state) 0 * 100%, transparent);
+      border-radius: 100px;
+
+      @include motion-transition-TBD(background-color, color);
+      transition-delay: 0.05s, 0s;
     }
-  }
 
-  @include focus {
-    @include state-layer {
-      background-color: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
+    @include ripple(var(--ripple), $scale: 17);
+
+    @include hover {
+      @include state-layer {
+        background-color: color-mix(in srgb, var(--state) 0.08 * 100%, transparent);
+      }
     }
-  }
 
-  @include active {
-    @include state-layer {
-      background-color: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
+    @include focus {
+      @include state-layer {
+        background-color: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
+      }
     }
-  }
 
-  @include checked {
-    --background: #{$primary};
-    --ripple: #{$primary};
-    --state: #{$primary};
+    @include active {
+      @include state-layer {
+        background-color: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
+      }
+    }
 
-    outline: 3px solid $surface;
-    outline-offset: -5px;
-    background: var(--background);
-  }
+    @include checked {
+      --background: #{$primary};
+      --ripple: #{$primary};
+      --state: #{$primary};
 
-  @include disabled {
-    pointer-events: none;
-    --background: #{$on-surface};
-    --border: #{$on-surface};
-    opacity: 0.38;
+      outline: 3px solid $surface;
+      outline-offset: -5px;
+      background: var(--background);
+    }
+
+    @include disabled {
+      pointer-events: none;
+      --background: #{$on-surface};
+      --border: #{$on-surface};
+      opacity: 0.38;
+    }
   }
 }

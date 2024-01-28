@@ -1,4 +1,4 @@
-@mixin dialog {
+@mixin core-dialog--styles {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -7,6 +7,3 @@
   box-sizing: border-box;
 }
 
-.baka-dialog {
-  @include dialog();
-}

@@ -1,11 +1,13 @@
-@use "../../styles.scss" as *;
+@use "../../index.scss" as *;
 
-.ul {
-  @include body-medium;
-}
+@mixin misc--styles {
+  .ul {
+    @include body-medium;
+  }
 
-.li {
-  & + & {
-    margin-top: 4px;
+  .li {
+    & + & {
+      margin-top: 4px;
+    }
   }
 }

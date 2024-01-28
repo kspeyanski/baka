@@ -1,4 +1,4 @@
-@mixin menu-item {
+@mixin core-menu-item--styles {
   cursor: pointer;
   box-sizing: border-box;
 
@@ -10,6 +10,3 @@
   justify-content: flex-start;
 }
 
-.baka-menu-item {
-  @include menu-item();
-}

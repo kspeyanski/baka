@@ -1,4 +1,4 @@
-@mixin menu {
+@mixin core-menu--styles {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -8,6 +8,3 @@
   overflow: auto;
 }
 
-.baka-menu {
-  @include menu();
-}

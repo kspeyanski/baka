@@ -1,10 +1,13 @@
-@use "../../styles" as *;
+@use "../../design" as *;
 @use "baka-core" as *;
 
-.baka-bottom-navigation {
-  background: $surface-container;
-  padding: 0px 8px;
-  height: 80px;
+@mixin bottom-navigation--styles {
+  .baka-bottom-navigation {
+    @include core-bottom-navigation--styles;
+    background: $surface-container;
+    padding: 0px 8px;
+    height: 80px;
 
-  justify-content: flex-start;
+    justify-content: flex-start;
+  }
 }

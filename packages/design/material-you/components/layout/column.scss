@@ -1,26 +1,57 @@
 @use "baka-core" as *;
-@use "../../styles/" as *;
+@use "../../design/" as *;
 
-.baka-column {
-  @include column();
+@mixin column--styles {
+  .baka-column {
+    @include core-column--styles;
+    @include core-column--styles();
 
-  @each $size, $breakpoint in $breakpoints {
-    $_width: map-get($breakpoint, width);
-    $_screen: map-get($breakpoint, screen);
-    $_columns: map-get($breakpoint, columns);
-    $_gutter: map-get($breakpoint, gutter);
+    @each $size, $breakpoint in $breakpoints {
+      $_width: map-get($breakpoint, width);
+      $_screen: map-get($breakpoint, screen);
+      $_columns: map-get($breakpoint, columns);
+      $_gutter: map-get($breakpoint, gutter);
+      $_regions: map-get($breakpoint, regions);
 
-    @if ($_screen == 0) {
-      @for $i from 1 through $_columns {
-        & {
-          width: calc(($i / $_columns) * 100% - $_gutter);
+      @if ($_screen == 0) {
+        @for $i from 1 through $_columns {
+          & {
+            width: calc(($i / $_columns) * 100% - $_gutter);
+          }
+        }
+      } @else {
+        @media screen and (min-width: $_screen) {
+          @for $i from 1 through $_columns {
+            &.value--#{$i} {
+              width: calc(($i / $_columns) * 100% - $_gutter);
+            }
+          }
         }
       }
-    } @else {
-      @media screen and (min-width: $_screen) {
-        @for $i from 1 through $_columns {
-          &[data-count="#{$i}"] {
-            width: calc(($i / $_columns) * 100% - $_gutter);
+    }
+
+    @include variant(region-left) {
+      @each $size, $breakpoint in $breakpoints {
+        $_width: map-get($breakpoint, width);
+        $_screen: map-get($breakpoint, screen);
+        $_columns: map-get($breakpoint, columns);
+        $_gutter: map-get($breakpoint, gutter);
+        $_margin: map-get($breakpoint, margin);
+        $_regions: map-get($breakpoint, regions);
+
+        @if ($_screen == 0) {
+          @if ($_regions) {
+            @for $i from 1 through $_columns {
+              & {
+                width: map-get(map-get($_regions, left), width);
+              }
+            }
+          }
+        } @else {
+          @if ($_regions) {
+            @media screen and (min-width: $_screen) {
+              width: map-get(map-get($_regions, left), width);
+            }
           }
         }
       }

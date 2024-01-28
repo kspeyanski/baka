@@ -1,28 +1,31 @@
-@use "../../styles" as *;
+@use "../../design" as *;
 @use "baka-core" as *;
 
-.baka-tooltip {
-  @include body-small;
+@mixin tooltip--styles {
+  .baka-tooltip {
+    @include core-tooltip--styles;
+    @include body-small;
 
-  display: flex;
-  flex-direction: column;
-  align-self: flex-start;
-  border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    border-radius: 12px;
 
-  @include variant(rich, true) {
-    box-shadow: map-get($elevation, 2);
-    color: $on-surface;
-    background: $surface-container;
-    gap: 8px;
-    padding-bottom: 8px;
-  }
+    @include variant(rich, true) {
+      box-shadow: map-get($elevation, 2);
+      color: $on-surface;
+      background: $surface-container;
+      gap: 8px;
+      padding-bottom: 8px;
+    }
 
-  @include variant(plain) {
-    padding: 4px 8px;
-    gap: 10px;
-    border-radius: 4px;
-    color: $inverse-on-surface;
-    background: $inverse-surface;
-    box-shadow: none;
+    @include variant(plain) {
+      padding: 4px 8px;
+      gap: 10px;
+      border-radius: 4px;
+      color: $inverse-on-surface;
+      background: $inverse-surface;
+      box-shadow: none;
+    }
   }
 }

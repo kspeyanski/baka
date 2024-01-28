@@ -1,44 +1,47 @@
-@use "../../styles" as *;
+@use "../../design" as *;
 @use "baka-core" as *;
 
-.baka-top-bar {
-  display: flex;
-  gap: 4px;
-  align-items: center;
-  justify-content: flex-start;
+@mixin top-bar--styles {
+  .baka-top-bar {
+    @include core-top-bar--styles;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: flex-start;
 
-  @include variant(flat, true) {
-    color: $on-surface;
-    background: $surface;
-  }
+    @include variant(flat, true) {
+      color: $on-surface;
+      background: $surface;
+    }
 
-  @include variant(elevated) {
-    color: $on-surface;
-    background: $surface-container;
-  }
+    @include variant(elevated) {
+      color: $on-surface;
+      background: $surface-container;
+    }
 
-  @include variant(small, true) {
-    min-height: 48px;
-    flex-direction: row;
-    padding: 8px 4px;
-  }
+    @include variant(small, true) {
+      min-height: 48px;
+      flex-direction: row;
+      padding: 8px 4px;
+    }
 
-  @include variant(medium) {
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-    padding-bottom: 24px;
-  }
+    @include variant(medium) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+      padding-bottom: 24px;
+    }
 
-  @include variant(large) {
-    gap: 40px;
-    justify-content: center;
-    align-items: stretch;
-    flex-direction: column;
-    padding-bottom: 28px;
-  }
+    @include variant(large) {
+      gap: 40px;
+      justify-content: center;
+      align-items: stretch;
+      flex-direction: column;
+      padding-bottom: 28px;
+    }
 
-  & > .baka-icon {
-    padding: 8px;
+    & > .baka-icon {
+      padding: 8px;
+    }
   }
 }

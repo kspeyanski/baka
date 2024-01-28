@@ -14,9 +14,12 @@ export const TabContentClient = (props: TabContentClientProps) => {
   return props.children ? (
     <props.children.type
       {...props.children.props}
-      className={clsx({
-        hidden: state !== props.value,
-      })}
+      className={clsx(
+        {
+          hidden: state !== props.value,
+        },
+        props.children.props.className
+      )}
     />
   ) : null;
 };

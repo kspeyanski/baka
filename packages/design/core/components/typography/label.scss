@@ -1,9 +1,6 @@
-@mixin label {
+@mixin core-label--styles {
   cursor: inherit;
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.baka-label {
-  @include label();
-}

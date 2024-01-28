@@ -1,4 +1,4 @@
-@mixin list-item {
+@mixin core-list-item--styles {
   box-sizing: border-box;
 
   overflow: hidden;
@@ -9,6 +9,3 @@
   justify-content: flex-start;
 }
 
-.baka-list-item {
-  @include list-item();
-}

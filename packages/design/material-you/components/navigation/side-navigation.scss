@@ -1,9 +1,12 @@
-@use "../../styles" as *;
+@use "../../design" as *;
 @use "baka-core" as *;
 
-.baka-side-navigation {
-  color: $on-surface;
-  background: $surface-container;
-  padding: 12px;
-  border-radius: 16px;
+@mixin side-navigation--styles {
+  .baka-side-navigation {
+    @include core-side-navigation--styles;
+    color: $on-surface;
+    background: $surface-container;
+    padding: 12px;
+    border-radius: 16px;
+  }
 }

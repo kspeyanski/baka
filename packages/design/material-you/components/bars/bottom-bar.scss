@@ -1,24 +1,27 @@
-@use "../../styles" as *;
+@use "../../design" as *;
 @use "baka-core" as *;
 
-.baka-bottom-bar {
-  background: $surface-container;
-  padding: 0px 16px 0px 4px;
-  height: 80px;
+@mixin bottom-bar--styles {
+  .baka-bottom-bar {
+    @include core-bottom-bar--styles;
+    background: $surface-container;
+    padding: 0px 16px 0px 4px;
+    height: 80px;
 
-  & .baka-button.variant--fab {
-    box-shadow: none;
-
-    @include hover {
+    & .baka-button.variant--fab {
       box-shadow: none;
-    }
 
-    @include focus {
-      box-shadow: none;
-    }
+      @include hover {
+        box-shadow: none;
+      }
 
-    @include active {
-      box-shadow: none;
+      @include focus {
+        box-shadow: none;
+      }
+
+      @include active {
+        box-shadow: none;
+      }
     }
   }
 }

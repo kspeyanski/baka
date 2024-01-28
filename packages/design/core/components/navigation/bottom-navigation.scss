@@ -1,8 +1,5 @@
-@mixin bottom-navigation {
+@mixin core-bottom-navigation--styles {
   display: flex;
   align-items: center;
 }
 
-.baka-bottom-navigation {
-  @include bottom-navigation();
-}

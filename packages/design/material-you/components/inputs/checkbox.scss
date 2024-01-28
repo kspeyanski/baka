@@ -1,119 +1,122 @@
-@use "../../styles" as *;
+@use "../../design" as *;
 @use "baka-core" as *;
 
-.baka-checkbox {
-  --color: #{$on-primary};
-  --state: ;
-  --border: #{$on-surface-variant};
-  --state: #{$on-surface};
-  --background: transparent;
-  --ripple: #{$on-surface};
-
-  width: 18px;
-  height: 18px;
-
-  color: var(--color);
-  background-color: var(--background);
-
-  border-radius: 2px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: var(--border);
-
-  @include motion-transition-TBD(background-color, border-color);
-
-  @include state-layer {
-    content: var(--content, "");
-    font-family: "Material Symbols Outlined";
-    font-size: 22px;
-    color: transparent;
-    border-radius: 100px;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 48px;
-    height: 48px;
-    padding: 12px;
-    transform: translate(-50%, -50%);
-    background-position: center;
-
-    @include motion-transition-TBD(background-color, color);
-    transition-delay: 0.05s, 0s;
-  }
-
-  @include ripple(var(--ripple), $scale: 24);
-
-  @include checked {
-    --content: "check";
-    --state: #{$primary};
-    --border: #{$primary};
+@mixin checkbox--styles {
+  .baka-checkbox {
+    @include core-checkbox--styles;
     --color: #{$on-primary};
-    --background: #{$primary};
-    --ripple: #{$primary};
+    --state: ;
+    --border: #{$on-surface-variant};
+    --state: #{$on-surface};
+    --background: transparent;
+    --ripple: #{$on-surface};
+
+    width: 18px;
+    height: 18px;
+
+    color: var(--color);
+    background-color: var(--background);
+
+    border-radius: 2px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--border);
+
+    @include motion-transition-TBD(background-color, border-color);
 
     @include state-layer {
-      color: #{$on-primary};
+      content: var(--content, "");
+      font-family: "Material Symbols Outlined";
+      font-size: 22px;
+      color: transparent;
+      border-radius: 100px;
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 48px;
+      height: 48px;
+      padding: 12px;
+      transform: translate(-50%, -50%);
+      background-position: center;
+
+      @include motion-transition-TBD(background-color, color);
+      transition-delay: 0.05s, 0s;
     }
-  }
 
-  @include indeterminate {
-    --content: "check_indeterminate_small";
-    --state: #{$primary};
-    --border: #{$primary};
-    --color: #{$on-primary};
-    --background: #{$primary};
-    --ripple: #{$primary};
-
-    @include state-layer {
-      color: #{$on-primary};
-    }
-  }
-
-  @include hover($readonly: false) {
-    @include state-layer {
-      background-color: color-mix(in srgb, var(--state) 0.08 * 100%, transparent);
-    }
-  }
-
-  @include focus($readonly: false) {
-    outline: none;
-    @include state-layer {
-      background-color: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
-    }
-  }
-
-  @include active($readonly: false) {
-    @include state-layer {
-      background-color: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
-    }
-  }
-
-  @include variant(error) {
-    --border: #{$error};
-    --state: #{$error};
-    --color: #{$on-error};
-    --ripple: #{$error};
+    @include ripple(var(--ripple), $scale: 24);
 
     @include checked {
-      --background: #{$error};
+      --content: "check";
+      --state: #{$primary};
+      --border: #{$primary};
+      --color: #{$on-primary};
+      --background: #{$primary};
+      --ripple: #{$primary};
+
+      @include state-layer {
+        color: #{$on-primary};
+      }
     }
 
     @include indeterminate {
-      --background: #{$error};
+      --content: "check_indeterminate_small";
+      --state: #{$primary};
+      --border: #{$primary};
+      --color: #{$on-primary};
+      --background: #{$primary};
+      --ripple: #{$primary};
+
+      @include state-layer {
+        color: #{$on-primary};
+      }
     }
-  }
 
-  @include disabled {
-    opacity: 0.38;
-    --border: #{$on-surface};
-
-    @include checked {
-      --background: #{$on-surface};
+    @include hover($readonly: false) {
+      @include state-layer {
+        background-color: color-mix(in srgb, var(--state) 0.08 * 100%, transparent);
+      }
     }
 
-    @include indeterminate {
-      --background: #{$on-surface};
+    @include focus($readonly: false) {
+      outline: none;
+      @include state-layer {
+        background-color: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
+      }
+    }
+
+    @include active($readonly: false) {
+      @include state-layer {
+        background-color: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
+      }
+    }
+
+    @include variant(error) {
+      --border: #{$error};
+      --state: #{$error};
+      --color: #{$on-error};
+      --ripple: #{$error};
+
+      @include checked {
+        --background: #{$error};
+      }
+
+      @include indeterminate {
+        --background: #{$error};
+      }
+    }
+
+    @include disabled {
+      opacity: 0.38;
+      --border: #{$on-surface};
+
+      @include checked {
+        --background: #{$on-surface};
+      }
+
+      @include indeterminate {
+        --background: #{$on-surface};
+      }
     }
   }
 }

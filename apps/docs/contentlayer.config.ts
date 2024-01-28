@@ -19,17 +19,21 @@ export const Docs = defineDocumentType(() => ({
     url: {
       type: "string",
       resolve: (docs) => {
-        return `/docs/${docs._raw.flattenedPath}`;
+        return `/${docs._raw.flattenedPath}`;
       },
     },
     group: {
-      type: "string",
+      type: "reference",
       resolve: (docs) => {
         const folder = p.join("data", p.dirname(docs._raw.sourceFilePath));
         const path = p.join(folder, "meta.json");
+
         if (fs.existsSync(path)) {
           const meta = JSON.parse(fs.readFileSync(path, "utf8"));
-          return meta.title;
+          return {
+            title: meta.title,
+            icon: meta.icon,
+          };
         } else {
           return null;
         }

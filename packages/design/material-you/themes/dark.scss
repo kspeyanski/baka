@@ -48,7 +48,7 @@ $swatch: (
   shadow: map-get($granite, 0),
 );
 
-@mixin styles {
+@mixin variables {
   @each $key, $value in $swatch {
     --swatch--#{$key}: #{$value};
   }

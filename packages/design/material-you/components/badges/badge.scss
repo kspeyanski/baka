@@ -1,28 +1,31 @@
-@use "../../styles" as *;
+@use "../../design" as *;
 @use "baka-core" as *;
 
-.baka-badge {
-  @include label-small;
+@mixin badge--styles {
+  .baka-badge {
+    @include core-badge--styles;
+    @include label-small;
 
-  border-radius: 100px;
+    border-radius: 100px;
 
-  color: $on-error;
-  background: $error;
+    color: $on-error;
+    background: $error;
 
-  @include variant(small, true) {
-    width: 6px;
-    height: 6px;
-  }
+    @include variant(small, true) {
+      width: 6px;
+      height: 6px;
+    }
 
-  @include variant(single-digit) {
-    width: 16px;
-    height: 16px;
-    padding: 1px;
-  }
+    @include variant(single-digit) {
+      width: 16px;
+      height: 16px;
+      padding: 1px;
+    }
 
-  @include variant(multi-digit) {
-    width: auto;
-    height: 16px;
-    padding: 0 4px;
+    @include variant(multi-digit) {
+      width: auto;
+      height: 16px;
+      padding: 0 4px;
+    }
   }
 }

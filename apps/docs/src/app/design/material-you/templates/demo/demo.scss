@@ -1,3 +1,7 @@
 .iframe {
   min-height: 350px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }

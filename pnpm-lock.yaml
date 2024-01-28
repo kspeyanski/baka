@@ -123,6 +123,9 @@ importers:
       tailwindcss:
         specifier: ^3.3.5
         version: 3.3.5
+      use-component-slot:
+        specifier: ^1.0.0
+        version: 1.0.0(@types/react@18.2.40)(react@18.2.0)
     devDependencies:
       '@types/node':
         specifier: ^20
@@ -15217,6 +15220,16 @@ packages:
       react: 18.2.0
       tslib: 2.6.2
     dev: true
+
+  /use-component-slot@1.0.0(@types/react@18.2.40)(react@18.2.0):
+    resolution: {integrity: sha512-C15brJlNaeHGw/KLqFVjBS6GXLzGLfho8N7znbN/JsSCEYRjUwVo+eQEOMI9WpmDBvzkUCNVE485HJPJGCPW6g==}
+    peerDependencies:
+      '@types/react': ^16.8.0 || ^17.0.0 || ^18.0.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      '@types/react': 18.2.40
+      react: 18.2.0
+    dev: false
 
   /use-resize-observer@9.1.0(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-R25VqO9Wb3asSD4eqtcxk8sJalvIOYBqS8MNZlpDSQ4l4xMQxC/J7Id9HoTqPq8FwULIn0PVW+OAqF2dyYbjow==}

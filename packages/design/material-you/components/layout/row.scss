@@ -1,17 +1,20 @@
 @use "baka-core" as *;
-@use "../../styles/" as *;
+@use "../../design/" as *;
 
-.baka-row {
-  @include row();
+@mixin row--styles {
+  .baka-row {
+    @include core-row--styles;
+    @include core-row--styles();
 
-  @each $size, $breakpoint in $breakpoints {
-    $_gutter: map-get($breakpoint, gutter);
-    $_screen: map-get($breakpoint, screen);
-    $_margin: map-get($breakpoint, margin);
+    @each $size, $breakpoint in $breakpoints {
+      $_gutter: map-get($breakpoint, gutter);
+      $_screen: map-get($breakpoint, screen);
+      $_margin: map-get($breakpoint, margin);
 
-    @media screen and (min-width: $_screen) {
-      gap: $_gutter;
-      padding-inline: $_margin;
+      @media screen and (min-width: $_screen) {
+        gap: $_gutter;
+        padding-inline: $_margin;
+      }
     }
   }
 }

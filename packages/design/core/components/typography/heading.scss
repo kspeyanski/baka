@@ -1,8 +1,5 @@
-@mixin heading {
+@mixin core-heading--styles {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.baka-heading {
-  @include heading();
-}

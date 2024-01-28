@@ -1,37 +1,40 @@
-@use "../../styles" as *;
+@use "../../design" as *;
 @use "baka-core" as *;
 
-.baka-card {
-  border-radius: 12px;
-  border-color: transparent;
-  border-width: 1px;
-  border-style: solid;
-
-  display: flex;
-  align-items: stretch;
-  flex-direction: column;
-
-  color: $on-surface-variant;
-
-  @include variant(outlined, true) {
-    border-color: $outline-variant;
-    background: $surface;
-  }
-
-  @include variant(elevated) {
-    border-width: 0;
-    background: $surface-container-low;
-    box-shadow: map-get($elevation, 1);
-  }
-
-  @include variant(filled) {
-    border-width: 0;
-    background: $surface-container-highest;
-  }
-
-  @include variant(horizontal) {
-    border-color: $outline-variant;
+@mixin card--styles {
+  .baka-card {
+    @include core-card--styles;
+    border-radius: 12px;
+    border-color: transparent;
     border-width: 1px;
-    flex-direction: row;
+    border-style: solid;
+
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+
+    color: $on-surface-variant;
+
+    @include variant(outlined, true) {
+      border-color: $outline-variant;
+      background: $surface;
+    }
+
+    @include variant(elevated) {
+      border-width: 0;
+      background: $surface-container-low;
+      box-shadow: map-get($elevation, 1);
+    }
+
+    @include variant(filled) {
+      border-width: 0;
+      background: $surface-container-highest;
+    }
+
+    @include variant(horizontal) {
+      border-color: $outline-variant;
+      border-width: 1px;
+      flex-direction: row;
+    }
   }
 }

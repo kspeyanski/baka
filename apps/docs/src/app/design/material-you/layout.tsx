@@ -1,8 +1,8 @@
-import "./layout.scss";
+import "@/design/material-you/styles.scss";
 import "@/design/material-you/global.css";
+import "./layout.scss";
 
 import type { Metadata } from "next";
-import Image from "next/image";
 import favicon from "./favicon.svg";
 
 import { Roboto, Roboto_Mono } from "next/font/google";
@@ -13,12 +13,14 @@ export const metadata: Metadata = {
 };
 
 import Logo from "@/icons/logo-material-you.svg";
-import { Header } from "@/templates/header";
 import { Container } from "@/components/layout/container";
 import { Row } from "@/components/layout/row";
 import { Column } from "@/components/layout/column";
-import { Sidenav } from "@/templates/sidenav";
+import { SidenavCategory } from "@/templates/sidenav/sidenav-category.server";
 import clsx from "clsx";
+import { Sidenav } from "@/templates/sidenav/sidenav.server";
+import { Header } from "./templates/header/header.server";
+import { SidenavState } from "@/templates/sidenav/sidenav.state";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
@@ -44,19 +46,16 @@ export default function MaterialYouLayout({ children }: { children: React.ReactN
         ></link>
       </head>
       <body className={clsx(roboto.variable, robotoMono.variable)}>
-        <Header
-          Logo={<Image src={Logo.src} width={141} height={32} alt="Baka Material You Logo" />}
-        />
-        <main className="min-h-[calc(100vh-60px)]">
-          <Container>
-            <Row className="relative">
-              <Column count={3} className="hidden md:flex sticky top-[100px] h-[calc(100%-100px)] ">
-                <Sidenav />
-              </Column>
-              {children}
-            </Row>
-          </Container>
-        </main>
+          <main className="min-h-[calc(100vh-60px)] flex flex-row">
+            <Sidenav />
+            <Container>
+              <Row className="relative">
+                {/* <Column count={3} className="hidden md:flex sticky top-[100px] h-[calc(100%-100px)] "> */}
+                {/* </Column> */}
+                {children}
+              </Row>
+            </Container>
+          </main>
       </body>
     </html>
   );

@@ -1,3 +1,5 @@
+import "./demo.scss";
+
 import { Label } from "@/components/typography";
 import { BakaCard, BakaDivider, BakaIcon, BakaTab, BakaTabGroup } from "baka-ui";
 import { DemoSource } from "./demo-source";

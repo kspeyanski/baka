@@ -1,9 +1,7 @@
 import clsx from "clsx";
 import { BakaStates } from "../models";
 
-export const stateClassNames = (
-  states?: BakaStates<any>
-) =>
+export const stateClassNames = (states: Partial<BakaStates<any>>) =>
   clsx({
     [`baka-state--selected`]: states.selected,
     [`baka-state--checked`]: states.checked,

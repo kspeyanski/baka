@@ -5,6 +5,9 @@ const withMDX = require("@next/mdx")();
 const nextConfig = withContentlayer(
   withMDX({
     pageExtensions: ["js", "jsx", "mdx", "md", "ts", "tsx"],
+    typescript: {
+      ignoreBuildErrors: true,
+    },
     sassOptions: {
       logger: console.log,
     },

@@ -1,10 +1,12 @@
-@use "../../styles.scss" as *;
+@use "../../index.scss" as *;
 
-.table {
-  @include body-medium;
-}
+@mixin table--styles {
+  .table {
+    @include body-medium;
+  }
 
-.table-header-cell {
-  display: table-cell;
-  font-weight: bold;
+  .table-header-cell {
+    display: table-cell;
+    font-weight: bold;
+  }
 }

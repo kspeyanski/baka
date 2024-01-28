@@ -1,9 +1,6 @@
-@mixin navigation-rail {
+@mixin core-navigation-rail--styles {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-.baka-navigation-rail {
-  @include navigation-rail();
-}

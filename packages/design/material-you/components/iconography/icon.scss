@@ -1,36 +1,39 @@
-@use "../../styles" as *;
+@use "../../design" as *;
 @use "baka-core" as *;
 
-.baka-icon {
-  font-weight: normal;
-  font-style: normal;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  font-family: "Material Symbols Outlined";
-  font-variation-settings: "FILL" 0, "wght" 600, "GRAD" 0, "opsz" 48;
+@mixin icon--styles {
+  .baka-icon {
+    @include core-icon--styles;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    font-family: "Material Symbols Outlined";
+    font-variation-settings: "FILL" 0, "wght" 600, "GRAD" 0, "opsz" 48;
 
-  @include variant(primary) {
-    color: $primary;
-  }
+    @include variant(primary) {
+      color: $primary;
+    }
 
-  @include variant(filled) {
-    font-variation-settings: "FILL" 1, "wght" 600, "GRAD" 0, "opsz" 48;
-  }
+    @include variant(filled) {
+      font-variation-settings: "FILL" 1, "wght" 600, "GRAD" 0, "opsz" 48;
+    }
 
-  @include variant(small) {
-    font-size: 20px;
-  }
+    @include variant(small) {
+      font-size: 20px;
+    }
 
-  @include variant(medium, true) {
-    font-size: 24px;
-  }
+    @include variant(medium, true) {
+      font-size: 24px;
+    }
 
-  @include variant(large) {
-    font-size: 40px;
-  }
+    @include variant(large) {
+      font-size: 40px;
+    }
 
-  @include variant(error) {
-    color: $error;
+    @include variant(error) {
+      color: $error;
+    }
   }
 }

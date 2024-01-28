@@ -1,6 +1,3 @@
-@mixin tab {
+@mixin core-tab--styles {
   user-select: none;
-}
-.baka-tab {
-  @include tab();
 }

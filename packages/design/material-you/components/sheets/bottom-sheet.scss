@@ -1,15 +1,18 @@
-@use "../../styles" as *;
+@use "../../design" as *;
 @use "baka-core" as *;
 
-.baka-bottom-sheet {
-  border-radius: 28px 28px 0 0;
+@mixin bottom-sheet--styles {
+  .baka-bottom-sheet {
+    @include core-bottom-sheet--styles;
+    border-radius: 28px 28px 0 0;
 
-  color: $outline;
-  background: $surface-container-low;
+    color: $outline;
+    background: $surface-container-low;
 
-  box-shadow: map-get($elevation, 3);
+    box-shadow: map-get($elevation, 3);
 
-  @include variant(modal) {
-    box-shadow: none;
+    @include variant(modal) {
+      box-shadow: none;
+    }
   }
 }

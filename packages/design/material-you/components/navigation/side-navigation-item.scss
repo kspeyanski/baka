@@ -1,68 +1,71 @@
-@use "../../styles" as *;
+@use "../../design" as *;
 @use "baka-core" as *;
 
-.baka-side-navigation-item {
-  --color: #{$on-surface-variant};
-  --state: #{$on-surface};
+@mixin side-navigation-item--styles {
+  .baka-side-navigation-item {
+    @include core-side-navigation-item--styles;
+    --color: #{$on-surface-variant};
+    --state: #{$on-surface};
 
-  gap: 12px;
-  border-radius: 100px;
-  padding: 16px 24px 16px 16px;
-
-  color: var(--color);
-
-  .baka-label,
-  .baka-text {
-    color: inherit;
-  }
-
-  .baka-label {
-    flex-grow: 1;
-  }
-
-  @include state-layer {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    gap: 12px;
     border-radius: 100px;
-    background: transparent;
+    padding: 16px 24px 16px 16px;
 
-    @include motion-transition-TBD(color, background);
-  }
+    color: var(--color);
 
-  @include hover(false) {
-    cursor: pointer;
+    .baka-label,
+    .baka-text {
+      color: inherit;
+    }
+
+    .baka-label {
+      flex-grow: 1;
+    }
 
     @include state-layer {
-      background: color-mix(in srgb, var(--state) 0.08 * 100%, transparent);
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 100px;
+      background: transparent;
+
+      @include motion-transition-TBD(color, background);
     }
-  }
 
-  @include focus {
-    @include state-layer {
-      background: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
+    @include hover(false) {
+      cursor: pointer;
+
+      @include state-layer {
+        background: color-mix(in srgb, var(--state) 0.08 * 100%, transparent);
+      }
     }
-  }
 
-  @include active {
-    @include state-layer {
-      background: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
+    @include focus {
+      @include state-layer {
+        background: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
+      }
     }
-  }
 
-  @include selected {
-    --color: #{$on-secondary-container};
-    --state: #{$on-secondary-container};
+    @include active {
+      @include state-layer {
+        background: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
+      }
+    }
 
-    background: $secondary-container;
-  }
+    @include selected {
+      --color: $on-secondary-container;
+      --state: $on-secondary-container;
 
-  :last-child {
-    &:is(.baka-icon) {
-      margin-right: -16px;
+      background: $secondary-container;
+    }
+
+    :last-child {
+      &:is(.baka-icon) {
+        margin-right: -16px;
+      }
     }
   }
 }

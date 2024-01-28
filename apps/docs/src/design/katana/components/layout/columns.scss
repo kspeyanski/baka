@@ -9,7 +9,7 @@
 
     @media screen and (min-width: $_screen) {
       @for $i from 1 through $_columns {
-        &[data-count="#{$i}"] {
+        &.value--#{$i} {
           width: calc(($i / $_columns) * 100% - $_gutter);
         }
       }

@@ -1,9 +1,6 @@
-@mixin navigation-rail-item {
+@mixin core-navigation-rail-item--styles {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-.baka-navigation-rail-item {
-  @include navigation-rail-item();
-}

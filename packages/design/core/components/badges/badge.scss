@@ -1,12 +1,8 @@
-@mixin badge {
+@mixin core-badge--styles {
   display: inline-flex;
   flex-direction: column;
   flex-wrap: wrap;
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
-}
-
-.baka-badge {
-  @include badge();
 }

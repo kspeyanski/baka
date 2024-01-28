@@ -1,71 +1,83 @@
-@use "../../styles" as *;
+@use "../../design" as *;
 @use "baka-core" as *;
 
-.baka-navigation-rail-item {
-  --state: #{$on-surface};
-  --vertical-padding: 16px;
+@mixin navigation-rail-item--styles {
+  .baka-navigation-rail-item {
+    @include core-navigation-rail-item--styles;
+    --state: #{$on-surface};
+    --vertical-padding: 16px;
 
-  cursor: pointer;
-  display: flex;
-  flex-grow: 1;
-  justify-content: center;
-  height: 80px;
-  gap: 4px;
-  flex-direction: column;
+    cursor: pointer;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    height: 80px;
+    gap: 4px;
+    flex-direction: column;
+    padding: 0 5px;
 
-  .baka-label {
-    color: $on-surface-variant;
-  }
-
-  .baka-icon {
-    border-radius: 100px;
-    position: relative;
-    padding: var(--vertical-padding) 16px;
-    color: $on-surface-variant;
-
-    @include state-layer {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 100px;
-      width: 100%;
-      height: 100%;
-      background: transparent;
-
-      @include motion-transition-TBD(background);
-    }
-  }
-
-  @include hover {
-    .baka-icon {
-      @include state-layer {
-        background: color-mix(in srgb, var(--state) 0.08 * 100%, transparent);
-      }
-    }
-  }
-
-  @include focus {
-    .baka-icon {
-      @include state-layer {
-        background: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
-      }
-    }
-  }
-
-  @include selected {
-    --state: #{$on-secondary-container};
     .baka-label {
-      color: $on-surface;
+      color: $on-surface-variant;
     }
-    .baka-icon {
-      color: $on-secondary-container;
-      background-color: $secondary-container;
-    }
-  }
 
-  &:has(.baka-label) {
-    --vertical-padding: 4px;
+    .baka-icon {
+      border-radius: 100px;
+      position: relative;
+      padding: var(--vertical-padding) 16px;
+      color: $on-surface-variant;
+
+      @include state-layer {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 100px;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+
+        @include motion-transition-TBD(background);
+      }
+    }
+
+    @include hover {
+      .baka-icon {
+        @include state-layer {
+          background: color-mix(in srgb, var(--state) 0.08 * 100%, transparent);
+        }
+      }
+    }
+
+    @include focus {
+      .baka-icon {
+        @include state-layer {
+          background: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
+        }
+      }
+    }
+
+    @include active {
+      .baka-icon {
+        @include state-layer {
+          background: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
+        }
+      }
+    }
+
+    @include selected {
+      --state: #{$on-secondary-container};
+      .baka-label {
+        color: $on-surface;
+      }
+      .baka-icon {
+        color: $on-secondary-container;
+        background-color: $secondary-container;
+      }
+    }
+
+    &:has(.baka-label) {
+      --vertical-padding: 4px;
+    }
   }
 }

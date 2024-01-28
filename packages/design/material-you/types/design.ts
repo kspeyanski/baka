@@ -69,6 +69,8 @@ export interface BakaDesignMaterialYou {
   ListItemVariant: "multi-line" | "video";
   IconVariant: "primary" | "small" | "medium" | "large" | "filled" | "error";
   SwitchVariant: "icon";
+  ContainerVariant: "contained" | "fluid";
+  ColumnVariant: "region-left" | "region-right";
 
   TextFieldState: {
     hovered?: boolean;

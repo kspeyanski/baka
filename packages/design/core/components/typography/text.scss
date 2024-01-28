@@ -1,8 +1,5 @@
-@mixin text {
+@mixin core-text--styles {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.baka-text {
-  @include text();
-}

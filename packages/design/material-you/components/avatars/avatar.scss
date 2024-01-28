@@ -1,21 +1,24 @@
-@use "../../styles" as *;
+@use "../../design" as *;
 @use "baka-core" as *;
 
-.baka-avatar {
-  @include title-medium;
+@mixin avatar--styles {
+  .baka-avatar {
+    @include core-avatar--styles;
+    @include title-medium;
 
-  border-radius: 100px;
+    border-radius: 100px;
 
-  color: $primary;
-  background-color: $primary-container;
+    color: $primary;
+    background-color: $primary-container;
 
-  @include variant(small) {
-    width: 24px;
-    height: 24px;
-  }
+    @include variant(small) {
+      width: 24px;
+      height: 24px;
+    }
 
-  @include variant(medium, true) {
-    width: 40px;
-    height: 40px;
+    @include variant(medium, true) {
+      width: 40px;
+      height: 40px;
+    }
   }
 }

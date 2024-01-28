@@ -1,18 +1,21 @@
-@use "../../styles" as *;
+@use "../../design" as *;
 @use "baka-core" as *;
 
-.baka-paragraph {
-  color: inherit;
+@mixin paragraph--styles {
+  .baka-paragraph {
+    @include core-paragraph--styles;
+    color: inherit;
 
-  @include variant(body-large) {
-    @include body-large;
-  }
+    @include variant(body-large) {
+      @include body-large;
+    }
 
-  @include variant(body-medium, true) {
-    @include body-medium;
-  }
+    @include variant(body-medium, true) {
+      @include body-medium;
+    }
 
-  @include variant(body-small) {
-    @include body-small;
+    @include variant(body-small) {
+      @include body-small;
+    }
   }
 }
