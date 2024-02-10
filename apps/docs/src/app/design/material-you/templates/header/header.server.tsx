@@ -5,8 +5,8 @@ import { Row } from "@/components/layout/row";
 import { Icon } from "@/components/misc/icon";
 import Logo from "@/icons/maskot-material-you.svg";
 import Image from "next/image";
-import { MenuButton } from "./header.client";
 import { TopBar } from "@/components/bars/top-bar";
+import { ToggleButton } from "@/templates/sidenav/sidenav-category.client";
 
 export const Header = () => {
   return (
@@ -15,9 +15,9 @@ export const Header = () => {
         <Row>
           <Column count={12} className="flex items-center justify-between">
             <div className="flex items-center gap-2 ml-[-24px]">
-              <MenuButton className="xl:hidden">
+              <ToggleButton className="xl:hidden">
                 <Icon>menu</Icon>
-              </MenuButton>
+              </ToggleButton>
               <Button variant={"icon"}>
                 <Image src={Logo.src} width={33} height={32} alt="Baka Material You Logo" />
               </Button>

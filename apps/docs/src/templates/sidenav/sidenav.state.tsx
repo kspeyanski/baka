@@ -4,7 +4,7 @@ import React from "react";
 import { Docs } from "contentlayer/generated";
 import { usePathname } from "next/navigation";
 
-const SidenavContext = React.createContext<[SidenavState, React.Dispatch<SidenavAction>]>([
+export const SidenavContext = React.createContext<[SidenavState, React.Dispatch<SidenavAction>]>([
   {
     open: false,
     selected: "",
@@ -55,7 +55,6 @@ const sidenavReducer = (
 ): Partial<SidenavState> => {
   switch (action.type) {
     case SIDENAV_ACTION.TOGGLE:
-      console.log("here", state.open);
       return { ...state, open: !state.open };
     case SIDENAV_ACTION.OPEN:
       return { ...state, open: true };
@@ -81,6 +80,7 @@ const sidenavReducer = (
 export const useSidenavState = () => React.useContext(SidenavContext);
 
 export const SidenavState = (props: SidenavStateProps) => {
+  const override = useSidenavState();
   const pathname = usePathname();
   const expanded =
     props.data?.find((group) => group.docs.some((doc) => pathname.endsWith(doc.url)))?.title ??
@@ -91,15 +91,23 @@ export const SidenavState = (props: SidenavStateProps) => {
       ?.docs.find((doc) => pathname.endsWith(doc.url))?.url ?? null;
   const group = props.data?.find((group) => group.title === expanded) ?? null;
 
-  const [state, setState] = React.useState<Partial<SidenavState>>({
+  const [local, setState] = React.useState<Partial<SidenavState>>({
     open: false,
     group,
   });
 
+  const state = React.useMemo(
+    () => ({
+      ...local,
+      ...override,
+    }),
+    [local]
+  );
+
   const handleDispatch = React.useCallback(
     (action: SidenavAction) => {
       const proposed = sidenavReducer(state, action, props.data);
-      console.log("there", proposed);
+
       setState(proposed);
     },
     [state]

@@ -69,6 +69,9 @@ importers:
       contentlayer:
         specifier: ^0.3.4
         version: 0.3.4(esbuild@0.19.8)
+      flexsearch:
+        specifier: ^0.7.43
+        version: 0.7.43
       geist:
         specifier: ^1.1.0
         version: 1.2.0(next@14.0.2)
@@ -8726,6 +8729,10 @@ packages:
   /flatted@3.2.9:
     resolution: {integrity: sha512-36yxDn5H7OFZQla0/jFJmbIKTdZAQHngCedGxiMmpNfEZM0sdEeT+WczLQrjK6D7o2aiyLYDnkw0R3JK0Qv1RQ==}
     dev: true
+
+  /flexsearch@0.7.43:
+    resolution: {integrity: sha512-c5o/+Um8aqCSOXGcZoqZOm+NqtVwNsvVpWv6lfmSclU954O3wvQKxxK8zj74fPaSJbXpSLTs4PRhh+wnoCXnKg==}
+    dev: false
 
   /flow-parser@0.223.2:
     resolution: {integrity: sha512-K68f4BNDmz+fC2aPi/DnckpNQbJvlN10srj2dUDrmUpyVCg48MPOyPMIrxwYPBRO+DtwSTYMF4wXaK3lRrDTfQ==}

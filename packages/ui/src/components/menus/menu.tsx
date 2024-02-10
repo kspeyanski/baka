@@ -11,7 +11,7 @@ export interface BakaMenuProps
 }
 
 export const BakaMenu: BakaComponent<"ul", BakaMenuProps> = (props) => {
-  const { as: Component = "ul", ...other } = props;
+  const { as: Component = "ul", _ref, ...other } = props;
 
-  return <Component {...other} className={clsx("baka-menu", props.className)} />;
+  return <Component ref={_ref} {...other} className={clsx("baka-menu", props.className)} />;
 };

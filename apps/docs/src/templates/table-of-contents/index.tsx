@@ -1,5 +1,4 @@
 import { Label, Text } from "@/components/typography";
-import { BakaDivider } from "baka-ui";
 import clsx from "clsx";
 import Link from "next/link";
 

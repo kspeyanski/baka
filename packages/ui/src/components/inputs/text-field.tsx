@@ -24,11 +24,13 @@ export const BakaTextField: BakaComponent<"span", BakaTextFieldProps> = (props) 
     readOnly,
     valid,
     invalid,
+    _ref,
     ...other
   } = props;
 
   return (
     <Component
+      ref={_ref}
       type="text-field"
       checked={checked}
       readOnly={readOnly}

@@ -145,6 +145,34 @@
       }
     }
 
+    @include variant(search) {
+      --state: transparent;
+      height: 56px;
+      border-radius: 28px;
+      width: 100%;
+      @include motion-transition-TBD(border-radius);
+
+      &:after {
+        opacity: 0;
+        margin: auto;
+        width: calc(100% - 56px);
+        @include motion-transition-TBD(width, opacity);
+      }
+
+      @include focus {
+        --accent: #{$on-surface};
+        --outline-height: 1px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+        &:after {
+          opacity: 1;
+          transition-delay: 0;
+          width: 100%;
+        }
+      }
+    }
+
     @include hover {
       --accent: #{$on-surface};
       @include state-layer {

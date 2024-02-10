@@ -12,7 +12,7 @@ export interface BakaMenuItemProps
 }
 
 export const BakaMenuItem: BakaComponent<"li", BakaMenuItemProps> = (props) => {
-  const { as: Component = "li", readOnly, disabled, ...other } = props;
+  const { as: Component = "li", readOnly, selected, hovered, disabled, ...other } = props;
 
   return (
     <Component

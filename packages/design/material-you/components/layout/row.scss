@@ -11,6 +11,8 @@
       $_screen: map-get($breakpoint, screen);
       $_margin: map-get($breakpoint, margin);
 
+      display: flex;
+
       @media screen and (min-width: $_screen) {
         gap: $_gutter;
         padding-inline: $_margin;

@@ -79,7 +79,7 @@ export interface BakaDesignMaterialYou {
     disabled?: boolean;
     invalid?: boolean;
   };
-  TextFieldVariant: "filled" | "outlined";
+  TextFieldVariant: "filled" | "outlined" | "search";
   TabGroupVariant: "primary" | "secondary" | "overflow";
   TabState: {
     selected?: boolean;

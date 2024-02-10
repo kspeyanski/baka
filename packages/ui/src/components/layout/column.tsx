@@ -7,7 +7,7 @@ import { valueClassNames } from "../../utils/value-class-names";
 
 export interface BakaColumnProps extends React.HTMLAttributes<HTMLDivElement>, BakaProps {
   variant?: BakaVariant<BakaDesign["ColumnVariant"]>;
-  count?: number | Array<number>;
+  count?: number | Array<number | null>;
 }
 
 export const BakaColumn: BakaComponent<"div", BakaColumnProps> = (props) => {

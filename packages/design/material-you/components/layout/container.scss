@@ -21,7 +21,6 @@
         @media screen and (min-width: $_screen) {
           max-width: $_width;
           width: 100%;
-          margin-inline: auto;
         }
       }
       @include variant(fluid) {

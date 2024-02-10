@@ -1,0 +1,21 @@
+@use "@/design/material-you" as theme;
+
+.responsive-search {
+  @media screen and (max-width: calc(map-get(theme.$breakpoints, sm, screen) - 1px)) {
+    &:not(.open) {
+      flex: 0;
+      background-color: transparent;
+    }
+
+    .input {
+      display: none;
+    }
+
+    &.open {
+      position: absolute;
+      .input {
+        display: flex;
+      }
+    }
+  }
+}

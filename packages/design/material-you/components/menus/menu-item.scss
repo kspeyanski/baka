@@ -4,7 +4,8 @@
 @mixin menu-item--styles {
   .baka-menu-item {
     @include core-menu-item--styles;
-    --state: transparent;
+    --state: #{$on-surface};
+    --modifier: transparent;
     --ripple: #{$on-surface};
     min-height: 56px;
 
@@ -22,7 +23,7 @@
       bottom: 0;
       width: 100%;
       height: 100%;
-      background: var(--state);
+      background: var(--modifier);
 
       @include motion-transition-TBD(background);
     }
@@ -30,15 +31,19 @@
     @include ripple(var(--ripple), $scale: 10);
 
     @include hover($readonly: false) {
-      --state: color-mix(in srgb, var(--state) 0.08 * 100%, transparent);
+      --modifier: #{color-mix(in srgb, #{var(--state)} 0.08 * 100%, transparent)};
     }
 
     @include focus($readonly: false) {
-      --state: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
+      --modifier: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
     }
 
     @include active($readonly: false) {
-      --state: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
+      --modifier: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
+    }
+
+    @include selected() {
+      background: $surface-container-high;
     }
 
     @include dragged {

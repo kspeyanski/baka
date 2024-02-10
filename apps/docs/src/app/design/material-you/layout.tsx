@@ -13,14 +13,22 @@ export const metadata: Metadata = {
 };
 
 import Logo from "@/icons/logo-material-you.svg";
+import GitHub from "@/icons/github-mark.svg";
+import NPM from "@/icons/npm-logo.svg";
 import { Container } from "@/components/layout/container";
 import { Row } from "@/components/layout/row";
 import { Column } from "@/components/layout/column";
-import { SidenavCategory } from "@/templates/sidenav/sidenav-category.server";
 import clsx from "clsx";
 import { Sidenav } from "@/templates/sidenav/sidenav.server";
-import { Header } from "./templates/header/header.server";
 import { SidenavState } from "@/templates/sidenav/sidenav.state";
+import { TopBar } from "@/components/bars/top-bar";
+import { Icon } from "@/components/misc/icon";
+import { ToggleButton } from "@/templates/sidenav/sidenav-category.client";
+import { Docs, allDocs } from "contentlayer/generated";
+import Image from "next/image";
+import { Search } from "@/templates/search/search.client";
+import { Button } from "@/components/buttons/button";
+import Link from "next/link";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
@@ -35,6 +43,24 @@ const robotoMono = Roboto_Mono({
 });
 
 export default function MaterialYouLayout({ children }: { children: React.ReactNode }) {
+  const docs = allDocs;
+  const groups = docs
+    .sort((a: Partial<Docs>, b: Partial<Docs>) => (a.position ?? 0) - (b.position ?? 0))
+    .reduce((acc, doc) => {
+      const g = acc.find((a) => a.title === doc?.group?.title);
+
+      if (!g) {
+        acc.push({
+          ...doc.group,
+          docs: [{ title: doc.title, url: doc.url }],
+        });
+      } else {
+        g.docs.push({ title: doc.title, url: doc.url });
+      }
+
+      return acc;
+    }, [] as Array<{ title: string; icon?: string; docs: Pick<Docs, "url" | "title">[] }>);
+
   return (
     <html lang="en">
       <head>
@@ -46,16 +72,56 @@ export default function MaterialYouLayout({ children }: { children: React.ReactN
         ></link>
       </head>
       <body className={clsx(roboto.variable, robotoMono.variable)}>
-          <main className="min-h-[calc(100vh-60px)] flex flex-row">
-            <Sidenav />
+        <main className="min-h-[calc(100vh-60px)] flex flex-row">
+          <SidenavState data={groups}>
+            <Sidenav data={groups} />
             <Container>
-              <Row className="relative">
-                {/* <Column count={3} className="hidden md:flex sticky top-[100px] h-[calc(100%-100px)] "> */}
-                {/* </Column> */}
-                {children}
+              <Row as={TopBar} className={"sticky top-0 z-30 min-h-[72px] "}>
+                <Column
+                  count={[4, 6, 10, 8, 8]}
+                  className="items-center gap-3 md:gap-0 justify-between relative"
+                >
+                  <div className="flex items-center gap-3 ">
+                    <ToggleButton className="sm:hidden">
+                      <Icon />
+                    </ToggleButton>
+                    <Image
+                      src={Logo}
+                      alt="Baka UI"
+                      className="h-[30px] w-auto sm:hidden"
+                      width={400}
+                      height={33}
+                    />
+                  </div>
+                  <Search />
+                </Column>
+                <Column count={[null, 2, 2, 4, 4]} className="gap-2 hidden sm:flex">
+                  <Button
+                    variant={"icon"}
+                    as={Link}
+                    href={"https://github.com/kspeyanski/baka"}
+                    target={"_blank"}
+                  >
+                    <Icon>
+                      <Image src={GitHub} alt="GitHub" width={32} height={32} />
+                    </Icon>
+                  </Button>
+                  <Button
+                    variant={"icon"}
+                    as={Link}
+                    href="https://www.npmjs.com/package/baka-ui"
+                    target={"_blank"}
+                  >
+                    <Icon>
+                      <Image src={NPM} alt="NPM" width={32} height={32} />
+                    </Icon>
+                  </Button>
+                </Column>
               </Row>
+              <Row className="relative">{children}</Row>
             </Container>
-          </main>
+          </SidenavState>
+        </main>
       </body>
     </html>
   );
