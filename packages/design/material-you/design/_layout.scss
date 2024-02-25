@@ -1,4 +1,6 @@
-$breakpoints: (
+@use "baka-core" as *;
+
+$layout: (
   xs: (
     screen: 0,
     width: 100%,
@@ -46,7 +48,7 @@ $breakpoints: (
   xl: (
     screen: 1440px,
     width: 1128px,
-    columns: 12, 
+    columns: 12,
     gutter: 24px,
     margin: 24px,
     regions: (
@@ -58,7 +60,7 @@ $breakpoints: (
 );
 
 @mixin layout--styles {
-  @each $breakpoint, $properties in $breakpoints {
-    --layout--screen--#{$breakpoint}: #{map-get($properties, screen)};
+  *, ::before, ::after  {
+    @include css-vars($layout, --layout);
   }
 }

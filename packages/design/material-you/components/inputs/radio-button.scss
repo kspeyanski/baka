@@ -56,7 +56,7 @@
       --ripple: #{$primary};
       --state: #{$primary};
 
-      outline: 3px solid $surface;
+      outline: 3px solid map-get($swatch, surface);
       outline-offset: -5px;
       background: var(--background);
     }

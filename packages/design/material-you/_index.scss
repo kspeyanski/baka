@@ -1,4 +1,5 @@
 @forward "baka-core";
+@use "baka-core" as *;
 
 @forward "./design";
 @use "./design/" as *;
@@ -6,14 +7,9 @@
 @forward "./components";
 @use "./components/" as *;
 
-@mixin variables {
-  @include swatch--styles();
-  @include typography--styles();
-  @include layout--styles();
-  @include elevation--styles();
-}
-
 @mixin styles {
+  @include design--styles();
+
   @include avatar--styles();
   @include badge--styles();
   @include bottom-bar--styles();

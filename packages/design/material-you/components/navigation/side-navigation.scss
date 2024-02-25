@@ -4,7 +4,7 @@
 @mixin side-navigation--styles {
   .baka-side-navigation {
     @include core-side-navigation--styles;
-    color: $on-surface;
+    color: map-get($swatch, on-surface);
     background: $surface-container;
     padding: 12px;
     border-radius: 16px;

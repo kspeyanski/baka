@@ -1,10 +1,16 @@
 @use "./index" as material-you;
+@use "./themes/dark" as dark;
 @use "./components/" as extended;
 
-:root {
-  @include material-you.variables();
-}
 @include material-you.styles();
+
+html {
+  @media screen and (prefers-color-scheme: dark) {
+    &:not(.theme-light) {
+      @include dark.styles();
+    }
+  }
+}
 
 @include extended.misc--styles();
 @include extended.code--styles();

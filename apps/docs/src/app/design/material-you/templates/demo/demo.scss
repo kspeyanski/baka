@@ -1,7 +1,11 @@
 .iframe {
-  min-height: 350px;
+  min-height: calc(var(--iframe-height, 350px) - 48px);
 
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+.demo-source {
+  margin: 0;
 }

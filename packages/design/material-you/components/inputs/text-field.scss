@@ -114,7 +114,7 @@
       &:has(.baka-label) {
         & > .baka-label {
           z-index: 1;
-          background: $surface;
+          background: map-get($swatch, surface);
           padding: 0 4px;
 
           @include body-small;

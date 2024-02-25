@@ -9,8 +9,8 @@ body {
   align-items: center;
   min-height: 100vh;
 
-  color: $on-surface;
-  background-color: $surface;
+  color: map-get($swatch, on-surface);
+  background-color: map-get($swatch, surface);
 
   // TODO: enable later
   // @media screen and (prefers-color-scheme: dark) {

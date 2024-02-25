@@ -1,5 +1,5 @@
-@use "../../design" as *;
 @use "baka-core" as *;
+@use "../../design" as *;
 
 @mixin button--styles {
   .baka-button {
@@ -58,7 +58,7 @@
 
     @include variant(filled) {
       color: $on-primary;
-      background: $primary;
+      background: map-get($swatch, primary);
       padding: 10px 24px;
 
       @include hover {
@@ -92,7 +92,7 @@
 
     @include variant(outlined) {
       background: transparent;
-      color: $primary;
+      color: map-get($swatch, primary);
       border-color: $outline;
       padding: 10px 24px;
 
@@ -127,7 +127,7 @@
 
     @include variant(text, true) {
       background: transparent;
-      color: $primary;
+      color: map-get($swatch, primary);
       padding: 10px 12px;
 
       @include hover {
@@ -169,7 +169,7 @@
 
     @include variant(elevated) {
       background: $surface-container-low;
-      color: $primary;
+      color: map-get($swatch, primary);
       box-shadow: map-get($elevation, 1);
       border-color: transparent;
       padding: 10px 24px;
@@ -282,7 +282,7 @@
 
     @include variant((icon, toggle)) {
       @include selected {
-        color: $primary;
+        color: map-get($swatch, primary);
 
         .baka-icon {
           font-variation-settings: $font-variation, "FILL" 1;
@@ -319,12 +319,12 @@
     }
 
     @include variant((icon, toggle, filled)) {
-      color: $primary;
+      color: map-get($swatch, primary);
       background: $surface-container-highest;
 
       @include selected {
         color: $on-primary;
-        background: $primary;
+        background: map-get($swatch, primary);
 
         .baka-icon {
           font-variation-settings: $font-variation, "FILL" 1;
@@ -430,7 +430,7 @@
 
     @include variant((fab, primary)) {
       color: $on-primary-container;
-      background: $primary-container;
+      background: map-get($swatch, primary-container);
 
       @include hover {
         @include state-layer {

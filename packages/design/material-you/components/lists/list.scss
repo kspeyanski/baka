@@ -4,7 +4,7 @@
 @mixin list--styles {
   .baka-list {
     @include core-list--styles;
-    color: $on-surface;
-    background-color: $surface;
+    color: map-get($swatch, on-surface);
+    background-color: map-get($swatch, surface);
   }
 }

@@ -24,7 +24,10 @@ $motion-easing-emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15);
 $motion-easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
 
 @mixin motion-transition-TBD($property...) {
-    transition-property: $property;
-    transition-duration: $motion-duration-medium-1;
-    transition-timing-function: $motion-easing-standard;
+  transition-property: $property;
+  transition-duration: $motion-duration-medium-1;
+  transition-timing-function: $motion-easing-standard;
+}
+
+@mixin motion--styles {
 }

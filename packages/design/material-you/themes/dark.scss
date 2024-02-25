@@ -1,6 +1,7 @@
+@use "../index" as *;
 @use "../colors" as *;
 
-$swatch: (
+$dark_swatch: (
   primary: map-get($royal-purple, 80),
   on-primary: map-get($royal-purple, 20),
   primary-container: map-get($royal-purple, 30),
@@ -48,8 +49,10 @@ $swatch: (
   shadow: map-get($granite, 0),
 );
 
-@mixin variables {
-  @each $key, $value in $swatch {
-    --swatch--#{$key}: #{$value};
-  }
+@mixin design--styles {
+  @include swatch--styles($dark_swatch);
+}
+
+@mixin styles {
+  @include design--styles();
 }

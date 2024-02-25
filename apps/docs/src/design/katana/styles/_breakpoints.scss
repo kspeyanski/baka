@@ -42,3 +42,11 @@ $breakpoints: (
     margin: 32px,
   ),
 );
+
+@mixin layout--styles {
+  *, ::before, ::after  {
+    @each $breakpoint, $properties in $breakpoints {
+      --layout--screen--#{$breakpoint}: #{map-get($properties, screen)};
+    }
+  }
+}

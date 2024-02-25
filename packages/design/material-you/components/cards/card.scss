@@ -17,7 +17,7 @@
 
     @include variant(outlined, true) {
       border-color: $outline-variant;
-      background: $surface;
+      background: map-get($swatch, surface);
     }
 
     @include variant(elevated) {

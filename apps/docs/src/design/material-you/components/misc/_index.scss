@@ -6,6 +6,19 @@
   }
 
   .li {
+    padding-left: 24px;
+    position: relative;
+
+    &::before {
+      content: "•";
+      position: absolute;
+      font-size: 24px;
+      border-radius: 50%;
+      left: 0;
+      top: 2px;
+      color: map-get($swatch, primary);
+    }
+
     & + & {
       margin-top: 4px;
     }

@@ -1,7 +1,25 @@
-@forward "./swatch";
 @forward "./elevation";
-@forward "./typography";
-@forward "./states";
-@forward "./motion";
 @forward "./iconography";
-@forward "./breakpoints";
+@forward "./layout";
+@forward "./motion";
+@forward "./state";
+@forward "./swatch";
+@forward "./typography";
+
+@use "./elevation" as *;
+@use "./iconography" as *;
+@use "./layout" as *;
+@use "./motion" as *;
+@use "./state" as *;
+@use "./swatch" as *;
+@use "./typography" as *;
+
+@mixin design--styles {
+  @include elevation--styles();
+  @include iconography--styles();
+  @include layout--styles();
+  @include motion--styles();
+  @include state--styles();
+  @include swatch--styles();
+  @include typography--styles();
+}

@@ -1,6 +1,6 @@
-@use "../../../design/material-you/index.scss" as *;
+@use "@/design/material-you/index.scss" as *;
 
 body {
-  color: $on-surface;
-  background-color: $surface;
+  color: map-get($swatch, on-surface);
+  background-color: map-get($swatch, surface);
 }

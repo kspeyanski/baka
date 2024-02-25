@@ -1,5 +1,5 @@
 $font-family: (
-  sans: 'Roboto',
+  sans: "Roboto",
   serif: '"Roboto Serif"',
   mono: '"Roboto Mono"',
 ) !default;
@@ -232,16 +232,18 @@ $line-height: (
 }
 
 @mixin typography--styles {
-  @each $name, $value in $font-family {
-    --typography--font-family--#{$name}: #{$value};
-  }
-  @each $key, $value in $font-size {
-    --typography--font-size--#{$key}: #{$value};
-  }
-  @each $key, $value in $letter-spacing {
-    --typography--letter-spacing--#{$key}: #{$value};
-  }
-  @each $key, $value in $line-height {
-    --typography--line-height--#{$key}: #{$value};
+  *, ::before, ::after  {
+    @each $name, $value in $font-family {
+      --typography--font-family--#{$name}: #{$value};
+    }
+    @each $key, $value in $font-size {
+      --typography--font-size--#{$key}: #{$value};
+    }
+    @each $key, $value in $letter-spacing {
+      --typography--letter-spacing--#{$key}: #{$value};
+    }
+    @each $key, $value in $line-height {
+      --typography--line-height--#{$key}: #{$value};
+    }
   }
 }

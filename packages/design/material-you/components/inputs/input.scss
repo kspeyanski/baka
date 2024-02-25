@@ -9,7 +9,7 @@
     background: none;
     outline: none;
 
-    color: $on-surface;
-    caret-color: $primary;
+    color: map-get($swatch, on-surface);
+    caret-color: map-get($swatch, primary);
   }
 }

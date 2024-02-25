@@ -29,6 +29,7 @@ import Image from "next/image";
 import { Search } from "@/templates/search/search.client";
 import { Button } from "@/components/buttons/button";
 import Link from "next/link";
+import { ColorScheme } from "@/templates/color-scheme/color-scheme.client";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
@@ -62,67 +63,69 @@ export default function MaterialYouLayout({ children }: { children: React.ReactN
     }, [] as Array<{ title: string; icon?: string; docs: Pick<Docs, "url" | "title">[] }>);
 
   return (
-    <html lang="en">
-      <head>
-        <link rel="icon" href={favicon.src} />
-        {/* eslint-disable-next-line @next/next/google-font-display, @next/next/no-page-custom-font  */}
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-        ></link>
-      </head>
-      <body className={clsx(roboto.variable, robotoMono.variable)}>
-        <main className="min-h-[calc(100vh-60px)] flex flex-row">
-          <SidenavState data={groups}>
-            <Sidenav data={groups} />
-            <Container>
-              <Row as={TopBar} className={"sticky top-0 z-30 min-h-[72px] "}>
-                <Column
-                  count={[4, 6, 10, 8, 8]}
-                  className="items-center gap-3 md:gap-0 justify-between relative"
-                >
-                  <div className="flex items-center gap-3 ">
-                    <ToggleButton className="sm:hidden">
-                      <Icon />
-                    </ToggleButton>
-                    <Image
-                      src={Logo}
-                      alt="Baka UI"
-                      className="h-[30px] w-auto sm:hidden"
-                      width={400}
-                      height={33}
-                    />
-                  </div>
-                  <Search />
-                </Column>
-                <Column count={[null, 2, 2, 4, 4]} className="gap-2 hidden sm:flex">
-                  <Button
-                    variant={"icon"}
-                    as={Link}
-                    href={"https://github.com/kspeyanski/baka"}
-                    target={"_blank"}
+    <ColorScheme>
+      <html lang="en">
+        <head>
+          <link rel="icon" href={favicon.src} />
+          {/* eslint-disable-next-line @next/next/google-font-display, @next/next/no-page-custom-font  */}
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+          ></link>
+        </head>
+        <body className={clsx(roboto.variable, robotoMono.variable)}>
+          <main className="min-h-[calc(100vh-60px)] flex flex-row">
+            <SidenavState data={groups}>
+              <Sidenav data={groups} />
+              <Container>
+                <Row as={TopBar} className={"sticky top-0 z-30 min-h-[72px] "}>
+                  <Column
+                    count={[4, 6, 10, 8, 8]}
+                    className="items-center gap-3 md:gap-0 justify-between relative"
                   >
-                    <Icon>
-                      <Image src={GitHub} alt="GitHub" width={32} height={32} />
-                    </Icon>
-                  </Button>
-                  <Button
-                    variant={"icon"}
-                    as={Link}
-                    href="https://www.npmjs.com/package/baka-ui"
-                    target={"_blank"}
-                  >
-                    <Icon>
-                      <Image src={NPM} alt="NPM" width={32} height={32} />
-                    </Icon>
-                  </Button>
-                </Column>
-              </Row>
-              <Row className="relative">{children}</Row>
-            </Container>
-          </SidenavState>
-        </main>
-      </body>
-    </html>
+                    <div className="flex items-center gap-3 ">
+                      <ToggleButton className="sm:hidden">
+                        <Icon />
+                      </ToggleButton>
+                      <Image
+                        src={Logo}
+                        alt="Baka UI"
+                        className="h-[30px] w-auto sm:hidden"
+                        width={400}
+                        height={33}
+                      />
+                    </div>
+                    <Search />
+                  </Column>
+                  <Column count={[null, 2, 2, 4, 4]} className="gap-2 hidden sm:flex">
+                    <Button
+                      variant={"icon"}
+                      as={Link}
+                      href={"https://github.com/kspeyanski/baka"}
+                      target={"_blank"}
+                    >
+                      <Icon>
+                        <Image src={GitHub} alt="GitHub" width={32} height={32} />
+                      </Icon>
+                    </Button>
+                    <Button
+                      variant={"icon"}
+                      as={Link}
+                      href="https://www.npmjs.com/package/baka-ui"
+                      target={"_blank"}
+                    >
+                      <Icon>
+                        <Image src={NPM} alt="NPM" width={32} height={32} />
+                      </Icon>
+                    </Button>
+                  </Column>
+                </Row>
+                <Row className="relative">{children}</Row>
+              </Container>
+            </SidenavState>
+          </main>
+        </body>
+      </html>
+    </ColorScheme>
   );
 }

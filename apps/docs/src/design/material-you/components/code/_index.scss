@@ -2,6 +2,10 @@
 
 @mixin code--styles {
   .pre {
+    overflow: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 16px 0;
     background: $surface-container;
     padding: 16px;
     border-radius: 4px;
@@ -16,7 +20,7 @@
   }
 
   .code {
-    color: $primary;
+    color: map-get($swatch, primary);
     font-size: map-get($font-size, body-medium);
     font-family: map-get($font-family, mono);
 
@@ -26,7 +30,7 @@
       .hljs-subst,
       .hljs-title {
         font-weight: normal;
-        color: #000;
+        color: $on-surface;
       }
 
       .hljs-title.function_ {

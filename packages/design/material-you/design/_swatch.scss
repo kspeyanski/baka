@@ -1,3 +1,7 @@
+@use "sass:map";
+
+@use "baka-core" as *;
+
 @use "../colors" as *;
 @forward "../colors";
 
@@ -51,67 +55,62 @@ $_default-swatch: (
 
 $swatch: () !default;
 $swatch: map-merge($_default-swatch, $swatch);
+$_swatch: map-merge($swatch, ());
 
-$primary: var(--swatch--primary, map-get($swatch, primary));
-$on-primary: var(--swatch--on-primary, map-get($swatch, on-primary));
-$primary-container: var(--swatch--primary-container, map-get($swatch, primary-container));
-$on-primary-container: var(--swatch--on-primary-container, map-get($swatch, on-primary-container));
-$primary-fixed: var(--swatch--primary-fixed, map-get($swatch, primary-fixed));
-$primary-fixed-dim: var(--swatch--primary-fixed-dim, map-get($swatch, primary-fixed-dim));
-$on-primary-fixed: var(--swatch--on-primary-fixed, map-get($swatch, on-primary-fixed));
-$on-primary-fixed-variant: var(
-  --on-primary-fixed-variant,
-  map-get($swatch, on-primary-fixed-variant)
-);
-$secondary: var(--swatch--secondary, map-get($swatch, secondary));
-$on-secondary: var(--swatch--on-secondary, map-get($swatch, on-secondary));
-$secondary-container: var(--swatch--secondary-container, map-get($swatch, secondary-container));
-$on-secondary-container: var(--swatch--on-secondary-container, map-get($swatch, on-secondary-container));
-$secondary-fixed: var(--swatch--secondary-fixed, map-get($swatch, secondary-fixed));
-$secondary-fixed-dim: var(--swatch--secondary-fixed-dim, map-get($swatch, secondary-fixed-dim));
-$on-secondary-fixed: var(--swatch--on-secondary-fixed, map-get($swatch, on-secondary-fixed));
-$on-secondary-fixed-variant: var(
-  --on-secondary-fixed-variant,
-  map-get($swatch, on-secondary-fixed-variant)
-);
-$tertiary: var(--swatch--tertiary, map-get($swatch, tertiary));
-$on-tertiary: var(--swatch--on-tertiary, map-get($swatch, on-tertiary));
-$tertiary-container: var(--swatch--tertiary-container, map-get($swatch, tertiary-container));
-$on-tertiary-container: var(--swatch--on-tertiary-container, map-get($swatch, on-tertiary-container));
-$error: var(--swatch--error, map-get($swatch, error));
-$on-error: var(--swatch--on-error, map-get($swatch, on-error));
-$error-container: var(--swatch--error-container, map-get($swatch, error-container));
-$on-error-container: var(--swatch--on-error-container, map-get($swatch, on-error-container));
-$error-fixed: var(--swatch--error-fixed, map-get($swatch, error-fixed));
-$error-fixed-dim: var(--swatch--error-fixed-dim, map-get($swatch, error-fixed-dim));
-$on-error-fixed: var(--swatch--on-error-fixed, map-get($swatch, on-error-fixed));
-$on-error-fixed-variant: var(--swatch--on-error-fixed-variant, map-get($swatch, on-error-fixed-variant));
-$surface-dim: var(--swatch--surface-dim, map-get($swatch, surface-dim));
-$surface: var(--swatch--surface, map-get($swatch, surface));
-$surface-bright: var(--swatch--surface-bright, map-get($swatch, surface-bright));
-$surface-container-lowest: var(
-  --surface-container-lowest,
-  map-get($swatch, surface-container-lowest)
-);
-$surface-container-low: var(--swatch--surface-container-low, map-get($swatch, surface-container-low));
-$surface-container: var(--swatch--surface-container, map-get($swatch, surface-container));
-$surface-container-highest: var(
-  --surface-container-highest,
-  map-get($swatch, surface-container-highest)
-);
-$surface-container-high: var(--swatch--surface-container-high, map-get($swatch, surface-container-high));
-$on-surface: var(--swatch--on-surface, map-get($swatch, on-surface));
-$on-surface-variant: var(--swatch--on-surface-variant, map-get($swatch, on-surface-variant));
-$outline: var(--swatch--outline, map-get($swatch, outline));
-$outline-variant: var(--swatch--outline-variant, map-get($swatch, outline-variant));
-$inverse-surface: var(--swatch--inverse-surface, map-get($swatch, inverse-surface));
-$inverse-on-surface: var(--swatch--inverse-on-surface, map-get($swatch, inverse-on-surface));
-$inverse-primary: var(--swatch--inverse-primary, map-get($swatch, inverse-primary));
-$scrim: var(--swatch--scrim, map-get($swatch, scrim));
-$shadow: var(--swatch--shadow, map-get($swatch, shadow));
+@each $name, $value in $swatch {
+  $swatch: map.merge($swatch, (#{$name}: var(--swatch--#{$name}, $value)));
+}
 
-@mixin swatch--styles() {
-  @each $key, $value in $swatch {
-    --swatch--#{$key}: #{$value};
+$primary: map-get($swatch, primary);
+$on-primary: map-get($swatch, on-primary);
+$primary-container: map-get($swatch, primary-container);
+$on-primary-container: map-get($swatch, on-primary-container);
+$primary-fixed: map-get($swatch, primary-fixed);
+$primary-fixed-dim: map-get($swatch, primary-fixed-dim);
+$on-primary-fixed: map-get($swatch, on-primary-fixed);
+$on-primary-fixed-variant: map-get($swatch, on-primary-fixed-variant);
+$secondary: map-get($swatch, secondary);
+$on-secondary: map-get($swatch, on-secondary);
+$secondary-container: map-get($swatch, secondary-container);
+$on-secondary-container: map-get($swatch, on-secondary-container);
+$secondary-fixed: map-get($swatch, secondary-fixed);
+$secondary-fixed-dim: map-get($swatch, secondary-fixed-dim);
+$on-secondary-fixed: map-get($swatch, on-secondary-fixed);
+$on-secondary-fixed-variant: map-get($swatch, on-secondary-fixed-variant);
+$tertiary: map-get($swatch, tertiary);
+$on-tertiary: map-get($swatch, on-tertiary);
+$tertiary-container: map-get($swatch, tertiary-container);
+$on-tertiary-container: map-get($swatch, on-tertiary-container);
+$error: map-get($swatch, error);
+$on-error: map-get($swatch, on-error);
+$error-container: map-get($swatch, error-container);
+$on-error-container: map-get($swatch, on-error-container);
+$error-fixed: map-get($swatch, error-fixed);
+$error-fixed-dim: map-get($swatch, error-fixed-dim);
+$on-error-fixed: map-get($swatch, on-error-fixed);
+$on-error-fixed-variant: map-get($swatch, on-error-fixed-variant);
+$surface-dim: map-get($swatch, surface-dim);
+$surface: map-get($swatch, surface);
+$surface-bright: map-get($swatch, surface-bright);
+$surface-container-lowest: map-get($swatch, surface-container-lowest);
+$surface-container-low: map-get($swatch, surface-container-low);
+$surface-container: map-get($swatch, surface-container);
+$surface-container-highest: map-get($swatch, surface-container-highest);
+$surface-container-high: map-get($swatch, surface-container-high);
+$on-surface: map-get($swatch, on-surface);
+$on-surface-variant: map-get($swatch, on-surface-variant);
+$outline: map-get($swatch, outline);
+$outline-variant: map-get($swatch, outline-variant);
+$inverse-surface: map-get($swatch, inverse-surface);
+$inverse-on-surface: map-get($swatch, inverse-on-surface);
+$inverse-primary: map-get($swatch, inverse-primary);
+$scrim: map-get($swatch, scrim);
+$shadow: map-get($swatch, shadow);
+
+@mixin swatch--styles($swatch: $_swatch) {
+  *,
+  ::before,
+  ::after {
+    @include css-vars($swatch, --swatch);
   }
 }

@@ -1,6 +1,7 @@
-@use "./index.scss" as *;
+@use "./index.scss" as katana;
 
-:root {
-  @include spacing--styles();
-  @include typography-styles();
+*, ::before, ::after  {
+  @include katana.variables();
 }
+
+@include katana.styles();

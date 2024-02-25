@@ -6,7 +6,7 @@
     @include core-row--styles;
     @include core-row--styles();
 
-    @each $size, $breakpoint in $breakpoints {
+    @each $size, $breakpoint in $layout {
       $_gutter: map-get($breakpoint, gutter);
       $_screen: map-get($breakpoint, screen);
       $_margin: map-get($breakpoint, margin);

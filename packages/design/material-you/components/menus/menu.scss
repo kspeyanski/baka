@@ -16,7 +16,7 @@
   .baka-menu {
     @include core-menu--styles;
     padding: 8px 0;
-    color: $on-surface;
+    color: map-get($swatch, on-surface);
     background-color: $surface-container-highest;
     border-radius: 4px;
     box-shadow: map-get($elevation, 2);

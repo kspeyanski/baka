@@ -13,7 +13,7 @@
 
     @include variant(rich, true) {
       box-shadow: map-get($elevation, 2);
-      color: $on-surface;
+      color: map-get($swatch, on-surface);
       background: $surface-container;
       gap: 8px;
       padding-bottom: 8px;

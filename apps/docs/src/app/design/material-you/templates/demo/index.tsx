@@ -9,11 +9,12 @@ import { DemoIFrame } from "./demo-iframe";
 
 export type DemoProps = {
   src: string;
+  style?: React.CSSProperties;
 };
 
 export const Demo = (props: DemoProps) => {
   return (
-    <BakaCard>
+    <BakaCard className="my-4" style={props.style}>
       <DemoState>
         <div className="bg-surface-container">
           <BakaTabGroup variant={"secondary"}>
@@ -28,7 +29,7 @@ export const Demo = (props: DemoProps) => {
           </BakaTabGroup>
         </div>
         <BakaDivider />
-        <DemoIFrame src={props.src} />
+        <DemoIFrame src={props.src} style={{minHeight: props.style?.height}}/>
         <DemoSource src={props.src} />
       </DemoState>
     </BakaCard>

@@ -1,0 +1,59 @@
+---
+title: Chip
+---
+
+# Chip
+
+The Chip component in the Baka UI library is a versatile element that can display labels and icons in a compact format. Chips are commonly used to represent tags, categories, or actions in your web application.
+
+<Demo src="/demos/material-you/chip" />
+
+### Basic Usage
+
+You can use the Chip component by importing it from `baka-ui` and adding it to your JSX code:
+
+```jsx
+import { BakaChip } from "baka-ui";
+
+function MyComponent() {
+  return <BakaChip>BakaLabel</BakaChip>;
+}
+```
+
+### Props
+
+The Chip component supports the following props:
+
+- `variant`: An array of strings representing different variants such as "elevated," "selected," "hovered," "focused," "dragged," etc.
+- `selected`: A boolean that highlights the chip when set to `true`.
+- `hovered`: A boolean that changes the chip's appearance when hovered.
+- `focused`: A boolean that changes the chip's appearance when focused.
+- `dragged`: A boolean that changes the chip's appearance when dragged.
+
+### Variants 
+
+The Chip component supports different variants that can be used to change its appearance. The following variants are supported:
+
+#### Elevated
+
+The `elevated` variant adds a shadow to the chip, making it appear elevated from the background.
+
+<Demo src="/demos/material-you/chip/elevated" />
+
+
+### Examples
+
+Here are some examples of using the Chip component with different props:
+
+
+#### Trailing icons
+
+You can add a trailing icon to the chip:
+
+<Demo src="/demos/material-you/chip/trailing-icon" />
+
+#### Leading icons
+
+You can add a leading icon to the chip:
+
+<Demo src="/demos/material-you/chip/leading-icon" />

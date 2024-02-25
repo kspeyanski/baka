@@ -1,7 +1,7 @@
 @use "@/design/material-you" as theme;
 
 .responsive-search {
-  @media screen and (max-width: calc(map-get(theme.$breakpoints, sm, screen) - 1px)) {
+  @media screen and (max-width: calc(map-get(theme.$layout, sm, screen) - 1px)) {
     &:not(.open) {
       flex: 0;
       background-color: transparent;

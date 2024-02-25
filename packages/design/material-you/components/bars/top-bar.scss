@@ -1,5 +1,5 @@
-@use "../../design" as *;
 @use "baka-core" as *;
+@use "../../design" as *;
 
 @mixin top-bar--styles {
   .baka-top-bar {
@@ -10,13 +10,13 @@
     justify-content: flex-start;
 
     @include variant(flat, true) {
-      color: $on-surface;
-      background: $surface;
+      color: map-get($swatch, on-surface);
+      background: map-get($swatch, surface);
     }
 
     @include variant(elevated) {
-      color: $on-surface;
-      background: $surface-container;
+      color: map-get($swatch, on-surface);
+      background: map-get($swatch, surface-container);
     }
 
     @include variant(small, true) {

@@ -77,7 +77,7 @@
           width: 100%;
           left: 50%;
           transform: translateX(-50%);
-          background: $primary;
+          background: map-get($swatch, primary);
         }
 
         &:is(.baka-icon) {

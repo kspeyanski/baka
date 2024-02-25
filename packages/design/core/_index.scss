@@ -1,2 +1,5 @@
 @forward "./utils";
+@use "./utils/" as *;
+
 @forward "./components";
+@use "./components/" as *;

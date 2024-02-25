@@ -1,0 +1,55 @@
+---
+title: Checkbox
+---
+
+# Checkbox
+
+The Checkbox component in the Baka UI library provides a simple way to include interactive checkboxes in your web applications. Checkboxes allow users to make binary choices, such as selecting or deselecting an option.
+
+<Demo src="/demos/material-you/checkbox" />
+
+### Basic Usage
+
+You can use the Checkbox component by importing it from `baka-ui` and adding it to your JSX code:
+
+```jsx
+import { BakaCheckbox } from "baka-ui";
+
+function MyComponent() {
+  return <BakaCheckbox />;
+}
+```
+
+### Props
+
+The Checkbox component supports the following props:
+
+- `disabled`: A boolean that disables the checkbox when set to `true`.
+- `hovered`: A boolean that changes the checkbox's appearance when hovered.
+- `focused`: A boolean that changes the checkbox's appearance when focused.
+- `activated`: A boolean that changes the checkbox's appearance when activated (clicked).
+- `checked`: A boolean that sets the checkbox to a checked state when set to `true`.
+- `indeterminate`: A boolean that sets the checkbox to an indeterminate state when set to `true`.
+- `readOnly`: A boolean that sets the checkbox to a read-only state when set to `true`.
+
+The Checkbox component also supports all the props of the `input` HTML element.
+
+### Examples
+
+Here are some examples of using the Checkbox component with different props:
+
+```jsx
+import { BakaCheckbox } from "baka-ui";
+
+function MyComponent() {
+  return (
+    <div>
+      <BakaCheckbox /> {/* Default Checkbox */}
+      <BakaCheckbox disabled={true} /> {/* Disabled Checkbox */}
+      <BakaCheckbox hovered={true} /> {/* Hovered Checkbox */}
+      <BakaCheckbox focused={true} /> {/* Focused Checkbox */}
+      <BakaCheckbox activated={true} /> {/* Activated Checkbox */}
+    </div>
+  );
+}
+```

@@ -18,7 +18,7 @@
     width: 52px;
     height: 32px;
 
-    color: $on-surface;
+    color: map-get($swatch, on-surface);
     background: var(--background);
 
     outline-style: solid;

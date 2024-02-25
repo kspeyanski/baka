@@ -8,7 +8,7 @@
     flex-direction: column;
     border-radius: 28px;
 
-    color: $on-surface;
+    color: map-get($swatch, on-surface);
     background-color: $surface-container-high;
 
     gap: 24px;

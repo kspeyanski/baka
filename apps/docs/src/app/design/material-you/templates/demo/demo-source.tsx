@@ -1,7 +1,6 @@
 import { Code } from "@/components/code/code";
 // import { Fragment, jsx, jsxs } from "react/jsx-runtime";
 import { common, createLowlight } from "lowlight";
-import { toJsxRuntime } from "hast-util-to-jsx-runtime";
 import { toHtml } from "hast-util-to-html";
 import { Pre } from "@/components/code/pre";
 import { DemoSourceClient } from "./demo-source.client";
