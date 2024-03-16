@@ -1,7 +1,7 @@
 {
-  "extends": "../../../../tsconfig.json",
   "compilerOptions": {
     "composite": true
   },
-  "files": ["../../../design/material-you/index.d.ts"],
+  "extends": "../../../../tsconfig.json",
+  "files": ["../../../../design/material-you/material-you.d.ts"]
 }

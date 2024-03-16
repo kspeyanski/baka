@@ -1,7 +1,7 @@
 import "./layout.scss";
-import styles from "@/design/katana/styles.module.scss";
-import "@/design/katana/global.css";
-// import "@/design/katana/styles.scss";
+import styles from "@design/katana/styles.module.scss";
+import "@design/katana/global.css";
+// import "@design/katana/styles.scss";
 
 import type { Metadata } from "next";
 

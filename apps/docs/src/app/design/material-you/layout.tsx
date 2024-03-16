@@ -1,5 +1,5 @@
-import styles from "@/design/material-you/styles.module.scss";
-import "@/design/material-you/global.css";
+import styles from "@design/material-you/styles.module.scss";
+import "@design/material-you/global.css";
 import "./layout.scss";
 
 import type { Metadata } from "next";

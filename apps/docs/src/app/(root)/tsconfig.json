@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "composite": true
+  },
+  "extends": "../../../tsconfig.json",
+  "files": ["../../../design/katana/katana.d.ts"]
+}

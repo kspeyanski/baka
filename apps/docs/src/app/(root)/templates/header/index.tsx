@@ -1,3 +1,4 @@
+/* /// <reference path="../../../../../design/katana/katana.d.ts" /> */
 import { TopBar } from "@/components/bars/top-bar";
 import { Button } from "@/components/buttons/button";
 import { BakaDivider, BakaIcon } from "baka-ui";
