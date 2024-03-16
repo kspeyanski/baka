@@ -1,14 +1,16 @@
-@use "../../styles/" as *;
+@use "../../design" as *;
 
-.row {
-  @each $size, $breakpoint in $breakpoints {
-    $_gutter: map-get($breakpoint, gutter);
-    $_screen: map-get($breakpoint, screen);
-    $_margin: map-get($breakpoint, margin);
+@mixin styles {
+  .row {
+    @each $size, $breakpoint in $layout {
+      $_gutter: map-get($breakpoint, gutter);
+      $_screen: map-get($breakpoint, screen);
+      $_margin: map-get($breakpoint, margin);
 
-    @media screen and (min-width: $_screen) {
-      gap: $_gutter;
-      padding-inline: $_margin;
+      @media screen and (min-width: $_screen) {
+        gap: $_gutter;
+        padding-inline: $_margin;
+      }
     }
   }
 }

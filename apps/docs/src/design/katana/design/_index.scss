@@ -1,0 +1,16 @@
+@forward "./layout" hide styles;
+@forward "./swatch" hide styles;
+@forward "./spacing" hide styles;
+@forward "./typography" hide styles;
+
+@use "./layout" as layout;
+@use "./swatch" as swatch;
+@use "./spacing" as spacing;
+@use "./typography" as typography;
+
+@mixin design--styles {
+  @include layout.styles();
+  @include swatch.styles();
+  @include spacing.styles();
+  @include typography.styles();
+}

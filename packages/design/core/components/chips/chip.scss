@@ -1,6 +1,6 @@
 @use "../../utils" as *;
 
-@mixin core-chip--styles {
+@mixin chip--styles {
   cursor: pointer;
   overflow: hidden;
   position: relative;

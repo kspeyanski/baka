@@ -1,11 +1,11 @@
 @use "../../design" as *;
-@use "baka-core" as *;
+@use "baka-core" as baka;
 
 @mixin side-navigation-item--styles {
   .baka-side-navigation-item {
-    @include core-side-navigation-item--styles;
-    --color: #{$on-surface-variant};
-    --state: #{$on-surface};
+    @include baka.side-navigation-item--styles;
+    --color: #{map-get($swatch, on-surface-variant)};
+    --state: #{map-get($swatch, on-surface)};
 
     gap: 12px;
     border-radius: 100px;
@@ -35,7 +35,7 @@
       @include motion-transition-TBD(color, background);
     }
 
-    @include hover(false) {
+    @include baka.hover(false) {
       cursor: pointer;
 
       @include state-layer {
@@ -43,23 +43,23 @@
       }
     }
 
-    @include focus {
+    @include baka.focus {
       @include state-layer {
         background: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
       }
     }
 
-    @include active {
+    @include baka.active {
       @include state-layer {
         background: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
       }
     }
 
-    @include selected {
-      --color: $on-secondary-container;
-      --state: $on-secondary-container;
+    @include baka.selected {
+      --color: map-get($swatch, on-secondary-container);
+      --state: map-get($swatch, on-secondary-container);
 
-      background: $secondary-container;
+      background: map-get($swatch, secondary-container);
     }
 
     :last-child {

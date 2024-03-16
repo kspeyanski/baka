@@ -1,9 +1,9 @@
 @use "../../design" as *;
-@use "baka-core" as *;
+@use "baka-core" as baka;
 
 @mixin input--styles {
   .baka-input {
-    @include core-input--styles;
+    @include baka.input--styles;
     @include body-large;
     border: none;
     background: none;

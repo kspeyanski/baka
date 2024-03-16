@@ -1,4 +1,4 @@
-@use "../../design/katana/styles/" as *;
+@use "@/design/katana" as *;
 
 body {
   color: swatch(foreground);

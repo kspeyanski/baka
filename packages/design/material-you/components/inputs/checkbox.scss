@@ -1,15 +1,15 @@
 @use "../../design" as *;
-@use "baka-core" as *;
+@use "baka-core" as baka;
 
 @mixin checkbox--styles {
   .baka-checkbox {
-    @include core-checkbox--styles;
-    --color: #{$on-primary};
+    @include baka.checkbox--styles;
+    --color: #{map-get($swatch, on-primary)};
     --state: ;
-    --border: #{$on-surface-variant};
-    --state: #{$on-surface};
+    --border: #{map-get($swatch, on-surface-variant)};
+    --state: #{map-get($swatch, on-surface)};
     --background: transparent;
-    --ripple: #{$on-surface};
+    --ripple: #{map-get($swatch, on-surface)};
 
     width: 18px;
     height: 18px;
@@ -46,76 +46,76 @@
 
     @include ripple(var(--ripple), $scale: 24);
 
-    @include checked {
+    @include baka.checked {
       --content: "check";
-      --state: #{$primary};
-      --border: #{$primary};
-      --color: #{$on-primary};
-      --background: #{$primary};
-      --ripple: #{$primary};
+      --state: #{map-get($swatch, primary)};
+      --border: #{map-get($swatch, primary)};
+      --color: #{map-get($swatch, on-primary)};
+      --background: #{map-get($swatch, primary)};
+      --ripple: #{map-get($swatch, primary)};
 
       @include state-layer {
-        color: #{$on-primary};
+        color: #{map-get($swatch, on-primary)};
       }
     }
 
-    @include indeterminate {
+    @include baka.indeterminate {
       --content: "check_indeterminate_small";
-      --state: #{$primary};
-      --border: #{$primary};
-      --color: #{$on-primary};
-      --background: #{$primary};
-      --ripple: #{$primary};
+      --state: #{map-get($swatch, primary)};
+      --border: #{map-get($swatch, primary)};
+      --color: #{map-get($swatch, on-primary)};
+      --background: #{map-get($swatch, primary)};
+      --ripple: #{map-get($swatch, primary)};
 
       @include state-layer {
-        color: #{$on-primary};
+        color: #{map-get($swatch, on-primary)};
       }
     }
 
-    @include hover($readonly: false) {
+    @include baka.hover($readonly: false) {
       @include state-layer {
         background-color: color-mix(in srgb, var(--state) 0.08 * 100%, transparent);
       }
     }
 
-    @include focus($readonly: false) {
+    @include baka.focus($readonly: false) {
       outline: none;
       @include state-layer {
         background-color: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
       }
     }
 
-    @include active($readonly: false) {
+    @include baka.active($readonly: false) {
       @include state-layer {
         background-color: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
       }
     }
 
-    @include variant(error) {
-      --border: #{$error};
-      --state: #{$error};
-      --color: #{$on-error};
-      --ripple: #{$error};
+    @include baka.variant(error) {
+      --border: #{map-get($swatch, error)};
+      --state: #{map-get($swatch, error)};
+      --color: #{map-get($swatch, on-error)};
+      --ripple: #{map-get($swatch, error)};
 
-      @include checked {
-        --background: #{$error};
+      @include baka.checked {
+        --background: #{map-get($swatch, error)};
       }
 
-      @include indeterminate {
-        --background: #{$error};
+      @include baka.indeterminate {
+        --background: #{map-get($swatch, error)};
       }
     }
 
-    @include disabled {
+    @include baka.disabled {
       opacity: 0.38;
-      --border: #{$on-surface};
+      --border: #{map-get($swatch, on-surface)};
 
-      @include checked {
-        --background: #{$on-surface};
+      @include baka.checked {
+        --background: #{map-get($swatch, on-surface)};
       }
 
-      @include indeterminate {
-        --background: #{$on-surface};
+      @include baka.indeterminate {
+        --background: #{map-get($swatch, on-surface)};
       }
     }
   }

@@ -1,9 +1,9 @@
 @use "../../design" as *;
-@use "baka-core" as *;
+@use "baka-core" as baka;
 
 @mixin tooltip--styles {
   .baka-tooltip {
-    @include core-tooltip--styles;
+    @include baka.tooltip--styles;
     @include body-small;
 
     display: flex;
@@ -11,20 +11,20 @@
     align-self: flex-start;
     border-radius: 12px;
 
-    @include variant(rich, true) {
+    @include baka.variant(rich, true) {
       box-shadow: map-get($elevation, 2);
       color: map-get($swatch, on-surface);
-      background: $surface-container;
+      background: map-get($swatch, surface-container);
       gap: 8px;
       padding-bottom: 8px;
     }
 
-    @include variant(plain) {
+    @include baka.variant(plain) {
       padding: 4px 8px;
       gap: 10px;
       border-radius: 4px;
-      color: $inverse-on-surface;
-      background: $inverse-surface;
+      color: map-get($swatch, inverse-on-surface);
+      background: map-get($swatch, inverse-surface);
       box-shadow: none;
     }
   }

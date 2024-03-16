@@ -1,9 +1,9 @@
-@use "baka-core" as *;
+@use "baka-core" as baka;
 @use "../../design" as *;
 
 @mixin button--styles {
   .baka-button {
-    @include core-button--styles;
+    @include baka.button--styles;
 
     --negative-margin: -8px;
     @include label-large;
@@ -56,68 +56,68 @@
       }
     }
 
-    @include variant(filled) {
-      color: $on-primary;
+    @include baka.variant(filled) {
+      color: map-get($swatch, on-primary);
       background: map-get($swatch, primary);
       padding: 10px 24px;
 
-      @include hover {
+      @include baka.hover {
         @include state-layer {
-          background: color-mix(in srgb, $on-primary 0.08 * 100%, transparent);
+          background: color-mix(in srgb, map-get($swatch, on-primary) 0.08 * 100%, transparent);
         }
         box-shadow: map-get($elevation, 1);
       }
 
-      @include focus {
+      @include baka.focus {
         @include state-layer {
-          background: color-mix(in srgb, $on-primary 0.12 * 100%, transparent);
+          background: color-mix(in srgb, map-get($swatch, on-primary) 0.12 * 100%, transparent);
         }
       }
 
-      @include active {
+      @include baka.active {
         @include state-layer {
-          background: color-mix(in srgb, $on-primary 0.12 * 100%, transparent);
+          background: color-mix(in srgb, map-get($swatch, on-primary) 0.12 * 100%, transparent);
         }
       }
 
-      @include disabled {
-        color: color-mix(in srgb, $on-surface 0.38 * 100%, transparent);
+      @include baka.disabled {
+        color: color-mix(in srgb, map-get($swatch, on-surface) 0.38 * 100%, transparent);
         background: none;
 
         @include state-layer {
-          background: color-mix(in srgb, $on-surface 0.12 * 100%, transparent);
+          background: color-mix(in srgb, map-get($swatch, on-surface) 0.12 * 100%, transparent);
         }
       }
     }
 
-    @include variant(outlined) {
+    @include baka.variant(outlined) {
       background: transparent;
       color: map-get($swatch, primary);
-      border-color: $outline;
+      border-color: map-get($swatch, outline);
       padding: 10px 24px;
 
-      @include hover {
+      @include baka.hover {
         @include state-layer {
-          background: color-mix(in srgb, $primary 0.08 * 100%, transparent);
+          background: color-mix(in srgb, map-get($swatch, primary) 0.08 * 100%, transparent);
         }
         box-shadow: none;
       }
 
-      @include focus {
+      @include baka.focus {
         @include state-layer {
-          background: color-mix(in srgb, $primary 0.12 * 100%, transparent);
+          background: color-mix(in srgb, map-get($swatch, primary) 0.12 * 100%, transparent);
         }
       }
 
-      @include active {
+      @include baka.active {
         @include state-layer {
-          background: color-mix(in srgb, $primary 0.12 * 100%, transparent);
+          background: color-mix(in srgb, map-get($swatch, primary) 0.12 * 100%, transparent);
         }
       }
 
-      @include disabled {
-        color: color-mix(in srgb, $on-surface 0.38 * 100%, transparent);
-        border-color: color-mix(in srgb, $on-surface 0.12 * 100%, transparent);
+      @include baka.disabled {
+        color: color-mix(in srgb, map-get($swatch, on-surface) 0.38 * 100%, transparent);
+        border-color: color-mix(in srgb, map-get($swatch, on-surface) 0.12 * 100%, transparent);
 
         @include state-layer {
           background: transparent;
@@ -125,32 +125,32 @@
       }
     }
 
-    @include variant(text, true) {
+    @include baka.variant(text, true) {
       background: transparent;
       color: map-get($swatch, primary);
       padding: 10px 12px;
 
-      @include hover {
+      @include baka.hover {
         @include state-layer {
-          background: color-mix(in srgb, $primary 0.08 * 100%, transparent);
+          background: color-mix(in srgb, map-get($swatch, primary) 0.08 * 100%, transparent);
         }
         box-shadow: none;
       }
 
-      @include focus {
+      @include baka.focus {
         @include state-layer {
-          background: color-mix(in srgb, $primary 0.12 * 100%, transparent);
+          background: color-mix(in srgb, map-get($swatch, primary) 0.12 * 100%, transparent);
         }
       }
 
-      @include active {
+      @include baka.active {
         @include state-layer {
-          background: color-mix(in srgb, $primary 0.12 * 100%, transparent);
+          background: color-mix(in srgb, map-get($swatch, primary) 0.12 * 100%, transparent);
         }
       }
 
-      @include disabled {
-        color: color-mix(in srgb, $on-surface 0.38 * 100%, transparent);
+      @include baka.disabled {
+        color: color-mix(in srgb, map-get($swatch, on-surface) 0.38 * 100%, transparent);
 
         @include state-layer {
           background: transparent;
@@ -167,121 +167,145 @@
       }
     }
 
-    @include variant(elevated) {
-      background: $surface-container-low;
+    @include baka.variant(elevated) {
+      background: map-get($swatch, surface-container-low);
       color: map-get($swatch, primary);
       box-shadow: map-get($elevation, 1);
       border-color: transparent;
       padding: 10px 24px;
 
-      @include hover {
+      @include baka.hover {
         @include state-layer {
-          background: color-mix(in srgb, $primary 0.08 * 100%, transparent);
+          background: color-mix(in srgb, map-get($swatch, primary) 0.08 * 100%, transparent);
         }
         box-shadow: map-get($elevation, 2);
       }
 
-      @include focus {
+      @include baka.focus {
         @include state-layer {
-          background: color-mix(in srgb, $primary 0.12 * 100%, transparent);
+          background: color-mix(in srgb, map-get($swatch, primary) 0.12 * 100%, transparent);
         }
       }
 
-      @include active {
+      @include baka.active {
         @include state-layer {
-          background: color-mix(in srgb, $primary 0.12 * 100%, transparent);
+          background: color-mix(in srgb, map-get($swatch, primary) 0.12 * 100%, transparent);
         }
       }
 
-      @include disabled {
-        color: color-mix(in srgb, $on-surface 0.38 * 100%, transparent);
+      @include baka.disabled {
+        color: color-mix(in srgb, map-get($swatch, on-surface) 0.38 * 100%, transparent);
         box-shadow: none;
         background: none;
 
         @include state-layer {
-          background: color-mix(in srgb, $on-surface 0.12 * 100%, transparent);
+          background: color-mix(in srgb, map-get($swatch, on-surface) 0.12 * 100%, transparent);
         }
       }
     }
 
-    @include variant(tonal) {
-      background: $secondary-container;
-      color: $on-secondary-container;
+    @include baka.variant(tonal) {
+      background: map-get($swatch, secondary-container);
+      color: map-get($swatch, on-secondary-container);
       border-color: transparent;
       padding: 10px 24px;
 
-      @include hover {
+      @include baka.hover {
         @include state-layer {
-          background: color-mix(in srgb, $on-secondary-container 0.08 * 100%, transparent);
+          background: color-mix(
+            in srgb,
+            map-get($swatch, on-secondary-container) 0.08 * 100%,
+            transparent
+          );
         }
         box-shadow: map-get($elevation, 1);
       }
 
-      @include focus {
+      @include baka.focus {
         @include state-layer {
-          background: color-mix(in srgb, $on-secondary-container 0.12 * 100%, transparent);
+          background: color-mix(
+            in srgb,
+            map-get($swatch, on-secondary-container) 0.12 * 100%,
+            transparent
+          );
         }
       }
 
-      @include active {
+      @include baka.active {
         @include state-layer {
-          background: color-mix(in srgb, $on-secondary-container 0.12 * 100%, transparent);
+          background: color-mix(
+            in srgb,
+            map-get($swatch, on-secondary-container) 0.12 * 100%,
+            transparent
+          );
         }
       }
 
-      @include disabled {
-        color: color-mix(in srgb, $on-surface 0.38 * 100%, transparent);
+      @include baka.disabled {
+        color: color-mix(in srgb, map-get($swatch, on-surface) 0.38 * 100%, transparent);
         background: none;
 
         @include state-layer {
-          background: color-mix(in srgb, $on-surface 0.12 * 100%, transparent);
+          background: color-mix(in srgb, map-get($swatch, on-surface) 0.12 * 100%, transparent);
         }
       }
     }
 
-    @include variant(icon) {
+    @include baka.variant(icon) {
       --negative-margin: 0;
-      color: $on-surface-variant;
+      color: map-get($swatch, on-surface-variant);
       padding: 8px;
       padding-inline-start: 8px;
       width: 48px;
       height: 48px;
 
-      @include hover {
+      @include baka.hover {
         @include state-layer {
-          background: color-mix(in srgb, $on-surface-variant 0.08 * 100%, transparent);
+          background: color-mix(
+            in srgb,
+            map-get($swatch, on-surface-variant) 0.08 * 100%,
+            transparent
+          );
         }
 
         box-shadow: none;
       }
 
-      @include focus {
+      @include baka.focus {
         @include state-layer {
-          background: color-mix(in srgb, $on-surface-variant 0.12 * 100%, transparent);
+          background: color-mix(
+            in srgb,
+            map-get($swatch, on-surface-variant) 0.12 * 100%,
+            transparent
+          );
         }
       }
 
-      @include active {
+      @include baka.active {
         @include state-layer {
-          background: color-mix(in srgb, $on-surface-variant 0.12 * 100%, transparent);
+          background: color-mix(
+            in srgb,
+            map-get($swatch, on-surface-variant) 0.12 * 100%,
+            transparent
+          );
         }
       }
 
-      @include disabled {
-        color: color-mix(in srgb, $on-surface 0.38 * 100%, transparent);
+      @include baka.disabled {
+        color: color-mix(in srgb, map-get($swatch, on-surface) 0.38 * 100%, transparent);
       }
     }
 
-    @include variant((icon, filled)) {
-      color: $on-primary;
+    @include baka.variant((icon, filled)) {
+      color: map-get($swatch, on-primary);
 
-      @include disabled {
-        color: color-mix(in srgb, $on-surface 0.38 * 100%, transparent);
+      @include baka.disabled {
+        color: color-mix(in srgb, map-get($swatch, on-surface) 0.38 * 100%, transparent);
       }
     }
 
-    @include variant((icon, toggle)) {
-      @include selected {
+    @include baka.variant((icon, toggle)) {
+      @include baka.selected {
         color: map-get($swatch, primary);
 
         .baka-icon {
@@ -289,41 +313,41 @@
         }
       }
 
-      @include hover {
-        @include selected {
+      @include baka.hover {
+        @include baka.selected {
           @include state-layer {
-            background: color-mix(in srgb, $primary 0.08 * 100%, transparent);
+            background: color-mix(in srgb, map-get($swatch, primary) 0.08 * 100%, transparent);
           }
         }
       }
 
-      @include focus {
-        @include selected {
+      @include baka.focus {
+        @include baka.selected {
           @include state-layer {
-            background: color-mix(in srgb, $primary 0.12 * 100%, transparent);
+            background: color-mix(in srgb, map-get($swatch, primary) 0.12 * 100%, transparent);
           }
         }
       }
 
-      @include active {
-        @include selected {
+      @include baka.active {
+        @include baka.selected {
           @include state-layer {
-            background: color-mix(in srgb, $primary 0.12 * 100%, transparent);
+            background: color-mix(in srgb, map-get($swatch, primary) 0.12 * 100%, transparent);
           }
         }
       }
 
-      @include disabled {
-        color: color-mix(in srgb, $on-surface 0.38 * 100%, transparent);
+      @include baka.disabled {
+        color: color-mix(in srgb, map-get($swatch, on-surface) 0.38 * 100%, transparent);
       }
     }
 
-    @include variant((icon, toggle, filled)) {
+    @include baka.variant((icon, toggle, filled)) {
       color: map-get($swatch, primary);
-      background: $surface-container-highest;
+      background: map-get($swatch, surface-container-highest);
 
-      @include selected {
-        color: $on-primary;
+      @include baka.selected {
+        color: map-get($swatch, on-primary);
         background: map-get($swatch, primary);
 
         .baka-icon {
@@ -331,91 +355,103 @@
         }
       }
 
-      @include disabled {
-        color: color-mix(in srgb, $on-surface 0.38 * 100%, transparent);
-        background-color: color-mix(in srgb, $on-surface 0.12 * 100%, transparent);
+      @include baka.disabled {
+        color: color-mix(in srgb, map-get($swatch, on-surface) 0.38 * 100%, transparent);
+        background-color: color-mix(in srgb, map-get($swatch, on-surface) 0.12 * 100%, transparent);
 
         @include state-layer {
-          background: color-mix(in srgb, $on-surface 0.12 * 100%, transparent);
+          background: color-mix(in srgb, map-get($swatch, on-surface) 0.12 * 100%, transparent);
         }
 
-        @include selected {
-          color: color-mix(in srgb, $on-surface 0.38 * 100%, transparent);
-          background: color-mix(in srgb, $on-surface 0.12 * 100%, transparent);
+        @include baka.selected {
+          color: color-mix(in srgb, map-get($swatch, on-surface) 0.38 * 100%, transparent);
+          background: color-mix(in srgb, map-get($swatch, on-surface) 0.12 * 100%, transparent);
         }
       }
     }
 
-    @include variant((icon, toggle, tonal)) {
-      color: $on-secondary-container;
-      background: $surface-container-highest;
+    @include baka.variant((icon, toggle, tonal)) {
+      color: map-get($swatch, on-secondary-container);
+      background: map-get($swatch, surface-container-highest);
 
-      @include selected {
-        color: $on-secondary-container;
-        background: $secondary-container;
+      @include baka.selected {
+        color: map-get($swatch, on-secondary-container);
+        background: map-get($swatch, secondary-container);
 
         .baka-icon {
           font-variation-settings: $font-variation, "FILL" 1;
         }
       }
 
-      @include disabled {
-        color: color-mix(in srgb, $on-surface 0.38 * 100%, transparent);
-        background-color: color-mix(in srgb, $on-surface 0.12 * 100%, transparent);
+      @include baka.disabled {
+        color: color-mix(in srgb, map-get($swatch, on-surface) 0.38 * 100%, transparent);
+        background-color: color-mix(in srgb, map-get($swatch, on-surface) 0.12 * 100%, transparent);
 
         @include state-layer {
-          background: color-mix(in srgb, $on-surface 0.12 * 100%, transparent);
+          background: color-mix(in srgb, map-get($swatch, on-surface) 0.12 * 100%, transparent);
         }
 
-        @include selected {
-          color: color-mix(in srgb, $on-surface 0.38 * 100%, transparent);
-          background: color-mix(in srgb, $on-surface 0.12 * 100%, transparent);
+        @include baka.selected {
+          color: color-mix(in srgb, map-get($swatch, on-surface) 0.38 * 100%, transparent);
+          background: color-mix(in srgb, map-get($swatch, on-surface) 0.12 * 100%, transparent);
         }
       }
     }
 
-    @include variant((icon, toggle, outlined)) {
-      @include selected {
+    @include baka.variant((icon, toggle, outlined)) {
+      @include baka.selected {
         border-color: transparent;
-        color: $inverse-on-surface;
-        background: $inverse-surface;
+        color: map-get($swatch, inverse-on-surface);
+        background: map-get($swatch, inverse-surface);
 
-        @include hover {
+        @include baka.hover {
           @include state-layer {
-            background: color-mix(in srgb, $inverse-on-surface 0.08 * 100%, transparent);
+            background: color-mix(
+              in srgb,
+              map-get($swatch, inverse-on-surface) 0.08 * 100%,
+              transparent
+            );
           }
         }
 
-        @include focus {
+        @include baka.focus {
           @include state-layer {
-            background: color-mix(in srgb, $inverse-on-surface 0.12 * 100%, transparent);
+            background: color-mix(
+              in srgb,
+              map-get($swatch, inverse-on-surface) 0.12 * 100%,
+              transparent
+            );
           }
         }
 
-        @include active {
+        @include baka.active {
           @include state-layer {
-            background: color-mix(in srgb, $inverse-on-surface 0.12 * 100%, transparent);
+            background: color-mix(
+              in srgb,
+              map-get($swatch, inverse-on-surface) 0.12 * 100%,
+              transparent
+            );
           }
         }
 
-        @include disabled {
-          color: color-mix(in srgb, $on-surface 0.38 * 100%, transparent);
+        @include baka.disabled {
+          color: color-mix(in srgb, map-get($swatch, on-surface) 0.38 * 100%, transparent);
           background: none;
 
           @include state-layer {
-            background: color-mix(in srgb, $on-surface 0.12 * 100%, transparent);
+            background: color-mix(in srgb, map-get($swatch, on-surface) 0.12 * 100%, transparent);
           }
         }
       }
     }
 
     // TODO: ripple
-    @include variant(fab) {
+    @include baka.variant(fab) {
       --negative-margin: 0;
       height: auto;
       border-radius: 16px;
       padding: 16px;
-      background: $surface-container-high;
+      background: map-get($swatch, surface-container-high);
       box-shadow: map-get($elevation, 3);
       margin: 0;
 
@@ -423,81 +459,114 @@
         border-radius: 16px;
       }
 
-      @include hover {
+      @include baka.hover {
         box-shadow: map-get($elevation, 4);
       }
     }
 
-    @include variant((fab, primary)) {
-      color: $on-primary-container;
+    @include baka.variant((fab, primary)) {
+      color: map-get($swatch, on-primary-container);
       background: map-get($swatch, primary-container);
 
-      @include hover {
+      @include baka.hover {
         @include state-layer {
-          background: color-mix(in srgb, $on-primary-container 0.08 * 100%, transparent);
+          background: color-mix(
+            in srgb,
+            map-get($swatch, on-primary-container 0.08 * 100%, transparent)
+          );
         }
       }
 
-      @include focus {
+      @include baka.focus {
         @include state-layer {
-          background: color-mix(in srgb, $on-primary-container 0.12 * 100%, transparent);
+          background: color-mix(
+            in srgb,
+            map-get($swatch, on-primary-container 0.12 * 100%, transparent)
+          );
         }
       }
 
-      @include active {
+      @include baka.active {
         @include state-layer {
-          background: color-mix(in srgb, $on-primary-container 0.12 * 100%, transparent);
-        }
-      }
-    }
-
-    @include variant((fab, secondary)) {
-      color: $on-secondary-container;
-      background: $secondary-container;
-
-      @include hover {
-        @include state-layer {
-          background: color-mix(in srgb, $on-secondary-container 0.08 * 100%, transparent);
-        }
-      }
-
-      @include focus {
-        @include state-layer {
-          background: color-mix(in srgb, $on-secondary-container 0.12 * 100%, transparent);
-        }
-      }
-
-      @include active {
-        @include state-layer {
-          background: color-mix(in srgb, $on-secondary-container 0.12 * 100%, transparent);
+          background: color-mix(
+            in srgb,
+            map-get($swatch, on-primary-container 0.12 * 100%, transparent)
+          );
         }
       }
     }
 
-    @include variant((fab, tertiary)) {
-      color: $on-tertiary-container;
-      background: $tertiary-container;
+    @include baka.variant((fab, secondary)) {
+      color: map-get($swatch, on-secondary-container);
+      background: map-get($swatch, secondary-container);
 
-      @include hover {
+      @include baka.hover {
         @include state-layer {
-          background: color-mix(in srgb, $on-tertiary-container 0.08 * 100%, transparent);
+          background: color-mix(
+            in srgb,
+            map-get($swatch, on-secondary-container) 0.08 * 100%,
+            transparent
+          );
         }
       }
 
-      @include focus {
+      @include baka.focus {
         @include state-layer {
-          background: color-mix(in srgb, $on-tertiary-container 0.12 * 100%, transparent);
+          background: color-mix(
+            in srgb,
+            map-get($swatch, on-secondary-container) 0.12 * 100%,
+            transparent
+          );
         }
       }
 
-      @include active {
+      @include baka.active {
         @include state-layer {
-          background: color-mix(in srgb, $on-tertiary-container 0.12 * 100%, transparent);
+          background: color-mix(
+            in srgb,
+            map-get($swatch, on-secondary-container) 0.12 * 100%,
+            transparent
+          );
         }
       }
     }
 
-    @include variant((fab, small)) {
+    @include baka.variant((fab, tertiary)) {
+      color: map-get($swatch, on-tertiary-container);
+      background: map-get($swatch, tertiary-container);
+
+      @include baka.hover {
+        @include state-layer {
+          background: color-mix(
+            in srgb,
+            map-get($swatch, on-tertiary-container) 0.08 * 100%,
+            transparent
+          );
+        }
+      }
+
+      @include baka.focus {
+        @include state-layer {
+          background: color-mix(
+            in srgb,
+            map-get($swatch, on-tertiary-container) 0.12 * 100%,
+            transparent
+          );
+        }
+      }
+
+      @include baka.active {
+        @include state-layer {
+          background: color-mix(
+            in srgb,
+            map-get($swatch, on-tertiary-container) 0.12 * 100%,
+            transparent
+          );
+        }
+      }
+    }
+
+    @include baka.variant((fab, small)) {
       padding: 8px;
       border-radius: 12px;
 
@@ -506,7 +575,7 @@
       }
     }
 
-    @include variant((fab, large)) {
+    @include baka.variant((fab, large)) {
       padding: 30px;
       border-radius: 28px;
 
@@ -515,7 +584,7 @@
       }
     }
 
-    @include variant((fab, extended)) {
+    @include baka.variant((fab, extended)) {
       padding-right: 20px;
       gap: 12px;
     }

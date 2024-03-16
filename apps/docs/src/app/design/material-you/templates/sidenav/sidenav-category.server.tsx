@@ -1,14 +1,12 @@
 import { type Docs } from "contentlayer/generated";
-import Image from "next/image";
-import Logo from "@/icons/maskot-material-you.svg";
+// @ts-expect-error
+import Logo from "@/icons/maskot-material-you.inline-svg";
 import { NavigationRail, NavigationRailProps } from "@/components/navigation/navigation-rail";
 import { SidenavCategoryItem } from "./sidenav-category-item.server";
 import clsx from "clsx";
 import { SidenavCategoryClient, ToggleButton } from "./sidenav-category.client";
 import { Icon } from "@/components/misc/icon";
-import { NavigationRailItem } from "@/components/navigation/navigation-rail-item";
 import Link from "next/link";
-import { Label } from "@/components/typography";
 import { Button } from "@/components/buttons/button";
 import { ThemeToggle } from "../theme-toggle/theme-toggle.server";
 
@@ -30,16 +28,15 @@ export const SidenavCategory = (props: SidenavCategoryProp) => {
         {...other}
       >
         <div className="flex items-center flex-col flex-1 justify-between">
-          <div className="flex items-center flex-col">
+          <div className="flex items-center flex-col gap-2">
             <ToggleButton className="xl:hidden">
               <Icon />
             </ToggleButton>
-            <NavigationRailItem as={Link} href="/" title="Home">
+            <Button variant={["fab", "tertiary"]} as={Link} href="/" title="Home">
               <Icon>
-                <Image src={Logo.src} width={33} height={32} alt="Baka Material You Logo" />
+                <Logo width={32} height={32} alt="Baka Material You Logo" viewBox={"0 0 56 40"}/>
               </Icon>
-              <Label>Home</Label>
-            </NavigationRailItem>
+            </Button>
             {data.map((group) => (
               <SidenavCategoryItem
                 key={group.title}

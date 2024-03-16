@@ -1,5 +1,9 @@
-@forward "./utils";
+@forward "./utils/";
 @use "./utils/" as *;
 
 @forward "./components";
-@use "./components/" as *;
+@use "./components" as *;
+
+@mixin styles {
+  @include components--styles;
+}

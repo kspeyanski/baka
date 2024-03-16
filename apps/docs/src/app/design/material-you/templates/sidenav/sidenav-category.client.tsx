@@ -8,7 +8,7 @@ import { BakaButtonProps } from "baka-ui";
 
 export type SidenavCategoryClientProps = {
   children: React.ReactNode;
-  variant: BakaButtonProps["variant"];
+  variant?: BakaButtonProps["variant"];
 };
 
 export const ToggleButton = (props: ButtonProps) => {

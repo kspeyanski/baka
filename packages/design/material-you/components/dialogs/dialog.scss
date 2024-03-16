@@ -1,24 +1,24 @@
 @use "../../design" as *;
-@use "baka-core" as *;
+@use "baka-core" as baka;
 
 @mixin dialog--styles {
   .baka-dialog {
-    @include core-dialog--styles;
+    @include baka.dialog--styles;
     display: flex;
     flex-direction: column;
     border-radius: 28px;
 
     color: map-get($swatch, on-surface);
-    background-color: $surface-container-high;
+    background-color: map-get($swatch, surface-container-high);
 
     gap: 24px;
     padding: 24px;
 
-    @include variant(basic, true) {
+    @include baka.variant(basic, true) {
       box-shadow: map-get($elevation, 3);
     }
 
-    @include variant(full-screen) {
+    @include baka.variant(full-screen) {
       box-shadow: none;
     }
   }

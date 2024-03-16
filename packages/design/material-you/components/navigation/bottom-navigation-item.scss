@@ -1,10 +1,10 @@
 @use "../../design" as *;
-@use "baka-core" as *;
+@use "baka-core" as baka;
 
 @mixin bottom-navigation-item--styles {
   .baka-bottom-navigation-item {
-    @include core-bottom-navigation-item--styles;
-    --state: #{$on-surface};
+    @include baka.bottom-navigation-item--styles;
+    --state: #{map-get($swatch, on-surface)};
 
     cursor: pointer;
     display: flex;
@@ -15,14 +15,14 @@
     flex-direction: column;
 
     .baka-label {
-      color: $on-surface-variant;
+      color: map-get($swatch, on-surface-variant);
     }
 
     .baka-icon {
       border-radius: 16px;
       position: relative;
       padding: 4px 20px;
-      color: $on-surface-variant;
+      color: map-get($swatch, on-surface-variant);
 
       @include state-layer {
         content: "";
@@ -39,7 +39,7 @@
       }
     }
 
-    @include hover {
+    @include baka.hover {
       .baka-icon {
         @include state-layer {
           background: color-mix(in srgb, var(--state) 0.08 * 100%, transparent);
@@ -47,7 +47,7 @@
       }
     }
 
-    @include focus {
+    @include baka.focus {
       .baka-icon {
         @include state-layer {
           background: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
@@ -55,7 +55,7 @@
       }
     }
 
-    @include active {
+    @include baka.active {
       .baka-icon {
         @include state-layer {
           background: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
@@ -63,14 +63,14 @@
       }
     }
 
-    @include selected {
-      --state: #{$on-secondary-container};
+    @include baka.selected {
+      --state: #{map-get($swatch, on-secondary-container)};
       .baka-label {
         color: map-get($swatch, on-surface);
       }
       .baka-icon {
-        color: $on-secondary-container;
-        background-color: $secondary-container;
+        color: map-get($swatch, on-secondary-container);
+        background-color: map-get($swatch, secondary-container);
       }
     }
   }

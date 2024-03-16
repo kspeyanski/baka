@@ -1,10 +1,10 @@
 @use "../../design" as *;
-@use "baka-core" as *;
+@use "baka-core" as baka;
 
 @mixin bottom-navigation--styles {
   .baka-bottom-navigation {
-    @include core-bottom-navigation--styles;
-    background: $surface-container;
+    @include baka.bottom-navigation--styles;
+    background: map-get($swatch, surface-container);
     padding: 0px 8px;
     height: 80px;
 

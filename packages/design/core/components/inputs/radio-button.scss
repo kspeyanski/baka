@@ -1,6 +1,6 @@
 @use "../../utils" as *;
 
-@mixin core-radio-button--styles {
+@mixin radio-button--styles {
   cursor: pointer;
   position: relative;
   appearance: none;

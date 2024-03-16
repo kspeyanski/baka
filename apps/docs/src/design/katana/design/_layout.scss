@@ -1,4 +1,4 @@
-$breakpoints: (
+$layout: (
   xs: (
     screen: 0,
     width: 100%,
@@ -43,10 +43,8 @@ $breakpoints: (
   ),
 );
 
-@mixin layout--styles {
-  *, ::before, ::after  {
-    @each $breakpoint, $properties in $breakpoints {
-      --layout--screen--#{$breakpoint}: #{map-get($properties, screen)};
-    }
+@mixin styles {
+  @each $breakpoint, $properties in $layout {
+    --layout--screen--#{$breakpoint}: #{map-get($properties, screen)};
   }
 }

@@ -1,12 +1,12 @@
 @use "../../design" as *;
-@use "baka-core" as *;
+@use "baka-core" as baka;
 
 @mixin menu-item--styles {
   .baka-menu-item {
-    @include core-menu-item--styles;
-    --state: #{$on-surface};
+    @include baka.menu-item--styles;
+    --state: #{map-get($swatch, on-surface)};
     --modifier: transparent;
-    --ripple: #{$on-surface};
+    --ripple: #{map-get($swatch, on-surface)};
     min-height: 56px;
 
     @include body-large;
@@ -30,35 +30,35 @@
 
     @include ripple(var(--ripple), $scale: 10);
 
-    @include hover($readonly: false) {
+    @include baka.hover($readonly: false) {
       --modifier: #{color-mix(in srgb, #{var(--state)} 0.08 * 100%, transparent)};
     }
 
-    @include focus($readonly: false) {
+    @include baka.focus($readonly: false) {
       --modifier: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
     }
 
-    @include active($readonly: false) {
+    @include baka.active($readonly: false) {
       --modifier: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
     }
 
-    @include selected() {
-      background: $surface-container-high;
+    @include baka.selected() {
+      background: map-get($swatch, surface-container-high);
     }
 
-    @include dragged {
+    @include baka.dragged {
       box-shadow: map-get($elevation, 3);
     }
 
-    @include disabled {
+    @include baka.disabled {
       opacity: 0.38;
     }
 
-    @include variant(multi-line) {
+    @include baka.variant(multi-line) {
       align-items: flex-start;
     }
 
-    @include variant(video) {
+    @include baka.variant(video) {
       padding-inline-start: 0;
     }
   }

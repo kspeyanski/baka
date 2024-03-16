@@ -1,4 +1,4 @@
-@use "baka-core" as *;
+@use "baka-core" as baka;
 
 $layout: (
   xs: (
@@ -60,7 +60,9 @@ $layout: (
 );
 
 @mixin layout--styles {
-  *, ::before, ::after  {
-    @include css-vars($layout, --layout);
+  *,
+  ::before,
+  ::after {
+    @include baka.css-vars($layout, --layout);
   }
 }

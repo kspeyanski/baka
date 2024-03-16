@@ -16,10 +16,10 @@ body,
   }
 
   &:has(.container-high) {
-    background-color: $surface-container-high;
+    background-color: map-get($swatch, surface-container-high);
   }
 
   &:has(.container-low) {
-    background-color: $surface-container-low;
+    background-color: map-get($swatch, surface-container-low);
   }
 }

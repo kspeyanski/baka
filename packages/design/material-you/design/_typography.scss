@@ -232,7 +232,9 @@ $line-height: (
 }
 
 @mixin typography--styles {
-  *, ::before, ::after  {
+  *,
+  ::before,
+  ::after {
     @each $name, $value in $font-family {
       --typography--font-family--#{$name}: #{$value};
     }

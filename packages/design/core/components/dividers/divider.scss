@@ -1,6 +1,6 @@
 @use "../../utils" as *;
 
-@mixin core-divider--styles {
+@mixin divider--styles {
   margin: 0;
 
   @include variant(horizontal, true) {

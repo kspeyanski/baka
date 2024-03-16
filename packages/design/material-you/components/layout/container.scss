@@ -1,10 +1,10 @@
-@use "baka-core" as *;
+@use "baka-core" as baka;
 @use "../../design/" as *;
 
 @mixin container--styles {
   .baka-container {
-    @include core-container--styles;
-    @include core-container--styles();
+    @include baka.container--styles;
+    @include baka.container--styles();
 
     @each $size, $breakpoint in $layout {
       $_gutter: map-get($breakpoint, gutter);
@@ -23,7 +23,7 @@
           width: 100%;
         }
       }
-      @include variant(fluid) {
+      @include baka.variant(fluid) {
         max-width: 100%;
         width: 100%;
         margin-inline: 0;

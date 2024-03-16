@@ -1,6 +1,6 @@
 @use "../../utils" as *;
 
-@mixin core-text-field--styles {
+@mixin text-field--styles {
   font-family: inherit;
   font-size: inherit;
   position: relative;

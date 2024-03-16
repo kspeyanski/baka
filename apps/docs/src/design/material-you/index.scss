@@ -1,3 +1,5 @@
+@use "./styles/swatch" as *;
+
 $font-family: (
   sans: var(--font-family--sans),
   serif: var(--font-family--serif),
@@ -5,5 +7,6 @@ $font-family: (
 );
 
 @forward "baka-material-you" with (
-  $font-family: $font-family
+  $font-family: $font-family,
+  $swatch: $swatch
 );

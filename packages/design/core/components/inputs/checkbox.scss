@@ -1,6 +1,6 @@
 @use "../../utils" as *;
 
-@mixin core-checkbox--styles {
+@mixin checkbox--styles {
   cursor: pointer;
   position: relative;
   appearance: none;

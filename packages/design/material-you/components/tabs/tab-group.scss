@@ -1,23 +1,23 @@
 @use "../../design" as *;
-@use "baka-core" as *;
+@use "baka-core" as baka;
 
 @mixin tab-group--styles {
   .baka-tab-group {
-    @include core-tab-group--styles;
-    --color: #{$on-surface-variant};
-    --state: #{$on-surface};
-    --ripple: #{$on-surface};
+    @include baka.tab-group--styles;
+    --color: #{map-get($swatch, on-surface-variant)};
+    --state: #{map-get($swatch, on-surface)};
+    --ripple: #{map-get($swatch, on-surface)};
 
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
 
-    @include variant(primary, true) {
+    @include baka.variant(primary, true) {
       --position: relative;
     }
 
-    @include variant(overflow) {
+    @include baka.variant(overflow) {
       overflow: auto;
       --group-padding: 32px;
 
@@ -31,10 +31,10 @@
       }
     }
 
-    @include variant(secondary) {
+    @include baka.variant(secondary) {
       --position: initial;
       --group-bottom: 0;
-      --group-selected-color: #{$on-surface};
+      --group-selected-color: #{map-get($swatch, on-surface)};
       --group-radius: 0;
       --group-height: 2px;
       --flex-direction: row;

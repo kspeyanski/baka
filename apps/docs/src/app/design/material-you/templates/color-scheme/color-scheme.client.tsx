@@ -10,11 +10,9 @@ export type ColorSchemeProps = {
 export const ThemeContext = React.createContext<[string | null, Function]>([null, () => {}]);
 
 export const ColorScheme = (props: ColorSchemeProps) => {
-  const [theme, setTheme] = React.useState<string | null>(
-    window?.localStorage?.getItem("baka-theme")
-  );
+  const [theme, setTheme] = React.useState<string | null>(null);
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     if (theme) {
       window.localStorage.setItem("baka-theme", theme);
     }
@@ -24,10 +22,13 @@ export const ColorScheme = (props: ColorSchemeProps) => {
     <ThemeContext.Provider value={[theme, setTheme]}>
       {React.cloneElement(props.children, {
         ...props.children.props,
-        className: clsx({
-          "theme-light": theme === "light",
-          "theme-dark": theme === "dark",
-        }),
+        className: clsx(
+          {
+            "theme-light": theme === "light",
+            "theme-dark": theme === "dark",
+          },
+          props.children.props?.className
+        ),
       })}
     </ThemeContext.Provider>
   );

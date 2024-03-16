@@ -1,13 +1,13 @@
 @use "../../design" as *;
-@use "baka-core" as *;
+@use "baka-core" as baka;
 
 @mixin text-field--styles {
   .baka-text-field {
-    @include core-text-field--styles;
+    @include baka.text-field--styles;
     @include body-large;
-    --accent: #{$on-surface-variant};
+    --accent: #{map-get($swatch, on-surface-variant)};
     --outline-height: 1px;
-    --state: #{$on-surface};
+    --state: #{map-get($swatch, on-surface)};
     --label-offset: 0;
 
     gap: 8px;
@@ -26,11 +26,11 @@
       @include motion-transition-TBD(background);
     }
 
-    @include variant(filled, true) {
+    @include baka.variant(filled, true) {
       border-top-left-radius: 4px;
       border-top-right-radius: 4px;
-      color: $on-surface-variant;
-      background: $surface-container-highest;
+      color: map-get($swatch, on-surface-variant);
+      background: map-get($swatch, surface-container-highest);
 
       &:after {
         content: "";
@@ -70,9 +70,9 @@
           @include motion-transition-TBD(transform, opacity);
         }
 
-        &:has(.baka-input:not(:placeholder-shown)#{$selector--empty}):not(:focus):not(
+        &:has(.baka-input:not(:placeholder-shown)#{baka.$selector--empty}):not(:focus):not(
             :focus-within
-          ):not(:focus-visible):not(#{$selector--focus}) {
+          ):not(:focus-visible):not(#{baka.$selector--focus}) {
           & > .baka-label {
             @include body-large;
             transform: translate(var(--label-offset), 0);
@@ -86,7 +86,7 @@
       }
     }
 
-    @include variant(outlined) {
+    @include baka.variant(outlined) {
       --state: transparent;
       background: transparent;
 
@@ -128,9 +128,9 @@
           @include motion-transition-TBD(transform, opacity);
         }
 
-        &:has(.baka-input:not(:placeholder-shown)#{$selector--empty}):not(:focus):not(
+        &:has(.baka-input:not(:placeholder-shown)#{baka.$selector--empty}):not(:focus):not(
             :focus-within
-          ):not(:focus-visible):not(#{$selector--focus}) {
+          ):not(:focus-visible):not(#{baka.$selector--focus}) {
           & > .baka-label {
             @include body-large;
             background: transparent;
@@ -145,7 +145,7 @@
       }
     }
 
-    @include variant(search) {
+    @include baka.variant(search) {
       --state: transparent;
       height: 56px;
       border-radius: 28px;
@@ -159,8 +159,8 @@
         @include motion-transition-TBD(width, opacity);
       }
 
-      @include focus {
-        --accent: #{$on-surface};
+      @include baka.focus {
+        --accent: #{map-get($swatch, on-surface)};
         --outline-height: 1px;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
@@ -173,27 +173,27 @@
       }
     }
 
-    @include hover {
-      --accent: #{$on-surface};
+    @include baka.hover {
+      --accent: #{map-get($swatch, on-surface)};
       @include state-layer {
         background: color-mix(in srgb, var(--state) 0.08 * 100%, transparent);
       }
     }
 
-    @include focus {
-      --accent: #{$primary};
+    @include baka.focus {
+      --accent: #{map-get($swatch, primary)};
       --outline-height: 2px;
     }
 
-    @include invalid {
-      --accent: #{$error};
+    @include baka.invalid {
+      --accent: #{map-get($swatch, error)};
       --outline-height: 2px;
     }
 
-    @include disabled {
+    @include baka.disabled {
       pointer-events: none;
       opacity: 0.38;
-      --accent: #{$on-surface};
+      --accent: #{map-get($swatch, on-surface)};
     }
 
     > .baka-icon,

@@ -1,25 +1,24 @@
+@use "baka-core" as baka;
 @use "../../design" as *;
-@use "baka-core" as *;
 
 @mixin bottom-bar--styles {
   .baka-bottom-bar {
-    @include core-bottom-bar--styles;
-    background: $surface-container;
+    background: map-get($swatch, surface-container);
     padding: 0px 16px 0px 4px;
     height: 80px;
 
     & .baka-button.variant--fab {
       box-shadow: none;
 
-      @include hover {
+      @include baka.hover {
         box-shadow: none;
       }
 
-      @include focus {
+      @include baka.focus {
         box-shadow: none;
       }
 
-      @include active {
+      @include baka.active {
         box-shadow: none;
       }
     }

@@ -12,7 +12,7 @@ $spacing: (
   @return var(--spacing--#{size}, map-get($spacing, $size));
 }
 
-@mixin spacing--styles() {
+@mixin styles() {
   @each $key, $value in $spacing {
     --spacing--#{$key}: #{$value};
   }

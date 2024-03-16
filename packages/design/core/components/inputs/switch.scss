@@ -1,6 +1,6 @@
 @use "../../utils" as *;
 
-@mixin core-switch--styles {
+@mixin switch--styles {
   cursor: pointer;
   position: relative;
   display: inline-flex;

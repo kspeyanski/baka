@@ -1,3 +1,4 @@
+@use "baka-core" as baka;
 @use "../colors/" as *;
 
 $swatch: (
@@ -9,4 +10,8 @@ $swatch: (
 
 @function swatch($color) {
   @return map-get($swatch, $color);
+}
+
+@mixin styles {
+  @include baka.css-vars($swatch, --swatch);
 }

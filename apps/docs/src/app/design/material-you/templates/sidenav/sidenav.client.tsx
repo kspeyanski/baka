@@ -42,7 +42,7 @@ export const SidenavClient = (props: SidenavClientProps) => {
               className: clsx(
                 child.props?.className,
                 {
-                  // ["hidden"]: !state.open,
+                  ["hidden"]: !state.open,
                 },
                 "sm:flex"
               ),

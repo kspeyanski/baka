@@ -23,6 +23,8 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
+      "@katana/*": ["./src/app/(root)/*"],
+      "@material-you/*": ["./src/app/design/material-you/*"],
       "baka-ui": ["./node_modules/baka-ui/src/index.ts"],
       "baka-core": ["./node_modules/baka-core/_index.scss"],
       "contentlayer/generated": ["./.contentlayer/generated"]

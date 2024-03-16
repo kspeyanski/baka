@@ -1,1 +1,26 @@
-@forward "baka-material-you/themes/dark";
+$extended_swatch: (
+  info: #aac7ff,
+  on-info: #0a305f,
+  info-container: #284777,
+  on-info-container: #d6e3ff,
+  warning: #dbc66e,
+  on-warning: #3a3000,
+  warning-container: #534600,
+  on-warning-container: #f8e287,
+  success: #b1d18a,
+  on-success: #1f3701,
+  success-container: #354e16,
+  on-success-container: #cdeda3,
+  accent: #ddbce0,
+  on-accent: #3f2844,
+  accent-container: #573e5c,
+  on-accent-container: #fad8fd,
+);
+
+@use "baka-material-you/themes/dark" as dark with (
+  $swatch: $extended_swatch
+);
+
+@mixin design--styles {
+  @include dark.design--styles();
+}

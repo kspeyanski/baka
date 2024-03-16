@@ -6,7 +6,7 @@
     white-space: pre-wrap;
     word-wrap: break-word;
     margin: 16px 0;
-    background: $surface-container;
+    background: map-get($swatch, surface-container);
     padding: 16px;
     border-radius: 4px;
     box-shadow: map-get($elevation, 1);
@@ -25,16 +25,16 @@
     font-family: map-get($font-family, mono);
 
     &.hljs {
-      color: $on-surface-variant;
+      color: map-get($swatch, on-surface-variant);
 
       .hljs-subst,
       .hljs-title {
         font-weight: normal;
-        color: $on-surface;
+        color: map-get($swatch, on-surface);
       }
 
       .hljs-title.function_ {
-        color: #7a7a43;
+        color: map-get($swatch, warning);
       }
 
       .hljs-code,
@@ -45,7 +45,7 @@
       }
 
       .hljs-meta {
-        color: #9e880d;
+        color: map-get($swatch, warning);
       }
 
       .hljs-section {
@@ -66,38 +66,38 @@
       .hljs-name,
       .hljs-built_in,
       .hljs-type {
-        color: #0033b3;
+        color: map-get($swatch, info);
       }
 
       .hljs-property,
       .hljs-attr {
-        color: #871094;
+        color: map-get($swatch, accent);
       }
 
       .hljs-attribute {
-        color: #174ad4;
+        color: map-get($swatch, info);
       }
 
       .hljs-number {
-        color: #1750eb;
+        color: map-get($swatch, info);
       }
 
       .hljs-regexp {
-        color: #264eff;
+        color: map-get($swatch, info);
       }
 
       .hljs-link {
         text-decoration: underline;
-        color: #006dcc;
+        color: map-get($swatch, info);
       }
 
       .hljs-meta .hljs-string,
       .hljs-string {
-        color: #067d17;
+        color: map-get($swatch, success);
       }
 
       .hljs-char.escape_ {
-        color: #0037a6;
+        color: map-get($swatch, on-info-container);
       }
 
       .hljs-doctag {
@@ -105,11 +105,11 @@
       }
 
       .hljs-template-variable {
-        color: #248f8f;
+        color: map-get($swatch, success);
       }
 
       .hljs-addition {
-        background: #bee6be;
+        background: map-get($swatch, success-container);
       }
 
       .hljs-deletion {

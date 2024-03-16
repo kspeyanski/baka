@@ -1,9 +1,9 @@
-@use "baka-core" as *;
+@use "baka-core" as baka;
 @use "../../design/" as *;
 
 @mixin column--styles {
   .baka-column {
-    @include core-column--styles;
+    @include baka.column--styles;
 
     @for $j from 1 through length($layout) {
       $size: nth(map-keys($layout), $j);
@@ -40,7 +40,7 @@
       }
     }
 
-    @include variant(region-left) {
+    @include baka.variant(region-left) {
       flex: 0 0 auto;
       @each $size, $breakpoint in $layout {
         $_width: map-get($breakpoint, width);

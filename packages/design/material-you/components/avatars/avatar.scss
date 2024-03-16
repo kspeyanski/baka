@@ -1,9 +1,9 @@
-@use "baka-core" as *;
+@use "baka-core" as baka;
 @use "../../design" as *;
 
 @mixin avatar--styles {
   .baka-avatar {
-    @include core-avatar--styles;
+    @include baka.avatar--styles;
     @include title-medium;
 
     border-radius: 100px;
@@ -11,12 +11,12 @@
     color: map-get($swatch, primary);
     background-color: map-get($swatch, primary-container);
 
-    @include variant(small) {
+    @include baka.variant(small) {
       width: 24px;
       height: 24px;
     }
 
-    @include variant(medium, true) {
+    @include baka.variant(medium, true) {
       width: 40px;
       height: 40px;
     }

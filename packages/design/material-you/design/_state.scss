@@ -1,5 +1,5 @@
 @use "./motion" as *;
-@use "baka-core" as *;
+@use "baka-core" as baka;
 
 @mixin state-layer {
   &::before {
@@ -13,7 +13,7 @@
 }
 
 @mixin ripple($color, $scale: 20) {
-  @include editable {
+  @include baka.editable {
     &::after {
       content: "";
       box-sizing: border-box;
@@ -34,7 +34,7 @@
       transition: transform 0.25s, opacity 1s;
     }
 
-    @include active {
+    @include baka.active {
       &::after {
         transform: scale(0, 0);
         opacity: 0.2;

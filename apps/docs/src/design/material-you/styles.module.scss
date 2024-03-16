@@ -1,0 +1,21 @@
+@use "./index" as material-you;
+@use "./themes/dark" as dark;
+@use "./components/" as extended;
+
+.material-you {
+  :global {
+    @include material-you.components--styles;
+    @include material-you.design--styles();
+
+    @include extended.misc--styles();
+    @include extended.code--styles();
+    @include extended.table--styles();
+    @include extended.typography--styles();
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    &:not(:global(.theme-light)) {
+      @include dark.design--styles();
+    }
+  }
+}

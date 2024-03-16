@@ -1,12 +1,12 @@
 @use "../../design" as *;
-@use "baka-core" as *;
+@use "baka-core" as baka;
 
 @mixin radio-button--styles {
   .baka-radio-button {
-    @include core-radio-button--styles;
-    --background: #{$on-surface-variant};
-    --state: #{$on-surface};
-    --ripple: #{$on-surface};
+    @include baka.radio-button--styles;
+    --background: #{map-get($swatch, on-surface-variant)};
+    --state: #{map-get($swatch, on-surface)};
+    --ripple: #{map-get($swatch, on-surface)};
 
     width: 24px;
     height: 24px;
@@ -33,38 +33,38 @@
 
     @include ripple(var(--ripple), $scale: 17);
 
-    @include hover {
+    @include baka.hover {
       @include state-layer {
         background-color: color-mix(in srgb, var(--state) 0.08 * 100%, transparent);
       }
     }
 
-    @include focus {
+    @include baka.focus {
       @include state-layer {
         background-color: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
       }
     }
 
-    @include active {
+    @include baka.active {
       @include state-layer {
         background-color: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
       }
     }
 
-    @include checked {
-      --background: #{$primary};
-      --ripple: #{$primary};
-      --state: #{$primary};
+    @include baka.checked {
+      --background: #{map-get($swatch, primary)};
+      --ripple: #{map-get($swatch, primary)};
+      --state: #{map-get($swatch, primary)};
 
       outline: 3px solid map-get($swatch, surface);
       outline-offset: -5px;
       background: var(--background);
     }
 
-    @include disabled {
+    @include baka.disabled {
       pointer-events: none;
-      --background: #{$on-surface};
-      --border: #{$on-surface};
+      --background: #{map-get($swatch, on-surface)};
+      --border: #{map-get($swatch, on-surface)};
       opacity: 0.38;
     }
   }

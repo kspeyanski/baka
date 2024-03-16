@@ -1,4 +1,10 @@
-@forward "baka-core";
+@forward "./design";
+@use "./design" as *;
 
-@forward "./styles/";
-@forward "./components/";
+@forward "./components";
+@use "./components" as *;
+
+@mixin styles {
+  @include design--styles;
+  @include components--styles;
+}

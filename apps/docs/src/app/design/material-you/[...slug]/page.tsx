@@ -7,7 +7,7 @@ import { Heading, Paragraph, Text } from "@/components/typography";
 import { Pre } from "@/components/code/pre";
 import { Code } from "@/components/code/code";
 import { Column } from "@/components/layout/column";
-import { TableOfContents } from "@/templates/table-of-contents";
+import { TableOfContents } from "@material-you/templates/table-of-contents";
 import { Table } from "@/components/table/table";
 import { TableRow } from "@/components/table/table-row";
 import { TableCell } from "@/components/table/table-cell";
@@ -65,7 +65,7 @@ export default function MaterialYouPage(props: { params?: { slug?: string[] } })
 
   return (
     <>
-      <Column count={[8, 9, 10]} className="pt-[45px]">
+      <Column count={[8, 9, 10]} className="pt-[45px]  pb-[100px]">
         <article className="max-w-[100%] min-h-[calc(100vh-105px)]">
           <React.Suspense fallback={<div>loading</div>}>
             <MDXContent components={mdxComponents} />

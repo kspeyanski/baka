@@ -1,4 +1,4 @@
-@use "baka-core" as *;
+@use "baka-core" as baka;
 @use "./swatch" as *;
 
 $elevation: (
@@ -28,9 +28,6 @@ $elevation: (
   *,
   ::before,
   ::after {
-    @include css-vars($elevation, --elevation);
+    @include baka.css-vars($elevation, --elevation);
   }
-  // @each $key, $value in $elevation {
-  //   --elevation--#{$key}: #{$value};
-  // }
 }

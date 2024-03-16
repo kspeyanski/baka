@@ -2,12 +2,14 @@
 @use "./themes/dark" as dark;
 @use "./components/" as extended;
 
-@include material-you.styles();
+@include material-you.components--styles();
 
-html {
+body.material-you {
+  @include material-you.design--styles();
+
   @media screen and (prefers-color-scheme: dark) {
     &:not(.theme-light) {
-      @include dark.styles();
+      @include dark.design--styles();
     }
   }
 }

@@ -1,6 +1,6 @@
 @use "../../utils" as *;
 
-@mixin core-button--styles {
+@mixin button--styles {
   cursor: pointer;
   box-sizing: border-box;
   user-select: none;

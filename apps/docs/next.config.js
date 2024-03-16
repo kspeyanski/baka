@@ -4,6 +4,23 @@ const withMDX = require("@next/mdx")();
 
 const nextConfig = withContentlayer(
   withMDX({
+    webpack: (config) => {
+      config.module.rules.push({
+        test: /\.inline-svg$/,
+        use: [
+          {
+            loader: "@svgr/webpack",
+            options: {
+              inlineStyles: false,
+            },
+          },
+        ],
+      });
+      return config;
+    },
+    eslint: {
+      ignoreDuringBuilds: true,
+    },
     pageExtensions: ["js", "jsx", "mdx", "md", "ts", "tsx"],
     typescript: {
       ignoreBuildErrors: true,

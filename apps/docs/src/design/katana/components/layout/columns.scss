@@ -1,16 +1,20 @@
-@use "../../styles/" as *;
+@use "baka-core" as baka;
+@use "../../design" as *;
 
-.column {
-  @each $size, $breakpoint in $breakpoints {
-    $_width: map-get($breakpoint, width);
-    $_screen: map-get($breakpoint, screen);
-    $_columns: map-get($breakpoint, columns);
-    $_gutter: map-get($breakpoint, gutter);
+@mixin styles {
+  .column {
+    @include baka.column--styles;
+    @each $size, $breakpoint in $layout {
+      $_width: map-get($breakpoint, width);
+      $_screen: map-get($breakpoint, screen);
+      $_columns: map-get($breakpoint, columns);
+      $_gutter: map-get($breakpoint, gutter);
 
-    @media screen and (min-width: $_screen) {
-      @for $i from 1 through $_columns {
-        &.value--#{$i} {
-          width: calc(($i / $_columns) * 100% - $_gutter);
+      @media screen and (min-width: $_screen) {
+        @for $i from 1 through $_columns {
+          &.value--#{$i} {
+            width: calc(($i / $_columns) * 100% - $_gutter);
+          }
         }
       }
     }

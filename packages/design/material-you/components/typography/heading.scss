@@ -1,32 +1,32 @@
 @use "../../design" as *;
-@use "baka-core" as *;
+@use "baka-core" as baka;
 
 @mixin heading--styles {
   .baka-heading {
-    @include core-heading--styles;
+    @include baka.heading--styles;
     color: inherit;
 
-    @include variant(display-large) {
+    @include baka.variant(display-large) {
       @include display-large;
     }
 
-    @include variant(display-medium) {
+    @include baka.variant(display-medium) {
       @include display-medium;
     }
 
-    @include variant(display-small) {
+    @include baka.variant(display-small) {
       @include display-small;
     }
 
-    @include variant(headline-large) {
+    @include baka.variant(headline-large) {
       @include headline-large;
     }
 
-    @include variant(headline-medium, true) {
+    @include baka.variant(headline-medium, true) {
       @include headline-medium;
     }
 
-    @include variant(headline-small) {
+    @include baka.variant(headline-small) {
       @include headline-small;
     }
   }

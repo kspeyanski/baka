@@ -1,7 +1,5 @@
 @use "./index.scss" as katana;
 
-*, ::before, ::after  {
-  @include katana.variables();
+html.katana {
+  @include katana.styles();
 }
-
-@include katana.styles();

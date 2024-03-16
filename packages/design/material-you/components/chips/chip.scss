@@ -1,14 +1,14 @@
 @use "../../design" as *;
-@use "baka-core" as *;
+@use "baka-core" as baka;
 
 @mixin chip--styles {
   .baka-chip {
-    @include core-chip--styles;
+    @include baka.chip--styles;
     @include label-large;
-    --state: #{$on-surface-variant};
-    --color: #{$on-surface-variant};
-    --outline: #{$outline};
-    --ripple: #{$on-surface};
+    --state: #{map-get($swatch, on-surface-variant)};
+    --color: #{map-get($swatch, on-surface-variant)};
+    --outline: #{map-get($swatch, outline)};
+    --ripple: #{map-get($swatch, on-surface)};
     --elevation: none;
     --background: transparent;
 
@@ -67,12 +67,12 @@
       height: 24px;
     }
 
-    @include variant(elevated) {
+    @include baka.variant(elevated) {
       --outline: transparent;
       --elevation: #{map-get($elevation, 1)};
     }
 
-    @include hover {
+    @include baka.hover {
       outline-color: var(--outline);
 
       @include state-layer {
@@ -80,15 +80,15 @@
       }
     }
 
-    @include focus {
-      --outline: #{$on-surface-variant};
+    @include baka.focus {
+      --outline: #{map-get($swatch, on-surface-variant)};
 
       @include state-layer {
         background: #{color-mix(in srgb, var(--state) 0.12 * 100%, transparent)};
       }
     }
 
-    @include dragged {
+    @include baka.dragged {
       --elevation: #{map-get($elevation, 2)};
 
       @include state-layer {
@@ -96,10 +96,10 @@
       }
     }
 
-    @include selected {
-      --color: #{$on-secondary-container};
-      --background: #{$secondary-container};
-      --state: #{$on-secondary-container};
+    @include baka.selected {
+      --color: #{map-get($swatch, on-secondary-container)};
+      --background: #{map-get($swatch, secondary-container)};
+      --state: #{map-get($swatch, on-secondary-container)};
       --outline: transparent;
     }
   }

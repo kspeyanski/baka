@@ -1,4 +1,4 @@
-import "@/design/material-you/styles.scss";
+import styles from "@/design/material-you/styles.module.scss";
 import "@/design/material-you/global.css";
 import "./layout.scss";
 
@@ -13,23 +13,24 @@ export const metadata: Metadata = {
 };
 
 import Logo from "@/icons/logo-material-you.svg";
-import GitHub from "@/icons/github-mark.svg";
+// @ts-expect-error
+import GitHub from "@/icons/github-mark.inline-svg";
 import NPM from "@/icons/npm-logo.svg";
 import { Container } from "@/components/layout/container";
 import { Row } from "@/components/layout/row";
 import { Column } from "@/components/layout/column";
 import clsx from "clsx";
-import { Sidenav } from "@/templates/sidenav/sidenav.server";
-import { SidenavState } from "@/templates/sidenav/sidenav.state";
+import { Sidenav } from "@material-you/templates/sidenav/sidenav.server";
+import { SidenavState } from "@material-you/templates/sidenav/sidenav.state";
 import { TopBar } from "@/components/bars/top-bar";
 import { Icon } from "@/components/misc/icon";
-import { ToggleButton } from "@/templates/sidenav/sidenav-category.client";
+import { ToggleButton } from "@material-you/templates/sidenav/sidenav-category.client";
 import { Docs, allDocs } from "contentlayer/generated";
 import Image from "next/image";
-import { Search } from "@/templates/search/search.client";
+import { Search } from "@material-you/templates/search/search.client";
 import { Button } from "@/components/buttons/button";
 import Link from "next/link";
-import { ColorScheme } from "@/templates/color-scheme/color-scheme.client";
+import { ColorScheme } from "@material-you/templates/color-scheme/color-scheme.client";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
@@ -64,16 +65,17 @@ export default function MaterialYouLayout({ children }: { children: React.ReactN
 
   return (
     <ColorScheme>
-      <html lang="en">
+      <html lang="en" className={clsx(styles["material-you"])}>
         <head>
           <link rel="icon" href={favicon.src} />
+          <link href="https://fonts.googleapis.com" rel="preconnect" />
           {/* eslint-disable-next-line @next/next/google-font-display, @next/next/no-page-custom-font  */}
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
           ></link>
         </head>
-        <body className={clsx(roboto.variable, robotoMono.variable)}>
+        <body className={clsx(roboto.variable, robotoMono.variable)} id="material-you">
           <main className="min-h-[calc(100vh-60px)] flex flex-row">
             <SidenavState data={groups}>
               <Sidenav data={groups} />
@@ -105,7 +107,8 @@ export default function MaterialYouLayout({ children }: { children: React.ReactN
                       target={"_blank"}
                     >
                       <Icon>
-                        <Image src={GitHub} alt="GitHub" width={32} height={32} />
+                        <GitHub height={32} width={32} />
+                        {/* <Image src={GitHub} alt="GitHub" width={32} height={32} /> */}
                       </Icon>
                     </Button>
                     <Button

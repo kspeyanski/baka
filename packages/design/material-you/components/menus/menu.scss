@@ -1,5 +1,5 @@
 @use "../../design" as *;
-@use "baka-core" as *;
+@use "baka-core" as baka;
 
 @keyframes enter {
   from {
@@ -14,10 +14,10 @@
 
 @mixin menu--styles {
   .baka-menu {
-    @include core-menu--styles;
+    @include baka.menu--styles;
     padding: 8px 0;
     color: map-get($swatch, on-surface);
-    background-color: $surface-container-highest;
+    background-color: map-get($swatch, surface-container-highest);
     border-radius: 4px;
     box-shadow: map-get($elevation, 2);
     animation: enter 0.15s ease-out;

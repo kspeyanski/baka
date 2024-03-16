@@ -110,16 +110,14 @@ $typography: (
   }
 }
 
-@mixin typography-styles() {
-  *, ::before, ::after  {
-    @each $key, $value in $font-family {
-      --typography--font-family--#{$key}: #{$value};
-    }
-    @each $key, $value in $font-size {
-      --typography--font-size--#{$key}: #{$value};
-    }
-    @each $key, $value in $line-height {
-      --typography--line-height--#{$key}: #{$value};
-    }
+@mixin styles() {
+  @each $key, $value in $font-family {
+    --typography--font-family--#{$key}: #{$value};
+  }
+  @each $key, $value in $font-size {
+    --typography--font-size--#{$key}: #{$value};
+  }
+  @each $key, $value in $line-height {
+    --typography--line-height--#{$key}: #{$value};
   }
 }
