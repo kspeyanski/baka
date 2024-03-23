@@ -1,12 +1,9 @@
 import { Icon } from "@/components/misc/icon";
-import {
-  NavigationRailItem,
-  NavigationRailItemProps,
-} from "@/components/navigation/navigation-rail-item";
+import { NavigationItem, NavigationItemProps } from "@/components/navigation/navigation-item";
 import { Label } from "@/components/typography";
 import { SidenavCategoryItemClient } from "./sidenav-category-item.client";
 
-export type SidenavCategoryItemProps = NavigationRailItemProps & {
+export type SidenavCategoryItemProps = NavigationItemProps & {
   url: string;
   icon: JSX.Element;
   title: string;
@@ -19,10 +16,10 @@ export const SidenavCategoryItem = (props: SidenavCategoryItemProps) => {
 
   return (
     <SidenavCategoryItemClient url={url} title={title} match={match} readOnly={readOnly}>
-      <NavigationRailItem>
+      <NavigationItem>
         <Icon>{icon}</Icon>
         <Label>{title}</Label>
-      </NavigationRailItem>
+      </NavigationItem>
     </SidenavCategoryItemClient>
   );
 };

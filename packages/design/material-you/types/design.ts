@@ -86,4 +86,13 @@ export interface BakaDesignMaterialYou {
   };
   TooltipVariant: "rich" | "plain";
   TopBarVariant: "small" | "medium" | "large" | "elevated";
+
+  NavigationVariant: "bottom" | "rail" | "side";
+  NavigationItemState: {
+    selected?: boolean;
+    hovered?: boolean;
+    focused?: boolean;
+    activated?: boolean;
+    disabled?: boolean;
+  };
 }

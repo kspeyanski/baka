@@ -1,7 +1,7 @@
 import { type Docs } from "contentlayer/generated";
 // @ts-expect-error
 import Logo from "@/icons/maskot-material-you.inline-svg";
-import { NavigationRail, NavigationRailProps } from "@/components/navigation/navigation-rail";
+import { Navigation, NavigationProps } from "@/components/navigation/navigation";
 import { SidenavCategoryItem } from "./sidenav-category-item.server";
 import clsx from "clsx";
 import { SidenavCategoryClient, ToggleButton } from "./sidenav-category.client";
@@ -16,14 +16,15 @@ export type SidenavCategoryProp = {
     icon?: string;
     docs: Pick<Docs, "url" | "title">[];
   }>;
-} & NavigationRailProps;
+} & NavigationProps;
 
 export const SidenavCategory = (props: SidenavCategoryProp) => {
   const { data, ...other } = props;
 
   return (
     <SidenavCategoryClient>
-      <NavigationRail
+      <Navigation
+        variant={"rail"}
         className={clsx(other.className, "bg-surface-container z-20 hidden sm:flex")}
         {...other}
       >
@@ -34,7 +35,7 @@ export const SidenavCategory = (props: SidenavCategoryProp) => {
             </ToggleButton>
             <Button variant={["fab", "tertiary"]} as={Link} href="/" title="Home" className="p-3">
               <Icon>
-                <Logo width={32} height={32} alt="Baka Material You Logo" viewBox={"0 0 56 40"}/>
+                <Logo width={32} height={32} alt="Baka Material You Logo" viewBox={"0 0 56 40"} />
               </Icon>
             </Button>
             {data.map((group) => (
@@ -49,7 +50,7 @@ export const SidenavCategory = (props: SidenavCategoryProp) => {
           </div>
           <ThemeToggle />
         </div>
-      </NavigationRail>
+      </Navigation>
     </SidenavCategoryClient>
   );
 };

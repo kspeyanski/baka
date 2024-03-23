@@ -1,16 +1,17 @@
-import { BakaComponent, BakaSideNavigation, BakaSideNavigationProps } from "baka-ui";
+import { BakaNavigation, BakaNavigationProps } from "baka-ui";
 import clsx from "clsx";
 
-export type NavigationDrawerProps = BakaSideNavigationProps;
+export type NavigationDrawerProps = BakaNavigationProps & {
+  className?: string;
+  children?: React.ReactNode;
+};
 
-export const NavigationDrawer: BakaComponent<"div", NavigationDrawerProps> = (
-  props: NavigationDrawerProps
-) => {
+export const NavigationDrawer: BakaNavigation = (props: NavigationDrawerProps) => {
   const { children, className, ...rest } = props;
 
   return (
-    <BakaSideNavigation className={clsx("navigation-drawer", className)} {...rest}>
+    <BakaNavigation className={clsx("navigation-drawer", className)} variant={"side"}>
       {children}
-    </BakaSideNavigation>
+    </BakaNavigation>
   );
 };

@@ -71,6 +71,12 @@ export type BakaDesign = {
   BottomNavigationItemVariant: string;
   BottomNavigationItemState: {};
 
+  NavigationVariant: string;
+  NavigationState: {};
+
+  NavigationItemVariant: string;
+  NavigationItemState: {};
+
   NavigationRailVariant: string;
   NavigationRailState: {};
 

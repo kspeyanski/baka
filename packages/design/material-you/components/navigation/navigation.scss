@@ -1,0 +1,52 @@
+@use "../../design" as *;
+@use "baka-core" as baka;
+
+@mixin navigation--styles {
+  .baka-navigation {
+    @include baka.navigation--styles;
+
+    @include baka.variant(bottom) {
+      align-items: center;
+      background: map-get($swatch, surface-container);
+      padding: 0px 8px;
+      height: 80px;
+
+      justify-content: flex-start;
+    }
+
+    @include baka.variant(rail) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      background: map-get($swatch, surface-container);
+      height: 100%;
+      gap: 40px;
+      padding: 12px 0 56px 0;
+
+      & .baka-button.variant--fab {
+        box-shadow: none;
+
+        @include baka.hover {
+          box-shadow: none;
+        }
+
+        @include baka.focus {
+          box-shadow: none;
+        }
+
+        @include baka.active {
+          box-shadow: none;
+        }
+      }
+    }
+
+    @include baka.variant(side) {
+      flex-direction: column;
+      min-height: min-content;
+      color: map-get($swatch, on-surface);
+      background: map-get($swatch, surface-container);
+      padding: 12px;
+      border-radius: 16px;
+    }
+  }
+}
