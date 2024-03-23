@@ -1,7 +1,8 @@
 @use "../../index.scss" as *;
 
 @mixin misc--styles {
-  .ul {
+  .ul,
+  .ol {
     @include body-medium;
   }
 

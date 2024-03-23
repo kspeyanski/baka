@@ -16,6 +16,7 @@ import { UL } from "@/components/misc/ul";
 import { LI } from "@/components/misc/li";
 
 import { Demo } from "../templates/demo";
+import { OL } from "@/components/misc/ol";
 
 const mdxComponents = {
   h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
@@ -46,6 +47,7 @@ const mdxComponents = {
   pre: Pre,
   code: Code,
   ul: UL,
+  ol: OL,
   li: LI,
   Demo: Demo,
 };

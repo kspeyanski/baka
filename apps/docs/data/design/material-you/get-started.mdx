@@ -8,7 +8,7 @@ position: 10
 ## Installation
 
 ```bash
-yarn add baka-material-you
+npm install baka-ui baka-material-you
 ```
 
 ## Usage
@@ -17,15 +17,19 @@ The `baka-material-you` package provides both a `css` and [`scss`](https://sass-
 
 - CSS
 
-   ```jsx
-   import "baka-material-you/dist/index.css";
-   ```
+  ```jsx
+  import "baka-material-you/dist/index.css";
+  ```
 
 - SCSS
 
-   ```scss
-   @use "baka-material-you";
-   ```
+  ```scss
+  @use "baka-material-you";
+
+  body {
+    @include material-you.styles();
+  }
+  ```
 
 ## Fonts & Icons
 
