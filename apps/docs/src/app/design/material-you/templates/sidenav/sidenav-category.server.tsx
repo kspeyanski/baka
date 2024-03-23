@@ -32,7 +32,7 @@ export const SidenavCategory = (props: SidenavCategoryProp) => {
             <ToggleButton className="xl:hidden">
               <Icon />
             </ToggleButton>
-            <Button variant={["fab", "tertiary"]} as={Link} href="/" title="Home">
+            <Button variant={["fab", "tertiary"]} as={Link} href="/" title="Home" className="p-3">
               <Icon>
                 <Logo width={32} height={32} alt="Baka Material You Logo" viewBox={"0 0 56 40"}/>
               </Icon>
