@@ -9,7 +9,7 @@ import {
 
 export default async function () {
   return (
-    <BakaNavigation style={{ width: 300 }} variant={"side"}>
+    <BakaNavigation style={{ width: 328 }} variant={"side"}>
       <div style={{ padding: "18px 16px" }}>
         <BakaText variant={"title-small"}>Title</BakaText>
       </div>

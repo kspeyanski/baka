@@ -4,7 +4,7 @@
 @mixin divider--styles {
   .baka-divider {
     @include baka.divider--styles;
-    flex: 1 1 auto;
+    flex: 0 1 auto;
     background-color: map-get($swatch, outline-variant);
   }
 }

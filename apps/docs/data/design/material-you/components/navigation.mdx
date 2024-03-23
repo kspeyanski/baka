@@ -1,0 +1,52 @@
+---
+title: Navigation
+---
+
+## Navigation
+
+The `Navigation` component is used to create a navigation bar typically placed at the top, bottom or the side of an app. It allows users to switch between different sections or views within the app.
+
+<Demo src="/demos/material-you/navigation/" style={{ height: 600 }} />
+
+### Usage
+
+```jsx
+import { BakaBottomNavigation, BakaNavigationItem, BakaIcon, BakaLabel, BakaBadge } from "baka-ui";
+
+// Inside your component
+<BakaNavigation>
+  <BakaNavigationItem selected={true}>
+    <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
+    <BakaLabel>BakaLabel</BakaLabel>
+  </BakaNavigationItem>
+</BakaNavigation>;
+```
+
+### Variants
+
+The `Navigation` component supports three variants &mdash; `rail`, `bottom`, and `side`.
+
+#### Rail
+
+The following example demonstrates the `Navigation` component with the `rail` variant.
+
+<Demo src="/demos/material-you/navigation/rail" style={{ height: 700 }} />
+
+#### Bottom
+
+The following example demonstrates the `Navigation` component with the `bottom` variant.
+
+<Demo src="/demos/material-you/navigation/bottom" />
+
+##### Bottom with Labels
+
+The following example demonstrates the `Navigation` component with the `bottom` variant and labels.
+
+<Demo src="/demos/material-you/navigation/bottom/labels" />
+
+#### Side
+
+The following example demonstrates the `Navigation` component with the `side` variant.
+
+<Demo src="/demos/material-you/navigation/side" style={{ height: 700 }} />
+
