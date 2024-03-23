@@ -1,11 +1,8 @@
-/* /// <reference path="../../../../../design/katana/katana.d.ts" /> */
 import { TopBar } from "@/components/bars/top-bar";
-import { Button } from "@/components/buttons/button";
 import { BakaDivider, BakaIcon } from "baka-ui";
 
 import Logo from "@/icons/logo-dark.svg";
 import Image from "next/image";
-import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { Row } from "@/components/layout/row";
 import { Column } from "@/components/layout/column";
@@ -26,7 +23,7 @@ export const Header = (props: HeaderProps) => {
           <Row>
             <Column count={12}>
               <BakaIcon>{HeaderLogo}</BakaIcon>
-              <ul className="ml-xl flex gap-sm">
+              {/* <ul className="ml-xl flex gap-sm">
                 <li>
                   <Button variant={"link"} as={Link} href="/">
                     Documentation
@@ -37,7 +34,7 @@ export const Header = (props: HeaderProps) => {
                     Design Systems
                   </Button>
                 </li>
-              </ul>
+              </ul> */}
             </Column>
           </Row>
         </Container>

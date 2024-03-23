@@ -4,16 +4,37 @@
 @mixin styles {
   .column {
     @include baka.column--styles;
-    @each $size, $breakpoint in $layout {
+
+    @for $j from 1 through length($layout) {
+      $size: nth(map-keys($layout), $j);
+      $breakpoint: nth(map-values($layout), $j);
+
       $_width: map-get($breakpoint, width);
       $_screen: map-get($breakpoint, screen);
       $_columns: map-get($breakpoint, columns);
       $_gutter: map-get($breakpoint, gutter);
+      $_regions: map-get($breakpoint, regions);
 
-      @media screen and (min-width: $_screen) {
+      flex-grow: 1;
+
+      @if ($_screen == 0) {
         @for $i from 1 through $_columns {
+          & {
+            width: calc(($i / $_columns) * 100% - $_gutter);
+          }
           &.value--#{$i} {
             width: calc(($i / $_columns) * 100% - $_gutter);
+          }
+        }
+      } @else {
+        @media screen and (min-width: $_screen) {
+          @for $i from 1 through $_columns {
+            &.value-#{$j - 1}--#{$i} {
+              width: calc(($i / $_columns) * 100% - $_gutter);
+            }
+            &.value--#{$i} {
+              width: calc(($i / $_columns) * 100% - $_gutter);
+            }
           }
         }
       }

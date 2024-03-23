@@ -3,8 +3,9 @@
 
 @mixin styles {
   .button {
+    --angle: 153deg;
     --color-gradient: linear-gradient(
-      153deg,
+      var(--angle),
       #{swatch(brand)} 0%,
       rgba(95, 154, 142, 1) 90%,
       rgba(0, 255, 203, 1) 100%
@@ -24,11 +25,7 @@
       background-color: swatch(background);
       background-clip: padding-box;
       padding: spacing(md) spacing(lg);
-
-      @include hover {
-        background-color: transparent;
-        color: #000;
-      }
+      transition: background-color 0.1s ease-in, color 0.1s ease-out;
 
       &::before {
         content: "";
@@ -41,6 +38,7 @@
         background: var(--color-gradient);
         background-clip: padding-box;
         filter: blur(24px);
+        transition: background-position 0.1s ease-in;
       }
 
       &::after {
@@ -54,6 +52,16 @@
         border-radius: spacing(sm);
         background-clip: padding-box;
         background: var(--color-gradient);
+      }
+
+      @include hover {
+        background-color: transparent;
+        color: #000;
+
+        &::before,
+        &::after {
+          background-position: 270deg;
+        }
       }
     }
 

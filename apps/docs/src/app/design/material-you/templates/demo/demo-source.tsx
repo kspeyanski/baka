@@ -23,7 +23,7 @@ export const DemoSource = async (props: DemoSourceProps) => {
 
   return (
     <DemoSourceClient>
-      <Pre className="demo-source">
+      <Pre className="demo-source m-0">
         <Code dangerouslySetInnerHTML={{ __html: code }} className="hljs" />
       </Pre>
     </DemoSourceClient>

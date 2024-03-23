@@ -1,0 +1,36 @@
+@use "baka-core" as baka;
+@use "@design/katana" as *;
+
+.design-system-card {
+  border-width: 1px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: map-get($swatch, brand);
+  position: relative;
+  width: 100%;
+
+  @include baka.disabled {
+    opacity: 0.5;
+  }
+
+  img {
+    height: 130px;
+    width: 100%;
+    object-fit: cover;
+    height: 230px;
+
+    @media screen and (min-width: map-get(map-get($layout, sm), 'screen')) {
+      height: 400px;
+    }
+
+    @media screen and (min-width: map-get(map-get($layout, lg), 'screen')) {
+      height: 250px;
+    }
+  }
+
+  .badge {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+  }
+}

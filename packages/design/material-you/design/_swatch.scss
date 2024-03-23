@@ -62,9 +62,5 @@ $_swatch: map-merge($swatch, ());
 }
 
 @mixin swatch--styles($sw: $_swatch) {
-  *,
-  ::before,
-  ::after {
-    @include baka.css-vars($sw, --swatch);
-  }
+  @include baka.css-vars($sw, --swatch);
 }

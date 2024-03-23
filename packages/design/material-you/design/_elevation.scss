@@ -25,9 +25,5 @@ $elevation: (
 );
 
 @mixin elevation--styles() {
-  *,
-  ::before,
-  ::after {
-    @include baka.css-vars($elevation, --elevation);
-  }
+  @include baka.css-vars($elevation, --elevation);
 }

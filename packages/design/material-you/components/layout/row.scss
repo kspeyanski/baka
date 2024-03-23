@@ -4,7 +4,6 @@
 @mixin row--styles {
   .baka-row {
     @include baka.row--styles;
-    @include baka.row--styles();
 
     @each $size, $breakpoint in $layout {
       $_gutter: map-get($breakpoint, gutter);

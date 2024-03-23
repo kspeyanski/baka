@@ -1,5 +1,3 @@
-export * from "./props";
-export * from "./design";
+export * from "./component";
 export * from "./states";
 export * from "./variant";
-export * from "./component";

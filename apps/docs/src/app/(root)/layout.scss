@@ -1,6 +1,6 @@
 @use "@design/katana" as *;
 
-body {
+body#katana {
   color: swatch(foreground);
   background-color: swatch(background);
 }

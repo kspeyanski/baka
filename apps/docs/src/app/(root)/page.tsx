@@ -1,13 +1,20 @@
 import styles from "./page.module.scss";
+import Image from "next/image";
 import { Container } from "@/components/layout/container";
 import { Row } from "@/components/layout/row";
 import { Column } from "@/components/layout/column";
 import { Heading, Paragraph, Text } from "@/components/typography";
 import { Button } from "@/components/buttons/button";
+import Link from "next/link";
+
+import MaterialYou from "@/images/google-material-you.png";
+import Fluent2 from "@/images/microsoft-fluent-2.jpeg";
+import Geist from "@/images/vercel-geist.jpeg";
+import { DesignSystemCard } from "./templates/design-system-card";
 
 export default function Home() {
   return (
-    <>
+    <div className="pb-[100px]">
       <Container>
         <Row>
           <Column>
@@ -21,7 +28,14 @@ export default function Home() {
               </Paragraph>
               <div className="mt-10 flex flex-col gap-md items-center">
                 <div className="flex gap-sm justify-center">
-                  <Button variant="cta">Get Started</Button>
+                  <Button
+                    variant="cta"
+                    as={Link}
+                    target="_blank"
+                    href="https://github.com/kspeyanski/baka"
+                  >
+                    Explore
+                  </Button>
                 </div>
                 <div>
                   <Text variant="code">~ npm install baka-ui</Text>
@@ -31,9 +45,38 @@ export default function Home() {
           </Column>
         </Row>
       </Container>
+      <div className="mt-40">
+        <Container>
+          <Row>
+            <Column>
+              <Heading as="h2" variant={"h2"}>
+                Showcase
+              </Heading>
+            </Column>
+          </Row>
+          <Row className="mt-6">
+            <Column count={2}>
+              <DesignSystemCard released={true} href={"/design/material-you"}>
+                <Image src={MaterialYou} alt="Google Material You" />
+              </DesignSystemCard>
+            </Column>
+            <Column count={2}>
+              <DesignSystemCard>
+                <Image src={Fluent2} alt="Microsoft Fluent 2" />
+              </DesignSystemCard>
+            </Column>
+            <Column count={2}>
+              <DesignSystemCard>
+                <Image src={Geist} alt="Vercel Geist" />
+              </DesignSystemCard>
+            </Column>
+            <Column count={2}></Column>
+          </Row>
+        </Container>
+      </div>
       <div>
         {/* Own the rendering: Engineered to be the beginning, not the end of your design system development */}
       </div>
-    </>
+    </div>
   );
 }

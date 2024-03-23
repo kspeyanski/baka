@@ -60,9 +60,5 @@ $layout: (
 );
 
 @mixin layout--styles {
-  *,
-  ::before,
-  ::after {
-    @include baka.css-vars($layout, --layout);
-  }
+  @include baka.css-vars($layout, --layout);
 }
