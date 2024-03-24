@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "node ./lib/demo.mjs",
     "dev": "next dev",
+    "prebuild": "node ./lib/demo.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -22,7 +24,6 @@
     "flexsearch": "^0.7.43",
     "geist": "^1.1.0",
     "github-slugger": "^2.0.0",
-    "glob": "^10.3.10",
     "hast-util-to-html": "^9.0.0",
     "hast-util-to-jsx-runtime": "^2.3.0",
     "lowlight": "^3.1.0",
@@ -48,6 +49,8 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.0.2",
+    "fast-glob": "^3.3.1",
+    "glob": "^10.3.10",
     "postcss-preset-env": "^9.5.0",
     "typescript": "^5"
   }

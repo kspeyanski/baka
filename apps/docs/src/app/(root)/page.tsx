@@ -17,12 +17,12 @@ export default function Home() {
     <div className="pb-[100px]">
       <Container>
         <Row>
-          <Column>
-            <main className={"mt-40"}>
+          <Column count={4}>
+            <main className={"mt-40 w-[100%] text-center"}>
               <Text variant={"hero"} as="h1">
                 A <span className={styles.highlight}>Design System</span> Framework
               </Text>
-              <Text variant={["sub-hero"]} className="mt-10">
+              <Text variant={["sub-hero", "heading-medium"]} className="mt-10">
                 Elevate Your Web Design: Build from Scratch or Build on top. BakaUI helps you build
                 faster and more consistent user experiences in your web apps.
               </Text>

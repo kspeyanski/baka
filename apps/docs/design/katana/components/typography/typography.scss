@@ -12,23 +12,23 @@
     }
 
     @include variant(h1) {
-      color: swatch(emphasis);
       @include typography(h1);
+      color: swatch(emphasis);
     }
 
     @include variant(h2) {
-      color: swatch(emphasis);
       @include typography(h2);
+      color: swatch(emphasis);
     }
 
     @include variant(h3) {
-      color: swatch(emphasis);
       @include typography(h3);
+      color: swatch(emphasis);
     }
 
     @include variant(h4) {
-      color: swatch(emphasis);
       @include typography(h4);
+      color: swatch(emphasis);
     }
 
     @include variant(h5) {
@@ -37,14 +37,13 @@
     }
 
     @include variant(h6) {
-      color: swatch(emphasis);
       @include typography(h6);
+      color: swatch(emphasis);
     }
 
     @include variant(sub-hero) {
       font-size: 20px;
       line-height: map-get($line-height, body);
-      @include typography(body);
     }
 
     @include variant(body-large) {
