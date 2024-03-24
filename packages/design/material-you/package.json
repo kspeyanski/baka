@@ -5,7 +5,7 @@
     "type": "git",
     "url": "https://github.com/kspeyanski/baka"
   },
-  "version": "0.0.8-alpha.0",
+  "version": "0.0.9-alpha.0",
   "types": "./types/index.d.ts",
   "main": "./_index.scss",
   "sass": "./_index.scss",
