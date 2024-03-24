@@ -52,6 +52,8 @@ const mdxComponents = {
   Demo: Demo,
 };
 
+export const dynamic = "force-static";
+
 export default function MaterialYouPage(props: { params?: { slug?: string[] } }) {
   const slug = props.params?.slug?.join("/") ?? "";
 
@@ -80,3 +82,11 @@ export default function MaterialYouPage(props: { params?: { slug?: string[] } })
     </>
   );
 }
+
+export const generateStaticParams = async () => {
+  return allDocs
+    .filter((doc) => doc._raw.flattenedPath.startsWith("design/material-you"))
+    .map((doc) => {
+      return { params: { slug: doc._raw.flattenedPath.split("/") } };
+    });
+};

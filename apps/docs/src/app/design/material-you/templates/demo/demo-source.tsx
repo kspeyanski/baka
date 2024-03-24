@@ -21,7 +21,11 @@ export const DemoSource = async (props: DemoSourceProps) => {
       console.log(err);
     }); */
 
-  console.log(result);
+  if (!result) {
+    console.log("No result found", props.src);
+    return null;
+  }
+  // console.log(result);
 
   const tree = lowlight.highlight("js", result.files?.[0].code);
   const code = toHtml(tree);

@@ -12,6 +12,8 @@ import Fluent2 from "@/images/microsoft-fluent-2.jpeg";
 import Geist from "@/images/vercel-geist.jpeg";
 import { DesignSystemCard } from "./templates/design-system-card";
 
+export const dynamic = 'force-static';
+
 export default function Home() {
   return (
     <div className="pb-[100px]">

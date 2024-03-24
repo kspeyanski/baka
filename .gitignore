@@ -137,3 +137,4 @@ dist
 # custom
 .tmp
 packages/**/README.md
+apps/docs/public/demos.json
