@@ -11,16 +11,12 @@
     "email": "kspeyanski@gmail.com"
   },
   "scripts": {
-    "start": "lerna run watch --parallel",
-    "build-packages": "lerna run build --no-private",
-    "build-storybook": "build-storybook -c .storybook -o .out",
     "prepare": "node ./scripts/prepare.mjs"
   },
   "devDependencies": {
     "eslint": "^8.53.0",
     "eslint-config-prettier": "^8.10.0",
     "fast-glob": "^3.3.1",
-    "lerna": "^7.4.2",
     "prettier": "^2.8.8"
   },
   "dependencies": {
