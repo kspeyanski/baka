@@ -61,6 +61,15 @@ export default function MaterialYouPage(props: { params?: { slug?: string[] } })
     (doc) => doc._raw.flattenedPath === "design/material-you" + (slug ? `/${slug}` : "")
   );
 
+  console.log(
+    allDocs
+      .filter((doc) => doc._raw.flattenedPath.startsWith("design/material-you"))
+      .map((doc) => {
+        return { slug: doc._raw.flattenedPath.split("/") };
+      }),
+    doc
+  );
+
   if (!doc) {
     notFound();
   }
@@ -87,6 +96,6 @@ export const generateStaticParams = async () => {
   return allDocs
     .filter((doc) => doc._raw.flattenedPath.startsWith("design/material-you"))
     .map((doc) => {
-      return { slug: doc._raw.flattenedPath.split("/") };
+      return { slug: doc._raw.flattenedPath.replace("design/material-you/", "").split("/") };
     });
 };
