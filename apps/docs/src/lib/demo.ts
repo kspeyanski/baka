@@ -9,11 +9,9 @@ export const getDemo = async (demo: string) => {
   const allDemos = fs.readFileSync("public/demos.json", "utf8");
   const parsed = JSON.parse(allDemos);
   const url = new URL(
-    demo.endsWith("/") ? demo.slice(0, demo.length - 2) : demo,
+    demo.endsWith("/") ? demo.substring(0, demo.length - 1) : demo,
     "http://localhost"
   );
-
-  console.log(url);
 
   return parsed.find((d: any) => new URL(d.name, "http://localhost").pathname === url.pathname);
 };

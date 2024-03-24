@@ -87,6 +87,6 @@ export const generateStaticParams = async () => {
   return allDocs
     .filter((doc) => doc._raw.flattenedPath.startsWith("design/material-you"))
     .map((doc) => {
-      return { params: { slug: doc._raw.flattenedPath.split("/") } };
+      return { slug: doc._raw.flattenedPath.split("/") };
     });
 };
