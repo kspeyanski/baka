@@ -10,6 +10,7 @@ export type BakaBarProps = BakaStates<BakaDesign["BarState"]> &
 export type BakaBar = PolymorphicComponent<"span", BakaBarProps>;
 export const BakaBar: BakaBar = (props) => {
   const {
+    _ref,
     as: Component = "span",
     variant,
     selected,
@@ -29,6 +30,7 @@ export const BakaBar: BakaBar = (props) => {
 
   return (
     <Component
+      ref={_ref}
       {...other}
       className={clsx(
         "baka-bar",

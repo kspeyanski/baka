@@ -8,10 +8,12 @@ export type BakaContainerProps = BakaVariant<BakaDesign["ContainerVariant"]> & {
 
 export type BakaContainer = PolymorphicComponent<"div", BakaContainerProps>;
 export const BakaContainer: BakaContainer = (props) => {
-  const { as: Component = "div", variant, ...other } = props;
+  const { _ref,
+    as: Component = "div", variant, ...other } = props;
 
   return (
     <Component
+      ref={_ref}
       {...other}
       className={clsx("baka-container", props.className, variantClassNames(variant))}
     />

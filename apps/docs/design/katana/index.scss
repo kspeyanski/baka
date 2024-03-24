@@ -6,5 +6,5 @@
 
 @mixin styles {
   @include design--styles;
-  @include components--styles;
+  @include component--styles;
 }

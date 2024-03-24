@@ -10,6 +10,7 @@ export type BakaNavigationItemProps = BakaStates<BakaDesign["NavigationItemState
 export type BakaNavigationItem = PolymorphicComponent<"div", BakaNavigationItemProps>;
 export const BakaNavigationItem: BakaNavigationItem = (props) => {
   const {
+    _ref,
     as: Component = "div",
     variant,
     selected,
@@ -29,6 +30,7 @@ export const BakaNavigationItem: BakaNavigationItem = (props) => {
 
   return (
     <Component
+      ref={_ref}
       {...other}
       disabled={disabled}
       className={clsx(

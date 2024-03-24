@@ -10,6 +10,7 @@ export type BakaIconProps = BakaStates<BakaDesign["IconState"]> &
 export type BakaIcon = PolymorphicComponent<"ul", BakaIconProps>;
 export const BakaIcon: BakaIcon = (props) => {
   const {
+    _ref,
     as: Component = "ul",
     variant,
     selected,
@@ -29,6 +30,7 @@ export const BakaIcon: BakaIcon = (props) => {
 
   return (
     <Component
+      ref={_ref}
       {...other}
       disabled={disabled}
       className={clsx(

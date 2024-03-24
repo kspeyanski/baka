@@ -10,6 +10,7 @@ export type BakaDialogProps = BakaStates<BakaDesign["DialogState"]> &
 export type BakaDialog = PolymorphicComponent<"div", BakaDialogProps>;
 export const BakaDialog: BakaDialog = (props) => {
   const {
+    _ref,
     as: Component = "div",
     variant,
     selected,
@@ -29,6 +30,7 @@ export const BakaDialog: BakaDialog = (props) => {
 
   return (
     <Component
+      ref={_ref}
       {...other}
       disabled={disabled}
       className={clsx(

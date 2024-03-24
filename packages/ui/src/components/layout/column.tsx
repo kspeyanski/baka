@@ -11,10 +11,12 @@ export type BakaColumnProps = BakaVariant<BakaDesign["ColumnVariant"]> & {
 
 export type BakaColumn = PolymorphicComponent<"div", BakaColumnProps>;
 export const BakaColumn: BakaColumn = (props) => {
-  const { as: Component = "div", count, variant, ...other } = props;
+  const { _ref,
+    as: Component = "div", count, variant, ...other } = props;
 
   return (
     <Component
+      ref={_ref}
       {...other}
       className={clsx(
         "baka-column",

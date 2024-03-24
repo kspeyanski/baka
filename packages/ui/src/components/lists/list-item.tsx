@@ -10,6 +10,7 @@ export type BakaListItemProps = BakaStates<BakaDesign["ListItemState"]> &
 export type BakaListItem = PolymorphicComponent<"li", BakaListItemProps>;
 export const BakaListItem: BakaListItem = (props) => {
   const {
+    _ref,
     as: Component = "li",
     variant,
     selected,
@@ -29,6 +30,7 @@ export const BakaListItem: BakaListItem = (props) => {
 
   return (
     <Component
+      ref={_ref}
       {...other}
       disabled={disabled}
       className={clsx(

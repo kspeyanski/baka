@@ -10,6 +10,7 @@ export type BakaMenuProps = BakaStates<BakaDesign["MenuState"]> &
 export type BakaMenu = PolymorphicComponent<"div", BakaMenuProps>;
 export const BakaMenu: BakaMenu = (props) => {
   const {
+    _ref,
     as: Component = "div",
     variant,
     selected,
@@ -29,6 +30,7 @@ export const BakaMenu: BakaMenu = (props) => {
 
   return (
     <Component
+      ref={_ref}
       {...other}
       disabled={disabled}
       className={clsx(

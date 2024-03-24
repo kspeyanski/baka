@@ -10,6 +10,7 @@ export type BakaSwitchProps = BakaStates<BakaDesign["SwitchState"]> &
 export type BakaSwitch = PolymorphicComponent<"input", BakaSwitchProps>;
 export const BakaSwitch: BakaSwitch = (props) => {
   const {
+    _ref,
     as: Component = "input",
     variant,
     selected,
@@ -29,6 +30,7 @@ export const BakaSwitch: BakaSwitch = (props) => {
 
   return (
     <Component
+      ref={_ref}
       {...other}
       type="checkbox"
       disabled={disabled}

@@ -10,6 +10,7 @@ export type BakaAvatarProps = BakaStates<BakaDesign["AvatarState"]> &
 export type BakaAvatar = PolymorphicComponent<"span", BakaAvatarProps>;
 export const BakaAvatar: BakaAvatar = (props) => {
   const {
+    _ref,
     as: Component = "span",
     variant,
     selected,
@@ -29,6 +30,7 @@ export const BakaAvatar: BakaAvatar = (props) => {
 
   return (
     <Component
+      ref={_ref}
       {...other}
       className={clsx(
         "baka-avatar",

@@ -9,7 +9,6 @@ import { TextField } from "@/components/inputs/text-field";
 import { Icon } from "@/components/misc/icon";
 import React from "react";
 import { search } from "./actions";
-import { BakaMenu, BakaMenuItem } from "baka-ui";
 import { usePopup } from "@/utils/use-popup";
 import Link from "next/link";
 import { useAsyncFocusBlur } from "@/utils/use-async-focus-blur";

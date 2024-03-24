@@ -9,10 +9,12 @@ export type BakaBadgeProps = BakaStates<BakaDesign["BadgeState"]> &
 
 export type BakaBadge = PolymorphicComponent<"span", BakaBadgeProps>;
 export const BakaBadge: BakaBadge = (props) => {
-  const { as: Component = "span", variant, ...other } = props;
+  const { _ref,
+    as: Component = "span", variant, ...other } = props;
 
   return (
     <Component
+      ref={_ref}
       {...other}
       className={clsx(
         "baka-badge",

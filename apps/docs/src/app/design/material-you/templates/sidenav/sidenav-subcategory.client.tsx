@@ -44,7 +44,7 @@ export const SidenavSubcategoryClient = (props: SidenavSubcategoryClientProps) =
         "rounded-l-none w-full border-l border-outline-variant shadow-2 z-10 xl:block min-w-[255px]",
         {
           //   ["min-w-[255px]"]: open,
-          ["hidden"]: !open,
+          ["invisible"]: !open,
         },
         other.className
       )}

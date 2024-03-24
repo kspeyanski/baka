@@ -10,6 +10,7 @@ export type BakaTextProps = BakaStates<BakaDesign["TextState"]> &
 export type BakaText = PolymorphicComponent<"span", BakaTextProps>;
 export const BakaText: BakaText = (props) => {
   const {
+    _ref,
     as: Component = "span",
     variant,
     selected,
@@ -29,6 +30,7 @@ export const BakaText: BakaText = (props) => {
 
   return (
     <Component
+      ref={_ref}
       {...other}
       disabled={disabled}
       className={clsx(

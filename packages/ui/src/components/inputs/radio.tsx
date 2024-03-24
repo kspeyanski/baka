@@ -10,6 +10,7 @@ export type BakaRadioProps = BakaStates<BakaDesign["RadioState"]> &
 export type BakaRadio = PolymorphicComponent<"input", BakaRadioProps>;
 export const BakaRadio: BakaRadio = (props) => {
   const {
+    _ref,
     as: Component = "input",
     variant,
     selected,
@@ -29,6 +30,7 @@ export const BakaRadio: BakaRadio = (props) => {
 
   return (
     <Component
+      ref={_ref}
       {...other}
       type="radio"
       disabled={disabled}

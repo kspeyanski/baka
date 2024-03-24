@@ -2,8 +2,8 @@
 @use "../../design" as *;
 
 @mixin styles {
-  .heading {
-    color: swatch(emphasis);
+  .text {
+    @include typography(body);
 
     @include variant(hero) {
       font-size: 64px;
@@ -11,37 +11,40 @@
       font-family: map-get($font-family, serif);
     }
 
-    @include variant(h1, true) {
+    @include variant(h1) {
+      color: swatch(emphasis);
       @include typography(h1);
     }
 
     @include variant(h2) {
+      color: swatch(emphasis);
       @include typography(h2);
     }
 
     @include variant(h3) {
+      color: swatch(emphasis);
       @include typography(h3);
     }
 
     @include variant(h4) {
+      color: swatch(emphasis);
       @include typography(h4);
     }
 
     @include variant(h5) {
+      color: swatch(emphasis);
       @include typography(h5);
     }
 
     @include variant(h6) {
+      color: swatch(emphasis);
       @include typography(h6);
     }
-  }
-
-  .paragraph {
-    @include typography(body);
 
     @include variant(sub-hero) {
       font-size: 20px;
       line-height: map-get($line-height, body);
+      @include typography(body);
     }
 
     @include variant(body-large) {
@@ -51,10 +54,6 @@
     @include variant(body-small) {
       @include typography(body-small);
     }
-  }
-
-  .text {
-    @include typography(body);
 
     @include variant(body-large) {
       @include typography(body-large);
@@ -67,10 +66,10 @@
     @include variant(code) {
       @include typography(code);
     }
-  }
 
-  .label {
-    @include typography(body-small);
+    @include variant(body-small) {
+      @include typography(body-small);
+    }
 
     @include variant(body) {
       @include typography(body);

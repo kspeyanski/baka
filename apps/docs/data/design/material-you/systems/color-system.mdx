@@ -2,4 +2,105 @@
 title: Color System
 ---
 
-## Color System
+# Color System
+
+The `baka-material-you` Color System implements the Material You Design System swatch. It creates a pair of `sass` and `css` variables for usage in your application.
+
+## Usage
+
+The `baka-material-you` package provides a set of `sass` mixins and variables for styling your application, the main ones being:
+
+- `styles` - A mixin that applies all of the Material You Design System styles.
+- `design--styles` - A mixin that applies only css variables for the corresponding theme.
+- `component--styles` - A mixin that applies only styles for the components.
+
+```scss
+@use "baka-material-you" as material-you;
+
+body {
+  @include material-you.styles();
+}
+```
+
+or alternatively:
+
+```scss
+@use "baka-material-you" as material-you;
+
+@include material-you.component--styles();
+
+:root {
+  @include material-you.design-styles();
+}
+```
+
+### Styling Components
+
+You can utilize the `baka-material-you` Color System by importing the package and using the `$swatch` variable for any custom styles and components in your application.
+
+```scss
+@use "baka-material-you" as material-you;
+
+.my-element {
+  color: map-get(material-you.$swatch, on-surface);
+  background-color: map-get(material-you.$swatch, surface);
+}
+```
+
+This will result in the following CSS:
+
+```css
+.my-element {
+  color: var(--on-surface, #1d1b20);
+  background-color: var(--surface, #fef7ff);
+}
+```
+
+### Styling Layout
+
+By utilizing the [Baka Tailwind Preset](/desing/material-you/tailwind), you can easily style your layout with the `baka-material-you` Color System.
+
+```html
+<div class="bg-surface-container">Hello World</div>
+```
+
+## Theming
+
+The `baka-material-you` Color System supports theming. You can change the theme by passing a new `swatch` variable.
+
+```scss
+@use "baka-material-you" as material-you;
+@use "baka-material-you/themes/dark" as dark-swatch;
+
+:root {
+  @include materila-you.styles();
+
+  @media screen and (prefers-color-scheme: dark) {
+    @include dark-swatch.design-styles();
+  }
+}
+```
+
+### Custom Theme
+
+The `baka-material-you` Color System also supports custom theming. You can create a new theme by passing a custom `swatch` variable.
+
+> The custom `swatch` will be merged with the default one.
+
+```scss
+$custom-swatch: (
+  primary: #ff0000,
+  secondary: #00ff00,
+  surface: #000000,
+  on-surface: #ffffff,
+);
+
+@use "baka-material-you" as material-you with (
+  $swatch: $custom-swatch
+);
+
+.my-element {
+  color: map-get(material-you.$swatch, on-surface);
+  background-color: map-get(material-you.$swatch, surface);
+}
+```

@@ -10,6 +10,7 @@ export type BakaButtonProps = BakaStates<BakaDesign["ButtonState"]> &
 export type BakaButton = PolymorphicComponent<"button", BakaButtonProps>;
 export const BakaButton: BakaButton = (props) => {
   const {
+    _ref,
     as: Component = "button",
     variant,
     selected,
@@ -29,6 +30,7 @@ export const BakaButton: BakaButton = (props) => {
 
   return (
     <Component
+      ref={_ref}
       {...other}
       disabled={disabled}
       className={clsx(

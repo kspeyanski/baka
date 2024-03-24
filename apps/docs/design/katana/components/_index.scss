@@ -12,7 +12,7 @@
 @use "./layout/container.scss" as container;
 @use "./typography/typography.scss" as typography;
 
-@mixin components--styles {
+@mixin component--styles {
   @include top-bar.styles;
   @include button.styles;
   @include row.styles;

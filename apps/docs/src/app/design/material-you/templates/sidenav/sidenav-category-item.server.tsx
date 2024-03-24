@@ -18,7 +18,7 @@ export const SidenavCategoryItem = (props: SidenavCategoryItemProps) => {
     <SidenavCategoryItemClient url={url} title={title} match={match} readOnly={readOnly}>
       <NavigationItem>
         <Icon>{icon}</Icon>
-        <Text>{title}</Text>
+        <Text variant="label-medium">{title}</Text>
       </NavigationItem>
     </SidenavCategoryItemClient>
   );

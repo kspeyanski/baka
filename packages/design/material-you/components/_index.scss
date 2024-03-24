@@ -56,7 +56,7 @@
 @use "./layout/column.scss" as *;
 @use "./layout/row.scss" as *;
 
-@mixin components--styles {
+@mixin component--styles {
   @include avatar--styles();
   @include badge--styles();
   @include bar--styles();

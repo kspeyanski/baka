@@ -1,0 +1,12 @@
+@use "../../index.scss" as *;
+
+@mixin navigation-drawer--styles {
+  .navigation-drawer {
+    opacity: 0;
+    transition: all $motion-duration-short-3 $motion-easing-standard;
+
+    &:not(.invisible) {
+      opacity: 1;
+    }
+  }
+}

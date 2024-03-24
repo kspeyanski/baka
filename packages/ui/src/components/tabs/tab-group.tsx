@@ -10,6 +10,7 @@ export type BakaTabGroupProps = BakaStates<BakaDesign["TabGroupState"]> &
 export type BakaTabGroup = PolymorphicComponent<"div", BakaTabGroupProps>;
 export const BakaTabGroup: BakaTabGroup = (props) => {
   const {
+    _ref,
     as: Component = "div",
     variant,
     selected,
@@ -29,6 +30,7 @@ export const BakaTabGroup: BakaTabGroup = (props) => {
 
   return (
     <Component
+      ref={_ref}
       {...other}
       disabled={disabled}
       className={clsx(

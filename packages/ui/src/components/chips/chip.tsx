@@ -10,6 +10,7 @@ export type BakaChipProps = BakaStates<BakaDesign["ChipState"]> &
 export type BakaChip = PolymorphicComponent<"span", BakaChipProps>;
 export const BakaChip: BakaChip = (props) => {
   const {
+    _ref,
     as: Component = "span",
     variant,
     selected,
@@ -29,6 +30,7 @@ export const BakaChip: BakaChip = (props) => {
 
   return (
     <Component
+      ref={_ref}
       {...other}
       disabled={disabled}
       className={clsx(

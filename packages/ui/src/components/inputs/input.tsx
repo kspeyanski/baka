@@ -10,6 +10,7 @@ export type BakaInputProps = BakaStates<BakaDesign["InputState"]> &
 export type BakaInput = PolymorphicComponent<"input", BakaInputProps>;
 export const BakaInput: BakaInput = (props) => {
   const {
+    _ref,
     as: Component = "input",
     variant,
     selected,
@@ -29,6 +30,7 @@ export const BakaInput: BakaInput = (props) => {
 
   return (
     <Component
+      ref={_ref}
       {...other}
       disabled={disabled}
       className={clsx(

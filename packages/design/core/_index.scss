@@ -5,5 +5,5 @@
 @use "./components" as *;
 
 @mixin styles {
-  @include components--styles;
+  @include component--styles;
 }

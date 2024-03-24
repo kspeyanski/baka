@@ -10,6 +10,7 @@ export type BakaDividerProps = BakaStates<BakaDesign["DividerState"]> &
 export type BakaDivider = PolymorphicComponent<"div", BakaDividerProps>;
 export const BakaDivider: BakaDivider = (props) => {
   const {
+    _ref,
     as: Component = "div",
     variant,
     selected,
@@ -29,6 +30,7 @@ export const BakaDivider: BakaDivider = (props) => {
 
   return (
     <Component
+      ref={_ref}
       {...other}
       disabled={disabled}
       className={clsx(

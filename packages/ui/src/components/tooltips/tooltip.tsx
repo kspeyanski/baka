@@ -10,6 +10,7 @@ export type BakaTooltipProps = BakaStates<BakaDesign["TooltipState"]> &
 export type BakaTooltip = PolymorphicComponent<"div", BakaTooltipProps>;
 export const BakaTooltip: BakaTooltip = (props) => {
   const {
+    _ref,
     as: Component = "div",
     variant,
     selected,
@@ -29,6 +30,7 @@ export const BakaTooltip: BakaTooltip = (props) => {
 
   return (
     <Component
+      ref={_ref}
       {...other}
       disabled={disabled}
       className={clsx(
