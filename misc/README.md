@@ -31,7 +31,7 @@ import "baka-material-you/dist/index.css";
 const App = () => <BakaButton>Click me</BakaButton>;
 ```
 
-## Foundation
+## Principles
 
 The `baka-ui` is built on top of basic design system principles which are followed strictly.
 
