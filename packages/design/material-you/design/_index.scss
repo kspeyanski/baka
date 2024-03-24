@@ -1,0 +1,25 @@
+@forward "./swatch";
+@forward "./elevation";
+@forward "./iconography";
+@forward "./layout";
+@forward "./motion";
+@forward "./state";
+@forward "./typography";
+
+@use "./swatch" as *;
+@use "./elevation" as *;
+@use "./iconography" as *;
+@use "./layout" as *;
+@use "./motion" as *;
+@use "./state" as *;
+@use "./typography" as *;
+
+@mixin design--styles {
+  @include swatch--styles;
+  @include elevation--styles;
+  @include iconography--styles;
+  @include layout--styles;
+  @include motion--styles;
+  @include state--styles;
+  @include typography--styles;
+}

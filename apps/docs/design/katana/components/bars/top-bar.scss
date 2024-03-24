@@ -1,0 +1,8 @@
+@use "../../design" as *;
+
+@mixin styles {
+  .top-bar {
+    padding: 0 spacing(md);
+    margin: spacing(md) 0;
+  }
+}

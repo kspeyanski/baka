@@ -1,0 +1,66 @@
+@use "sass:map";
+
+@use "baka-core" as baka;
+
+@use "../colors" as *;
+@forward "../colors";
+
+$_default-swatch: (
+  primary: map-get($royal-purple, 40),
+  on-primary: map-get($royal-purple, 100),
+  primary-container: map-get($royal-purple, 90),
+  on-primary-container: map-get($royal-purple, 10),
+  primary-fixed: map-get($royal-purple, 90),
+  primary-fixed-dim: map-get($royal-purple, 80),
+  on-primary-fixed: map-get($royal-purple, 10),
+  on-primary-fixed-variant: map-get($royal-purple, 30),
+  secondary: map-get($black-coral, 40),
+  on-secondary: map-get($black-coral, 100),
+  secondary-container: map-get($black-coral, 90),
+  on-secondary-container: map-get($black-coral, 10),
+  secondary-fixed: map-get($black-coral, 90),
+  secondary-fixed-dim: map-get($black-coral, 80),
+  on-secondary-fixed: map-get($black-coral, 10),
+  on-secondary-fixed-variant: map-get($black-coral, 30),
+  tertiary: map-get($deep-taupe, 40),
+  on-tertiary: map-get($deep-taupe, 100),
+  tertiary-container: map-get($deep-taupe, 90),
+  on-tertiary-container: map-get($deep-taupe, 10),
+  error: map-get($firebrick, 40),
+  on-error: map-get($firebrick, 100),
+  error-container: map-get($firebrick, 90),
+  on-error-container: map-get($firebrick, 10),
+  error-fixed: map-get($firebrick, 90),
+  error-fixed-dim: map-get($firebrick, 80),
+  on-error-fixed: map-get($firebrick, 10),
+  on-error-fixed-variant: map-get($firebrick, 30),
+  surface-dim: map-get($granite, 87),
+  surface: map-get($granite, 98),
+  surface-bright: map-get($granite, 24),
+  surface-container-lowest: map-get($granite, 100),
+  surface-container-low: map-get($granite, 96),
+  surface-container: map-get($granite, 94),
+  surface-container-highest: map-get($granite, 90),
+  surface-container-high: map-get($granite, 92),
+  on-surface: map-get($granite, 10),
+  on-surface-variant: map-get($granite-variant, 30),
+  outline: map-get($granite-variant, 50),
+  outline-variant: map-get($granite-variant, 80),
+  inverse-surface: map-get($granite, 20),
+  inverse-on-surface: map-get($granite, 95),
+  inverse-primary: map-get($royal-purple, 80),
+  scrim: map-get($granite, 0),
+  shadow: map-get($granite, 0),
+);
+
+$swatch: () !default;
+$swatch: map-merge($_default-swatch, $swatch);
+$_swatch: map-merge($swatch, ());
+
+@each $name, $value in $swatch {
+  $swatch: map.merge($swatch, (#{$name}: var(--swatch--#{$name}, $value)));
+}
+
+@mixin swatch--styles($sw: $_swatch) {
+  @include baka.css-vars($sw, --swatch);
+}

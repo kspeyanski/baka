@@ -1,29 +1,44 @@
-import type { BakaTooltipVariant } from "baka-core";
 import clsx from "clsx";
+import type { BakaDesign } from "baka-core";
 
-import { BakaComponent, BakaProps, BakaVariant } from "../../../src/models";
-import { variantClassNames } from "../../utils";
+import { BakaStates, BakaVariant, PolymorphicComponent } from "../../../src/models";
+import { stateClassNames, variantClassNames } from "../../utils";
 
-export interface BakaTooltipProps extends React.HTMLAttributes<HTMLDivElement>, BakaProps {
-  variant?: BakaVariant<BakaTooltipVariant>; 
-}
+export type BakaTooltipProps = BakaStates<BakaDesign["TooltipState"]> &
+  BakaVariant<BakaDesign["TooltipVariant"]> & {};
 
-export const BakaTooltip: BakaComponent<"div", BakaTooltipProps> = (props) => {
+export type BakaTooltip = PolymorphicComponent<"div", BakaTooltipProps>;
+export const BakaTooltip: BakaTooltip = (props) => {
   const {
+    _ref,
     as: Component = "div",
+    variant,
     selected,
+    checked,
+    readOnly,
+    indeterminate,
     hovered,
     focused,
     activated,
     disabled,
-    variant,
+    empty,
+    valid,
+    invalid,
+    dragged,
     ...other
   } = props;
 
   return (
     <Component
+      ref={_ref}
       {...other}
-      className={clsx("baka-tooltip", props.className, variantClassNames(variant))}
+      disabled={disabled}
+      className={clsx(
+        "baka-tooltip",
+        props.className,
+        variantClassNames(variant),
+        stateClassNames(props)
+      )}
     />
   );
 };

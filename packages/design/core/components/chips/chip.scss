@@ -1,6 +1,6 @@
 @use "../../utils" as *;
 
-@mixin chip {
+@mixin chip--styles {
   cursor: pointer;
   overflow: hidden;
   position: relative;
@@ -21,6 +21,3 @@
   }
 }
 
-.baka-chip {
-  @include chip();
-}

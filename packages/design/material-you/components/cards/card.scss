@@ -1,36 +1,40 @@
-@use "../../styles" as *;
-@use "baka-core" as *;
+@use "../../design" as *;
+@use "baka-core" as baka;
 
-.baka-card {
-  border-radius: 12px;
-  border-color: transparent;
-  border-width: 1px;
-  border-style: solid;
-
-  display: flex;
-  flex-direction: column;
-
-  color: $on-surface-variant;
-
-  @include variant(outlined, true) {
-    border-color: $outline-variant;
-    background: $surface;
-  }
-
-  @include variant(elevated) {
-    border-width: 0;
-    background: $surface-container-low;
-    box-shadow: map-get($elevation, 1);
-  }
-
-  @include variant(filled) {
-    border-width: 0;
-    background: $surface-container-highest;
-  }
-
-  @include variant(horizontal) {
-    border-color: $outline-variant;
+@mixin card--styles {
+  .baka-card {
+    @include baka.card--styles;
+    border-radius: 12px;
+    border-color: transparent;
     border-width: 1px;
-    flex-direction: row;
+    border-style: solid;
+
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+
+    color: map-get($swatch, on-surface-variant);
+
+    @include baka.variant(outlined, true) {
+      border-color: map-get($swatch, outline-variant);
+      background: map-get($swatch, surface);
+    }
+
+    @include baka.variant(elevated) {
+      border-width: 0;
+      background: map-get($swatch, surface-container-low);
+      box-shadow: map-get($elevation, 1);
+    }
+
+    @include baka.variant(filled) {
+      border-width: 0;
+      background: map-get($swatch, surface-container-highest);
+    }
+
+    @include baka.variant(horizontal) {
+      border-color: map-get($swatch, outline-variant);
+      border-width: 1px;
+      flex-direction: row;
+    }
   }
 }

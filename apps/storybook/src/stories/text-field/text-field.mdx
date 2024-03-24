@@ -15,7 +15,7 @@ npm install baka-ui
 You can import the TextField component like this:
 
 ```javascript
-import { BakaTextField, BakaLabel, BakaInput, BakaIcon, BakaButton } from "baka-ui";
+import { BakaTextField, BakaText, BakaInput, BakaIcon, BakaButton } from "baka-ui";
 ```
 
 ## Usage
@@ -24,7 +24,7 @@ import { BakaTextField, BakaLabel, BakaInput, BakaIcon, BakaButton } from "baka-
 
 ```jsx
 <BakaTextField>
-  <BakaLabel variant={"body-small"}>BakaLabel</BakaLabel>
+  <BakaText variant={"body-small"}>BakaText</BakaText>
   <BakaInput defaultValue="BakaInput" type="text" />
   <BakaButton variant={"icon"}>
     <BakaIcon>cancel</BakaIcon>
@@ -47,7 +47,7 @@ The TextField component supports various visual styles and states:
 
 ```jsx
 <BakaTextField focused={true} variant={"outlined"}>
-  <BakaLabel variant={"body-small"}>BakaLabel</BakaLabel>
+  <BakaText variant={"body-small"}>BakaText</BakaText>
   <BakaInput defaultValue="BakaInput" type="text" />
   <BakaButton variant={"icon"}>
     <BakaIcon>cancel</BakaIcon>

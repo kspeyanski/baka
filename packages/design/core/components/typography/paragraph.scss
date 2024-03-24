@@ -1,8 +1,0 @@
-@mixin paragraph {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.baka-paragraph {
-  @include paragraph();
-}

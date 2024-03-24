@@ -1,0 +1,5 @@
+@use "./index.scss" as katana;
+
+html.katana {
+  @include katana.styles();
+}

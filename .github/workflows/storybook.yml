@@ -1,4 +1,4 @@
-name: Deploy Storybook to GitHub Pages
+name: CI
 
 permissions:
   contents: write
@@ -20,7 +20,7 @@ jobs:
 
       - name: Setup package manger
         uses: pnpm/action-setup@v2
-        with: 
+        with:
           version: 8
           run_install: false
 
@@ -29,12 +29,3 @@ jobs:
 
       - name: Build packages
         run: pnpm build-packages
-
-      - name: Build Storybook
-        run: pnpm --filter baka-storybook run build
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./apps/storybook/storybook-static

@@ -1,9 +1,0 @@
-@mixin side-navigation-item {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.baka-side-navigation-item {
-  @include side-navigation-item();
-}

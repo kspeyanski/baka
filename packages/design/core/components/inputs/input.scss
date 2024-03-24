@@ -1,9 +1,6 @@
-@mixin input {
+@mixin input--styles {
   padding: 0;
   flex-grow: 1;
   font-family: inherit;
 }
 
-.baka-input {
-  @include input();
-}

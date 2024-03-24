@@ -1,22 +1,25 @@
-@use "../../styles" as *;
-@use "baka-core" as *;
+@use "../../design" as *;
+@use "baka-core" as baka;
 
-.baka-dialog {
-  display: flex;
-  flex-direction: column;
-  border-radius: 28px;
+@mixin dialog--styles {
+  .baka-dialog {
+    @include baka.dialog--styles;
+    display: flex;
+    flex-direction: column;
+    border-radius: 28px;
 
-  color: $on-surface;
-  background-color: $surface-container-high;
+    color: map-get($swatch, on-surface);
+    background-color: map-get($swatch, surface-container-high);
 
-  gap: 24px;
-  padding: 24px;
+    gap: 24px;
+    padding: 24px;
 
-  @include variant(basic, true) {
-    box-shadow: map-get($elevation, 3);
-  }
+    @include baka.variant(basic, true) {
+      box-shadow: map-get($elevation, 3);
+    }
 
-  @include variant(full-screen) {
-    box-shadow: none;
+    @include baka.variant(full-screen) {
+      box-shadow: none;
+    }
   }
 }

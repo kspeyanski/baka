@@ -1,42 +1,45 @@
-@use "../../styles" as *;
-@use "baka-core" as *;
+@use "../../design" as *;
+@use "baka-core" as baka;
 
-.baka-tab-group {
-  --color: #{$on-surface-variant};
-  --state: #{$on-surface};
-  --ripple: #{$on-surface};
+@mixin tab-group--styles {
+  .baka-tab-group {
+    @include baka.tab-group--styles;
+    --color: #{map-get($swatch, on-surface-variant)};
+    --state: #{map-get($swatch, on-surface)};
+    --ripple: #{map-get($swatch, on-surface)};
 
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
 
-  @include variant(primary, true) {
-    --position: relative;
-  }
+    @include baka.variant(primary, true) {
+      --position: relative;
+    }
 
-  @include variant(overflow) {
-    overflow: auto;
-    --group-padding: 32px;
+    @include baka.variant(overflow) {
+      overflow: auto;
+      --group-padding: 32px;
 
-    & {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
+      & {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
 
-      &::-webkit-scrollbar {
-        display: none;
+        &::-webkit-scrollbar {
+          display: none;
+        }
       }
     }
-  }
 
-  @include variant(secondary) {
-    --position: initial;
-    --group-bottom: 0;
-    --group-selected-color: #{$on-surface};
-    --group-radius: 0;
-    --group-height: 2px;
-    --flex-direction: row;
-    --margin-bottom: 0;
-    --gap: 8px;
+    @include baka.variant(secondary) {
+      --position: initial;
+      --group-bottom: 0;
+      --group-selected-color: #{map-get($swatch, on-surface)};
+      --group-radius: 0;
+      --group-height: 2px;
+      --flex-direction: row;
+      --margin-bottom: 0;
+      --gap: 8px;
+    }
   }
 }

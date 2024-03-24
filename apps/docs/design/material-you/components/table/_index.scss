@@ -1,0 +1,16 @@
+@use "../../index.scss" as *;
+
+@mixin table--styles {
+  .table {
+    @include body-medium;
+  }
+
+  .table-header-cell {
+    display: table-cell;
+    font-weight: bold;
+  }
+
+  .table-cell {
+    display: table-cell;
+  }
+}

@@ -7,7 +7,7 @@ import {
   BakaText,
   BakaIcon,
   BakaInput,
-  BakaLabel,
+  BakaText,
   BakaTextField,
 } from "baka-ui";
 import type { Meta, StoryObj } from "@storybook/react";
@@ -88,7 +88,7 @@ export const Popup: Story = {
               return (
                 <BakaTextField variant={"outlined"}>
                   {args.component === "text-field-icon" ? <BakaIcon>search</BakaIcon> : null}
-                  <BakaLabel variant={"body-small"}>BakaLabel</BakaLabel>
+                  <BakaText variant={"body-small"}>BakaText</BakaText>
                   <BakaInput defaultValue="BakaInput" type="text" />
                   <BakaButton variant={"icon"}>
                     <BakaIcon>cancel</BakaIcon>

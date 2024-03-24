@@ -1,0 +1,22 @@
+@use "baka-core" as baka;
+@use "../../design" as *;
+
+@mixin styles {
+  .row {
+    @include baka.row--styles;
+
+    @each $size, $breakpoint in $layout {
+      $_gutter: map-get($breakpoint, gutter);
+      $_screen: map-get($breakpoint, screen);
+      $_margin: map-get($breakpoint, margin);
+
+      display: flex;
+      flex-wrap: wrap;
+
+      @media screen and (min-width: $_screen) {
+        gap: $_gutter;
+        padding-inline: $_margin;
+      }
+    }
+  }
+}

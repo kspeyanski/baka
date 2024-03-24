@@ -1,4 +1,4 @@
-@mixin icon {
+@mixin icon--styles {
   display: inline-flex;
   white-space: nowrap;
   word-wrap: normal;
@@ -8,6 +8,3 @@
   -webkit-font-smoothing: antialiased;
 }
 
-.baka-icon {
-  @include icon();
-}

@@ -1,6 +1,6 @@
 @use "../../utils" as *;
 
-@mixin text-field {
+@mixin text-field--styles {
   font-family: inherit;
   font-size: inherit;
   position: relative;
@@ -8,6 +8,3 @@
   align-items: center;
 }
 
-.baka-text-field {
-  @include text-field();
-}

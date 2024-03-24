@@ -1,4 +1,4 @@
-@mixin bottom-sheet {
+@mixin bottom-sheet--styles {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -8,6 +8,3 @@
   height: 100%;
 }
 
-.baka-bottom-sheet {
-  @include bottom-sheet();
-}

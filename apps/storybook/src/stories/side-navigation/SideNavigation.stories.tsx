@@ -7,7 +7,7 @@ import {
   BakaSideNavigationItem,
   BakaText,
   BakaIcon,
-  BakaLabel,
+  BakaText,
 } from "baka-ui";
 import Docs from "./side-navigation.mdx";
 
@@ -50,17 +50,17 @@ export const Basic: Story = {
         </div>
         <BakaSideNavigationItem selected={true}>
           {args.icons ? <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon> : null}
-          <BakaLabel>BakaLabel</BakaLabel>
+          <BakaText>BakaText</BakaText>
           <BakaText>100+</BakaText>
         </BakaSideNavigationItem>
         <BakaSideNavigationItem>
           {args.icons ? <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon> : null}
-          <BakaLabel>BakaLabel</BakaLabel>
+          <BakaText>BakaText</BakaText>
           <BakaText>100+</BakaText>
         </BakaSideNavigationItem>
         <BakaSideNavigationItem>
           {args.icons ? <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon> : null}
-          <BakaLabel>BakaLabel</BakaLabel>
+          <BakaText>BakaText</BakaText>
           <BakaText>100+</BakaText>
         </BakaSideNavigationItem>
         <BakaDivider />
@@ -69,15 +69,15 @@ export const Basic: Story = {
         </div>
         <BakaSideNavigationItem>
           {args.icons ? <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon> : null}
-          <BakaLabel>BakaLabel</BakaLabel>
+          <BakaText>BakaText</BakaText>
         </BakaSideNavigationItem>
         <BakaSideNavigationItem>
           {args.icons ? <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon> : null}
-          <BakaLabel>BakaLabel</BakaLabel>
+          <BakaText>BakaText</BakaText>
         </BakaSideNavigationItem>
         <BakaSideNavigationItem>
           {args.icons ? <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon> : null}
-          <BakaLabel>BakaLabel</BakaLabel>
+          <BakaText>BakaText</BakaText>
         </BakaSideNavigationItem>
       </BakaSideNavigation>
     );

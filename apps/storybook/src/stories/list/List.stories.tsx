@@ -5,7 +5,7 @@ import {
   BakaListItem,
   BakaText,
   BakaIcon,
-  BakaRadioButton,
+  BakaRadio,
   BakaSwitch,
 } from "baka-ui";
 import type { Meta, StoryObj } from "@storybook/react";
@@ -108,7 +108,7 @@ export const Items: Story = {
             )}
             {args.suffix === "checkbox" ? <BakaCheckbox readOnly={true} checked={true} /> : null}
             {args.prefix === "video" && <img style={{ width: 114, height: 64 }} src="./media.png" />}
-            {args.prefix === "radio" && <BakaRadioButton checked={true} readOnly={true} />}
+            {args.prefix === "radio" && <BakaRadio checked={true} readOnly={true} />}
             {args.prefix === "switch" && <BakaSwitch checked={false} readOnly={true} />}
             <div
               style={{ display: "flex", flexGrow: 1, flexDirection: "column", overflow: "hidden" }}

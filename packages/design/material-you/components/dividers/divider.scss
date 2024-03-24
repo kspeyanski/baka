@@ -1,7 +1,10 @@
-@use "../../styles" as *;
-@use "baka-core" as *;
+@use "../../design" as *;
+@use "baka-core" as baka;
 
-.baka-divider {
-  flex: 1 1 auto;
-  background-color: $outline-variant;
+@mixin divider--styles {
+  .baka-divider {
+    @include baka.divider--styles;
+    flex: 0 1 auto;
+    background-color: map-get($swatch, outline-variant);
+  }
 }

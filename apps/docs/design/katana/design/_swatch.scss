@@ -1,0 +1,17 @@
+@use "baka-core" as baka;
+@use "../colors/" as *;
+
+$swatch: (
+  brand: map-get($crimson, 500),
+  background: #0a0a0a,
+  emphasis: #ededed,
+  foreground: #a1a1a1,
+);
+
+@function swatch($color) {
+  @return map-get($swatch, $color);
+}
+
+@mixin styles {
+  @include baka.css-vars($swatch, --swatch);
+}

@@ -1,5 +1,4 @@
-@mixin list-item {
-  cursor: pointer;
+@mixin list-item--styles {
   box-sizing: border-box;
 
   overflow: hidden;
@@ -10,6 +9,3 @@
   justify-content: flex-start;
 }
 
-.baka-list-item {
-  @include list-item();
-}

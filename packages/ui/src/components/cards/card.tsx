@@ -1,20 +1,44 @@
-import type { BakaCardVariant } from "baka-core";
 import clsx from "clsx";
+import type { BakaDesign } from "baka-core";
 
-import { BakaComponent, BakaProps, BakaVariant } from "../../../src/models";
-import { variantClassNames } from "../../utils";
+import { BakaStates, BakaVariant, PolymorphicComponent } from "../../../src/models";
+import { stateClassNames, variantClassNames } from "../../utils";
 
-export interface BakaCardProps extends React.HTMLAttributes<HTMLDivElement>, BakaProps {
-  variant?: BakaVariant<BakaCardVariant>; 
-}
+export type BakaCardProps = BakaStates<BakaDesign["CardState"]> &
+  BakaVariant<BakaDesign["CardVariant"]> & {};
 
-export const BakaCard: BakaComponent<"div", BakaCardProps> = (props) => {
-  const { as: Component = "div", variant, ...other } = props;
+export type BakaCard = PolymorphicComponent<"div", BakaCardProps>;
+export const BakaCard: BakaCard = (props) => {
+  const {
+    _ref,
+    as: Component = "div",
+    variant,
+    selected,
+    checked,
+    readOnly,
+    indeterminate,
+    hovered,
+    focused,
+    activated,
+    disabled,
+    empty,
+    valid,
+    invalid,
+    dragged,
+    ...other
+  } = props;
 
   return (
     <Component
+      ref={_ref}
       {...other}
-      className={clsx("baka-card", props.className, variantClassNames(variant))}
+      disabled={disabled}
+      className={clsx(
+        "baka-card",
+        props.className,
+        variantClassNames(variant),
+        stateClassNames(props)
+      )}
     />
   );
 };

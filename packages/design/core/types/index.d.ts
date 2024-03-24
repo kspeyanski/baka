@@ -1,67 +1,88 @@
-declare var __baka_DESIGN: string;
+export type BakaDesign = {
+  AvatarVariant: string;
+  AvatarState: {};
 
-declare module "baka-core" {
-  type BakaAvatarVariant = string;
-  type BakaBadgeVariant = string;
+  BadgeVariant: string;
+  BadgeState: {};
 
-  type BakaButtonVariant = string;
-  type BakaButtonStates = {
+  BarVariant: string;
+  BarState: {};
+
+  ButtonVariant: string;
+  ButtonState: {};
+
+  CardVariant: string;
+  CardState: {};
+
+  ChipVariant: string;
+  ChipState: {};
+
+  DialogVariant: string;
+  DialogState: {};
+
+  DividerVariant: string;
+  DividerState: {};
+
+  CheckboxVariant: string;
+  CheckboxState: {};
+
+  InputVariant: string;
+  InputState: {};
+
+  RadioVariant: string;
+  RadioState: {};
+
+  SwitchVariant: string;
+  SwitchState: {};
+
+  TextFieldVariant: string;
+  TextFieldState: {
     hovered?: boolean;
     focused?: boolean;
     activated?: boolean;
     disabled?: boolean;
   };
 
-  type BakaRadioButtonStates = {
-    hovered?: boolean;
-    focused?: boolean;
-    activated?: boolean;
-    disabled?: boolean;
-    checked?: boolean;
-  };
+  RowVariant: string;
+  ColumnVariant: string;
+  ContainerVariant: string;
 
-  type BakaBottomSheetVariant = string;
-  type BakaCardVariant = string;
-  type BakaChipVariant = string;
+  ListVariant: string;
+  ListState: {};
 
-  type BakaCheckboxVariant = string;
-  type BakaCheckboxStates = {
-    hovered?: boolean;
-    focused?: boolean;
-    activated?: boolean;
-    checked?: boolean;
-    disabled?: boolean;
-  };
+  ListItemVariant: string;
+  ListItemState: {};
 
-  type BakaSwitchStates = {
-    hovered?: boolean;
-    focused?: boolean;
-    activated?: boolean;
-    checked?: boolean;
-    disabled?: boolean;
-  };
+  MenuVariant: string;
+  MenuState: {};
 
-  type BakaTextFieldStates = {
-    hovered?: boolean;
-    focused?: boolean;
-    activated?: boolean;
-    disabled?: boolean;
-  };
+  MenuItemVariant: string;
+  MenuItemState: {};
 
-  type BakaDialogVariant = string;
-  type BakaDividerVariant = string;
-  type BakaDividerVariant = "horizontal" | "vertical";
-  type BakaHeadingVariant = string;
-  type BakaParagraphVariant = string;
-  type BakaListItemVariant = string;
-  type BakaTextVariant = string;
-  type BakaSwitchVariant = string;
-  type BakaIconVariant = string;
-  type BakaTextFieldVariant = string;
-  type BakaLabelVariant = string;
-  type BakaTabGroupVariant = string;
-  type BakaTooltipVariant = string;
-  type BakaTopBarVariant = string;
-  type BakaContainerVariant = string;
-  type BakaColumnVariant = string;
-}
+  IconVariant: string;
+  IconState: {};
+
+  BottomNavigationVariant: string;
+  BottomNavigationState: {};
+
+  BottomNavigationItemVariant: string;
+  BottomNavigationItemState: {};
+
+  NavigationVariant: string;
+  NavigationState: {};
+
+  NavigationItemVariant: string;
+  NavigationItemState: {};
+
+  TabGroupVariant: string;
+  TabGroupState: {};
+
+  TabVariant: string;
+  TabState: {};
+
+  TooltipVariant: string;
+  TooltipState: {};
+
+  TextVariant: string;
+  TextState: {};
+};

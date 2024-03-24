@@ -1,0 +1,17 @@
+@use "../../utils" as *;
+
+@mixin radio--styles {
+  cursor: pointer;
+  position: relative;
+  appearance: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  margin: 0;
+
+  @include disabled {
+    pointer-events: none;
+  }
+}
+

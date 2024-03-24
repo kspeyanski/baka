@@ -1,5 +1,4 @@
-@use "../../styles" as *;
-@use "baka-core" as *;
+@use "../../design" as *;
 
 .baka-badge-label {
   @include label-small;

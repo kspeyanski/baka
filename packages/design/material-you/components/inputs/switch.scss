@@ -1,163 +1,166 @@
-@use "../../styles" as *;
-@use "baka-core" as *;
+@use "../../design" as *;
+@use "baka-core" as baka;
 
-.baka-switch {
-  --background: #{$surface-container-highest};
-  --outline: #{$outline};
-  --border: #{$outline};
-  --state: #{$on-surface};
-  --disabled: transparent;
-  --content: "close";
-  --left: 16px;
+@mixin switch--styles {
+  .baka-switch {
+    @include baka.switch--styles;
+    --background: #{map-get($swatch, surface-container-highest)};
+    --outline: #{map-get($swatch, outline)};
+    --border: #{map-get($swatch, outline)};
+    --state: #{map-get($swatch, on-surface)};
+    --disabled: transparent;
+    --content: "close";
+    --left: 16px;
 
-  appearance: none;
-  border-radius: 100px;
-
-  width: 52px;
-  height: 32px;
-
-  color: $on-surface;
-  background: var(--background);
-
-  outline-style: solid;
-  outline-color: var(--border);
-  outline-width: 2px;
-  outline-offset: -1px;
-
-  @include motion-transition-TBD(background, outline-color);
-
-  @include state-layer {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: var(--left);
-    width: 16px;
-    height: 16px;
-    padding: 22px;
-    transform: translate(-50%, -50%);
-
+    appearance: none;
     border-radius: 100px;
-    outline-color: var(--outline);
+
+    width: 52px;
+    height: 32px;
+
+    color: map-get($swatch, on-surface);
+    background: var(--background);
+
     outline-style: solid;
-    outline-width: 8px;
-    outline-offset: -24px;
+    outline-color: var(--border);
+    outline-width: 2px;
+    outline-offset: -1px;
 
-    @include motion-transition-TBD(width, height, outline-color, outline-width, left);
-  }
-
-  @include hover {
-    --outline: #{$on-surface-variant};
-    @include state-layer {
-      background: color-mix(in srgb, var(--state) 0.08 * 100%, transparent);
-    }
-  }
-
-  @include focus {
-    --outline: #{$on-surface-variant};
-    @include state-layer {
-      background: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
-    }
-  }
-
-  @include active {
-    --outline: #{$on-surface-variant};
+    @include motion-transition-TBD(background, outline-color);
 
     @include state-layer {
-      background: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
-
-      outline-width: 15px;
-      outline-offset: -22px;
-    }
-  }
-
-  @include disabled {
-    --border: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
-    background: var(--disabled);
-  }
-
-  @include checked {
-    --state: #{$primary};
-    --background: #{$primary};
-    --border: #{$primary};
-    --outline: #{$on-primary};
-    --content: "check";
-    --left: 36px;
-
-    @include hover {
-      --outline: #{$primary-container};
-    }
-
-    @include focus {
-      --outline: #{$primary-container};
-    }
-
-    @include active {
-      --outline: #{$primary-container};
-    }
-
-    @include state-layer {
-      outline-width: 12px;
-      outline-offset: -22px;
-    }
-
-    @include active {
-      @include state-layer {
-        outline-width: 15px;
-        outline-offset: -22px;
-      }
-    }
-
-    @include disabled {
-      outline-offset: 0;
-      --border: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
-      --outline: #{$on-primary};
-      --disabled: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
-
-      &::after {
-        opacity: 0.38;
-      }
-    }
-  }
-
-  @include variant(icon) {
-    @include state-layer {
-      outline-width: 12px;
-      outline-offset: -22px;
-    }
-
-    @include active {
-      @include state-layer {
-        outline-width: 15px;
-        outline-offset: -22px;
-      }
-    }
-
-    &::after {
-      content: var(--content);
-      z-index: 1;
+      content: "";
       position: absolute;
-      color: $on-primary;
+      top: 50%;
       left: var(--left);
-      transform: translate(-50%, 0);
-      font-size: 16px;
       width: 16px;
-      line-height: 32px;
-      height: 100%;
-      height: 100%;
-      font-family: "Material Icons";
-      font-family: "Material Symbols Outlined";
+      height: 16px;
+      padding: 22px;
+      transform: translate(-50%, -50%);
 
-      @include motion-transition-TBD(color, left);
+      border-radius: 100px;
+      outline-color: var(--outline);
+      outline-style: solid;
+      outline-width: 8px;
+      outline-offset: -24px;
+
+      @include motion-transition-TBD(width, height, outline-color, outline-width, left);
     }
 
-    @include checked {
-      &::after {
-        color: $on-primary-container;
+    @include baka.hover {
+      --outline: #{map-get($swatch, on-surface-variant)};
+      @include state-layer {
+        background: color-mix(in srgb, var(--state) 0.08 * 100%, transparent);
+      }
+    }
+
+    @include baka.focus {
+      --outline: #{map-get($swatch, on-surface-variant)};
+      @include state-layer {
+        background: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
+      }
+    }
+
+    @include baka.active {
+      --outline: #{map-get($swatch, on-surface-variant)};
+
+      @include state-layer {
+        background: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
+
+        outline-width: 15px;
+        outline-offset: -22px;
+      }
+    }
+
+    @include baka.disabled {
+      --border: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
+      background: var(--disabled);
+    }
+
+    @include baka.checked {
+      --state: #{map-get($swatch, primary)};
+      --background: #{map-get($swatch, primary)};
+      --border: #{map-get($swatch, primary)};
+      --outline: #{map-get($swatch, on-primary)};
+      --content: "check";
+      --left: 36px;
+
+      @include baka.hover {
+        --outline: #{map-get($swatch, primary-container)};
       }
 
-      @include disabled {
+      @include baka.focus {
+        --outline: #{map-get($swatch, primary-container)};
+      }
+
+      @include baka.active {
+        --outline: #{map-get($swatch, primary-container)};
+      }
+
+      @include state-layer {
+        outline-width: 12px;
+        outline-offset: -22px;
+      }
+
+      @include baka.active {
+        @include state-layer {
+          outline-width: 15px;
+          outline-offset: -22px;
+        }
+      }
+
+      @include baka.disabled {
+        outline-offset: 0;
+        --border: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
+        --outline: #{map-get($swatch, on-primary)};
+        --disabled: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
+
         &::after {
-          color: $outline;
+          opacity: 0.38;
+        }
+      }
+    }
+
+    @include baka.variant(icon) {
+      @include state-layer {
+        outline-width: 12px;
+        outline-offset: -22px;
+      }
+
+      @include baka.active {
+        @include state-layer {
+          outline-width: 15px;
+          outline-offset: -22px;
+        }
+      }
+
+      &::after {
+        content: var(--content);
+        z-index: 1;
+        position: absolute;
+        color: map-get($swatch, on-primary);
+        left: var(--left);
+        transform: translate(-50%, 0);
+        font-size: 16px;
+        width: 16px;
+        line-height: 32px;
+        height: 100%;
+        height: 100%;
+        font-family: "Material Icons";
+        font-family: "Material Symbols Outlined";
+
+        @include motion-transition-TBD(color, left);
+      }
+
+      @include baka.checked {
+        &::after {
+          color: map-get($swatch, on-primary-container);
+        }
+
+        @include baka.disabled {
+          &::after {
+            color: map-get($swatch, outline);
+          }
         }
       }
     }

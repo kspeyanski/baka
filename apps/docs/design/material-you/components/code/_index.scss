@@ -1,0 +1,128 @@
+@use "../../index.scss" as *;
+
+@mixin code--styles {
+  .pre {
+    overflow: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 16px 0;
+    background: map-get($swatch, surface-container);
+    padding: 16px;
+    border-radius: 4px;
+    box-shadow: map-get($elevation, 1);
+    overflow-x: auto;
+
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .code {
+    color: map-get($swatch, primary);
+    font-size: map-get($font-size, body-medium);
+    font-family: map-get($font-family, mono);
+
+    &.hljs {
+      color: map-get($swatch, on-surface-variant);
+
+      .hljs-subst,
+      .hljs-title {
+        font-weight: normal;
+        color: map-get($swatch, on-surface);
+      }
+
+      .hljs-title.function_ {
+        color: map-get($swatch, warning);
+      }
+
+      .hljs-code,
+      .hljs-comment,
+      .hljs-quote {
+        color: #8c8c8c;
+        font-style: italic;
+      }
+
+      .hljs-meta {
+        color: map-get($swatch, warning);
+      }
+
+      .hljs-section {
+        color: #871094;
+      }
+
+      .hljs-variable.language_,
+      .hljs-symbol,
+      .hljs-selector-class,
+      .hljs-selector-id,
+      .hljs-selector-tag,
+      .hljs-template-tag,
+      .hljs-selector-attr,
+      .hljs-selector-pseudo,
+      .hljs-keyword,
+      .hljs-meta .hljs-keyword,
+      .hljs-literal,
+      .hljs-name,
+      .hljs-built_in,
+      .hljs-type {
+        color: map-get($swatch, info);
+      }
+
+      .hljs-property,
+      .hljs-attr {
+        color: map-get($swatch, accent);
+      }
+
+      .hljs-attribute {
+        color: map-get($swatch, info);
+      }
+
+      .hljs-number {
+        color: map-get($swatch, info);
+      }
+
+      .hljs-regexp {
+        color: map-get($swatch, info);
+      }
+
+      .hljs-link {
+        text-decoration: underline;
+        color: map-get($swatch, info);
+      }
+
+      .hljs-meta .hljs-string,
+      .hljs-string {
+        color: map-get($swatch, success);
+      }
+
+      .hljs-char.escape_ {
+        color: map-get($swatch, on-info-container);
+      }
+
+      .hljs-doctag {
+        text-decoration: underline;
+      }
+
+      .hljs-template-variable {
+        color: map-get($swatch, success);
+      }
+
+      .hljs-addition {
+        background: map-get($swatch, success-container);
+      }
+
+      .hljs-deletion {
+        background: #d6d6d6;
+      }
+
+      .hljs-emphasis {
+        font-style: italic;
+      }
+
+      .hljs-strong {
+        font-weight: bold;
+      }
+    }
+  }
+}

@@ -1,20 +1,43 @@
 import clsx from "clsx";
-import { BakaAvatarVariant } from "baka-core";
+import type { BakaDesign } from "baka-core";
 
-import { BakaComponent, BakaProps, BakaVariant } from "../../../src/models";
-import { variantClassNames } from "../../utils";
+import { BakaStates, BakaVariant, PolymorphicComponent } from "../../../src/models";
+import { stateClassNames, variantClassNames } from "../../utils";
 
-export interface BakaAvatarProps extends React.HTMLAttributes<HTMLSpanElement>, BakaProps {
-  variant?: BakaVariant<BakaAvatarVariant>;
-}
+export type BakaAvatarProps = BakaStates<BakaDesign["AvatarState"]> &
+  BakaVariant<BakaDesign["AvatarVariant"]> & {};
 
-export const BakaAvatar: BakaComponent<"span", BakaAvatarProps> = (props) => {
-  const { as: Component = "span", variant, ...other } = props;
+export type BakaAvatar = PolymorphicComponent<"span", BakaAvatarProps>;
+export const BakaAvatar: BakaAvatar = (props) => {
+  const {
+    _ref,
+    as: Component = "span",
+    variant,
+    selected,
+    checked,
+    readOnly,
+    indeterminate,
+    hovered,
+    focused,
+    activated,
+    disabled,
+    empty,
+    valid,
+    invalid,
+    dragged,
+    ...other
+  } = props;
 
   return (
     <Component
+      ref={_ref}
       {...other}
-      className={clsx("baka-avatar", props.className, variantClassNames(variant))}
+      className={clsx(
+        "baka-avatar",
+        props.className,
+        variantClassNames(variant),
+        stateClassNames(props)
+      )}
     />
   );
 };

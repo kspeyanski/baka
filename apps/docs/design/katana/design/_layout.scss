@@ -1,0 +1,50 @@
+$layout: (
+  xs: (
+    screen: 0,
+    width: 100%,
+    columns: 1,
+    gutter: 16px,
+    margin: 16px,
+  ),
+  sm: (
+    screen: 768px,
+    width: 100%,
+    columns: 1,
+    gutter: 16px,
+    margin: 16px,
+  ),
+  md: (
+    screen: 992px,
+    width: 768px,
+    columns: 2,
+    gutter: 16px,
+    margin: 16px,
+  ),
+  lg: (
+    screen: 1200px,
+    width: 1024px,
+    columns: 4,
+    gutter: 16px,
+    margin: 16px,
+  ),
+  xl: (
+    screen: 1440px,
+    width: 1280px,
+    columns: 4,
+    gutter: 24px,
+    margin: 24px,
+  ),
+  xxl: (
+    screen: 1920px,
+    width: 1440px,
+    columns: 4,
+    gutter: 32px,
+    margin: 32px,
+  ),
+);
+
+@mixin styles {
+  @each $breakpoint, $properties in $layout {
+    --layout--screen--#{$breakpoint}: #{map-get($properties, screen)};
+  }
+}

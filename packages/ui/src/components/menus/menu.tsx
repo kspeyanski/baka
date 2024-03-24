@@ -1,11 +1,44 @@
 import clsx from "clsx";
+import type { BakaDesign } from "baka-core";
 
-import { BakaComponent, BakaProps } from "../../../src/models";
+import { BakaStates, BakaVariant, PolymorphicComponent } from "../../../src/models";
+import { stateClassNames, variantClassNames } from "../../utils";
 
-export interface BakaMenuProps extends React.HTMLAttributes<HTMLUListElement>, BakaProps {}
+export type BakaMenuProps = BakaStates<BakaDesign["MenuState"]> &
+  BakaVariant<BakaDesign["MenuVariant"]> & {};
 
-export const BakaMenu: BakaComponent<"ul", BakaMenuProps> = (props) => {
-  const { as: Component = "ul", ...other } = props;
+export type BakaMenu = PolymorphicComponent<"div", BakaMenuProps>;
+export const BakaMenu: BakaMenu = (props) => {
+  const {
+    _ref,
+    as: Component = "div",
+    variant,
+    selected,
+    checked,
+    readOnly,
+    indeterminate,
+    hovered,
+    focused,
+    activated,
+    disabled,
+    empty,
+    valid,
+    invalid,
+    dragged,
+    ...other
+  } = props;
 
-  return <Component {...other} className={clsx("baka-menu", props.className)} />;
+  return (
+    <Component
+      ref={_ref}
+      {...other}
+      disabled={disabled}
+      className={clsx(
+        "baka-menu",
+        props.className,
+        variantClassNames(variant),
+        stateClassNames(props)
+      )}
+    />
+  );
 };

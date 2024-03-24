@@ -1,6 +1,6 @@
 @use "../../utils" as *;
 
-@mixin divider {
+@mixin divider--styles {
   margin: 0;
 
   @include variant(horizontal, true) {
@@ -14,6 +14,3 @@
   }
 }
 
-.baka-divider {
-  @include divider();
-}

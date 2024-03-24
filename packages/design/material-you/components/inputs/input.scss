@@ -1,12 +1,15 @@
-@use "../../styles" as *;
-@use "baka-core" as *;
+@use "../../design" as *;
+@use "baka-core" as baka;
 
-.baka-input {
-  @include body-large;
-  border: none;
-  background: none;
-  outline: none;
+@mixin input--styles {
+  .baka-input {
+    @include baka.input--styles;
+    @include body-large;
+    border: none;
+    background: none;
+    outline: none;
 
-  color: $on-surface;
-  caret-color: $primary;
+    color: map-get($swatch, on-surface);
+    caret-color: map-get($swatch, primary);
+  }
 }

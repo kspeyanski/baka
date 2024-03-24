@@ -4,10 +4,10 @@ import {
   BakaCheckbox,
   BakaDialog,
   BakaText,
-  BakaHeading,
+  BakaText,
   BakaIcon,
   BakaListItem,
-  BakaParagraph,
+  BakaText,
 } from "baka-ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import Docs from "./dialog.mdx";
@@ -49,16 +49,16 @@ export const Basic: Story = {
       <BakaDialog style={{ width: 320 }} variant={args.variant}>
         <div style={{ display: "flex", gap: 16, flexDirection: "column" }}>
           {args.icon && <BakaIcon style={{ justifyContent: "center" }}>mobile_friendly</BakaIcon>}
-          <BakaHeading
+          <BakaText
             style={{ display: "flex", justifyContent: args.icon ? "center" : "flex-start" }}
             variant={"headline-small"}
           >
             Basic dialog title
-          </BakaHeading>
-          <BakaParagraph variant={"body-medium"}>
+          </BakaText>
+          <BakaText variant={"body-medium"}>
             A dialog is a type of modal window that appears in front of app content to provide
             critical information, or prompt for a decision to be made.
-          </BakaParagraph>
+          </BakaText>
         </div>
         <div style={{ display: "flex", gap: 8, width: "100%", justifyContent: "flex-end" }}>
           <BakaButton variant={["text"]}>Action 2</BakaButton>
@@ -94,16 +94,16 @@ export const WithList: Story = {
         {/* TODO: extract to sub-component */}
         <div style={{ display: "flex", gap: 16, flexDirection: "column" }}>
           {args.icon && <BakaIcon style={{ justifyContent: "center" }}>mobile_friendly</BakaIcon>}
-          <BakaHeading
+          <BakaText
             style={{ display: "flex", justifyContent: args.icon ? "center" : "flex-start" }}
             variant={"headline-small"}
           >
             Dialog Title
-          </BakaHeading>
-          <BakaParagraph variant={"body-medium"}>
+          </BakaText>
+          <BakaText variant={"body-medium"}>
             A dialog is a type of modal window that appears in front of app content to provide
             critical information, or prompt for a decision to be made.
-          </BakaParagraph>
+          </BakaText>
         </div>
         <ul
           style={{

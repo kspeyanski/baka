@@ -1,30 +1,44 @@
-import type { BakaDividerVariant } from "baka-core";
 import clsx from "clsx";
+import type { BakaDesign } from "baka-core";
 
-import { BakaComponent, BakaProps, BakaVariant } from "../../../src/models";
-import { variantClassNames } from "../../utils";
+import { BakaStates, BakaVariant, PolymorphicComponent } from "../../../src/models";
+import { stateClassNames, variantClassNames } from "../../utils";
 
-export interface BakaDividerProps extends React.HTMLAttributes<HTMLDivElement>, BakaProps {
-  variant?: BakaVariant<BakaDividerVariant>; 
-}
+export type BakaDividerProps = BakaStates<BakaDesign["DividerState"]> &
+  BakaVariant<BakaDesign["DividerVariant"]> & {};
 
-export const BakaDivider: BakaComponent<"div", BakaDividerProps> = (props) => {
+export type BakaDivider = PolymorphicComponent<"div", BakaDividerProps>;
+export const BakaDivider: BakaDivider = (props) => {
   const {
+    _ref,
     as: Component = "div",
+    variant,
     selected,
+    checked,
+    readOnly,
+    indeterminate,
     hovered,
     focused,
     activated,
     disabled,
-    variant,
+    empty,
+    valid,
+    invalid,
     dragged,
     ...other
   } = props;
 
   return (
     <Component
+      ref={_ref}
       {...other}
-      className={clsx("baka-divider", props.className, variantClassNames(variant))}
+      disabled={disabled}
+      className={clsx(
+        "baka-divider",
+        props.className,
+        variantClassNames(variant),
+        stateClassNames(props)
+      )}
     />
   );
 };

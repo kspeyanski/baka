@@ -1,0 +1,9 @@
+@use '@design/katana' as *;
+
+.badge {
+    font-size: 12px;
+    padding: 2px 4px;
+    border-radius: 8px;
+    color: map-get($swatch, foreground);
+    background-color: map-get($swatch, background);
+}

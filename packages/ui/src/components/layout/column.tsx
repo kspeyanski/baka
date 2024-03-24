@@ -1,22 +1,29 @@
-import type { BakaColumnVariant } from "baka-core";
 import clsx from "clsx";
+import type { BakaDesign } from "baka-core";
 
-import { BakaComponent, BakaProps, BakaVariant } from "../../../src/models";
+import { BakaVariant, PolymorphicComponent } from "../../../src/models";
 import { variantClassNames } from "../../utils";
+import { valueClassNames } from "../../utils/value-class-names";
 
-export interface BakaColumnProps extends React.HTMLAttributes<HTMLDivElement>, BakaProps {
-  variant?: BakaVariant<BakaColumnVariant>; 
-  count?: number;
-}
+export type BakaColumnProps = BakaVariant<BakaDesign["ColumnVariant"]> & {
+  count?: number | Array<number>;
+};
 
-export const BakaColumn: BakaComponent<"div", BakaColumnProps> = (props) => {
-  const { as: Component = "div", variant, count, ...other } = props;
+export type BakaColumn = PolymorphicComponent<"div", BakaColumnProps>;
+export const BakaColumn: BakaColumn = (props) => {
+  const { _ref,
+    as: Component = "div", count, variant, ...other } = props;
 
   return (
     <Component
+      ref={_ref}
       {...other}
-      data-count={count}
-      className={clsx("baka-column", props.className, variantClassNames(variant))}
+      className={clsx(
+        "baka-column",
+        props.className,
+        variantClassNames(variant),
+        valueClassNames(count)
+      )}
     />
   );
 };

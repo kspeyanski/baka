@@ -1,30 +1,44 @@
-import { BakaStates } from "../../models/states";
 import clsx from "clsx";
-import { BakaIconVariant } from "baka-core";
-import { BakaVariant } from "../../models/variant";
-import { variantClassNames } from "../../utils";
-import { BakaComponent } from "../../models/component";
+import type { BakaDesign } from "baka-core";
 
-export interface BakaIconProps extends React.HTMLAttributes<HTMLElement>, BakaStates {
-  variant?: BakaVariant<BakaIconVariant>;
-}
+import { BakaStates, BakaVariant, PolymorphicComponent } from "../../../src/models";
+import { stateClassNames, variantClassNames } from "../../utils";
 
-export const BakaIcon: BakaComponent<"i", BakaIconProps> = (props) => {
+export type BakaIconProps = BakaStates<BakaDesign["IconState"]> &
+  BakaVariant<BakaDesign["IconVariant"]> & {};
+
+export type BakaIcon = PolymorphicComponent<"ul", BakaIconProps>;
+export const BakaIcon: BakaIcon = (props) => {
   const {
-    as: Component = "i",
+    _ref,
+    as: Component = "ul",
     variant,
     selected,
+    checked,
+    readOnly,
+    indeterminate,
     hovered,
     focused,
     activated,
     disabled,
+    empty,
+    valid,
+    invalid,
+    dragged,
     ...other
   } = props;
 
   return (
     <Component
+      ref={_ref}
       {...other}
-      className={clsx("baka-icon", props.className, variantClassNames(variant))}
+      disabled={disabled}
+      className={clsx(
+        "baka-icon",
+        props.className,
+        variantClassNames(variant),
+        stateClassNames(props)
+      )}
     />
   );
 };

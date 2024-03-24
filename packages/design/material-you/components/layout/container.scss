@@ -1,19 +1,33 @@
-@use "baka-core" as *;
-@use "../../styles/" as *;
+@use "baka-core" as baka;
+@use "../../design/" as *;
 
-.baka-container {
-  @include container();
+@mixin container--styles {
+  .baka-container {
+    @include baka.container--styles;
+    @include baka.container--styles();
 
-  @each $size, $breakpoint in $breakpoints {
-    $_gutter: map-get($breakpoint, gutter);
-    $_screen: map-get($breakpoint, screen);
-    $_width: map-get($breakpoint, width);
-    $_margin: map-get($breakpoint, margin);
+    @each $size, $breakpoint in $layout {
+      $_gutter: map-get($breakpoint, gutter);
+      $_screen: map-get($breakpoint, screen);
+      $_width: map-get($breakpoint, width);
+      $_margin: map-get($breakpoint, margin);
+      $_regions: map-get($breakpoint, regions);
 
-    @media screen and (min-width: $_screen) {
-      max-width: $_width;
-      width: 100%;
-      margin-inline: auto;
+      @if ($_screen == 0) {
+        max-width: $_width;
+        width: 100%;
+        margin-inline: auto;
+      } @else {
+        @media screen and (min-width: $_screen) {
+          max-width: $_width;
+          width: 100%;
+        }
+      }
+      @include baka.variant(fluid) {
+        max-width: 100%;
+        width: 100%;
+        margin-inline: 0;
+      }
     }
   }
 }

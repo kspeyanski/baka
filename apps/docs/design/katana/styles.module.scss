@@ -1,0 +1,7 @@
+@use "./index.scss" as katana;
+
+.katana {
+  :global {
+    @include katana.styles();
+  }
+}

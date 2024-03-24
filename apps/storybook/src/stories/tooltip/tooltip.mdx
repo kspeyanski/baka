@@ -27,10 +27,10 @@ The Tooltip component can be used to wrap any element you want to add additional
 ```jsx
 <BakaTooltip>
   <div className={styles["content"]}>
-    <BakaLabel variant={"title-small"}>Title</BakaLabel>
-    <BakaParagraph variant={"body-medium"}>
+    <BakaText variant={"title-small"}>Title</BakaText>
+    <BakaText variant={"body-medium"}>
       Supporting line text lorem ipsum dolor sit amet, consectetur
-    </BakaParagraph>
+    </BakaText>
   </div>
   <div className={styles["actions"]}>
     <BakaButton variant={"text"}>Action</BakaButton>
@@ -57,9 +57,9 @@ You can customize the width and style of the Tooltip by applying CSS styles dire
 
 ```jsx
 <BakaTooltip variant={"plain"} style={{ width: 184 }}>
-  <BakaParagraph variant="body-small">
+  <BakaText variant="body-small">
     Supporting text Body text string goes here psum dolor sit amet, consectetur adipiscing elit, sed
     do eiusmod tempor incididunt
-  </BakaParagraph>
+  </BakaText>
 </BakaTooltip>
 ```

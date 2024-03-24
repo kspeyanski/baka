@@ -1,4 +1,4 @@
-@mixin list {
+@mixin list--styles {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -7,6 +7,3 @@
   overflow: auto;
 }
 
-.baka-list {
-  @include list();
-}

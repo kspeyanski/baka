@@ -1,38 +1,45 @@
-import type { BakaSwitchStates, BakaSwitchVariant } from "baka-core";
 import clsx from "clsx";
+import type { BakaDesign } from "baka-core";
 
-import { BakaComponent, BakaProps, BakaVariant } from "../../../src/models";
+import { BakaStates, BakaVariant, PolymorphicComponent } from "../../../src/models";
 import { stateClassNames, variantClassNames } from "../../utils";
 
-export interface BakaSwitchProps
-  extends React.HTMLAttributes<HTMLInputElement>,
-    BakaProps,
-    BakaSwitchStates {
-  variant?: BakaVariant<BakaSwitchVariant>; 
-}
+export type BakaSwitchProps = BakaStates<BakaDesign["SwitchState"]> &
+  BakaVariant<BakaDesign["SwitchVariant"]> & {};
 
-export const BakaSwitch: BakaComponent<"input", BakaSwitchProps> = (props) => {
+export type BakaSwitch = PolymorphicComponent<"input", BakaSwitchProps>;
+export const BakaSwitch: BakaSwitch = (props) => {
   const {
+    _ref,
     as: Component = "input",
+    variant,
+    selected,
     checked,
+    readOnly,
     indeterminate,
     hovered,
     focused,
     activated,
     disabled,
-    variant,
-    className,
-    readOnly,
+    empty,
+    valid,
+    invalid,
+    dragged,
     ...other
   } = props;
 
   return (
     <Component
-      type="checkbox"
-      checked={checked}
-      readOnly={readOnly}
-      className={clsx("baka-switch", className, stateClassNames(props), variantClassNames(variant))}
+      ref={_ref}
       {...other}
+      type="checkbox"
+      disabled={disabled}
+      className={clsx(
+        "baka-switch",
+        props.className,
+        variantClassNames(variant),
+        stateClassNames(props)
+      )}
     />
   );
 };

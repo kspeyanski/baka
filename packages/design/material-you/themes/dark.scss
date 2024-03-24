@@ -1,6 +1,8 @@
 @use "../colors" as *;
+@use "../index" as material-you;
 
-$swatch: (
+$swatch: () !default;
+$_dark_swatch: (
   primary: map-get($royal-purple, 80),
   on-primary: map-get($royal-purple, 20),
   primary-container: map-get($royal-purple, 30),
@@ -48,8 +50,14 @@ $swatch: (
   shadow: map-get($granite, 0),
 );
 
+$swatch: map-merge($swatch, $_dark_swatch);
+
+@mixin design--styles {
+  @include material-you.design--styles;
+  @include material-you.swatch--styles($swatch);
+}
+
 @mixin styles {
-  @each $key, $value in $swatch {
-    --#{$key}: #{$value};
-  }
+  @include design--styles;
+  @include material-you.component--styles;
 }

@@ -1,20 +1,44 @@
 import clsx from "clsx";
+import type { BakaDesign } from "baka-core";
 
-import { BakaComponent, BakaProps, BakaVariant } from "../../../src/models";
-import { BakaDialogVariant } from "baka-core";
-import { variantClassNames } from "../../utils";
+import { BakaStates, BakaVariant, PolymorphicComponent } from "../../../src/models";
+import { stateClassNames, variantClassNames } from "../../utils";
 
-export interface BakaDialogProps extends React.HTMLAttributes<HTMLDivElement>, BakaProps {
-  variant?: BakaVariant<BakaDialogVariant>;
-}
+export type BakaDialogProps = BakaStates<BakaDesign["DialogState"]> &
+  BakaVariant<BakaDesign["DialogVariant"]> & {};
 
-export const BakaDialog: BakaComponent<"div", BakaDialogProps> = (props) => {
-  const { as: Component = "div", variant, ...other } = props;
+export type BakaDialog = PolymorphicComponent<"div", BakaDialogProps>;
+export const BakaDialog: BakaDialog = (props) => {
+  const {
+    _ref,
+    as: Component = "div",
+    variant,
+    selected,
+    checked,
+    readOnly,
+    indeterminate,
+    hovered,
+    focused,
+    activated,
+    disabled,
+    empty,
+    valid,
+    invalid,
+    dragged,
+    ...other
+  } = props;
 
   return (
     <Component
+      ref={_ref}
       {...other}
-      className={clsx("baka-dialog", props.className, variantClassNames(variant))}
+      disabled={disabled}
+      className={clsx(
+        "baka-dialog",
+        props.className,
+        variantClassNames(variant),
+        stateClassNames(props)
+      )}
     />
   );
 };

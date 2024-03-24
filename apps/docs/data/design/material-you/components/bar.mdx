@@ -1,0 +1,75 @@
+---
+title: Bar
+---
+
+# Bars
+
+The Bar component is a layout component designed to create top and bottom navigation bars in your application.
+
+<Demo src="/demos/material-you/bars" />
+
+## Variants
+
+### Top
+
+The `top` variant of the Bar component is used to create a top navigation bar in your application. It can be customized with different variants to suit your design requirements.
+
+<Demo src="/demos/material-you/bars/top" />
+
+#### Usage
+
+To use the "Bar" component, simply import it from `baka-ui` and include it in your JSX code. Here's a basic example:
+
+```jsx
+import { BakaBar } from "baka-ui";
+
+// Inside your component:
+<BakaBar variant="top">{/* Add buttons, text, or icons here */}</BakaBar>;
+```
+
+#### Medium Bar
+
+```jsx
+<BakaTopBar variant={["top", "medium"]}>{/* Components for the medium-sized top bar */}</BakaTopBar>
+```
+
+<Demo src="/demos/material-you/bars/top/medium" />
+
+Use the "medium" variant when you need a top bar that adapts well to medium-sized screens. It provides a balanced layout for elements within the bar.
+
+#### Large Bar
+
+```jsx
+<BakaTopBar variant={["top", "large"]}>{/* Components for the large top bar */}</BakaTopBar>
+```
+
+<Demo src="/demos/material-you/bars/top/large" />
+
+The "large" variant is suitable for top bars with complex content or when you have more screen real estate to work with. It offers a spacious layout for arranging components.
+
+#### Elevated Bar
+
+```jsx
+<BakaTopBar variant={["top", "elevated"]}>{/* Components for the elevated top bar */}</BakaTopBar>
+```
+
+<Demo src="/demos/material-you/bars/top/elevated" />
+
+If you want to emphasize the importance of the top bar in your interface, the "elevated" variant adds a subtle shadow to create a visual elevation effect.
+
+### Bottom
+
+The `bottom` variant of the Bar component serves as a bottom navigation bar within your application. It's ideal for displaying primary actions or navigation items.
+
+<Demo src="/demos/material-you/bars/bottom" />
+
+#### Usage
+
+To use the "Bar" component, import it from `baka-ui` and add it to your JSX code. Here's a basic example:
+
+```jsx
+import { BakaBar } from "baka-ui";
+
+// Inside your component:
+<BakaBar variant="bottom">{/* Add buttons or icons here */}</BakaBar>;
+```

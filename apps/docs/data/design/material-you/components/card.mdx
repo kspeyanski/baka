@@ -1,0 +1,87 @@
+---
+title: Card
+---
+
+# Card
+
+The Card component is a versatile component for displaying content with a consistent and visually appealing design. It can be customized with different variants to match the style of your application.
+
+<Demo src="/demos/material-you/card" style={{ height: 650 }} />
+
+## Usage
+
+To use the Card component, import it from `baka-ui`:
+
+```tsx
+import { BakaCard } from "baka-ui";
+```
+
+Then, you can create a Card with different variants and content as needed.
+
+```tsx
+<BakaCard variant={"outlined"}>{/* Content goes here */}</BakaCard>
+```
+
+### Variants
+
+The Card component supports the following variants:
+
+- `"outlined"`: A card with an outlined border.
+- `"elevated"`: A card with elevated (raised) appearance.
+- `"filled"`: A card with a filled background color.
+
+You can also combine variants to create unique card styles, such as `"["outlined", "horizontal"]"` for an outlined horizontal card.
+
+## Content
+
+The content of a Card can be customized based on your needs. You can include text, images, buttons, and other components within the Card to display your content effectively.
+
+### Example
+
+Here's an example of how to create a Card with some content:
+
+```tsx
+<BakaCard variant={"outlined"}>
+  <div>{/* Your content goes here */}</div>
+</BakaCard>
+```
+
+## Examples
+
+### Basic Card
+
+A basic Card with outlined variant:
+
+```tsx
+<BakaCard variant={"outlined"}>{/* Your content goes here */}</BakaCard>
+```
+
+### Filled
+
+A filled Card with filled variant:
+
+```tsx
+<BakaCard variant={"filled"}>{/* Your content goes here */}</BakaCard>
+```
+
+<Demo src="/demos/material-you/card/filled" style={{ height: 650 }} />
+
+### Elevated Card
+
+An elevated Card with filled variant:
+
+```tsx
+<BakaCard variant={"elevated"}>{/* Your content goes here */}</BakaCard>
+```
+
+<Demo src="/demos/material-you/card/elevated" style={{ height: 650 }} />
+
+### Horizontal Card
+
+A horizontal Card with filled variant:
+
+```tsx
+<BakaCard variant={"horizontal"}>{/* Your content goes here */}</BakaCard>
+```
+
+<Demo src="/demos/material-you/card/horizontal" />

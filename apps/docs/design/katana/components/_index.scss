@@ -1,0 +1,22 @@
+@forward "./bars/top-bar.scss" hide styles;
+@forward "./buttons/button.scss" hide styles;
+@forward "./layout/row.scss" hide styles;
+@forward "./layout/columns.scss" hide styles;
+@forward "./layout/container.scss" hide styles;
+@forward "./typography/typography.scss" hide styles;
+
+@use "./bars/top-bar.scss" as top-bar;
+@use "./buttons/button.scss" as button;
+@use "./layout/row.scss" as row;
+@use "./layout/columns.scss" as columns;
+@use "./layout/container.scss" as container;
+@use "./typography/typography.scss" as typography;
+
+@mixin component--styles {
+  @include top-bar.styles;
+  @include button.styles;
+  @include row.styles;
+  @include columns.styles;
+  @include container.styles;
+  @include typography.styles;
+}

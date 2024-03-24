@@ -1,19 +1,21 @@
-export type BakaComponentProps<
-  E extends React.ElementType | React.ComponentType,
-  P extends object
-> = Omit<React.ComponentPropsWithoutRef<E>, "as"> & {
-  as?: E;
-  className?: string;
-  style?: React.CSSProperties;
-  tabIndex?: number;
-  id?: string;
-  forwardedAs?: React.ComponentPropsWithoutRef<E> extends { as?: E }
-    ? React.ComponentPropsWithoutRef<E>["as"]
-    : never;
-} & P;
+import React from "react";
 
-export type BakaComponent<DE extends React.ElementType | React.ComponentType, P extends object> = <
-  E extends React.ElementType | React.ComponentType = DE
+type PropsOf<T extends React.ElementType> = React.ComponentPropsWithRef<T>;
+
+type PolymorphicRef<T extends React.ElementType> = React.ComponentPropsWithRef<T>["ref"];
+
+export type PolymorphicProps<T extends React.ElementType = React.ElementType, TProps = {}> = {
+  as?: T;
+} & TProps &
+  Omit<PropsOf<T>, keyof TProps | "as" | "ref"> & { ref?: PolymorphicRef<T> };
+
+export type PolymorphicPropsWithRef<C extends React.ElementType, Props = {}> = PolymorphicProps<
+  C,
+  Props
+> & { ref?: PolymorphicRef<C> };
+
+export type PolymorphicComponent<E extends React.ElementType = "div", Props = {}> = <
+  C extends React.ElementType = E
 >(
-  props: BakaComponentProps<E, P>
-) => React.ReactElement;
+  props: PolymorphicProps<C, Props>
+) => JSX.Element;

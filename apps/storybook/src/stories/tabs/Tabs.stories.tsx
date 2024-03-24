@@ -1,4 +1,4 @@
-import { BakaTabGroup, BakaTab, BakaLabel, BakaDivider, BakaIcon } from "baka-ui";
+import { BakaTabGroup, BakaTab, BakaText, BakaDivider, BakaIcon } from "baka-ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import Docs from "./tabs.mdx";
 
@@ -52,29 +52,29 @@ export const TabGroup: Story = {
         >
           <BakaTab selected={true}>
             {args.icons ? <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon> : null}
-            <BakaLabel>{args.labels ? "Tab" : null}</BakaLabel>
+            <BakaText>{args.labels ? "Tab" : null}</BakaText>
           </BakaTab>
           <BakaTab>
             {args.icons ? <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon> : null}
-            <BakaLabel>{args.labels ? "Tab" : null}</BakaLabel>
+            <BakaText>{args.labels ? "Tab" : null}</BakaText>
           </BakaTab>
           <BakaTab>
             {args.icons ? <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon> : null}
-            <BakaLabel>{args.labels ? "Tab" : null}</BakaLabel>
+            <BakaText>{args.labels ? "Tab" : null}</BakaText>
           </BakaTab>
           {args.overflow ? (
             <>
               <BakaTab>
                 {args.icons ? <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon> : null}
-                <BakaLabel>{args.labels ? "Tab" : null}</BakaLabel>
+                <BakaText>{args.labels ? "Tab" : null}</BakaText>
               </BakaTab>
               <BakaTab>
                 {args.icons ? <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon> : null}
-                <BakaLabel>{args.labels ? "Tab" : null}</BakaLabel>
+                <BakaText>{args.labels ? "Tab" : null}</BakaText>
               </BakaTab>
               <BakaTab>
                 {args.icons ? <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon> : null}
-                <BakaLabel>{args.labels ? "Tab" : null}</BakaLabel>
+                <BakaText>{args.labels ? "Tab" : null}</BakaText>
               </BakaTab>
             </>
           ) : null}

@@ -1,8 +1,0 @@
-@mixin bottom-bar {
-  display: flex;
-  align-items: center;
-}
-
-.baka-bottom-bar {
-  @include bottom-bar();
-}

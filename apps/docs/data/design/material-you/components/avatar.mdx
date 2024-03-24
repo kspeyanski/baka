@@ -1,0 +1,66 @@
+---
+title: Avatar
+---
+
+# Avatar
+
+Welcome to the documentation for the "Avatar" component in the Baka UI Library. The "Avatar" component is used to represent a user's profile image or initials in a compact, visually appealing manner.
+
+<Demo src="/demos/material-you/avatar/basic" />
+
+## Introduction
+
+The "Avatar" component is a versatile element that can be used to display user profile images, initials, or icons. It's a crucial part of creating user-friendly interfaces, providing visual context to user identities.
+
+### Usage
+
+To use the "Avatar" component, import it from `baka-ui` and include it in your JSX code. Here's a basic example:
+
+```jsx
+import { BakaAvatar } from "baka-ui";
+
+// Inside your component:
+<BakaAvatar>A</BakaAvatar>;
+```
+
+### Variants
+
+The "Avatar" component can be customized in various ways:
+
+- **BakaIcon Avatar**: You can place an icon or any content inside the "Avatar" component to represent the user.
+
+<Demo src="/demos/material-you/avatar/icon" style={{ height: 250 }} />
+
+- **Text Avatar**: You can use initials or any text to create a simple text-based avatar.
+
+<Demo src="/demos/material-you/avatar/text" style={{ height: 250 }} />
+
+- **Image Avatar**: If you have user profile images, you can use an image as the avatar.
+
+<Demo src="/demos/material-you/avatar/image" style={{ height: 250 }} />
+
+### Usage Guidelines
+
+When using the "Avatar" component, consider the following guidelines:
+
+- **BakaIcon Avatars**: These are suitable for representing actions or states associated with the user. For example, you can use a checkmark icon to indicate a verified user.
+
+```jsx
+<BakaAvatar>
+  <BakaIcon>check</BakaIcon>
+</BakaAvatar>
+```
+
+- **Text Avatars**: Use text avatars when you want a simple and clean representation of the user, such as displaying their initials.
+
+```jsx
+<BakaAvatar>A</BakaAvatar>
+```
+
+- **Image Avatars**: When you have user profile images, use image avatars to provide a visual representation of the user.
+
+```jsx
+<BakaAvatar>
+  <BakaIcon as="img" src="./avatar.svg" />
+</BakaAvatar>
+```

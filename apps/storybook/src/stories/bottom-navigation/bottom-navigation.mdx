@@ -5,13 +5,13 @@ The `BottomNavigation` component is used to create a navigation bar typically pl
 ### Usage
 
 ```jsx
-import { BakaBottomNavigation, BakaBottomNavigationItem, BakaIcon, BakaLabel, BakaBadge } from "baka-ui";
+import { BakaBottomNavigation, BakaBottomNavigationItem, BakaIcon, BakaText, BakaBadge } from "baka-ui";
 
 // Inside your component
 <BakaBottomNavigation style={{ width: 400, display: "flex", justifyContent: "space-between" }}>
   <BakaBottomNavigationItem selected={true}>
     <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-    <BakaLabel>BakaLabel</BakaLabel>
+    <BakaText>BakaText</BakaText>
   </BakaBottomNavigationItem>
   {/* Add more BottomNavigationItems as needed */}
 </BakaBottomNavigation>;
@@ -44,20 +44,20 @@ Indicates whether this item is selected. When set to `true`, it highlights the i
 #### Basic BottomNavigation
 
 ```jsx
-import { BakaBottomNavigation, BakaBottomNavigationItem, BakaIcon, BakaLabel } from "baka-ui";
+import { BakaBottomNavigation, BakaBottomNavigationItem, BakaIcon, BakaText } from "baka-ui";
 
 <BakaBottomNavigation style={{ width: 400, display: "flex", justifyContent: "space-between" }}>
   <BakaBottomNavigationItem selected={true}>
     <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-    <BakaLabel>Home</BakaLabel>
+    <BakaText>Home</BakaText>
   </BakaBottomNavigationItem>
   <BakaBottomNavigationItem>
     <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-    <BakaLabel>Profile</BakaLabel>
+    <BakaText>Profile</BakaText>
   </BakaBottomNavigationItem>
   <BakaBottomNavigationItem>
     <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-    <BakaLabel>Settings</BakaLabel>
+    <BakaText>Settings</BakaText>
   </BakaBottomNavigationItem>
 </BakaBottomNavigation>;
 ```
@@ -67,16 +67,16 @@ This will render a basic BottomNavigation bar with three selectable items.
 ### Advanced BottomNavigation
 
 ```jsx
-import { BakaBottomNavigation, BakaBottomNavigationItem, BakaIcon, BakaLabel, BakaBadge } from "baka-ui";
+import { BakaBottomNavigation, BakaBottomNavigationItem, BakaIcon, BakaText, BakaBadge } from "baka-ui";
 
 <BakaBottomNavigation style={{ width: 400, display: "flex", justifyContent: "space-between" }}>
   <BakaBottomNavigationItem selected={true}>
     <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-    <BakaLabel>Home</BakaLabel>
+    <BakaText>Home</BakaText>
   </BakaBottomNavigationItem>
   <BakaBottomNavigationItem>
     <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-    <BakaLabel>Profile</BakaLabel>
+    <BakaText>Profile</BakaText>
   </BakaBottomNavigationItem>
   <BakaBottomNavigationItem>
     <BakaIcon variant={"filled"}>
@@ -85,7 +85,7 @@ import { BakaBottomNavigation, BakaBottomNavigationItem, BakaIcon, BakaLabel, Ba
         3
       </BakaBadge>
     </BakaIcon>
-    <BakaLabel>Notifications</BakaLabel>
+    <BakaText>Notifications</BakaText>
   </BakaBottomNavigationItem>
 </BakaBottomNavigation>;
 ```

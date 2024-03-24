@@ -1,0 +1,45 @@
+---
+title: Typescript
+position: 20
+---
+
+# Typescript
+
+The `baka-material-you` package distribute typing specific to the Material You Design Language.
+
+## Usage
+
+To enable the contextual types for the Material You Design Language:
+
+1. Create an `design.d.ts` file.
+1. Declare a module called `baka-core`:
+
+```ts
+declare module "baka-core" {}
+```
+
+1. Import the Material You Design types:
+
+```ts
+import { BakaDesignMaterialYou } from "baka-material-you/types/design";
+```
+
+1. Extend the `BakaDesign` interface with the Material You Design types:
+
+```ts
+export interface BakaDesign extends BakaDesignMaterialYou {}
+```
+
+You can further override the Material You Design types by adding additional properties to the `BakaDesign` interface.
+
+Here's how the `design.d.ts` file should look like:
+
+```ts
+declare module "baka-core" {
+  import { BakaDesignMaterialYou } from "baka-material-you/types/design";
+
+  export interface BakaDesign extends BakaDesignMaterialYou {
+    // Extend or override here
+  }
+}
+```

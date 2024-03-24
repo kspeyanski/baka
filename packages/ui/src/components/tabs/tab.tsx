@@ -1,24 +1,43 @@
 import clsx from "clsx";
+import type { BakaDesign } from "baka-core";
 
-import { BakaComponent, BakaProps, BakaStates } from "../../../src/models";
+import { BakaStates, BakaVariant, PolymorphicComponent } from "../../../src/models";
 import { stateClassNames, variantClassNames } from "../../utils";
 
-export interface BakaTabProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    BakaProps,
-    BakaStates {}
+export type BakaTabProps = BakaStates<BakaDesign["TabState"]> &
+  BakaVariant<BakaDesign["TabVariant"]> & {};
 
-export const BakaTab: BakaComponent<"div", BakaTabProps> = (props) => {
-  const { as: Component = "div", variant, readOnly, disabled, ...other } = props;
+export type BakaTab = PolymorphicComponent<"div", BakaTabProps>;
+export const BakaTab: BakaTab = (props) => {
+  const {
+    _ref,
+    as: Component = "div",
+    variant,
+    selected,
+    checked,
+    readOnly,
+    indeterminate,
+    hovered,
+    focused,
+    activated,
+    disabled,
+    empty,
+    valid,
+    invalid,
+    dragged,
+    ...other
+  } = props;
 
   return (
     <Component
+      ref={_ref}
       {...other}
+      disabled={disabled}
       className={clsx(
         "baka-tab",
         props.className,
-        stateClassNames(props),
-        variantClassNames(variant)
+        variantClassNames(variant),
+        stateClassNames(props)
       )}
     />
   );

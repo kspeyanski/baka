@@ -4,8 +4,8 @@
 
 body,
 .docs-story {
-  color: $on-surface;
-  background-color: $surface;
+  color: map-get($swatch, on-surface);
+  background-color: map-get($swatch, surface);
 
   &[data-theme="dark"] {
     @include dark-swatch.styles;
@@ -16,10 +16,10 @@ body,
   }
 
   &:has(.container-high) {
-    background-color: $surface-container-high;
+    background-color: map-get($swatch, surface-container-high);
   }
 
   &:has(.container-low) {
-    background-color: $surface-container-low;
+    background-color: map-get($swatch, surface-container-low);
   }
 }

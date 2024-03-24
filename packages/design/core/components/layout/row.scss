@@ -1,4 +1,4 @@
-@mixin row {
+@mixin row--styles {
   display: flex;
   justify-content: flex-start;
 
@@ -6,6 +6,3 @@
   height: 100%;
 }
 
-.baka-row {
-  @include row();
-}
