@@ -10,6 +10,7 @@
     --state: #{map-get($swatch, on-surface)};
     --label-offset: 0;
 
+    box-sizing: content-box;
     gap: 8px;
     height: 40px;
     padding: 8px 0 8px 16px;
