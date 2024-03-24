@@ -2,6 +2,6 @@ import { BakaContainer, BakaContainerProps } from "baka-ui";
 
 export type ContainerProps = BakaContainerProps;
 
-export const Container = (props: ContainerProps) => {
+export const Container: BakaContainer = (props) => {
   return <BakaContainer {...props} className="container" />;
 };

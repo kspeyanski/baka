@@ -1,35 +1,41 @@
-import type { BakaDesign } from "baka-core";
 import clsx from "clsx";
-import { BakaComponent, BakaProps, BakaStates, BakaVariant } from "../../../src/models";
+import type { BakaDesign } from "baka-core";
+
+import { BakaStates, BakaVariant, PolymorphicComponent } from "../../../src/models";
 import { stateClassNames, variantClassNames } from "../../utils";
 
-export interface BakaButtonProps
-  extends React.HTMLAttributes<HTMLButtonElement>,
-    BakaProps,
-    BakaStates<BakaDesign["ButtonState"]> {
-  variant?: BakaVariant<BakaDesign["ButtonVariant"]>;
-}
+export type BakaButtonProps = BakaStates<BakaDesign["ButtonState"]> &
+  BakaVariant<BakaDesign["ButtonVariant"]> & {};
 
-export const BakaButton: BakaComponent<"button", BakaButtonProps> = (props) => {
+export type BakaButton = PolymorphicComponent<"button", BakaButtonProps>;
+export const BakaButton: BakaButton = (props) => {
   const {
     as: Component = "button",
+    variant,
     selected,
+    checked,
+    readOnly,
+    indeterminate,
     hovered,
     focused,
     activated,
     disabled,
-    variant,
+    empty,
+    valid,
+    invalid,
+    dragged,
     ...other
   } = props;
 
   return (
     <Component
       {...other}
+      disabled={disabled}
       className={clsx(
         "baka-button",
         props.className,
-        stateClassNames(props),
-        variantClassNames(variant)
+        variantClassNames(variant),
+        stateClassNames(props)
       )}
     />
   );

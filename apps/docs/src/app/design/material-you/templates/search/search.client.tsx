@@ -17,7 +17,7 @@ import { SEARCH_ACTION, initialState, searchReducer } from "./state";
 import { Menu } from "@/components/menus/menu";
 import { MenuItem } from "@/components/menus/menu-item";
 import clsx from "clsx";
-import { Label } from "@/components/typography";
+import { Text } from "@/components/text";
 
 export type SearchProps = {};
 
@@ -166,7 +166,9 @@ export const Search = (props: SearchProps) => {
                 tabIndex={index === state.focused ? 0 : -1}
               >
                 <div className="flex flex-col">
-                  <Label variant={"label-small"}>{item.doc.group}</Label>
+                  <Text as="label" variant={"label-small"}>
+                    {item.doc.group}
+                  </Text>
                   {item.doc?.title}
                 </div>
               </MenuItem>

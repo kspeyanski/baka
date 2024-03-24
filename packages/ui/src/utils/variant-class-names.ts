@@ -1,7 +1,5 @@
-import { BakaVariant } from "../models/variant";
-
 export const variantClassNames = (
-  variant: BakaVariant<any>,
+  variant?: string | string[],
   design?: { [key: string]: string }
 ): string | string[] | null =>
   design && Object.keys(design).length > 0

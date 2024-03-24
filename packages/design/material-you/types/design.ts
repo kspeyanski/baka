@@ -1,6 +1,7 @@
 export interface BakaDesignMaterialYou {
   AvatarVariant: "small" | "medium" | "large";
   BadgeVariant: "small" | "single-digit" | "multi-digit";
+  BarVariant: "top" | "bottom" | "small" | "medium" | "large" | "elevated";
   ButtonState: {
     hovered?: boolean;
     focused?: boolean;
@@ -38,15 +39,13 @@ export interface BakaDesignMaterialYou {
   ChipVariant: "elevated";
   CardVariant: "outlined" | "elevated" | "filled" | "horizontal";
   DialogVariant: "basic" | "full-screen";
-  HeadingVariant:
+  TextVariant:
     | "display-large"
     | "display-medium"
     | "display-small"
     | "headline-large"
     | "headline-medium"
-    | "headline-small";
-  TextVariant:
-    | "title-large"
+    | "headline-small"
     | "title-medium"
     | "title-small"
     | "label-large"
@@ -55,17 +54,6 @@ export interface BakaDesignMaterialYou {
     | "body-large"
     | "body-medium"
     | "body-small";
-  LabelVariant:
-    | "title-large"
-    | "title-medium"
-    | "title-small"
-    | "label-large"
-    | "label-medium"
-    | "label-small"
-    | "body-large"
-    | "body-medium"
-    | "body-small";
-  ParagraphVariant: "body-large" | "body-medium" | "body-small";
   ListItemVariant: "multi-line" | "video";
   IconVariant: "primary" | "small" | "medium" | "large" | "filled" | "error";
   SwitchVariant: "icon";
@@ -85,7 +73,6 @@ export interface BakaDesignMaterialYou {
     selected?: boolean;
   };
   TooltipVariant: "rich" | "plain";
-  TopBarVariant: "small" | "medium" | "large" | "elevated";
 
   NavigationVariant: "bottom" | "rail" | "side";
   NavigationItemState: {

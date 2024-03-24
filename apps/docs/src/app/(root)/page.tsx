@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Container } from "@/components/layout/container";
 import { Row } from "@/components/layout/row";
 import { Column } from "@/components/layout/column";
-import { Heading, Paragraph, Text } from "@/components/typography";
+import { Text } from "@/components/text";
 import { Button } from "@/components/buttons/button";
 import Link from "next/link";
 
@@ -19,13 +19,13 @@ export default function Home() {
         <Row>
           <Column>
             <main className={"mt-40"}>
-              <Heading variant={"hero"}>
+              <Text variant={"hero"} as="h1">
                 A <span className={styles.highlight}>Design System</span> Framework
-              </Heading>
-              <Paragraph variant={["sub-hero"]} className="mt-10">
+              </Text>
+              <Text variant={["sub-hero"]} className="mt-10">
                 Elevate Your Web Design: Build from Scratch or Build on top. BakaUI helps you build
                 faster and more consistent user experiences in your web apps.
-              </Paragraph>
+              </Text>
               <div className="mt-10 flex flex-col gap-md items-center">
                 <div className="flex gap-sm justify-center">
                   <Button
@@ -49,9 +49,9 @@ export default function Home() {
         <Container>
           <Row>
             <Column>
-              <Heading as="h2" variant={"h2"}>
+              <Text as="h2" variant={"h2"}>
                 Showcase
-              </Heading>
+              </Text>
             </Column>
           </Row>
           <Row className="mt-6">

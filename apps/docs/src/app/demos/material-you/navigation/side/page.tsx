@@ -1,9 +1,8 @@
 import {
   BakaNavigation,
-  BakaText,
   BakaNavigationItem,
   BakaIcon,
-  BakaLabel,
+  BakaText,
   BakaDivider,
 } from "baka-ui";
 
@@ -18,17 +17,17 @@ export default async function () {
       </div>
       <BakaNavigationItem selected={true}>
         <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-        <BakaLabel>BakaLabel</BakaLabel>
+        <BakaText>BakaText</BakaText>
         <BakaText>100+</BakaText>
       </BakaNavigationItem>
       <BakaNavigationItem>
         <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-        <BakaLabel>BakaLabel</BakaLabel>
+        <BakaText>BakaText</BakaText>
         <BakaText>100+</BakaText>
       </BakaNavigationItem>
       <BakaNavigationItem>
         <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-        <BakaLabel>BakaLabel</BakaLabel>
+        <BakaText>BakaText</BakaText>
         <BakaText>100+</BakaText>
       </BakaNavigationItem>
       <BakaDivider />
@@ -37,15 +36,15 @@ export default async function () {
       </div>
       <BakaNavigationItem>
         <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-        <BakaLabel>BakaLabel</BakaLabel>
+        <BakaText>BakaText</BakaText>
       </BakaNavigationItem>
       <BakaNavigationItem>
         <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-        <BakaLabel>BakaLabel</BakaLabel>
+        <BakaText>BakaText</BakaText>
       </BakaNavigationItem>
       <BakaNavigationItem>
         <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-        <BakaLabel>BakaLabel</BakaLabel>
+        <BakaText>BakaText</BakaText>
       </BakaNavigationItem>
     </BakaNavigation>
   );

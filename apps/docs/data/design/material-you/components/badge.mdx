@@ -33,17 +33,17 @@ The "Badge" component offers different variants to suit your specific needs:
 
 ### Constructed Badge
 
-You can also create a "Badge" by using the "BakaLabel" component within the "BakaBadge" component. This allows you to include additional content alongside the badge, making it more informative.
+You can also create a "Badge" by using the "BakaText" component within the "BakaBadge" component. This allows you to include additional content alongside the badge, making it more informative.
 
 ```jsx
-import { BakaBadge, BakaLabel } from "baka-ui";
+import { BakaBadge, BakaText } from "baka-ui";
 
 // Constructed Badge examples:
 <BakaBadge variant={"single-digit"}>
-  <BakaLabel>3</BakaLabel>
+  <BakaText>3</BakaText>
 </BakaBadge>
 <BakaBadge variant={"multi-digit"}>
-  <BakaLabel>32</BakaLabel>
+  <BakaText>32</BakaText>
 </BakaBadge>
 ```
 
@@ -53,7 +53,7 @@ When using the "Badge" component, consider the following guidelines:
 
 - **Self-container Badge**: Use the self-container badge when you only need a simple visual indicator without additional content.
 - **Single-digit and Multi-digit Badges**: Choose the appropriate variant based on the expected content. Single-digit badges are ideal for displaying single-digit numbers, while multi-digit badges are suitable for longer numbers.
-- **Constructed Badges**: If you need to provide additional context or content alongside the badge, use the constructed badge with the "BakaLabel" component.
+- **Constructed Badges**: If you need to provide additional context or content alongside the badge, use the constructed badge with the "BakaText" component.
 
 ## Real-World Examples
 
@@ -75,13 +75,13 @@ For situations where you need to display a larger count, such as the number of m
 <BakaBadge variant={"multi-digit"}>32</BakaBadge>
 ```
 
-#### Constructed Badge with BakaLabel
+#### Constructed Badge with BakaText
 
-In cases where you want to provide additional information alongside the badge, you can use a constructed badge with the "BakaLabel" component.
+In cases where you want to provide additional information alongside the badge, you can use a constructed badge with the "BakaText" component.
 
 ```jsx
 <BakaBadge variant={"single-digit"}>
-  <BakaLabel>New</BakaLabel>
+  <BakaText>New</BakaText>
 </BakaBadge>
 ```
 

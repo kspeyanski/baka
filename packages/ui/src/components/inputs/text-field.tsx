@@ -1,46 +1,42 @@
-import type { BakaDesign } from "baka-core";
 import clsx from "clsx";
+import type { BakaDesign } from "baka-core";
 
-import { BakaComponent, BakaStates, BakaVariant } from "../../../src/models";
+import { BakaStates, BakaVariant, PolymorphicComponent } from "../../../src/models";
 import { stateClassNames, variantClassNames } from "../../utils";
 
-export interface BakaTextFieldProps
-  extends React.HTMLAttributes<HTMLInputElement>,
-    BakaStates<BakaDesign["TextFieldState"]> {
-  variant?: BakaVariant<BakaDesign["TextFieldVariant"]>;
-}
+export type BakaTextFieldProps = BakaStates<BakaDesign["TextFieldState"]> &
+  BakaVariant<BakaDesign["TextFieldVariant"]> & {};
 
-export const BakaTextField: BakaComponent<"span", BakaTextFieldProps> = (props) => {
+export type BakaTextField = PolymorphicComponent<"span", BakaTextFieldProps>;
+export const BakaTextField: BakaTextField = (props) => {
   const {
     as: Component = "span",
+    variant,
+    selected,
     checked,
+    readOnly,
     indeterminate,
     hovered,
     focused,
     activated,
     disabled,
-    variant,
-    className,
-    readOnly,
+    empty,
     valid,
     invalid,
-    _ref,
+    dragged,
     ...other
   } = props;
 
   return (
     <Component
-      ref={_ref}
-      type="text-field"
-      checked={checked}
-      readOnly={readOnly}
+      {...other}
+      disabled={disabled}
       className={clsx(
         "baka-text-field",
-        className,
-        stateClassNames(props),
-        variantClassNames(variant)
+        props.className,
+        variantClassNames(variant),
+        stateClassNames(props)
       )}
-      {...other}
     />
   );
 };

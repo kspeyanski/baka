@@ -1,23 +1,42 @@
 import clsx from "clsx";
+import type { BakaDesign } from "baka-core";
 
-import { BakaComponent, BakaProps, BakaStates, BakaVariant } from "../../../src/models";
-import { variantClassNames } from "../../utils";
-import { BakaDesign } from "baka-core";
+import { BakaStates, BakaVariant, PolymorphicComponent } from "../../../src/models";
+import { stateClassNames, variantClassNames } from "../../utils";
 
-export interface BakaTabGroupProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    BakaProps,
-    BakaStates<BakaDesign["TabGroupState"]> {
-  variant?: BakaVariant<BakaDesign["TabGroupVariant"]>;
-}
+export type BakaTabGroupProps = BakaStates<BakaDesign["TabGroupState"]> &
+  BakaVariant<BakaDesign["TabGroupVariant"]> & {};
 
-export const BakaTabGroup: BakaComponent<"div", BakaTabGroupProps> = (props) => {
-  const { as: Component = "div", variant, ...other } = props;
+export type BakaTabGroup = PolymorphicComponent<"div", BakaTabGroupProps>;
+export const BakaTabGroup: BakaTabGroup = (props) => {
+  const {
+    as: Component = "div",
+    variant,
+    selected,
+    checked,
+    readOnly,
+    indeterminate,
+    hovered,
+    focused,
+    activated,
+    disabled,
+    empty,
+    valid,
+    invalid,
+    dragged,
+    ...other
+  } = props;
 
   return (
     <Component
       {...other}
-      className={clsx("baka-tab-group", props.className, variantClassNames(variant))}
+      disabled={disabled}
+      className={clsx(
+        "baka-tab-group",
+        props.className,
+        variantClassNames(variant),
+        stateClassNames(props)
+      )}
     />
   );
 };

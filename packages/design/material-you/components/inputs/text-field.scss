@@ -45,18 +45,18 @@
         @include motion-transition-TBD(height, background);
       }
 
-      & > .baka-label {
+      & > .baka-text {
         color: var(--accent);
       }
 
       &:has(> .baka-icon:is(:first-child)) {
-        & > .baka-label {
+        & > .baka-text {
           --label-offset: 32px;
         }
       }
 
-      &:has(.baka-label) {
-        & > .baka-label {
+      &:has(.baka-text) {
+        & > .baka-text {
           @include body-small;
 
           position: absolute;
@@ -73,7 +73,7 @@
         &:has(.baka-input:not(:placeholder-shown)#{baka.$selector--empty}):not(:focus):not(
             :focus-within
           ):not(:focus-visible):not(#{baka.$selector--focus}) {
-          & > .baka-label {
+          & > .baka-text {
             @include body-large;
             transform: translate(var(--label-offset), 0);
           }
@@ -111,8 +111,8 @@
         content: none;
       }
 
-      &:has(.baka-label) {
-        & > .baka-label {
+      &:has(.baka-text) {
+        & > .baka-text {
           z-index: 1;
           background: map-get($swatch, surface);
           padding: 0 4px;
@@ -131,7 +131,7 @@
         &:has(.baka-input:not(:placeholder-shown)#{baka.$selector--empty}):not(:focus):not(
             :focus-within
           ):not(:focus-visible):not(#{baka.$selector--focus}) {
-          & > .baka-label {
+          & > .baka-text {
             @include body-large;
             background: transparent;
             transform: translate(var(--label-offset), 0);

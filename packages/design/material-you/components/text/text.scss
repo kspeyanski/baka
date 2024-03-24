@@ -1,0 +1,69 @@
+@use "../../design" as *;
+@use "baka-core" as baka;
+
+@mixin text--styles {
+  .baka-text {
+    @include baka.text--styles;
+    color: inherit;
+
+    @include baka.variant(display-large) {
+      @include display-large;
+    }
+
+    @include baka.variant(display-medium) {
+      @include display-medium;
+    }
+
+    @include baka.variant(display-small) {
+      @include display-small;
+    }
+
+    @include baka.variant(headline-large) {
+      @include headline-large;
+    }
+
+    @include baka.variant(headline-medium) {
+      @include headline-medium;
+    }
+
+    @include baka.variant(headline-small) {
+      @include headline-small;
+    }
+
+    @include baka.variant(body-large) {
+      @include body-large;
+    }
+
+    @include baka.variant(body-medium, true) {
+      @include body-medium;
+    }
+
+    @include baka.variant(body-small) {
+      @include body-small;
+    }
+
+    @include baka.variant(title-large) {
+      @include title-large;
+    }
+
+    @include baka.variant(title-medium) {
+      @include title-medium;
+    }
+
+    @include baka.variant(title-small) {
+      @include title-small;
+    }
+
+    @include baka.variant(label-large) {
+      @include label-large;
+    }
+
+    @include baka.variant(label-medium) {
+      @include label-medium;
+    }
+
+    @include baka.variant(label-small) {
+      @include label-small;
+    }
+  }
+}

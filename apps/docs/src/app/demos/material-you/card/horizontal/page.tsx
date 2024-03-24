@@ -1,12 +1,4 @@
-import {
-  BakaCard,
-  BakaAvatar,
-  BakaText,
-  BakaLabel,
-  BakaButton,
-  BakaIcon,
-  BakaParagraph,
-} from "baka-ui";
+import { BakaCard, BakaAvatar, BakaText } from "baka-ui";
 
 export default async function Demo() {
   return (
@@ -16,8 +8,8 @@ export default async function Demo() {
           <span>A</span>
         </BakaAvatar>
         <div style={{ display: "flex", flexGrow: 1, flexDirection: "column", gap: 4 }}>
-          <BakaLabel variant="title-medium">Header</BakaLabel>
-          <BakaLabel variant="body-medium">Subhead</BakaLabel>
+          <BakaText variant="title-medium">Header</BakaText>
+          <BakaText variant="body-medium">Subhead</BakaText>
         </div>
       </div>
 

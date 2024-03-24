@@ -1,6 +1,6 @@
 import { Icon } from "@/components/misc/icon";
 import { NavigationItem, NavigationItemProps } from "@/components/navigation/navigation-item";
-import { Label } from "@/components/typography";
+import { Text } from "@/components/text";
 import { SidenavCategoryItemClient } from "./sidenav-category-item.client";
 
 export type SidenavCategoryItemProps = NavigationItemProps & {
@@ -18,7 +18,7 @@ export const SidenavCategoryItem = (props: SidenavCategoryItemProps) => {
     <SidenavCategoryItemClient url={url} title={title} match={match} readOnly={readOnly}>
       <NavigationItem>
         <Icon>{icon}</Icon>
-        <Label>{title}</Label>
+        <Text>{title}</Text>
       </NavigationItem>
     </SidenavCategoryItemClient>
   );

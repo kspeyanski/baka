@@ -1,7 +1,7 @@
 /// <reference types="baka-material-you" />
 
 import type { Meta, StoryObj } from "@storybook/react";
-import { BakaButton, BakaTextField, BakaIcon, BakaInput, BakaLabel } from "baka-ui";
+import { BakaButton, BakaTextField, BakaIcon, BakaInput, BakaText } from "baka-ui";
 import Docs from "./text-field.mdx";
 import React from "react";
 
@@ -29,7 +29,7 @@ export const Basic: Story = {
     return (
       <BakaTextField {...args} style={{ width: 300 }} {...{ [args.state]: true }}>
         {args["leading icon"] && <BakaIcon>search</BakaIcon>}
-        {args.label && <BakaLabel>BakaLabel</BakaLabel>}
+        {args.label && <BakaText>BakaText</BakaText>}
         <BakaInput
           {...(args.placeholder && { placeholder: "Placeholder" })}
           value={args.input}

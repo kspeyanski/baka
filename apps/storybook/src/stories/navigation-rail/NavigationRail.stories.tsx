@@ -1,7 +1,7 @@
 /// <reference types="baka-material-you" />
 
 import type { Meta, StoryObj } from "@storybook/react";
-import { BakaButton, BakaNavigationRail, BakaNavigationRailItem, BakaIcon, BakaLabel } from "baka-ui";
+import { BakaButton, BakaNavigationRail, BakaNavigationRailItem, BakaIcon, BakaText } from "baka-ui";
 import Docs from "./navigation-rail.mdx";
 
 const meta = {
@@ -70,7 +70,7 @@ export const Basic: Story = {
         >
           <BakaNavigationRailItem selected={true}>
             <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-            {args.labels ? <BakaLabel>BakaLabel</BakaLabel> : null}
+            {args.labels ? <BakaText>BakaText</BakaText> : null}
           </BakaNavigationRailItem>
           <BakaNavigationRailItem>
             <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>

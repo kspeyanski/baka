@@ -1,7 +1,7 @@
 /// <reference types="baka-material-you" />
 
 import type { Meta, StoryObj } from "@storybook/react";
-import { BakaBadge, BakaBottomNavigation, BakaBottomNavigationItem, BakaIcon, BakaLabel } from "baka-ui";
+import { BakaBadge, BakaBottomNavigation, BakaBottomNavigationItem, BakaIcon, BakaText } from "baka-ui";
 import Docs from "./bottom-navigation.mdx";
 
 const meta = {
@@ -45,12 +45,12 @@ export const Basic: Story = {
       <BakaBottomNavigation style={{ width: 400 }}>
         <BakaBottomNavigationItem selected={true}>
           <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-          {args.labels ? <BakaLabel>BakaLabel</BakaLabel> : null}
+          {args.labels ? <BakaText>BakaText</BakaText> : null}
         </BakaBottomNavigationItem>
         {Array.from({ length: args.items - 2 }, (_, i) => (
           <BakaBottomNavigationItem key={i}>
             <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-            {args.labels ? <BakaLabel>BakaLabel</BakaLabel> : null}
+            {args.labels ? <BakaText>BakaText</BakaText> : null}
           </BakaBottomNavigationItem>
         ))}
         <BakaBottomNavigationItem>
@@ -67,7 +67,7 @@ export const Basic: Story = {
               <BakaBadge variant={"small"} style={{ position: "absolute", right: 16, top: 2 }} />
             )}
           </BakaIcon>
-          {args.labels ? <BakaLabel>BakaLabel</BakaLabel> : null}
+          {args.labels ? <BakaText>BakaText</BakaText> : null}
         </BakaBottomNavigationItem>
       </BakaBottomNavigation>
     );

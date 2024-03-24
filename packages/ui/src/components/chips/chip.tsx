@@ -1,25 +1,28 @@
-import type { BakaDesign } from "baka-core";
 import clsx from "clsx";
+import type { BakaDesign } from "baka-core";
 
-import { BakaComponent, BakaProps, BakaStates, BakaVariant } from "../../../src/models";
+import { BakaStates, BakaVariant, PolymorphicComponent } from "../../../src/models";
 import { stateClassNames, variantClassNames } from "../../utils";
 
-export interface BakaChipProps
-  extends React.HTMLAttributes<HTMLSpanElement>,
-    BakaProps,
-    BakaStates<BakaDesign["ChipState"]> {
-  variant?: BakaVariant<BakaDesign["ChipVariant"]>; 
-}
+export type BakaChipProps = BakaStates<BakaDesign["ChipState"]> &
+  BakaVariant<BakaDesign["ChipVariant"]> & {};
 
-export const BakaChip: BakaComponent<"span", BakaChipProps> = (props) => {
+export type BakaChip = PolymorphicComponent<"span", BakaChipProps>;
+export const BakaChip: BakaChip = (props) => {
   const {
     as: Component = "span",
+    variant,
     selected,
+    checked,
+    readOnly,
+    indeterminate,
     hovered,
     focused,
     activated,
     disabled,
-    variant,
+    empty,
+    valid,
+    invalid,
     dragged,
     ...other
   } = props;
@@ -27,11 +30,12 @@ export const BakaChip: BakaComponent<"span", BakaChipProps> = (props) => {
   return (
     <Component
       {...other}
+      disabled={disabled}
       className={clsx(
         "baka-chip",
         props.className,
-        stateClassNames(props),
-        variantClassNames(variant)
+        variantClassNames(variant),
+        stateClassNames(props)
       )}
     />
   );

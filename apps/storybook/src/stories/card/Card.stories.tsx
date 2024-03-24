@@ -1,6 +1,6 @@
 /// <reference types="baka-material-you" />
 
-import { BakaAvatar, BakaButton, BakaCard, BakaText, BakaIcon, BakaLabel, BakaParagraph } from "baka-ui";
+import { BakaAvatar, BakaButton, BakaCard, BakaText, BakaIcon, BakaText, BakaText } from "baka-ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import Docs from "./card.mdx";
 import "./styles.scss";
@@ -40,8 +40,8 @@ export const Basic: Story = {
             <span>A</span>
           </BakaAvatar>
           <BakaText style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-            <BakaLabel variant={"title-medium"}>Header</BakaLabel>
-            <BakaLabel variant={"body-medium"}>Subhead</BakaLabel>
+            <BakaText variant={"title-medium"}>Header</BakaText>
+            <BakaText variant={"body-medium"}>Subhead</BakaText>
           </BakaText>
         </div>
         <BakaButton variant={["icon"]}>
@@ -70,12 +70,12 @@ export const Basic: Story = {
         }}
       >
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <BakaLabel variant={"body-large"}>Title</BakaLabel>
-          <BakaLabel variant={"body-medium"}>Subhead</BakaLabel>
+          <BakaText variant={"body-large"}>Title</BakaText>
+          <BakaText variant={"body-medium"}>Subhead</BakaText>
         </div>
-        <BakaParagraph variant={"body-medium"}>
+        <BakaText variant={"body-medium"}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-        </BakaParagraph>
+        </BakaText>
         <div style={{ display: "flex", alignSelf: "stretch", justifyContent: "flex-end", gap: 8 }}>
           <BakaButton variant={["outlined"]}>Enabled</BakaButton>
           <BakaButton variant={["filled"]}>Enabled</BakaButton>
@@ -102,8 +102,8 @@ export const Horizontal: Story = {
           <span>A</span>
         </BakaAvatar>
         <div style={{ display: "flex", flexGrow: 1, flexDirection: "column", gap: 4 }}>
-          <BakaLabel variant="title-medium">Header</BakaLabel>
-          <BakaLabel variant="body-medium">Subhead</BakaLabel>
+          <BakaText variant="title-medium">Header</BakaText>
+          <BakaText variant="body-medium">Subhead</BakaText>
         </div>
       </div>
 

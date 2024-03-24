@@ -1,17 +1,42 @@
 import clsx from "clsx";
+import type { BakaDesign } from "baka-core";
 
-import { BakaComponent, BakaProps, BakaStates } from "../../../src/models";
-import { BakaDesign } from "baka-core";
+import { BakaStates, BakaVariant, PolymorphicComponent } from "../../../src/models";
+import { stateClassNames, variantClassNames } from "../../utils";
 
-export interface BakaListProps
-  extends React.HTMLAttributes<HTMLElement>,
-    BakaProps,
-    BakaStates<BakaDesign["ListState"]> {
-  variant?: BakaDesign["ListVariant"];
-}
+export type BakaListProps = BakaStates<BakaDesign["ListState"]> &
+  BakaVariant<BakaDesign["ListVariant"]> & {};
 
-export const BakaList: BakaComponent<"ul", BakaListProps> = (props) => {
-  const { as: Component = "ul", ...other } = props;
+export type BakaList = PolymorphicComponent<"ul", BakaListProps>;
+export const BakaList: BakaList = (props) => {
+  const {
+    as: Component = "ul",
+    variant,
+    selected,
+    checked,
+    readOnly,
+    indeterminate,
+    hovered,
+    focused,
+    activated,
+    disabled,
+    empty,
+    valid,
+    invalid,
+    dragged,
+    ...other
+  } = props;
 
-  return <Component {...other} className={clsx("baka-list", props.className)} />;
+  return (
+    <Component
+      {...other}
+      disabled={disabled}
+      className={clsx(
+        "baka-list",
+        props.className,
+        variantClassNames(variant),
+        stateClassNames(props)
+      )}
+    />
+  );
 };

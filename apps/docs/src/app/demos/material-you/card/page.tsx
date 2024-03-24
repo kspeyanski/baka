@@ -2,10 +2,8 @@ import {
   BakaCard,
   BakaAvatar,
   BakaText,
-  BakaLabel,
   BakaButton,
   BakaIcon,
-  BakaParagraph,
 } from "baka-ui";
 
 export default async function Demo() {
@@ -25,8 +23,8 @@ export default async function Demo() {
             <span>A</span>
           </BakaAvatar>
           <BakaText style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-            <BakaLabel variant={"title-medium"}>Header</BakaLabel>
-            <BakaLabel variant={"body-medium"}>Subhead</BakaLabel>
+            <BakaText variant={"title-medium"}>Header</BakaText>
+            <BakaText variant={"body-medium"}>Subhead</BakaText>
           </BakaText>
         </div>
         <BakaButton variant={["icon"]}>
@@ -55,12 +53,12 @@ export default async function Demo() {
         }}
       >
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <BakaLabel variant={"body-large"}>Title</BakaLabel>
-          <BakaLabel variant={"body-medium"}>Subhead</BakaLabel>
+          <BakaText variant={"body-large"}>Title</BakaText>
+          <BakaText variant={"body-medium"}>Subhead</BakaText>
         </div>
-        <BakaParagraph variant={"body-medium"}>
+        <BakaText variant={"body-medium"}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-        </BakaParagraph>
+        </BakaText>
         <div style={{ display: "flex", alignSelf: "stretch", justifyContent: "flex-end", gap: 8 }}>
           <BakaButton variant={["outlined"]}>Enabled</BakaButton>
           <BakaButton variant={["filled"]}>Enabled</BakaButton>

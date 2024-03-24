@@ -1,4 +1,4 @@
-import { BakaBadge, BakaNavigation, BakaNavigationItem, BakaIcon, BakaLabel } from "baka-ui";
+import { BakaBadge, BakaNavigation, BakaNavigationItem, BakaIcon, BakaText } from "baka-ui";
 
 export default async function Demo() {
   return (

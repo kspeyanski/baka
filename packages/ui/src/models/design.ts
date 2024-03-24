@@ -9,7 +9,7 @@ export type BakaButtonStates = {
   disabled?: boolean;
 };
 
-export type BakaRadioButtonStates = {
+export type BakaRadioStates = {
   hovered?: boolean;
   focused?: boolean;
   activated?: boolean;
@@ -47,14 +47,14 @@ export type BakaTextFieldStates = {
 
 export type BakaDialogVariant = string;
 export type BakaDividerVariant = "horizontal" | "vertical";
-export type BakaHeadingVariant = string;
-export type BakaParagraphVariant = string;
+export type BakaTextVariant = string;
+export type BakaTextVariant = string;
 export type BakaListItemVariant = string;
 export type BakaTextVariant = string;
 export type BakaSwitchVariant = string;
 export type BakaIconVariant = string;
 export type BakaTextFieldVariant = string;
-export type BakaLabelVariant = string;
+export type BakaTextVariant = string;
 export type BakaTabGroupVariant = string;
 export type BakaTooltipVariant = string;
 export type BakaTopBarVariant = string;

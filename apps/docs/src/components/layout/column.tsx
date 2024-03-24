@@ -3,6 +3,6 @@ import clsx from "clsx";
 
 export type ColumnProps = BakaColumnProps;
 
-export const Column = (props: ColumnProps) => {
+export const Column: BakaColumn = (props) => {
   return <BakaColumn {...props} className={clsx("column", props.className)} />;
 };

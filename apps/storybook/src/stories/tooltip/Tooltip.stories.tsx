@@ -1,8 +1,8 @@
 import {
   BakaButton,
   BakaTooltip,
-  BakaParagraph,
-  BakaLabel,
+  BakaText,
+  BakaText,
   BakaTooltipProps,
 } from "baka-ui";
 import type { Meta, StoryObj } from "@storybook/react";
@@ -44,15 +44,15 @@ export const Basic: Story = {
   render: (args) => {
     return args.variant === "plain" ? (
       <BakaTooltip variant={args.variant}>
-        <BakaParagraph variant="body-small">Supporting text</BakaParagraph>
+        <BakaText variant="body-small">Supporting text</BakaText>
       </BakaTooltip>
     ) : (
       <BakaTooltip style={{ width: 320 }} variant={args.variant}>
         <div style={{ padding: "12px 16px 0 16px" }}>
-          <BakaLabel variant={"title-small"}>Title</BakaLabel>
-          <BakaParagraph variant={"body-medium"}>
+          <BakaText variant={"title-small"}>Title</BakaText>
+          <BakaText variant={"body-medium"}>
             Supporting line text lorem ipsum dolor sit amet, consectetur
-          </BakaParagraph>
+          </BakaText>
         </div>
         {args.actions ? (
           <div style={{ display: "flex", gap: 8, paddingInline: 8 }}>

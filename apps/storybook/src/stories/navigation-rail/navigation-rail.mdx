@@ -5,7 +5,7 @@ The `NavigationRail` component is used to create a vertical navigation rail typi
 ### Usage
 
 ```jsx
-import { BakaNavigationRail, BakaNavigationRailItem, BakaIcon, BakaLabel } from "baka-ui";
+import { BakaNavigationRail, BakaNavigationRailItem, BakaIcon, BakaText } from "baka-ui";
 
 // Inside your component
 <BakaNavigationRail>
@@ -32,7 +32,7 @@ import { BakaNavigationRail, BakaNavigationRailItem, BakaIcon, BakaLabel } from 
   <div>
     <BakaNavigationRailItem selected={true}>
       <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-      <BakaLabel>BakaLabel</BakaLabel>
+      <BakaText>BakaText</BakaText>
     </BakaNavigationRailItem>
     {/* Add more NavigationRailItems as needed */}
   </div>
@@ -63,7 +63,7 @@ Indicates whether this item is selected. When set to `true`, it highlights the i
 #### Basic NavigationRail
 
 ```jsx
-import { BakaNavigationRail, BakaNavigationRailItem, BakaIcon, BakaLabel } from "baka-ui";
+import { BakaNavigationRail, BakaNavigationRailItem, BakaIcon, BakaText } from "baka-ui";
 
 <BakaNavigationRail>
   <div
@@ -85,11 +85,11 @@ import { BakaNavigationRail, BakaNavigationRailItem, BakaIcon, BakaLabel } from 
   <div>
     <BakaNavigationRailItem selected={true}>
       <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-      <BakaLabel>Home</BakaLabel>
+      <BakaText>Home</BakaText>
     </BakaNavigationRailItem>
     <BakaNavigationRailItem>
       <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-      <BakaLabel>Profile</BakaLabel>
+      <BakaText>Profile</BakaText>
     </BakaNavigationRailItem>
     {/* Add more NavigationRailItems as needed */}
   </div>

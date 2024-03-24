@@ -18,7 +18,7 @@
       gap: 4px;
       flex-direction: column;
 
-      .baka-label {
+      .baka-text {
         color: map-get($swatch, on-surface-variant);
       }
 
@@ -69,7 +69,7 @@
 
       @include baka.selected {
         --state: #{map-get($swatch, on-secondary-container)};
-        .baka-label {
+        .baka-text {
           color: map-get($swatch, on-surface);
         }
         .baka-icon {
@@ -93,7 +93,7 @@
       flex-direction: column;
       padding: 0 5px;
 
-      .baka-label {
+      .baka-text {
         color: map-get($swatch, on-surface-variant);
       }
 
@@ -145,7 +145,7 @@
 
       @include baka.selected {
         --state: #{map-get($swatch, on-secondary-container)};
-        .baka-label {
+        .baka-text {
           color: map-get($swatch, on-surface);
         }
         .baka-icon {
@@ -154,7 +154,7 @@
         }
       }
 
-      &:has(.baka-label) {
+      &:has(.baka-text) {
         --vertical-padding: 4px;
       }
     }
@@ -170,12 +170,12 @@
 
       color: var(--color);
 
-      .baka-label,
+      .baka-text,
       .baka-text {
         color: inherit;
       }
 
-      .baka-label {
+      .baka-text {
         flex-grow: 1;
       }
 

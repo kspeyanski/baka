@@ -1,8 +1,8 @@
-import { BakaComponent, BakaTopBar, BakaTopBarProps } from "baka-ui";
+import { BakaBar, BakaBarProps } from "baka-ui";
 import clsx from "clsx";
 
-export type TopBarProps = BakaTopBarProps;
+export type TopBarProps = BakaBarProps;
 
-export const TopBar: BakaComponent<"div", TopBarProps> = (props: TopBarProps) => {
-  return <BakaTopBar {...props} className={clsx("top-bar", props.className)} />;
+export const TopBar: BakaBar = (props) => {
+  return <BakaBar {...props} className={clsx("top-bar", props.className)} variant={"top"} />;
 };

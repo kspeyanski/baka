@@ -5,11 +5,8 @@ export type BakaDesign = {
   BadgeVariant: string;
   BadgeState: {};
 
-  BottomBarVariant: string;
-  BottomBarState: {};
-
-  TopBarVariant: string;
-  TopBarState: {};
+  BarVariant: string;
+  BarState: {};
 
   ButtonVariant: string;
   ButtonState: {};
@@ -32,8 +29,8 @@ export type BakaDesign = {
   InputVariant: string;
   InputState: {};
 
-  RadioButtonVariant: string;
-  RadioButtonState: {};
+  RadioVariant: string;
+  RadioState: {};
 
   SwitchVariant: string;
   SwitchState: {};
@@ -77,18 +74,6 @@ export type BakaDesign = {
   NavigationItemVariant: string;
   NavigationItemState: {};
 
-  NavigationRailVariant: string;
-  NavigationRailState: {};
-
-  NavigationRailItemVariant: string;
-  NavigationRailItemState: {};
-
-  SideNavigationVariant: string;
-  SideNavigationState: {};
-
-  SideNavigationItemVariant: string;
-  SideNavigationItemState: {};
-
   TabGroupVariant: string;
   TabGroupState: {};
 
@@ -97,15 +82,6 @@ export type BakaDesign = {
 
   TooltipVariant: string;
   TooltipState: {};
-
-  HeadingVariant: string;
-  HeadingState: {};
-
-  LabelVariant: string;
-  LabelState: {};
-
-  ParagraphVariant: string;
-  ParagraphState: {};
 
   TextVariant: string;
   TextState: {};

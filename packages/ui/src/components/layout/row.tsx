@@ -1,14 +1,13 @@
 import clsx from "clsx";
+import type { BakaDesign } from "baka-core";
 
-import { BakaComponent, BakaProps, BakaVariant } from "../../../src/models";
+import { BakaVariant, PolymorphicComponent } from "../../../src/models";
 import { variantClassNames } from "../../utils";
-import { BakaDesign } from "baka-core";
 
-export interface BakaRowProps extends React.HTMLAttributes<HTMLDivElement>, BakaProps {
-  variant?: BakaVariant<BakaDesign["RowVariant"]>;
-}
+export type BakaRowProps = BakaVariant<BakaDesign["RowVariant"]> & {};
 
-export const BakaRow: BakaComponent<"div", BakaRowProps> = (props) => {
+export type BakaRow = PolymorphicComponent<"div", BakaRowProps>;
+export const BakaRow: BakaRow = (props) => {
   const { as: Component = "div", variant, ...other } = props;
 
   return (

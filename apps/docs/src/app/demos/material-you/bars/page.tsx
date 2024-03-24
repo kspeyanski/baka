@@ -1,9 +1,9 @@
-import { BakaBottomBar, BakaButton, BakaIcon, BakaText, BakaTopBar } from "baka-ui";
+import { BakaButton, BakaIcon, BakaText, BakaBar } from "baka-ui";
 
 export default async function Demo() {
   return (
     <>
-      <BakaTopBar style={{ width: 404 }}>
+      <BakaBar style={{ width: 404 }} variant="top">
         <BakaButton variant={"icon"}>
           <BakaIcon>menu</BakaIcon>
         </BakaButton>
@@ -13,16 +13,17 @@ export default async function Demo() {
         <BakaButton variant={"icon"}>
           <BakaIcon variant={"filled"}>account_circle</BakaIcon>
         </BakaButton>
-      </BakaTopBar>
+      </BakaBar>
       <br />
       <br />
-      <BakaBottomBar
+      <BakaBar
         style={{
           width: 400,
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
         }}
+        variant="bottom"
       >
         <div style={{ display: "flex", gap: 8 }}>
           {["circle", "change_history", "rectangle", "pentagon", "hexagon"].map((shape) => (
@@ -36,7 +37,7 @@ export default async function Demo() {
             <BakaIcon>add</BakaIcon>
           </BakaButton>
         ) : null}
-      </BakaBottomBar>
+      </BakaBar>
     </>
   );
 }

@@ -1,23 +1,25 @@
-import type { BakaDesign } from "baka-core";
 import clsx from "clsx";
+import type { BakaDesign } from "baka-core";
 
-import { BakaComponent, BakaProps, BakaStates, BakaVariant } from "../../../src/models";
-import { variantClassNames } from "../../utils";
+import { BakaStates, BakaVariant, PolymorphicComponent } from "../../../src/models";
+import { stateClassNames, variantClassNames } from "../../utils";
 
-export interface BakaBadgeProps
-  extends React.HTMLAttributes<HTMLSpanElement>,
-    BakaProps,
-    BakaStates<BakaDesign["BadgeState"]> {
-  variant?: BakaVariant<BakaDesign["BadgeVariant"]>;
-}
+export type BakaBadgeProps = BakaStates<BakaDesign["BadgeState"]> &
+  BakaVariant<BakaDesign["BadgeVariant"]> & {};
 
-export const BakaBadge: BakaComponent<"span", BakaBadgeProps> = (props) => {
+export type BakaBadge = PolymorphicComponent<"span", BakaBadgeProps>;
+export const BakaBadge: BakaBadge = (props) => {
   const { as: Component = "span", variant, ...other } = props;
 
   return (
     <Component
       {...other}
-      className={clsx("baka-badge", props.className, variantClassNames(variant))}
+      className={clsx(
+        "baka-badge",
+        props.className,
+        variantClassNames(variant),
+        stateClassNames(props)
+      )}
     />
   );
 };

@@ -1,4 +1,4 @@
-import { Label, Text } from "@/components/typography";
+import { Text } from "@/components/text";
 import clsx from "clsx";
 import Link from "next/link";
 
@@ -13,7 +13,7 @@ export type TableOfContentsProps = {
 export const TableOfContents = ({ data }: TableOfContentsProps) => {
   return (
     <div className="flex flex-col gap-md">
-      <Label className="text-primary">On this page</Label>
+      <Text className="text-primary">On this page</Text>
 
       <ul className="flex flex-col gap-sm">
         {data.map((item) =>

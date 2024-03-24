@@ -1,22 +1,42 @@
 import clsx from "clsx";
-import { PolymorphicComponent } from "../../models/component";
-import { BakaVariant } from "../../models/variant";
-import { BakaDesign } from "baka-core";
-import { BakaStates } from "../../models/states";
-import { stateClassNames } from "../../utils";
+import type { BakaDesign } from "baka-core";
 
-export type BakaNavigationItemProps = BakaStates<BakaDesign["NavigationItemState"]> & {
-  variant?: BakaVariant<BakaDesign["NavigationItemVariant"]>;
-};
+import { BakaStates, BakaVariant, PolymorphicComponent } from "../../../src/models";
+import { stateClassNames, variantClassNames } from "../../utils";
+
+export type BakaNavigationItemProps = BakaStates<BakaDesign["NavigationItemState"]> &
+  BakaVariant<BakaDesign["NavigationItemVariant"]> & {};
 
 export type BakaNavigationItem = PolymorphicComponent<"div", BakaNavigationItemProps>;
 export const BakaNavigationItem: BakaNavigationItem = (props) => {
-  const { as: Component = "div", ...other } = props;
+  const {
+    as: Component = "div",
+    variant,
+    selected,
+    checked,
+    readOnly,
+    indeterminate,
+    hovered,
+    focused,
+    activated,
+    disabled,
+    empty,
+    valid,
+    invalid,
+    dragged,
+    ...other
+  } = props;
 
   return (
     <Component
       {...other}
-      className={clsx("baka-navigation-item", props.className, stateClassNames(other))}
+      disabled={disabled}
+      className={clsx(
+        "baka-navigation-item",
+        props.className,
+        variantClassNames(variant),
+        stateClassNames(props)
+      )}
     />
   );
 };

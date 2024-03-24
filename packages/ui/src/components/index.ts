@@ -8,7 +8,7 @@ export * from "./dividers";
 export * from "./misc";
 export * from "./inputs";
 export * from "./dialogs";
-export * from "./typography";
+export * from "./text";
 export * from "./navigation";
 export * from "./lists";
 export * from "./tabs";

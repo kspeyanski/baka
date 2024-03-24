@@ -6,12 +6,12 @@ import React from "react";
 import { NavigationDrawer, NavigationDrawerProps } from "@/components/navigation/navigation-drawer";
 import { NavigationDrawerItem } from "@/components/navigation/navigation-drawer-item";
 import Link from "next/link";
-import { Label } from "@/components/typography";
 import clsx from "clsx";
 import { stateClassNames } from "baka-ui";
 import { SIDENAV_ACTION, useSidenav } from "./sidenav.state";
 import { Icon } from "@/components/misc/icon";
 import { Button } from "@/components/buttons/button";
+import { Text } from "@/components/text";
 
 export type SidenavSubcategoryClientProps = {
   data: Array<{
@@ -94,7 +94,7 @@ export const SidenavSubcategoryClient = (props: SidenavSubcategoryClientProps) =
                     className={clsx(stateClassNames({ selected: doc.url === selected }))}
                   >
                     {/* <Icon className={clsx("xl:hidden")} style={{ width: 24, height: 24 }}></Icon> */}
-                    <Label>{doc.title}</Label>
+                    <Text>{doc.title}</Text>
                   </NavigationDrawerItem>
                 ))}
               </>

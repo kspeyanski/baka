@@ -1,0 +1,71 @@
+@use "../../design" as *;
+@use "baka-core" as baka;
+
+@mixin radio--styles {
+  .baka-radio {
+    @include baka.radio--styles;
+    --background: #{map-get($swatch, on-surface-variant)};
+    --state: #{map-get($swatch, on-surface)};
+    --ripple: #{map-get($swatch, on-surface)};
+
+    width: 24px;
+    height: 24px;
+
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--background);
+    border-radius: 100px;
+
+    @include state-layer {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 48px;
+      height: 48px;
+      transform: translate(-50%, -50%);
+      background: color-mix(in srgb, var(--state) 0 * 100%, transparent);
+      border-radius: 100px;
+
+      @include motion-transition-TBD(background-color, color);
+      transition-delay: 0.05s, 0s;
+    }
+
+    @include ripple(var(--ripple), $scale: 17);
+
+    @include baka.hover {
+      @include state-layer {
+        background-color: color-mix(in srgb, var(--state) 0.08 * 100%, transparent);
+      }
+    }
+
+    @include baka.focus {
+      @include state-layer {
+        background-color: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
+      }
+    }
+
+    @include baka.active {
+      @include state-layer {
+        background-color: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
+      }
+    }
+
+    @include baka.checked {
+      --background: #{map-get($swatch, primary)};
+      --ripple: #{map-get($swatch, primary)};
+      --state: #{map-get($swatch, primary)};
+
+      outline: 3px solid map-get($swatch, surface);
+      outline-offset: -5px;
+      background: var(--background);
+    }
+
+    @include baka.disabled {
+      pointer-events: none;
+      --background: #{map-get($swatch, on-surface)};
+      --border: #{map-get($swatch, on-surface)};
+      opacity: 0.38;
+    }
+  }
+}

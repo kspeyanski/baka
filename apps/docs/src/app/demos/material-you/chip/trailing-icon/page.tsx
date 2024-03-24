@@ -1,9 +1,9 @@
-import { BakaChip, BakaIcon, BakaLabel } from "baka-ui";
+import { BakaChip, BakaIcon, BakaText } from "baka-ui";
 
 export default async function Chip() {
   return (
     <BakaChip variant={"elevated"}>
-      <BakaLabel>Label</BakaLabel>
+      <BakaText>Label</BakaText>
       <BakaIcon>close</BakaIcon>
     </BakaChip>
   );

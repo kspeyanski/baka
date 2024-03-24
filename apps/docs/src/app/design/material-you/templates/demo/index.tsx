@@ -1,7 +1,7 @@
 import "./demo.scss";
 
-import { Label } from "@/components/typography";
-import { BakaCard, BakaDivider, BakaIcon, BakaTab, BakaTabGroup } from "baka-ui";
+import { Text } from "@/components/text";
+import { BakaCard, BakaDivider, BakaIcon, BakaTabGroup } from "baka-ui";
 import { DemoSource } from "./demo-source";
 import { DemoState } from "./demo.state";
 import { DemoTabClient } from "./demo-tab.client";
@@ -20,16 +20,16 @@ export const Demo = (props: DemoProps) => {
           <BakaTabGroup variant={"secondary"}>
             <DemoTabClient value="demo">
               <BakaIcon>terminal</BakaIcon>
-              <Label>Demo</Label>
+              <Text as="label">Demo</Text>
             </DemoTabClient>
             <DemoTabClient value="source">
               <BakaIcon>code</BakaIcon>
-              <Label>Source</Label>
+              <Text as="label">Source</Text>
             </DemoTabClient>
           </BakaTabGroup>
         </div>
         <BakaDivider />
-        <DemoIFrame src={props.src} style={{minHeight: props.style?.height}}/>
+        <DemoIFrame src={props.src} style={{ minHeight: props.style?.height }} />
         <DemoSource src={props.src} />
       </DemoState>
     </BakaCard>

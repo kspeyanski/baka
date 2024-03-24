@@ -1,4 +1,4 @@
-import { BakaNavigation, BakaButton, BakaIcon, BakaNavigationItem, BakaLabel } from "baka-ui";
+import { BakaNavigation, BakaButton, BakaIcon, BakaNavigationItem, BakaText } from "baka-ui";
 
 export default function Navigation() {
   return (
@@ -24,7 +24,7 @@ export default function Navigation() {
       <div>
         <BakaNavigationItem selected={true}>
           <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-          <BakaLabel>BakaLabel</BakaLabel>
+          <BakaText>BakaText</BakaText>
         </BakaNavigationItem>
         <BakaNavigationItem>
           <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>

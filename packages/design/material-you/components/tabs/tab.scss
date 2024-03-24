@@ -21,7 +21,7 @@
 
     @include ripple(var(--ripple), $scale: 10);
 
-    .baka-label {
+    .baka-text {
       @include title-small();
       color: var(--color);
     }
@@ -31,7 +31,7 @@
       color: var(--color);
     }
 
-    .baka-icon + .baka-label {
+    .baka-icon + .baka-text {
       margin-bottom: var(--margin-bottom, -6px);
     }
 
@@ -87,14 +87,14 @@
           }
         }
 
-        &:is(.baka-label) {
+        &:is(.baka-text) {
           &:after {
             content: "";
             bottom: var(--group-bottom, -14px);
           }
         }
 
-        &:is(.baka-icon + .baka-label) {
+        &:is(.baka-icon + .baka-text) {
           &:after {
             content: "";
             bottom: var(--group-bottom, -8px);

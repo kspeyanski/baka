@@ -3,7 +3,7 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import { notFound } from "next/navigation";
 
 import { allDocs } from "contentlayer/generated";
-import { Heading, Paragraph, Text } from "@/components/typography";
+import { Text } from "@/components/text";
 import { Pre } from "@/components/code/pre";
 import { Code } from "@/components/code/code";
 import { Column } from "@/components/layout/column";
@@ -20,25 +20,25 @@ import { OL } from "@/components/misc/ol";
 
 const mdxComponents = {
   h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <Heading {...props} as="h2" variant={["display-medium", "article"]} />
+    <Text {...props} as="h2" variant={["display-medium", "article"]} />
   ),
   h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <Heading {...props} as="h2" variant={["display-small", "article"]} />
+    <Text {...props} as="h2" variant={["display-small", "article"]} />
   ),
   h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <Heading {...props} as="h2" variant={["headline-large", "article"]} />
+    <Text {...props} as="h3" variant={["headline-large", "article"]} />
   ),
   h4: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <Heading {...props} as="h2" variant={["headline-medium", "article"]} />
+    <Text {...props} as="h4" variant={["headline-medium", "article"]} />
   ),
   h5: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <Heading {...props} as="h2" variant={["headline-small", "article"]} />
+    <Text {...props} as="h5" variant={["headline-small", "article"]} />
   ),
   h6: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <Text {...props} as="h2" variant={["title-large", "article"]} />
+    <Text {...props} as="h6" variant={["title-large", "article"]} />
   ),
   p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
-    <Paragraph {...props} variant={["body-large", "article"]} />
+    <Text as="p" {...props} variant={["body-large", "article"]} />
   ),
   table: Table,
   tr: TableRow,
