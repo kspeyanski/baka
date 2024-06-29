@@ -90,10 +90,12 @@ export interface BakaDesignFluent2 extends BakaDesignCore {
   TextVariant:
     | "caption-1"
     | "caption-1-strong"
+    | "caption-1-stronger"
     | "caption-2"
     | "caption-2-strong"
     | "body-1"
     | "body-1-strong"
+    | "body-1-stronger"
     | "body-2"
     | "subtitle-1"
     | "subtitle-1-stronger"
@@ -103,7 +105,10 @@ export interface BakaDesignFluent2 extends BakaDesignCore {
     | "title-2"
     | "title-1"
     | "large-title"
-    | "display";
+    | "display"
+    | "link"
+    | "subtle"
+    | "over-brand";
 
   ListItemState: {
     focused?: boolean;

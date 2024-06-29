@@ -83,6 +83,13 @@ $font-weight: (
   @include font-weight(semibold);
 }
 
+@mixin caption-1-stronger {
+  @include font-family(base);
+  @include font-size(200);
+  @include line-height(200);
+  @include font-weight(bold);
+}
+
 @mixin caption-2 {
   @include font-family(base);
   @include font-size(100);
