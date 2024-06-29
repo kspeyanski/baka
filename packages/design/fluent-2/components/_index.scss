@@ -23,9 +23,9 @@
 // @forward "./tabs/tab.scss";
 // @forward "./tooltips/tooltip.scss";
 @forward "./text/text.scss";
-// @forward "./layout/container.scss";
-// @forward "./layout/column.scss";
-// @forward "./layout/row.scss";
+@forward "./layout/container.scss";
+@forward "./layout/column.scss";
+@forward "./layout/row.scss";
 
 @use "./avatars/avatar.scss" as *;
 @use "./badges/badge.scss" as *;
@@ -52,9 +52,9 @@
 // @use "./tabs/tab.scss" as *;
 // @use "./tooltips/tooltip.scss" as *;
 @use "./text/text.scss" as *;
-// @use "./layout/container.scss" as *;
-// @use "./layout/column.scss" as *;
-// @use "./layout/row.scss" as *;
+@use "./layout/container.scss" as *;
+@use "./layout/column.scss" as *;
+@use "./layout/row.scss" as *;
 
 @mixin component--styles {
   @include avatar--styles();
@@ -63,10 +63,10 @@
   @include button--styles();
   @include card--styles();
   //   @include chip--styles();
-    @include dialog--styles();
+  @include dialog--styles();
   //   @include divider--styles();
   @include icon--styles();
-    @include checkbox--styles();
+  @include checkbox--styles();
   //   @include input--styles();
   //   @include radio--styles();
   //   @include switch--styles();
@@ -82,7 +82,7 @@
   //   @include tab--styles();
   //   @include tooltip--styles();
   @include text--styles();
-  //   @include container--styles();
-  //   @include column--styles();
-  //   @include row--styles();
+  @include container--styles();
+  @include column--styles();
+  @include row--styles();
 }

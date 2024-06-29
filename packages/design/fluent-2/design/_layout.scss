@@ -1,0 +1,64 @@
+@use "sass:map";
+@use "sass:meta";
+@use "baka-core" as baka;
+@use "./spacing" as *;
+
+$_default-layout: (
+  x-small: (
+    screen: 0,
+    width: 100%,
+    columns: 12,
+    gutter: map.get($spacing, horizontal-xs),
+    margin: map.get($spacing, horizontal-xs),
+  ),
+  small: (
+    screen: 320px,
+    width: 100%,
+    columns: 12,
+    gutter: map.get($spacing, horizontal-s),
+    margin: map.get($spacing, horizontal-m),
+  ),
+  medium: (
+    screen: 480px,
+    width: 100%,
+    columns: 12,
+    gutter: map.get($spacing, horizontal-m),
+    margin: map.get($spacing, horizontal-m),
+  ),
+  large: (
+    screen: 640px,
+    width: 768px,
+    columns: 12,
+    gutter: map.get($spacing, horizontal-l),
+    margin: map.get($spacing, horizontal-l),
+  ),
+  x-large: (
+    screen: 1024px,
+    width: 768px,
+    columns: 12,
+    gutter: map.get($spacing, horizontal-xl),
+    margin: map.get($spacing, horizontal-xl),
+  ),
+  xx-large: (
+    screen: 1366px,
+    width: 768px,
+    columns: 12,
+    gutter: map.get($spacing, horizontal-xxl),
+    margin: map.get($spacing, horizontal-xxl),
+  ),
+  xxx-large: (
+    screen: 1920px,
+    width: 768px,
+    columns: 12,
+    gutter: map.get($spacing, horizontal-xxxl),
+    margin: map.get($spacing, horizontal-xxxl),
+  ),
+);
+
+$layout: () !default;
+$layout: map-merge($_default-layout, $layout);
+$_layout: map-merge($layout, ());
+
+@mixin layout--styles {
+  @include baka.css-vars($layout, --layout);
+}

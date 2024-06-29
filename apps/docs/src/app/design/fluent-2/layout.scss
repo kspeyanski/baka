@@ -1,0 +1,7 @@
+@use "sass:map";
+@use "@design/fluent-2/index.scss" as *;
+
+body#fluent-2 {
+  color: map.get($swatch, neutral-foreground-1);
+  background-color: map.get($swatch, neutral-background-1);
+}

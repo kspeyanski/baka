@@ -1,0 +1,30 @@
+@use "baka-core" as baka;
+@use "../../design/" as *;
+
+@mixin container--styles {
+  .baka-container {
+    @each $size, $breakpoint in $layout {
+      $_gutter: map-get($breakpoint, gutter);
+      $_screen: map-get($breakpoint, screen);
+      $_width: map-get($breakpoint, width);
+      $_margin: map-get($breakpoint, margin);
+      $_regions: map-get($breakpoint, regions);
+
+      @if ($_screen == 0) {
+        max-width: $_width;
+        width: 100%;
+        margin-inline: auto;
+      } @else {
+        @media screen and (min-width: $_screen) {
+          max-width: $_width;
+          width: 100%;
+        }
+      }
+      @include baka.variant(fluid) {
+        max-width: 100%;
+        width: 100%;
+        margin-inline: 0;
+      }
+    }
+  }
+}
