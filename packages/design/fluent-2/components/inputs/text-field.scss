@@ -1,0 +1,73 @@
+@use "sass:map";
+@use "../../design" as *;
+@use "baka-core" as baka;
+
+@property --progress {
+  syntax: "<percentage>";
+  initial-value: 0%;
+  inherits: true;
+}
+
+@mixin text-field--styles {
+  .baka-text-field {
+    --text-field-border-color: #{map.get($swatch, neutral-stroke-1)};
+    --base: #{map.get($swatch, neutral-stroke-accessible)};
+    --accent: #{map.get($swatch, neutral-stroke-accessible)};
+    --text-field-state-indicator-scale: 100%;
+
+    @include baka.text-field--styles;
+    @include body-1;
+
+    position: relative;
+    overflow: hidden;
+
+    background-color: map.get($swatch, neutral-background-1);
+
+    padding: 0 map.get($spacing, horizontal-m-nudge);
+    outline-width: 1px;
+    outline-offset: -1px;
+    outline-style: solid;
+    outline-color: var(--text-field-border-color);
+    border-radius: 4px;
+    transition: --progress 0.2s ease-in-out;
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+
+      transform: scaleY(var(--text-field-state-indicator-scale, 100%));
+      background: linear-gradient(
+        90deg,
+        var(--base) 0%,
+        var(--base) calc(50% - (var(--progress, 0%) / 2)),
+        var(--accent) calc(50% - (var(--progress, 0%) / 2)),
+        var(--accent) 50%,
+        var(--accent) calc(50% + (var(--progress, 0%) / 2)),
+        var(--base) calc(50% + (var(--progress, 0%) / 2)),
+        var(--base) 100%
+      );
+      transition: transform 0.2s ease-in-out;
+    }
+
+    @include baka.hover {
+      --base: #{map.get($swatch, neutral-stroke-accessible-hover)};
+      --accent: #{map.get($swatch, neutral-stroke-accessible-hover)};
+    }
+
+    @include baka.active {
+      --progress: 100%;
+      --text-field-state-indicator-scale: 200%;
+      --accent: #{map.get($swatch, neutral-stroke-accessible-pressed)};
+    }
+
+    @include baka.focus {
+      --progress: 100%;
+      --text-field-state-indicator-scale: 200%;
+      --accent: #{map.get($swatch, brand-stroke-compound)};
+    }
+  }
+}

@@ -17,7 +17,7 @@
     }
 
     @include baka.variant(brand) {
-        background-color: map.get($swatch, brand-background-1);
+      background-color: map.get($swatch, brand-background-1);
     }
   }
 }
