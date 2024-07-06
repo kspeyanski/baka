@@ -94,7 +94,7 @@
     @include baka.active {
       --progress: 100%;
       --text-field-state-indicator-scale: 200%;
-      --accent: #{map.get($swatch, neutral-stroke-accessible-pressed)};
+      --accent: #{map.get($swatch, brand-stroke-compound)};
     }
 
     @include baka.focus {
