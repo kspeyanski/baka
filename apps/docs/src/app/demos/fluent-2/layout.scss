@@ -4,6 +4,11 @@
 body {
   @include styles();
 
+  margin: 0;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+
   background: map.get($swatch, neutral-background-2);
 
   &:has(.background-3) {
@@ -16,4 +21,8 @@ body {
   margin: auto;
   padding: 1rem;
   max-height: 100%;
+
+  &:has(.width-full) {
+    width: 100%;
+  }
 }

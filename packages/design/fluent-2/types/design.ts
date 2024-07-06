@@ -46,6 +46,7 @@ export interface BakaDesignFluent2 extends BakaDesignCore {
     | "mink"
     | "platinum"
     | "anchor";
+  BarVariant: "top" | "brand";
   BadgeVariant:
     | "circular"
     | "filled"

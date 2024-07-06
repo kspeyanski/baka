@@ -21,5 +21,7 @@
     },
     "[markdown]": {
         "diffEditor.wordWrap": "on"
-    }
+    },
+    "workbench.editor.splitInGroupLayout": "horizontal",
+    "git.mergeEditor": true
 }
