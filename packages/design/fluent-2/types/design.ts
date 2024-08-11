@@ -118,10 +118,18 @@ export interface BakaDesignFluent2 extends BakaDesignCore {
     | "display"
     | "link"
     | "subtle"
-    | "over-brand";
+    | "over-brand"
+    | "placeholder";
 
   ListItemState: {
     focused?: boolean;
+  };
+  MenuItemState: {
+    readOnly?: boolean;
+    hovered?: boolean;
+    focused?: boolean;
+    activated?: boolean;
+    disabled?: boolean;
   };
 
   IconVariant: "size-12" | "size-16" | "size-20" | "size-24" | "size-28" | "size-32" | "size-48";

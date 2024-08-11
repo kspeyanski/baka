@@ -14,8 +14,8 @@
 @forward "./inputs/text-field.scss";
 @forward "./lists/list.scss";
 @forward "./lists/list-item.scss";
-// @forward "./menus/menu.scss";
-// @forward "./menus/menu-item.scss";
+@forward "./menus/menu.scss";
+@forward "./menus/menu-item.scss";
 // @forward "./navigation/navigation.scss";
 // @forward "./navigation/navigation-item.scss";
 // @forward "./sheets/bottom-sheet.scss";
@@ -43,8 +43,8 @@
 @use "./inputs/text-field.scss" as *;
 @use "./lists/list.scss" as *;
 @use "./lists/list-item.scss" as *;
-// @use "./menus/menu.scss" as *;
-// @use "./menus/menu-item.scss" as *;
+@use "./menus/menu.scss" as *;
+@use "./menus/menu-item.scss" as *;
 // @use "./navigation/navigation.scss" as *;
 // @use "./navigation/navigation-item.scss" as *;
 // @use "./sheets/bottom-sheet.scss" as *;
@@ -73,8 +73,8 @@
   @include text-field--styles();
   @include list--styles();
   @include list-item--styles();
-  //   @include menu--styles();
-  //   @include menu-item--styles();
+  @include menu--styles();
+  @include menu-item--styles();
   //   @include navigation--styles();
   //   @include navigation-item--styles();
   //   @include bottom-sheet--styles();

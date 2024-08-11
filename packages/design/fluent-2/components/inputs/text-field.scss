@@ -21,6 +21,8 @@
 
     position: relative;
     overflow: hidden;
+    text-align: start;
+    min-height: 32px;
 
     background-color: var(--background);
 
@@ -31,6 +33,10 @@
     outline-color: var(--text-field-border-color);
     border-radius: 4px;
     transition: --progress 0.2s ease-in-out;
+
+    .baka-text {
+      flex-grow: 1;
+    }
 
     &:after {
       content: "";

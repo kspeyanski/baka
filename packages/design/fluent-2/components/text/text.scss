@@ -125,6 +125,9 @@
     @include baka.variant("subtle") {
       color: map.get($swatch, neutral-foreground-2-link);
     }
+    @include baka.variant("placeholder") {
+      color: map.get($swatch, neutral-foreground-4);
+    }
 
     @include baka.variant("link") {
       @include body-1;
