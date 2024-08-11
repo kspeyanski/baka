@@ -5,7 +5,7 @@
 @forward "./cards/card.scss";
 // @forward "./chips/chip.scss";
 @forward "./dialogs/dialog.scss";
-// @forward "./dividers/divider.scss";
+@forward "./dividers/divider.scss";
 @forward "./icons/icon.scss";
 @forward "./inputs/checkbox.scss";
 @forward "./inputs/input.scss";
@@ -34,7 +34,7 @@
 @use "./cards/card.scss" as *;
 // @use "./chips/chip.scss" as *;
 @use "./dialogs/dialog.scss" as *;
-// @use "./dividers/divider.scss" as *;
+@use "./dividers/divider.scss" as *;
 @use "./icons/icon.scss" as *;
 @use "./inputs/checkbox.scss" as *;
 @use "./inputs/input.scss" as *;
@@ -64,7 +64,7 @@
   @include card--styles();
   //   @include chip--styles();
   @include dialog--styles();
-  //   @include divider--styles();
+  @include divider--styles();
   @include icon--styles();
   @include checkbox--styles();
   @include input--styles();
