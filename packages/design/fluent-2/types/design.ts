@@ -142,4 +142,12 @@ export interface BakaDesignFluent2 extends BakaDesignCore {
     disabled?: boolean;
     checked?: boolean;
   };
+
+  SwitchState: {
+    hovered?: boolean;
+    focused?: boolean;
+    activated?: boolean;
+    disabled?: boolean;
+    checked?: boolean;
+  };
 }

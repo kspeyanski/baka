@@ -10,7 +10,7 @@
 @forward "./inputs/checkbox.scss";
 @forward "./inputs/input.scss";
 @forward "./inputs/radio.scss";
-// @forward "./inputs/switch.scss";
+@forward "./inputs/switch.scss";
 @forward "./inputs/text-field.scss";
 @forward "./lists/list.scss";
 @forward "./lists/list-item.scss";
@@ -38,7 +38,7 @@
 @use "./inputs/checkbox.scss" as *;
 @use "./inputs/input.scss" as *;
 @use "./inputs/radio.scss" as *;
-// @use "./inputs/switch.scss" as *;
+@use "./inputs/switch.scss" as *;
 @use "./inputs/text-field.scss" as *;
 @use "./lists/list.scss" as *;
 @use "./lists/list-item.scss" as *;
@@ -68,7 +68,7 @@
   @include checkbox--styles();
   @include input--styles();
   @include radio--styles();
-  //   @include switch--styles();
+  @include switch--styles();
   @include text-field--styles();
   @include list--styles();
   @include list-item--styles();

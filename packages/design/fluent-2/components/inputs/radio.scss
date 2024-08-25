@@ -6,6 +6,8 @@
 @mixin radio--styles {
   .baka-radio {
     --radio-ring-color: #{map.get($swatch, "neutral-stroke-accessible")};
+    @include focus-indicator;
+
     appearance: none;
     cursor: pointer;
     box-sizing: content-box;
@@ -43,7 +45,6 @@
     }
 
     @include baka.focus {
-      @include focus-indicator;
       box-sizing: content-box;
     }
 
