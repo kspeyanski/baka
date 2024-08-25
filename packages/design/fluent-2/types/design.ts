@@ -150,4 +150,14 @@ export interface BakaDesignFluent2 extends BakaDesignCore {
     disabled?: boolean;
     checked?: boolean;
   };
+
+  TabGroupVariant: "horizontal" | "vertical";
+  TabVariant: "transparent" | "subtle";
+  TabState: {
+    hovered?: boolean;
+    focused?: boolean;
+    activated?: boolean;
+    disabled?: boolean;
+    selected?: boolean;
+  };
 }

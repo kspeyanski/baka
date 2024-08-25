@@ -1,0 +1,19 @@
+@use "sass:map";
+@use "../../design" as *;
+@use "baka-core" as baka;
+
+@mixin tab-group--styles {
+  .baka-tab-group {
+    @include baka.tab-group--styles;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    @include baka.variant(vertical) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+  }
+}

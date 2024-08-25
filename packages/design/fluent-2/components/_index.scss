@@ -19,8 +19,7 @@
 // @forward "./navigation/navigation.scss";
 // @forward "./navigation/navigation-item.scss";
 // @forward "./sheets/bottom-sheet.scss";
-// @forward "./tabs/tab-group.scss";
-// @forward "./tabs/tab.scss";
+@forward "./tabs";
 // @forward "./tooltips/tooltip.scss";
 @forward "./text/text.scss";
 @forward "./layout/container.scss";
@@ -47,8 +46,7 @@
 // @use "./navigation/navigation.scss" as *;
 // @use "./navigation/navigation-item.scss" as *;
 // @use "./sheets/bottom-sheet.scss" as *;
-// @use "./tabs/tab-group.scss" as *;
-// @use "./tabs/tab.scss" as *;
+@use "./tabs" as *;
 // @use "./tooltips/tooltip.scss" as *;
 @use "./text/text.scss" as *;
 @use "./layout/container.scss" as *;
@@ -77,8 +75,7 @@
   //   @include navigation--styles();
   //   @include navigation-item--styles();
   //   @include bottom-sheet--styles();
-  //   @include tab-group--styles();
-  //   @include tab--styles();
+  @include tabs--styles();
   //   @include tooltip--styles();
   @include text--styles();
   @include container--styles();
