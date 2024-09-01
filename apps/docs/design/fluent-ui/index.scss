@@ -4,7 +4,7 @@ $font-family: (
   base: var(--font-family--sans),
 );
 
-@forward "baka-fluent-2" with (
+@forward "baka-fluent-ui" with (
   $font-family: $font-family,
   $swatch: ()
 );

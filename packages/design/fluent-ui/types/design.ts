@@ -1,6 +1,6 @@
 import { BakaDesignCore } from "baka-core/types";
 
-export interface BakaDesignFluent2 extends BakaDesignCore {
+export interface BakaDesignFluentUI extends BakaDesignCore {
   AvatarVariant:
     | "size-16"
     | "size-20"

@@ -56,10 +56,10 @@ const mdxComponents = {
 
 export const dynamic = "force-static";
 
-export default function Fluent2Page(props: { params?: { slug?: string[] } }) {
+export default function FluentUIPage(props: { params?: { slug?: string[] } }) {
   const slug = props.params?.slug?.join("/") ?? "";
 
-  const doc = allDocs.find((doc) => doc._raw.flattenedPath === "design/fluent-2" + (slug ? `/${slug}` : ""));
+  const doc = allDocs.find((doc) => doc._raw.flattenedPath === "design/fluent-ui" + (slug ? `/${slug}` : ""));
 
   if (!doc) {
     notFound();
@@ -90,8 +90,8 @@ export default function Fluent2Page(props: { params?: { slug?: string[] } }) {
 
 export const generateStaticParams = async () => {
   return allDocs
-    .filter((doc) => doc._raw.flattenedPath.startsWith("design/fluent-2"))
+    .filter((doc) => doc._raw.flattenedPath.startsWith("design/fluent-ui"))
     .map((doc) => {
-      return { slug: doc._raw.flattenedPath.replace("design/fluent-2/", "").split("/") };
+      return { slug: doc._raw.flattenedPath.replace("design/fluent-ui/", "").split("/") };
     });
 };

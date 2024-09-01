@@ -1,11 +1,11 @@
-@use "./index" as fluent-2;
+@use "./index" as fluent-ui;
 // @use "./themes/dark" as dark;
 // @use "./components/" as extended;
 
-.fluent-2 {
+.fluent-ui {
   :global {
-    @include fluent-2.component--styles;
-    @include fluent-2.design--styles();
+    @include fluent-ui.component--styles;
+    @include fluent-ui.design--styles();
 
     // @include extended.misc--styles();
     // @include extended.code--styles();

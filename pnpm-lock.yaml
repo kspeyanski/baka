@@ -57,9 +57,9 @@ importers:
       baka-core:
         specifier: workspace:*
         version: link:../../packages/design/core
-      baka-fluent-2:
+      baka-fluent-ui:
         specifier: workspace:*
-        version: link:../../packages/design/fluent-2
+        version: link:../../packages/design/fluent-ui
       baka-material-you:
         specifier: workspace:*
         version: link:../../packages/design/material-you
@@ -218,7 +218,7 @@ importers:
         specifier: ^1.68.0
         version: 1.77.6
 
-  packages/design/fluent-2:
+  packages/design/fluent-ui:
     devDependencies:
       baka-core:
         specifier: workspace:*

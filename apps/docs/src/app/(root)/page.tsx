@@ -8,7 +8,7 @@ import { Button } from "@/components/buttons/button";
 import Link from "next/link";
 
 import MaterialYou from "@/images/google-material-you.png";
-import Fluent2 from "@/images/microsoft-fluent-2.jpeg";
+import FluentUI from "@/images/microsoft-fluent-ui.jpeg";
 import Geist from "@/images/vercel-geist.jpeg";
 import { DesignSystemCard } from "./templates/design-system-card";
 
@@ -73,7 +73,7 @@ export default function Home() {
             </Column>
             <Column size={2}>
               <DesignSystemCard>
-                <Image src={Fluent2} alt="Microsoft Fluent 2" />
+                <Image src={FluentUI} alt="Microsoft Fluent 2" />
               </DesignSystemCard>
             </Column>
             <Column size={2}>

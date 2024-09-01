@@ -22,7 +22,7 @@
     "autoprefixer": "^10.4.16",
     "baka-core": "workspace:*",
     "baka-material-you": "workspace:*",
-    "baka-fluent-2": "workspace:*",
+    "baka-fluent-ui": "workspace:*",
     "baka-ui": "workspace:*",
     "clsx": "^1.2.1",
     "contentlayer": "^0.3.4",

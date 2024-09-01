@@ -1,5 +1,5 @@
-import styles from "@design/fluent-2/styles.module.scss";
-import "@design/fluent-2/global.css";
+import styles from "@design/fluent-ui/styles.module.scss";
+import "@design/fluent-ui/global.css";
 
 import "./layout.scss";
 
@@ -25,7 +25,7 @@ export default async function FluentLayout({ children }: { children: React.React
   const docs = allDocs;
   const groups = docs
     .sort((a: Partial<Docs>, b: Partial<Docs>) => (a.position ?? 0) - (b.position ?? 0))
-    .filter((doc) => doc._raw.flattenedPath.startsWith("design/fluent-2"))
+    .filter((doc) => doc._raw.flattenedPath.startsWith("design/fluent-ui"))
     .reduce((acc, doc) => {
       const g = acc.find((a) => a.title === doc?.group?.title);
 
@@ -43,11 +43,11 @@ export default async function FluentLayout({ children }: { children: React.React
 
   return (
     <ColorScheme>
-      <html lang="en" className={clsx(styles["fluent-2"])} suppressHydrationWarning={true}>
+      <html lang="en" className={clsx(styles["fluent-ui"])} suppressHydrationWarning={true}>
         <head>
           <link rel="icon" href={favicon.src} />
         </head>
-        <body className={clsx(openSans.variable)} id="fluent-2">
+        <body className={clsx(openSans.variable)} id="fluent-ui">
           <main className="flex flex-col">
             <TopBar>
               <div className="flex justify-between">

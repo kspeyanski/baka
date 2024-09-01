@@ -15,7 +15,7 @@ export default function FluentUILayout({ children }: { children: React.ReactNode
       <head>
         <link rel="icon" href={favicon.src} />
       </head>
-      <body id="fluent-2--demos">
+      <body id="fluent-ui--demos">
         <div className="root">{children}</div>
       </body>
     </html>
