@@ -1,0 +1,83 @@
+@use "sass:map";
+@use "../../design" as *;
+@use "baka-core" as baka;
+@use "../../common/focus.scss" as *;
+
+@mixin tab--styles {
+  .baka-tab {
+    @include body-1;
+    @include baka.tab--styles;
+
+    cursor: pointer;
+    display: inline-flex;
+    position: relative;
+
+    color: var(--tab-color, #{map.get($swatch, "neutral-foreground-2")});
+    background-color: var(--tab-selection-background, transparent);
+
+    border-radius: map.get($radii, medium);
+    gap: map.get($spacing, "horizontal-s-nudge");
+    padding: map.get($spacing, "vertical-m") map.get($spacing, "horizontal-m-nudge");
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      height: 3px;
+      width: calc(100% - #{map.get($spacing, "horizontal-m-nudge") * 2});
+      background-color: var(--tab-selection-color, transparent);
+      border-radius: map.get($radii, circle);
+    }
+
+    @include baka.hover {
+      --tab-selection-color: var(--tab-selection-color-hover, #{map.get($swatch, "neutral-stroke-1-hover")});
+      --tab-selection-background: var(--tab-selection-background-hover, transparent);
+    }
+
+    @include baka.active {
+      --tab-selection-color: var(--tab-selection-color-active, #{map.get($swatch, "neutral-stroke-1-pressed")});
+      --tab-selection-background: var(--tab-selection-background-active, transparent);
+    }
+
+    @include focus-indicator;
+    @include baka.focus {
+      --tab-selection-color: ;
+    }
+
+    @include baka.selected {
+      @include body-1-strong;
+      --tab-selection-color: #{map.get($swatch, brand-stroke-compound)};
+      --tab-selection-color-hover: #{map.get($swatch, brand-stroke-compound-hover)};
+      --tab-selection-color-active: #{map.get($swatch, brand-stroke-compound-pressed)};
+      --tab-selection-color-disabled: #{map.get($swatch, neutral-foreground-disabled)};
+
+      .baka-icon {
+        // TODO: this should be a filled icon, but screw you Segoe Fluent Icons!
+        color: var(--tab-selection-color);
+      }
+    }
+
+    @include baka.disabled {
+      pointer-events: none;
+      --tab-selection-color: var(--tab-selection-color-disabled, transparent);
+      --tab-color: #{map.get($swatch, neutral-foreground-disabled)};
+    }
+
+    @include baka.variant(subtle) {
+      --tab-selection-background-hover: #{map.get($swatch, neutral-background-subtle-hover)};
+      --tab-selection-background-active: #{map.get($swatch, neutral-background-subtle-pressed)};
+    }
+  }
+
+  .baka-tab-group.variant--vertical .baka-tab {
+    padding: map.get($spacing, "vertical-xxs") map.get($spacing, "horizontal-s-nudge");
+
+    &:before {
+      width: 3px;
+      top: 4px;
+      left: 0;
+      height: calc(100% - 8px);
+    }
+  }
+}

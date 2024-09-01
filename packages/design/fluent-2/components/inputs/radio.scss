@@ -1,0 +1,67 @@
+@use "sass:map";
+@use "../../design" as *;
+@use "baka-core" as baka;
+@use "../../common/focus.scss" as *;
+
+@mixin radio--styles {
+  .baka-radio {
+    --radio-ring-color: #{map.get($swatch, "neutral-stroke-accessible")};
+    @include focus-indicator;
+
+    appearance: none;
+    cursor: pointer;
+    box-sizing: content-box;
+    display: inline-flex;
+    position: relative;
+
+    width: 16px;
+    height: 16px;
+    padding: map.get($spacing, "vertical-s") map.get($spacing, "horizontal-s");
+
+    outline-color: var(--radio-ring-color);
+    outline-width: 1px;
+    outline-style: solid;
+    outline-offset: -8px;
+    border-radius: 50%;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: calc(50% - 5px);
+      left: calc(50% - 5px);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--radio-ring-color);
+      display: none;
+    }
+
+    @include baka.hover {
+      --radio-ring-color: var(--radio-ring-color-hover, #{map.get($swatch, "neutral-stroke-accessible-hover")});
+    }
+
+    @include baka.active {
+      --radio-ring-color: var(--radio-ring-color-pressed, #{map.get($swatch, "neutral-stroke-accessible-pressed")});
+    }
+
+    @include baka.focus {
+      box-sizing: content-box;
+    }
+
+    @include baka.checked {
+      --radio-ring-color: #{map.get($swatch, "brand-foreground-compound")};
+      --radio-ring-color-hover: #{map.get($swatch, "brand-foreground-compound-hover")};
+      --radio-ring-color-pressed: #{map.get($swatch, "brand-foreground-compound-pressed")};
+
+      &:before {
+        display: inline-flex;
+      }
+    }
+
+    @include baka.disabled {
+      pointer-events: none;
+      --radio-ring-color: #{map.get($swatch, neutral-foreground-disabled)};
+      color: var(--radio-ring-color);
+    }
+  }
+}

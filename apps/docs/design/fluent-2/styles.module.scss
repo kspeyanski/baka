@@ -1,0 +1,23 @@
+@use "./index" as fluent-2;
+// @use "./themes/dark" as dark;
+// @use "./components/" as extended;
+
+.fluent-2 {
+  :global {
+    @include fluent-2.component--styles;
+    @include fluent-2.design--styles();
+
+    // @include extended.misc--styles();
+    // @include extended.code--styles();
+    // @include extended.table--styles();
+    // @include extended.typography--styles();
+    // @include extended.navigation-drawer--styles();
+  }
+
+  //   TODO: dark theme
+  //   @media screen and (prefers-color-scheme: dark) {
+  //     &:not(:global(.theme-light)) {
+  //       @include dark.design--styles();
+  //     }
+  //   }
+}

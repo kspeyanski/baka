@@ -1,0 +1,23 @@
+@use "sass:map";
+@use "baka-core" as baka;
+@use "../../design" as *;
+
+@mixin bar--styles {
+  .baka-bar {
+    @include baka.bar--styles;
+
+    @include baka.variant(top, true) {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: map.get($spacing, horizontal-s);
+      padding: map.get($spacing, vertical-s) map.get($spacing, horizontal-s);
+      background-color: map.get($swatch, neutral-background-1);
+    }
+
+    @include baka.variant(brand) {
+      background-color: map.get($swatch, brand-background-1);
+    }
+  }
+}

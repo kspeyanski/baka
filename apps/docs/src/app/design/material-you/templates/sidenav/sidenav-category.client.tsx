@@ -11,7 +11,7 @@ export type SidenavCategoryClientProps = {
   variant?: BakaButtonProps["variant"];
 };
 
-export const ToggleButton = (props: ButtonProps) => {
+export const ToggleButton = (props: ButtonProps & { children: any }) => {
   const [state, dispatch] = useSidenav();
 
   const handleClick = React.useCallback(() => {

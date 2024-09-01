@@ -49,6 +49,7 @@ export default function MaterialYouLayout({ children }: { children: React.ReactN
   const docs = allDocs;
   const groups = docs
     .sort((a: Partial<Docs>, b: Partial<Docs>) => (a.position ?? 0) - (b.position ?? 0))
+    .filter((doc) => doc._raw.flattenedPath.startsWith("design/material-you"))
     .reduce((acc, doc) => {
       const g = acc.find((a) => a.title === doc?.group?.title);
 

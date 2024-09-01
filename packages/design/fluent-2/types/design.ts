@@ -46,6 +46,7 @@ export interface BakaDesignFluent2 extends BakaDesignCore {
     | "mink"
     | "platinum"
     | "anchor";
+  BarVariant: "top" | "brand";
   BadgeVariant:
     | "circular"
     | "filled"
@@ -81,6 +82,15 @@ export interface BakaDesignFluent2 extends BakaDesignCore {
     indeterminate?: boolean;
   };
   CheckboxVariant: "circular";
+  TextFieldState: {
+    hovered?: boolean;
+    focused?: boolean;
+    activated?: boolean;
+    disabled?: boolean;
+    invalid?: boolean;
+    readOnly?: boolean;
+  };
+  TextFieldVariant: "outline" | "filled-darker" | "filled-lighter" | "focus";
   TextState: {
     disabled?: boolean;
     hovered?: boolean;
@@ -90,10 +100,12 @@ export interface BakaDesignFluent2 extends BakaDesignCore {
   TextVariant:
     | "caption-1"
     | "caption-1-strong"
+    | "caption-1-stronger"
     | "caption-2"
     | "caption-2-strong"
     | "body-1"
     | "body-1-strong"
+    | "body-1-stronger"
     | "body-2"
     | "subtitle-1"
     | "subtitle-1-stronger"
@@ -103,11 +115,49 @@ export interface BakaDesignFluent2 extends BakaDesignCore {
     | "title-2"
     | "title-1"
     | "large-title"
-    | "display";
+    | "display"
+    | "link"
+    | "subtle"
+    | "over-brand"
+    | "placeholder";
 
   ListItemState: {
     focused?: boolean;
   };
+  MenuItemState: {
+    readOnly?: boolean;
+    hovered?: boolean;
+    focused?: boolean;
+    activated?: boolean;
+    disabled?: boolean;
+  };
 
   IconVariant: "size-12" | "size-16" | "size-20" | "size-24" | "size-28" | "size-32" | "size-48";
+  DividerVariant: "subtle" | "strong" | "brand" | "inset";
+
+  RadioState: {
+    hovered?: boolean;
+    focused?: boolean;
+    activated?: boolean;
+    disabled?: boolean;
+    checked?: boolean;
+  };
+
+  SwitchState: {
+    hovered?: boolean;
+    focused?: boolean;
+    activated?: boolean;
+    disabled?: boolean;
+    checked?: boolean;
+  };
+
+  TabGroupVariant: "horizontal" | "vertical";
+  TabVariant: "transparent" | "subtle";
+  TabState: {
+    hovered?: boolean;
+    focused?: boolean;
+    activated?: boolean;
+    disabled?: boolean;
+    selected?: boolean;
+  };
 }

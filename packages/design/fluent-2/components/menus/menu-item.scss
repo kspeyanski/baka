@@ -1,0 +1,93 @@
+@use "../../design" as *;
+@use "baka-core" as baka;
+@use "../../common/focus.scss" as *;
+
+@mixin menu-item--styles {
+  .baka-menu-item {
+    @include baka.menu-item--styles;
+
+    --background: #{map-get($swatch, neutral-background-1)};
+    --text: #{map-get($swatch, neutral-foreground-2)};
+
+    cursor: auto;
+
+    min-height: 32px;
+    gap: map-get($spacing, horizontal-xs);
+    padding: map-get($spacing, vertical-s) 0 map-get($spacing, vertical-s) map-get($spacing, horizontal-s);
+    margin: 0 map-get($spacing, horizontal-xs);
+    border-radius: map-get($radii, medium);
+
+    color: var(--text);
+    background-color: var(--background);
+
+    &,
+    & .baka-text {
+      @include body-1;
+    }
+
+    .baka-text {
+      flex-grow: 1;
+    }
+
+    .baka-icon {
+      color: var(--text);
+    }
+
+    &:has(:first-child:is(.baka-icon)) {
+      padding-left: 6px;
+    }
+
+    @include baka.hover($readonly: false) {
+      cursor: pointer;
+      --background: #{map-get($swatch, neutral-background-1-hover)};
+      --text: #{map-get($swatch, neutral-foreground-2-hover)};
+    }
+
+    @include baka.active($readonly: false) {
+      --background: #{map-get($swatch, neutral-background-1-pressed)};
+      --text: #{map-get($swatch, neutral-foreground-2-pressed)};
+    }
+
+    @include baka.focus($readonly: false) {
+      outline: none;
+      @include focus-indicator($readonly: true);
+    }
+
+    @include baka.disabled {
+      pointer-events: none;
+      --text: #{map-get($swatch, neutral-foreground-disabled)};
+
+      .baka-text {
+        color: var(--text);
+      }
+    }
+
+    // @include baka.focus($readonly: false) {
+    //   --modifier: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
+    // }
+
+    // @include baka.active($readonly: false) {
+    //   --modifier: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
+    // }
+
+    // @include baka.selected() {
+    //   background: map-get($swatch, surface-container-high);
+    // }
+
+    // @include baka.dragged {
+    //   box-shadow: map-get($elevation, 3);
+    // }
+
+    // @include baka.disabled {
+    //   opacity: 0.38;
+    // }
+
+    // @include baka.variant(multi-line) {
+    //   align-items: flex-start;
+    // }
+
+    // @include baka.variant(video) {
+    //   padding-inline-start: 0;
+    // }
+  }
+}

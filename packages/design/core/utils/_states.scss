@@ -85,7 +85,7 @@ $selector--focus: ".baka-state--focus";
   }
 }
 
-@mixin invalid ($readonly: false) {
+@mixin invalid($readonly: false) {
   @if ($readonly) {
     &:invalid,
     &.baka-state--invalid {
@@ -119,6 +119,15 @@ $selector--empty: ".baka-state--empty";
 @mixin empty {
   &:empty,
   &#{$selector--empty} {
+    @content;
+  }
+}
+
+@mixin readonly {
+  &:where(input:not(:read-write):read-only),
+  &:where(textarea:not(:read-write):read-only),
+  &:where(.baka-state--readonly),
+  &:where(.baka-state--readonly) {
     @content;
   }
 }

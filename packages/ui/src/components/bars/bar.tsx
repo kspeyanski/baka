@@ -7,11 +7,11 @@ import { stateClassNames, variantClassNames } from "../../utils";
 export type BakaBarProps = BakaStates<BakaDesign["BarState"]> &
   BakaVariant<BakaDesign["BarVariant"]> & {};
 
-export type BakaBar = PolymorphicComponent<"span", BakaBarProps>;
+export type BakaBar = PolymorphicComponent<"div", BakaBarProps>;
 export const BakaBar: BakaBar = (props) => {
   const {
     _ref,
-    as: Component = "span",
+    as: Component = "div",
     variant,
     selected,
     checked,

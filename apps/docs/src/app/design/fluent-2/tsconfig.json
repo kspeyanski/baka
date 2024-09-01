@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "composite": true
+  },
+  "extends": "../../../../tsconfig.json",
+  "files": ["../../../../design/fluent-2/fluent-2.d.ts"]
+}

@@ -5,12 +5,11 @@
 
   @include variant(horizontal, true) {
     height: 1px;
-    width: 100%;
+    flex-grow: 1;
   }
 
   @include variant(vertical) {
     width: 1px;
-    height: 100%;
+    flex-grow: 1;
   }
 }
-
