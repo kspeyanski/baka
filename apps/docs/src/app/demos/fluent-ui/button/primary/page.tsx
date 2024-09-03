@@ -1,9 +1,12 @@
 import { BakaButton, BakaIcon } from "baka-ui";
+import { Button } from "baka-fluent-ui";
 
 export default function ButtonDemo() {
   return (
     <>
       <div className="flex gap-4">
+        <Button as="a">test</Button>
+
         <div className="flex flex-col gap-4">
           <BakaButton variant={"primary"}>Text</BakaButton>
           <BakaButton variant={"primary"}>

@@ -4,8 +4,7 @@ import type { BakaDesign } from "baka-core";
 import { BakaStates, BakaVariant, PolymorphicComponent } from "../../../src/models";
 import { stateClassNames, variantClassNames } from "../../utils";
 
-export type BakaSwitchProps = BakaStates<BakaDesign["SwitchState"]> &
-  BakaVariant<BakaDesign["SwitchVariant"]> & {};
+export type BakaSwitchProps = BakaStates<BakaDesign["SwitchState"]> & BakaVariant<BakaDesign["SwitchVariant"]> & {};
 
 export type BakaSwitch = PolymorphicComponent<"input", BakaSwitchProps>;
 export const BakaSwitch: BakaSwitch = (props) => {
@@ -36,12 +35,7 @@ export const BakaSwitch: BakaSwitch = (props) => {
       {...other}
       type="checkbox"
       disabled={disabled}
-      className={clsx(
-        "baka-switch",
-        props.className,
-        variantClassNames(variant),
-        stateClassNames(props)
-      )}
+      className={clsx("baka-switch", props.className, variantClassNames(variant), stateClassNames(props))}
     />
   );
 };
