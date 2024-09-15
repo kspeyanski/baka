@@ -1,3 +1,1 @@
-export type BakaVariant<T> = {
-  variant?: T | Array<T>;
-};
+export type MultiVariant<T> = T | Array<T>;

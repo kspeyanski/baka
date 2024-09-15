@@ -1,5 +1,9 @@
-declare module "baka-core" {
-  import { BakaDesignFluentUI } from "baka-fluent-ui/types/design";
+import type { BakaDesign as BakaDesignFluentUI } from "baka-fluent-ui";
 
-  export interface BakaDesign extends BakaDesignFluentUI {}
+declare module "baka-ui" {
+  interface BakaDesignFluentUIExtended extends BakaDesignFluentUI {
+    /* TODO: custom components/variants/states here */
+  }
+
+  export interface BakaDesign extends BakaDesignFluentUIExtended {}
 }

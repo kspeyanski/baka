@@ -57,13 +57,13 @@ export default function TabsDemo() {
         <BakaTab>
           <BakaIcon></BakaIcon>Text
         </BakaTab>
-        <BakaTab hovered>
+        <BakaTab hover>
           <BakaIcon></BakaIcon>Text
         </BakaTab>
-        <BakaTab activated>
+        <BakaTab pressed>
           <BakaIcon></BakaIcon>Text
         </BakaTab>
-        <BakaTab focused>
+        <BakaTab focus>
           <BakaIcon></BakaIcon>Text
         </BakaTab>
         <BakaTab disabled>
@@ -74,13 +74,13 @@ export default function TabsDemo() {
         <BakaTab variant="subtle">
           <BakaIcon></BakaIcon>Text
         </BakaTab>
-        <BakaTab variant="subtle" hovered>
+        <BakaTab variant="subtle" hover>
           <BakaIcon></BakaIcon>Text
         </BakaTab>
-        <BakaTab variant="subtle" activated>
+        <BakaTab variant="subtle" pressed>
           <BakaIcon></BakaIcon>Text
         </BakaTab>
-        <BakaTab variant="subtle" focused>
+        <BakaTab variant="subtle" focus>
           <BakaIcon></BakaIcon>Text
         </BakaTab>
         <BakaTab variant="subtle" disabled>
@@ -92,13 +92,13 @@ export default function TabsDemo() {
         <BakaTab selected>
           <BakaIcon></BakaIcon>Text
         </BakaTab>
-        <BakaTab selected hovered>
+        <BakaTab selected hover>
           <BakaIcon></BakaIcon>Text
         </BakaTab>
-        <BakaTab selected activated>
+        <BakaTab selected pressed>
           <BakaIcon></BakaIcon>Text
         </BakaTab>
-        <BakaTab selected focused>
+        <BakaTab selected focus>
           <BakaIcon></BakaIcon>Text
         </BakaTab>
         <BakaTab selected disabled>
@@ -109,13 +109,13 @@ export default function TabsDemo() {
         <BakaTab variant="subtle" selected>
           <BakaIcon></BakaIcon>Text
         </BakaTab>
-        <BakaTab variant="subtle" selected hovered>
+        <BakaTab variant="subtle" selected hover>
           <BakaIcon></BakaIcon>Text
         </BakaTab>
-        <BakaTab variant="subtle" selected activated>
+        <BakaTab variant="subtle" selected pressed>
           <BakaIcon></BakaIcon>Text
         </BakaTab>
-        <BakaTab variant="subtle" selected focused>
+        <BakaTab variant="subtle" selected focus>
           <BakaIcon></BakaIcon>Text
         </BakaTab>
         <BakaTab variant="subtle" selected disabled>

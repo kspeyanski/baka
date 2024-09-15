@@ -5,17 +5,17 @@ export default function RadioDemo() {
     <>
       <div>
         <BakaRadio name="unchecked" />
-        <BakaRadio name="unchecked" hovered />
-        <BakaRadio name="unchecked" activated />
+        <BakaRadio name="unchecked" hover />
+        <BakaRadio name="unchecked" pressed />
         <BakaRadio name="unchecked" disabled />
-        <BakaRadio name="unchecked" focused />
+        <BakaRadio name="unchecked" focus />
       </div>
       <div>
         <BakaRadio name="checked" checked />
-        <BakaRadio name="checked" checked hovered />
-        <BakaRadio name="checked" checked activated />
+        <BakaRadio name="checked" checked hover />
+        <BakaRadio name="checked" checked pressed />
         <BakaRadio name="checked" checked disabled />
-        <BakaRadio name="checked" checked focused />
+        <BakaRadio name="checked" checked focus />
       </div>
     </>
   );

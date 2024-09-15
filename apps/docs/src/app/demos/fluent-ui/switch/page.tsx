@@ -5,17 +5,17 @@ export default function SwitchDemo() {
     <div className="flex flex-col gap-6">
       <div className="flex gap-6">
         <BakaSwitch name="unchecked" />
-        <BakaSwitch name="unchecked" hovered />
-        <BakaSwitch name="unchecked" activated />
+        <BakaSwitch name="unchecked" hover />
+        <BakaSwitch name="unchecked" pressed />
         <BakaSwitch name="unchecked" disabled />
-        <BakaSwitch name="unchecked" focused />
+        <BakaSwitch name="unchecked" focus />
       </div>
       <div className="flex gap-6">
         <BakaSwitch name="checked" checked />
-        <BakaSwitch name="checked" checked hovered />
-        <BakaSwitch name="checked" checked activated />
+        <BakaSwitch name="checked" checked hover />
+        <BakaSwitch name="checked" checked pressed />
         <BakaSwitch name="checked" checked disabled />
-        <BakaSwitch name="checked" checked focused />
+        <BakaSwitch name="checked" checked focus />
       </div>
     </div>
   );

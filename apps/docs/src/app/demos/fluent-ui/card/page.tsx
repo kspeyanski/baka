@@ -10,33 +10,33 @@ export default function CardDemos() {
   return (
     <div className="grid grid-cols-4 grid-rows-4 gap-4">
       <BakaCard>{content}</BakaCard>
-      <BakaCard hovered={true}>{content}</BakaCard>
-      <BakaCard activated={true}>{content}</BakaCard>
-      <BakaCard selected={true}>{content}</BakaCard>
+      <BakaCard state={{hover: true}}>{content}</BakaCard>
+      <BakaCard state={{ pressed: true }}>{content}</BakaCard>
+      <BakaCard state={{ selected: true }}>{content}</BakaCard>
       <BakaCard variant="filled-alt">{content}</BakaCard>
-      <BakaCard variant="filled-alt" hovered={true}>
+      <BakaCard variant="filled-alt" state={{hover: true}}>
         {content}
       </BakaCard>
-      <BakaCard variant="filled-alt" activated={true}>
+      <BakaCard variant="filled-alt" state={{ pressed: true }}>
         {content}
       </BakaCard>
-      <BakaCard variant="filled-alt" selected={true}>
+      <BakaCard variant="filled-alt" state={{ selected: true }}>
         {content}
       </BakaCard>
       <BakaCard variant="outline">{content}</BakaCard>
-      <BakaCard variant="outline" hovered={true}>
+      <BakaCard variant="outline" state={{hover: true}}>
         {content}
       </BakaCard>
-      <BakaCard variant="outline" activated={true}>
+      <BakaCard variant="outline" state={{ pressed: true }}>
         {content}
       </BakaCard>
-      <BakaCard variant="outline" selected={true}>
+      <BakaCard variant="outline" state={{ selected: true }}>
         {content}
       </BakaCard>
       <BakaCard variant="subtle">{content}</BakaCard>
-      <BakaCard variant="subtle" hovered={true}>{content}</BakaCard>
-      <BakaCard variant="subtle" activated={true}>{content}</BakaCard>
-      <BakaCard variant="subtle" selected={true}>{content}</BakaCard>
+      <BakaCard variant="subtle" state={{hover: true}}>{content}</BakaCard>
+      <BakaCard variant="subtle" state={{ pressed: true }}>{content}</BakaCard>
+      <BakaCard variant="subtle" state={{ selected: true }}>{content}</BakaCard>
     </div>
   );
 }

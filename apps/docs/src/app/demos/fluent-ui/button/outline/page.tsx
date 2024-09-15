@@ -15,62 +15,62 @@ export default function ButtonDemo() {
           </BakaButton>
         </div>
         <div className="flex flex-col gap-4">
-          <BakaButton hovered={true} variant={"outline"}>
+          <BakaButton state={{hover: true}} variant={"outline"}>
             Text
           </BakaButton>
-          <BakaButton hovered={true} variant={"outline"}>
+          <BakaButton state={{hover: true}} variant={"outline"}>
             <BakaIcon></BakaIcon>
             Text
           </BakaButton>
-          <BakaButton hovered={true} variant={["outline", "icon"]}>
-            <BakaIcon></BakaIcon>
-          </BakaButton>
-        </div>
-        <div className="flex flex-col gap-4">
-          <BakaButton activated={true} variant={"outline"}>
-            Text
-          </BakaButton>
-          <BakaButton activated={true} variant={"outline"}>
-            <BakaIcon></BakaIcon>
-            Text
-          </BakaButton>
-          <BakaButton activated={true} variant={["outline", "icon"]}>
+          <BakaButton state={{hover: true}} variant={["outline", "icon"]}>
             <BakaIcon></BakaIcon>
           </BakaButton>
         </div>
         <div className="flex flex-col gap-4">
-          <BakaButton selected={true} variant={"outline"}>
+          <BakaButton state={{ pressed: true }} variant={"outline"}>
             Text
           </BakaButton>
-          <BakaButton selected={true} variant={"outline"}>
+          <BakaButton state={{ pressed: true }} variant={"outline"}>
+            <BakaIcon></BakaIcon>
+            Text
+          </BakaButton>
+          <BakaButton state={{ pressed: true }} variant={["outline", "icon"]}>
+            <BakaIcon></BakaIcon>
+          </BakaButton>
+        </div>
+        <div className="flex flex-col gap-4">
+          <BakaButton state={{ selected: true }} variant={"outline"}>
+            Text
+          </BakaButton>
+          <BakaButton state={{ selected: true }} variant={"outline"}>
             <BakaIcon></BakaIcon>
             Text
           </BakaButton>
-          <BakaButton selected={true} variant={["outline", "icon"]}>
+          <BakaButton state={{ selected: true }} variant={["outline", "icon"]}>
             <BakaIcon></BakaIcon>
           </BakaButton>
         </div>
         <div className="flex flex-col gap-4">
-          <BakaButton focused={true} variant={"outline"}>
+          <BakaButton state={{ focus: true }} variant={"outline"}>
             Text
           </BakaButton>
-          <BakaButton focused={true} variant={"outline"}>
+          <BakaButton state={{ focus: true }} variant={"outline"}>
             <BakaIcon></BakaIcon>
             Text
           </BakaButton>
-          <BakaButton focused={true} variant={["outline", "icon"]}>
+          <BakaButton state={{ focus: true }} variant={["outline", "icon"]}>
             <BakaIcon></BakaIcon>
           </BakaButton>
         </div>
         <div className="flex flex-col gap-4">
-          <BakaButton disabled={true} variant={"outline"}>
+          <BakaButton disabled={true} state={{ disabled: true }} variant={"outline"}>
             Text
           </BakaButton>
-          <BakaButton disabled={true} variant={"outline"}>
+          <BakaButton disabled={true} state={{ disabled: true }} variant={"outline"}>
             <BakaIcon></BakaIcon>
             Text
           </BakaButton>
-          <BakaButton disabled={true} variant={["outline", "icon"]}>
+          <BakaButton disabled={true} state={{ disabled: true }} variant={["outline", "icon"]}>
             <BakaIcon></BakaIcon>
           </BakaButton>
         </div>

@@ -25,7 +25,7 @@ export default function ListDemo() {
           <BakaText>Draft</BakaText>
           <BakaBadge variant={"subtle"}>2</BakaBadge>
         </BakaListItem>
-        <BakaListItem tabIndex={1} focused={true}>
+        <BakaListItem tabIndex={1} state={{ focus: true }}>
           <BakaIcon></BakaIcon>
           <BakaText variant="subtitle-2">colin_ballinger@acme.com</BakaText>
         </BakaListItem>

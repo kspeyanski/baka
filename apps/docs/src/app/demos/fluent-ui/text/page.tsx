@@ -25,13 +25,13 @@ export default async function TextDemo() {
         <BakaText variant={"link"} as="a">
           Link
         </BakaText>
-        <BakaText variant={"link"} as="a" hovered>
+        <BakaText variant={"link"} as="a" hover>
           Link
         </BakaText>
-        <BakaText variant={"link"} as="a" activated>
+        <BakaText variant={"link"} as="a" pressed>
           Link
         </BakaText>
-        <BakaText variant={"link"} as="a" focused>
+        <BakaText variant={"link"} as="a" focus>
           Link
         </BakaText>
         <BakaText variant={"link"} as="a" disabled>
@@ -42,13 +42,13 @@ export default async function TextDemo() {
         <BakaText variant={["link", "subtle"]} as="a">
           Link
         </BakaText>
-        <BakaText variant={["link", "subtle"]} as="a" hovered>
+        <BakaText variant={["link", "subtle"]} as="a" hover>
           Link
         </BakaText>
-        <BakaText variant={["link", "subtle"]} as="a" activated>
+        <BakaText variant={["link", "subtle"]} as="a" pressed>
           Link
         </BakaText>
-        <BakaText variant={["link", "subtle"]} as="a" focused>
+        <BakaText variant={["link", "subtle"]} as="a" focus>
           Link
         </BakaText>
         <BakaText variant={["link", "subtle"]} as="a" disabled>
@@ -59,13 +59,13 @@ export default async function TextDemo() {
         <BakaText variant={["link", "over-brand"]} as="a">
           Link
         </BakaText>
-        <BakaText variant={["link", "over-brand"]} as="a" hovered>
+        <BakaText variant={["link", "over-brand"]} as="a" hover>
           Link
         </BakaText>
-        <BakaText variant={["link", "over-brand"]} as="a" activated>
+        <BakaText variant={["link", "over-brand"]} as="a" pressed>
           Link
         </BakaText>
-        <BakaText variant={["link", "over-brand"]} as="a" focused>
+        <BakaText variant={["link", "over-brand"]} as="a" focus>
           Link
         </BakaText>
         <BakaText variant={["link", "over-brand"]} as="a" disabled>

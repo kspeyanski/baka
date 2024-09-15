@@ -4,23 +4,23 @@ export default function CheckboxDemos() {
   return (
     <div className="grid grid-cols-5 gap-4">
       <BakaCheckbox readOnly checked={false} />
-      <BakaCheckbox readOnly checked={false} hovered />
-      <BakaCheckbox readOnly checked={false} activated />
-      <BakaCheckbox readOnly checked={false} focused />
+      <BakaCheckbox readOnly checked={false} hover />
+      <BakaCheckbox readOnly checked={false} pressed />
+      <BakaCheckbox readOnly checked={false} focus />
       <BakaCheckbox readOnly checked={false} disabled />
       <BakaText as="label" variant={"body-1"}>
         <BakaCheckbox readOnly />
         Label
       </BakaText>
-      <BakaText as="label" variant={"body-1"} hovered>
+      <BakaText as="label" variant={"body-1"} hover>
         <BakaCheckbox readOnly />
         Label
       </BakaText>
-      <BakaText as="label" variant={"body-1"} activated>
+      <BakaText as="label" variant={"body-1"} pressed>
         <BakaCheckbox readOnly />
         Label
       </BakaText>
-      <BakaText as="label" variant={"body-1"} focused>
+      <BakaText as="label" variant={"body-1"} focus>
         <BakaCheckbox readOnly />
         Label
       </BakaText>
@@ -32,15 +32,15 @@ export default function CheckboxDemos() {
         <BakaCheckbox readOnly variant="circular" />
         Label
       </BakaText>
-      <BakaText as="label" variant={"body-1"} hovered>
+      <BakaText as="label" variant={"body-1"} hover>
         <BakaCheckbox readOnly variant="circular" />
         Label
       </BakaText>
-      <BakaText as="label" variant={"body-1"} activated>
+      <BakaText as="label" variant={"body-1"} pressed>
         <BakaCheckbox readOnly variant="circular" />
         Label
       </BakaText>
-      <BakaText as="label" variant={"body-1"} focused>
+      <BakaText as="label" variant={"body-1"} focus>
         <BakaCheckbox readOnly variant="circular" />
         Label
       </BakaText>
@@ -49,23 +49,23 @@ export default function CheckboxDemos() {
         Label
       </BakaText>
       <BakaCheckbox readOnly checked />
-      <BakaCheckbox readOnly checked hovered />
-      <BakaCheckbox readOnly checked activated />
-      <BakaCheckbox readOnly checked focused />
+      <BakaCheckbox readOnly checked hover />
+      <BakaCheckbox readOnly checked pressed />
+      <BakaCheckbox readOnly checked focus />
       <BakaCheckbox readOnly checked disabled />
       <BakaText as="label" variant={"body-1"}>
         <BakaCheckbox readOnly checked />
         Label
       </BakaText>
-      <BakaText as="label" variant={"body-1"} hovered>
+      <BakaText as="label" variant={"body-1"} hover>
         <BakaCheckbox readOnly checked />
         Label
       </BakaText>
-      <BakaText as="label" variant={"body-1"} activated>
+      <BakaText as="label" variant={"body-1"} pressed>
         <BakaCheckbox readOnly checked />
         Label
       </BakaText>
-      <BakaText as="label" variant={"body-1"} focused>
+      <BakaText as="label" variant={"body-1"} focus>
         <BakaCheckbox readOnly checked />
         Label
       </BakaText>
@@ -77,15 +77,15 @@ export default function CheckboxDemos() {
         <BakaCheckbox readOnly checked variant="circular" />
         Label
       </BakaText>
-      <BakaText as="label" variant={"body-1"} hovered>
+      <BakaText as="label" variant={"body-1"} hover>
         <BakaCheckbox readOnly checked variant="circular" />
         Label
       </BakaText>
-      <BakaText as="label" variant={"body-1"} activated>
+      <BakaText as="label" variant={"body-1"} pressed>
         <BakaCheckbox readOnly checked variant="circular" />
         Label
       </BakaText>
-      <BakaText as="label" variant={"body-1"} focused>
+      <BakaText as="label" variant={"body-1"} focus>
         <BakaCheckbox readOnly checked variant="circular" />
         Label
       </BakaText>
@@ -94,23 +94,23 @@ export default function CheckboxDemos() {
         Label
       </BakaText>
       <BakaCheckbox readOnly indeterminate />
-      <BakaCheckbox readOnly indeterminate hovered />
-      <BakaCheckbox readOnly indeterminate activated />
-      <BakaCheckbox readOnly indeterminate focused />
+      <BakaCheckbox readOnly indeterminate hover />
+      <BakaCheckbox readOnly indeterminate pressed />
+      <BakaCheckbox readOnly indeterminate focus />
       <BakaCheckbox readOnly indeterminate disabled />
       <BakaText as="label" variant={"body-1"}>
         <BakaCheckbox readOnly indeterminate />
         Label
       </BakaText>
-      <BakaText as="label" variant={"body-1"} hovered>
+      <BakaText as="label" variant={"body-1"} hover>
         <BakaCheckbox readOnly indeterminate />
         Label
       </BakaText>
-      <BakaText as="label" variant={"body-1"} activated>
+      <BakaText as="label" variant={"body-1"} pressed>
         <BakaCheckbox readOnly indeterminate />
         Label
       </BakaText>
-      <BakaText as="label" variant={"body-1"} focused>
+      <BakaText as="label" variant={"body-1"} focus>
         <BakaCheckbox readOnly indeterminate />
         Label
       </BakaText>
@@ -122,15 +122,15 @@ export default function CheckboxDemos() {
         <BakaCheckbox readOnly variant="circular" indeterminate />
         Label
       </BakaText>
-      <BakaText as="label" variant={"body-1"} hovered>
+      <BakaText as="label" variant={"body-1"} hover>
         <BakaCheckbox readOnly variant="circular" indeterminate />
         Label
       </BakaText>
-      <BakaText as="label" variant={"body-1"} activated>
+      <BakaText as="label" variant={"body-1"} pressed>
         <BakaCheckbox readOnly variant="circular" indeterminate />
         Label
       </BakaText>
-      <BakaText as="label" variant={"body-1"} focused>
+      <BakaText as="label" variant={"body-1"} focus>
         <BakaCheckbox readOnly variant="circular" indeterminate />
         Label
       </BakaText>

@@ -1,81 +1,79 @@
-import { BakaButton, BakaIcon } from "baka-ui";
-import { Button } from "baka-fluent-ui";
+"use client";
+import { Button, Icon } from "baka-fluent-ui";
 
 export default function ButtonDemo() {
   return (
     <>
       <div className="flex gap-4">
-        <Button as="a">test</Button>
-
         <div className="flex flex-col gap-4">
-          <BakaButton variant={"primary"}>Text</BakaButton>
-          <BakaButton variant={"primary"}>
-            <BakaIcon></BakaIcon>
+          <Button variant={"primary"}>Text</Button>
+          <Button variant={"primary"}>
+            <Icon></Icon>
             Text
-          </BakaButton>
-          <BakaButton variant={["primary", "icon"]}>
-            <BakaIcon></BakaIcon>
-          </BakaButton>
+          </Button>
+          <Button variant={["primary", "icon"]}>
+            <Icon></Icon>
+          </Button>
         </div>
         <div className="flex flex-col gap-4">
-          <BakaButton hovered={true} variant={"primary"}>
+          <Button state={{ hover: true }} variant={"primary"}>
             Text
-          </BakaButton>
-          <BakaButton hovered={true} variant={"primary"}>
-            <BakaIcon></BakaIcon>
+          </Button>
+          <Button state={{hover: true}} variant={"primary"}>
+            <Icon></Icon>
             Text
-          </BakaButton>
-          <BakaButton hovered={true} variant={["primary", "icon"]}>
-            <BakaIcon></BakaIcon>
-          </BakaButton>
+          </Button>
+          <Button state={{hover: true}} variant={["primary", "icon"]}>
+            <Icon></Icon>
+          </Button>
         </div>
         <div className="flex flex-col gap-4">
-          <BakaButton activated={true} variant={"primary"}>
+          <Button state={{ pressed: true }} variant={"primary"}>
             Text
-          </BakaButton>
-          <BakaButton activated={true} variant={"primary"}>
-            <BakaIcon></BakaIcon>
+          </Button>
+          <Button state={{ pressed: true }} variant={"primary"}>
+            <Icon></Icon>
             Text
-          </BakaButton>
-          <BakaButton activated={true} variant={["primary", "icon"]}>
-            <BakaIcon></BakaIcon>
-          </BakaButton>
+          </Button>
+          <Button state={{ pressed: true }} variant={["primary", "icon"]}>
+            <Icon></Icon>
+          </Button>
         </div>
         <div className="flex flex-col gap-4">
-          <BakaButton selected={true} variant={"primary"}>
+          <Button state={{ selected: true }} variant={"primary"}>
             Text
-          </BakaButton>
-          <BakaButton selected={true} variant={"primary"}>
-            <BakaIcon></BakaIcon>
+          </Button>
+          <Button state={{ selected: true }} variant={"primary"}>
+            <Icon></Icon>
             Text
-          </BakaButton>
-          <BakaButton selected={true} variant={["primary", "icon"]}>
-            <BakaIcon></BakaIcon>
-          </BakaButton>
+          </Button>
+          <Button state={{ selected: true }} variant={["primary", "icon"]}>
+            <Icon></Icon>
+          </Button>
         </div>
         <div className="flex flex-col gap-4">
-          <BakaButton focused={true} variant={"primary"}>
+          <Button state={{ focus: true }} variant={"primary"}>
             Text
-          </BakaButton>
-          <BakaButton focused={true} variant={"primary"}>
-            <BakaIcon></BakaIcon>
+          </Button>
+          <Button state={{ focus: true }} variant={"primary"}>
+            <Icon></Icon>
             Text
-          </BakaButton>
-          <BakaButton focused={true} variant={["primary", "icon"]}>
-            <BakaIcon></BakaIcon>
-          </BakaButton>
+          </Button>
+          <Button state={{ focus: true }} variant={["primary", "icon"]}>
+            <Icon></Icon>
+          </Button>
         </div>
         <div className="flex flex-col gap-4">
-          <BakaButton disabled={true} variant={"primary"}>
+          <Button disabled={true} state={{ disabled: true }} variant={"primary"}>
             Text
-          </BakaButton>
-          <BakaButton disabled={true} variant={"primary"}>
-            <BakaIcon></BakaIcon>
+          </Button>
+          <Button disabled={true} state={{ disabled: true }} variant={"primary"}>
+            <Icon></Icon>
             Text
-          </BakaButton>
-          <BakaButton disabled={true} variant={["primary", "icon"]}>
-            <BakaIcon></BakaIcon>
-          </BakaButton>
+          </Button>
+          <Button disabled={true} state={{ disabled: true }} variant={["primary", "icon"]}>
+            <Icon></Icon>
+          </Button>
         </div>
       </div>
     </>

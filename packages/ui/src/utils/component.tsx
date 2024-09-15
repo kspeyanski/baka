@@ -3,22 +3,45 @@ import React from "react";
 import clsx from "clsx";
 import { variantClassNames } from "./variant-class-names";
 import { stateClassNames } from "./state-attributes";
+import { BakaDesign } from "../models/design";
 
-export type BakaProps<T extends React.ElementType> = {
-  as?: T | React.ElementType;
-} & React.ComponentPropsWithoutRef<T>;
+type Baka<B extends keyof BakaDesign> = {
+  baka?: B;
+};
+
+export type BakaProps<
+  T extends React.ElementType,
+  C = unknown,
+  A = {}
+> = (C extends keyof BakaDesign
+  ? {
+      as?: T | React.ElementType;
+      variant?: BakaDesign[C]["variant"] /*  | string */;
+      state?: BakaDesign[C]["state"];
+    }
+  : A extends Baka<infer B extends keyof BakaDesign>
+  ? {
+      as?: T | React.ElementType;
+      variant?: BakaDesign[B]["variant"] /*  | string */;
+      state?: BakaDesign[B]["state"];
+    }
+  : {}) &
+  React.ComponentPropsWithoutRef<T>;
 
 export const BakaComponent = <T extends React.ElementType = "span">(
-  props: BakaProps<T> & {
-    baka: string;
-  }
+  props: BakaProps<T> & Baka<keyof BakaDesign>
 ) => {
-  const { as: Component = "span", variant, baka, ...other } = props;
+  const { as: Component = "span", variant, state, baka, ...other } = props;
 
   return (
     <Component
       {...other}
-      className={clsx(`baka-${baka}`, props.className, variantClassNames(variant), stateClassNames(props))}
+      className={clsx(
+        `baka-${baka}`,
+        props.className,
+        variantClassNames(variant),
+        stateClassNames(state)
+      )}
     />
   );
 };

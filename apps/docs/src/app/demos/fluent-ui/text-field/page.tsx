@@ -24,13 +24,13 @@ export default async function TextFieldDemo() {
           <BakaTextField>
             <BakaInput placeholder="Placeholder text" />
           </BakaTextField>
-          <BakaTextField hovered>
+          <BakaTextField hover>
             <BakaInput placeholder="Placeholder text" />
           </BakaTextField>
-          <BakaTextField activated style={{ "--progress": "50%" }}>
+          <BakaTextField pressed style={{ "--progress": "50%" }}>
             <BakaInput placeholder="Placeholder text" />
           </BakaTextField>
-          <BakaTextField focused>
+          <BakaTextField focus>
             <BakaInput placeholder="Placeholder text" />
           </BakaTextField>
           <BakaTextField invalid>
@@ -49,13 +49,13 @@ export default async function TextFieldDemo() {
           <BakaTextField variant={"filled-darker"}>
             <BakaInput placeholder="Placeholder text" />
           </BakaTextField>
-          <BakaTextField variant={"filled-darker"} hovered>
+          <BakaTextField variant={"filled-darker"} hover>
             <BakaInput placeholder="Placeholder text" />
           </BakaTextField>
-          <BakaTextField variant={"filled-darker"} activated style={{ "--progress": "50%" }}>
+          <BakaTextField variant={"filled-darker"} pressed style={{ "--progress": "50%" }}>
             <BakaInput placeholder="Placeholder text" />
           </BakaTextField>
-          <BakaTextField variant={"filled-darker"} focused>
+          <BakaTextField variant={"filled-darker"} focus>
             <BakaInput placeholder="Placeholder text" />
           </BakaTextField>
           <BakaTextField variant={"filled-darker"} invalid>
@@ -74,13 +74,13 @@ export default async function TextFieldDemo() {
           <BakaTextField variant={"filled-lighter"}>
             <BakaInput placeholder="Placeholder text" />
           </BakaTextField>
-          <BakaTextField variant={"filled-lighter"} hovered>
+          <BakaTextField variant={"filled-lighter"} hover>
             <BakaInput placeholder="Placeholder text" />
           </BakaTextField>
-          <BakaTextField variant={"filled-lighter"} activated style={{ "--progress": "50%" }}>
+          <BakaTextField variant={"filled-lighter"} pressed style={{ "--progress": "50%" }}>
             <BakaInput placeholder="Placeholder text" />
           </BakaTextField>
-          <BakaTextField variant={"filled-lighter"} focused>
+          <BakaTextField variant={"filled-lighter"} focus>
             <BakaInput placeholder="Placeholder text" />
           </BakaTextField>
           <BakaTextField variant={"filled-lighter"} invalid>
@@ -99,13 +99,13 @@ export default async function TextFieldDemo() {
           <BakaTextField variant={"focus"}>
             <BakaInput placeholder="Placeholder text" />
           </BakaTextField>
-          <BakaTextField variant={"focus"} hovered>
+          <BakaTextField variant={"focus"} hover>
             <BakaInput placeholder="Placeholder text" />
           </BakaTextField>
-          <BakaTextField variant={"focus"} activated style={{ "--progress": "50%" }}>
+          <BakaTextField variant={"focus"} pressed style={{ "--progress": "50%" }}>
             <BakaInput placeholder="Placeholder text" />
           </BakaTextField>
-          <BakaTextField variant={"focus"} focused>
+          <BakaTextField variant={"focus"} focus>
             <BakaInput placeholder="Placeholder text" />
           </BakaTextField>
           <BakaTextField variant={"focus"} invalid>
