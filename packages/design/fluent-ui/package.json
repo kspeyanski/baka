@@ -9,15 +9,15 @@
   "version": "0.1.1-alpha.0",
   "main": "./index.ts",
   "types": "./index.ts",
-  "sass": "./_index.scss",
+  "sass": "./index.scss",
   "files": [
     "dist",
     "types"
   ],
   "license": "MIT",
   "scripts": {
-    "build": "sass --load-path=./node_modules ./_index.scss ./dist/index.css",
-    "watch": "sass --watch --load-path=./node_modules ./_index.scss ./dist/index.css"
+    "build": "sass --load-path=./node_modules ./index.scss ./dist/index.css",
+    "watch": "sass --watch --load-path=./node_modules ./index.scss ./dist/index.css"
   },
   "devDependencies": {
     "baka-core": "workspace:*",

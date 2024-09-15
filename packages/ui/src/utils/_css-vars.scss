@@ -1,0 +1,9 @@
+@mixin css-vars($var: (), $prefix: --) {
+  @each $name, $value in $var {
+    @if (type-of($value) == "map") {
+      @include css-vars($value, #{$prefix}--#{$name});
+    } @else {
+      #{$prefix}--#{$name}: #{$value};
+    }
+  }
+}

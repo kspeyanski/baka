@@ -1,0 +1,30 @@
+@use "sass:map";
+@use "baka-ui" as baka;
+@use "../../design" as *;
+@use "../../common/focus.scss" as *;
+
+@mixin accordion--styles {
+  .baka-accordion {
+    @include body-1;
+
+    gap: #{map.get($spacing, horizontal-s)};
+    padding: #{map.get($spacing, vertical-m-nudge)} #{map.get(
+        $spacing,
+        horizontal-m-nudge
+      )};
+
+    .baka-text {
+      flex-grow: 1;
+    }
+
+    @include focus-indicator;
+
+    @include baka.hover($readonly: false) {
+      cursor: pointer;
+    }
+
+    @include baka.focus($readonly: false) {
+      outline: none;
+    }
+  }
+}

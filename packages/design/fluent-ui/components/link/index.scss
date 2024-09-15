@@ -1,0 +1,95 @@
+@use "sass:map";
+@use "../../design" as *;
+@use "baka-core" as baka;
+@use "../../common/focus.scss" as *;
+
+@mixin link--styles {
+  .baka-link {
+    color: var(--text-color, inherit);
+    cursor: pointer;
+
+    @include body-1;
+
+    --text-indicator-content: "";
+    --text-link-indicator-color: #{currentColor};
+    --text-link-color-rest: #{map.get($swatch, brand-foreground-link)};
+    --text-link-color-hover: #{map.get($swatch, brand-foreground-link-hover)};
+    --text-link-color-active: #{map.get($swatch, brand-foreground-link-pressed)};
+    text-decoration: none;
+    position: relative;
+    color: var(--text-link-color-rest);
+
+    &::before {
+      content: var(--text-indicator-content);
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      top: calc(100% - 3px);
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--text-link-indicator-color);
+    }
+
+    @include baka.hover {
+      color: var(--text-link-color-hover);
+    }
+
+    @include baka.active {
+      color: var(--text-link-color-active);
+    }
+
+    @include baka.focus {
+      --text-link-indicator-color: var(
+        --text-link-indicator-color-override,
+        #{map.get($swatch, neutral-stroke-focus-2)}
+      );
+
+      &::after {
+        content: var(--text-indicator-content);
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        top: calc(100% - 1px);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--text-link-indicator-color);
+      }
+    }
+
+    @include baka.disabled {
+      pointer-events: none;
+      color: map.get($swatch, neutral-foreground-disabled);
+      --text-indicator-content: none;
+    }
+
+    @include baka.variant("subtle") {
+      --text-link-color-rest: #{map.get($swatch, neutral-foreground-2-link)};
+      --text-link-color-hover: #{map.get(
+          $swatch,
+          neutral-foreground-2-link-hover
+        )};
+      --text-link-color-active: #{map.get(
+          $swatch,
+          neutral-foreground-2-link-pressed
+        )};
+    }
+
+    @include baka.variant("over-brand") {
+      --text-link-color-rest: #{map.get(
+          $swatch,
+          neutral-foreground-inverted-link
+        )};
+      --text-link-color-hover: #{map.get(
+          $swatch,
+          neutral-foreground-inverted-link-hover
+        )};
+      --text-link-color-active: #{map.get(
+          $swatch,
+          neutral-foreground-inverted-link-pressed
+        )};
+      --text-link-indicator-color-override: #{currentColor};
+    }
+  }
+}

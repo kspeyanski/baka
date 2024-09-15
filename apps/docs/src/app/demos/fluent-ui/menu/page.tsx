@@ -1,71 +1,76 @@
-import { BakaDivider, BakaIcon, BakaMenu, BakaMenuItem, BakaText } from "baka-ui";
+import { Text } from "baka-fluent-ui";
+import { Divider, Icon, Menu, MenuItem } from "baka-fluent-ui";
 
 export default function MenuDemo() {
   return (
-    <BakaMenu style={{ width: 248 }}>
-      <BakaMenuItem readOnly>
-        <BakaText variant={["caption-1-strong", "subtle"]}>Section header</BakaText>
-      </BakaMenuItem>
-      <BakaMenuItem>
-        <BakaIcon></BakaIcon>
-        <BakaText>Action</BakaText>
+    <Menu style={{ width: 248 }}>
+      <MenuItem state={{ readonly: true }}>
+        <Text variant={["caption-1-strong", "subtle"]}>
+          Section header
+        </Text>
+      </MenuItem>
+      <MenuItem>
+        <Icon></Icon>
+        <Text>Action</Text>
         <div className="flex items-center">
-          <BakaText variant={["body-1", "subtle"]}>Shortcut text</BakaText>
-          <BakaIcon></BakaIcon>
+          <Text variant={["body-1", "subtle"]}>Shortcut text</Text>
+          <Icon></Icon>
         </div>
-      </BakaMenuItem>
-      <BakaMenuItem>
-        <BakaIcon></BakaIcon>
-        <BakaText>Action</BakaText>
+      </MenuItem>
+      <MenuItem>
+        <Icon></Icon>
+        <Text>Action</Text>
         <div className="flex items-center">
-          <BakaText variant={["body-1", "subtle"]}>Shortcut text</BakaText>
-          <BakaIcon></BakaIcon>
+          <Text variant={["body-1", "subtle"]}>Shortcut text</Text>
+          <Icon></Icon>
         </div>
-      </BakaMenuItem>
-      <BakaMenuItem>
-        <BakaIcon></BakaIcon>
-        <BakaText>Action</BakaText>
+      </MenuItem>
+      <MenuItem>
+        <Icon></Icon>
+        <Text>Action</Text>
         <div className="flex items-center">
-          <BakaText variant={["body-1", "subtle"]}>Shortcut text</BakaText>
-          <BakaIcon></BakaIcon>
+          <Text variant={["body-1", "subtle"]}>Shortcut text</Text>
+          <Icon></Icon>
         </div>
-      </BakaMenuItem>
-      <BakaDivider />
-      <BakaMenuItem readOnly>
-        <BakaText variant={["caption-1-strong", "subtle"]}>Section header</BakaText>
-      </BakaMenuItem>
-      <BakaMenuItem>
-        <BakaIcon></BakaIcon>
-        <BakaText>Action</BakaText>
+      </MenuItem>
+      <Divider />
+      <MenuItem state={{ readonly: true }}>
+        <Text variant={["caption-1-strong", "subtle"]}>
+          Section header
+        </Text>
+      </MenuItem>
+      <MenuItem>
+        <Icon></Icon>
+        <Text>Action</Text>
         <div className="flex items-center">
-          <BakaText variant={["body-1", "subtle"]}>Shortcut text</BakaText>
-          <BakaIcon></BakaIcon>
+          <Text variant={["body-1", "subtle"]}>Shortcut text</Text>
+          <Icon></Icon>
         </div>
-      </BakaMenuItem>
-      <BakaMenuItem>
-        <BakaIcon></BakaIcon>
-        <BakaText>Action</BakaText>
+      </MenuItem>
+      <MenuItem>
+        <Icon></Icon>
+        <Text>Action</Text>
         <div className="flex items-center">
-          <BakaText variant={["body-1", "subtle"]}>Shortcut text</BakaText>
-          <BakaIcon></BakaIcon>
+          <Text variant={["body-1", "subtle"]}>Shortcut text</Text>
+          <Icon></Icon>
         </div>
-      </BakaMenuItem>
-      <BakaMenuItem>
-        <BakaIcon></BakaIcon>
-        <BakaText>Action</BakaText>
+      </MenuItem>
+      <MenuItem>
+        <Icon></Icon>
+        <Text>Action</Text>
         <div className="flex items-center">
-          <BakaText variant={["body-1", "subtle"]}>Shortcut text</BakaText>
-          <BakaIcon></BakaIcon>
+          <Text variant={["body-1", "subtle"]}>Shortcut text</Text>
+          <Icon></Icon>
         </div>
-      </BakaMenuItem>
-      <BakaMenuItem disabled>
-        <BakaIcon></BakaIcon>
-        <BakaText>Action</BakaText>
+      </MenuItem>
+      <MenuItem state={{ disabled: true }}>
+        <Icon></Icon>
+        <Text>Action</Text>
         <div className="flex items-center">
-          <BakaText variant={["body-1", "subtle"]}>Shortcut text</BakaText>
-          <BakaIcon></BakaIcon>
+          <Text variant={["body-1", "subtle"]}>Shortcut text</Text>
+          <Icon></Icon>
         </div>
-      </BakaMenuItem>
-    </BakaMenu>
+      </MenuItem>
+    </Menu>
   );
 }

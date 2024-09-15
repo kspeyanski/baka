@@ -1,7 +1,0 @@
-@use "./tab-group.scss" as *;
-@use "./tab.scss" as *;
-
-@mixin tabs--styles {
-  @include tab-group--styles;
-  @include tab--styles;
-}

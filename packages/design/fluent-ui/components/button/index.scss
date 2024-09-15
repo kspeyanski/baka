@@ -1,0 +1,326 @@
+@use "sass:map";
+@use "baka-ui" as baka;
+@use "../../design" as *;
+@use "../../common/focus.scss" as *;
+
+@mixin button--styles {
+  .baka-button {
+    @include body-1-strong;
+
+    cursor: pointer;
+    box-sizing: border-box;
+    user-select: none;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    outline: none;
+    border: none;
+
+    &::before,
+    &::after {
+      box-sizing: border-box;
+    }
+
+    width: max-content;
+
+    height: calc(map.get($spacing, vertical-m) + map.get($line-height, 300));
+    gap: map.get($spacing, horizontal-xs);
+
+    border-radius: map.get($radii, medium);
+    outline: 1px;
+    outline-style: solid;
+    outline-color: var(--baka-button--border-color, transparent);
+
+    color: var(--baka-button--color);
+    background-color: var(--baka-button--background-color);
+    padding: var(--baka-button--padding, 0 map.get($spacing, horizontal-m));
+
+    @include baka.hover {
+      color: var(--baka-button--color--hover);
+      outline-color: var(--baka-button--border-color--hover);
+      background-color: var(--baka-button--background-color-hover);
+
+      .baka-icon {
+        color: var(--baka-button--icon--color--hover);
+      }
+    }
+
+    @include baka.active {
+      color: var(--baka-button--color--pressed);
+      outline-color: var(--baka-button--border-color--pressed);
+      background-color: var(--baka-button--background-color-pressed);
+
+      .baka-icon {
+        color: var(--baka-button--icon--color--pressed);
+      }
+    }
+
+    @include baka.selected {
+      color: var(--baka-button--color--selected);
+      outline-color: var(--baka-button--border-color--selected);
+      background-color: var(--baka-button--background-color-selected);
+
+      .baka-icon {
+        color: var(--baka-button--icon--color--selected);
+      }
+    }
+
+    @include focus-indicator;
+
+    @include baka.focus {
+      outline-style: solid;
+      outline-width: 3px;
+      outline-color: map.get($swatch, neutral-stroke-focus-1);
+      outline-offset: -3px;
+    }
+
+    @include baka.disabled {
+      pointer-events: none;
+
+      color: var(--baka-button--color--disabled);
+      background-color: var(--baka-button--background-color-disabled);
+      border-color: var(--baka-button--border-color--disabled);
+    }
+
+    @include baka.variant("secondary", true) {
+      --baka-button--color: #{map.get($swatch, neutral-foreground-1)};
+      --baka-button--color--hover: #{map.get(
+          $swatch,
+          neutral-foreground-1-hover
+        )};
+      --baka-button--color--pressed: #{map.get(
+          $swatch,
+          neutral-foreground-1-pressed
+        )};
+      --baka-button--color--selected: #{map.get(
+          $swatch,
+          neutral-foreground-1-selected
+        )};
+      --baka-button--color--disabled: #{map.get(
+          $swatch,
+          neutral-foreground-disabled
+        )};
+
+      --baka-button--background-color: #{map.get($swatch, neutral-background-1)};
+      --baka-button--background-color-hover: #{map.get(
+          $swatch,
+          neutral-background-1-hover
+        )};
+      --baka-button--background-color-pressed: #{map.get(
+          $swatch,
+          neutral-background-1-pressed
+        )};
+      --baka-button--background-color-selected: #{map.get(
+          $swatch,
+          neutral-background-1-selected
+        )};
+      --baka-button--background-color-disabled: #{map.get(
+          $swatch,
+          neutral-background-disabled
+        )};
+
+      --baka-button--border-color: #{map.get($swatch, neutral-stroke-1)};
+      --baka-button--border-color--hover: #{map.get(
+          $swatch,
+          neutral-stroke-1-hover
+        )};
+      --baka-button--border-color--pressed: #{map.get(
+          $swatch,
+          neutral-stroke-1-pressed
+        )};
+      --baka-button--border-color--selected: #{map.get(
+          $swatch,
+          neutral-stroke-1-selected
+        )};
+      --baka-button--border-color--disabled: #{map.get(
+          $swatch,
+          neutral-stroke-disabled
+        )};
+    }
+
+    @include baka.variant("primary") {
+      --baka-button--color: #{map.get($swatch, neutral-foreground-on-brand)};
+      --baka-button--color--hover: #{map.get(
+          $swatch,
+          neutral-foreground-on-brand
+        )};
+      --baka-button--color--pressed: #{map.get(
+          $swatch,
+          neutral-foreground-on-brand
+        )};
+      --baka-button--color--selected: #{map.get(
+          $swatch,
+          neutral-foreground-on-brand
+        )};
+      --baka-button--color--disabled: #{map.get(
+          $swatch,
+          neutral-foreground-disabled
+        )};
+
+      --baka-button--background-color: #{map.get($swatch, brand-background-1)};
+      --baka-button--background-color-hover: #{map.get(
+          $swatch,
+          brand-background-1-hover
+        )};
+      --baka-button--background-color-pressed: #{map.get(
+          $swatch,
+          brand-background-1-pressed
+        )};
+      --baka-button--background-color-selected: #{map.get(
+          $swatch,
+          brand-background-1-selected
+        )};
+      --baka-button--background-color-disabled: #{map.get(
+          $swatch,
+          neutral-background-disabled
+        )};
+
+      --baka-button--border-color: transparent;
+      --baka-button--border-color--hover: transparent;
+      --baka-button--border-color--pressed: transparent;
+      --baka-button--border-color--selected: transparent;
+      --baka-button--border-color--disabled: transparent;
+    }
+
+    @include baka.variant("outline") {
+      --baka-button--background-color: #{map.get(
+          $swatch,
+          neutral-background-transparent
+        )};
+      --baka-button--background-color-hover: #{map.get(
+          $swatch,
+          neutral-background-transparent-hover
+        )};
+      --baka-button--background-color-pressed: #{map.get(
+          $swatch,
+          neutral-background-transparent-pressed
+        )};
+      --baka-button--background-color-selected: #{map.get(
+          $swatch,
+          neutral-background-transparent-selected
+        )};
+
+      --baka-button--background-color-disabled: ;
+    }
+
+    @include baka.variant("subtle") {
+      --baka-button--color: #{map.get($swatch, neutral-foreground-2)};
+      --baka-button--color--hover: #{map.get(
+          $swatch,
+          neutral-foreground-2-hover
+        )};
+      --baka-button--color--pressed: #{map.get(
+          $swatch,
+          neutral-foreground-2-pressed
+        )};
+      --baka-button--color--selected: #{map.get(
+          $swatch,
+          neutral-foreground-2-selected
+        )};
+      --baka-button--color--disabled: #{map.get(
+          $swatch,
+          neutral-foreground-disabled
+        )};
+
+      --baka-button--background-color: #{map.get(
+          $swatch,
+          neutral-background-subtle
+        )};
+      --baka-button--background-color-hover: #{map.get(
+          $swatch,
+          neutral-background-subtle-hover
+        )};
+      --baka-button--background-color-pressed: #{map.get(
+          $swatch,
+          neutral-background-subtle-pressed
+        )};
+      --baka-button--background-color-selected: #{map.get(
+          $swatch,
+          neutral-background-subtle-selected
+        )};
+      --baka-button--background-color-disabled: ;
+
+      --baka-button--border-color: transparent;
+      --baka-button--border-color--hover: transparent;
+      --baka-button--border-color--pressed: transparent;
+      --baka-button--border-color--selected: transparent;
+      --baka-button--border-color--disabled: transparent;
+
+      --baka-button--icon--color--hover: #{map.get(
+          $swatch,
+          neutral-foreground-2-brand-hover
+        )};
+      --baka-button--icon--color--pressed: #{map.get(
+          $swatch,
+          neutral-foreground-2-brand-pressed
+        )};
+      --baka-button--icon--color--selected: #{map.get(
+          $swatch,
+          neutral-foreground-2-brand-selected
+        )};
+    }
+
+    @include baka.variant("transparent") {
+      --baka-button--color: #{map.get($swatch, neutral-foreground-2)};
+      --baka-button--color--hover: #{map.get(
+          $swatch,
+          neutral-foreground-2-brand-hover
+        )};
+      --baka-button--color--pressed: #{map.get(
+          $swatch,
+          neutral-foreground-2-brand-pressed
+        )};
+      --baka-button--color--selected: #{map.get(
+          $swatch,
+          neutral-foreground-2-brand-selected
+        )};
+      --baka-button--color--disabled: #{map.get(
+          $swatch,
+          neutral-foreground-disabled
+        )};
+
+      --baka-button--background-color: #{map.get(
+          $swatch,
+          neutral-background-transparent
+        )};
+      --baka-button--background-color-hover: #{map.get(
+          $swatch,
+          neutral-background-transparent-hover
+        )};
+      --baka-button--background-color-pressed: #{map.get(
+          $swatch,
+          neutral-background-transparent-pressed
+        )};
+      --baka-button--background-color-selected: #{map.get(
+          $swatch,
+          neutral-background-transparent-selected
+        )};
+      --baka-button--background-color-disabled: ;
+
+      --baka-button--border-color: transparent;
+      --baka-button--border-color--hover: transparent;
+      --baka-button--border-color--pressed: transparent;
+      --baka-button--border-color--selected: transparent;
+      --baka-button--border-color--disabled: transparent;
+
+      --baka-button--icon--color--hover: #{map.get(
+          $swatch,
+          neutral-foreground-2-brand-hover
+        )};
+      --baka-button--icon--color--pressed: #{map.get(
+          $swatch,
+          neutral-foreground-2-brand-pressed
+        )};
+      --baka-button--icon--color--selected: #{map.get(
+          $swatch,
+          neutral-foreground-2-brand-selected
+        )};
+    }
+
+    @include baka.variant("icon") {
+      --baka-button--padding: 0 #{map.get($spacing, horizontal-s-nudge)};
+    }
+  }
+}

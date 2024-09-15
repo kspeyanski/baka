@@ -1,0 +1,147 @@
+@use "sass:map";
+@use "baka-ui" as baka;
+@use "../../design" as *;
+
+@property --field-progress {
+  syntax: "<percentage>";
+  initial-value: 0%;
+  inherits: true;
+}
+
+@mixin field--styles {
+  .baka-field {
+    --field-border-color: #{map.get($swatch, neutral-stroke-1)};
+    --base: #{map.get($swatch, neutral-stroke-accessible)};
+    --accent: #{map.get($swatch, neutral-stroke-accessible)};
+    --field-state-indicator-scale: 100%;
+    --background: #{map.get($swatch, neutral-background-1)};
+
+    font-family: inherit;
+    font-size: inherit;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+
+    @include body-1;
+
+    position: relative;
+    overflow: hidden;
+    text-align: start;
+    min-height: 32px;
+
+    background-color: var(--background);
+
+    padding: 0 map.get($spacing, horizontal-m-nudge);
+    outline-width: 1px;
+    outline-offset: -1px;
+    outline-style: solid;
+    outline-color: var(--field-border-color);
+    border-radius: 4px;
+    transition: --field-progress 0.2s ease-in-out;
+
+    .baka-text {
+      flex-grow: 1;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+
+      transform: scaleY(var(--field-state-indicator-scale, 100%));
+      background: linear-gradient(
+        90deg,
+        var(--base) 0%,
+        var(--base) calc(50% - (var(--field-progress, 0%) / 2)),
+        var(--accent) calc(50% - (var(--field-progress, 0%) / 2)),
+        var(--accent) 50%,
+        var(--accent) calc(50% + (var(--field-progress, 0%) / 2)),
+        var(--base) calc(50% + (var(--field-progress, 0%) / 2)),
+        var(--base) 100%
+      );
+      transition: transform 0.2s ease-in-out;
+    }
+
+    @include baka.variant("filled-darker") {
+      --background: #{map.get($swatch, neutral-background-3)};
+      --field-border-color: transparent;
+      --base: transparent;
+      --base-hover: transparent;
+    }
+
+    @include baka.variant("filled-lighter") {
+      --background: #{map.get($swatch, neutral-background-1)};
+      --field-border-color: transparent;
+      --base: transparent;
+      --base-hover: transparent;
+    }
+    @include baka.variant("focus") {
+      --background: transparent;
+      border-radius: 0;
+      --field-border-color: transparent;
+
+      @include baka.invalid {
+        outline-color: transparent;
+        border-bottom: 1px solid map.get($swatch, status-danger-stroke-2);
+      }
+      @include baka.disabled {
+        outline-color: transparent;
+        border-bottom: 1px solid map.get($swatch, neutral-stroke-disabled);
+      }
+      @include baka.readonly {
+        outline-color: transparent;
+        border-bottom: 1px solid map.get($swatch, neutral-stroke-disabled);
+      }
+    }
+
+    @include baka.hover {
+      --base: var(
+        --base-hover,
+        #{map.get($swatch, neutral-stroke-accessible-hover)}
+      );
+      --accent: #{map.get($swatch, neutral-stroke-accessible-hover)};
+    }
+
+    @include baka.active {
+      --field-progress: 100%;
+      --field-state-indicator-scale: 200%;
+      --accent: #{map.get($swatch, brand-stroke-compound)};
+    }
+
+    @include baka.focus {
+      --field-progress: 100%;
+      --field-state-indicator-scale: 200%;
+      --accent: #{map.get($swatch, brand-stroke-compound)};
+    }
+
+    @include baka.invalid {
+      outline-color: map.get($swatch, status-danger-stroke-2);
+
+      &:after {
+        content: none;
+      }
+    }
+
+    @include baka.disabled {
+      background: map.get($swatch, neutral-background-transparent);
+      outline-color: map.get($swatch, neutral-stroke-disabled);
+      pointer-events: none;
+
+      &:after {
+        content: none;
+      }
+    }
+
+    @include baka.readonly {
+      background: map.get($swatch, neutral-background-transparent);
+      outline-color: map.get($swatch, neutral-stroke-disabled);
+
+      &:after {
+        content: none;
+      }
+    }
+  }
+}

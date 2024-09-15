@@ -1,0 +1,27 @@
+@use "../../design" as *;
+
+@mixin icon--styles {
+  .baka-icon {
+    box-sizing: border-box;
+    display: inline-flex;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    font-feature-settings: "liga";
+    -webkit-font-feature-settings: "liga";
+    -webkit-font-smoothing: antialiased;
+
+    font-family: SegoeFluentIcons;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    justify-content: center;
+    align-items: center;
+
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,37 @@
+@use "sass:map";
+@use "../../design" as *;
+@use "baka-ui" as baka;
+
+@mixin input--styles {
+  .baka-input {
+    --input-placeholder-color: #{map.get($swatch, neutral-foreground-4)};
+    padding: 0;
+    flex-grow: 1;
+    font-family: inherit;
+
+    @include body-1;
+
+    min-height: 32px;
+    background: none;
+
+    &::placeholder {
+      @include body-1;
+
+      color: var(--input-placeholder-color);
+    }
+
+    @include baka.focus {
+      outline: none;
+    }
+
+    @include baka.readonly {
+      outline: none;
+      --input-placeholder-color: #{map.get($swatch, neutral-foreground-1)};
+    }
+
+    @include baka.disabled {
+      pointer-events: none;
+      --input-placeholder-color: #{map.get($swatch, neutral-foreground-disabled)};
+    }
+  }
+}

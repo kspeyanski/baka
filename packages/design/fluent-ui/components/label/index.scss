@@ -1,0 +1,76 @@
+@use "sass:map";
+@use "baka-ui" as baka;
+@use "../../design" as *;
+@use "../../common/focus.scss" as *;
+
+@mixin label--styles {
+  .baka-label {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    color: var(--text-color, inherit);
+    cursor: inherit;
+
+    @include baka.variant("small") {
+      @include caption-1;
+    }
+
+    @include baka.variant("medium", true) {
+      @include body-1;
+    }
+
+    @include baka.variant("large") {
+      @include subtitle-2;
+    }
+
+    @include baka.variant("semibold") {
+      @include font-weight(semibold );
+    }
+
+    &:is(label):has(input),
+    &:is(a),
+    &:has(input[type="checkbox"]),
+    &:has(input[type="radio"]) {
+      cursor: pointer;
+    }
+
+    &:is(label) {
+      display: inline-flex;
+      align-items: center;
+      gap: map.get($spacing, horizontal-xs);
+    }
+
+    &:has(> .baka-checkbox) {
+      --text-color: #{map.get($swatch, neutral-foreground-3)};
+
+      @include baka.hover {
+        --text-color: #{map.get($swatch, neutral-foreground-2)};
+      }
+
+      @include baka.active {
+        --text-color: #{map.get($swatch, neutral-foreground-1)};
+      }
+
+      @include baka.focus {
+        outline: none;
+        @include focus-indicator;
+      }
+    }
+
+    &:has(> .baka-checkbox.baka-state--checked),
+    &:has(> .baka-checkbox:checked) {
+      --text-color: #{map.get($swatch, neutral-foreground-1)};
+    }
+
+    &:has(> .baka-checkbox.baka-state--disabled),
+    &:has(> .baka-checkbox:disabled) {
+      pointer-events: none;
+      --text-color: #{map.get($swatch, neutral-foreground-disabled)};
+    }
+
+    @include baka.disabled {
+      pointer-events: none;
+      --text-color: #{map.get($swatch, neutral-foreground-disabled)};
+    }
+  }
+}

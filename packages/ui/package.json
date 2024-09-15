@@ -9,16 +9,19 @@
   "type": "module",
   "license": "MIT",
   "files": [
-    "dist"
+    "dist",
+    "src/**/*.scss"
   ],
   "main": "./dist/baka-ui.umd.cjs",
   "module": "./dist/baka-ui.js",
   "types": "./dist/index.d.ts",
+  "sass": "./src/index.scss",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/baka-ui.js",
-      "require": "./dist/baka-ui.umd.js"
+      "require": "./dist/baka-ui.umd.js",
+      "sass": "./src/index.scss"
     }
   },
   "scripts": {

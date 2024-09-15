@@ -1,0 +1,157 @@
+@use "sass:map";
+@use "baka-ui" as baka;
+@use "../../design" as *;
+
+@mixin badge--styles {
+  .baka-badge {
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+
+    @include caption-1-strong;
+
+    flex-direction: row;
+    box-sizing: border-box;
+
+    width: max-content;
+    min-width: 32px;
+    min-height: 32px;
+
+    gap: map.get($spacing, horizontal-xs);
+    padding: map.get($spacing, horizontal-xs)
+      map.get($spacing, horizontal-s-nudge);
+
+    outline-width: 1px;
+    outline-style: solid;
+    outline-color: var(--border);
+    outline-offset: -1px;
+    border-radius: map.get($radii, medium);
+
+    .baka-text {
+      padding: 0 map.get($spacing, horizontal-xs);
+    }
+
+    @include baka.variant("circular") {
+      border-radius: map.get($radii, circle);
+    }
+
+    @include baka.variant("filled", true) {
+      color: var(--text);
+      background-color: var(--bg);
+      outline-color: var(--border);
+    }
+
+    @include baka.variant("tint") {
+      color: var(--text-tint);
+      background-color: var(--bg-tint);
+      outline-color: var(--border-tint);
+    }
+
+    @include baka.variant("outline") {
+      color: var(--text-alt);
+      background-color: transparent;
+      outline-color: var(--border-outline, var(--text-alt));
+    }
+
+    @include baka.variant("subtle") {
+      color: var(--text-alt);
+      background-color: transparent;
+      outline-color: transparent;
+    }
+
+    @include baka.variant("color-brand", true) {
+      --bg: #{map.get($swatch, brand-background-1)};
+      --bg-tint: #{map.get($swatch, brand-background-2)};
+
+      --border: #{map.get($swatch, brand-background-1)};
+      --border-tint: #{map.get($swatch, brand-stroke-2)};
+
+      --text: #{map.get($swatch, neutral-foreground-on-brand)};
+      --text-tint: #{map.get($swatch, brand-foreground-2)};
+      --text-alt: #{map.get($swatch, brand-foreground-1)};
+    }
+
+    @include baka.variant("color-danger") {
+      --bg: #{map.get($swatch, status-danger-background-3)};
+      --bg-tint: #{map.get($swatch, status-danger-background-1)};
+
+      --border: #{map.get($swatch, status-danger-background-3)};
+      --border-tint: #{map.get($swatch, status-danger-stroke-1)};
+
+      --text: #{map.get($swatch, neutral-foreground-on-brand)};
+      --text-tint: #{map.get($swatch, status-danger-foreground-1)};
+      --text-alt: #{map.get($swatch, status-danger-foreground-3)};
+    }
+
+    @include baka.variant("color-warning") {
+      --bg: #{map.get($swatch, status-warning-background-3)};
+      --bg-tint: #{map.get($swatch, status-warning-background-1)};
+
+      --border: #{map.get($swatch, status-warning-background-3)};
+      --border-tint: #{map.get($swatch, status-warning-stroke-1)};
+
+      --text: #{map.get($swatch, neutral-foreground-static)};
+      --text-tint: #{map.get($swatch, status-warning-foreground-2)};
+      --text-alt: #{map.get($swatch, status-warning-foreground-2)};
+    }
+
+    @include baka.variant("color-success") {
+      --bg: #{map.get($swatch, status-success-background-3)};
+      --bg-tint: #{map.get($swatch, status-success-background-1)};
+
+      --border: #{map.get($swatch, status-success-background-3)};
+      --border-tint: #{map.get($swatch, status-success-stroke-1)};
+
+      --text: #{map.get($swatch, neutral-foreground-on-brand)};
+      --text-tint: #{map.get($swatch, status-success-foreground-1)};
+      --text-alt: #{map.get($swatch, status-success-foreground-3)};
+    }
+
+    @include baka.variant("color-important") {
+      --bg: #{map.get($swatch, neutral-foreground-1)};
+      --bg-tint: #{map.get($swatch, neutral-foreground-3)};
+
+      --border: #{map.get($swatch, neutral-foreground-1)};
+      --border-tint: #{map.get($swatch, neutral-stroke-accessible)};
+
+      --text: #{map.get($swatch, neutral-background-1)};
+      --text-tint: #{map.get($swatch, neutral-background-1)};
+      --text-alt: #{map.get($swatch, neutral-foreground-3)};
+
+      @include baka.variant("subtle") {
+        --text-alt: #{map.get($swatch, neutral-foreground-1)};
+      }
+    }
+
+    @include baka.variant("color-informative") {
+      --bg: #{map.get($swatch, neutral-background-5)};
+      --bg-tint: #{map.get($swatch, neutral-background-4)};
+
+      --border: #{map.get($swatch, neutral-stroke-transparent)};
+      --border-tint: #{map.get($swatch, neutral-stroke-2)};
+
+      --text: #{map.get($swatch, neutral-foreground-3)};
+      --text-tint: #{map.get($swatch, neutral-foreground-3)};
+      --text-alt: #{map.get($swatch, neutral-foreground-3)};
+
+      @include baka.variant("outline") {
+        --border-outline: #{map.get($swatch, neutral-stroke-2)};
+      }
+    }
+
+    @include baka.variant("color-subtle") {
+      --bg: #{map.get($swatch, neutral-background-1)};
+      --bg-tint: #{map.get($swatch, neutral-background-1)};
+
+      --border: #{map.get($swatch, neutral-stroke-transparent)};
+      --border-tint: #{map.get($swatch, neutral-stroke-3)};
+
+      --text: #{map.get($swatch, neutral-foreground-1)};
+      --text-tint: #{map.get($swatch, neutral-foreground-3)};
+      --text-alt: #{map.get($swatch, neutral-foreground-on-brand)};
+    }
+  }
+}

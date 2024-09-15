@@ -1,21 +1,29 @@
-import { BakaRadio } from "baka-ui";
+import { Radio } from "baka-fluent-ui";
 
 export default function RadioDemo() {
   return (
     <>
       <div>
-        <BakaRadio name="unchecked" />
-        <BakaRadio name="unchecked" hover />
-        <BakaRadio name="unchecked" pressed />
-        <BakaRadio name="unchecked" disabled />
-        <BakaRadio name="unchecked" focus />
+        <Radio name="unchecked" />
+        <Radio name="unchecked" state={{ hover: true }} />
+        <Radio name="unchecked" state={{ pressed: true }} />
+        <Radio name="unchecked" state={{ disabled: true }} />
+        <Radio name="unchecked" state={{ focus: true }} />
       </div>
       <div>
-        <BakaRadio name="checked" checked />
-        <BakaRadio name="checked" checked hover />
-        <BakaRadio name="checked" checked pressed />
-        <BakaRadio name="checked" checked disabled />
-        <BakaRadio name="checked" checked focus />
+        <Radio name="checked" checked state={{ checked: true }} />
+        <Radio name="checked" checked state={{ checked: true, hover: true }} />
+        <Radio
+          name="checked"
+          checked
+          state={{ checked: true, pressed: true }}
+        />
+        <Radio
+          name="checked"
+          checked
+          state={{ checked: true, disabled: true }}
+        />
+        <Radio name="checked" checked state={{ checked: true, focus: true }} />
       </div>
     </>
   );

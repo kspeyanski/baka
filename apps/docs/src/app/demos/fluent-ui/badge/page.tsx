@@ -1,4 +1,3 @@
-import { BakaBadge } from "baka-ui";
 import BadgeCatalog from "./catalog";
 
 export default function BadgeDemo() {

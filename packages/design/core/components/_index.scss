@@ -1,7 +1,7 @@
 @forward "./avatars/avatar.scss";
 @forward "./badges/badge.scss";
 @forward "./bars/bar.scss";
-@forward "./buttons/button.scss";
+// @forward "./buttons/button.scss";
 @forward "./cards/card.scss";
 @forward "./chips/chip.scss";
 @forward "./dialogs/dialog.scss";
@@ -30,7 +30,7 @@
 @use "./avatars/avatar.scss" as *;
 @use "./badges/badge.scss" as *;
 @use "./bars/bar.scss" as *;
-@use "./buttons/button.scss" as *;
+// @use "./buttons/button.scss" as *;
 @use "./cards/card.scss" as *;
 @use "./chips/chip.scss" as *;
 @use "./dialogs/dialog.scss" as *;

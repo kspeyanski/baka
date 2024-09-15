@@ -1,41 +1,48 @@
-import { BakaDialog, BakaIcon, BakaList, BakaListItem, BakaMenu, BakaMenuItem, BakaText, BakaTextField } from "baka-ui";
+import { Icon, Menu, MenuItem, Text } from "baka-fluent-ui";
+import { Dropdown } from "baka-fluent-ui";
 
 export default function DropdownDemo() {
   return (
     <div className="flex gap-4 flex-row">
-      {["outline", "transparent", "filled-lighter", "filled-darker"].map((variant) => (
+      {(
+        [
+          "outline",
+          /* TODO: "transparent", */ "filled-lighter",
+          "filled-darker",
+        ] as const
+      ).map((variant) => (
         <div key={variant} className="flex gap-5 flex-col">
-          <BakaTextField style={{ width: 300 }} as="button" variant={variant}>
-            <BakaText variant={"placeholder"}>Placeholder text</BakaText>
-            <BakaIcon></BakaIcon>
-          </BakaTextField>
+          <Dropdown style={{ width: 300 }} variant={variant}>
+            <Text variant={"placeholder"}>Placeholder text</Text>
+            <Icon></Icon>
+          </Dropdown>
 
           <div>
-            <BakaTextField style={{ width: 300 }} as="button" variant={variant}>
-              <BakaText variant={"placeholder"}>Placeholder text</BakaText>
-              <BakaIcon></BakaIcon>
-            </BakaTextField>
-            <BakaMenu>
-              <BakaMenuItem readOnly>
-                <BakaText variant={"caption-1-strong"}>Action</BakaText>
-              </BakaMenuItem>
-              <BakaMenuItem>
-                <BakaIcon />
-                <BakaText>Action</BakaText>
-              </BakaMenuItem>
-              <BakaMenuItem>
-                <BakaIcon />
-                <BakaText>Action</BakaText>
-              </BakaMenuItem>
-              <BakaMenuItem>
-                <BakaIcon />
-                <BakaText>Action</BakaText>
-              </BakaMenuItem>
-              <BakaMenuItem>
-                <BakaIcon />
-                <BakaText>Action</BakaText>
-              </BakaMenuItem>
-            </BakaMenu>
+            <Dropdown style={{ width: 300 }} variant={variant}>
+              <Text variant={"placeholder"}>Placeholder text</Text>
+              <Icon></Icon>
+            </Dropdown>
+            <Menu>
+              <MenuItem state={{ readonly: true }}>
+                <Text variant={"caption-1-strong"}>Action</Text>
+              </MenuItem>
+              <MenuItem>
+                <Icon />
+                <Text>Action</Text>
+              </MenuItem>
+              <MenuItem>
+                <Icon />
+                <Text>Action</Text>
+              </MenuItem>
+              <MenuItem>
+                <Icon />
+                <Text>Action</Text>
+              </MenuItem>
+              <MenuItem>
+                <Icon />
+                <Text>Action</Text>
+              </MenuItem>
+            </Menu>
           </div>
         </div>
       ))}

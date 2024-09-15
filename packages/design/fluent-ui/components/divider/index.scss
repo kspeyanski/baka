@@ -1,0 +1,36 @@
+@use "../../design" as *;
+@use "baka-ui" as baka;
+
+@mixin divider--styles {
+  .baka-divider {
+    margin: 0;
+
+    flex: 1 1 auto;
+    background-color: map-get($swatch, neutral-stroke-2);
+
+    @include baka.variant(horizontal, true) {
+      height: 1px;
+      flex-grow: 1;
+    }
+
+    @include baka.variant(vertical) {
+      width: 1px;
+      flex-grow: 1;
+    }
+
+    @include baka.variant(subtle) {
+      background-color: map-get($swatch, neutral-stroke-3);
+    }
+
+    @include baka.variant(strong) {
+      background-color: map-get($swatch, neutral-stroke-1);
+    }
+
+    @include baka.variant(brand) {
+      background-color: map-get($swatch, brand-stroke-1);
+    }
+    @include baka.variant(inset) {
+      margin-inline: map-get($spacing, horizontal-m);
+    }
+  }
+}

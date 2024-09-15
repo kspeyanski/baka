@@ -1,0 +1,71 @@
+@use "sass:map";
+@use "baka-ui" as baka;
+@use "../../design" as *;
+
+@mixin card--styles {
+  .baka-card {
+    display: flex;
+    align-items: flex-start;
+    flex-shrink: 0;
+    overflow: hidden;
+
+    flex-direction: column;
+    gap: map.get($spacing, vertical-l);
+    padding: map.get($spacing, vertical-m) map.get($spacing, horizontal-m);
+
+    outline-width: 1px;
+    outline-style: solid;
+    outline-color: map.get($swatch, neutral-stroke-transparent);
+    border-radius: map.get($radii, medium);
+
+    box-shadow: var(--shadow);
+
+    @include baka.hover {
+      background: var(--background-hover);
+    }
+
+    @include baka.active {
+      background: var(--background-active);
+    }
+
+    @include baka.selected {
+      background: var(--background-selected);
+    }
+
+    @include baka.variant(filled, true) {
+      background: map.get($swatch, neutral-background-1);
+
+      --shadow: #{map.get($elevation, 4)};
+      --background-hover: #{map.get($swatch, neutral-background-1-hover)};
+      --background-active: #{map.get($swatch, neutral-background-1-pressed)};
+      --background-selected: #{map.get($swatch, neutral-background-1-selected)};
+    }
+
+    @include baka.variant(filled-alt) {
+      background: map.get($swatch, neutral-background-2);
+
+      --shadow: #{map.get($elevation, 4)};
+      --background-hover: #{map.get($swatch, neutral-background-2-hover)};
+      --background-active: #{map.get($swatch, neutral-background-2-pressed)};
+      --background-selected: #{map.get($swatch, neutral-background-2-selected)};
+    }
+
+    @include baka.variant(outline) {
+      background: none;
+      outline-color: map.get($swatch, neutral-stroke-1);
+
+      --shadow: none;
+      --background-hover: none;
+      --background-active: none;
+      --background-selected: none;
+
+      @include baka.variant(subtle) {
+        background: none;
+        --shadow: none;
+        --background-hover: none;
+        --background-active: none;
+        --background-selected: none;
+      }
+    }
+  }
+}

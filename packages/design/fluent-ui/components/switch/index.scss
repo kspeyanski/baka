@@ -1,0 +1,101 @@
+@use "sass:map";
+@use "baka-ui" as baka;
+@use "../../design" as *;
+@use "../../common/focus.scss" as *;
+
+@mixin switch--styles {
+  .baka-switch {
+    --switch-ring-color: #{map.get($swatch, "neutral-stroke-accessible")};
+    --switch-background: transparent;
+
+    appearance: none;
+    cursor: pointer;
+    display: inline-flex;
+
+    width: 40px;
+    height: 20px;
+    padding: 8px;
+
+    outline-color: var(--switch-ring-color);
+    outline-width: 1px;
+    outline-offset: -1px;
+    outline-style: solid;
+    border-radius: map.get($radii, "xx-large");
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 14px;
+      height: 14px;
+      border-radius: map.get($radii, "circle");
+      background-color: var(--switch-thumb-color, var(--switch-ring-color));
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    @include baka.hover {
+      --switch-ring-color: var(
+        --switch-ring-color-hover,
+        #{map.get($swatch, "neutral-stroke-accessible-hover")}
+      );
+    }
+
+    @include baka.active {
+      --switch-ring-color: var(
+        --switch-ring-color-pressed,
+        #{map.get($swatch, "neutral-stroke-accessible-pressed")}
+      );
+    }
+
+    @include baka.checked {
+      background-color: var(--switch-ring-color);
+      --switch-ring-color: #{map.get($swatch, brand-background-compound)};
+      --switch-ring-color-hover: #{map.get(
+          $swatch,
+          brand-background-compound-hover
+        )};
+      --switch-ring-color-pressed: #{map.get(
+          $swatch,
+          brand-background-compound-pressed
+        )};
+      --switch-ring-color-disabled: #{map.get(
+          $swatch,
+          neutral-background-disabled
+        )};
+
+      --switch-thumb-color: #{map.get($swatch, neutral-foreground-inverted-1)};
+      --switch-thumb-color-disabled: #{map.get(
+          $swatch,
+          neutral-foreground-disabled
+        )};
+
+      &:before {
+        transform: translateX(20px);
+      }
+    }
+
+    // TODO: change to keyboard focus
+    @include focus-indicator;
+    @include baka.focus {
+      &:after {
+        left: -8px;
+        top: -8px;
+        width: calc(100% + 16px);
+        height: calc(100% + 16px);
+      }
+    }
+
+    @include baka.disabled {
+      pointer-events: none;
+      --switch-ring-color: var(
+        --switch-ring-color-disabled,
+        #{map.get($swatch, neutral-stroke-disabled)}
+      );
+      --switch-thumb-color: var(
+        --switch-thumb-color-disabled,
+        #{map.get($swatch, neutral-foreground-disabled)}
+      );
+    }
+  }
+}

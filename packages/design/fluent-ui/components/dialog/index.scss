@@ -1,0 +1,22 @@
+@use "sass:map";
+@use "baka-ui" as baka;
+@use "../../design" as *;
+
+@mixin dialog--styles {
+  .baka-dialog {
+    position: relative;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+    background-color: map.get($swatch, neutral-background-rest);
+    box-shadow: map.get($elevation, 64);
+
+    border-style: solid;
+    border-color: map.get($swatch, neutral-stroke-transparent);
+    border-radius: map.get($radii, x-large);
+  }
+}

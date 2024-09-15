@@ -1,78 +1,78 @@
-import { BakaButton, BakaIcon } from "baka-ui";
+import { Button, Icon } from "baka-fluent-ui";
 
 export default function ButtonDemo() {
   return (
     <>
       <div className="flex gap-4">
         <div className="flex flex-col gap-4">
-          <BakaButton variant={"transparent"}>Text</BakaButton>
-          <BakaButton variant={"transparent"}>
-            <BakaIcon></BakaIcon>
+          <Button variant={"transparent"}>Text</Button>
+          <Button variant={"transparent"}>
+            <Icon></Icon>
             Text
-          </BakaButton>
-          <BakaButton variant={["transparent", "icon"]}>
-            <BakaIcon></BakaIcon>
-          </BakaButton>
+          </Button>
+          <Button variant={["transparent", "icon"]}>
+            <Icon></Icon>
+          </Button>
         </div>
         <div className="flex flex-col gap-4">
-          <BakaButton state={{hover: true}} variant={"transparent"}>
+          <Button state={{hover: true}} variant={"transparent"}>
             Text
-          </BakaButton>
-          <BakaButton state={{hover: true}} variant={"transparent"}>
-            <BakaIcon></BakaIcon>
+          </Button>
+          <Button state={{hover: true}} variant={"transparent"}>
+            <Icon></Icon>
             Text
-          </BakaButton>
-          <BakaButton state={{hover: true}} variant={["transparent", "icon"]}>
-            <BakaIcon></BakaIcon>
-          </BakaButton>
+          </Button>
+          <Button state={{hover: true}} variant={["transparent", "icon"]}>
+            <Icon></Icon>
+          </Button>
         </div>
         <div className="flex flex-col gap-4">
-          <BakaButton state={{ pressed: true }} variant={"transparent"}>
+          <Button state={{ pressed: true }} variant={"transparent"}>
             Text
-          </BakaButton>
-          <BakaButton state={{ pressed: true }} variant={"transparent"}>
-            <BakaIcon></BakaIcon>
+          </Button>
+          <Button state={{ pressed: true }} variant={"transparent"}>
+            <Icon></Icon>
             Text
-          </BakaButton>
-          <BakaButton state={{ pressed: true }} variant={["transparent", "icon"]}>
-            <BakaIcon></BakaIcon>
-          </BakaButton>
+          </Button>
+          <Button state={{ pressed: true }} variant={["transparent", "icon"]}>
+            <Icon></Icon>
+          </Button>
         </div>
         <div className="flex flex-col gap-4">
-          <BakaButton state={{ selected: true }} variant={"transparent"}>
+          <Button state={{ selected: true }} variant={"transparent"}>
             Text
-          </BakaButton>
-          <BakaButton state={{ selected: true }} variant={"transparent"}>
-            <BakaIcon></BakaIcon>
+          </Button>
+          <Button state={{ selected: true }} variant={"transparent"}>
+            <Icon></Icon>
             Text
-          </BakaButton>
-          <BakaButton state={{ selected: true }} variant={["transparent", "icon"]}>
-            <BakaIcon></BakaIcon>
-          </BakaButton>
+          </Button>
+          <Button state={{ selected: true }} variant={["transparent", "icon"]}>
+            <Icon></Icon>
+          </Button>
         </div>
         <div className="flex flex-col gap-4">
-          <BakaButton state={{ focus: true }} variant={"transparent"}>
+          <Button state={{ focus: true }} variant={"transparent"}>
             Text
-          </BakaButton>
-          <BakaButton state={{ focus: true }} variant={"transparent"}>
-            <BakaIcon></BakaIcon>
+          </Button>
+          <Button state={{ focus: true }} variant={"transparent"}>
+            <Icon></Icon>
             Text
-          </BakaButton>
-          <BakaButton state={{ focus: true }} variant={["transparent", "icon"]}>
-            <BakaIcon></BakaIcon>
-          </BakaButton>
+          </Button>
+          <Button state={{ focus: true }} variant={["transparent", "icon"]}>
+            <Icon></Icon>
+          </Button>
         </div>
         <div className="flex flex-col gap-4">
-          <BakaButton disabled={true} state={{ disabled: true }} variant={"transparent"}>
+          <Button disabled={true} state={{ disabled: true }} variant={"transparent"}>
             Text
-          </BakaButton>
-          <BakaButton disabled={true} state={{ disabled: true }} variant={"transparent"}>
-            <BakaIcon></BakaIcon>
+          </Button>
+          <Button disabled={true} state={{ disabled: true }} variant={"transparent"}>
+            <Icon></Icon>
             Text
-          </BakaButton>
-          <BakaButton disabled={true} state={{ disabled: true }} variant={["transparent", "icon"]}>
-            <BakaIcon></BakaIcon>
-          </BakaButton>
+          </Button>
+          <Button disabled={true} state={{ disabled: true }} variant={["transparent", "icon"]}>
+            <Icon></Icon>
+          </Button>
         </div>
       </div>
     </>
