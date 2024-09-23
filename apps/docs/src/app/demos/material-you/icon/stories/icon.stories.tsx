@@ -1,12 +1,10 @@
-/// <reference types="baka-material-you" />
-
 import React from "react";
-import type { BakaDesign } from "baka-core";
+import type { BakaDesign } from "baka-material-you";
 import type { Meta, StoryObj } from "@storybook/react";
 import IconStory, { IconStoryProps, defaultProps } from "./page";
 import icons from "./icons.json";
 
-const variantOptions: BakaDesign["IconVariant"][] = ["primary", "error"];
+const variantOptions: BakaDesign["icon"]["variant"][] = ["primary", "error"];
 
 const meta: Meta = {
   title: "Material You/Icon",
@@ -21,7 +19,7 @@ const meta: Meta = {
       },
       options: icons,
     },
-    
+
     variant: {
       control: "radio",
       map: {

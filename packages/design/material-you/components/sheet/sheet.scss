@@ -1,0 +1,25 @@
+@use "../../design" as *;
+@use "baka-ui" as baka;
+
+@mixin sheet--styles {
+  .baka-sheet {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    
+    border-radius: 28px 28px 0 0;
+
+    color: map-get($swatch, outline);
+    background: map-get($swatch, surface-container-low);
+
+    box-shadow: map-get($elevation, 3);
+
+    @include baka.variant(modal) {
+      box-shadow: none;
+    }
+  }
+}

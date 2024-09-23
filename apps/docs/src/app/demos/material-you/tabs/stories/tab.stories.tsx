@@ -1,5 +1,3 @@
-/// <reference types="baka-material-you" />
-
 import React from "react";
 import TabsStory, { TabsStoryProps, defaultProps } from "./page";
 import { Meta, StoryObj } from "@storybook/react";

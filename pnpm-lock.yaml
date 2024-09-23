@@ -234,10 +234,14 @@ importers:
         version: 3.4.4
 
   packages/design/material-you:
+    dependencies:
+      clsx:
+        specifier: ^1.2.1
+        version: 1.2.1
     devDependencies:
-      baka-core:
+      baka-ui:
         specifier: workspace:*
-        version: link:../core
+        version: link:../../ui
       sass:
         specifier: ^1.68.0
         version: 1.77.6

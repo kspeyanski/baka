@@ -1,4 +1,4 @@
-import { BakaList, BakaListItem, BakaRadio, BakaText, BakaIcon } from "baka-ui";
+import { List, ListItem, Radio, Text, Icon } from "baka-material-you";
 
 export default function ListItemWithRadioDemo() {
   return (
@@ -14,32 +14,32 @@ export default function ListItemWithRadioDemo() {
         }}
       >
         {/* With Radio */}
-        <BakaList>
-          <BakaListItem variant={"multi-line"}>
-            <BakaRadio readOnly={true} checked={true} />
+        <List>
+          <ListItem variant={"multi-line"}>
+            <Radio readOnly={true} checked={true} />
             <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
-              <BakaText variant="body-large">List item</BakaText>
-              <BakaText variant={["body-medium", "variant"]}>
+              <Text variant="body-large">List item</Text>
+              <Text variant={["body-medium", "variant"]}>
                 Supporting line text lorem ipsum dolor sit amet, consectetur.
-              </BakaText>
+              </Text>
             </div>
-          </BakaListItem>
-        </BakaList>
-        <BakaList>
-          <BakaListItem variant={"multi-line"}>
-            <BakaRadio readOnly={true} checked={true} />
+          </ListItem>
+        </List>
+        <List>
+          <ListItem variant={"multi-line"}>
+            <Radio readOnly={true} checked={true} />
             <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
-              <BakaText variant="body-large">List item</BakaText>
-              <BakaText variant={["body-medium", "variant"]} style={{ width: "100%" }}>
+              <Text variant="body-large">List item</Text>
+              <Text variant={["body-medium", "variant"]} style={{ width: "100%" }}>
                 Supporting line text lorem ipsum dolor sit amet, consectetur.
-              </BakaText>
+              </Text>
             </div>
-            <BakaIcon>arrow_right</BakaIcon>
-          </BakaListItem>
-        </BakaList>
-        <BakaList>
-          <BakaListItem>
-            <BakaRadio readOnly={true} checked={true} />
+            <Icon>arrow_right</Icon>
+          </ListItem>
+        </List>
+        <List>
+          <ListItem>
+            <Radio readOnly={true} checked={true} />
             <div
               style={{
                 display: "flex",
@@ -49,8 +49,8 @@ export default function ListItemWithRadioDemo() {
                 overflow: "hidden",
               }}
             >
-              <BakaText variant="body-large">List item</BakaText>
-              <BakaText
+              <Text variant="body-large">List item</Text>
+              <Text
                 variant={["body-medium", "variant"]}
                 style={{
                   whiteSpace: "nowrap",
@@ -60,13 +60,13 @@ export default function ListItemWithRadioDemo() {
                 }}
               >
                 Supporting line text lorem ipsum dolor sit amet, consectetur.
-              </BakaText>
+              </Text>
             </div>
-          </BakaListItem>
-        </BakaList>
-        <BakaList>
-          <BakaListItem>
-            <BakaRadio readOnly={true} checked={true} />
+          </ListItem>
+        </List>
+        <List>
+          <ListItem>
+            <Radio readOnly={true} checked={true} />
             <div
               style={{
                 display: "flex",
@@ -76,34 +76,34 @@ export default function ListItemWithRadioDemo() {
                 overflow: "hidden",
               }}
             >
-              <BakaText variant="body-large">List item</BakaText>
-              <BakaText
+              <Text variant="body-large">List item</Text>
+              <Text
                 variant={["body-medium", "variant"]}
                 style={{ whiteSpace: "nowrap", textOverflow: "ellipsis", overflow: "hidden" }}
               >
                 Supporting line text lorem ipsum dolor sit amet, consectetur.
-              </BakaText>
+              </Text>
             </div>
-            <BakaIcon>arrow_right</BakaIcon>
-          </BakaListItem>
-        </BakaList>
-        <BakaList>
-          <BakaListItem>
-            <BakaRadio readOnly={true} checked={true} />
+            <Icon>arrow_right</Icon>
+          </ListItem>
+        </List>
+        <List>
+          <ListItem>
+            <Radio readOnly={true} checked={true} />
             <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
-              <BakaText variant="body-large">List item</BakaText>
+              <Text variant="body-large">List item</Text>
             </div>
-          </BakaListItem>
-        </BakaList>
-        <BakaList>
-          <BakaListItem>
-            <BakaRadio readOnly={true} checked={true} />
+          </ListItem>
+        </List>
+        <List>
+          <ListItem>
+            <Radio readOnly={true} checked={true} />
             <div style={{ display: "flex", flexDirection: "column", gap: 0, width: "100%" }}>
-              <BakaText variant="body-large">List item</BakaText>
+              <Text variant="body-large">List item</Text>
             </div>
-            <BakaIcon>arrow_right</BakaIcon>
-          </BakaListItem>
-        </BakaList>
+            <Icon>arrow_right</Icon>
+          </ListItem>
+        </List>
       </div>
     </div>
   );

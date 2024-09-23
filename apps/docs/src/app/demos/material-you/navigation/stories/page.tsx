@@ -1,15 +1,15 @@
 import {
-  BakaBadge,
-  BakaButton,
-  BakaDivider,
-  BakaIcon,
-  BakaNavigation,
-  BakaNavigationItem,
-  BakaNavigationProps,
-  BakaText,
-} from "baka-ui";
+  Badge,
+  Button,
+  Divider,
+  Icon,
+  Navigation,
+  NavigationItem,
+  NavigationProps,
+  Text,
+} from "baka-material-you";
 
-export type NavigationStoryProps = BakaNavigationProps & {
+export type NavigationStoryProps = NavigationProps & {
   type: "side" | "bottom" | "rail";
   labels: boolean;
   items: number;
@@ -29,81 +29,84 @@ export default function NavigationStory(props: NavigationStoryProps) {
   switch (type) {
     case "side":
       return (
-        <BakaNavigation variant={"side"} style={{ width: 300 }}>
+        <Navigation variant={"side"} style={{ width: 300 }}>
           <div style={{ padding: "18px 16px" }}>
-            <BakaText variant={"title-small"}>Title</BakaText>
+            <Text variant={"title-small"}>Title</Text>
           </div>
           <div style={{ padding: "18px 16px" }}>
-            <BakaText variant={"title-small"}>Section header</BakaText>
+            <Text variant={"title-small"}>Section header</Text>
           </div>
-          <BakaNavigationItem selected={true}>
-            {icons ? <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon> : null}
-            <BakaText variant={"label-medium"}>Label</BakaText>
-            <BakaText variant={"label-medium"}>100+</BakaText>
-          </BakaNavigationItem>
-          <BakaNavigationItem>
-            {icons ? <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon> : null}
-            <BakaText variant={"label-medium"}>Label</BakaText>
-            <BakaText variant={"label-medium"}>100+</BakaText>
-          </BakaNavigationItem>
-          <BakaNavigationItem>
-            {icons ? <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon> : null}
-            <BakaText variant={"label-medium"}>Label</BakaText>
-            <BakaText variant={"label-medium"}>100+</BakaText>
-          </BakaNavigationItem>
-          <BakaDivider />
+          <NavigationItem state={{ selected: true }}>
+            {icons ? <Icon variant={"filled"}>fiber_manual_record</Icon> : null}
+            <Text variant={"label-medium"}>Label</Text>
+            <Text variant={"label-medium"}>100+</Text>
+          </NavigationItem>
+          <NavigationItem>
+            {icons ? <Icon variant={"filled"}>fiber_manual_record</Icon> : null}
+            <Text variant={"label-medium"}>Label</Text>
+            <Text variant={"label-medium"}>100+</Text>
+          </NavigationItem>
+          <NavigationItem>
+            {icons ? <Icon variant={"filled"}>fiber_manual_record</Icon> : null}
+            <Text variant={"label-medium"}>Label</Text>
+            <Text variant={"label-medium"}>100+</Text>
+          </NavigationItem>
+          <Divider />
           <div style={{ padding: "18px 16px" }}>
-            <BakaText variant={"title-small"}>Section header</BakaText>
+            <Text variant={"title-small"}>Section header</Text>
           </div>
-          <BakaNavigationItem>
-            {icons ? <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon> : null}
-            <BakaText variant={"label-medium"}>Label</BakaText>
-          </BakaNavigationItem>
-          <BakaNavigationItem>
-            {icons ? <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon> : null}
-            <BakaText variant={"label-medium"}>Label</BakaText>
-          </BakaNavigationItem>
-          <BakaNavigationItem>
-            {icons ? <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon> : null}
-            <BakaText variant={"label-medium"}>Label</BakaText>
-          </BakaNavigationItem>
-        </BakaNavigation>
+          <NavigationItem>
+            {icons ? <Icon variant={"filled"}>fiber_manual_record</Icon> : null}
+            <Text variant={"label-medium"}>Label</Text>
+          </NavigationItem>
+          <NavigationItem>
+            {icons ? <Icon variant={"filled"}>fiber_manual_record</Icon> : null}
+            <Text variant={"label-medium"}>Label</Text>
+          </NavigationItem>
+          <NavigationItem>
+            {icons ? <Icon variant={"filled"}>fiber_manual_record</Icon> : null}
+            <Text variant={"label-medium"}>Label</Text>
+          </NavigationItem>
+        </Navigation>
       );
     case "bottom":
     default:
       return (
-        <BakaNavigation variant={"bottom"} style={{ width: 400 }}>
-          <BakaNavigationItem selected={true}>
-            <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-            {labels ? <BakaText variant={"label-medium"}>Label</BakaText> : null}
-          </BakaNavigationItem>
+        <Navigation variant={"bottom"} style={{ width: 400 }}>
+          <NavigationItem state={{ selected: true }}>
+            <Icon variant={"filled"}>fiber_manual_record</Icon>
+            {labels ? <Text variant={"label-medium"}>Label</Text> : null}
+          </NavigationItem>
           {Array.from({ length: items - 2 }, (_, i) => (
-            <BakaNavigationItem key={i}>
-              <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-              {labels ? <BakaText variant={"label-medium"}>Label</BakaText> : null}
-            </BakaNavigationItem>
+            <NavigationItem key={i}>
+              <Icon variant={"filled"}>fiber_manual_record</Icon>
+              {labels ? <Text variant={"label-medium"}>Label</Text> : null}
+            </NavigationItem>
           ))}
-          <BakaNavigationItem>
-            <BakaIcon variant={"filled"}>
+          <NavigationItem>
+            <Icon variant={"filled"}>
               fiber_manual_record
               {labels ? (
-                <BakaBadge
+                <Badge
                   variant={"single-digit"}
                   style={{ position: "absolute", right: 16, top: 2 }}
                 >
                   3
-                </BakaBadge>
+                </Badge>
               ) : (
-                <BakaBadge variant={"small"} style={{ position: "absolute", right: 16, top: 2 }} />
+                <Badge
+                  variant={"small"}
+                  style={{ position: "absolute", right: 16, top: 2 }}
+                />
               )}
-            </BakaIcon>
-            {labels ? <BakaText variant={"label-medium"}>Label</BakaText> : null}
-          </BakaNavigationItem>
-        </BakaNavigation>
+            </Icon>
+            {labels ? <Text variant={"label-medium"}>Label</Text> : null}
+          </NavigationItem>
+        </Navigation>
       );
     case "rail":
       return (
-        <BakaNavigation variant={"rail"} style={{ height: "calc(100vh - 100px)" }}>
+        <Navigation variant={"rail"} style={{ height: "calc(100vh - 100px)" }}>
           <div
             style={{
               display: "flex",
@@ -113,13 +116,13 @@ export default function NavigationStory(props: NavigationStoryProps) {
               justifyContent: "stretch",
             }}
           >
-            <BakaButton variant="icon">
-              <BakaIcon>menu</BakaIcon>
-            </BakaButton>
+            <Button variant="icon">
+              <Icon>menu</Icon>
+            </Button>
             {
-              <BakaButton variant={["fab", "tertiary"]}>
-                <BakaIcon>mode_edit</BakaIcon>
-              </BakaButton>
+              <Button variant={["fab", "tertiary"]}>
+                <Icon>mode_edit</Icon>
+              </Button>
             }
           </div>
           <div
@@ -131,21 +134,21 @@ export default function NavigationStory(props: NavigationStoryProps) {
                 : {}
             }
           >
-            <BakaNavigationItem selected={true}>
-              <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-              {labels ? <BakaText>BakaText</BakaText> : null}
-            </BakaNavigationItem>
-            <BakaNavigationItem>
-              <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-            </BakaNavigationItem>
-            <BakaNavigationItem>
-              <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-            </BakaNavigationItem>
-            <BakaNavigationItem>
-              <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-            </BakaNavigationItem>
+            <NavigationItem state={{ selected: true }}>
+              <Icon variant={"filled"}>fiber_manual_record</Icon>
+              {labels ? <Text>Text</Text> : null}
+            </NavigationItem>
+            <NavigationItem>
+              <Icon variant={"filled"}>fiber_manual_record</Icon>
+            </NavigationItem>
+            <NavigationItem>
+              <Icon variant={"filled"}>fiber_manual_record</Icon>
+            </NavigationItem>
+            <NavigationItem>
+              <Icon variant={"filled"}>fiber_manual_record</Icon>
+            </NavigationItem>
           </div>
-        </BakaNavigation>
+        </Navigation>
       );
   }
 }

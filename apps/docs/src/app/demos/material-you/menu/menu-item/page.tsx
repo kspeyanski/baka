@@ -1,13 +1,13 @@
-import { BakaIcon, BakaMenu, BakaMenuItem, BakaText } from "baka-ui";
+import { Icon, Menu, MenuItem, Text } from "baka-material-you";
 
 export default function MenuItemDemo() {
   return (
-    <BakaMenu style={{ width: 360 }}>
-      <BakaMenuItem>
-        <BakaIcon>cut</BakaIcon>
-        <BakaText>Menu item</BakaText>
-        <BakaIcon>chevron_right</BakaIcon>
-      </BakaMenuItem>
-    </BakaMenu>
+    <Menu style={{ width: 360 }}>
+      <MenuItem>
+        <Icon>cut</Icon>
+        <Text>Menu item</Text>
+        <Icon>chevron_right</Icon>
+      </MenuItem>
+    </Menu>
   );
 }

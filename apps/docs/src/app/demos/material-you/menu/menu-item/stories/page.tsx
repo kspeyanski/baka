@@ -1,4 +1,4 @@
-import { BakaIcon, BakaMenu, BakaMenuItem, BakaText } from "baka-ui";
+import { Icon, Menu, MenuItem, Text } from "baka-material-you";
 
 export type MenuItemStoryProps = {
   prefix: boolean;
@@ -14,12 +14,12 @@ export default function MenuItemStory(props: MenuItemStoryProps) {
   const args = { ...defaultProps, ...props };
 
   return (
-    <BakaMenu style={{ width: 360 }}>
-      <BakaMenuItem>
-        {args.prefix && <BakaIcon>cut</BakaIcon>}
-        <BakaText>Menu item</BakaText>
-        {args.suffix && <BakaIcon>chevron_right</BakaIcon>}
-      </BakaMenuItem>
-    </BakaMenu>
+    <Menu style={{ width: 360 }}>
+      <MenuItem>
+        {args.prefix && <Icon>cut</Icon>}
+        <Text>Menu item</Text>
+        {args.suffix && <Icon>chevron_right</Icon>}
+      </MenuItem>
+    </Menu>
   );
 }

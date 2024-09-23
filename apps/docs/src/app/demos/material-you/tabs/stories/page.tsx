@@ -1,4 +1,4 @@
-import { BakaIcon, BakaTab, BakaTabGroup, BakaTabGroupProps, BakaText } from "baka-ui";
+import { Icon, Tab, TabGroup, TabGroupProps, Text } from "baka-material-you";
 
 export type TabsStoryProps = {
   tabs: number;
@@ -25,20 +25,22 @@ export default function TabStory(props: TabsStoryProps) {
 
   return (
     <div style={{ width: args.overflow ? 310 : 120 * args.tabs }}>
-      <BakaTabGroup
+      <TabGroup
         variant={
           [args.variant, args.overflow ? "overflow" : null].filter(
             Boolean
-          ) as BakaTabGroupProps["variant"]
+          ) as TabGroupProps["variant"]
         }
       >
         {Array.from({ length: args.tabs }, (_, i) => (
-          <BakaTab key={i} selected={i === 0}>
-            {args.tab.icons && <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>}
-            {args.tab.text && <BakaText>Tab</BakaText>}
-          </BakaTab>
+          <Tab key={i} state={{ selected: i === 0 }}>
+            {args.tab.icons && (
+              <Icon variant={"filled"}>fiber_manual_record</Icon>
+            )}
+            {args.tab.text && <Text>Tab</Text>}
+          </Tab>
         ))}
-      </BakaTabGroup>
+      </TabGroup>
     </div>
   );
 }

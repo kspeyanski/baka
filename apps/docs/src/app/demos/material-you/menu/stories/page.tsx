@@ -1,4 +1,4 @@
-import { BakaMenu, BakaMenuItem, BakaText } from "baka-ui";
+import { Menu, MenuItem, Text } from "baka-material-you";
 
 export type MenuStoryProps = {
   items: number;
@@ -14,12 +14,12 @@ export default function MenuStory(props: MenuStoryProps) {
   const args = { ...defaultProps, ...props };
 
   return (
-    <BakaMenu {...args} style={{ width: 360, ...(args.scrollable ? { maxHeight: 300 } : {}) }}>
+    <Menu {...args} style={{ width: 360, ...(args.scrollable ? { maxHeight: 300 } : {}) }}>
       {Array.from({ length: args.items }, (_, i) => (
-        <BakaMenuItem key={i}>
-          <BakaText>Menu item</BakaText>
-        </BakaMenuItem>
+        <MenuItem key={i}>
+          <Text>Menu item</Text>
+        </MenuItem>
       ))}
-    </BakaMenu>
+    </Menu>
   );
 }

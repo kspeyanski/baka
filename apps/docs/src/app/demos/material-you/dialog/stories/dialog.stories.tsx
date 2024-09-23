@@ -1,9 +1,12 @@
 import React from "react";
-import type { BakaDesign } from "baka-core";
+import type { BakaDesign } from "baka-material-you";
 import type { Meta, StoryObj } from "@storybook/react";
 import DialogStory, { DialogStoryProps, defaultProps } from "./page";
 
-const variantOptions: BakaDesign["DialogVariant"][] = ["basic", "full-screen"];
+const variantOptions: BakaDesign["dialog"]["variant"][] = [
+  "basic",
+  "full-screen",
+];
 
 const meta: Meta = {
   title: "Material You/Dialog",

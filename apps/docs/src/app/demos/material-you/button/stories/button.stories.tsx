@@ -1,12 +1,10 @@
-/// <reference types="baka-material-you" />
-
 import React from "react";
-import type { BakaDesign } from "baka-core";
+import type { BakaDesign } from "baka-material-you";
 import type { Meta, StoryObj } from "@storybook/react";
 import ButtonStory, { ButtonStoryProps, defaultProps } from "./page";
-import { BakaIcon } from "baka-ui";
+import { Icon } from "baka-material-you";
 
-const variantOptions: BakaDesign["ButtonVariant"][] = [
+const variantOptions: BakaDesign["button"]["variant"][] = [
   "filled",
   "outlined",
   "text",
@@ -45,7 +43,7 @@ export const IconButton: Story = {
     selected: false,
     variant: "icon",
     ...defaultProps,
-    children: <BakaIcon>settings</BakaIcon>,
+    children: <Icon>settings</Icon>,
   },
   render: (props) => {
     const { toggleable, ...other } = props;
@@ -58,7 +56,7 @@ export const IconButton: Story = {
             "icon",
             ...(Array.isArray(props.variant) ? props.variant : [props.variant]),
             toggleable ? "toggle" : null,
-          ].filter(Boolean) as BakaDesign["ButtonVariant"][]
+          ].filter(Boolean) as BakaDesign["button"]["variant"][]
         }
       />
     );
@@ -85,7 +83,7 @@ export const TextAndIcon: Story = {
 
     return (
       <ButtonStory {...other}>
-        <BakaIcon>{icon}</BakaIcon>
+        <Icon>{icon}</Icon>
         {children}
       </ButtonStory>
     );
@@ -120,7 +118,7 @@ export const FAB: Story = {
     ["variant (size)"]: "medium",
     extended: false,
     ...defaultProps,
-    children: <BakaIcon>mode_edit</BakaIcon>,
+    children: <Icon>mode_edit</Icon>,
   },
   argTypes: {
     variant: {

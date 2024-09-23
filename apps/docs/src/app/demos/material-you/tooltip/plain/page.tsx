@@ -1,13 +1,13 @@
-import { BakaButton, BakaText, BakaTooltip } from "baka-ui";
+import { Button, Text, Tooltip } from "baka-material-you";
 
 export default function PlainTooltipDemo() {
   return (
     <div style={{ display: "grid", gridRowGap: 16, alignItems: "center", justifyItems: "center" }}>
-      <BakaTooltip variant={"plain"}>Supporting text</BakaTooltip>
-      <BakaTooltip variant={"plain"} style={{ width: 312 }}>
+      <Tooltip variant={"plain"}>Supporting text</Tooltip>
+      <Tooltip variant={"plain"} style={{ width: 312 }}>
         Supporting text Body text string goes here lorem ipsum dolor sit amet, consectetur
         adipiscing elit, sed do eiusmod tempor incididunt
-      </BakaTooltip>
+      </Tooltip>
     </div>
   );
 }

@@ -1,9 +1,13 @@
 import React from "react";
-import type { BakaDesign } from "baka-core";
+import type { BakaDesign } from "baka-material-you";
 import type { Meta, StoryObj } from "@storybook/react";
 import CardStory, { CardStoryProps, defaultProps } from "./page";
 
-const variantOptions: BakaDesign["CardVariant"][] = ["outlined", "elevated", "filled"];
+const variantOptions: BakaDesign["card"]["variant"][] = [
+  "outlined",
+  "elevated",
+  "filled",
+];
 
 const meta: Meta = {
   title: "Material You/Card",

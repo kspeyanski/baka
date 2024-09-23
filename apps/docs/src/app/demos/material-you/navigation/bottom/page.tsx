@@ -1,21 +1,30 @@
-import { BakaBadge, BakaNavigation, BakaNavigationItem, BakaIcon, BakaText } from "baka-ui";
+import {
+  Badge,
+  Navigation,
+  NavigationItem,
+  Icon,
+  Text,
+} from "baka-material-you";
 
 export default async function Demo() {
   return (
-    <BakaNavigation style={{ width: 409 }} variant="bottom">
-      <BakaNavigationItem selected={true}>
-        <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-      </BakaNavigationItem>
-      <BakaNavigationItem>
-        <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-      </BakaNavigationItem>
+    <Navigation style={{ width: 409 }} variant="bottom">
+      <NavigationItem state={{ selected: true }}>
+        <Icon variant={"filled"}>fiber_manual_record</Icon>
+      </NavigationItem>
+      <NavigationItem>
+        <Icon variant={"filled"}>fiber_manual_record</Icon>
+      </NavigationItem>
 
-      <BakaNavigationItem>
-        <BakaIcon variant={"filled"}>
+      <NavigationItem>
+        <Icon variant={"filled"}>
           fiber_manual_record
-          <BakaBadge variant={"small"} style={{ position: "absolute", right: 16, top: 2 }} />
-        </BakaIcon>
-      </BakaNavigationItem>
-    </BakaNavigation>
+          <Badge
+            variant={"small"}
+            style={{ position: "absolute", right: 16, top: 2 }}
+          />
+        </Icon>
+      </NavigationItem>
+    </Navigation>
   );
 }

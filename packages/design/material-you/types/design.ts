@@ -1,116 +1,165 @@
-import { BakaDesignCore } from "baka-core/types";
+import { MultiVariant } from "baka-ui";
 
-export interface BakaDesignMaterialYou extends BakaDesignCore {
-  AvatarVariant: "small" | "medium" | "large";
-  BadgeVariant: "small" | "single-digit" | "multi-digit";
-  BarVariant: "top" | "bottom" | "small" | "medium" | "large" | "elevated";
-  ButtonState: {
-    hovered?: boolean;
-    focused?: boolean;
-    activated?: boolean;
-    disabled?: boolean;
-    selected?: boolean;
-  };
-  ButtonVariant:
-    | "filled"
-    | "outlined"
-    | "text"
-    | "elevated"
-    | "tonal"
-    | "icon"
-    | "toggle"
-    | "fab"
-    | "primary"
-    | "secondary"
-    | "tertiary"
-    | "small"
-    | "medium"
-    | "large"
-    | "extended";
+export interface MaterialYouState {
+  enabled?: boolean;
+  hovered?: boolean;
+  focused?: boolean;
+  pressed?: boolean;
+  disabled?: boolean;
+  selected?: boolean;
+  dragged?: boolean;
+  invalid?: boolean;
+  empty?: boolean;
+  indeterminate?: boolean;
+}
 
-  CheckboxState: {
-    checked?: boolean;
-    indeterminate?: boolean;
-    hovered?: boolean;
-    focused?: boolean;
-    activated?: boolean;
-    disabled?: boolean;
+export interface BakaDesign {
+  avatar: {
+    variant: MultiVariant<"small" | "medium" | "large">;
   };
-  CheckboxVariant: "primary" | "error";
-  BottomSheetVariant: "modal";
-  ChipState: {
-    hovered?: boolean;
-    focused?: boolean;
-    activated?: boolean;
-    dragged?: boolean;
-    selected?: boolean;
+  badge: {
+    variant: MultiVariant<"small" | "single-digit" | "multi-digit">;
   };
-  ChipVariant: "elevated";
-  CardVariant: "outlined" | "elevated" | "filled" | "horizontal";
-  DialogVariant: "basic" | "full-screen";
-  TextVariant:
-    | "display-large"
-    | "display-medium"
-    | "display-small"
-    | "headline-large"
-    | "headline-medium"
-    | "headline-small"
-    | "title-large"
-    | "title-medium"
-    | "title-small"
-    | "label-large"
-    | "label-medium"
-    | "label-small"
-    | "body-large"
-    | "body-medium"
-    | "body-small"
-    | "variant";
-  ListItemVariant: "multi-line" | "video";
-  IconVariant: "primary" | "small" | "medium" | "large" | "filled" | "error";
-
-  SwitchState: {
-    checked?: boolean;
-    hovered?: boolean;
-    focused?: boolean;
-    activated?: boolean;
-    disabled?: boolean;
+  bar: {
+    variant: MultiVariant<
+      "top" | "bottom" | "small" | "medium" | "large" | "elevated"
+    >;
   };
-  SwitchVariant: "icon";
-
-  ContainerVariant: "contained" | "fluid";
-  ColumnVariant: "region-left" | "region-right";
-
-  TextFieldState: {
-    hovered?: boolean;
-    focused?: boolean;
-    activated?: boolean;
-    disabled?: boolean;
-    invalid?: boolean;
+  button: {
+    state: Pick<
+      MaterialYouState,
+      "enabled" | "hovered" | "focused" | "pressed" | "disabled" | "selected"
+    >;
+    variant?: MultiVariant<
+      | "filled"
+      | "outlined"
+      | "text"
+      | "elevated"
+      | "tonal"
+      | "icon"
+      | "toggle"
+      | "fab"
+      | "primary"
+      | "secondary"
+      | "tertiary"
+      | "small"
+      | "medium"
+      | "large"
+      | "extended"
+    >;
   };
-  TextFieldVariant: "filled" | "outlined" | "search";
-  InputState: {
-    empty?: boolean;
+  checkbox: {
+    state: Pick<
+      MaterialYouState,
+      | "selected"
+      | "indeterminate"
+      | "hovered"
+      | "focused"
+      | "pressed"
+      | "disabled"
+    >;
+    variant: MultiVariant<"primary" | "error">;
   };
-  TabGroupVariant: "primary" | "secondary" | "overflow";
-  TabState: {
-    selected?: boolean;
+  sheet: {
+    variant: MultiVariant<"modal" | "bottom">;
   };
-  TooltipVariant: "rich" | "plain";
-
-  NavigationVariant: "bottom" | "rail" | "side";
-  NavigationItemState: {
-    selected?: boolean;
-    hovered?: boolean;
-    focused?: boolean;
-    activated?: boolean;
-    disabled?: boolean;
+  chip: {
+    state: Pick<
+      MaterialYouState,
+      "hovered" | "focused" | "pressed" | "dragged" | "selected"
+    >;
+    variant: MultiVariant<"elevated">;
   };
-
-  RadioState: {
-    checked?: boolean;
-    hovered?: boolean;
-    focused?: boolean;
-    activated?: boolean;
-    disabled?: boolean;
+  card: {
+    variant: MultiVariant<"outlined" | "elevated" | "filled" | "horizontal">;
+    state: Pick<
+      MaterialYouState,
+      "hovered" | "focused" | "pressed" | "selected" | "disabled"
+    >;
+  };
+  dialog: {
+    variant: MultiVariant<"basic" | "full-screen">;
+  };
+  divider: {
+    variant: MultiVariant<"horizontal" | "vertical">;
+  };
+  text: {
+    variant: MultiVariant<
+      | "display-large"
+      | "display-medium"
+      | "display-small"
+      | "headline-large"
+      | "headline-medium"
+      | "headline-small"
+      | "title-large"
+      | "title-medium"
+      | "title-small"
+      | "label-large"
+      | "label-medium"
+      | "label-small"
+      | "body-large"
+      | "body-medium"
+      | "body-small"
+      | "variant"
+    >;
+  };
+  list: {};
+  "list-item": {
+    variant: MultiVariant<"multi-line" | "video">;
+  };
+  menu: {};
+  "menu-item": {};
+  icon: {
+    variant: MultiVariant<
+      "primary" | "small" | "medium" | "large" | "filled" | "error"
+    >;
+  };
+  switch: {
+    state: Pick<
+      MaterialYouState,
+      "selected" | "hovered" | "focused" | "pressed" | "disabled"
+    >;
+    variant: MultiVariant<"icon">;
+  };
+  container: {
+    variant: MultiVariant<"contained" | "fluid">;
+  };
+  row: {};
+  column: {
+    variant: MultiVariant<"region-left" | "region-right">;
+  };
+  "text-field": {
+    state: Pick<
+      MaterialYouState,
+      "hovered" | "focused" | "pressed" | "disabled" | "invalid"
+    >;
+    variant: MultiVariant<"filled" | "outlined" | "search">;
+  };
+  "tab-group": {
+    variant: MultiVariant<"primary" | "secondary" | "overflow">;
+  };
+  tab: {
+    state: Pick<MaterialYouState, "selected">;
+  };
+  input: {
+    state: Pick<MaterialYouState, "empty">;
+  };
+  tooltip: {
+    variant: MultiVariant<"rich" | "plain">;
+  };
+  navigation: {
+    variant: MultiVariant<"bottom" | "rail" | "side">;
+  };
+  "navigation-item": {
+    state: Pick<
+      MaterialYouState,
+      "selected" | "hovered" | "focused" | "pressed" | "disabled"
+    >;
+  };
+  radio: {
+    state: Pick<
+      MaterialYouState,
+      "selected" | "hovered" | "focused" | "pressed" | "disabled"
+    >;
   };
 }

@@ -1,29 +1,29 @@
-import { BakaButton, BakaBar, BakaIcon, BakaText } from "baka-ui";
+import { Button, Bar, Icon, Text } from "baka-material-you";
 
 export default async function Demo() {
   return (
-    <BakaBar style={{ width: 404 }} variant={["top", "medium"]}>
+    <Bar style={{ width: 404 }} variant={["top", "medium"]}>
       <div style={{ display: "flex", flex: 1 }}>
         <div style={{ flex: 1 }}>
-          <BakaButton variant={"icon"}>
-            <BakaIcon>arrow_back</BakaIcon>
-          </BakaButton>
+          <Button variant={"icon"}>
+            <Icon>arrow_back</Icon>
+          </Button>
         </div>
-        <BakaButton variant={"icon"}>
-          <BakaIcon>attach_file</BakaIcon>
-        </BakaButton>
-        <BakaButton variant={"icon"}>
-          <BakaIcon>today</BakaIcon>
-        </BakaButton>
-        <BakaButton variant={"icon"}>
-          <BakaIcon>more_vert</BakaIcon>
-        </BakaButton>
+        <Button variant={"icon"}>
+          <Icon>attach_file</Icon>
+        </Button>
+        <Button variant={"icon"}>
+          <Icon>today</Icon>
+        </Button>
+        <Button variant={"icon"}>
+          <Icon>more_vert</Icon>
+        </Button>
       </div>
       <div style={{ paddingInline: 16 }}>
-        <BakaText variant="title-large" style={{ flexGrow: 1, textAlign: "left" }}>
+        <Text variant="title-large" style={{ flexGrow: 1, textAlign: "left" }}>
           Title
-        </BakaText>
+        </Text>
       </div>
-    </BakaBar>
+    </Bar>
   );
 }

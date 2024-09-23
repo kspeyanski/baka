@@ -1,4 +1,4 @@
-import { BakaList, BakaListItem, BakaSwitch, BakaText, BakaIcon } from "baka-ui";
+import { List, ListItem, Switch, Text, Icon } from "baka-material-you";
 
 export default function ListItemWithSwitchDemo() {
   return (
@@ -14,32 +14,32 @@ export default function ListItemWithSwitchDemo() {
         }}
       >
         {/* With Switch */}
-        <BakaList>
-          <BakaListItem variant={"multi-line"}>
-            <BakaSwitch readOnly={true} checked={false} />
+        <List>
+          <ListItem variant={"multi-line"}>
+            <Switch readOnly={true} checked={false} />
             <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
-              <BakaText variant="body-large">List item</BakaText>
-              <BakaText variant={["body-medium", "variant"]}>
+              <Text variant="body-large">List item</Text>
+              <Text variant={["body-medium", "variant"]}>
                 Supporting line text lorem ipsum dolor sit amet, consectetur.
-              </BakaText>
+              </Text>
             </div>
-          </BakaListItem>
-        </BakaList>
-        <BakaList>
-          <BakaListItem variant={"multi-line"}>
-            <BakaSwitch readOnly={true} checked={false} />
+          </ListItem>
+        </List>
+        <List>
+          <ListItem variant={"multi-line"}>
+            <Switch readOnly={true} checked={false} />
             <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
-              <BakaText variant="body-large">List item</BakaText>
-              <BakaText variant={["body-medium", "variant"]} style={{ width: "100%" }}>
+              <Text variant="body-large">List item</Text>
+              <Text variant={["body-medium", "variant"]} style={{ width: "100%" }}>
                 Supporting line text lorem ipsum dolor sit amet, consectetur.
-              </BakaText>
+              </Text>
             </div>
-            <BakaIcon>arrow_right</BakaIcon>
-          </BakaListItem>
-        </BakaList>
-        <BakaList>
-          <BakaListItem>
-            <BakaSwitch readOnly={true} checked={false} />
+            <Icon>arrow_right</Icon>
+          </ListItem>
+        </List>
+        <List>
+          <ListItem>
+            <Switch readOnly={true} checked={false} />
             <div
               style={{
                 display: "flex",
@@ -49,8 +49,8 @@ export default function ListItemWithSwitchDemo() {
                 overflow: "hidden",
               }}
             >
-              <BakaText variant="body-large">List item</BakaText>
-              <BakaText
+              <Text variant="body-large">List item</Text>
+              <Text
                 variant={["body-medium", "variant"]}
                 style={{
                   whiteSpace: "nowrap",
@@ -60,13 +60,13 @@ export default function ListItemWithSwitchDemo() {
                 }}
               >
                 Supporting line text lorem ipsum dolor sit amet, consectetur.
-              </BakaText>
+              </Text>
             </div>
-          </BakaListItem>
-        </BakaList>
-        <BakaList>
-          <BakaListItem>
-            <BakaSwitch readOnly={true} checked={false} />
+          </ListItem>
+        </List>
+        <List>
+          <ListItem>
+            <Switch readOnly={true} checked={false} />
             <div
               style={{
                 display: "flex",
@@ -76,34 +76,34 @@ export default function ListItemWithSwitchDemo() {
                 overflow: "hidden",
               }}
             >
-              <BakaText variant="body-large">List item</BakaText>
-              <BakaText
+              <Text variant="body-large">List item</Text>
+              <Text
                 variant={["body-medium", "variant"]}
                 style={{ whiteSpace: "nowrap", textOverflow: "ellipsis", overflow: "hidden" }}
               >
                 Supporting line text lorem ipsum dolor sit amet, consectetur.
-              </BakaText>
+              </Text>
             </div>
-            <BakaIcon>arrow_right</BakaIcon>
-          </BakaListItem>
-        </BakaList>
-        <BakaList>
-          <BakaListItem>
-            <BakaSwitch readOnly={true} checked={false} />
+            <Icon>arrow_right</Icon>
+          </ListItem>
+        </List>
+        <List>
+          <ListItem>
+            <Switch readOnly={true} checked={false} />
             <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
-              <BakaText variant="body-large">List item</BakaText>
+              <Text variant="body-large">List item</Text>
             </div>
-          </BakaListItem>
-        </BakaList>
-        <BakaList>
-          <BakaListItem>
-            <BakaSwitch readOnly={true} checked={false} />
+          </ListItem>
+        </List>
+        <List>
+          <ListItem>
+            <Switch readOnly={true} checked={false} />
             <div style={{ display: "flex", flexDirection: "column", gap: 0, width: "100%" }}>
-              <BakaText variant="body-large">List item</BakaText>
+              <Text variant="body-large">List item</Text>
             </div>
-            <BakaIcon>arrow_right</BakaIcon>
-          </BakaListItem>
-        </BakaList>
+            <Icon>arrow_right</Icon>
+          </ListItem>
+        </List>
       </div>
     </div>
   );

@@ -1,19 +1,19 @@
-import { BakaCard, BakaAvatar, BakaText } from "baka-ui";
+import { Card, Avatar, Text } from "baka-material-you";
 
 export default async function Demo() {
   return (
-    <BakaCard variant={"horizontal"} style={{ width: 360 }}>
+    <Card variant={"horizontal"} style={{ width: 360 }}>
       <div style={{ display: "flex", flexGrow: 1, gap: 16, padding: 16, alignItems: "center" }}>
-        <BakaAvatar>
+        <Avatar>
           <span>A</span>
-        </BakaAvatar>
+        </Avatar>
         <div style={{ display: "flex", flexGrow: 1, flexDirection: "column", gap: 4 }}>
-          <BakaText variant="title-medium">Header</BakaText>
-          <BakaText variant="body-medium">Subhead</BakaText>
+          <Text variant="title-medium">Header</Text>
+          <Text variant="body-medium">Subhead</Text>
         </div>
       </div>
 
       <img src="/media-small.png" alt="media" width={80} height={80} />
-    </BakaCard>
+    </Card>
   );
 }

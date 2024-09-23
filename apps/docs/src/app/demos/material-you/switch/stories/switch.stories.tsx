@@ -1,9 +1,9 @@
 import React from "react";
-import type { BakaDesign } from "baka-core";
+import type { BakaDesign } from "baka-material-you";
 import type { Meta, StoryObj } from "@storybook/react";
 import SwitchStory, { SwitchStoryProps, defaultProps } from "./page";
 
-const variantOptions: BakaDesign["SwitchVariant"][] = ["icon"];
+const variantOptions: BakaDesign["switch"]["variant"][] = ["icon"];
 
 const meta: Meta = {
   title: "Material You/Switch",

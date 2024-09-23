@@ -1,6 +1,9 @@
 import { BakaComponent, BakaProps } from "baka-ui";
 
-type LabelProps<T extends React.ElementType> = BakaProps<T, "label"> & {};
+export type LabelProps<T extends React.ElementType = "label"> = BakaProps<
+  T,
+  "label"
+> & {};
 
 export const Label = <T extends React.ElementType = "label">(
   props: LabelProps<T>

@@ -1,3 +1,4 @@
+/// <reference types="./types" />
 export * from "./types/design";
 
 export * from "./components/accordion";

@@ -1,13 +1,13 @@
-import { BakaButton } from "baka-ui";
+import { Button } from "baka-material-you";
 
 export default function ButtonDemo() {
   return (
     <>
       <div className="flex flex-col">
-        <BakaButton variant="filled">Button</BakaButton>
-        <BakaButton variant="outlined">Button</BakaButton>
-        <BakaButton variant="text">Button</BakaButton>
-        <BakaButton variant="elevated">Button</BakaButton>
+        <Button variant="filled">Button</Button>
+        <Button variant="outlined">Button</Button>
+        <Button variant="text">Button</Button>
+        <Button variant="elevated">Button</Button>
       </div>
     </>
   );

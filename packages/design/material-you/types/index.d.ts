@@ -1,5 +1,5 @@
-import type { BakaDesignMaterialYou } from "./design";
+import type { BakaDesign as BakaDesignMaterialYou } from "./design";
 
-declare module "baka-core" {
+declare module "baka-ui" {
   export interface BakaDesign extends BakaDesignMaterialYou {}
 }

@@ -1,9 +1,12 @@
 import React from "react";
-import type { BakaDesign } from "baka-core";
+import type { BakaDesign } from "baka-material-you";
 import type { Meta, StoryObj } from "@storybook/react";
 import ChipStory, { ChipStoryProps, defaultProps } from "./page";
 
-const variantOptions: (BakaDesign["ChipVariant"] | "normal")[] = ["normal", "elevated"];
+const variantOptions: (BakaDesign["chip"]["variant"] | "normal")[] = [
+  "normal",
+  "elevated",
+];
 
 const meta: Meta = {
   title: "Material You/Chip",

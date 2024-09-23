@@ -1,4 +1,4 @@
-import { BakaContainer, BakaRow, BakaColumn } from "baka-ui";
+import { Container, Row, Column } from "baka-material-you";
 
 export type LayoutStoryProps = {
   columns?: number;
@@ -17,21 +17,29 @@ export default function LayoutDemo(props: LayoutStoryProps) {
   const args = { ...defaultProps, ...props };
 
   return (
-    <div style={{ width: "calc(100vw - 128px)", height: "calc(100vh - 64px)", display: "flex" }}>
+    <div
+      style={{
+        width: "calc(100vw - 128px)",
+        height: "calc(100vh - 64px)",
+        display: "flex",
+      }}
+    >
       {args.region ? (
-        <BakaColumn variant={"region-left"} style={{ background: "#FDE0F1" }}>
+        <Column variant={"region-left"} style={{ background: "#FDE0F1" }}>
           <div style={{ height: "calc(100vh - 64px" }} />
-        </BakaColumn>
+        </Column>
       ) : null}
-      <BakaContainer>
-        <BakaRow style={{ height: "100%" }}>
+      <Container>
+        <Row style={{ height: "100%" }}>
           {Array.from({ length: args.columns }).map((_, index) => (
-            <BakaColumn key={index} size={args.autosize ? undefined : args.size}>
-              <div style={{ height: "100%", width: "100%", background: "#E0F0F0" }} />
-            </BakaColumn>
+            <Column key={index} columns={args.autosize ? undefined : args.size}>
+              <div
+                style={{ height: "100%", width: "100%", background: "#E0F0F0" }}
+              />
+            </Column>
           ))}
-        </BakaRow>
-      </BakaContainer>
+        </Row>
+      </Container>
     </div>
   );
 }

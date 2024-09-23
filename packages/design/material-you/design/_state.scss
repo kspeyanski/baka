@@ -1,5 +1,5 @@
 @use "./motion" as *;
-@use "baka-core" as baka;
+@use "baka-ui" as baka;
 
 @mixin state-layer {
   &::before {

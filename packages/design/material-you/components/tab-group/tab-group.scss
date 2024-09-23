@@ -1,0 +1,158 @@
+@use "../../design" as *;
+@use "baka-ui" as baka;
+
+@mixin tab-group--styles {
+  @include tab--styles;
+
+  .baka-tab-group {
+    --color: #{map-get($swatch, on-surface-variant)};
+    --state: #{map-get($swatch, on-surface)};
+    --ripple: #{map-get($swatch, on-surface)};
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    @include baka.variant(primary, true) {
+      --position: relative;
+    }
+
+    @include baka.variant(overflow) {
+      overflow: auto;
+      --group-padding: 32px;
+
+      & {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    }
+
+    @include baka.variant(secondary) {
+      --position: initial;
+      --group-bottom: 0;
+      --group-selected-color: #{map-get($swatch, on-surface)};
+      --group-radius: 0;
+      --group-height: 2px;
+      --flex-direction: row;
+      --margin-bottom: 0;
+      --gap: 8px;
+    }
+  }
+}
+
+@mixin tab--styles {
+  .baka-tab {
+    --padding: var(--group-padding, 16px);
+
+    @include body-medium;
+
+    user-select: none;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    padding: 14px var(--padding);
+    min-width: min-content;
+    display: flex;
+    flex-direction: var(--flex-direction, column);
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    flex: 1;
+    gap: var(--gap, 2px);
+
+    @include ripple(var(--ripple), $scale: 10);
+
+    .baka-text {
+      @include title-small();
+      color: var(--color);
+    }
+
+    .baka-icon {
+      margin: -2px 0;
+      color: var(--color);
+    }
+
+    .baka-icon + .baka-text {
+      margin-bottom: var(--margin-bottom, -6px);
+    }
+
+    @include state-layer {
+      content: "";
+      user-select: none;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: transparent;
+
+      @include motion-transition-TBD(background);
+    }
+
+    @include baka.hover {
+      @include state-layer {
+        background: color-mix(in srgb, var(--state) 0.08 * 100%, transparent);
+      }
+    }
+
+    @include baka.focus {
+      @include state-layer {
+        background: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
+      }
+    }
+
+    @include baka.selected {
+      --state: #{map-get($swatch, primary)};
+      --color: var(--group-selected-color, #{map-get($swatch, primary)});
+      --ripple: #{map-get($swatch, primary)};
+      position: relative;
+
+      :last-child {
+        position: var(--position);
+
+        &:after {
+          position: absolute;
+          border-top-left-radius: var(--group-radius, 100px);
+          border-top-right-radius: var(--group-radius, 100px);
+          height: var(--group-height, 3px);
+          width: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          background: map-get($swatch, primary);
+        }
+
+        &:is(.baka-icon) {
+          &:after {
+            content: "";
+            bottom: var(--group-bottom, -12px);
+          }
+        }
+
+        &:is(.baka-text) {
+          &:after {
+            content: "";
+            bottom: var(--group-bottom, -14px);
+          }
+        }
+
+        &:is(.baka-icon + .baka-text) {
+          &:after {
+            content: "";
+            bottom: var(--group-bottom, -8px);
+          }
+        }
+      }
+    }
+  }
+
+  :where(.baka-tab-group.variant--overflow) {
+    .baka-tab {
+      flex: 0;
+    }
+  }
+}

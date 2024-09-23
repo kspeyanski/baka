@@ -1,24 +1,24 @@
-import { BakaCheckbox } from "baka-ui";
+import { Checkbox } from "baka-material-you";
 
 export default async function Demo() {
   return (
     <>
-      <BakaCheckbox readOnly checked />
+      <Checkbox readOnly checked />
       <br />
       <br />
-      <BakaCheckbox readOnly indeterminate />
+      <Checkbox readOnly state={{ indeterminate: true }} />
       <br />
       <br />
-      <BakaCheckbox />
+      <Checkbox />
       <br />
       <br />
-      <BakaCheckbox readOnly checked variant={"error"} />
+      <Checkbox readOnly checked variant={"error"} />
       <br />
       <br />
-      <BakaCheckbox readOnly indeterminate variant={"error"} />
+      <Checkbox readOnly state={{ indeterminate: true }} variant={"error"} />
       <br />
       <br />
-      <BakaCheckbox readOnly variant={"error"} />
+      <Checkbox readOnly variant={"error"} />
     </>
   );
 }

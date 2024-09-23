@@ -1,11 +1,10 @@
-/// <reference types="baka-material-you" />
 
 import React from "react";
-import type { BakaDesign } from "baka-core";
+import type { BakaDesign } from "baka-material-you";
 import type { Meta, StoryObj } from "@storybook/react";
 import AvatarStory, { AvatarStoryProps, defaultProps } from "./page";
 
-const variantOptions: BakaDesign["AvatarVariant"][] = ["small", "medium"];
+const variantOptions: BakaDesign["avatar"]["variant"][] = ["small", "medium"];
 
 const meta: Meta = {
   title: "Material You/Avatar",

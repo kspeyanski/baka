@@ -1,9 +1,9 @@
-import { BakaInput, BakaTextField } from "baka-ui";
+import { Input, TextField } from "baka-material-you";
 
 export default function InputDemo() {
   return (
-    <BakaTextField>
-      <BakaInput defaultValue={"test"} />
-    </BakaTextField>
+    <TextField>
+      <Input defaultValue={"test"} />
+    </TextField>
   );
 }

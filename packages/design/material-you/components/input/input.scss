@@ -1,0 +1,17 @@
+@use "../../design" as *;
+@use "baka-ui" as baka;
+
+@mixin input--styles {
+  .baka-input {
+    padding: 0;
+    flex-grow: 1;
+    font-family: inherit;
+    @include body-large;
+    border: none;
+    background: none;
+    outline: none;
+
+    color: map-get($swatch, on-surface);
+    caret-color: map-get($swatch, primary);
+  }
+}

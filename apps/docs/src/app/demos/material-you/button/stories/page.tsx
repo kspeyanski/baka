@@ -1,17 +1,19 @@
-import { BakaButton, BakaButtonProps } from "baka-ui";
+import { Button, ButtonProps } from "baka-material-you";
 
-export type ButtonStoryProps = BakaButtonProps & {
+export type ButtonStoryProps = ButtonProps & {
   children?: React.ReactNode;
 };
 export const defaultProps: ButtonStoryProps = {
-  hovered: false,
-  focused: false,
-  activated: false,
-  disabled: false,
+  state: {
+    hovered: false,
+    focused: false,
+    pressed: false,
+    disabled: false,
+  },
   children: "Label",
 };
 
 export default function ButtonStory(props: ButtonStoryProps) {
   const { children, ...other } = { ...defaultProps, ...props };
-  return <BakaButton {...other}>{children}</BakaButton>;
+  return <Button {...other}>{children}</Button>;
 }

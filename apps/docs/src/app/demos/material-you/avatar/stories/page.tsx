@@ -1,9 +1,8 @@
-/// <reference types="baka-material-you" />
-import { BakaAvatar, BakaAvatarProps, BakaIcon } from "baka-ui";
+import { Avatar, AvatarProps, Icon } from "baka-material-you";
 
-export type AvatarStoryProps = BakaAvatarProps & {
+export type AvatarStoryProps = AvatarProps & {
   type: "letter" | "icon" | "image";
-  children: React.ReactNode;
+  children?: React.ReactNode;
 };
 export const defaultProps: AvatarStoryProps = {
   type: "letter",
@@ -18,19 +17,19 @@ export default function AvatarStory(props: AvatarStoryProps) {
         switch (type) {
           case "icon":
             return (
-              <BakaAvatar {...other}>
-                <BakaIcon>check</BakaIcon>
-              </BakaAvatar>
+              <Avatar {...other}>
+                <Icon>check</Icon>
+              </Avatar>
             );
           case "image":
             return (
-              <BakaAvatar {...other}>
-                <BakaIcon as="img" src="./avatar.svg" />
-              </BakaAvatar>
+              <Avatar {...other}>
+                <Icon as="img" src="./avatar.svg" />
+              </Avatar>
             );
           case "letter":
           default:
-            return <BakaAvatar {...other}>{children || "A"}</BakaAvatar>;
+            return <Avatar {...other}>{children || "A"}</Avatar>;
         }
       })()}
     </>

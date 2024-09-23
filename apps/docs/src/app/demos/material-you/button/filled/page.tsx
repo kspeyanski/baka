@@ -1,42 +1,42 @@
-import { BakaButton, BakaIcon } from "baka-ui";
+import { Button, Icon } from "baka-material-you";
 
 export default function ButtonDemo() {
   return (
     <>
       <div className="flex flex-col gap-4">
         <div className="flex flex-row gap-5">
-          <BakaButton variant="filled">Button</BakaButton>
-          <BakaButton variant="filled" hovered={true}>
+          <Button variant="filled">Button</Button>
+          <Button variant="filled" state={{ hovered: true }}>
             Button
-          </BakaButton>
-          <BakaButton variant="filled" focused={true}>
+          </Button>
+          <Button variant="filled" state={{ focused: true }}>
             Button
-          </BakaButton>
-          <BakaButton variant="filled" activated={true}>
+          </Button>
+          <Button variant="filled" state={{ pressed: true }}>
             Button
-          </BakaButton>
-          <BakaButton variant="filled" disabled={true}>
+          </Button>
+          <Button variant="filled" state={{ disabled: true }}>
             Button
-          </BakaButton>
+          </Button>
         </div>
         <div className="flex flex-row gap-5">
-          <BakaButton variant="filled">Button</BakaButton>
-          <BakaButton variant="filled" hovered={true}>
-            <BakaIcon>add</BakaIcon>
+          <Button variant="filled">Button</Button>
+          <Button variant="filled" state={{ hovered: true }}>
+            <Icon>add</Icon>
             Button
-          </BakaButton>
-          <BakaButton variant="filled" focused={true}>
-            <BakaIcon>add</BakaIcon>
+          </Button>
+          <Button variant="filled" state={{ focused: true }}>
+            <Icon>add</Icon>
             Button
-          </BakaButton>
-          <BakaButton variant="filled" activated={true}>
-            <BakaIcon>add</BakaIcon>
+          </Button>
+          <Button variant="filled" state={{ pressed: true }}>
+            <Icon>add</Icon>
             Button
-          </BakaButton>
-          <BakaButton variant="filled" disabled={true}>
-            <BakaIcon>add</BakaIcon>
+          </Button>
+          <Button variant="filled" state={{ disabled: true }}>
+            <Icon>add</Icon>
             Button
-          </BakaButton>
+          </Button>
         </div>
       </div>
     </>

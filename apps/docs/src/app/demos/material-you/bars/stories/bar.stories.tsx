@@ -1,5 +1,4 @@
 import React from "react";
-import type { BakaDesign } from "baka-core";
 import type { Meta, StoryObj } from "@storybook/react";
 import BarStory, { BarStoryProps, defaultProps } from "./page";
 

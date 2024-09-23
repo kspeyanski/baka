@@ -2,7 +2,7 @@ import SideNavigation from "./side/page";
 import BottomNavigation from "./bottom/page";
 import RailNavigation from "./rail/page";
 
-export default async function () {
+export default async function NavigationDemo() {
   return (
     <div className="flex flex-col" style={{ height: 500 }}>
       <div className="flex overflow-hidden">

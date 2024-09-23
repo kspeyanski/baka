@@ -1,4 +1,4 @@
-import { BakaButton, BakaText, BakaTooltip } from "baka-ui";
+import { Button, Text, Tooltip } from "baka-material-you";
 
 export type TooltipStoryProps = {
   variant: string;
@@ -20,26 +20,26 @@ export default function TooltipStory(props: TooltipStoryProps) {
     case "plain":
       console.log("here");
       return (
-        <BakaTooltip style={{ maxWidth: 316 }} variant={"plain"}>
+        <Tooltip style={{ maxWidth: 316 }} variant={"plain"}>
           {args.text}
-        </BakaTooltip>
+        </Tooltip>
       );
     case "rich":
       return (
-        <BakaTooltip style={{ maxWidth: 316 }} variant={"rich"}>
+        <Tooltip style={{ maxWidth: 316 }} variant={"rich"}>
           <div
             style={{ padding: "12px 16px 8px", display: "flex", flexDirection: "column", gap: 4 }}
           >
-            <BakaText variant={"title-small"}>Title</BakaText>
-            <BakaText variant={["body-medium", "variant"]}>{args.text}</BakaText>
+            <Text variant={"title-small"}>Title</Text>
+            <Text variant={["body-medium", "variant"]}>{args.text}</Text>
           </div>
           {args.buttons ? (
             <div style={{ padding: "0 8px", display: "flex", gap: 8 }}>
-              <BakaButton>Action</BakaButton>
-              <BakaButton>Action</BakaButton>
+              <Button>Action</Button>
+              <Button>Action</Button>
             </div>
           ) : null}
-        </BakaTooltip>
+        </Tooltip>
       );
   }
 }

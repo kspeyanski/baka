@@ -1,28 +1,28 @@
-import { BakaButton, BakaText, BakaTooltip } from "baka-ui";
+import { Button, Text, Tooltip } from "baka-material-you";
 
 export default function RichTooltipDemo() {
   return (
     <div style={{ display: "grid", gridRowGap: 16, alignItems: "center", justifyItems: "center" }}>
-      <BakaTooltip variant={"rich"} style={{ width: 312 }}>
+      <Tooltip variant={"rich"} style={{ width: 312 }}>
         <div style={{ padding: "12px 16px 8px", display: "flex", flexDirection: "column", gap: 4 }}>
-          <BakaText variant={"title-small"}>Title</BakaText>
-          <BakaText variant={["body-medium", "variant"]}>
+          <Text variant={"title-small"}>Title</Text>
+          <Text variant={["body-medium", "variant"]}>
             Supporting line text lorem ipsum dolor sit amet, consectetur.
-          </BakaText>
+          </Text>
         </div>
         <div style={{ padding: "0 8px", display: "flex", gap: 8 }}>
-          <BakaButton>Action</BakaButton>
-          <BakaButton>Action</BakaButton>
+          <Button>Action</Button>
+          <Button>Action</Button>
         </div>
-      </BakaTooltip>
-      <BakaTooltip variant={"rich"} style={{ width: 312 }}>
+      </Tooltip>
+      <Tooltip variant={"rich"} style={{ width: 312 }}>
         <div style={{ padding: "12px 16px 8px", display: "flex", flexDirection: "column", gap: 4 }}>
-          <BakaText variant={"title-small"}>Title</BakaText>
-          <BakaText variant={["body-medium", "variant"]}>
+          <Text variant={"title-small"}>Title</Text>
+          <Text variant={["body-medium", "variant"]}>
             Supporting line text lorem ipsum dolor sit amet, consectetur.
-          </BakaText>
+          </Text>
         </div>
-      </BakaTooltip>
+      </Tooltip>
     </div>
   );
 }

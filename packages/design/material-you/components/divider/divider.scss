@@ -1,0 +1,20 @@
+@use "../../design" as *;
+@use "baka-ui" as baka;
+
+@mixin divider--styles {
+  .baka-divider {
+    margin: 0;
+    flex: 1 1 auto;
+    background-color: map-get($swatch, outline-variant);
+
+    @include baka.variant(horizontal, true) {
+      height: 1px;
+      flex-grow: 1;
+    }
+
+    @include baka.variant(vertical) {
+      width: 1px;
+      flex-grow: 1;
+    }
+  }
+}

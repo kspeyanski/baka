@@ -1,5 +1,5 @@
-import { BakaChip } from "baka-ui";
+import { Chip } from "baka-material-you";
 
-export default async function Chip() {
-  return <BakaChip variant={"elevated"}>Label</BakaChip>;
+export default async function ChipDemo() {
+  return <Chip variant={"elevated"}>Label</Chip>;
 }

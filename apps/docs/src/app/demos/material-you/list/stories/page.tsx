@@ -1,6 +1,6 @@
-import { BakaAvatar, BakaCheckbox, BakaList, BakaListItem, BakaListProps, BakaText } from "baka-ui";
+import { Avatar, Checkbox, List, ListItem, ListProps, Text } from "baka-material-you";
 
-export type ListStoryProps = BakaListProps & {
+export type ListStoryProps = ListProps & {
   scrollable?: boolean;
   items?: number;
 };
@@ -15,17 +15,17 @@ export default function ListStory(props: ListStoryProps) {
 
   return (
     <div className="container-low">
-      <BakaList {...args} style={{ width: 360, ...(args.scrollable ? { maxHeight: 300 } : {}) }}>
+      <List {...args} style={{ width: 360, ...(args.scrollable ? { maxHeight: 300 } : {}) }}>
         {Array.from({ length: args.items }, (_, i) => (
-          <BakaListItem key={i}>
-            <BakaAvatar>A</BakaAvatar>
-            <BakaText style={{ flexGrow: 1 }} variant={"body-large"}>
+          <ListItem key={i}>
+            <Avatar>A</Avatar>
+            <Text style={{ flexGrow: 1 }} variant={"body-large"}>
               List item
-            </BakaText>
-            <BakaCheckbox readOnly={true} checked={true} />
-          </BakaListItem>
+            </Text>
+            <Checkbox readOnly={true} checked={true} />
+          </ListItem>
         ))}
-      </BakaList>
+      </List>
     </div>
   );
 }

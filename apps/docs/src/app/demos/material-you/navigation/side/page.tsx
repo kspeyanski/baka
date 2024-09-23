@@ -1,51 +1,51 @@
 import {
-  BakaNavigation,
-  BakaNavigationItem,
-  BakaIcon,
-  BakaText,
-  BakaDivider,
-} from "baka-ui";
+  Navigation,
+  NavigationItem,
+  Icon,
+  Text,
+  Divider,
+} from "baka-material-you";
 
-export default async function () {
+export default async function SideNavigationDemo() {
   return (
-    <BakaNavigation style={{ width: 328 }} variant={"side"}>
+    <Navigation style={{ width: 328 }} variant={"side"}>
       <div style={{ padding: "18px 16px" }}>
-        <BakaText variant={"title-small"}>Title</BakaText>
+        <Text variant={"title-small"}>Title</Text>
       </div>
       <div style={{ padding: "18px 16px" }}>
-        <BakaText variant={"title-small"}>Section header</BakaText>
+        <Text variant={"title-small"}>Section header</Text>
       </div>
-      <BakaNavigationItem selected={true}>
-        <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-        <BakaText>Label</BakaText>
-        <BakaText>100+</BakaText>
-      </BakaNavigationItem>
-      <BakaNavigationItem>
-        <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-        <BakaText>Label</BakaText>
-        <BakaText>100+</BakaText>
-      </BakaNavigationItem>
-      <BakaNavigationItem>
-        <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-        <BakaText>Label</BakaText>
-        <BakaText>100+</BakaText>
-      </BakaNavigationItem>
-      <BakaDivider />
+      <NavigationItem state={{ selected: true }}>
+        <Icon variant={"filled"}>fiber_manual_record</Icon>
+        <Text>Label</Text>
+        <Text>100+</Text>
+      </NavigationItem>
+      <NavigationItem>
+        <Icon variant={"filled"}>fiber_manual_record</Icon>
+        <Text>Label</Text>
+        <Text>100+</Text>
+      </NavigationItem>
+      <NavigationItem>
+        <Icon variant={"filled"}>fiber_manual_record</Icon>
+        <Text>Label</Text>
+        <Text>100+</Text>
+      </NavigationItem>
+      <Divider />
       <div style={{ padding: "18px 16px" }}>
-        <BakaText variant={"title-small"}>Section header</BakaText>
+        <Text variant={"title-small"}>Section header</Text>
       </div>
-      <BakaNavigationItem>
-        <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-        <BakaText>Label</BakaText>
-      </BakaNavigationItem>
-      <BakaNavigationItem>
-        <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-        <BakaText>Label</BakaText>
-      </BakaNavigationItem>
-      <BakaNavigationItem>
-        <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-        <BakaText>Label</BakaText>
-      </BakaNavigationItem>
-    </BakaNavigation>
+      <NavigationItem>
+        <Icon variant={"filled"}>fiber_manual_record</Icon>
+        <Text>Label</Text>
+      </NavigationItem>
+      <NavigationItem>
+        <Icon variant={"filled"}>fiber_manual_record</Icon>
+        <Text>Label</Text>
+      </NavigationItem>
+      <NavigationItem>
+        <Icon variant={"filled"}>fiber_manual_record</Icon>
+        <Text>Label</Text>
+      </NavigationItem>
+    </Navigation>
   );
 }

@@ -1,4 +1,4 @@
-import { BakaIcon, BakaIconProps } from "baka-ui";
+import { Icon, IconProps } from "baka-material-you";
 import icons from "./icons.json";
 
 export type IconStoryProps = {
@@ -19,10 +19,10 @@ export default function IconStory(props: IconStoryProps) {
   const args = { ...defaultProps, ...props };
 
   return (
-    <BakaIcon
-      variant={[args.variant, args.size, args.filled ? "filled" : null].filter(Boolean) as BakaIconProps["variant"]}
+    <Icon
+      variant={[args.variant, args.size, args.filled ? "filled" : null].filter(Boolean) as IconProps["variant"]}
     >
       {args.icon}
-    </BakaIcon>
+    </Icon>
   );
 }

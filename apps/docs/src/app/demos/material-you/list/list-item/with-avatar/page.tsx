@@ -1,4 +1,4 @@
-import { BakaList, BakaListItem, BakaAvatar, BakaText, BakaCheckbox } from "baka-ui";
+import { List, ListItem, Avatar, Text, Checkbox } from "baka-material-you";
 
 export default function ListItemWithAvatarDemo() {
   return (
@@ -14,32 +14,32 @@ export default function ListItemWithAvatarDemo() {
         }}
       >
         {/* With Avatar */}
-        <BakaList>
-          <BakaListItem variant={"multi-line"}>
-            <BakaAvatar>A</BakaAvatar>
+        <List>
+          <ListItem variant={"multi-line"}>
+            <Avatar>A</Avatar>
             <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
-              <BakaText variant="body-large">List item</BakaText>
-              <BakaText variant={["body-medium", "variant"]}>
+              <Text variant="body-large">List item</Text>
+              <Text variant={["body-medium", "variant"]}>
                 Supporting line text lorem ipsum dolor sit amet, consectetur.
-              </BakaText>
+              </Text>
             </div>
-          </BakaListItem>
-        </BakaList>
-        <BakaList>
-          <BakaListItem variant={"multi-line"}>
-            <BakaAvatar>A</BakaAvatar>
+          </ListItem>
+        </List>
+        <List>
+          <ListItem variant={"multi-line"}>
+            <Avatar>A</Avatar>
             <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
-              <BakaText variant="body-large">List item</BakaText>
-              <BakaText variant={["body-medium", "variant"]} style={{ width: "100%" }}>
+              <Text variant="body-large">List item</Text>
+              <Text variant={["body-medium", "variant"]} style={{ width: "100%" }}>
                 Supporting line text lorem ipsum dolor sit amet, consectetur.
-              </BakaText>
+              </Text>
             </div>
-            <BakaCheckbox readOnly={true} checked={true} />
-          </BakaListItem>
-        </BakaList>
-        <BakaList>
-          <BakaListItem>
-            <BakaAvatar>A</BakaAvatar>
+            <Checkbox readOnly={true} checked={true} />
+          </ListItem>
+        </List>
+        <List>
+          <ListItem>
+            <Avatar>A</Avatar>
             <div
               style={{
                 display: "flex",
@@ -49,8 +49,8 @@ export default function ListItemWithAvatarDemo() {
                 overflow: "hidden",
               }}
             >
-              <BakaText variant="body-large">List item</BakaText>
-              <BakaText
+              <Text variant="body-large">List item</Text>
+              <Text
                 variant={["body-medium", "variant"]}
                 style={{
                   whiteSpace: "nowrap",
@@ -60,13 +60,13 @@ export default function ListItemWithAvatarDemo() {
                 }}
               >
                 Supporting line text lorem ipsum dolor sit amet, consectetur.
-              </BakaText>
+              </Text>
             </div>
-          </BakaListItem>
-        </BakaList>
-        <BakaList>
-          <BakaListItem>
-            <BakaAvatar>A</BakaAvatar>
+          </ListItem>
+        </List>
+        <List>
+          <ListItem>
+            <Avatar>A</Avatar>
             <div
               style={{
                 display: "flex",
@@ -76,34 +76,34 @@ export default function ListItemWithAvatarDemo() {
                 overflow: "hidden",
               }}
             >
-              <BakaText variant="body-large">List item</BakaText>
-              <BakaText
+              <Text variant="body-large">List item</Text>
+              <Text
                 variant={["body-medium", "variant"]}
                 style={{ whiteSpace: "nowrap", textOverflow: "ellipsis", overflow: "hidden" }}
               >
                 Supporting line text lorem ipsum dolor sit amet, consectetur.
-              </BakaText>
+              </Text>
             </div>
-            <BakaCheckbox readOnly={true} checked={true} />
-          </BakaListItem>
-        </BakaList>
-        <BakaList>
-          <BakaListItem>
-            <BakaAvatar>A</BakaAvatar>
+            <Checkbox readOnly={true} checked={true} />
+          </ListItem>
+        </List>
+        <List>
+          <ListItem>
+            <Avatar>A</Avatar>
             <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
-              <BakaText variant="body-large">List item</BakaText>
+              <Text variant="body-large">List item</Text>
             </div>
-          </BakaListItem>
-        </BakaList>
-        <BakaList>
-          <BakaListItem>
-            <BakaAvatar>A</BakaAvatar>
+          </ListItem>
+        </List>
+        <List>
+          <ListItem>
+            <Avatar>A</Avatar>
             <div style={{ display: "flex", flexDirection: "column", gap: 0, width: "100%" }}>
-              <BakaText variant="body-large">List item</BakaText>
+              <Text variant="body-large">List item</Text>
             </div>
-            <BakaCheckbox readOnly={true} checked={true} />
-          </BakaListItem>
-        </BakaList>
+            <Checkbox readOnly={true} checked={true} />
+          </ListItem>
+        </List>
       </div>
     </div>
   );

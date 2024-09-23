@@ -1,8 +1,8 @@
-import { BakaCard, BakaAvatar, BakaText, BakaButton, BakaIcon } from "baka-ui";
+import { Card, Avatar, Text, Button, Icon } from "baka-material-you";
 
 export default async function Demo() {
   return (
-    <BakaCard variant={"filled"} style={{ width: 360 }}>
+    <Card variant={"filled"} style={{ width: 360 }}>
       <div
         style={{
           display: "flex",
@@ -13,17 +13,17 @@ export default async function Demo() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <BakaAvatar>
+          <Avatar>
             <span>A</span>
-          </BakaAvatar>
-          <BakaText style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-            <BakaText variant={"title-medium"}>Header</BakaText>
-            <BakaText variant={"body-medium"}>Subhead</BakaText>
-          </BakaText>
+          </Avatar>
+          <Text style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+            <Text variant={"title-medium"}>Header</Text>
+            <Text variant={"body-medium"}>Subhead</Text>
+          </Text>
         </div>
-        <BakaButton variant={["icon"]}>
-          <BakaIcon>more_vert</BakaIcon>
-        </BakaButton>
+        <Button variant={["icon"]}>
+          <Icon>more_vert</Icon>
+        </Button>
       </div>
       <div>
         <img
@@ -47,17 +47,17 @@ export default async function Demo() {
         }}
       >
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <BakaText variant={"body-large"}>Title</BakaText>
-          <BakaText variant={"body-medium"}>Subhead</BakaText>
+          <Text variant={"body-large"}>Title</Text>
+          <Text variant={"body-medium"}>Subhead</Text>
         </div>
-        <BakaText variant={"body-medium"}>
+        <Text variant={"body-medium"}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-        </BakaText>
+        </Text>
         <div style={{ display: "flex", alignSelf: "stretch", justifyContent: "flex-end", gap: 8 }}>
-          <BakaButton variant={["outlined"]}>Enabled</BakaButton>
-          <BakaButton variant={["filled"]}>Enabled</BakaButton>
+          <Button variant={["outlined"]}>Enabled</Button>
+          <Button variant={["filled"]}>Enabled</Button>
         </div>
       </div>
-    </BakaCard>
+    </Card>
   );
 }

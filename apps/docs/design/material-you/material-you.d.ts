@@ -1,7 +1,9 @@
-declare module "baka-core" {
-  import { BakaDesignMaterialYou } from "baka-material-you/types/design";
+import type { BakaDesign as BakaDesignMaterialYou } from "baka-material-you/types/design";
 
-  export interface BakaDesign extends BakaDesignMaterialYou {
-    TextVariant: BakaDesignMaterialYou["TextVariant"] | "article";
+declare module "baka-ui" {
+  interface BakaDesignMaterialYouExtended extends BakaDesignMaterialYou {
+    /* TODO: custom components/variants/states here */
   }
+
+  export interface BakaDesign extends BakaDesignMaterialYouExtended {}
 }

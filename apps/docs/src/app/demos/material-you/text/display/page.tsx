@@ -1,17 +1,17 @@
-import { BakaCard, BakaText } from "baka-ui";
+import { Card, Text } from "baka-material-you";
 
 export default function DisplayDemo() {
   return (
-    <BakaCard style={{ padding: 24 }}>
-      <BakaText variant={"display-large"}>
+    <Card style={{ padding: 24 }}>
+      <Text variant={"display-large"}>
         Display Large <br /> &mdash; Roboto 57/64 -0.25
-      </BakaText>
-      <BakaText variant={"display-medium"}>
+      </Text>
+      <Text variant={"display-medium"}>
         Display Medium <br /> &mdash; Roboto 45/52 . 0
-      </BakaText>
-      <BakaText variant={"display-small"}>
+      </Text>
+      <Text variant={"display-small"}>
         Display Small <br /> &mdash; Roboto 36/44 . 0
-      </BakaText>
-    </BakaCard>
+      </Text>
+    </Card>
   );
 }

@@ -1,5 +1,5 @@
-import { BakaDivider } from "baka-ui";
+import { Divider } from "baka-material-you";
 
 export default function DividerDemo() {
-  return <BakaDivider style={{ width: 1, height: 300 }} />;
+  return <Divider style={{ width: 1, height: 300 }} />;
 }

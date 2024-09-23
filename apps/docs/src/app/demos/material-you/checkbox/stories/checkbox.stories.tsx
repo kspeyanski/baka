@@ -1,9 +1,12 @@
 import React from "react";
-import type { BakaDesign } from "baka-core";
+import type { BakaDesign } from "baka-material-you";
 import type { Meta, StoryObj } from "@storybook/react";
 import CheckboxStory, { CheckboxStoryProps, defaultProps } from "./page";
 
-const variantOptions: BakaDesign["CheckboxVariant"][] = ["primary", "error"];
+const variantOptions: BakaDesign["checkbox"]["variant"][] = [
+  "primary",
+  "error",
+];
 
 const meta: Meta = {
   title: "Material You/Checkbox",

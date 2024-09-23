@@ -1,6 +1,6 @@
-import { BakaBadge, BakaBadgeProps } from "baka-ui";
+import { Badge, BadgeProps } from "baka-material-you";
 
-export type BadgeStoryProps = BakaBadgeProps & {};
+export type BadgeStoryProps = BadgeProps & {};
 export const defaultProps: BadgeStoryProps = {
   variant: "single-digit",
 };
@@ -8,11 +8,11 @@ export const defaultProps: BadgeStoryProps = {
 export default function BadgeStory(props: BadgeStoryProps) {
   switch (props.variant) {
     case "small":
-      return <BakaBadge {...props} />;
+      return <Badge {...props} />;
     case "multi-digit":
-      return <BakaBadge {...props}>99+</BakaBadge>;
+      return <Badge {...props}>99+</Badge>;
     case "single-digit":
     default:
-      return <BakaBadge {...props}>3</BakaBadge>;
+      return <Badge {...props}>3</Badge>;
   }
 }

@@ -1,6 +1,6 @@
-import { BakaDivider, BakaDividerProps } from "baka-ui";
+import { Divider, DividerProps } from "baka-material-you";
 
-export type DividerStoryProps = BakaDividerProps & {
+export type DividerStoryProps = DividerProps & {
   orientation?: "horizontal" | "vertical";
 };
 
@@ -12,8 +12,8 @@ export default function DividerStoryDemo(props: DividerStoryProps) {
   const args = { ...defaultProps, ...props };
 
   return args.orientation === "horizontal" ? (
-    <BakaDivider style={{ width: 300 }} />
+    <Divider style={{ width: 300 }} />
   ) : (
-    <BakaDivider style={{ width: 1, height: 300 }} />
+    <Divider style={{ width: 1, height: 300 }} />
   );
 }

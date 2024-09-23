@@ -1,0 +1,157 @@
+@use "baka-ui" as baka;
+@use "../../design" as *;
+
+@mixin row--styles {
+  .baka-row {
+    display: flex;
+    justify-content: flex-start;
+    box-sizing: border-box;
+
+    width: 100%;
+
+    @each $size, $breakpoint in $layout {
+      $_gutter: map-get($breakpoint, gutter);
+      $_screen: map-get($breakpoint, screen);
+      $_margin: map-get($breakpoint, margin);
+
+      display: flex;
+      flex-wrap: wrap;
+
+      @media screen and (min-width: $_screen) {
+        gap: $_gutter;
+        padding-inline: $_margin;
+      }
+    }
+  }
+}
+
+@mixin container--styles {
+  .baka-container {
+    @each $size, $breakpoint in $layout {
+      $_gutter: map-get($breakpoint, gutter);
+      $_screen: map-get($breakpoint, screen);
+      $_width: map-get($breakpoint, width);
+      $_margin: map-get($breakpoint, margin);
+      $_regions: map-get($breakpoint, regions);
+
+      @if ($_screen == 0) {
+        max-width: $_width;
+        width: 100%;
+        margin-inline: auto;
+      } @else {
+        @media screen and (min-width: $_screen) {
+          max-width: $_width;
+          width: 100%;
+        }
+      }
+      @include baka.variant(fluid) {
+        max-width: 100%;
+        width: 100%;
+        margin-inline: 0;
+      }
+    }
+  }
+}
+
+@mixin column--styles {
+  .baka-column {
+    display: flex;
+    box-sizing: border-box;
+    margin: 0;
+
+    @for $j from 1 through length($layout) {
+      $size: nth(map-keys($layout), $j);
+      $breakpoint: nth(map-values($layout), $j);
+
+      $_width: map-get($breakpoint, width);
+      $_screen: map-get($breakpoint, screen);
+      $_columns: map-get($breakpoint, columns);
+      $_gutter: map-get($breakpoint, gutter);
+      $_regions: map-get($breakpoint, regions);
+      flex-grow: 1;
+
+      @if ($_screen == 0) {
+        @for $i from 1 through $_columns {
+          $_offset: calc(
+            $_gutter * calc(calc($_columns / $i) - 1) / calc($_columns / $i)
+          );
+          & {
+            --size: #{$i};
+          }
+          &.value--#{$i} {
+            flex-grow: 0;
+            --size: #{$i};
+          }
+          &.value-0--#{$i} {
+            flex-grow: 0;
+            --size: #{$i};
+          }
+        }
+
+        flex-basis: calc(
+          (calc(var(--size, 1) / $_columns)) *
+            100% -
+            calc(
+              $_gutter *
+                calc(calc($_columns / var(--size, 1)) - 1) /
+                calc($_columns / var(--size, 1))
+            ) +
+            0px
+        );
+      } @else {
+        @media screen and (min-width: $_screen) {
+          @for $i from 1 through $_columns {
+            $_offset: calc(
+              $_gutter * calc(calc($_columns / $i) - 1) / calc($_columns / $i)
+            );
+
+            &.value--#{$i} {
+              flex-grow: 0;
+              --size: #{$i};
+            }
+            &.value-#{$j - 1}--#{$i} {
+              flex-grow: 0;
+              --size: #{$i};
+            }
+          }
+
+          flex-basis: calc(
+            (calc(var(--size, 1) / $_columns)) * 100% -
+              calc(
+                $_gutter * calc(calc($_columns / var(--size, 1)) - 1) /
+                  calc($_columns / var(--size, 1))
+              ) + 0px
+          );
+        }
+      }
+    }
+
+    @include baka.variant(region-left) {
+      flex: 0 0 auto;
+      @each $size, $breakpoint in $layout {
+        $_width: map-get($breakpoint, width);
+        $_screen: map-get($breakpoint, screen);
+        $_columns: map-get($breakpoint, columns);
+        $_gutter: map-get($breakpoint, gutter);
+        $_margin: map-get($breakpoint, margin);
+        $_regions: map-get($breakpoint, regions);
+
+        @if ($_screen == 0) {
+          @if ($_regions) {
+            @for $i from 1 through $_columns {
+              & {
+                width: map-get(map-get($_regions, left), width);
+              }
+            }
+          }
+        } @else {
+          @if ($_regions) {
+            @media screen and (min-width: $_screen) {
+              width: map-get(map-get($_regions, left), width);
+            }
+          }
+        }
+      }
+    }
+  }
+}

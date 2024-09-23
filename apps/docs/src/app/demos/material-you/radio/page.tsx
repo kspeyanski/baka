@@ -1,21 +1,21 @@
-import { BakaRadio } from "baka-ui";
+import { Radio } from "baka-material-you";
 
 export default function RadioDemo() {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
       <div style={{ display: "flex", gap: 48 }}>
-        <BakaRadio defaultChecked={true} />
-        <BakaRadio defaultChecked={true} hovered={true} />
-        <BakaRadio defaultChecked={true} focused={true} />
-        <BakaRadio defaultChecked={true} activated={true} />
-        <BakaRadio defaultChecked={true} disabled={true} />
+        <Radio defaultChecked={true} />
+        <Radio defaultChecked={true} state={{ hovered: true }} />
+        <Radio defaultChecked={true} state={{ focused: true }} />
+        <Radio defaultChecked={true} state={{ pressed: true }} />
+        <Radio defaultChecked={true} state={{disabled: true}} />
       </div>
       <div style={{ display: "flex", gap: 48 }}>
-        <BakaRadio />
-        <BakaRadio hovered={true} />
-        <BakaRadio focused={true} />
-        <BakaRadio activated={true} />
-        <BakaRadio disabled={true} />
+        <Radio />
+        <Radio state={{ hovered: true }} />
+        <Radio state={{ focused: true }} />
+        <Radio state={{ pressed: true }} />
+        <Radio state={{disabled: true}} />
       </div>
     </div>
   );

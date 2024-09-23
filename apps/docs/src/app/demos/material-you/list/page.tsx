@@ -1,19 +1,19 @@
-import { BakaAvatar, BakaCheckbox, BakaList, BakaListItem, BakaText } from "baka-ui";
+import { Avatar, Checkbox, List, ListItem, Text } from "baka-material-you";
 
 export default async function ListDemo() {
   return (
     <div className="container-low">
-      <BakaList style={{ width: 360 }}>
+      <List style={{ width: 360 }}>
         {Array.from({ length: 5 }, (_, i) => (
-          <BakaListItem key={i}>
-            <BakaAvatar>A</BakaAvatar>
-            <BakaText style={{ flexGrow: 1 }} variant={"body-large"}>
+          <ListItem key={i}>
+            <Avatar>A</Avatar>
+            <Text style={{ flexGrow: 1 }} variant={"body-large"}>
               List item
-            </BakaText>
-            <BakaCheckbox readOnly={true} checked={true} />
-          </BakaListItem>
+            </Text>
+            <Checkbox readOnly={true} checked={true} />
+          </ListItem>
         ))}
-      </BakaList>
+      </List>
     </div>
   );
 }

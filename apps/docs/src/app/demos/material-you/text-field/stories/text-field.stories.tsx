@@ -1,11 +1,10 @@
-/// <reference types="baka-material-you" />
 
 import React from "react";
-import type { BakaDesign } from "baka-core";
+import type { Design } from "baka-core";
 import type { Meta, StoryObj } from "@storybook/react";
 import TextFieldStory, { TextFieldStoryProps, defaultProps } from "./page";
 
-const variantOptions: BakaDesign["TextFieldVariant"][] = ["filled", "outlined"];
+const variantOptions: Design["TextFieldVariant"][] = ["filled", "outlined"];
 
 const meta: Meta = {
   title: "Material You/TextField",

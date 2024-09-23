@@ -1,11 +1,11 @@
-import { BakaAvatar, BakaIcon } from "baka-ui";
+import { Avatar, Icon } from "baka-material-you";
 
 export default async function Demo() {
   return (
     <>
-      <BakaAvatar>
-        <BakaIcon>check</BakaIcon>
-      </BakaAvatar>
+      <Avatar>
+        <Icon>check</Icon>
+      </Avatar>
     </>
   );
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import NavigationStory, { NavigationStoryProps, defaultProps } from "./page";
+import NavigationStory, { NavigationStoryProps } from "./page";
 
 const meta: Meta = {
   title: "Material You/Navigation",

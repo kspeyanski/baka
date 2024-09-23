@@ -1,0 +1,32 @@
+@use "../../design" as *;
+@use "baka-ui" as baka;
+
+@mixin dialog--styles {
+  .baka-dialog {
+    position: relative;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    border-radius: 28px;
+
+    color: map-get($swatch, on-surface);
+    background-color: map-get($swatch, surface-container-high);
+
+    gap: 24px;
+    padding: 24px;
+
+    @include baka.variant(basic, true) {
+      box-shadow: map-get($elevation, 3);
+    }
+
+    @include baka.variant(full-screen) {
+      box-shadow: none;
+    }
+  }
+}

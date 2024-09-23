@@ -1,8 +1,14 @@
-import { BakaNavigation, BakaButton, BakaIcon, BakaNavigationItem, BakaText } from "baka-ui";
+import {
+  Navigation,
+  Button,
+  Icon,
+  NavigationItem,
+  Text,
+} from "baka-material-you";
 
-export default function Navigation() {
+export default function NavigationDemo() {
   return (
-    <BakaNavigation style={{ height: "calc(100vh - 100px)" }} variant={"rail"}>
+    <Navigation style={{ height: "calc(100vh - 100px)" }} variant={"rail"}>
       <div
         style={{
           display: "flex",
@@ -12,30 +18,30 @@ export default function Navigation() {
           justifyContent: "stretch",
         }}
       >
-        <BakaButton variant="icon">
-          <BakaIcon>menu</BakaIcon>
-        </BakaButton>
+        <Button variant="icon">
+          <Icon>menu</Icon>
+        </Button>
         {
-          <BakaButton variant={["fab", "tertiary"]}>
-            <BakaIcon>mode_edit</BakaIcon>
-          </BakaButton>
+          <Button variant={["fab", "tertiary"]}>
+            <Icon>mode_edit</Icon>
+          </Button>
         }
       </div>
       <div>
-        <BakaNavigationItem selected={true}>
-          <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-          <BakaText>Label</BakaText>
-        </BakaNavigationItem>
-        <BakaNavigationItem>
-          <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-        </BakaNavigationItem>
-        <BakaNavigationItem>
-          <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-        </BakaNavigationItem>
-        <BakaNavigationItem>
-          <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-        </BakaNavigationItem>
+        <NavigationItem state={{ selected: true }}>
+          <Icon variant={"filled"}>fiber_manual_record</Icon>
+          <Text>Label</Text>
+        </NavigationItem>
+        <NavigationItem>
+          <Icon variant={"filled"}>fiber_manual_record</Icon>
+        </NavigationItem>
+        <NavigationItem>
+          <Icon variant={"filled"}>fiber_manual_record</Icon>
+        </NavigationItem>
+        <NavigationItem>
+          <Icon variant={"filled"}>fiber_manual_record</Icon>
+        </NavigationItem>
       </div>
-    </BakaNavigation>
+    </Navigation>
   );
 }

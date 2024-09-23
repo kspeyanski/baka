@@ -1,10 +1,10 @@
-import { BakaChip, BakaIcon, BakaText } from "baka-ui";
+import { Chip, Icon, Text } from "baka-material-you";
 
-export default async function Chip() {
+export default async function ChipDemo() {
   return (
-    <BakaChip>
-      <BakaIcon variant={"primary"}>local_taxi</BakaIcon>
-      <BakaText>Label</BakaText>
-    </BakaChip>
+    <Chip>
+      <Icon variant={"primary"}>local_taxi</Icon>
+      <Text>Label</Text>
+    </Chip>
   );
 }

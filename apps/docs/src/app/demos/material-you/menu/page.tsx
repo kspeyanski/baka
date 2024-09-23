@@ -1,13 +1,13 @@
-import { BakaMenu, BakaMenuItem, BakaText } from "baka-ui";
+import { Menu, MenuItem, Text } from "baka-material-you";
 
 export default function MenuDemo() {
   return (
-    <BakaMenu style={{ width: 360 }}>
+    <Menu style={{ width: 360 }}>
       {Array.from({ length: 5 }, (_, i) => (
-        <BakaMenuItem key={i}>
-          <BakaText>Menu item</BakaText>
-        </BakaMenuItem>
+        <MenuItem key={i}>
+          <Text>Menu item</Text>
+        </MenuItem>
       ))}
-    </BakaMenu>
+    </Menu>
   );
 }

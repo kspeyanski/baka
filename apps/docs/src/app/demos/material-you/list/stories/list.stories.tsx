@@ -1,5 +1,3 @@
-/// <reference types="baka-material-you" />
-
 import React from "react";
 import ListStory, { ListStoryProps, defaultProps } from "./page";
 import { Meta, StoryObj } from "@storybook/react";
@@ -48,7 +46,15 @@ export const ListItem: Story = {
       control: {
         type: "radio",
       },
-      options: ["none", "avatar", "icon", "media", "checkbox", "radio", "switch"],
+      options: [
+        "none",
+        "avatar",
+        "icon",
+        "media",
+        "checkbox",
+        "radio",
+        "switch",
+      ],
     },
     media: {
       control: {

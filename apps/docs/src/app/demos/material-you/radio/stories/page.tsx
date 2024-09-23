@@ -1,31 +1,34 @@
-import { BakaRadio, BakaRadioProps, BakaText } from "baka-ui";
+import { Radio, RadioProps, Text } from "baka-material-you";
 
-export type RadioStoryProps = BakaRadioProps & {
+export type RadioStoryProps = RadioProps & {
   label?: boolean;
 };
 
 export const defaultProps: RadioStoryProps = {
   label: true,
   checked: false,
-  hovered: false,
-  focused: false,
-  activated: false,
-  disabled: false,
+  state: {
+    hovered: false,
+    focused: false,
+    pressed: false,
+    disabled: false,
+    selected: false,
+  },
 };
 
 export default function RadioStory(props: RadioStoryProps) {
   const { label, ...other } = { ...defaultProps, ...props };
 
   return label ? (
-    <BakaText
+    <Text
       as="label"
       variant="label-large"
       style={{ display: "flex", gap: 16, alignItems: "center" }}
     >
-      <BakaRadio {...other} />
+      <Radio {...other} />
       Label
-    </BakaText>
+    </Text>
   ) : (
-    <BakaRadio {...other} />
+    <Radio {...other} />
   );
 }

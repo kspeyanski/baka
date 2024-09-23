@@ -1,6 +1,9 @@
 import { BakaComponent, BakaProps } from "baka-ui";
 
-type LinkProps<T extends React.ElementType> = BakaProps<T, "link"> & {};
+export type LinkProps<T extends React.ElementType = "a"> = BakaProps<
+  T,
+  "link"
+> & {};
 
 export const Link = <T extends React.ElementType = "a">(
   props: LinkProps<T>

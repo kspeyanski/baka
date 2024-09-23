@@ -1,4 +1,4 @@
-import { BakaText, BakaTextProps } from "baka-ui";
+import { Text, TextProps } from "baka-material-you";
 
 export type TextStoryProps = {
   color: string;
@@ -34,15 +34,15 @@ export default function TextStory(props: TextStoryProps) {
 
   return (
     <>
-      <BakaText
+      <Text
         variant={
           [args.variant, args.color === "on-surface-variant" ? "variant" : undefined].filter(
             Boolean
-          ) as BakaTextProps["variant"]
+          ) as TextProps["variant"]
         }
       >
         {args.text} &mdash; {spec[args.variant]}
-      </BakaText>
+      </Text>
     </>
   );
 }

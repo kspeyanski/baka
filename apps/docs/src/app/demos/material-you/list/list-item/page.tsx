@@ -1,13 +1,13 @@
 import {
-  BakaAvatar,
-  BakaCheckbox,
-  BakaIcon,
-  BakaList,
-  BakaListItem,
-  BakaRadio,
-  BakaSwitch,
-  BakaText,
-} from "baka-ui";
+  Avatar,
+  Checkbox,
+  Icon,
+  List,
+  ListItem,
+  Radio,
+  Switch,
+  Text,
+} from "baka-material-you";
 import Image from "next/image";
 import ListItemBasicDemo from "./basic/page";
 import ListItemWithAvatarDemo from "./with-avatar/page";

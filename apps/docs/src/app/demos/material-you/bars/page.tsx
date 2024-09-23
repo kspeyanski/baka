@@ -1,22 +1,25 @@
-import { BakaButton, BakaIcon, BakaText, BakaBar } from "baka-ui";
+import { Button, Icon, Text, Bar } from "baka-material-you";
 
 export default async function Demo() {
   return (
     <>
-      <BakaBar style={{ width: 404 }} variant="top">
-        <BakaButton variant={"icon"}>
-          <BakaIcon>menu</BakaIcon>
-        </BakaButton>
-        <BakaText variant="title-large" style={{ flexGrow: 1, textAlign: "center" }}>
+      <Bar style={{ width: 404 }} variant="top">
+        <Button variant={"icon"}>
+          <Icon>menu</Icon>
+        </Button>
+        <Text
+          variant="title-large"
+          style={{ flexGrow: 1, textAlign: "center" }}
+        >
           Product
-        </BakaText>
-        <BakaButton variant={"icon"}>
-          <BakaIcon variant={"filled"}>account_circle</BakaIcon>
-        </BakaButton>
-      </BakaBar>
+        </Text>
+        <Button variant={"icon"}>
+          <Icon variant={"filled"}>account_circle</Icon>
+        </Button>
+      </Bar>
       <br />
       <br />
-      <BakaBar
+      <Bar
         style={{
           width: 400,
           display: "flex",
@@ -26,18 +29,20 @@ export default async function Demo() {
         variant="bottom"
       >
         <div style={{ display: "flex", gap: 8 }}>
-          {["circle", "change_history", "rectangle", "pentagon", "hexagon"].map((shape) => (
-            <BakaButton variant={"icon"}>
-              <BakaIcon>{shape}</BakaIcon>
-            </BakaButton>
-          ))}
+          {["circle", "change_history", "rectangle", "pentagon", "hexagon"].map(
+            (shape) => (
+              <Button key={shape} variant={"icon"}>
+                <Icon>{shape}</Icon>
+              </Button>
+            )
+          )}
         </div>
         {true ? (
-          <BakaButton variant={["fab", "secondary"]}>
-            <BakaIcon>add</BakaIcon>
-          </BakaButton>
+          <Button variant={["fab", "secondary"]}>
+            <Icon>add</Icon>
+          </Button>
         ) : null}
-      </BakaBar>
+      </Bar>
     </>
   );
 }

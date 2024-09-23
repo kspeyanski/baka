@@ -1,8 +1,8 @@
-import { BakaBar, BakaButton, BakaIcon } from "baka-ui";
+import { Bar, Button, Icon } from "baka-material-you";
 
 export default async function Demo() {
   return (
-    <BakaBar
+    <Bar
       style={{
         width: 400,
         display: "flex",
@@ -12,17 +12,19 @@ export default async function Demo() {
       variant="bottom"
     >
       <div style={{ display: "flex", gap: 8 }}>
-        {["circle", "change_history", "rectangle", "pentagon", "hexagon"].map((shape) => (
-          <BakaButton variant={"icon"}>
-            <BakaIcon>{shape}</BakaIcon>
-          </BakaButton>
-        ))}
+        {["circle", "change_history", "rectangle", "pentagon", "hexagon"].map(
+          (shape) => (
+            <Button key={shape} variant={"icon"}>
+              <Icon>{shape}</Icon>
+            </Button>
+          )
+        )}
       </div>
       {true ? (
-        <BakaButton variant={["fab", "secondary"]}>
-          <BakaIcon>add</BakaIcon>
-        </BakaButton>
+        <Button variant={["fab", "secondary"]}>
+          <Icon>add</Icon>
+        </Button>
       ) : null}
-    </BakaBar>
+    </Bar>
   );
 }

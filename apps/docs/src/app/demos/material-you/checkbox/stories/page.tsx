@@ -1,17 +1,18 @@
-import { BakaCheckbox, BakaCheckboxProps } from "baka-ui";
+import { Checkbox, CheckboxProps } from "baka-material-you";
 
-export type CheckboxStoryProps = BakaCheckboxProps & {};
+export type CheckboxStoryProps = CheckboxProps & {};
 
 export const defaultProps: CheckboxStoryProps = {
   variant: "primary",
-  checked: true,
-  indeterminate: false,
-  hovered: false,
-  focused: false,
-  activated: false,
-  disabled: false,
+  state: {
+    indeterminate: false,
+    hovered: false,
+    focused: false,
+    pressed: false,
+    disabled: false,
+  },
 };
 
 export default function CheckboxStory(props: CheckboxStoryProps) {
-  return <BakaCheckbox {...props} />;
+  return <Checkbox {...props} />;
 }

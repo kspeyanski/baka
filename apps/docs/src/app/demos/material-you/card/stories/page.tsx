@@ -1,6 +1,6 @@
-import { BakaAvatar, BakaButton, BakaCard, BakaCardProps, BakaIcon, BakaText } from "baka-ui";
+import { Avatar, Button, Card, CardProps, Icon, Text } from "baka-material-you";
 
-export type CardStoryProps = BakaCardProps & {
+export type CardStoryProps = CardProps & {
   type: "vertical" | "horizontal";
 };
 export const defaultProps: CardStoryProps = {
@@ -13,24 +13,24 @@ export default function CardStory(props: CardStoryProps) {
   switch (type) {
     case "horizontal":
       return (
-        <BakaCard variant={["horizontal", other.variant]} style={{ width: 360 }}>
+        <Card variant={["horizontal", other.variant]} style={{ width: 360 }}>
           <div style={{ display: "flex", flexGrow: 1, gap: 16, padding: 16, alignItems: "center" }}>
-            <BakaAvatar>
+            <Avatar>
               <span>A</span>
-            </BakaAvatar>
+            </Avatar>
             <div style={{ display: "flex", flexGrow: 1, flexDirection: "column", gap: 4 }}>
-              <BakaText variant="title-medium">Header</BakaText>
-              <BakaText variant="body-medium">Subhead</BakaText>
+              <Text variant="title-medium">Header</Text>
+              <Text variant="body-medium">Subhead</Text>
             </div>
           </div>
 
           <img src="./media-small.png" alt="media" width={80} height={80} />
-        </BakaCard>
+        </Card>
       );
     case "vertical":
     default: {
       return (
-        <BakaCard {...other} style={{ width: 360 }}>
+        <Card {...other} style={{ width: 360 }}>
           <div
             style={{
               display: "flex",
@@ -41,17 +41,17 @@ export default function CardStory(props: CardStoryProps) {
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-              <BakaAvatar>
+              <Avatar>
                 <span>A</span>
-              </BakaAvatar>
-              <BakaText style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-                <BakaText variant={"title-medium"}>Header</BakaText>
-                <BakaText variant={"body-medium"}>Subhead</BakaText>
-              </BakaText>
+              </Avatar>
+              <Text style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+                <Text variant={"title-medium"}>Header</Text>
+                <Text variant={"body-medium"}>Subhead</Text>
+              </Text>
             </div>
-            <BakaButton variant={["icon"]}>
-              <BakaIcon>more_vert</BakaIcon>
-            </BakaButton>
+            <Button variant={["icon"]}>
+              <Icon>more_vert</Icon>
+            </Button>
           </div>
           <div>
             <img
@@ -75,22 +75,22 @@ export default function CardStory(props: CardStoryProps) {
             }}
           >
             <div style={{ display: "flex", flexDirection: "column" }}>
-              <BakaText variant={"body-large"}>Title</BakaText>
-              <BakaText variant={"body-medium"}>Subhead</BakaText>
+              <Text variant={"body-large"}>Title</Text>
+              <Text variant={"body-medium"}>Subhead</Text>
             </div>
-            <BakaText variant={"body-medium"}>
+            <Text variant={"body-medium"}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            </BakaText>
+            </Text>
             <div
               style={{ display: "flex", alignSelf: "stretch", justifyContent: "flex-end", gap: 8 }}
             >
-              <BakaButton variant={["outlined"]}>Enabled</BakaButton>
-              <BakaButton variant={["filled"]}>Enabled</BakaButton>
+              <Button variant={["outlined"]}>Enabled</Button>
+              <Button variant={["filled"]}>Enabled</Button>
             </div>
           </div>
-        </BakaCard>
+        </Card>
       );
     }
   }
-  //   return <BakaCard {...other}></BakaCard>;
+  //   return <Card {...other}></Card>;
 }

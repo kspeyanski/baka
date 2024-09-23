@@ -1,14 +1,14 @@
 import Image from "next/image";
 import {
-  BakaAvatar,
-  BakaCheckbox,
-  BakaIcon,
-  BakaList,
-  BakaListItem,
-  BakaRadio,
-  BakaSwitch,
-  BakaText,
-} from "baka-ui";
+  Avatar,
+  Checkbox,
+  Icon,
+  List,
+  ListItem,
+  Radio,
+  Switch,
+  Text,
+} from "baka-material-you";
 
 export type ListItemStoryProps = {
   prefix: null | "avatar" | "icon" | "media" | "checkbox" | "radio" | "switch";
@@ -29,33 +29,45 @@ export default function ListItemStory(props: ListItemStoryProps) {
 
   return (
     <div className="container-low" style={{ maxWidth: 360 }}>
-      <BakaList>
-        <BakaListItem
+      <List>
+        <ListItem
           variant={
             [
               args.multiLine ? "multi-line" : false,
-              args.prefix === "media" && args.media === "video" ? "video" : false,
+              args.prefix === "media" && args.media === "video"
+                ? "video"
+                : false,
             ].filter(Boolean) as any[]
           }
         >
           {(() => {
             switch (args.prefix) {
               case "avatar":
-                return <BakaAvatar>A</BakaAvatar>;
+                return <Avatar>A</Avatar>;
               case "icon":
-                return <BakaIcon>person</BakaIcon>;
+                return <Icon>person</Icon>;
               case "media":
                 return args.media === "video" ? (
-                  <Image src="/media.png" width={114} height={64} alt="media-video" />
+                  <Image
+                    src="/media.png"
+                    width={114}
+                    height={64}
+                    alt="media-video"
+                  />
                 ) : (
-                  <Image src="/media-small.png" width={56} height={56} alt="media-small" />
+                  <Image
+                    src="/media-small.png"
+                    width={56}
+                    height={56}
+                    alt="media-small"
+                  />
                 );
               case "checkbox":
-                return <BakaCheckbox readOnly={true} checked={true} />;
+                return <Checkbox readOnly={true} checked={true} />;
               case "radio":
-                return <BakaRadio readOnly={true} checked={true} />;
+                return <Radio readOnly={true} checked={true} />;
               case "switch":
-                return <BakaSwitch readOnly={true} checked={false} />;
+                return <Switch readOnly={true} checked={false} />;
               default:
                 return null;
             }
@@ -69,8 +81,8 @@ export default function ListItemStory(props: ListItemStoryProps) {
               overflow: "hidden",
             }}
           >
-            <BakaText variant="body-large">List item</BakaText>
-            <BakaText
+            <Text variant="body-large">List item</Text>
+            <Text
               variant={["body-medium", "variant"]}
               style={
                 args.multiLine
@@ -84,20 +96,20 @@ export default function ListItemStory(props: ListItemStoryProps) {
               }
             >
               Supporting line text lorem ipsum dolor sit amet, consectetur.
-            </BakaText>
+            </Text>
           </div>
           {(() => {
             switch (args.suffix) {
               case "checkbox":
-                return <BakaCheckbox readOnly={true} checked={true} />;
+                return <Checkbox readOnly={true} checked={true} />;
               case "icon":
-                return <BakaIcon>arrow_right</BakaIcon>;
+                return <Icon>arrow_right</Icon>;
               default:
                 return null;
             }
           })()}
-        </BakaListItem>
-      </BakaList>
+        </ListItem>
+      </List>
     </div>
   );
 }

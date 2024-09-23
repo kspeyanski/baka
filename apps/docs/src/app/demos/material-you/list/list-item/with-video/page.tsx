@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { BakaCheckbox, BakaList, BakaListItem, BakaText } from "baka-ui";
+import { Checkbox, List, ListItem, Text } from "baka-material-you";
 
 export default function ListItemWithVideoDemo() {
   return (
@@ -15,31 +15,31 @@ export default function ListItemWithVideoDemo() {
         }}
       >
         {/* With Video */}
-        <BakaList>
-          <BakaListItem variant={["video"]}>
+        <List>
+          <ListItem variant={["video"]}>
             <Image src="/media.png" width={114} height={64} alt="media-video" />
             <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
-              <BakaText variant="body-large">List item</BakaText>
-              <BakaText variant={["body-medium", "variant"]}>
+              <Text variant="body-large">List item</Text>
+              <Text variant={["body-medium", "variant"]}>
                 Supporting line text lorem ipsum dolor sit amet, consectetur.
-              </BakaText>
+              </Text>
             </div>
-          </BakaListItem>
-        </BakaList>
-        <BakaList>
-          <BakaListItem variant={["multi-line", "video"]}>
+          </ListItem>
+        </List>
+        <List>
+          <ListItem variant={["multi-line", "video"]}>
             <Image src="/media.png" width={114} height={64} alt="media-video" />
             <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
-              <BakaText variant="body-large">List item</BakaText>
-              <BakaText variant={["body-medium", "variant"]} style={{ width: "100%" }}>
+              <Text variant="body-large">List item</Text>
+              <Text variant={["body-medium", "variant"]} style={{ width: "100%" }}>
                 Supporting line text lorem ipsum dolor sit amet, consectetur.
-              </BakaText>
+              </Text>
             </div>
-            <BakaCheckbox readOnly={true} checked={true} />
-          </BakaListItem>
-        </BakaList>
-        <BakaList>
-          <BakaListItem variant={"video"}>
+            <Checkbox readOnly={true} checked={true} />
+          </ListItem>
+        </List>
+        <List>
+          <ListItem variant={"video"}>
             <Image src="/media.png" width={114} height={64} alt="media-video" />
             <div
               style={{
@@ -50,8 +50,8 @@ export default function ListItemWithVideoDemo() {
                 overflow: "hidden",
               }}
             >
-              <BakaText variant="body-large">List item</BakaText>
-              <BakaText
+              <Text variant="body-large">List item</Text>
+              <Text
                 variant={["body-medium", "variant"]}
                 style={{
                   whiteSpace: "nowrap",
@@ -61,12 +61,12 @@ export default function ListItemWithVideoDemo() {
                 }}
               >
                 Supporting line text lorem ipsum dolor sit amet, consectetur.
-              </BakaText>
+              </Text>
             </div>
-          </BakaListItem>
-        </BakaList>
-        <BakaList>
-          <BakaListItem variant={"video"}>
+          </ListItem>
+        </List>
+        <List>
+          <ListItem variant={"video"}>
             <Image src="/media.png" width={114} height={64} alt="media-video" />
             <div
               style={{
@@ -77,34 +77,34 @@ export default function ListItemWithVideoDemo() {
                 overflow: "hidden",
               }}
             >
-              <BakaText variant="body-large">List item</BakaText>
-              <BakaText
+              <Text variant="body-large">List item</Text>
+              <Text
                 variant={["body-medium", "variant"]}
                 style={{ whiteSpace: "nowrap", textOverflow: "ellipsis", overflow: "hidden" }}
               >
                 Supporting line text lorem ipsum dolor sit amet, consectetur.
-              </BakaText>
+              </Text>
             </div>
-            <BakaCheckbox readOnly={true} checked={true} />
-          </BakaListItem>
-        </BakaList>
-        <BakaList>
-          <BakaListItem variant={"video"}>
+            <Checkbox readOnly={true} checked={true} />
+          </ListItem>
+        </List>
+        <List>
+          <ListItem variant={"video"}>
             <Image src="/media.png" width={114} height={64} alt="media-video" />
             <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
-              <BakaText variant="body-large">List item</BakaText>
+              <Text variant="body-large">List item</Text>
             </div>
-          </BakaListItem>
-        </BakaList>
-        <BakaList>
-          <BakaListItem variant={"video"}>
+          </ListItem>
+        </List>
+        <List>
+          <ListItem variant={"video"}>
             <Image src="/media.png" width={114} height={64} alt="media" />
             <div style={{ display: "flex", flexDirection: "column", gap: 0, width: "100%" }}>
-              <BakaText variant="body-large">List item</BakaText>
+              <Text variant="body-large">List item</Text>
             </div>
-            <BakaCheckbox readOnly={true} checked={true} />
-          </BakaListItem>
-        </BakaList>
+            <Checkbox readOnly={true} checked={true} />
+          </ListItem>
+        </List>
       </div>
     </div>
   );

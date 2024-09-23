@@ -1,6 +1,6 @@
-import { BakaAvatar, BakaChip, BakaChipProps, BakaIcon } from "baka-ui";
+import { Avatar, Chip, ChipProps, Icon } from "baka-material-you";
 
-export type ChipStoryProps = BakaChipProps & {
+export type ChipStoryProps = ChipProps & {
   variant?: "elevated";
   leadingIcon?: boolean;
   trailingIcon?: boolean;
@@ -11,36 +11,41 @@ export const defaultProps: ChipStoryProps = {
   variant: "normal" as any,
   leadingIcon: false,
   trailingIcon: false,
+  state: {
+    hovered: false,
+    focused: false,
+    pressed: false,
+    dragged: false,
+    selected: false,
+  },
   avatar: false,
-  hovered: false,
-  focused: false,
-  activated: false,
-  dragged: false,
-  selected: false,
 };
 
 export default function ChipStory(props: ChipStoryProps) {
-  const { leadingIcon, trailingIcon, avatar, variant, ...other } = { ...defaultProps, ...props };
+  const { leadingIcon, trailingIcon, avatar, variant, ...other } = {
+    ...defaultProps,
+    ...props,
+  };
 
   return (
-    <BakaChip {...other} variant={variant}>
-      {leadingIcon && <BakaIcon variant={"primary"}>local_taxi</BakaIcon>}
+    <Chip {...other} variant={variant}>
+      {leadingIcon && <Icon variant={"primary"}>local_taxi</Icon>}
       {avatar && (
-        <BakaAvatar>
-          {props.selected ? (
-            <BakaIcon variant={["filled"]}>check</BakaIcon>
+        <Avatar>
+          {props.state?.selected ? (
+            <Icon variant={["filled"]}>check</Icon>
           ) : (
             <img src="./avatar-light.svg" />
           )}
-        </BakaAvatar>
+        </Avatar>
       )}
-      {!avatar && props.selected && (
-        <BakaAvatar>
-          <BakaIcon variant={["filled"]}>check</BakaIcon>
-        </BakaAvatar>
+      {!avatar && props.state?.selected && (
+        <Avatar>
+          <Icon variant={["filled"]}>check</Icon>
+        </Avatar>
       )}
       <span>Label</span>
-      {trailingIcon && <BakaIcon>close</BakaIcon>}
-    </BakaChip>
+      {trailingIcon && <Icon>close</Icon>}
+    </Chip>
   );
 }

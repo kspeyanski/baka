@@ -1,4 +1,4 @@
-import { BakaIcon, BakaTab, BakaTabGroup, BakaText } from "baka-ui";
+import { Icon, Tab, TabGroup, Text } from "baka-material-you";
 
 export default function TabsDemos() {
   return (
@@ -11,35 +11,35 @@ export default function TabsDemos() {
         maxWidth: 630,
       }}
     >
-      <BakaTabGroup variant={["primary"]}>
-        <BakaTab selected={true}>
-          <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-          <BakaText>Tab</BakaText>
-        </BakaTab>
-        <BakaTab>
-          <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-          <BakaText>Tab</BakaText>
-        </BakaTab>
-        <BakaTab>
-          <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-          <BakaText>Tab</BakaText>
-        </BakaTab>
-      </BakaTabGroup>
+      <TabGroup variant={["primary"]}>
+        <Tab state={{ selected: true }}>
+          <Icon variant={"filled"}>fiber_manual_record</Icon>
+          <Text>Tab</Text>
+        </Tab>
+        <Tab>
+          <Icon variant={"filled"}>fiber_manual_record</Icon>
+          <Text>Tab</Text>
+        </Tab>
+        <Tab>
+          <Icon variant={"filled"}>fiber_manual_record</Icon>
+          <Text>Tab</Text>
+        </Tab>
+      </TabGroup>
 
-      <BakaTabGroup variant={["secondary"]}>
-        <BakaTab selected={true}>
-          <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-          <BakaText>Tab</BakaText>
-        </BakaTab>
-        <BakaTab>
-          <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-          <BakaText>Tab</BakaText>
-        </BakaTab>
-        <BakaTab>
-          <BakaIcon variant={"filled"}>fiber_manual_record</BakaIcon>
-          <BakaText>Tab</BakaText>
-        </BakaTab>
-      </BakaTabGroup>
+      <TabGroup variant={["secondary"]}>
+        <Tab state={{ selected: true }}>
+          <Icon variant={"filled"}>fiber_manual_record</Icon>
+          <Text>Tab</Text>
+        </Tab>
+        <Tab>
+          <Icon variant={"filled"}>fiber_manual_record</Icon>
+          <Text>Tab</Text>
+        </Tab>
+        <Tab>
+          <Icon variant={"filled"}>fiber_manual_record</Icon>
+          <Text>Tab</Text>
+        </Tab>
+      </TabGroup>
     </div>
   );
 }

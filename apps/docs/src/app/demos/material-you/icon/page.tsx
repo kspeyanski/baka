@@ -1,4 +1,4 @@
-import { BakaIcon } from "baka-ui";
+import { Icon } from "baka-material-you";
 
 export default function IconDemo() {
   return (
@@ -10,26 +10,26 @@ export default function IconDemo() {
         alignItems: "center",
       }}
     >
-      <BakaIcon variant={["small"]}>settings</BakaIcon>
-      <BakaIcon variant={["filled", "small"]}>settings</BakaIcon>
-      <BakaIcon variant={["medium"]}>settings</BakaIcon>
-      <BakaIcon variant={["medium", "filled"]}>settings</BakaIcon>
-      <BakaIcon variant={["large"]}>settings</BakaIcon>
-      <BakaIcon variant={["filled", "large"]}>settings</BakaIcon>
+      <Icon variant={["small"]}>settings</Icon>
+      <Icon variant={["filled", "small"]}>settings</Icon>
+      <Icon variant={["medium"]}>settings</Icon>
+      <Icon variant={["medium", "filled"]}>settings</Icon>
+      <Icon variant={["large"]}>settings</Icon>
+      <Icon variant={["filled", "large"]}>settings</Icon>
 
-      <BakaIcon variant={["primary", "small"]}>settings</BakaIcon>
-      <BakaIcon variant={["primary", "filled", "small"]}>settings</BakaIcon>
-      <BakaIcon variant={["primary", "medium"]}>settings</BakaIcon>
-      <BakaIcon variant={["primary", "medium", "filled"]}>settings</BakaIcon>
-      <BakaIcon variant={["primary", "large"]}>settings</BakaIcon>
-      <BakaIcon variant={["primary", "filled", "large"]}>settings</BakaIcon>
+      <Icon variant={["primary", "small"]}>settings</Icon>
+      <Icon variant={["primary", "filled", "small"]}>settings</Icon>
+      <Icon variant={["primary", "medium"]}>settings</Icon>
+      <Icon variant={["primary", "medium", "filled"]}>settings</Icon>
+      <Icon variant={["primary", "large"]}>settings</Icon>
+      <Icon variant={["primary", "filled", "large"]}>settings</Icon>
 
-      <BakaIcon variant={["error", "small"]}>settings</BakaIcon>
-      <BakaIcon variant={["error", "filled", "small"]}>settings</BakaIcon>
-      <BakaIcon variant={["error", "medium"]}>settings</BakaIcon>
-      <BakaIcon variant={["error", "medium", "filled"]}>settings</BakaIcon>
-      <BakaIcon variant={["error", "large"]}>settings</BakaIcon>
-      <BakaIcon variant={["error", "filled", "large"]}>settings</BakaIcon>
+      <Icon variant={["error", "small"]}>settings</Icon>
+      <Icon variant={["error", "filled", "small"]}>settings</Icon>
+      <Icon variant={["error", "medium"]}>settings</Icon>
+      <Icon variant={["error", "medium", "filled"]}>settings</Icon>
+      <Icon variant={["error", "large"]}>settings</Icon>
+      <Icon variant={["error", "filled", "large"]}>settings</Icon>
     </div>
   );
 }

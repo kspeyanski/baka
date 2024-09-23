@@ -1,25 +1,25 @@
-import { BakaRadio, BakaText } from "baka-ui";
+import { Radio, Text } from "baka-material-you";
 
 export default function RadioWithLabels() {
   return (
     <div style={{ display: "flex", gap: 16, flexDirection: "column" }}>
       <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
-        <BakaRadio id="apple" name="fruit" value="apple" />
-        <BakaText as="label" htmlFor="apple">
+        <Radio id="apple" name="fruit" value="apple" />
+        <Text as="label" htmlFor="apple">
           Apple
-        </BakaText>
+        </Text>
       </div>
       <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
-        <BakaRadio id="banana" name="fruit" value="banana" />
-        <BakaText as="label" htmlFor="banana">
+        <Radio id="banana" name="fruit" value="banana" />
+        <Text as="label" htmlFor="banana">
           Banana
-        </BakaText>
+        </Text>
       </div>
       <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
-        <BakaRadio id="cherry" name="fruit" value="cherry" />
-        <BakaText as="label" htmlFor="cherry">
+        <Radio id="cherry" name="fruit" value="cherry" />
+        <Text as="label" htmlFor="cherry">
           Cherry
-        </BakaText>
+        </Text>
       </div>
     </div>
   );
