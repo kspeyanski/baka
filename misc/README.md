@@ -58,7 +58,7 @@ Change the appearance of the components using themes & swatches by utilizing css
 @use "baka-material-you/themes/dark" as dark-swatch;
 
 :root {
-  @include materila-you.styles();
+  @include material-you.styles();
 
   @media screen and (prefers-color-scheme: dark) {
     @include dark-swatch.design-styles();
