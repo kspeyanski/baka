@@ -1,17 +1,18 @@
 import { type Docs } from "contentlayer/generated";
-// @ts-expect-error
-import Logo from "@/icons/maskot-material-you.inline-svg";
-import { Navigation, NavigationProps } from "@/components/navigation/navigation";
-import { SidenavCategoryItem } from "./sidenav-category-item.server";
+// import { Navigation, NavigationProps } from "@/components/navigation/navigation";
+import { SidenavCategoryItem } from "./sidenav-category-item";
 import clsx from "clsx";
 import { SidenavCategoryClient, ToggleButton } from "./sidenav-category.client";
 import { Icon } from "@/components/misc/icon";
 import Link from "next/link";
 import { Button } from "@/components/buttons/button";
-import { ThemeToggle } from "../theme-toggle/theme-toggle.server";
+import { Navigation, NavigationProps } from "@/components/navigation/navigation";
+import { ThemeToggle } from "../theme-toggle/theme-toggle";
+import { StorybookLink } from "../storybook-link";
 // @ts-expect-error
 import StorybookIcon from "@/icons/storybook.inline-svg";
-import { StorybookLink } from "../storybook-link";
+// @ts-expect-error
+import Logo from "@/icons/maskot-material-you.inline-svg";
 
 export type SidenavCategoryProp = {
   data: Array<{
@@ -25,7 +26,7 @@ export const SidenavCategory = (props: SidenavCategoryProp) => {
   const { data, ...other } = props;
 
   return (
-    <SidenavCategoryClient>
+    <>
       <Navigation
         variant={"rail"}
         className={clsx(other.className, "bg-surface-container z-20 flex")}
@@ -36,9 +37,20 @@ export const SidenavCategory = (props: SidenavCategoryProp) => {
             <ToggleButton className="xl:hidden">
               <Icon />
             </ToggleButton>
-            <Button variant={["fab", "tertiary"]} as={Link} href="/" title="Home" className="p-3">
+            <Button
+              variant={["fab", "tertiary"]}
+              as={Link}
+              href="/"
+              title="Home"
+              className="p-3"
+            >
               <Icon>
-                <Logo width={32} height={32} alt="Baka Material You Logo" viewBox={"0 0 56 40"} />
+                <Logo
+                  width={32}
+                  height={32}
+                  alt="Baka Material You Logo"
+                  viewBox={"0 0 56 40"}
+                />
               </Icon>
             </Button>
             {data.map((group) => (
@@ -60,6 +72,6 @@ export const SidenavCategory = (props: SidenavCategoryProp) => {
           <ThemeToggle />
         </div>
       </Navigation>
-    </SidenavCategoryClient>
+    </>
   );
 };

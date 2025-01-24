@@ -1,8 +1,8 @@
 import clsx from "clsx";
 
-import { BakaCard, BakaCardProps } from "baka-ui";
+import { Card as BakaCard, CardProps as BakaCardProps } from "baka-material-you";
 
 export type CardProps = BakaCardProps;
-export const Card: BakaCard = (props) => {
+export const Card: typeof BakaCard = (props) => {
   return <BakaCard {...props} className={clsx("card", props.className)} />;
 };

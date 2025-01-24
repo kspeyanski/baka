@@ -1,9 +1,6 @@
 import fs from "fs";
 import p from "path";
-import highlight from "rehype-highlight";
-import rehypeSlug from "rehype-slug";
 import GithubSlugger from "github-slugger";
-import remarkGfm from "remark-gfm";
 
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
 
@@ -45,15 +42,17 @@ export const Docs = defineDocumentType(() => ({
         const regXHeader = /\n(?<flag>#{1,6})\s+(?<content>.+)/g;
         const slugger = new GithubSlugger();
         // @ts-expect-error
-        const toc = Array.from(doc.body.raw.matchAll(regXHeader)).map(({ groups }) => {
-          const flag = groups?.flag;
-          const content = groups?.content;
-          return {
-            level: flag.length,
-            text: content,
-            slug: content ? slugger.slug(content) : undefined,
-          };
-        });
+        const toc = Array.from(doc.body.raw.matchAll(regXHeader)).map(
+          ({ groups }) => {
+            const flag = groups?.flag;
+            const content = groups?.content;
+            return {
+              level: flag.length,
+              text: content,
+              slug: content ? slugger.slug(content) : undefined,
+            };
+          }
+        );
         return toc;
       },
     },
@@ -63,9 +62,4 @@ export const Docs = defineDocumentType(() => ({
 export default makeSource({
   contentDirPath: "./data",
   documentTypes: [Docs],
-  mdx: {
-    remarkPlugins: [remarkGfm],
-    // @ts-expect-error
-    rehypePlugins: [highlight, rehypeSlug],
-  },
 });

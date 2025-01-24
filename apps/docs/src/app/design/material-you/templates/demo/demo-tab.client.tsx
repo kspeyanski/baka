@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useDemoState } from "./demo.state";
-import { BakaTab } from "baka-ui";
+import { Tab as BakaTab } from "baka-material-you";
 
 export type DemoTabClientProps = {
   value: "demo" | "source";
@@ -13,12 +13,17 @@ export const DemoTabClient = (props: DemoTabClientProps) => {
   const { value, ...other } = props;
   const [state, setState] = useDemoState();
 
-  const handleClick = React.useCallback(
-    (_event: React.MouseEvent<any>) => {
-      setState(props.value);
-    },
-    [props.value, setState]
-  );
+  const handleClick = (_event: React.MouseEvent<any>) => {
+    setState(props.value);
+  };
 
-  return <BakaTab {...other} selected={state === props.value} onClick={handleClick} />;
+  return (
+    <BakaTab
+      {...other}
+      state={{
+        selected: state === props.value,
+      }}
+      onClick={handleClick}
+    />
+  );
 };

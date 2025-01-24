@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use "baka-ui" as baka;
 @use "../../design" as *;
 
@@ -14,8 +15,8 @@
 
     border-radius: 100px;
 
-    color: map-get($swatch, on-error);
-    background: map-get($swatch, error);
+    color: map.get($swatch, on-error);
+    background: map.get($swatch, error);
 
     @include baka.variant(small, true) {
       width: 6px;

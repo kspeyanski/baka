@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use "../../design" as *;
 @use "baka-ui" as baka;
 
@@ -19,10 +20,10 @@
     }
 
     @include label-large;
-    --state: #{map-get($swatch, on-surface-variant)};
-    --color: #{map-get($swatch, on-surface-variant)};
-    --outline: #{map-get($swatch, outline)};
-    --ripple: #{map-get($swatch, on-surface)};
+    --state: #{map.get($swatch, on-surface-variant)};
+    --color: #{map.get($swatch, on-surface-variant)};
+    --outline: #{map.get($swatch, outline)};
+    --ripple: #{map.get($swatch, on-surface)};
     --elevation: none;
     --background: transparent;
 
@@ -83,7 +84,7 @@
 
     @include baka.variant(elevated) {
       --outline: transparent;
-      --elevation: #{map-get($elevation, 1)};
+      --elevation: #{map.get($elevation, 1)};
     }
 
     @include baka.hover {
@@ -95,7 +96,7 @@
     }
 
     @include baka.focus {
-      --outline: #{map-get($swatch, on-surface-variant)};
+      --outline: #{map.get($swatch, on-surface-variant)};
 
       @include state-layer {
         background: #{color-mix(in srgb, var(--state) 0.12 * 100%, transparent)};
@@ -103,7 +104,7 @@
     }
 
     @include baka.dragged {
-      --elevation: #{map-get($elevation, 2)};
+      --elevation: #{map.get($elevation, 2)};
 
       @include state-layer {
         background: #{color-mix(in srgb, var(--state) 0.16 * 100%, transparent)};
@@ -111,9 +112,9 @@
     }
 
     @include baka.selected {
-      --color: #{map-get($swatch, on-secondary-container)};
-      --background: #{map-get($swatch, secondary-container)};
-      --state: #{map-get($swatch, on-secondary-container)};
+      --color: #{map.get($swatch, on-secondary-container)};
+      --background: #{map.get($swatch, secondary-container)};
+      --state: #{map.get($swatch, on-secondary-container)};
       --outline: transparent;
     }
 

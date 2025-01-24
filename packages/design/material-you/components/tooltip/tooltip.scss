@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use "../../design" as *;
 @use "baka-ui" as baka;
 
@@ -11,9 +12,9 @@
     border-radius: 12px;
 
     @include baka.variant(rich) {
-      box-shadow: map-get($elevation, 2);
-      color: map-get($swatch, on-surface);
-      background: map-get($swatch, surface-container);
+      box-shadow: map.get($elevation, 2);
+      color: map.get($swatch, on-surface);
+      background: map.get($swatch, surface-container);
       gap: 8px;
       padding-bottom: 8px;
     }
@@ -23,8 +24,8 @@
       padding: 4px 8px;
       gap: 10px;
       border-radius: 4px;
-      color: map-get($swatch, inverse-on-surface);
-      background: map-get($swatch, inverse-surface);
+      color: map.get($swatch, inverse-on-surface);
+      background: map.get($swatch, inverse-surface);
       box-shadow: none;
     }
   }

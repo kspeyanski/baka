@@ -22,7 +22,7 @@ import { Row } from "@/components/layout/row";
 
 const mdxComponents = {
   h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <Text {...props} as="h2" variant={["display-medium", "article"]} />
+    <Text {...props} as="h2" variant={["display-medium"]} />
   ),
   h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <Text {...props} as="h2" variant={["display-small", "article"]} />

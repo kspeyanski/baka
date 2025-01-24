@@ -1,9 +1,8 @@
-import { BakaComponent } from "baka-ui";
 import clsx from "clsx";
 
 type TableRowProps = React.HTMLAttributes<HTMLTableRowElement>;
 
-export const TableRow: BakaComponent<"tr", TableRowProps> = (props) => {
+export const TableRow = (props: TableRowProps) => {
   const { children, className, ...rest } = props;
 
   return (

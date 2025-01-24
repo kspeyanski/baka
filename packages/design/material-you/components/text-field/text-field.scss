@@ -1,11 +1,12 @@
+@use 'sass:map';
 @use "../../design" as *;
 @use "baka-ui" as baka;
 
 @mixin text-field--styles {
   .baka-text-field {
-    --accent: #{map-get($swatch, on-surface-variant)};
+    --accent: #{map.get($swatch, on-surface-variant)};
     --outline-height: 1px;
-    --state: #{map-get($swatch, on-surface)};
+    --state: #{map.get($swatch, on-surface)};
     --label-offset: 0;
 
     @include body-large;
@@ -36,8 +37,8 @@
     @include baka.variant(filled, true) {
       border-top-left-radius: 4px;
       border-top-right-radius: 4px;
-      color: map-get($swatch, on-surface-variant);
-      background: map-get($swatch, surface-container-highest);
+      color: map.get($swatch, on-surface-variant);
+      background: map.get($swatch, surface-container-highest);
 
       &:after {
         content: "";
@@ -128,7 +129,7 @@
       &:has(.baka-text) {
         & > .baka-text {
           z-index: 1;
-          background: map-get($swatch, surface);
+          background: map.get($swatch, surface);
           padding: 0 4px;
 
           @include body-small;
@@ -177,7 +178,7 @@
       }
 
       @include baka.focus {
-        --accent: #{map-get($swatch, on-surface)};
+        --accent: #{map.get($swatch, on-surface)};
         --outline-height: 1px;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
@@ -191,26 +192,26 @@
     }
 
     @include baka.hover {
-      --accent: #{map-get($swatch, on-surface)};
+      --accent: #{map.get($swatch, on-surface)};
       @include state-layer {
         background: color-mix(in srgb, var(--state) 0.08 * 100%, transparent);
       }
     }
 
     @include baka.focus {
-      --accent: #{map-get($swatch, primary)};
+      --accent: #{map.get($swatch, primary)};
       --outline-height: 2px;
     }
 
     @include baka.invalid {
-      --accent: #{map-get($swatch, error)};
+      --accent: #{map.get($swatch, error)};
       --outline-height: 2px;
     }
 
     @include baka.disabled {
       pointer-events: none;
       opacity: 0.38;
-      --accent: #{map-get($swatch, on-surface)};
+      --accent: #{map.get($swatch, on-surface)};
     }
 
     > .baka-icon,

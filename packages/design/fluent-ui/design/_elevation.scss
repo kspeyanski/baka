@@ -1,62 +1,62 @@
 @use "sass:map";
-@use "baka-core" as baka;
+@use "baka-ui" as baka;
 
 @use "./swatch" as *;
 
 $_default-elevation: (
   2: (
-    0 1px 2px 0 map-get($swatch, shadow-key),
-    0 0 2px 0 map-get($swatch, shadow-ambient),
+    0 1px 2px 0 map.get($swatch, shadow-key),
+    0 0 2px 0 map.get($swatch, shadow-ambient),
   ),
   4: (
-    0 2px 4px 0 map-get($swatch, shadow-key),
-    0 0 2px 0 map-get($swatch, shadow-ambient),
+    0 2px 4px 0 map.get($swatch, shadow-key),
+    0 0 2px 0 map.get($swatch, shadow-ambient),
   ),
   8: (
-    0 4px 8px 0 map-get($swatch, shadow-key),
-    0 0 2px 0 map-get($swatch, shadow-ambient),
+    0 4px 8px 0 map.get($swatch, shadow-key),
+    0 0 2px 0 map.get($swatch, shadow-ambient),
   ),
   16: (
-    0 8px 16px 0 map-get($swatch, shadow-key),
-    0 0 2px 0 map-get($swatch, shadow-ambient),
+    0 8px 16px 0 map.get($swatch, shadow-key),
+    0 0 2px 0 map.get($swatch, shadow-ambient),
   ),
   28: (
-    0 12px 24px 0 map-get($swatch, shadow-key),
-    0 0 2px 0 map-get($swatch, shadow-ambient),
+    0 12px 24px 0 map.get($swatch, shadow-key),
+    0 0 2px 0 map.get($swatch, shadow-ambient),
   ),
   64: (
-    0 24px 48px 0 map-get($swatch, shadow-key),
-    0 0 2px 0 map-get($swatch, shadow-ambient),
+    0 24px 48px 0 map.get($swatch, shadow-key),
+    0 0 2px 0 map.get($swatch, shadow-ambient),
   ),
   brand-2: (
-    0 1px 2px 0 map-get($swatch, brand-key-brand),
-    0 0 2px 0 map-get($swatch, shadow-ambient-brand),
+    0 1px 2px 0 map.get($swatch, brand-key-brand),
+    0 0 2px 0 map.get($swatch, shadow-ambient-brand),
   ),
   brand-4: (
-    0 2px 4px 0 map-get($swatch, brand-key-brand),
-    0 0 2px 0 map-get($swatch, shadow-ambient-brand),
+    0 2px 4px 0 map.get($swatch, brand-key-brand),
+    0 0 2px 0 map.get($swatch, shadow-ambient-brand),
   ),
   brand-8: (
-    0 4px 8px 0 map-get($swatch, brand-key-brand),
-    0 0 2px 0 map-get($swatch, shadow-ambient-brand),
+    0 4px 8px 0 map.get($swatch, brand-key-brand),
+    0 0 2px 0 map.get($swatch, shadow-ambient-brand),
   ),
   brand-16: (
-    0 8px 16px 0 map-get($swatch, brand-key-brand),
-    0 0 2px 0 map-get($swatch, shadow-ambient-brand),
+    0 8px 16px 0 map.get($swatch, brand-key-brand),
+    0 0 2px 0 map.get($swatch, shadow-ambient-brand),
   ),
   brand-28: (
-    0 12px 24px 0 map-get($swatch, brand-key-brand),
-    0 0 2px 0 map-get($swatch, shadow-ambient-brand),
+    0 12px 24px 0 map.get($swatch, brand-key-brand),
+    0 0 2px 0 map.get($swatch, shadow-ambient-brand),
   ),
   brand-64: (
-    0 24px 48px 0 map-get($swatch, brand-key-brand),
-    0 0 2px 0 map-get($swatch, shadow-ambient-brand),
+    0 24px 48px 0 map.get($swatch, brand-key-brand),
+    0 0 2px 0 map.get($swatch, shadow-ambient-brand),
   ),
 );
 
 $elevation: () !default;
-$elevation: map-merge($_default-elevation, $elevation);
-$_elevation: map-merge($elevation, ());
+$elevation: map.merge($_default-elevation, $elevation);
+$_elevation: map.merge($elevation, ());
 
 @mixin elevation--styles($e: $elevation) {
   @include baka.css-vars($elevation, --elevation);

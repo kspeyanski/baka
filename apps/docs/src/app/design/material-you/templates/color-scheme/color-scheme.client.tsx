@@ -7,31 +7,46 @@ export type ColorSchemeProps = {
   children: React.ReactElement;
 };
 
-export const ThemeContext = React.createContext<[string | null, Function]>([null, () => {}]);
+export const ThemeContext = React.createContext<[string | null, Function]>([
+  null,
+  () => {},
+]);
+
+const applyTheme = () => {
+  let theme = localStorage.getItem("baka-theme");
+  if (theme) {
+    document.body.classList.remove("theme-light", "theme-dark");
+    document.body.classList.add("theme-" + theme);
+  }
+};
 
 export const ColorScheme = (props: ColorSchemeProps) => {
-  const [theme, setTheme] = React.useState<string | null>(
-    typeof window !== "undefined" ? window.localStorage.getItem("baka-theme") : null
-  );
+  const [theme, setTheme] = React.useState<string | null>(null);
 
   React.useLayoutEffect(() => {
+    setTheme(
+      typeof window !== "undefined"
+        ? window.localStorage.getItem("baka-theme")
+        : null
+    );
+  }, []);
+
+  React.useEffect(() => {
     if (theme) {
       window.localStorage.setItem("baka-theme", theme);
+      applyTheme();
     }
   }, [theme]);
 
   return (
-    <ThemeContext.Provider value={[theme, setTheme]}>
-      {React.cloneElement(props.children, {
-        ...props.children.props,
-        className: clsx(
-          {
-            "theme-light": theme === "light",
-            "theme-dark": theme === "dark",
-          },
-          props.children.props?.className
-        ),
-      })}
-    </ThemeContext.Provider>
+    <>
+      <ThemeContext.Provider value={[theme, setTheme]}>
+        {props.children}
+
+        <script suppressHydrationWarning={true}>
+          {`(${String(applyTheme)})()`}
+        </script>
+      </ThemeContext.Provider>
+    </>
   );
 };

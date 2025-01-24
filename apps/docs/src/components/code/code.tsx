@@ -1,8 +1,8 @@
-import { BakaComponent } from "baka-ui";
+import React from "react";
 import clsx from "clsx";
 
 export type CodeProps = React.HTMLAttributes<HTMLElement> & {};
 
-export const Code: BakaComponent<"code", CodeProps> = async (props) => {
+export const Code = (props: CodeProps) => {
   return <code {...props} className={clsx(props.className, "code")} />;
 };

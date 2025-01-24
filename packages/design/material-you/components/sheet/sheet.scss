@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use "../../design" as *;
 @use "baka-ui" as baka;
 
@@ -13,10 +14,10 @@
     
     border-radius: 28px 28px 0 0;
 
-    color: map-get($swatch, outline);
-    background: map-get($swatch, surface-container-low);
+    color: map.get($swatch, outline);
+    background: map.get($swatch, surface-container-low);
 
-    box-shadow: map-get($elevation, 3);
+    box-shadow: map.get($elevation, 3);
 
     @include baka.variant(modal) {
       box-shadow: none;

@@ -45,6 +45,6 @@ $layout: (
 
 @mixin styles {
   @each $breakpoint, $properties in $layout {
-    --layout--screen--#{$breakpoint}: #{map-get($properties, screen)};
+    --layout--screen--#{$breakpoint}: #{map.get($properties, screen)};
   }
 }

@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use "../../design" as *;
 @use "baka-ui" as baka;
 
@@ -77,7 +78,7 @@
     }
 
     @include baka.variant(variant) {
-      color: map-get($swatch, on-surface-variant);
+      color: map.get($swatch, on-surface-variant);
     }
   }
 }

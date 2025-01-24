@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use "../../design" as *;
 @use "baka-ui" as baka;
 
@@ -5,9 +6,9 @@
   @include tab--styles;
 
   .baka-tab-group {
-    --color: #{map-get($swatch, on-surface-variant)};
-    --state: #{map-get($swatch, on-surface)};
-    --ripple: #{map-get($swatch, on-surface)};
+    --color: #{map.get($swatch, on-surface-variant)};
+    --state: #{map.get($swatch, on-surface)};
+    --ripple: #{map.get($swatch, on-surface)};
 
     display: flex;
     flex-direction: row;
@@ -35,7 +36,7 @@
     @include baka.variant(secondary) {
       --position: initial;
       --group-bottom: 0;
-      --group-selected-color: #{map-get($swatch, on-surface)};
+      --group-selected-color: #{map.get($swatch, on-surface)};
       --group-radius: 0;
       --group-height: 2px;
       --flex-direction: row;
@@ -107,9 +108,9 @@
     }
 
     @include baka.selected {
-      --state: #{map-get($swatch, primary)};
-      --color: var(--group-selected-color, #{map-get($swatch, primary)});
-      --ripple: #{map-get($swatch, primary)};
+      --state: #{map.get($swatch, primary)};
+      --color: var(--group-selected-color, #{map.get($swatch, primary)});
+      --ripple: #{map.get($swatch, primary)};
       position: relative;
 
       :last-child {
@@ -123,7 +124,7 @@
           width: 100%;
           left: 50%;
           transform: translateX(-50%);
-          background: map-get($swatch, primary);
+          background: map.get($swatch, primary);
         }
 
         &:is(.baka-icon) {

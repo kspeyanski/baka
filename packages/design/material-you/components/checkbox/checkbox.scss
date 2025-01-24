@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use "../../design" as *;
 @use "baka-ui" as baka;
 
@@ -14,12 +15,12 @@
     font: inherit;
     line-height: 1.5;
 
-    --color: #{map-get($swatch, on-primary)};
+    --color: #{map.get($swatch, on-primary)};
     --state: ;
-    --border: #{map-get($swatch, on-surface-variant)};
-    --state: #{map-get($swatch, on-surface)};
+    --border: #{map.get($swatch, on-surface-variant)};
+    --state: #{map.get($swatch, on-surface)};
     --background: transparent;
-    --ripple: #{map-get($swatch, on-surface)};
+    --ripple: #{map.get($swatch, on-surface)};
 
     width: 18px;
     height: 18px;
@@ -58,27 +59,27 @@
 
     @include baka.checked {
       --content: "check";
-      --state: #{map-get($swatch, primary)};
-      --border: #{map-get($swatch, primary)};
-      --color: #{map-get($swatch, on-primary)};
-      --background: #{map-get($swatch, primary)};
-      --ripple: #{map-get($swatch, primary)};
+      --state: #{map.get($swatch, primary)};
+      --border: #{map.get($swatch, primary)};
+      --color: #{map.get($swatch, on-primary)};
+      --background: #{map.get($swatch, primary)};
+      --ripple: #{map.get($swatch, primary)};
 
       @include state-layer {
-        color: #{map-get($swatch, on-primary)};
+        color: #{map.get($swatch, on-primary)};
       }
     }
 
     @include baka.indeterminate {
       --content: "check_indeterminate_small";
-      --state: #{map-get($swatch, primary)};
-      --border: #{map-get($swatch, primary)};
-      --color: #{map-get($swatch, on-primary)};
-      --background: #{map-get($swatch, primary)};
-      --ripple: #{map-get($swatch, primary)};
+      --state: #{map.get($swatch, primary)};
+      --border: #{map.get($swatch, primary)};
+      --color: #{map.get($swatch, on-primary)};
+      --background: #{map.get($swatch, primary)};
+      --ripple: #{map.get($swatch, primary)};
 
       @include state-layer {
-        color: #{map-get($swatch, on-primary)};
+        color: #{map.get($swatch, on-primary)};
       }
     }
 
@@ -114,31 +115,31 @@
     }
 
     @include baka.variant(error) {
-      --border: #{map-get($swatch, error)};
-      --state: #{map-get($swatch, error)};
-      --color: #{map-get($swatch, on-error)};
-      --ripple: #{map-get($swatch, error)};
+      --border: #{map.get($swatch, error)};
+      --state: #{map.get($swatch, error)};
+      --color: #{map.get($swatch, on-error)};
+      --ripple: #{map.get($swatch, error)};
 
       @include baka.checked {
-        --background: #{map-get($swatch, error)};
+        --background: #{map.get($swatch, error)};
       }
 
       @include baka.indeterminate {
-        --background: #{map-get($swatch, error)};
+        --background: #{map.get($swatch, error)};
       }
     }
 
     @include baka.disabled {
       pointer-events: none;
       opacity: 0.38;
-      --border: #{map-get($swatch, on-surface)};
+      --border: #{map.get($swatch, on-surface)};
 
       @include baka.checked {
-        --background: #{map-get($swatch, on-surface)};
+        --background: #{map.get($swatch, on-surface)};
       }
 
       @include baka.indeterminate {
-        --background: #{map-get($swatch, on-surface)};
+        --background: #{map.get($swatch, on-surface)};
       }
     }
   }

@@ -3,8 +3,8 @@
 
 body,
 .docs-story {
-  color: map-get(material-you.$swatch, on-surface);
-  background-color: map-get(material-you.$swatch, surface);
+  color: map.get(material-you.$swatch, on-surface);
+  background-color: map.get(material-you.$swatch, surface);
 
   @include material-you.styles;
 
@@ -17,10 +17,10 @@ body,
   }
 
   &:has(.container-high) {
-    background-color: map-get(material-you.$swatch, surface-container-high);
+    background-color: map.get(material-you.$swatch, surface-container-high);
   }
 
   &:has(.container-low) {
-    background-color: map-get(material-you.$swatch, surface-container-low);
+    background-color: map.get(material-you.$swatch, surface-container-low);
   }
 }

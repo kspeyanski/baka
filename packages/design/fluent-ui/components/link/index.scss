@@ -1,6 +1,6 @@
 @use "sass:map";
 @use "../../design" as *;
-@use "baka-core" as baka;
+@use "baka-ui" as baka;
 @use "../../common/focus.scss" as *;
 
 @mixin link--styles {

@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "../../design" as *;
 @use "baka-ui" as baka;
 
@@ -23,10 +24,10 @@
     margin: 0;
     overflow: auto;
     padding: 8px 0;
-    color: map-get($swatch, on-surface);
-    background-color: map-get($swatch, surface-container-highest);
+    color: map.get($swatch, on-surface);
+    background-color: map.get($swatch, surface-container-highest);
     border-radius: 4px;
-    box-shadow: map-get($elevation, 2);
+    box-shadow: map.get($elevation, 2);
     animation: enter 0.15s ease-out;
   }
 }
@@ -43,10 +44,13 @@
     align-items: center;
     justify-content: flex-start;
 
-    --state: #{map-get($swatch, on-surface)};
+    --state: #{map.get($swatch, on-surface)};
     --modifier: transparent;
-    --ripple: #{map-get($swatch, on-surface)};
+    --ripple: #{map.get($swatch, on-surface)};
     min-height: 56px;
+
+    gap: 12px;
+    padding: 12px 24px 12px 16px;
 
     &,
     & .baka-text {
@@ -56,9 +60,6 @@
     .baka-text {
       flex-grow: 1;
     }
-
-    gap: 12px;
-    padding: 12px 24px 12px 16px;
 
     @include state-layer {
       content: "";
@@ -89,11 +90,11 @@
     }
 
     @include baka.selected() {
-      background: map-get($swatch, surface-container-high);
+      background: map.get($swatch, surface-container-high);
     }
 
     @include baka.dragged {
-      box-shadow: map-get($elevation, 3);
+      box-shadow: map.get($elevation, 3);
     }
 
     @include baka.disabled {

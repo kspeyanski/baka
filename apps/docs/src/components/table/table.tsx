@@ -1,9 +1,12 @@
-import { BakaComponent, BakaList, BakaListProps } from "baka-ui";
+import {
+  List as BakaList,
+  ListProps as BakaListProps,
+} from "baka-material-you";
 import clsx from "clsx";
 
 type TableProps = BakaListProps;
 
-export const Table = (props: TableProps) => {
+export const Table: typeof BakaList = (props: TableProps) => {
   const { children, className, ...rest } = props;
 
   return (

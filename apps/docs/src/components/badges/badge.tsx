@@ -1,5 +1,5 @@
 import "./badge.scss";
-import { BakaBadge, BakaBadgeProps } from "baka-ui";
+import { Badge as BakaBadge, BadgeProps as BakaBadgeProps } from "baka-material-you";
 import clsx from "clsx";
 
 export type BadgeProps = BakaBadgeProps;

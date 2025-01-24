@@ -9,7 +9,7 @@ $spacing: (
 );
 
 @function spacing($size: md) {
-  @return var(--spacing--#{size}, map-get($spacing, $size));
+  @return var(--spacing--#{size}, map.get($spacing, $size));
 }
 
 @mixin styles() {

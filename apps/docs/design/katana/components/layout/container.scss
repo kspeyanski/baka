@@ -3,10 +3,10 @@
 @mixin styles {
   .container {
     @each $size, $breakpoint in $layout {
-      $_gutter: map-get($breakpoint, gutter);
-      $_screen: map-get($breakpoint, screen);
-      $_width: map-get($breakpoint, width);
-      $_margin: map-get($breakpoint, margin);
+      $_gutter: map.get($breakpoint, gutter);
+      $_screen: map.get($breakpoint, screen);
+      $_width: map.get($breakpoint, width);
+      $_margin: map.get($breakpoint, margin);
 
       @media screen and (min-width: $_screen) {
         max-width: $_width;

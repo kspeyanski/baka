@@ -6,7 +6,7 @@ export type ColumnProps<T extends React.ElementType = "div"> = BakaProps<
   T,
   "column"
 > & {
-  columns?: number;
+  columns?: number | null | (number | null)[];
 };
 
 export const Column = <T extends React.ElementType = "div">(

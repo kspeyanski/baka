@@ -1,19 +1,22 @@
-@use "baka-core" as baka;
+@use "baka-ui" as baka;
 @use "../../design" as *;
 
 @mixin styles {
   .column {
-    @include baka.column--styles;
+    display: flex;
+    box-sizing: border-box;
+    margin: 0;
+
 
     @for $j from 1 through length($layout) {
-      $size: nth(map-keys($layout), $j);
-      $breakpoint: nth(map-values($layout), $j);
+      $size: nth(map.keys($layout), $j);
+      $breakpoint: nth(map.values($layout), $j);
 
-      $_width: map-get($breakpoint, width);
-      $_screen: map-get($breakpoint, screen);
-      $_columns: map-get($breakpoint, columns);
-      $_gutter: map-get($breakpoint, gutter);
-      $_regions: map-get($breakpoint, regions);
+      $_width: map.get($breakpoint, width);
+      $_screen: map.get($breakpoint, screen);
+      $_columns: map.get($breakpoint, columns);
+      $_gutter: map.get($breakpoint, gutter);
+      $_regions: map.get($breakpoint, regions);
 
       flex-grow: 1;
 

@@ -1,29 +1,30 @@
+@use 'sass:map';
 @use "baka-material-you" as *;
 @use "baka-material-you/themes/dark" as dark-swatch;
 
 body {
-  @include styles();
 
   margin: 0;
   display: flex;
   align-items: center;
   min-height: 100vh;
 
-  color: map-get($swatch, on-surface);
-  background-color: map-get($swatch, surface);
+  color: map.get($swatch, on-surface);
+  background-color: map.get($swatch, surface);
 
   // TODO: enable later
   // @media screen and (prefers-color-scheme: dark) {
   //   @include dark-swatch.styles();
   // }
 
+  @include styles();
 
   &:has(.container-high) {
-    background-color: map-get($swatch, surface-container-high);
+    background-color: map.get($swatch, surface-container-high);
   }
 
   &:has(.container-low) {
-    background-color: map-get($swatch, surface-container-low);
+    background-color: map.get($swatch, surface-container-low);
   }
 }
 

@@ -1,8 +1,8 @@
-import { BakaComponent, BakaIcon, BakaIconProps } from "baka-ui";
+import { Icon as BakaIcon, IconProps as BakaIconProps } from "baka-material-you";
 import clsx from "clsx";
 
 export type IconProps = BakaIconProps;
 
-export const Icon: BakaComponent<"i", IconProps> = (props: IconProps) => {
-  return <BakaIcon {...props} className={clsx("icon", props.className)} />;
+export const Icon: typeof BakaIcon = (props: IconProps) => {
+  return <BakaIcon {...props} as="i" className={clsx("icon", props.className)} />;
 };

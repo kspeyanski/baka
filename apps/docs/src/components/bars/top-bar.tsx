@@ -1,8 +1,14 @@
-import { BakaBar, BakaBarProps } from "baka-ui";
+import { Bar, BarProps } from "baka-material-you";
 import clsx from "clsx";
 
-export type TopBarProps = BakaBarProps;
+export type TopBarProps = BarProps;
 
-export const TopBar: BakaBar = (props) => {
-  return <BakaBar {...props} className={clsx("top-bar", props.className)} variant={"top"} />;
+export const TopBar: typeof Bar = (props) => {
+  return (
+    <Bar
+      {...props}
+      className={clsx("top-bar", props.className)}
+      variant={"top"}
+    />
+  );
 };

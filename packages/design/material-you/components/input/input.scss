@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use "../../design" as *;
 @use "baka-ui" as baka;
 
@@ -11,7 +12,7 @@
     background: none;
     outline: none;
 
-    color: map-get($swatch, on-surface);
-    caret-color: map-get($swatch, primary);
+    color: map.get($swatch, on-surface);
+    caret-color: map.get($swatch, primary);
   }
 }

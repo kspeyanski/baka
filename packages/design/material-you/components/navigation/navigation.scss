@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use "../../design" as *;
 @use "baka-ui" as baka;
 
@@ -9,7 +10,7 @@
 
     @include baka.variant(bottom) {
       align-items: center;
-      background: map-get($swatch, surface-container);
+      background: map.get($swatch, surface-container);
       padding: 0px 8px;
       height: 80px;
 
@@ -20,7 +21,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      background: map-get($swatch, surface-container);
+      background: map.get($swatch, surface-container);
       height: 100%;
       width: 80px;
       gap: 40px;
@@ -46,8 +47,8 @@
     @include baka.variant(side) {
       flex-direction: column;
       min-height: min-content;
-      color: map-get($swatch, on-surface);
-      background: map-get($swatch, surface-container);
+      color: map.get($swatch, on-surface);
+      background: map.get($swatch, surface-container);
       padding: 12px;
       border-radius: 16px;
     }
@@ -63,7 +64,7 @@
 
   :where(.baka-navigation.variant--bottom) {
     .baka-navigation-item {
-      --state: #{map-get($swatch, on-surface)};
+      --state: #{map.get($swatch, on-surface)};
 
       cursor: pointer;
       display: flex;
@@ -74,14 +75,14 @@
       flex-direction: column;
 
       .baka-text {
-        color: map-get($swatch, on-surface-variant);
+        color: map.get($swatch, on-surface-variant);
       }
 
       .baka-icon {
         border-radius: 16px;
         position: relative;
         padding: 4px 20px;
-        color: map-get($swatch, on-surface-variant);
+        color: map.get($swatch, on-surface-variant);
 
         @include state-layer {
           content: "";
@@ -135,20 +136,20 @@
       }
 
       @include baka.selected {
-        --state: #{map-get($swatch, on-secondary-container)};
+        --state: #{map.get($swatch, on-secondary-container)};
         .baka-text {
-          color: map-get($swatch, on-surface);
+          color: map.get($swatch, on-surface);
         }
         .baka-icon {
-          color: map-get($swatch, on-secondary-container);
-          background-color: map-get($swatch, secondary-container);
+          color: map.get($swatch, on-secondary-container);
+          background-color: map.get($swatch, secondary-container);
         }
       }
     }
   }
   :where(.baka-navigation.variant--rail) {
     .baka-navigation-item {
-      --state: #{map-get($swatch, on-surface)};
+      --state: #{map.get($swatch, on-surface)};
       --vertical-padding: 16px;
 
       box-sizing: border-box;
@@ -163,7 +164,7 @@
       padding: 0 5px;
 
       .baka-text {
-        color: map-get($swatch, on-surface-variant);
+        color: map.get($swatch, on-surface-variant);
       }
 
       .baka-icon {
@@ -171,7 +172,7 @@
         position: relative;
         width: 56px;
         padding: var(--vertical-padding) 16px;
-        color: map-get($swatch, on-surface-variant);
+        color: map.get($swatch, on-surface-variant);
 
         @include state-layer {
           content: "";
@@ -225,13 +226,13 @@
       }
 
       @include baka.selected {
-        --state: #{map-get($swatch, on-secondary-container)};
+        --state: #{map.get($swatch, on-secondary-container)};
         .baka-text {
-          color: map-get($swatch, on-surface);
+          color: map.get($swatch, on-surface);
         }
         .baka-icon {
-          color: map-get($swatch, on-secondary-container);
-          background-color: map-get($swatch, secondary-container);
+          color: map.get($swatch, on-secondary-container);
+          background-color: map.get($swatch, secondary-container);
         }
       }
 
@@ -242,8 +243,8 @@
   }
   :where(.baka-navigation.variant--side) {
     .baka-navigation-item {
-      --color: #{map-get($swatch, on-surface-variant)};
-      --state: #{map-get($swatch, on-surface)};
+      --color: #{map.get($swatch, on-surface-variant)};
+      --state: #{map.get($swatch, on-surface)};
 
       gap: 12px;
       border-radius: 100px;
@@ -296,10 +297,10 @@
       }
 
       @include baka.selected {
-        --color: map-get($swatch, on-secondary-container);
-        --state: map-get($swatch, on-secondary-container);
+        --color: map.get($swatch, on-secondary-container);
+        --state: map.get($swatch, on-secondary-container);
 
-        background: map-get($swatch, secondary-container);
+        background: map.get($swatch, secondary-container);
       }
 
       :last-child {

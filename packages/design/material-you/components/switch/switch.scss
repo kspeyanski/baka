@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use "../../design" as *;
 @use "baka-ui" as baka;
 
@@ -13,10 +14,10 @@
     margin: 0;
     text-rendering: auto;
 
-    --background: #{map-get($swatch, surface-container-highest)};
-    --outline: #{map-get($swatch, outline)};
-    --border: #{map-get($swatch, outline)};
-    --state: #{map-get($swatch, on-surface)};
+    --background: #{map.get($swatch, surface-container-highest)};
+    --outline: #{map.get($swatch, outline)};
+    --border: #{map.get($swatch, outline)};
+    --state: #{map.get($swatch, on-surface)};
     --disabled: transparent;
     --content: "close";
     --left: 16px;
@@ -27,7 +28,7 @@
     width: 52px;
     height: 32px;
 
-    color: map-get($swatch, on-surface);
+    color: map.get($swatch, on-surface);
     background: var(--background);
 
     outline-style: solid;
@@ -63,21 +64,21 @@
     }
 
     @include baka.hover {
-      --outline: #{map-get($swatch, on-surface-variant)};
+      --outline: #{map.get($swatch, on-surface-variant)};
       @include state-layer {
         background: color-mix(in srgb, var(--state) 0.08 * 100%, transparent);
       }
     }
 
     @include baka.focus {
-      --outline: #{map-get($swatch, on-surface-variant)};
+      --outline: #{map.get($swatch, on-surface-variant)};
       @include state-layer {
         background: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
       }
     }
 
     @include baka.active {
-      --outline: #{map-get($swatch, on-surface-variant)};
+      --outline: #{map.get($swatch, on-surface-variant)};
 
       @include state-layer {
         background: color-mix(in srgb, var(--state) 0.12 * 100%, transparent);
@@ -94,23 +95,23 @@
     }
 
     @include baka.checked {
-      --state: #{map-get($swatch, primary)};
-      --background: #{map-get($swatch, primary)};
-      --border: #{map-get($swatch, primary)};
-      --outline: #{map-get($swatch, on-primary)};
+      --state: #{map.get($swatch, primary)};
+      --background: #{map.get($swatch, primary)};
+      --border: #{map.get($swatch, primary)};
+      --outline: #{map.get($swatch, on-primary)};
       --content: "check";
       --left: 36px;
 
       @include baka.hover {
-        --outline: #{map-get($swatch, primary-container)};
+        --outline: #{map.get($swatch, primary-container)};
       }
 
       @include baka.focus {
-        --outline: #{map-get($swatch, primary-container)};
+        --outline: #{map.get($swatch, primary-container)};
       }
 
       @include baka.active {
-        --outline: #{map-get($swatch, primary-container)};
+        --outline: #{map.get($swatch, primary-container)};
       }
 
       @include state-layer {
@@ -128,7 +129,7 @@
       @include baka.disabled {
         outline-offset: 0;
         --border: #{color-mix(in srgb, var(--state) 0.12 * 100%, transparent)};
-        --outline: #{map-get($swatch, on-primary)};
+        --outline: #{map.get($swatch, on-primary)};
         --disabled: #{color-mix(in srgb, var(--state) 0.12 * 100%, transparent)};
 
         &::after {
@@ -154,7 +155,7 @@
         content: var(--content);
         z-index: 1;
         position: absolute;
-        color: map-get($swatch, on-primary);
+        color: map.get($swatch, on-primary);
         left: var(--left);
         transform: translate(-50%, 0);
         font-size: 16px;
@@ -170,12 +171,12 @@
 
       @include baka.checked {
         &::after {
-          color: map-get($swatch, on-primary-container);
+          color: map.get($swatch, on-primary-container);
         }
 
         @include baka.disabled {
           &::after {
-            color: map-get($swatch, outline);
+            color: map.get($swatch, outline);
           }
         }
       }

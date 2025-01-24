@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use "../../design" as *;
 @use "baka-ui" as baka;
 
@@ -5,7 +6,7 @@
   .baka-divider {
     margin: 0;
     flex: 1 1 auto;
-    background-color: map-get($swatch, outline-variant);
+    background-color: map.get($swatch, outline-variant);
 
     @include baka.variant(horizontal, true) {
       height: 1px;

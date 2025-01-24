@@ -1,11 +1,11 @@
-@use "baka-core" as baka;
+@use "baka-ui" as baka;
 @use "@design/katana" as *;
 
 .design-system-card {
   border-width: 1px;
   border-radius: 12px;
   overflow: hidden;
-  border: map-get($swatch, brand);
+  border: map.get($swatch, brand);
   position: relative;
   width: 100%;
 
@@ -19,11 +19,11 @@
     object-fit: cover;
     height: 230px;
 
-    @media screen and (min-width: map-get(map-get($layout, sm), 'screen')) {
+    @media screen and (min-width: map.get(map.get($layout, sm), 'screen')) {
       height: 400px;
     }
 
-    @media screen and (min-width: map-get(map-get($layout, lg), 'screen')) {
+    @media screen and (min-width: map.get(map.get($layout, lg), 'screen')) {
       height: 250px;
     }
   }

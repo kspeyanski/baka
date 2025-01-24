@@ -15,12 +15,12 @@ The `baka-material-you` Layout System implements the Material You Design System 
 .my-element {
   width: 100%;
 
-  @media screen and (min-width: map-get(map-get(material-you.$layout, sm), "screen")) {
+  @media screen and (min-width: map.get(map.get(material-you.$layout, sm), "screen")) {
     max-width: 400px;
   }
 
-  @media screen and (min-width: map-get(map-get(material-you.$layout, md), "screen")) {
-    width: calc(400px / map-get(map-get(material-you.$layout, md), "columns"));
+  @media screen and (min-width: map.get(map.get(material-you.$layout, md), "screen")) {
+    width: calc(400px / map.get(map.get(material-you.$layout, md), "columns"));
   }
 }
 ```

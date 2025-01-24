@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "baka-core" as baka;
+@use "baka-ui" as baka;
 @use "../design" as *;
 
 @mixin focus-indicator($readonly: false) {

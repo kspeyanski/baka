@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use "../../design" as *;
 @use "baka-ui" as baka;
 
@@ -12,7 +13,7 @@
     font-variation-settings: "FILL" 0, "wght" 600, "GRAD" 0, "opsz" 48;
 
     @include baka.variant(primary) {
-      color: map-get($swatch, primary);
+      color: map.get($swatch, primary);
     }
 
     @include baka.variant(filled) {
@@ -32,7 +33,7 @@
     }
 
     @include baka.variant(error) {
-      color: map-get($swatch, error);
+      color: map.get($swatch, error);
     }
   }
 }

@@ -27,7 +27,6 @@
       "@katana/*": ["./src/app/(root)/*"],
       "@material-you/*": ["./src/app/design/material-you/*"],
       "baka-ui": ["./node_modules/baka-ui/src/index.ts"],
-      "baka-core": ["./node_modules/baka-core/_index.scss"],
       "baka-design-fluent": ["./node_modules/baka-design-fluent/index.ts"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     }

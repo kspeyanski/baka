@@ -1,12 +1,14 @@
 import { Button } from "@/components/buttons/button";
-import { Icon } from "@/components/misc/icon";
-import { ThemeToggleClient } from "./theme-toggle.client";
+import {
+  ThemeToggleClient,
+  ThemeToggleIconClient,
+} from "./theme-toggle.client";
 
 export const ThemeToggle = () => {
   return (
     <ThemeToggleClient>
       <Button variant={["icon", "outlined"]}>
-        <Icon suppressHydrationWarning={true}>dark_mode</Icon>
+        <ThemeToggleIconClient />
       </Button>
     </ThemeToggleClient>
   );

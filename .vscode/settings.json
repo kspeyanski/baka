@@ -17,7 +17,8 @@
         "editor.defaultFormatter": "redhat.vscode-xml"
     },
     "[mdx]": {
-        "diffEditor.wordWrap": "on"
+        "diffEditor.wordWrap": "on",
+        "editor.defaultFormatter": "unifiedjs.vscode-mdx"
     },
     "[markdown]": {
         "diffEditor.wordWrap": "on"

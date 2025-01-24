@@ -21,7 +21,7 @@ import { Container } from "@/components/layout/container";
 import { Row } from "@/components/layout/row";
 import { Column } from "@/components/layout/column";
 import clsx from "clsx";
-import { Sidenav } from "@material-you/templates/sidenav/sidenav.server";
+
 import { SidenavState } from "@material-you/templates/sidenav/sidenav.state";
 import { TopBar } from "@/components/bars/top-bar";
 import { Icon } from "@/components/misc/icon";
@@ -32,6 +32,7 @@ import { Search } from "@material-you/templates/search/search.client";
 import { Button } from "@/components/buttons/button";
 import Link from "next/link";
 import { ColorScheme } from "@material-you/templates/color-scheme/color-scheme.client";
+import { Sidenav } from "./templates/sidenav/sidenav";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
@@ -45,10 +46,17 @@ const robotoMono = Roboto_Mono({
   variable: "--font-family--mono",
 });
 
-export default function MaterialYouLayout({ children }: { children: React.ReactNode }) {
+export default function MaterialYouLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const docs = allDocs;
   const groups = docs
-    .sort((a: Partial<Docs>, b: Partial<Docs>) => (a.position ?? 0) - (b.position ?? 0))
+    .sort(
+      (a: Partial<Docs>, b: Partial<Docs>) =>
+        (a.position ?? 0) - (b.position ?? 0)
+    )
     .filter((doc) => doc._raw.flattenedPath.startsWith("design/material-you"))
     .reduce((acc, doc) => {
       const g = acc.find((a) => a.title === doc?.group?.title);
@@ -66,34 +74,45 @@ export default function MaterialYouLayout({ children }: { children: React.ReactN
     }, [] as Array<{ title: string; icon?: string; docs: Pick<Docs, "url" | "title">[] }>);
 
   return (
-    <ColorScheme>
-      <html lang="en" className={clsx(styles["material-you"])} suppressHydrationWarning={true}>
-        <head>
-          <link rel="icon" href={favicon.src} />
-          <link href="https://fonts.googleapis.com" rel="preconnect" />
-          {/* eslint-disable-next-line @next/next/google-font-display, @next/next/no-page-custom-font  */}
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-          ></link>
-        </head>
-        <body className={clsx(roboto.variable, robotoMono.variable)} id="material-you">
+    <html lang="en">
+      <head>
+        <link rel="icon" href={favicon.src} />
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        {/* eslint-disable-next-line @next/next/google-font-display, @next/next/no-page-custom-font  */}
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        ></link>
+      </head>
+      <body
+        className={clsx(
+          roboto.variable,
+          robotoMono.variable,
+          styles["material-you"]
+        )}
+        suppressHydrationWarning={true}
+        id="material-you"
+      >
+        <ColorScheme>
           <main className="flex flex-row">
-            <SidenavState data={groups}>
+            <SidenavState data={structuredClone(groups)}>
               <Sidenav data={groups} />
               <Container>
                 <TopBar className={"z-30 sticky top-0"}>
                   <div className="flex flex-col grow">
                     <Row className={"min-h-[72px] items-center"}>
                       <Column
-                        size={[4, 8, 8, 8, 8]}
+                        columns={[4, 8, 8, 8, 8]}
                         className="items-center gap-3 sm:gap-0 justify-between relative"
                       >
                         <div className="flex items-center gap-3 ">
                           <ToggleButton className="sm:hidden">
                             <Icon />
                           </ToggleButton>
-                          <Logo className="h-[30px] w-auto sm:hidden" height={33} />
+                          <Logo
+                            className="h-[30px] w-auto sm:hidden"
+                            height={33}
+                          />
                           {/* <Image
                               src={Logo}
                               alt="Baka UI"
@@ -104,7 +123,10 @@ export default function MaterialYouLayout({ children }: { children: React.ReactN
                         </div>
                         <Search />
                       </Column>
-                      <Column size={[null, null, 2, 2, 4]} className="gap-2 hidden md:flex">
+                      <Column
+                        columns={[null, null, 2, 2, 4]}
+                        className="gap-2 hidden md:flex"
+                      >
                         <Button
                           variant={"icon"}
                           as={Link}
@@ -113,7 +135,6 @@ export default function MaterialYouLayout({ children }: { children: React.ReactN
                         >
                           <Icon>
                             <GitHub height={32} width={32} />
-                            {/* <Image src={GitHub} alt="GitHub" width={32} height={32} /> */}
                           </Icon>
                         </Button>
                         <Button
@@ -134,8 +155,8 @@ export default function MaterialYouLayout({ children }: { children: React.ReactN
               </Container>
             </SidenavState>
           </main>
-        </body>
-      </html>
-    </ColorScheme>
+        </ColorScheme>
+      </body>
+    </html>
   );
 }

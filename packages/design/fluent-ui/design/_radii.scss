@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "baka-core" as baka;
+@use "baka-ui" as baka;
 
 $_default_radii: (
   none: 0,
@@ -13,8 +13,8 @@ $_default_radii: (
 );
 
 $radii: () !default;
-$radii: map-merge($_default-radii, $radii);
-$_radii: map-merge($radii, ());
+$radii: map.merge($_default-radii, $radii);
+$_radii: map.merge($radii, ());
 
 @each $name, $value in $radii {
   $radii: map.merge($radii, (#{$name}: var(--radii--#{$name}, $value)));

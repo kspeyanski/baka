@@ -1,14 +1,18 @@
-@use "baka-core" as baka;
+@use "baka-ui" as baka;
 @use "../../design" as *;
 
 @mixin styles {
   .row {
-    @include baka.row--styles;
+    display: flex;
+    justify-content: flex-start;
+    box-sizing: border-box;
+
+    width: 100%;
 
     @each $size, $breakpoint in $layout {
-      $_gutter: map-get($breakpoint, gutter);
-      $_screen: map-get($breakpoint, screen);
-      $_margin: map-get($breakpoint, margin);
+      $_gutter: map.get($breakpoint, gutter);
+      $_screen: map.get($breakpoint, screen);
+      $_margin: map.get($breakpoint, margin);
 
       display: flex;
       flex-wrap: wrap;

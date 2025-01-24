@@ -19,16 +19,19 @@ export const SidenavCategoryItemClient = (props: SidenavCategoryItemClient) => {
 
   const selected = state.expanded === props.title;
 
-  const handleClick = React.useCallback(() => {
-    dispatch({ type: SIDENAV_ACTION.SET_GROUP, payload: props.title });
-  }, []);
+  const handleClick = () =>
+    dispatch({
+      type: SIDENAV_ACTION.SET_GROUP,
+      payload: props.title,
+    });
 
   return React.cloneElement(props.children, {
     className: clsx(
       props.children?.props?.className,
       stateClassNames({
         selected: selected && !readOnly,
-        activated: state.group?.title === props.title && !(selected && !readOnly),
+        activated:
+          state.group?.title === props.title && !(selected && !readOnly),
       })
     ),
     onClick: handleClick,

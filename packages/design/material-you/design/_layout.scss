@@ -62,8 +62,8 @@ $_default-layout: (
 );
 
 $layout: () !default;
-$layout: map-merge($_default-layout, $layout);
-$_layout: map-merge($layout, ());
+$layout: map.merge($_default-layout, $layout);
+$_layout: map.merge($layout, ());
 
 // @function assign($vars: (), $prefix: --) {
 //   @each $name, $value in $vars {

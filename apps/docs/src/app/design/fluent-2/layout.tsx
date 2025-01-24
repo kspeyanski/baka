@@ -21,7 +21,7 @@ const openSans = Open_Sans({
   variable: "--font-family--sans",
 });
 
-export default async function FluentLayout({ children }: { children: React.ReactNode }) {
+export default function FluentLayout({ children }: { children: React.ReactNode }) {
   const docs = allDocs;
   const groups = docs
     .sort((a: Partial<Docs>, b: Partial<Docs>) => (a.position ?? 0) - (b.position ?? 0))

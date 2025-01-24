@@ -25,11 +25,11 @@
     margin: 0;
     overflow: auto;
 
-    padding: map-get($spacing, vertical-xs) 0;
-    gap: map-get($spacing, vertical-xxs);
-    background-color: map-get($swatch, neutral-background-1);
-    border-radius: map-get($radii, medium);
-    box-shadow: map-get($elevation, 16);
+    padding: map.get($spacing, vertical-xs) 0;
+    gap: map.get($spacing, vertical-xxs);
+    background-color: map.get($swatch, neutral-background-1);
+    border-radius: map.get($radii, medium);
+    box-shadow: map.get($elevation, 16);
     animation: enter 0.15s ease-out;
   }
 }
@@ -46,17 +46,17 @@
     align-items: center;
     justify-content: flex-start;
 
-    --background: #{map-get($swatch, neutral-background-1)};
-    --text: #{map-get($swatch, neutral-foreground-2)};
+    --background: #{map.get($swatch, neutral-background-1)};
+    --text: #{map.get($swatch, neutral-foreground-2)};
 
     cursor: auto;
 
     min-height: 32px;
-    gap: map-get($spacing, horizontal-xs);
-    padding: map-get($spacing, vertical-s) 0 map-get($spacing, vertical-s)
-      map-get($spacing, horizontal-s);
-    margin: 0 map-get($spacing, horizontal-xs);
-    border-radius: map-get($radii, medium);
+    gap: map.get($spacing, horizontal-xs);
+    padding: map.get($spacing, vertical-s) 0 map.get($spacing, vertical-s)
+      map.get($spacing, horizontal-s);
+    margin: 0 map.get($spacing, horizontal-xs);
+    border-radius: map.get($radii, medium);
 
     color: var(--text);
     background-color: var(--background);
@@ -80,13 +80,13 @@
 
     @include baka.hover($readonly: false) {
       cursor: pointer;
-      --background: #{map-get($swatch, neutral-background-1-hover)};
-      --text: #{map-get($swatch, neutral-foreground-2-hover)};
+      --background: #{map.get($swatch, neutral-background-1-hover)};
+      --text: #{map.get($swatch, neutral-foreground-2-hover)};
     }
 
     @include baka.active($readonly: false) {
-      --background: #{map-get($swatch, neutral-background-1-pressed)};
-      --text: #{map-get($swatch, neutral-foreground-2-pressed)};
+      --background: #{map.get($swatch, neutral-background-1-pressed)};
+      --text: #{map.get($swatch, neutral-foreground-2-pressed)};
     }
 
     @include baka.focus($readonly: false) {
@@ -96,7 +96,7 @@
 
     @include baka.disabled {
       pointer-events: none;
-      --text: #{map-get($swatch, neutral-foreground-disabled)};
+      --text: #{map.get($swatch, neutral-foreground-disabled)};
 
       .baka-text {
         color: var(--text);
@@ -112,11 +112,11 @@
     // }
 
     // @include baka.selected() {
-    //   background: map-get($swatch, surface-container-high);
+    //   background: map.get($swatch, surface-container-high);
     // }
 
     // @include baka.dragged {
-    //   box-shadow: map-get($elevation, 3);
+    //   box-shadow: map.get($elevation, 3);
     // }
 
     // @include baka.disabled {

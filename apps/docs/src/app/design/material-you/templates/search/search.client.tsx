@@ -2,12 +2,12 @@
 
 import styles from "./search.module.scss";
 
+import React from "react";
 import { Button } from "@/components/buttons/button";
 import { Chip } from "@/components/chips/chip";
 import { Input } from "@/components/inputs/input";
 import { TextField } from "@/components/inputs/text-field";
 import { Icon } from "@/components/misc/icon";
-import React from "react";
 import { search } from "./actions";
 import { usePopup } from "@/utils/use-popup";
 import Link from "next/link";
@@ -26,54 +26,55 @@ export const Search = (props: SearchProps) => {
   const _popup = React.useRef<HTMLDivElement>(null);
   const [state, dispatch] = React.useReducer(searchReducer, initialState);
 
-  const results = React.useDeferredValue(state.results);
+  const results: any[] = React.useDeferredValue(state.results);
 
-  const handleChange = React.useCallback(async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch({ type: SEARCH_ACTION.SEARCH, payload: e.target.value });
     const result = await search(e.target.value);
     dispatch({ type: SEARCH_ACTION.SET_RESULTS, payload: result });
-  }, []);
+  };
 
-  const handleFocus = React.useCallback(() => {
+  const handleFocus = () => {
     dispatch({ type: SEARCH_ACTION.OPEN });
-  }, []);
+  };
 
-  const handleBlur = React.useCallback(() => {
+  const handleBlur = () => {
     dispatch({ type: SEARCH_ACTION.CLOSE });
-  }, []);
+  };
 
-  const handleClick = React.useCallback(() => {
+  const handleClick = () => {
     dispatch({ type: SEARCH_ACTION.OPEN });
     input.current?.focus();
-  }, []);
+  };
 
-  const handleKeyDown = React.useCallback(
-    (e: React.KeyboardEvent<HTMLInputElement | HTMLDivElement>) => {
-      switch (e.key) {
-        case "ArrowDown":
-          e.preventDefault();
-          dispatch({ type: SEARCH_ACTION.FOCUS_NEXT });
-          break;
-        case "ArrowUp":
-          e.preventDefault();
-          dispatch({ type: SEARCH_ACTION.FOCUS_PREV });
-          break;
-        case "Enter":
-          e.preventDefault();
-          const item = _popup.current?.querySelector(`[data-focused="true"]`);
-          if (item) {
-            item.click();
-          }
-          document?.activeElement?.blur();
-          dispatch({ type: SEARCH_ACTION.RESET });
-          break;
-        case "Escape":
-          input.current?.blur();
-          break;
-      }
-    },
-    [results, state.focused]
-  );
+  const handleKeyDown = (
+    e: React.KeyboardEvent<HTMLInputElement | HTMLDivElement>
+  ) => {
+    switch (e.key) {
+      case "ArrowDown":
+        e.preventDefault();
+        dispatch({ type: SEARCH_ACTION.FOCUS_NEXT });
+        break;
+      case "ArrowUp":
+        e.preventDefault();
+        dispatch({ type: SEARCH_ACTION.FOCUS_PREV });
+        break;
+      case "Enter":
+        e.preventDefault();
+        const item = _popup.current?.querySelector(
+          `[data-focused="true"]`
+        ) as HTMLElement;
+        if (item) {
+          item.click();
+        }
+        (document?.activeElement as HTMLElement)?.blur();
+        dispatch({ type: SEARCH_ACTION.RESET });
+        break;
+      case "Escape":
+        input.current?.blur();
+        break;
+    }
+  };
 
   React.useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -81,6 +82,7 @@ export const Search = (props: SearchProps) => {
         case "Escape":
           input.current?.blur();
           break;
+        case "K":
         case "k":
           if (e.metaKey) {
             e.preventDefault();
@@ -97,10 +99,6 @@ export const Search = (props: SearchProps) => {
     };
   }, []);
 
-  React.useEffect(() => {
-    const item = _popup.current?.querySelector(`[data-focused="true"]`);
-  }, [state.focused]);
-
   usePopup(_popup, anchor, {
     syncWidth: true,
     align: {
@@ -115,8 +113,11 @@ export const Search = (props: SearchProps) => {
     },
   });
 
-  const { onFocus, onBlur } = useAsyncFocusBlur({ onFocus: handleFocus, onBlur: handleBlur });
-  
+  const { onFocus, onBlur } = useAsyncFocusBlur({
+    onFocus: handleFocus,
+    onBlur: handleBlur,
+  });
+
   return (
     <>
       <TextField
@@ -126,10 +127,10 @@ export const Search = (props: SearchProps) => {
         onBlur={onBlur}
         onKeyDown={handleKeyDown}
         onClick={handleClick}
-        className={clsx(styles["responsive-search"],  {
+        className={clsx(styles["responsive-search"], {
           [styles["open"]]: state.open,
         })}
-        focused={state.open}
+        state={{ focused: state.open }}
       >
         <Input
           _ref={input}
@@ -138,10 +139,8 @@ export const Search = (props: SearchProps) => {
           onChange={handleChange}
           className={clsx(styles["input"])}
         />
-        <Chip readOnly={true} className="hidden sm:flex">
-          ⌘K
-        </Chip>
-        <Button variant={["icon"]} readOnly={true}>
+        <Chip /* readOnly={true} */ className="hidden sm:flex">⌘K</Chip>
+        <Button variant={["icon"]} /* readOnly={true} */>
           <Icon>search</Icon>
         </Button>
       </TextField>
@@ -159,7 +158,9 @@ export const Search = (props: SearchProps) => {
               <MenuItem
                 key={index}
                 data-focused={index === state.focused}
-                selected={index === state.focused}
+                state={{
+                  selected: index === state.focused,
+                }}
                 as={Link}
                 href={`/${item.doc.slug}`}
                 tabIndex={index === state.focused ? 0 : -1}

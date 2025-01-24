@@ -1,6 +1,11 @@
 import React from "react";
-import { useMDXComponent } from "next-contentlayer/hooks";
+import { compile, run } from "@mdx-js/mdx";
+import { getMDXComponent, useMDXComponent } from "next-contentlayer/hooks";
 import { notFound } from "next/navigation";
+import * as runtime from "react/jsx-runtime";
+import remarkGfm from "remark-gfm";
+import highlight from "rehype-highlight";
+import rehypeSlug from "rehype-slug";
 
 import { allDocs } from "contentlayer/generated";
 import { Text } from "@/components/text";
@@ -54,29 +59,41 @@ const mdxComponents = {
 
 export const dynamic = "force-static";
 
-export default function MaterialYouPage(props: { params?: { slug?: string[] } }) {
-  const slug = props.params?.slug?.join("/") ?? "";
+export default async function MaterialYouPage(props: {
+  params?: { slug?: string[] };
+}) {
+  const slug = (await props.params)?.slug?.join("/") ?? "";
 
   const doc = allDocs.find(
-    (doc) => doc._raw.flattenedPath === "design/material-you" + (slug ? `/${slug}` : "")
+    (doc) =>
+      doc._raw.flattenedPath ===
+      "design/material-you" + (slug ? `/${slug}` : "")
   );
 
   if (!doc) {
     notFound();
   }
 
-  const MDXContent = useMDXComponent(doc.body.code);
+  const mdx = await compile(doc.body.raw, {
+    outputFormat: "function-body",
+    rehypePlugins: [rehypeSlug, highlight],
+    remarkPlugins: [remarkGfm],
+  });
+  const { default: MDXContent } = await run(mdx, { ...runtime });
 
   return (
     <>
-      <Column size={[8, 8, 8, 8]} className="pt-[45px]  pb-[100px]">
+      <Column columns={[8, 8, 8, 8]} className="pb-[100px]">
         <article className="w-[100%]">
           <React.Suspense fallback={<div>loading</div>}>
             <MDXContent components={mdxComponents} />
           </React.Suspense>
         </article>
       </Column>
-      <Column size={[4, 3, 2, 4]} className="hidden md:flex sticky top-[100px] h-[calc(100vh-100px)]">
+      <Column
+        columns={[4, 3, 2, 4]}
+        className="hidden md:flex sticky top-[100px] h-[calc(100vh-100px)]"
+      >
         <TableOfContents data={doc.toc} />
       </Column>
     </>
@@ -87,6 +104,10 @@ export const generateStaticParams = async () => {
   return allDocs
     .filter((doc) => doc._raw.flattenedPath.startsWith("design/material-you"))
     .map((doc) => {
-      return { slug: doc._raw.flattenedPath.replace("design/material-you/", "").split("/") };
+      return {
+        slug: doc._raw.flattenedPath
+          .replace("design/material-you/", "")
+          .split("/"),
+      };
     });
 };

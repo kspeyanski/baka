@@ -11,8 +11,8 @@ $font-family: (
 ) !default;
 
 @mixin font-family($key) {
-  @if (map-has-key($font-family, $key)) {
-    font-family: var(--typography--font-family--#{$key}, map-get($font-family, $key));
+  @if (map.has-key($font-family, $key)) {
+    font-family: var(--typography--font-family--#{$key}, map.get($font-family, $key));
   }
 }
 
@@ -30,8 +30,8 @@ $font-size: (
 );
 
 @mixin font-size($key) {
-  @if (map-has-key($font-size, $key)) {
-    font-size: var(--typography--font-size--#{$key}, map-get($font-size, $key));
+  @if (map.has-key($font-size, $key)) {
+    font-size: var(--typography--font-size--#{$key}, map.get($font-size, $key));
   }
 }
 
@@ -49,8 +49,8 @@ $line-height: (
 );
 
 @mixin line-height($key) {
-  @if (map-has-key($line-height, $key)) {
-    line-height: var(--typography--line-height--#{$key}, map-get($line-height, $key));
+  @if (map.has-key($line-height, $key)) {
+    line-height: var(--typography--line-height--#{$key}, map.get($line-height, $key));
   }
 }
 
@@ -64,8 +64,8 @@ $font-weight: (
 );
 
 @mixin font-weight($key) {
-  @if (map-has-key($font-weight, $key)) {
-    font-weight: var(--typography--font-weight--#{$key}, map-get($font-weight, $key));
+  @if (map.has-key($font-weight, $key)) {
+    font-weight: var(--typography--font-weight--#{$key}, map.get($font-weight, $key));
   }
 }
 

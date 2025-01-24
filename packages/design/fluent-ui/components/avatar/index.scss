@@ -17,7 +17,7 @@
 
     aspect-ratio: 1 / 1;
 
-    border-radius: map-get($radii, circle);
+    border-radius: map.get($radii, circle);
     overflow: hidden;
 
     color: var(--color);
@@ -79,163 +79,163 @@
     }
 
     @include baka.variant(neutral, true) {
-      --color: #{map-get($swatch, neutral-foreground-3)};
-      --background: #{map-get($swatch, neutral-background-6)};
+      --color: #{map.get($swatch, neutral-foreground-3)};
+      --background: #{map.get($swatch, neutral-background-6)};
     }
 
     @include baka.variant(brand) {
-      --color: #{map-get($swatch, neutral-foreground-on-brand)};
-      --background: #{map-get($swatch, brand-background-compound)};
+      --color: #{map.get($swatch, neutral-foreground-on-brand)};
+      --background: #{map.get($swatch, brand-background-compound)};
     }
 
     @include baka.variant(darkred) {
-      --color: #{map-get($swatch, status-generic-darkred-foreground-2)};
-      --background: #{map-get($swatch, status-generic-darkred-background-2)};
+      --color: #{map.get($swatch, status-generic-darkred-foreground-2)};
+      --background: #{map.get($swatch, status-generic-darkred-background-2)};
     }
 
     @include baka.variant(cranberry) {
-      --color: #{map-get($swatch, status-generic-cranberry-foreground-2)};
-      --background: #{map-get($swatch, status-generic-cranberry-background-2)};
+      --color: #{map.get($swatch, status-generic-cranberry-foreground-2)};
+      --background: #{map.get($swatch, status-generic-cranberry-background-2)};
     }
 
     @include baka.variant(red) {
-      --color: #{map-get($swatch, status-generic-red-foreground-2)};
-      --background: #{map-get($swatch, status-generic-red-background-2)};
+      --color: #{map.get($swatch, status-generic-red-foreground-2)};
+      --background: #{map.get($swatch, status-generic-red-background-2)};
     }
 
     @include baka.variant(pumpkin) {
-      --color: #{map-get($swatch, status-generic-pumpkin-foreground-2)};
-      --background: #{map-get($swatch, status-generic-pumpkin-background-2)};
+      --color: #{map.get($swatch, status-generic-pumpkin-foreground-2)};
+      --background: #{map.get($swatch, status-generic-pumpkin-background-2)};
     }
 
     @include baka.variant(peach) {
-      --color: #{map-get($swatch, status-generic-peach-foreground-2)};
-      --background: #{map-get($swatch, status-generic-peach-background-2)};
+      --color: #{map.get($swatch, status-generic-peach-foreground-2)};
+      --background: #{map.get($swatch, status-generic-peach-background-2)};
     }
 
     @include baka.variant(marigold) {
-      --color: #{map-get($swatch, status-generic-marigold-foreground-2)};
-      --background: #{map-get($swatch, status-generic-marigold-background-2)};
+      --color: #{map.get($swatch, status-generic-marigold-foreground-2)};
+      --background: #{map.get($swatch, status-generic-marigold-background-2)};
     }
 
     @include baka.variant(gold) {
-      --color: #{map-get($swatch, status-generic-gold-foreground-2)};
-      --background: #{map-get($swatch, status-generic-gold-background-2)};
+      --color: #{map.get($swatch, status-generic-gold-foreground-2)};
+      --background: #{map.get($swatch, status-generic-gold-background-2)};
     }
 
     @include baka.variant(brass) {
-      --color: #{map-get($swatch, status-generic-brass-foreground-2)};
-      --background: #{map-get($swatch, status-generic-brass-background-2)};
+      --color: #{map.get($swatch, status-generic-brass-foreground-2)};
+      --background: #{map.get($swatch, status-generic-brass-background-2)};
     }
 
     @include baka.variant(brown) {
-      --color: #{map-get($swatch, status-generic-brown-foreground-2)};
-      --background: #{map-get($swatch, status-generic-brown-background-2)};
+      --color: #{map.get($swatch, status-generic-brown-foreground-2)};
+      --background: #{map.get($swatch, status-generic-brown-background-2)};
     }
 
     @include baka.variant(forest) {
-      --color: #{map-get($swatch, status-generic-forest-foreground-2)};
-      --background: #{map-get($swatch, status-generic-forest-background-2)};
+      --color: #{map.get($swatch, status-generic-forest-foreground-2)};
+      --background: #{map.get($swatch, status-generic-forest-background-2)};
     }
 
     @include baka.variant(seafoam) {
-      --color: #{map-get($swatch, status-generic-seafoam-foreground-2)};
-      --background: #{map-get($swatch, status-generic-seafoam-background-2)};
+      --color: #{map.get($swatch, status-generic-seafoam-foreground-2)};
+      --background: #{map.get($swatch, status-generic-seafoam-background-2)};
     }
 
     @include baka.variant(darkgreen) {
-      --color: #{map-get($swatch, status-generic-darkgreen-foreground-2)};
-      --background: #{map-get($swatch, status-generic-darkgreen-background-2)};
+      --color: #{map.get($swatch, status-generic-darkgreen-foreground-2)};
+      --background: #{map.get($swatch, status-generic-darkgreen-background-2)};
     }
 
     @include baka.variant(lightteal) {
-      --color: #{map-get($swatch, status-generic-lightteal-foreground-2)};
-      --background: #{map-get($swatch, status-generic-lightteal-background-2)};
+      --color: #{map.get($swatch, status-generic-lightteal-foreground-2)};
+      --background: #{map.get($swatch, status-generic-lightteal-background-2)};
     }
 
     @include baka.variant(teal) {
-      --color: #{map-get($swatch, status-generic-teal-foreground-2)};
-      --background: #{map-get($swatch, status-generic-teal-background-2)};
+      --color: #{map.get($swatch, status-generic-teal-foreground-2)};
+      --background: #{map.get($swatch, status-generic-teal-background-2)};
     }
 
     @include baka.variant(steel) {
-      --color: #{map-get($swatch, status-generic-steel-foreground-2)};
-      --background: #{map-get($swatch, status-generic-steel-background-2)};
+      --color: #{map.get($swatch, status-generic-steel-foreground-2)};
+      --background: #{map.get($swatch, status-generic-steel-background-2)};
     }
 
     @include baka.variant(blue) {
-      --color: #{map-get($swatch, status-generic-blue-foreground-2)};
-      --background: #{map-get($swatch, status-generic-blue-background-2)};
+      --color: #{map.get($swatch, status-generic-blue-foreground-2)};
+      --background: #{map.get($swatch, status-generic-blue-background-2)};
     }
 
     @include baka.variant(royalroyal) {
-      --color: #{map-get($swatch, status-generic-royalroyal-foreground-2)};
-      --background: #{map-get($swatch, status-generic-royalroyal-background-2)};
+      --color: #{map.get($swatch, status-generic-royalroyal-foreground-2)};
+      --background: #{map.get($swatch, status-generic-royalroyal-background-2)};
     }
 
     @include baka.variant(cornflower) {
-      --color: #{map-get($swatch, status-generic-cornflower-foreground-2)};
-      --background: #{map-get($swatch, status-generic-cornflower-background-2)};
+      --color: #{map.get($swatch, status-generic-cornflower-foreground-2)};
+      --background: #{map.get($swatch, status-generic-cornflower-background-2)};
     }
 
     @include baka.variant(navy) {
-      --color: #{map-get($swatch, status-generic-navy-foreground-2)};
-      --background: #{map-get($swatch, status-generic-navy-background-2)};
+      --color: #{map.get($swatch, status-generic-navy-foreground-2)};
+      --background: #{map.get($swatch, status-generic-navy-background-2)};
     }
 
     @include baka.variant(lavender) {
-      --color: #{map-get($swatch, status-generic-lavender-foreground-2)};
-      --background: #{map-get($swatch, status-generic-lavender-background-2)};
+      --color: #{map.get($swatch, status-generic-lavender-foreground-2)};
+      --background: #{map.get($swatch, status-generic-lavender-background-2)};
     }
 
     @include baka.variant(purple) {
-      --color: #{map-get($swatch, status-generic-purple-foreground-2)};
-      --background: #{map-get($swatch, status-generic-purple-background-2)};
+      --color: #{map.get($swatch, status-generic-purple-foreground-2)};
+      --background: #{map.get($swatch, status-generic-purple-background-2)};
     }
 
     @include baka.variant(grape) {
-      --color: #{map-get($swatch, status-generic-grape-foreground-2)};
-      --background: #{map-get($swatch, status-generic-grape-background-2)};
+      --color: #{map.get($swatch, status-generic-grape-foreground-2)};
+      --background: #{map.get($swatch, status-generic-grape-background-2)};
     }
 
     @include baka.variant(lilac) {
-      --color: #{map-get($swatch, status-generic-lilac-foreground-2)};
-      --background: #{map-get($swatch, status-generic-lilac-background-2)};
+      --color: #{map.get($swatch, status-generic-lilac-foreground-2)};
+      --background: #{map.get($swatch, status-generic-lilac-background-2)};
     }
 
     @include baka.variant(pink) {
-      --color: #{map-get($swatch, status-generic-pink-foreground-2)};
-      --background: #{map-get($swatch, status-generic-pink-background-2)};
+      --color: #{map.get($swatch, status-generic-pink-foreground-2)};
+      --background: #{map.get($swatch, status-generic-pink-background-2)};
     }
 
     @include baka.variant(magenta) {
-      --color: #{map-get($swatch, status-generic-magenta-foreground-2)};
-      --background: #{map-get($swatch, status-generic-magenta-background-2)};
+      --color: #{map.get($swatch, status-generic-magenta-foreground-2)};
+      --background: #{map.get($swatch, status-generic-magenta-background-2)};
     }
 
     @include baka.variant(plum) {
-      --color: #{map-get($swatch, status-generic-plum-foreground-2)};
-      --background: #{map-get($swatch, status-generic-plum-background-2)};
+      --color: #{map.get($swatch, status-generic-plum-foreground-2)};
+      --background: #{map.get($swatch, status-generic-plum-background-2)};
     }
 
     @include baka.variant(beige) {
-      --color: #{map-get($swatch, status-generic-beige-foreground-2)};
-      --background: #{map-get($swatch, status-generic-beige-background-2)};
+      --color: #{map.get($swatch, status-generic-beige-foreground-2)};
+      --background: #{map.get($swatch, status-generic-beige-background-2)};
     }
 
     @include baka.variant(mink) {
-      --color: #{map-get($swatch, status-generic-mink-foreground-2)};
-      --background: #{map-get($swatch, status-generic-mink-background-2)};
+      --color: #{map.get($swatch, status-generic-mink-foreground-2)};
+      --background: #{map.get($swatch, status-generic-mink-background-2)};
     }
 
     @include baka.variant(platinum) {
-      --color: #{map-get($swatch, status-generic-platinum-foreground-2)};
-      --background: #{map-get($swatch, status-generic-platinum-background-2)};
+      --color: #{map.get($swatch, status-generic-platinum-foreground-2)};
+      --background: #{map.get($swatch, status-generic-platinum-background-2)};
     }
 
     @include baka.variant(anchor) {
-      --color: #{map-get($swatch, status-generic-anchor-foreground-2)};
-      --background: #{map-get($swatch, status-generic-anchor-background-2)};
+      --color: #{map.get($swatch, status-generic-anchor-foreground-2)};
+      --background: #{map.get($swatch, status-generic-anchor-background-2)};
     }
   }
 }

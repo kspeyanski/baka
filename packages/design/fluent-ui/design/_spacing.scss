@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "baka-core" as baka;
+@use "baka-ui" as baka;
 
 $_default-spacing: (
   // vertical
@@ -29,8 +29,8 @@ $_default-spacing: (
 );
 
 $spacing: () !default;
-$spacing: map-merge($_default-spacing, $spacing);
-$_spacing: map-merge($spacing, ());
+$spacing: map.merge($_default-spacing, $spacing);
+$_spacing: map.merge($spacing, ());
 
 @mixin spacing--styles($s: $spacing) {
   @include baka.css-vars($spacing, --spacing);

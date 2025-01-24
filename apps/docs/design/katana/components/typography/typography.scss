@@ -1,4 +1,4 @@
-@use "baka-core" as *;
+@use "baka-ui" as *;
 @use "../../design" as *;
 
 @mixin styles {
@@ -8,7 +8,7 @@
     @include variant(hero) {
       font-size: 64px;
       font-weight: 800;
-      font-family: map-get($font-family, serif);
+      font-family: map.get($font-family, serif);
     }
 
     @include variant(h1) {
@@ -43,7 +43,7 @@
 
     @include variant(sub-hero) {
       font-size: 20px;
-      line-height: map-get($line-height, body);
+      line-height: map.get($line-height, body);
     }
 
     @include variant(body-large) {

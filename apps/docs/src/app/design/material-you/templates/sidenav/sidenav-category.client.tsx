@@ -4,29 +4,33 @@ import clsx from "clsx";
 import React from "react";
 import { SIDENAV_ACTION, useSidenav } from "./sidenav.state";
 import { Button, ButtonProps } from "@/components/buttons/button";
-import { BakaButtonProps } from "baka-ui";
+import { ButtonProps as BakaButtonProps } from "baka-material-you";
 
 export type SidenavCategoryClientProps = {
-  children: React.ReactNode;
+  children: React.ReactNode | React.ReactElement<any>;
   variant?: BakaButtonProps["variant"];
 };
 
 export const ToggleButton = (props: ButtonProps & { children: any }) => {
   const [state, dispatch] = useSidenav();
 
-  const handleClick = React.useCallback(() => {
+  const handleClick = () => {
     dispatch({ type: SIDENAV_ACTION.TOGGLE });
-  }, [dispatch]);
+  };
 
   return (
     <Button
-      variant={["icon", props.variant].filter(Boolean) as BakaButtonProps["variant"]}
+      variant={
+        ["icon", props.variant].filter(Boolean) as BakaButtonProps["variant"]
+      }
       onClick={handleClick}
       className={clsx(props.className)}
     >
-      {React.cloneElement(props.children as React.ReactElement, {
-        children: state.open ? "menu_open" : "menu",
-      })}
+      {React.isValidElement(props.children)
+        ? React.cloneElement(props.children, {
+            children: state.open ? "menu_open" : "menu",
+          })
+        : props.children}
     </Button>
   );
 };
@@ -39,7 +43,7 @@ export const SidenavCategoryClient = (props: SidenavCategoryClientProps) => {
       ? React.cloneElement(child, {
           ...(child?.props || {}),
           className: clsx(child.props?.className, {
-            // ["sm:hidden"]: !open
+            ["sm:hidden"]: !open,
           }),
         })
       : child;

@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use "../../index.scss" as *;
 
 @mixin code--styles {
@@ -6,10 +7,10 @@
     white-space: pre-wrap;
     word-wrap: break-word;
     margin: 16px 0;
-    background: map-get($swatch, surface-container);
+    background: map.get($swatch, surface-container);
     padding: 16px;
     border-radius: 4px;
-    box-shadow: map-get($elevation, 1);
+    box-shadow: map.get($elevation, 1);
     overflow-x: auto;
 
     -ms-overflow-style: none; /* IE and Edge */
@@ -20,21 +21,21 @@
   }
 
   .code {
-    color: map-get($swatch, primary);
-    font-size: map-get($font-size, body-medium);
-    font-family: map-get($font-family, mono);
+    color: map.get($swatch, primary);
+    font-size: map.get($font-size, body-medium);
+    font-family: map.get($font-family, mono);
 
     &.hljs {
-      color: map-get($swatch, on-surface-variant);
+      color: map.get($swatch, on-surface-variant);
 
       .hljs-subst,
       .hljs-title {
         font-weight: normal;
-        color: map-get($swatch, on-surface);
+        color: map.get($swatch, on-surface);
       }
 
       .hljs-title.function_ {
-        color: map-get($swatch, warning);
+        color: map.get($swatch, warning);
       }
 
       .hljs-code,
@@ -45,7 +46,7 @@
       }
 
       .hljs-meta {
-        color: map-get($swatch, warning);
+        color: map.get($swatch, warning);
       }
 
       .hljs-section {
@@ -66,38 +67,38 @@
       .hljs-name,
       .hljs-built_in,
       .hljs-type {
-        color: map-get($swatch, info);
+        color: map.get($swatch, info);
       }
 
       .hljs-property,
       .hljs-attr {
-        color: map-get($swatch, accent);
+        color: map.get($swatch, accent);
       }
 
       .hljs-attribute {
-        color: map-get($swatch, info);
+        color: map.get($swatch, info);
       }
 
       .hljs-number {
-        color: map-get($swatch, info);
+        color: map.get($swatch, info);
       }
 
       .hljs-regexp {
-        color: map-get($swatch, info);
+        color: map.get($swatch, info);
       }
 
       .hljs-link {
         text-decoration: underline;
-        color: map-get($swatch, info);
+        color: map.get($swatch, info);
       }
 
       .hljs-meta .hljs-string,
       .hljs-string {
-        color: map-get($swatch, success);
+        color: map.get($swatch, success);
       }
 
       .hljs-char.escape_ {
-        color: map-get($swatch, on-info-container);
+        color: map.get($swatch, on-info-container);
       }
 
       .hljs-doctag {
@@ -105,11 +106,11 @@
       }
 
       .hljs-template-variable {
-        color: map-get($swatch, success);
+        color: map.get($swatch, success);
       }
 
       .hljs-addition {
-        background: map-get($swatch, success-container);
+        background: map.get($swatch, success-container);
       }
 
       .hljs-deletion {

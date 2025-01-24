@@ -4,7 +4,9 @@ import React from "react";
 import { Docs } from "contentlayer/generated";
 import { usePathname } from "next/navigation";
 
-export const SidenavContext = React.createContext<[SidenavState, React.Dispatch<SidenavAction>]>([
+export const SidenavContext = React.createContext<
+  [SidenavState, React.Dispatch<SidenavAction>]
+>([
   {
     open: false,
     selected: "",
@@ -42,7 +44,11 @@ export type SidenavState = {
 };
 
 export type SidenavStateProps = {
-  data: Array<{ title: string; icon?: string; docs: Pick<Docs, "url" | "title">[] }>;
+  data: Array<{
+    title: string;
+    icon?: string;
+    docs: Pick<Docs, "url" | "title">[];
+  }>;
   children?: React.ReactNode;
 };
 
@@ -83,8 +89,9 @@ export const SidenavState = (props: SidenavStateProps) => {
   const override = useSidenavState();
   const pathname = usePathname();
   const expanded =
-    props.data?.find((group) => group.docs.some((doc) => pathname.endsWith(doc.url)))?.title ??
-    null;
+    props.data?.find((group) =>
+      group.docs.some((doc) => pathname.endsWith(doc.url))
+    )?.title ?? null;
   const selected =
     props.data
       ?.find((group) => group.docs.some((doc) => pathname.endsWith(doc.url)))
@@ -96,22 +103,16 @@ export const SidenavState = (props: SidenavStateProps) => {
     group,
   });
 
-  const state = React.useMemo(
-    () => ({
-      ...local,
-      ...override,
-    }),
-    [local]
-  );
+  const state = {
+    ...local,
+    ...override,
+  };
 
-  const handleDispatch = React.useCallback(
-    (action: SidenavAction) => {
-      const proposed = sidenavReducer(state, action, props.data);
+  const handleDispatch = (action: SidenavAction) => {
+    const proposed = sidenavReducer(state, action, props.data);
 
-      setState(proposed);
-    },
-    [state]
-  );
+    setState(proposed);
+  };
 
   return (
     <SidenavContext.Provider

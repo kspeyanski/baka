@@ -1,5 +1,5 @@
 import { TopBar } from "@/components/bars/top-bar";
-import { BakaDivider, BakaIcon } from "baka-ui";
+import { Divider, Icon } from "baka-material-you";
 
 import Logo from "@/icons/logo-dark.svg";
 import Image from "next/image";
@@ -22,7 +22,7 @@ export const Header = (props: HeaderProps) => {
         <Container>
           <Row>
             <Column size={12}>
-              <BakaIcon>{HeaderLogo}</BakaIcon>
+              <Icon>{HeaderLogo}</Icon>
               {/* <ul className="ml-xl flex gap-sm">
                 <li>
                   <Button variant={"link"} as={Link} href="/">
@@ -39,7 +39,7 @@ export const Header = (props: HeaderProps) => {
           </Row>
         </Container>
       </TopBar>
-      <BakaDivider />
+      <Divider />
     </div>
   );
 };

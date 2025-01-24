@@ -1,9 +1,9 @@
-import { BakaComponent, BakaListItem } from "baka-ui";
+import { ListItem as BakaListItem } from "baka-material-you";
 import clsx from "clsx";
 
 type TableHeaderCellProps = React.HTMLAttributes<HTMLTableCellElement>;
 
-export const TableHeaderCell: BakaComponent<"th", TableHeaderCellProps> = (props) => {
+export const TableHeaderCell = (props: TableHeaderCellProps) => {
   const { children, className, ...rest } = props;
 
   return (
@@ -11,7 +11,7 @@ export const TableHeaderCell: BakaComponent<"th", TableHeaderCellProps> = (props
       as="th"
       className={clsx("table-header-cell", className)}
       {...rest}
-      readOnly={true}
+      // readOnly={true}
     >
       {children}
     </BakaListItem>

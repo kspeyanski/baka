@@ -6,20 +6,25 @@ import { Icon } from "@/components/misc/icon";
 import Logo from "@/icons/maskot-material-you.svg";
 import Image from "next/image";
 import { TopBar } from "@/components/bars/top-bar";
-import { ToggleButton } from "@/templates/sidenav/sidenav-category.client";
+import { ToggleButton } from "../sidenav/sidenav-category.client";
 
 export const Header = () => {
   return (
     <TopBar>
       <Container variant={"fluid"}>
         <Row>
-          <Column size={12} className="flex items-center justify-between">
+          <Column columns={12} className="flex items-center justify-between">
             <div className="flex items-center gap-2 ml-[-24px]">
               <ToggleButton className="xl:hidden">
                 <Icon>menu</Icon>
               </ToggleButton>
               <Button variant={"icon"}>
-                <Image src={Logo.src} width={33} height={32} alt="Baka Material You Logo" />
+                <Image
+                  src={Logo.src}
+                  width={33}
+                  height={32}
+                  alt="Baka Material You Logo"
+                />
               </Button>
             </div>
             <div className="flex items-center justify-end">

@@ -1,6 +1,6 @@
 @use "sass:map";
 @use "sass:meta";
-@use "baka-core" as baka;
+@use "baka-ui" as baka;
 @use "./spacing" as *;
 
 $_default-layout: (
@@ -56,8 +56,8 @@ $_default-layout: (
 );
 
 $layout: () !default;
-$layout: map-merge($_default-layout, $layout);
-$_layout: map-merge($layout, ());
+$layout: map.merge($_default-layout, $layout);
+$_layout: map.merge($layout, ());
 
 @mixin layout--styles {
   @include baka.css-vars($layout, --layout);
