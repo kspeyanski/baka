@@ -46,5 +46,8 @@
     "react": "^19",
     "react-dom": "^19"
   },
-  "gitHead": "532e6985e8208e2dc614d825bcb0cf81b579f331"
+  "gitHead": "532e6985e8208e2dc614d825bcb0cf81b579f331",
+  "dependencies": {
+    "use-component-slot": "^1.0.1"
+  }
 }

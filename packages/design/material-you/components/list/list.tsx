@@ -1,4 +1,4 @@
-import { BakaComponent, BakaProps } from "baka-ui";
+import { Baka, BakaProps } from "baka-ui";
 
 export type ListProps<T extends React.ElementType = "ul"> = BakaProps<
   T,
@@ -8,7 +8,7 @@ export type ListProps<T extends React.ElementType = "ul"> = BakaProps<
 export const List = <T extends React.ElementType = "ul">(
   props: ListProps<T>
 ) => {
-  return <BakaComponent as="ul" {...props} baka="list" />;
+  return <Baka as="ul" {...props} baka="list" />;
 };
 
 export type ListItemProps<T extends React.ElementType = "i"> = BakaProps<
@@ -19,5 +19,5 @@ export type ListItemProps<T extends React.ElementType = "i"> = BakaProps<
 export const ListItem = <T extends React.ElementType = "li">(
   props: ListItemProps<T>
 ) => {
-  return <BakaComponent as="li" {...props} baka="list-item" />;
+  return <Baka as="li" {...props} baka="list-item" />;
 };

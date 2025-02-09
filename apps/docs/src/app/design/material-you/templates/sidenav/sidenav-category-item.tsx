@@ -1,15 +1,15 @@
-import { Icon } from "@/components/misc/icon";
+import { Icon } from "@/app/design/material-you/components/misc/icon";
 import {
   NavigationItem,
   NavigationItemProps,
-} from "@/components/navigation/navigation-item";
-import { Text } from "@/components/text";
+} from "@material-you/components/navigation/navigation-item";
+import { Text } from "@material-you/components/text";
 import { SidenavCategoryItemClient } from "./sidenav-category-item.client";
 import { JSX } from "react";
 
 export type SidenavCategoryItemProps = NavigationItemProps & {
   as?: any;
-  url: string;
+  href: string;
   icon: JSX.Element;
   title: string;
   match?: string[];
@@ -17,16 +17,16 @@ export type SidenavCategoryItemProps = NavigationItemProps & {
 };
 
 export const SidenavCategoryItem = (props: SidenavCategoryItemProps) => {
-  const { as: Component, url, icon, title, readOnly, match, ...other } = props;
+  const { as: Component, href, icon, title, readOnly, match, ...other } = props;
 
   return (
     <SidenavCategoryItemClient
-      url={url}
+      url={href}
       title={title}
       match={match}
       readOnly={readOnly}
     >
-      <NavigationItem as={Component} {...other}>
+      <NavigationItem as={Component ?? 'span'} href={href} {...other}>
         <Icon>{icon}</Icon>
         <Text variant="label-medium">{title}</Text>
       </NavigationItem>

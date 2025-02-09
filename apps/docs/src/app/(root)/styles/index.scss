@@ -1,0 +1,6 @@
+@forward "../design";
+@use "../design" as *;
+
+@mixin styles {
+  @include design--styles;
+}

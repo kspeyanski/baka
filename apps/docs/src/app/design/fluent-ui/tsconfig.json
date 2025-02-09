@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "composite": true
+  },
+  "extends": "../../../../tsconfig.json",
+  "files": ["../../../../types/fluent-ui.d.ts"]
+}

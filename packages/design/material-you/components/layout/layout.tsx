@@ -1,4 +1,4 @@
-import { BakaComponent, BakaProps } from "baka-ui";
+import { Baka, BakaProps } from "baka-ui";
 import clsx from "clsx";
 import { valueClassNames } from "baka-ui";
 
@@ -15,7 +15,7 @@ export const Column = <T extends React.ElementType = "div">(
   const { columns, as = "div", ...other } = props;
 
   return (
-    <BakaComponent
+    <Baka
       as={as}
       {...other}
       baka="column"
@@ -32,7 +32,7 @@ export type ContainerProps<T extends React.ElementType = "div"> = BakaProps<
 export const Container = <T extends React.ElementType = "div">(
   props: ContainerProps<T>
 ) => {
-  return <BakaComponent as="div" {...props} baka="container" />;
+  return <Baka as="div" {...props} baka="container" />;
 };
 
 export type RowProps<T extends React.ElementType = "div"> = BakaProps<
@@ -43,5 +43,5 @@ export type RowProps<T extends React.ElementType = "div"> = BakaProps<
 export const Row = <T extends React.ElementType = "div">(
   props: RowProps<T>
 ) => {
-  return <BakaComponent as="div" {...props} baka="row" />;
+  return <Baka as="div" {...props} baka="row" />;
 };

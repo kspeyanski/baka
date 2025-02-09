@@ -1,4 +1,4 @@
-import { BakaComponent, BakaProps } from "baka-ui";
+import { Baka, BakaProps } from "baka-ui";
 
 export type TextFieldProps<T extends React.ElementType = "span"> = BakaProps<
   T,
@@ -8,5 +8,5 @@ export type TextFieldProps<T extends React.ElementType = "span"> = BakaProps<
 export const TextField = <T extends React.ElementType = "span">(
   props: TextFieldProps<T>
 ) => {
-  return <BakaComponent as="span" {...props} baka="text-field" />;
+  return <Baka as="span" {...props} baka="text-field" />;
 };

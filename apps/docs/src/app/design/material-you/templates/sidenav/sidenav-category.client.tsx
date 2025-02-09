@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import React from "react";
 import { SIDENAV_ACTION, useSidenav } from "./sidenav.state";
-import { Button, ButtonProps } from "@/components/buttons/button";
+import { Button, ButtonProps } from "@material-you/components/buttons/button";
 import { ButtonProps as BakaButtonProps } from "baka-material-you";
 
 export type SidenavCategoryClientProps = {

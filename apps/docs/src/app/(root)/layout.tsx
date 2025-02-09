@@ -1,28 +1,32 @@
-import "./layout.scss";
-import styles from "@design/katana/styles.module.scss";
-import "@design/katana/global.css";
-// import "@design/katana/styles.scss";
+import "@katana/styles/tailwind.css";
+import styles from "./layout.module.scss";
 
 import type { Metadata } from "next";
 
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
+
 import { Header } from "@katana/templates/header";
 
 import clsx from "clsx";
 import favicon from "./favicon.svg";
+import { Button } from "./components/button";
 
 export const metadata: Metadata = {
   title: "Baka UI",
   description: "A Design System Framework",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" className={styles["katana"]}>
+    <html lang="en">
       <head>
         <link rel="icon" href={favicon.src} />
-        
+
         <meta property="og:url" content="https://www.baka-ui.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Baka UI" />
@@ -36,7 +40,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="twitter:description" content="A Design System Framework" />
         <meta name="twitter:image" content="https://baka-ui.com/og-image.png" />
       </head>
-      <body className={clsx(GeistSans.variable, GeistMono.variable)} id="katana">
+      <body
+        className={clsx(
+          styles["katana"],
+          GeistSans.variable,
+          GeistMono.variable
+        )}
+        id="katana"
+      >
         <Header />
         {children}
       </body>

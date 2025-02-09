@@ -23,9 +23,9 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@design/*": ["./design/*"],
       "@katana/*": ["./src/app/(root)/*"],
       "@material-you/*": ["./src/app/design/material-you/*"],
+      "@fluent-ui/*": ["./src/app/design/fluent-ui/*"],
       "baka-ui": ["./node_modules/baka-ui/src/index.ts"],
       "baka-design-fluent": ["./node_modules/baka-design-fluent/index.ts"],
       "contentlayer/generated": ["./.contentlayer/generated"]

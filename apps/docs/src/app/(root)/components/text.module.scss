@@ -1,0 +1,64 @@
+@use "sass:map";
+@use "baka-ui" as *;
+@use "../design" as *;
+
+.text {
+  @include typography(body);
+
+  @include variant(hero) {
+    font-size: 64px;
+    font-weight: 800;
+    font-family: map.get($font-family, serif);
+  }
+
+  @include variant(h1) {
+    @include typography(h1);
+    color: map.get($swatch, emphasis);
+  }
+
+  @include variant(h2) {
+    @include typography(h2);
+    color: map.get($swatch, emphasis);
+  }
+
+  @include variant(h3) {
+    @include typography(h3);
+    color: map.get($swatch, emphasis);
+  }
+
+  @include variant(h4) {
+    @include typography(h4);
+    color: map.get($swatch, emphasis);
+  }
+
+  @include variant(h5) {
+    color: map.get($swatch, emphasis);
+    @include typography(h5);
+  }
+
+  @include variant(h6) {
+    @include typography(h6);
+    color: map.get($swatch, emphasis);
+  }
+
+  @include variant(sub-hero) {
+    font-size: 20px;
+    line-height: map.get($line-height, body);
+  }
+
+  @include variant(body-small) {
+    @include typography(body-small);
+  }
+
+  @include variant(body) {
+    @include typography(body);
+  }
+
+  @include variant(body-large) {
+    @include typography(body-large);
+  }
+
+  @include variant(code) {
+    @include typography(code);
+  }
+}

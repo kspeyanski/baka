@@ -1,0 +1,6 @@
+@use "../design" as *;
+
+.bar {
+  padding: 0 spacing(md);
+  margin: spacing(md) 0;
+}

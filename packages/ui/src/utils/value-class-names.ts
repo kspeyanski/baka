@@ -1,6 +1,12 @@
-export const valueClassNames = (value: any): string | string[] | null =>
+export const valueClassNames = (
+  value: any,
+  classNames: { [className: string]: string }
+): string | string[] | null =>
   Array.isArray(value)
-    ? value.map((v, index) => `value-${index}--${v}`)
+    ? value.map((v, index) => {
+        const key = `value-${index}--${v}`;
+        return classNames?.[key] || key;
+      })
     : value
-    ? `value--${value}`
+    ? (classNames?.[`value--${value}`] ?? `value--${value}`)
     : null;

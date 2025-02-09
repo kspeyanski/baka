@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use "@design/material-you" as theme;
+@use "@material-you/styles" as theme;
 
 .responsive-search {
   @media screen and (max-width: calc(map.get(theme.$layout, sm, screen) - 1px)) {

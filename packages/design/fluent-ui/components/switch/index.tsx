@@ -1,4 +1,4 @@
-import { BakaComponent, BakaProps } from "baka-ui";
+import { Baka, BakaProps } from "baka-ui";
 
 export type SwitchProps<T extends React.ElementType = "input"> = BakaProps<
   T,
@@ -8,5 +8,5 @@ export type SwitchProps<T extends React.ElementType = "input"> = BakaProps<
 export const Switch = <T extends React.ElementType = "input">(
   props: SwitchProps<T>
 ) => {
-  return <BakaComponent as="input" type="checkbox" {...props} baka="switch" />;
+  return <Baka as="input" type="checkbox" {...props} baka="switch" />;
 };

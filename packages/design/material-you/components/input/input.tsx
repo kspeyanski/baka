@@ -1,4 +1,4 @@
-import { BakaComponent, BakaProps } from "baka-ui";
+import { Baka, BakaProps } from "baka-ui";
 
 export type InputProps<T extends React.ElementType = "input"> = BakaProps<
   T,
@@ -8,5 +8,5 @@ export type InputProps<T extends React.ElementType = "input"> = BakaProps<
 export const Input = <T extends React.ElementType = "input">(
   props: InputProps<T>
 ) => {
-  return <BakaComponent as="input" {...props} baka="input" />;
+  return <Baka as="input" {...props} baka="input" />;
 };

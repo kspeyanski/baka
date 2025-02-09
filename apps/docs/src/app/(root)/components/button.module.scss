@@ -1,0 +1,118 @@
+@use "sass:map";
+@use "baka-ui" as *;
+@use "../design" as *;
+
+.button {
+  --angle: 153deg;
+  --color-gradient: linear-gradient(
+    var(--angle),
+    #{map.get($swatch, brand)} 0%,
+    rgba(95, 154, 142, 1) 90%,
+    #5f9a8e 90%,
+    #00ffcb 100%
+  );
+
+  @include typography(button);
+  padding: spacing(sm) spacing(md);
+
+  border-radius: spacing(sm);
+  border-width: 1px;
+  border-color: transparent;
+  border-style: solid;
+
+  @include variant(cta) {
+    color: #000;
+
+    position: relative;
+    background-color: transparent;
+
+    background-clip: padding-box;
+    padding: spacing(md) spacing(lg);
+    transition: background-color 0.1s ease-in, color 0.1s ease-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      background: var(--color-gradient);
+      background-clip: padding-box;
+      filter: blur(var(--blur, 24px));
+      background-position: 100%;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      width: calc(100% + 2px);
+      height: calc(100% + 2px);
+      z-index: -1;
+      border-radius: spacing(sm);
+      background-clip: padding-box;
+      background-position: 100%;
+
+      background: var(--color-gradient);
+      transition: background-position 1s ease-in;
+    }
+
+    @include hover {
+      // --angle: 270deg;
+      &::before {
+        // --angle: 270deg;
+        transform: scale(1.3);
+      }
+    }
+  }
+
+  @include variant("secondary") {
+    --angle: 207deg;
+    color: map.get($swatch, emphasis);
+    position: relative;
+    background-color: map.get($swatch, background);
+    background-clip: padding-box;
+    padding: spacing(md) spacing(lg);
+    transition: background-color 0.1s ease-in, color 0.1s ease-out;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      width: calc(100% + 2px);
+      height: calc(100% + 2px);
+      z-index: -1;
+      border-radius: spacing(sm);
+      background-clip: padding-box;
+      --webkit-background-clip: padding-box;
+      background: var(--color-gradient);
+      transition: all 0.4s ease-in-out;
+    }
+
+    @include hover {
+      background-color: transparent;
+      color: #000;
+      --color-gradient: linear-gradient(
+        7deg,
+        #{map.get($swatch, brand)} 0%,
+        rgba(95, 154, 142, 1) 90%,
+        rgba(0, 255, 203, 1) 100%
+      );
+    }
+  }
+
+  @include variant(link) {
+    padding: spacing(xs) spacing(sm);
+
+    @include typography(link);
+
+    @include hover() {
+      color: map.get($swatch, emphasis);
+    }
+  }
+}

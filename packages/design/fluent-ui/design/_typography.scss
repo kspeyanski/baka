@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $font-family: (
   base: (
     Segoe UI,
@@ -12,7 +14,10 @@ $font-family: (
 
 @mixin font-family($key) {
   @if (map.has-key($font-family, $key)) {
-    font-family: var(--typography--font-family--#{$key}, map.get($font-family, $key));
+    font-family: var(
+      --typography--font-family--#{$key},
+      map.get($font-family, $key)
+    );
   }
 }
 
@@ -50,7 +55,10 @@ $line-height: (
 
 @mixin line-height($key) {
   @if (map.has-key($line-height, $key)) {
-    line-height: var(--typography--line-height--#{$key}, map.get($line-height, $key));
+    line-height: var(
+      --typography--line-height--#{$key},
+      map.get($line-height, $key)
+    );
   }
 }
 
@@ -65,7 +73,10 @@ $font-weight: (
 
 @mixin font-weight($key) {
   @if (map.has-key($font-weight, $key)) {
-    font-weight: var(--typography--font-weight--#{$key}, map.get($font-weight, $key));
+    font-weight: var(
+      --typography--font-weight--#{$key},
+      map.get($font-weight, $key)
+    );
   }
 }
 
@@ -197,15 +208,23 @@ $font-weight: (
 
 @mixin typography--styles {
   @each $name, $value in $font-family {
-    --typography--font-family--#{$name}: #{$value};
+    & {
+      --typography--font-family--#{$name}: #{$value};
+    }
   }
   @each $name, $value in $font-size {
-    --typography--font-size--#{$name}: #{$value};
+    & {
+      --typography--font-size--#{$name}: #{$value};
+    }
   }
   @each $name, $value in $line-height {
-    --typography--line-height--#{$name}: #{$value};
+    & {
+      --typography--line-height--#{$name}: #{$value};
+    }
   }
   @each $name, $value in $font-weight {
-    --typography--font-weight--#{$name}: #{$value};
+    & {
+      --typography--font-weight--#{$name}: #{$value};
+    }
   }
 }

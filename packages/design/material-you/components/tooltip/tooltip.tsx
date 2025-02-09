@@ -1,4 +1,4 @@
-import { BakaComponent, BakaProps } from "baka-ui";
+import { Baka, BakaProps } from "baka-ui";
 
 export type TooltipProps<T extends React.ElementType = "div"> = BakaProps<
   T,
@@ -8,5 +8,5 @@ export type TooltipProps<T extends React.ElementType = "div"> = BakaProps<
 export const Tooltip = <T extends React.ElementType = "div">(
   props: TooltipProps<T>
 ) => {
-  return <BakaComponent as="div" type="tooltip" {...props} baka="tooltip" />;
+  return <Baka as="div" type="tooltip" {...props} baka="tooltip" />;
 };

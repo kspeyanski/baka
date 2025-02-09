@@ -1,12 +1,12 @@
 import { type Docs } from "contentlayer/generated";
-// import { Navigation, NavigationProps } from "@/components/navigation/navigation";
+// import { Navigation, NavigationProps } from "@material-you/components/navigation/navigation";
 import { SidenavCategoryItem } from "./sidenav-category-item";
 import clsx from "clsx";
 import { SidenavCategoryClient, ToggleButton } from "./sidenav-category.client";
-import { Icon } from "@/components/misc/icon";
+import { Icon } from "@/app/design/material-you/components/misc/icon";
 import Link from "next/link";
-import { Button } from "@/components/buttons/button";
-import { Navigation, NavigationProps } from "@/components/navigation/navigation";
+import { Button } from "@material-you/components/buttons/button";
+import { Navigation, NavigationProps } from "@material-you/components/navigation/navigation";
 import { ThemeToggle } from "../theme-toggle/theme-toggle";
 import { StorybookLink } from "../storybook-link";
 // @ts-expect-error
@@ -59,7 +59,7 @@ export const SidenavCategory = (props: SidenavCategoryProp) => {
                 icon={<>{group.icon}</>}
                 match={group.docs?.map((doc) => doc.url)}
                 title={group.title}
-                url={group.docs?.[0].url}
+                href={group.docs?.[0].url}
               />
             ))}
             <SidenavCategoryItem

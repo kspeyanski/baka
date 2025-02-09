@@ -1,6 +1,5 @@
-import styles from "@design/material-you/styles.module.scss";
-import "@design/material-you/global.css";
-import "./layout.scss";
+import styles from "./layout.module.scss";
+import "@material-you/styles/tailwind.css";
 
 import type { Metadata } from "next";
 import favicon from "./favicon.svg";
@@ -17,19 +16,19 @@ import Logo from "@/icons/logo-material-you.inline-svg";
 // @ts-expect-error
 import GitHub from "@/icons/github-mark.inline-svg";
 import NPM from "@/icons/npm-logo.svg";
-import { Container } from "@/components/layout/container";
-import { Row } from "@/components/layout/row";
-import { Column } from "@/components/layout/column";
+import { Container } from "@material-you/components/layout/container";
+import { Row } from "@material-you/components/layout/row";
+import { Column } from "@material-you/components/layout/column";
 import clsx from "clsx";
 
 import { SidenavState } from "@material-you/templates/sidenav/sidenav.state";
-import { TopBar } from "@/components/bars/top-bar";
-import { Icon } from "@/components/misc/icon";
+import { TopBar } from "@material-you/components/bars/top-bar";
+import { Icon } from "@material-you/components/misc/icon";
 import { ToggleButton } from "@material-you/templates/sidenav/sidenav-category.client";
 import { Docs, allDocs } from "contentlayer/generated";
 import Image from "next/image";
 import { Search } from "@material-you/templates/search/search.client";
-import { Button } from "@/components/buttons/button";
+import { Button } from "@material-you/components/buttons/button";
 import Link from "next/link";
 import { ColorScheme } from "@material-you/templates/color-scheme/color-scheme.client";
 import { Sidenav } from "./templates/sidenav/sidenav";
@@ -96,7 +95,7 @@ export default function MaterialYouLayout({
         <ColorScheme>
           <main className="flex flex-row">
             <SidenavState data={structuredClone(groups)}>
-              <Sidenav data={groups} />
+              <Sidenav data={structuredClone(groups)} />
               <Container>
                 <TopBar className={"z-30 sticky top-0"}>
                   <div className="flex flex-col grow">

@@ -1,0 +1,9 @@
+// @use "./styles/swatch" as *;
+
+$font-family: (
+  base: var(--font-family--sans),
+);
+
+@forward "baka-fluent-ui" with (
+  $font-family: $font-family,
+);

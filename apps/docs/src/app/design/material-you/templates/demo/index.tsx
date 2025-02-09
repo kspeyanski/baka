@@ -1,6 +1,6 @@
 import "./demo.scss";
 
-import { Text } from "@/components/text";
+import { Text } from "@material-you/components/text";
 import {
   Card as BakaCard,
   Divider as BakaDivider,

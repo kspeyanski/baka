@@ -3,13 +3,13 @@
 import { Docs } from "contentlayer/generated";
 
 import React from "react";
-import { NavigationDrawer, NavigationDrawerProps } from "@/components/navigation/navigation-drawer";
-import { NavigationDrawerItem } from "@/components/navigation/navigation-drawer-item";
+import { NavigationDrawer, NavigationDrawerProps } from "@material-you/components/navigation/navigation-drawer";
+import { NavigationDrawerItem } from "@material-you/components/navigation/navigation-drawer-item";
 import Link from "next/link";
 import clsx from "clsx";
 import { stateClassNames } from "baka-ui";
 import { SIDENAV_ACTION, useSidenav } from "./sidenav.state";
-import { Text } from "@/components/text";
+import { Text } from "@material-you/components/text";
 
 export type SidenavSubcategoryClientProps = {
   data: Array<{

@@ -1,4 +1,4 @@
-import { BakaComponent, BakaProps } from "baka-ui";
+import { Baka, BakaProps } from "baka-ui";
 
 export type DividerProps<T extends React.ElementType = "span"> = BakaProps<
   T,
@@ -8,5 +8,5 @@ export type DividerProps<T extends React.ElementType = "span"> = BakaProps<
 export const Divider = <T extends React.ElementType = "span">(
   props: DividerProps<T>
 ) => {
-  return <BakaComponent as="span" {...props} baka="divider" />;
+  return <Baka as="span" {...props} baka="divider" />;
 };

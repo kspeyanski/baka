@@ -1,4 +1,4 @@
-import { BakaComponent, BakaProps } from "baka-ui";
+import { Baka, BakaProps } from "baka-ui";
 
 export type NavigationProps<T extends React.ElementType = "div"> = BakaProps<
   T,
@@ -8,7 +8,7 @@ export type NavigationProps<T extends React.ElementType = "div"> = BakaProps<
 export const Navigation = <T extends React.ElementType = "div">(
   props: NavigationProps<T>
 ) => {
-  return <BakaComponent as="div" {...props} baka="navigation" />;
+  return <Baka as="div" {...props} baka="navigation" />;
 };
 
 export type NavigationItemProps<T extends React.ElementType = "div"> =
@@ -17,5 +17,5 @@ export type NavigationItemProps<T extends React.ElementType = "div"> =
 export const NavigationItem = <T extends React.ElementType = "div">(
   props: NavigationItemProps<T>
 ) => {
-  return <BakaComponent as="div" {...props} baka="navigation-item" />;
+  return <Baka as="div" {...props} baka="navigation-item" />;
 };

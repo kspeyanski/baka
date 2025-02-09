@@ -3,5 +3,5 @@
     "composite": true
   },
   "extends": "../../../tsconfig.json",
-  "files": ["../../../design/katana/katana.d.ts"]
+  "files": ["../../../types/katana.d.ts"]
 }

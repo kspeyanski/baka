@@ -1,4 +1,4 @@
-import { BakaComponent, BakaProps } from "baka-ui";
+import { Baka, BakaProps } from "baka-ui";
 
 export type DialogProps<T extends React.ElementType = "div"> = BakaProps<
   T,
@@ -8,5 +8,5 @@ export type DialogProps<T extends React.ElementType = "div"> = BakaProps<
 export const Dialog = <T extends React.ElementType = "div">(
   props: DialogProps<T>
 ) => {
-  return <BakaComponent as="div" {...props} baka="dialog" />;
+  return <Baka as="div" {...props} baka="dialog" />;
 };

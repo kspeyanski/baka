@@ -1,8 +1,8 @@
-import { Code } from "@/components/code/code";
+import { Code } from "@/app/design/material-you/components/code/code";
 // import { Fragment, jsx, jsxs } from "react/jsx-runtime";
 import { common, createLowlight } from "lowlight";
 import { toHtml } from "hast-util-to-html";
-import { Pre } from "@/components/code/pre";
+import { Pre } from "@/app/design/material-you/components/code/pre";
 import { DemoSourceClient } from "./demo-source.client";
 import { getDemo } from "@/lib/demo";
 

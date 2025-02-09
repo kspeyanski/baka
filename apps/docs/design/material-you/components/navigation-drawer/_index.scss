@@ -1,7 +1,0 @@
-@use "../../index.scss" as *;
-
-@mixin navigation-drawer--styles {
-  .navigation-drawer {
-    transition: all $motion-duration-short-3 $motion-easing-standard;
-  }
-}

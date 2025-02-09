@@ -1,4 +1,4 @@
-import { BakaComponent, BakaProps } from "baka-ui";
+import { Baka, BakaProps } from "baka-ui";
 
 export type FieldProps<T extends React.ElementType = "span"> = BakaProps<
   T,
@@ -8,5 +8,5 @@ export type FieldProps<T extends React.ElementType = "span"> = BakaProps<
 export const Field = <T extends React.ElementType = "span">(
   props: FieldProps<T>
 ) => {
-  return <BakaComponent as="span" {...props} baka="field" />;
+  return <Baka as="span" {...props} baka="field" />;
 };

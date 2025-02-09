@@ -1,4 +1,4 @@
-import { BakaComponent, BakaProps } from "baka-ui";
+import { Baka, BakaProps } from "baka-ui";
 
 export type ChipProps<T extends React.ElementType = "div"> = BakaProps<
   T,
@@ -8,5 +8,5 @@ export type ChipProps<T extends React.ElementType = "div"> = BakaProps<
 export const Chip = <T extends React.ElementType = "div">(
   props: ChipProps<T>
 ) => {
-  return <BakaComponent as="div" {...props} baka="chip" />;
+  return <Baka as="div" {...props} baka="chip" />;
 };

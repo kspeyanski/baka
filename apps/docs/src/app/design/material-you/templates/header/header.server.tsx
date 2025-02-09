@@ -1,11 +1,11 @@
-import { Button } from "@/components/buttons/button";
-import { Column } from "@/components/layout/column";
-import { Container } from "@/components/layout/container";
-import { Row } from "@/components/layout/row";
-import { Icon } from "@/components/misc/icon";
+import { Button } from "@material-you/components/buttons/button";
+import { Column } from "@material-you/components/layout/column";
+import { Container } from "@material-you/components/layout/container";
+import { Row } from "@material-you/components/layout/row";
+import { Icon } from "@/app/design/material-you/components/misc/icon";
 import Logo from "@/icons/maskot-material-you.svg";
 import Image from "next/image";
-import { TopBar } from "@/components/bars/top-bar";
+import { TopBar } from "@material-you/components/bars/top-bar";
 import { ToggleButton } from "../sidenav/sidenav-category.client";
 
 export const Header = () => {

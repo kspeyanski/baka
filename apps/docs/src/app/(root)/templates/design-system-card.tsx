@@ -1,15 +1,14 @@
-import "./design-system-card.scss";
+import classNames from "./design-system-card.module.scss";
 
 import clsx from "clsx";
-import { Badge } from "@/components/badges/badge";
-import { stateClassNames } from "baka-ui";
-import { Card, CardProps } from "@/components/cards/card";
 import Link from "next/link";
 
-export type DesignSystemCardProps = CardProps & {
+import { Badge } from "@katana/components/badge";
+import { Card } from "@katana/components/card";
+
+export type DesignSystemCardProps = {
   children: React.ReactNode;
   className?: string;
-  href?: string | never;
 } & ({ released: true; href: string } | { released?: false; href?: never });
 
 export const DesignSystemCard = (props: DesignSystemCardProps) => {
@@ -18,17 +17,21 @@ export const DesignSystemCard = (props: DesignSystemCardProps) => {
   return (
     <Card
       {...other}
-      {...(released ? { as: Link, href } : {})}
-      className={clsx(
-        other.className,
-        "design-system-card",
-        stateClassNames({
-          disabled: !released,
-        })
-      )}
+      {...(released
+        ? { as: Link, href: href as string }
+        : { as: Card, href: undefined as never })}
+      classNames={classNames}
+      state={{
+        disabled: !released,
+      }}
+      className={clsx(props.className, classNames["design-system-card"], {
+        [classNames["state--disabled"]]: !released,
+      })}
     >
       {props.children}
-      {!props.released ? <Badge>coming soon</Badge> : null}
+      {!props.released ? (
+        <Badge className={classNames["badge"]}>coming soon</Badge>
+      ) : null}
     </Card>
   );
 };

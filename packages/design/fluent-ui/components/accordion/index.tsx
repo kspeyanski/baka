@@ -1,4 +1,4 @@
-import { BakaComponent, BakaProps } from "baka-ui";
+import { Baka, BakaProps } from "baka-ui";
 
 export type AccordionProps<T extends React.ElementType = "li"> = BakaProps<
   T,
@@ -8,5 +8,5 @@ export type AccordionProps<T extends React.ElementType = "li"> = BakaProps<
 export const Accordion = <T extends React.ElementType = "li">(
   props: AccordionProps<T>
 ) => {
-  return <BakaComponent as="li" {...props} baka="accordion" />;
+  return <Baka as="li" {...props} baka="accordion" />;
 };

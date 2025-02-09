@@ -18,30 +18,34 @@ export type BakaProps<
       as?: T | React.ElementType;
       variant?: BakaDesign[C]["variant"] /*  | string */;
       state?: BakaDesign[C]["state"];
+      classNames?: { [key: string]: string };
       ref?: React.Ref<any>;
       _ref?: React.Ref<any>;
     }
   : A extends Baka<infer B extends keyof BakaDesign>
   ? {
-      as?: T | React.ElementType;
+      as: T | React.ElementType;
       variant?: BakaDesign[B]["variant"] /*  | string */;
       state?: BakaDesign[B]["state"];
       ref?: React.Ref<any>;
       _ref?: React.Ref<any>;
+      classNames?: { [key: string]: string };
+      baka: B;
     }
   : {}) &
   React.ComponentPropsWithoutRef<T>;
 
-export const BakaComponent = <T extends React.ElementType = "span">(
+export const Baka = <T extends React.ElementType = "span">(
   props: BakaProps<T> & Baka<keyof BakaDesign>
 ) => {
   const {
     ref,
     _ref,
-    as: Component = "span",
+    as: Component,
     variant,
     state,
     baka,
+    classNames,
     ...other
   } = props;
 
@@ -50,10 +54,11 @@ export const BakaComponent = <T extends React.ElementType = "span">(
       ref={ref ?? _ref}
       {...other}
       className={clsx(
-        `baka-${baka}`,
+        baka && `baka-${baka}`,
         props.className,
-        variantClassNames(variant),
-        stateClassNames(state)
+        baka && classNames?.[baka as string],
+        variantClassNames(variant, classNames),
+        stateClassNames(state, classNames)
       )}
     />
   );

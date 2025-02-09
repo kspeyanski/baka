@@ -1,4 +1,4 @@
-import { BakaComponent, BakaProps } from "baka-ui";
+import { Baka, BakaProps } from "baka-ui";
 
 export type BadgeProps<T extends React.ElementType = "span"> = BakaProps<
   T,
@@ -8,5 +8,5 @@ export type BadgeProps<T extends React.ElementType = "span"> = BakaProps<
 export const Badge = <T extends React.ElementType = "span">(
   props: BadgeProps<T>
 ) => {
-  return <BakaComponent as="span" {...props} baka="badge" />;
+  return <Baka as="span" {...props} baka="badge" />;
 };

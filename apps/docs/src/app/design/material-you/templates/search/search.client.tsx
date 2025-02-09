@@ -3,20 +3,20 @@
 import styles from "./search.module.scss";
 
 import React from "react";
-import { Button } from "@/components/buttons/button";
-import { Chip } from "@/components/chips/chip";
-import { Input } from "@/components/inputs/input";
-import { TextField } from "@/components/inputs/text-field";
-import { Icon } from "@/components/misc/icon";
+import { Button } from "@material-you/components/buttons/button";
+import { Chip } from "@material-you/components/chips/chip";
+import { Input } from "@material-you/components/inputs/input";
+import { TextField } from "@material-you/components/inputs/text-field";
+import { Icon } from "@/app/design/material-you/components/misc/icon";
 import { search } from "./actions";
 import { usePopup } from "@/utils/use-popup";
 import Link from "next/link";
 import { useAsyncFocusBlur } from "@/utils/use-async-focus-blur";
 import { SEARCH_ACTION, initialState, searchReducer } from "./state";
-import { Menu } from "@/components/menus/menu";
-import { MenuItem } from "@/components/menus/menu-item";
+import { Menu } from "@material-you/components/menus/menu";
+import { MenuItem } from "@material-you/components/menus/menu-item";
 import clsx from "clsx";
-import { Text } from "@/components/text";
+import { Text } from "@material-you/components/text";
 
 export type SearchProps = {};
 

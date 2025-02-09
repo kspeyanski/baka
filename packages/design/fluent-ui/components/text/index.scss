@@ -1,11 +1,10 @@
 @use "sass:map";
-@use "../../design" as *;
 @use "baka-ui" as baka;
+@use "../../design" as *;
 @use "../../common/focus.scss" as *;
 
 @mixin text--styles {
   .baka-text {
-    @include baka.text--styles;
     color: var(--text-color, inherit);
     cursor: inherit;
 

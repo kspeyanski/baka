@@ -1,4 +1,4 @@
-import { BakaComponent, BakaProps } from "baka-ui";
+import { Baka, BakaProps } from "baka-ui";
 
 export type SheetProps<T extends React.ElementType = "div"> = BakaProps<
   T,
@@ -8,5 +8,5 @@ export type SheetProps<T extends React.ElementType = "div"> = BakaProps<
 export const Sheet = <T extends React.ElementType = "div">(
   props: SheetProps<T>
 ) => {
-  return <BakaComponent as="div" type="sheet" {...props} baka="sheet" />;
+  return <Baka as="div" type="sheet" {...props} baka="sheet" />;
 };

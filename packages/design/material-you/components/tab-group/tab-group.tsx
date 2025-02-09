@@ -1,4 +1,4 @@
-import { BakaComponent, BakaProps } from "baka-ui";
+import { Baka, BakaProps } from "baka-ui";
 
 export type TabGroupProps<T extends React.ElementType = "div"> = BakaProps<
   T,
@@ -8,7 +8,7 @@ export type TabGroupProps<T extends React.ElementType = "div"> = BakaProps<
 export const TabGroup = <T extends React.ElementType = "div">(
   props: TabGroupProps<T>
 ) => {
-  return <BakaComponent as="div" {...props} baka="tab-group" />;
+  return <Baka as="div" {...props} baka="tab-group" />;
 };
 
 export type TabProps<T extends React.ElementType = "div"> = BakaProps<
@@ -19,5 +19,5 @@ export type TabProps<T extends React.ElementType = "div"> = BakaProps<
 export const Tab = <T extends React.ElementType = "div">(
   props: TabProps<T>
 ) => {
-  return <BakaComponent as="div" {...props} baka="tab" />;
+  return <Baka as="div" {...props} baka="tab" />;
 };

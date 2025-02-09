@@ -1,0 +1,11 @@
+@use "sass:map";
+@use "@katana/styles" as katana;
+
+.katana {
+  :global {
+    @include katana.styles();
+  }
+
+  color: map.get(katana.$swatch, foreground);
+  background-color: map.get(katana.$swatch, background);
+}

@@ -1,7 +1,7 @@
 import { type Docs } from "contentlayer/generated";
 import { SidenavSubcategory } from "./sidenav-subcategory";
 import { SidenavCategory } from "./sidenav-category";
-import { Column } from "@/components/layout/column";
+import { Column } from "@material-you/components/layout/column";
 import { SidenavClient } from "./sidenav.client";
 
 export type SidenavProps = {
