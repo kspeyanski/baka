@@ -22,7 +22,10 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
+      "@shared/*": ["./src/app/design/shared/*"],
+      "@images/*": ["./src/images/*"],
+      "@icons/*": ["./src/icons/*"],
+      "@lib/*": ["./src/lib/*"],
       "@katana/*": ["./src/app/(root)/*"],
       "@material-you/*": ["./src/app/design/material-you/*"],
       "@fluent-ui/*": ["./src/app/design/fluent-ui/*"],

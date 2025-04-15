@@ -1,5 +1,6 @@
+import clsx from "clsx";
 import classNames from "./button.module.scss";
-import { BakaProps, Baka } from "baka-ui";
+import { BakaProps, Baka, modulesClassNames } from "baka-ui";
 
 export type ButtonProps<T extends React.ElementType = "button"> = BakaProps<
   T,
@@ -14,7 +15,7 @@ export const Button = <T extends React.ElementType = "button">(
       as="button"
       {...props}
       baka="button"
-      classNames={classNames}
+      className={clsx(props.className, modulesClassNames("button", classNames, props))}
     />
   );
 };

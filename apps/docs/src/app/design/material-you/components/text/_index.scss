@@ -1,0 +1,35 @@
+@use "baka-ui" as *;
+
+@mixin text--styles {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @include variant("display-medium") {
+      font-weight: 500;
+    }
+
+    @include variant("article") {
+      &:not(:first-child) {
+        margin-top: 2rem;
+      }
+      margin-bottom: 1rem;
+    }
+  }
+
+  span {
+    @include variant("article") {
+      margin-top: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+  }
+
+  p {
+    @include variant("article") {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+}

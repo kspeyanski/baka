@@ -5,24 +5,24 @@
     @if (meta.type-of($variant) == "list") {
       @if ($global) {
         &,
-        &:global(#{chain-variants($variant, ".variant--")}) {
+        &:where(:global(#{chain-variants($variant, ".variant--")})) {
           @content;
         }
       } @else {
         &,
-        &#{chain-variants($variant, ".variant--")} {
+        &:where(#{chain-variants($variant, ".variant--")}) {
           @content;
         }
       }
     } @else {
       @if ($global) {
         &,
-        &:global(.variant--#{"" + $variant}) {
+        &:where(:global(.variant--#{"" + $variant})) {
           @content;
         }
       } @else {
         &,
-        &.variant--#{"" + $variant} {
+        &:where(.variant--#{"" + $variant}) {
           @content;
         }
       }
@@ -30,21 +30,21 @@
   } @else {
     @if (meta.type-of($variant) == "list") {
       @if ($global) {
-        &:global(#{chain-variants($variant, ".variant--")}) {
+        &:where(:global(#{chain-variants($variant, ".variant--")})) {
           @content;
         }
       } @else {
-        &#{chain-variants($variant, ".variant--")} {
+        &:where(#{chain-variants($variant, ".variant--")}) {
           @content;
         }
       }
     } @else {
       @if ($global) {
-        &:global(.variant--#{"" + $variant}) {
+        &:where(:global(.variant--#{"" + $variant})) {
           @content;
         }
       } @else {
-        &.variant--#{"" + $variant} {
+        &:where(.variant--#{"" + $variant}) {
           @content;
         }
       }

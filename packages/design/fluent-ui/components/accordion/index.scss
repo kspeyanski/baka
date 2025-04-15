@@ -5,7 +5,11 @@
 
 @mixin accordion--styles {
   .baka-accordion {
+    @include focus-indicator;
     @include body-1;
+
+    width: 100%;
+    display: inline-flex;
 
     gap: #{map.get($spacing, horizontal-s)};
     padding: #{map.get($spacing, vertical-m-nudge)} #{map.get(
@@ -13,14 +17,15 @@
         horizontal-m-nudge
       )};
 
+    color: map.get($swatch, neutral-foreground-1);
+
     .baka-text {
       flex-grow: 1;
     }
 
-    @include focus-indicator;
-
     @include baka.hover($readonly: false) {
       cursor: pointer;
+      color: map.get($swatch, neutral-foreground-1-hover);
     }
 
     @include baka.focus($readonly: false) {

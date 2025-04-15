@@ -51,6 +51,7 @@ export interface BakaDesign {
   checkbox: {
     state: Pick<
       MaterialYouState,
+      | 'enabled'
       | "selected"
       | "indeterminate"
       | "hovered"

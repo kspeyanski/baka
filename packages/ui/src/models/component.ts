@@ -1,4 +1,4 @@
-import React from "react";
+import React, { JSX } from "react";
 
 type PropsOf<T extends React.ElementType> = React.ComponentPropsWithRef<T>;
 

@@ -1,4 +1,4 @@
-import { Text } from "@material-you/components/text";
+import { Text } from "@material-you/components";
 import clsx from "clsx";
 import Link from "next/link";
 

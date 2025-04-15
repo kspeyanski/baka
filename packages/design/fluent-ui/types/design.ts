@@ -73,7 +73,15 @@ export interface BakaDesign {
   };
   button: {
     variant: MultiVariant<
-      "primary" | "secondary" | "outline" | "subtle" | "transparent" | "icon"
+      | "primary"
+      | "secondary"
+      | "outline"
+      | "subtle"
+      | "transparent"
+      | "icon"
+      | "large"
+      | "small"
+      | "extra-large"
     >;
     state: Pick<
       FluentUIState,
@@ -148,6 +156,7 @@ export interface BakaDesign {
   };
   icon: {
     variant:
+      | "svg"
       | "size-12"
       | "size-16"
       | "size-20"
@@ -237,6 +246,13 @@ export interface BakaDesign {
       | "subtle"
       | "over-brand"
       | "placeholder"
+    >;
+  };
+  tree: {};
+  ["tree-item"]: {
+    state: Pick<
+      FluentUIState,
+      "rest" | "hover" | "pressed" | "selected" | "focus" | "disabled"
     >;
   };
 }

@@ -1,6 +1,5 @@
-import { Baka, BakaProps } from "baka-ui";
+import { Baka, BakaProps, valueClassNames } from "baka-ui";
 import clsx from "clsx";
-import { valueClassNames } from "baka-ui";
 
 export type ColumnProps<T extends React.ElementType = "div"> = BakaProps<
   T,

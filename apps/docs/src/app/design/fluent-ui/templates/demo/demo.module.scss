@@ -1,0 +1,11 @@
+@use "sass:map";
+@use "../../styles" as *;
+
+.header {
+  width: 100%;
+  border-bottom: 1px solid #{map.get($swatch, neutral-stroke-1)};
+}
+
+.iframe {
+  width: 100%;
+}

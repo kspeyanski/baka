@@ -1,4 +1,4 @@
-import styles from "./layout.module.scss";
+import "./layout.scss";
 import "@material-you/styles/tailwind.css";
 
 import type { Metadata } from "next";
@@ -10,28 +10,23 @@ export const metadata: Metadata = {
   title: "Material You | Baka UI",
   description: "A React Implementation of the Material You Design System",
 };
-
-// @ts-expect-error
-import Logo from "@/icons/logo-material-you.inline-svg";
-// @ts-expect-error
-import GitHub from "@/icons/github-mark.inline-svg";
-import NPM from "@/icons/npm-logo.svg";
-import { Container } from "@material-you/components/layout/container";
-import { Row } from "@material-you/components/layout/row";
-import { Column } from "@material-you/components/layout/column";
-import clsx from "clsx";
-
-import { SidenavState } from "@material-you/templates/sidenav/sidenav.state";
-import { TopBar } from "@material-you/components/bars/top-bar";
-import { Icon } from "@material-you/components/misc/icon";
-import { ToggleButton } from "@material-you/templates/sidenav/sidenav-category.client";
 import { Docs, allDocs } from "contentlayer/generated";
 import Image from "next/image";
-import { Search } from "@material-you/templates/search/search.client";
-import { Button } from "@material-you/components/buttons/button";
 import Link from "next/link";
+
+import clsx from "clsx";
+import { Container, Row, Column, Bar, Button, Icon } from "@material-you/components";
+// @ts-expect-error
+import Logo from "@icons/logo-material-you.inline-svg";
+// @ts-expect-error
+import GitHub from "@icons/github-mark.inline-svg";
+import NPM from "@icons/npm-logo.svg";
+
+import { SidenavState } from "@shared/sidenav/sidenav-state.client";
+import { SidenavButton } from "@material-you/templates/sidenav/sidenav-button";
+import { Search } from "@material-you/templates/search/search.client";
 import { ColorScheme } from "@material-you/templates/color-scheme/color-scheme.client";
-import { Sidenav } from "./templates/sidenav/sidenav";
+import { Sidenav } from "@material-you/templates/sidenav/sidenav";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
@@ -45,17 +40,10 @@ const robotoMono = Roboto_Mono({
   variable: "--font-family--mono",
 });
 
-export default function MaterialYouLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function MaterialYouLayout({ children }: { children: React.ReactNode }) {
   const docs = allDocs;
   const groups = docs
-    .sort(
-      (a: Partial<Docs>, b: Partial<Docs>) =>
-        (a.position ?? 0) - (b.position ?? 0)
-    )
+    .sort((a: Partial<Docs>, b: Partial<Docs>) => (a.position ?? 0) - (b.position ?? 0))
     .filter((doc) => doc._raw.flattenedPath.startsWith("design/material-you"))
     .reduce((acc, doc) => {
       const g = acc.find((a) => a.title === doc?.group?.title);
@@ -83,21 +71,13 @@ export default function MaterialYouLayout({
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
         ></link>
       </head>
-      <body
-        className={clsx(
-          roboto.variable,
-          robotoMono.variable,
-          styles["material-you"]
-        )}
-        suppressHydrationWarning={true}
-        id="material-you"
-      >
+      <body className={clsx(roboto.variable, robotoMono.variable)} suppressHydrationWarning={true} id="material-you">
         <ColorScheme>
           <main className="flex flex-row">
             <SidenavState data={structuredClone(groups)}>
               <Sidenav data={structuredClone(groups)} />
               <Container>
-                <TopBar className={"z-30 sticky top-0"}>
+                <Bar variant={"top"} className={"z-30 sticky top-0"}>
                   <div className="flex flex-col grow">
                     <Row className={"min-h-[72px] items-center"}>
                       <Column
@@ -105,27 +85,12 @@ export default function MaterialYouLayout({
                         className="items-center gap-3 sm:gap-0 justify-between relative"
                       >
                         <div className="flex items-center gap-3 ">
-                          <ToggleButton className="sm:hidden">
-                            <Icon />
-                          </ToggleButton>
-                          <Logo
-                            className="h-[30px] w-auto sm:hidden"
-                            height={33}
-                          />
-                          {/* <Image
-                              src={Logo}
-                              alt="Baka UI"
-                              className="h-[30px] w-auto sm:hidden"
-                              width={400}
-                              height={33}
-                          /> */}
+                          <SidenavButton className="sm:hidden" />
+                          <Logo className="h-[30px] w-auto sm:hidden" height={33} />
                         </div>
                         <Search />
                       </Column>
-                      <Column
-                        columns={[null, null, 2, 2, 4]}
-                        className="gap-2 hidden md:flex"
-                      >
+                      <Column columns={[null, null, 2, 2, 4]} className="gap-2 hidden md:flex">
                         <Button
                           variant={"icon"}
                           as={Link}
@@ -149,7 +114,7 @@ export default function MaterialYouLayout({
                       </Column>
                     </Row>
                   </div>
-                </TopBar>
+                </Bar>
                 <Row className="relative h-[calc(100%-88px)]">{children}</Row>
               </Container>
             </SidenavState>

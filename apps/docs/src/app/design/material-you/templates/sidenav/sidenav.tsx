@@ -1,8 +1,8 @@
 import { type Docs } from "contentlayer/generated";
 import { SidenavSubcategory } from "./sidenav-subcategory";
 import { SidenavCategory } from "./sidenav-category";
-import { Column } from "@material-you/components/layout/column";
-import { SidenavClient } from "./sidenav.client";
+import { Column } from "@material-you/components";
+import { SidenavClient } from "@shared/sidenav/sidenav.client";
 
 export type SidenavProps = {
   data: Array<{
@@ -20,7 +20,7 @@ export const Sidenav = (props: SidenavProps) => {
         className="fixed sm:sticky top-0 h-[100vh] z-40 md:flex"
       >
         <SidenavCategory data={props.data} />
-        <SidenavSubcategory data={props.data} />
+        <SidenavSubcategory />
       </Column>
     </SidenavClient>
   );

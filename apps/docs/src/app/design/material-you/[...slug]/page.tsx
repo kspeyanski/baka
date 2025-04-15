@@ -7,19 +7,21 @@ import highlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 
 import { allDocs } from "contentlayer/generated";
-import { Text } from "@material-you/components/text";
-import { Pre } from "@material-you/components/code/pre";
-import { Code } from "@material-you/components/code/code";
-import { Column } from "@material-you/components/layout/column";
-import { TableOfContents } from "@material-you/templates/table-of-contents";
-import { Table } from "@material-you/components/table/table";
-import { TableRow } from "@material-you/components/table/table-row";
-import { TableCell } from "@material-you/components/table/table-cell";
-import { TableHeaderCell } from "@material-you/components/table/table-header-cell";
-import { UL } from "@material-you/components/misc/ul";
-import { LI } from "@material-you/components/misc/li";
-import { OL } from "@material-you/components/misc/ol";
+import {
+  Column,
+  Text,
+  Pre,
+  Code,
+  Table,
+  TableRow,
+  TableCell,
+  TableHeaderCell,
+  UL,
+  LI,
+  OL,
+} from "@material-you/components";
 
+import { TableOfContents } from "@material-you/templates/table-of-contents";
 import { Demo } from "@material-you/templates/demo";
 
 const mdxComponents = {

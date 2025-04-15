@@ -1,6 +1,6 @@
 export const valueClassNames = (
   value: any,
-  classNames: { [className: string]: string }
+  classNames?: { [className: string]: string }
 ): string | string[] | null =>
   Array.isArray(value)
     ? value.map((v, index) => {

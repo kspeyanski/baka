@@ -1,0 +1,22 @@
+@use "sass:map";
+@use "./styles" as material-you;
+@use "./themes/dark" as dark;
+@use "./components" as extended;
+
+#material-you {
+  @include material-you.component--styles;
+  @include extended.component--styles();
+  @include material-you.design--styles();
+
+  color: map.get(material-you.$swatch, on-surface);
+  background-color: map.get(material-you.$swatch, surface);
+
+  font-size: 16px;
+  text-size-adjust: auto;
+
+  @media screen and (prefers-color-scheme: dark) {
+    &:not(.theme-light) {
+      @include dark.design--styles();
+    }
+  }
+}

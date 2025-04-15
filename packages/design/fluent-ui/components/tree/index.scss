@@ -1,0 +1,87 @@
+@use "sass:map";
+@use "baka-ui" as baka;
+@use "../../design" as *;
+@use "../../common/focus.scss" as *;
+
+@mixin tree--styles {
+  @include tree-item--styles;
+  .baka-tree {
+    display: flex;
+    flex-direction: column;
+    gap: map.get($spacing, "vertical-xxs");
+  }
+}
+
+@mixin tree-item--styles {
+  .baka-tree-item {
+    @include body-1;
+
+    display: inline-flex;
+    align-items: center;
+    gap: map.get($spacing, "horizontal-xxs");
+    border-radius: map.get($radii, medium);
+
+    padding: #{map.get($spacing, "vertical-s-nudge")} #{map.get($spacing, "horizontal-s")};
+
+    @include baka.has(".baka-icon") {
+      padding-left: 0;
+    }
+
+    cursor: pointer;
+
+    color: var(--foreground);
+    background-color: var(--background);
+
+    :where(& > .baka-text) {
+      flex-grow: 1;
+    }
+
+    @include baka.hover {
+      --foreground: var(--foreground-hover);
+      --background: var(--background-hover);
+    }
+
+    @include baka.active {
+      --foreground: var(--foreground-pressed);
+      --background: var(--background-pressed);
+    }
+
+    @include baka.selected {
+      --foreground: var(--foreground-selected);
+      --background: var(--background-selected);
+    }
+
+    @include baka.focus {
+      @include focus-indicator;
+    }
+
+    @include baka.disabled {
+      pointer-events: none;
+      --foreground: var(--foreground-disabled);
+    }
+
+    @include baka.variant(subtle, true) {
+      --background: #{map.get($swatch, "neutral-background-subtle")};
+      --background-hover: #{map.get($swatch, "neutral-background-subtle-hover")};
+      --background-pressed: #{map.get($swatch, "neutral-background-subtle-pressed")};
+      --background-selected: #{map.get($swatch, "neutral-background-subtle-selected")};
+
+      --foreground: #{map.get($swatch, "neutral-foreground-2")};
+      --foreground-hover: #{map.get($swatch, "neutral-foreground-2-hover")};
+      --foreground-pressed: #{map.get($swatch, "neutral-foreground-2-pressed")};
+      --foreground-selected: #{map.get($swatch, "neutral-foreground-2-selected")};
+      --foreground-disabled: #{map.get($swatch, "neutral-foreground-disabled")};
+    }
+
+    @include baka.variant(subtle-alpha) {
+      --background: #{map.get($swatch, "neutral-background-subtle-light-alpha")};
+      --background-hover: #{map.get($swatch, "neutral-background-subtle-light-alpha-hover")};
+      --background-pressed: #{map.get($swatch, "neutral-background-subtle-light-alpha-pressed")};
+      --background-selected: #{map.get($swatch, "neutral-background-subtle-light-alpha-selected")};
+    }
+
+    @include baka.variant(transparent) {
+      background-color: transparent;
+    }
+  }
+}

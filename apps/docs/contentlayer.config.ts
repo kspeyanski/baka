@@ -41,8 +41,8 @@ export const Docs = defineDocumentType(() => ({
       resolve: async (doc) => {
         const regXHeader = /\n(?<flag>#{1,6})\s+(?<content>.+)/g;
         const slugger = new GithubSlugger();
-        // @ts-expect-error
         const toc = Array.from(doc.body.raw.matchAll(regXHeader)).map(
+          // @ts-expect-error
           ({ groups }) => {
             const flag = groups?.flag;
             const content = groups?.content;

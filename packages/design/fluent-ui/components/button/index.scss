@@ -322,5 +322,28 @@
     @include baka.variant("icon") {
       --baka-button--padding: 0 #{map.get($spacing, horizontal-s-nudge)};
     }
+
+    @include baka.variant("small") {
+      height: calc(map.get($spacing, vertical-s) + map.get($line-height, 200));
+      padding: 0 #{map.get($spacing, horizontal-s-nudge)};
+    }
+
+    @include baka.variant("large") {
+      height: calc(map.get($spacing, vertical-l) + map.get($line-height, 400));
+      padding: var(--baka-button-padding, 0 map.get($spacing, horizontal-l));
+
+      @include baka.variant("icon") {
+        padding: 0 #{map.get($spacing, horizontal-l)};
+      }
+    }
+
+    @include baka.variant("extra-large") {
+      height: calc(map.get($spacing, vertical-xl) + map.get($line-height, 600));
+      padding: var(--baka-button--padding, 0 map.get($spacing, horizontal-xl));
+
+      @include baka.variant("icon") {
+        padding: 0 #{map.get($spacing, horizontal-xl) / 2};
+      }
+    }
   }
 }

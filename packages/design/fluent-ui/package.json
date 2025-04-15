@@ -27,5 +27,8 @@
   "peerDependencies": {
     "baka-ui": "workspace:*"
   },
-  "gitHead": "532e6985e8208e2dc614d825bcb0cf81b579f331"
+  "gitHead": "532e6985e8208e2dc614d825bcb0cf81b579f331",
+  "dependencies": {
+    "clsx": "^1.2.1"
+  }
 }

@@ -1,5 +1,6 @@
+import clsx from "clsx";
 import classNames from "./card.module.scss";
-import { BakaProps, Baka } from "baka-ui";
+import { BakaProps, Baka, modulesClassNames } from "baka-ui";
 
 export type CardProps<T extends React.ElementType = "div"> = BakaProps<
   T,
@@ -14,7 +15,7 @@ export const Card = <T extends React.ElementType = "div">(
       as="div"
       {...props}
       baka="card"
-      classNames={{ ...props.classNames, ...classNames }}
+      className={clsx(props.className, modulesClassNames("card", classNames, props))}
     />
   );
 };

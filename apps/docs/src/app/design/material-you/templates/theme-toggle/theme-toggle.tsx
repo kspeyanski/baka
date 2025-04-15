@@ -1,4 +1,4 @@
-import { Button } from "@material-you/components/buttons/button";
+import { Button } from "@material-you/components";
 import {
   ThemeToggleClient,
   ThemeToggleIconClient,

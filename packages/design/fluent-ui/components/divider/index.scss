@@ -5,6 +5,7 @@
 @mixin divider--styles {
   .baka-divider {
     margin: 0;
+    width: 100%;
 
     flex: 1 1 auto;
     background-color: map.get($swatch, neutral-stroke-2);

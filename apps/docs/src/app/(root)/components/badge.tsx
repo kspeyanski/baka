@@ -1,5 +1,6 @@
+import clsx from "clsx";
 import classNames from "./badge.module.scss";
-import { BakaProps, Baka } from "baka-ui";
+import { BakaProps, Baka, modulesClassNames } from "baka-ui";
 
 export type BadgeProps<T extends React.ElementType = "div"> = BakaProps<
   T,
@@ -14,7 +15,7 @@ export const Badge = <T extends React.ElementType = "div">(
       as="div"
       {...props}
       baka="badge"
-      classNames={{ ...props.classNames, ...classNames }}
+      className={clsx(props.className, modulesClassNames("badge", classNames, props))}
     />
   );
 };

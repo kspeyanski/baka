@@ -1,13 +1,11 @@
 @use "./misc/" as *;
 @use "./code/" as *;
 @use "./table/" as *;
-@use "./typography/" as *;
-@use "./navigation-drawer" as *;
+@use "./text/" as *;
 
 @mixin component--styles {
   @include misc--styles;
   @include code--styles;
   @include table--styles;
-  @include typography--styles;
-  @include navigation-drawer--styles;
+  @include text--styles;
 }

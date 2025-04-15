@@ -8,5 +8,5 @@ export type IconProps<T extends React.ElementType = "i"> = BakaProps<
 export const Icon = <T extends React.ElementType = "i">(
   props: IconProps<T>
 ) => {
-  return <Baka {...props} as={"span"} baka="icon" />;
+  return <Baka as={"span"} {...props} baka="icon" />;
 };

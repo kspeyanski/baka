@@ -1,10 +1,7 @@
 @use "sass:map";
 
 $font-family: (
-  base: (
-    Segoe UI,
-    Open Sans,
-  ),
+  base: '"Segoe UI", "Open Sans"',
   monospace: (
     Consolas,
     Courier,

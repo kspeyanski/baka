@@ -21,14 +21,15 @@
 
 @mixin tab--styles {
   .baka-tab {
-    @include body-1;
+    @include caption-2;
     user-select: none;
 
     cursor: pointer;
     display: inline-flex;
+    align-items: center;
     position: relative;
 
-    color: var(--tab-color, #{map.get($swatch, "neutral-foreground-2")});
+    color: var(--tab-color, #{map.get($swatch, neutral-foreground-2)});
     background-color: var(--tab-selection-background, transparent);
 
     border-radius: map.get($radii, medium);
@@ -114,12 +115,14 @@
     }
   }
 
-  .baka-tab-group.variant--vertical .baka-tab {
+  .baka-tab-list.variant--vertical .baka-tab {
     padding: map.get($spacing, "vertical-xxs")
       map.get($spacing, "horizontal-s-nudge");
+    width: 100%;
+    justify-content: center;
 
     &:before {
-      width: 3px;
+      width: 2px;
       top: 4px;
       left: 0;
       height: calc(100% - 8px);

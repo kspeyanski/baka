@@ -1,16 +1,17 @@
-import "./demo.scss";
-
-import { Text } from "@material-you/components/text";
 import {
-  Card as BakaCard,
-  Divider as BakaDivider,
-  Icon as BakaIcon,
-  TabGroup as BakaTabGroup,
-} from "baka-material-you";
-import { DemoSource } from "./demo-source";
-import { DemoState } from "./demo.state";
-import { DemoTabClient } from "./demo-tab.client";
-import { DemoIFrame } from "./demo-iframe";
+  Card,
+  Code,
+  Divider,
+  Icon,
+  Pre,
+  Tab,
+  TabGroup,
+  Text,
+} from "@material-you/components";
+import { DemoSource } from "../../../shared/demo/demo-source.server";
+import { DemoState } from "@shared/demo/demo-state.client";
+import { DemoTabClient } from "@shared/demo/demo-tab.client";
+import { DemoIFrame } from "../../../shared/demo/demo-iframe";
 
 export type DemoProps = {
   src: string;
@@ -19,27 +20,32 @@ export type DemoProps = {
 
 export const Demo = (props: DemoProps) => {
   return (
-    <BakaCard className="my-4" style={props.style}>
+    <Card className="my-4" style={props.style}>
       <DemoState>
-        <div className="bg-surface-container">
-          <BakaTabGroup variant={["secondary", "overflow"]}>
-            <DemoTabClient value="demo">
-              <BakaIcon>terminal</BakaIcon>
+        <TabGroup
+          className="bg-surface-container"
+          variant={["secondary", "overflow"]}
+        >
+          <DemoTabClient value="demo">
+            <Tab>
+              <Icon>terminal</Icon>
               <Text as="label">Demo</Text>
-            </DemoTabClient>
-            <DemoTabClient value="source">
-              <BakaIcon>code</BakaIcon>
+            </Tab>
+          </DemoTabClient>
+          <DemoTabClient value="source">
+            <Tab>
+              <Icon>code</Icon>
               <Text as="label">Source</Text>
-            </DemoTabClient>
-          </BakaTabGroup>
-        </div>
-        <BakaDivider />
+            </Tab>
+          </DemoTabClient>
+        </TabGroup>
+        <Divider />
         <DemoIFrame
           src={props.src}
           style={{ minHeight: props.style?.height }}
         />
-        <DemoSource src={props.src} />
+        <DemoSource src={props.src} Pre={Pre} Code={Code} />
       </DemoState>
-    </BakaCard>
+    </Card>
   );
 };

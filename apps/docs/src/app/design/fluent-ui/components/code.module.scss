@@ -1,0 +1,107 @@
+@use "sass:map";
+@use "@fluent-ui/styles" as *;
+
+.code {
+  color: map.get($swatch, brand-foreground-1);
+
+  &:global(.hljs) {
+    color: map.get($swatch, neutral-foreground-2);
+
+    :global(.hljs-subst),
+    :global(.hljs-title) {
+      font-weight: normal;
+      color: map.get($swatch, neutral-foreground-3);
+    }
+
+    :global(.hljs-title.function_) {
+      color: map.get($swatch, brand-foreground-1);
+    }
+
+    :global(.hljs-code),
+    :global(.hljs-comment),
+    :global(.hljs-quote) {
+      color: map.get($swatch, neutral-foreground-disabled);
+      font-style: italic;
+    }
+
+    :global(.hljs-meta) {
+      color: map.get($swatch, brand-foreground-2);
+    }
+
+    :global(.hljs-section) {
+      color: map.get($swatch, brand-foreground-3);
+    }
+
+    :global(.hljs-variable.language_),
+    :global(.hljs-symbol),
+    :global(.hljs-selector-class),
+    :global(.hljs-selector-id),
+    :global(.hljs-selector-tag),
+    :global(.hljs-template-tag),
+    :global(.hljs-selector-attr),
+    :global(.hljs-selector-pseudo),
+    :global(.hljs-keyword),
+    :global(.hljs-meta .hljs-keyword),
+    :global(.hljs-literal),
+    :global(.hljs-name),
+    :global(.hljs-built_in),
+    :global(.hljs-type) {
+      color: map.get($swatch, brand-foreground-2);
+    }
+
+    :global(.hljs-property),
+    :global(.hljs-attr) {
+      color: map.get($swatch, brand-foreground-3);
+    }
+
+    :global(.hljs-attribute) {
+      color: map.get($swatch, brand-foreground-2);
+    }
+
+    :global(.hljs-number) {
+      color: map.get($swatch, brand-foreground-2);
+    }
+
+    :global(.hljs-regexp) {
+      color: map.get($swatch, brand-foreground-2);
+    }
+
+    :global(.hljs-link) {
+      text-decoration: underline;
+      color: map.get($swatch, brand-foreground-2);
+    }
+
+    :global(.hljs-meta .hljs-string),
+    :global(.hljs-string) {
+      color: map.get($swatch, status-success-foreground-1);
+    }
+
+    :global(.hljs-char.escape_) {
+      color: map.get($swatch, status-success-foreground-3);
+    }
+
+    :global(.hljs-doctag) {
+      text-decoration: underline;
+    }
+
+    :global(.hljs-template-variable) {
+      color: map.get($swatch, status-success-foreground-1);
+    }
+
+    :global(.hljs-addition) {
+      background: map.get($swatch, status-success-background-1);
+    }
+
+    :global(.hljs-deletion) {
+      background: map.get($swatch, status-danger-background-1);
+    }
+
+    :global(.hljs-emphasis) {
+      font-style: italic;
+    }
+
+    :global(.hljs-strong) {
+      font-weight: bold;
+    }
+  }
+}

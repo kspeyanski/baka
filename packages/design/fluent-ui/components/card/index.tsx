@@ -8,5 +8,5 @@ export type CardProps<T extends React.ElementType = "span"> = BakaProps<
 export const Card = <T extends React.ElementType = "span">(
   props: CardProps<T>
 ) => {
-  return <Baka as="span" {...props} baka="card" />;
+  return <Baka as="div" {...props} baka="card" />;
 };

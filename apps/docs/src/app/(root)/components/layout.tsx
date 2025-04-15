@@ -1,5 +1,5 @@
 import classNames from "./layout.module.scss";
-import { Baka, BakaProps } from "baka-ui";
+import { Baka, BakaProps, modulesClassNames } from "baka-ui";
 import clsx from "clsx";
 import { valueClassNames } from "baka-ui";
 
@@ -22,8 +22,11 @@ export const Column = <T extends React.ElementType = "div">(
       as={as}
       {...other}
       baka="column"
-      className={clsx(valueClassNames(columns, classNames), props.className)}
-      classNames={classNames}
+      className={clsx(
+        valueClassNames(columns, classNames),
+        modulesClassNames("column", classNames, props),
+        props.className
+      )}
     />
   );
 };
@@ -41,7 +44,10 @@ export const Container = <T extends React.ElementType = "div">(
       as="div"
       {...props}
       baka="container"
-      classNames={classNames}
+      className={clsx(
+        props.className,
+        modulesClassNames("container", classNames, props)
+      )}
     />
   );
 };
@@ -55,6 +61,14 @@ export const Row = <T extends React.ElementType = "div">(
   props: RowProps<T>
 ) => {
   return (
-    <Baka as="div" {...props} baka="row" classNames={classNames} />
+    <Baka
+      as="div"
+      {...props}
+      baka="row"
+      className={clsx(
+        props.className,
+        modulesClassNames("row", classNames, props)
+      )}
+    />
   );
 };

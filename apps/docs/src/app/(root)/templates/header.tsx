@@ -1,7 +1,7 @@
 import { Bar } from "@katana/components/bar";
 import { Divider, Icon } from "baka-material-you";
 
-import Logo from "@/icons/logo-dark.svg";
+import Logo from "@icons/logo-dark.svg";
 import Image from "next/image";
 import { Container, Row, Column } from "@katana/components/layout";
 

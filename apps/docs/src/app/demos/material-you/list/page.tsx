@@ -10,7 +10,7 @@ export default async function ListDemo() {
             <Text style={{ flexGrow: 1 }} variant={"body-large"}>
               List item
             </Text>
-            <Checkbox readOnly={true} checked={true} />
+            <Checkbox state={{ enabled: true }} readOnly={true} checked={true} />
           </ListItem>
         ))}
       </List>

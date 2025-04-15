@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/app/design/material-you/**/*.{js,ts,jsx,tsx,mdx}"],
+  content: [
+    "./src/app/design/material-you/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/design/shared/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
   important: "#material-you",
   presets: [require("baka-material-you/tailwind")],
   theme: {

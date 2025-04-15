@@ -1,16 +1,18 @@
-import { Button } from "@material-you/components/buttons/button";
-import { Column } from "@material-you/components/layout/column";
-import { Container } from "@material-you/components/layout/container";
-import { Row } from "@material-you/components/layout/row";
-import { Icon } from "@/app/design/material-you/components/misc/icon";
-import Logo from "@/icons/maskot-material-you.svg";
+import {
+  Button,
+  Container,
+  Icon,
+  Row,
+  Column,
+  Bar,
+} from "@material-you/components";
+import Logo from "@icons/maskot-material-you.svg";
 import Image from "next/image";
-import { TopBar } from "@material-you/components/bars/top-bar";
-import { ToggleButton } from "../sidenav/sidenav-category.client";
+import { ToggleButton } from "../../../shared/sidenav/sidenav-category.client";
 
 export const Header = () => {
   return (
-    <TopBar>
+    <Bar variant={"top"}>
       <Container variant={"fluid"}>
         <Row>
           <Column columns={12} className="flex items-center justify-between">
@@ -41,6 +43,6 @@ export const Header = () => {
           </Column>
         </Row>
       </Container>
-    </TopBar>
+    </Bar>
   );
 };

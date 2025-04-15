@@ -1,18 +1,23 @@
 import { type Docs } from "contentlayer/generated";
-// import { Navigation, NavigationProps } from "@material-you/components/navigation/navigation";
+
 import { SidenavCategoryItem } from "./sidenav-category-item";
 import clsx from "clsx";
-import { SidenavCategoryClient, ToggleButton } from "./sidenav-category.client";
-import { Icon } from "@/app/design/material-you/components/misc/icon";
 import Link from "next/link";
-import { Button } from "@material-you/components/buttons/button";
-import { Navigation, NavigationProps } from "@material-you/components/navigation/navigation";
 import { ThemeToggle } from "../theme-toggle/theme-toggle";
 import { StorybookLink } from "../storybook-link";
 // @ts-expect-error
-import StorybookIcon from "@/icons/storybook.inline-svg";
+import StorybookIcon from "@icons/storybook.inline-svg";
 // @ts-expect-error
-import Logo from "@/icons/maskot-material-you.inline-svg";
+import Logo from "@icons/maskot-material-you.inline-svg";
+
+import {
+  Icon,
+  Button,
+  Navigation,
+  type NavigationProps,
+} from "@material-you/components";
+import { SidenavButtonClient } from "@shared/sidenav/sidenav-button.client";
+import { SidenavButton } from "./sidenav-button";
 
 export type SidenavCategoryProp = {
   data: Array<{
@@ -34,9 +39,7 @@ export const SidenavCategory = (props: SidenavCategoryProp) => {
       >
         <div className="flex items-center flex-col flex-1 justify-between">
           <div className="flex items-center flex-col overflow-auto gap-2">
-            <ToggleButton className="xl:hidden">
-              <Icon />
-            </ToggleButton>
+            <SidenavButton className="xl:hidden" />
             <Button
               variant={["fab", "tertiary"]}
               as={Link}

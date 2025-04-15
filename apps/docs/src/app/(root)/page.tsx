@@ -7,9 +7,9 @@ import { Text } from "@katana/components/text";
 import { Button } from "@katana/components/button";
 import { DesignSystemCard } from "@katana/templates/design-system-card";
 
-import MaterialYou from "@/images/google-material-you.png";
-import FluentUI from "@/images/microsoft-fluent-ui.jpeg";
-import Geist from "@/images/vercel-geist.jpeg";
+import MaterialYou from "@images/google-material-you.png";
+import FluentUI from "@images/microsoft-fluent-ui.jpeg";
+import Geist from "@images/vercel-geist.jpeg";
 
 export const dynamic = "force-static";
 

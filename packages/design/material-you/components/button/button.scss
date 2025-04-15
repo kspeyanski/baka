@@ -1,4 +1,4 @@
-@use 'sass:map';
+@use "sass:map";
 @use "baka-ui" as baka;
 @use "../../design" as *;
 
@@ -53,17 +53,7 @@
       @include motion-transition-TBD(background);
     }
 
-    @supports (selector(:has(*))) {
-      &:has(.baka-icon) {
-        gap: 16px;
-
-        & > .baka-icon {
-          margin: 0 -8px;
-        }
-      }
-    }
-
-    @supports not (selector(:has(*))) {
+    @include baka.has(".baka-icon") {
       gap: 16px;
 
       & > .baka-icon {
@@ -229,7 +219,7 @@
       }
 
       @supports (selector(:has(*))) {
-        &:has(.baka-icon) {
+        &:where(&:has(.baka-icon)) {
           padding: 10px 16px;
           & > .baka-icon {
             margin: 0 var(--negative-margin);

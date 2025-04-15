@@ -4,6 +4,15 @@ module.exports = {
   important: "#katana",
   theme: {
     extend: {
+      colors: {
+        "black": "#000000",
+        "brand-foreground-1": "var(--swatch--brand-foreground-1)",
+        "brand-background-1": "var(--swatch--brand-background-1)",
+        "brand-background-2": "var(--swatch--brand-background-2)",
+        "neutral-background-static": "var(--swatch--neutral-background-static)",
+        "neutral-background-2": "var(--swatch--neutral-background-2)",
+        "neutral-background-3": "var(--swatch--neutral-background-3)",
+      },
       fontFamily: {
         sans: ["var(--typography--font-family--sans)"],
         mono: ["var(--typography--font-family--mono)"],

@@ -1,0 +1,7 @@
+@use "sass:map";
+@use "@fluent-ui/styles" as *;
+
+.pre {
+  width: 100%;
+  padding: map.get($spacing, horizontal-l) map.get($spacing, vertical-l);
+}

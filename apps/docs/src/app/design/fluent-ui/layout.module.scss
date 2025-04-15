@@ -2,11 +2,11 @@
 @use "./styles" as fluent-ui;
 
 .fluent-ui {
+  color: map.get(fluent-ui.$swatch, neutral-foreground-1);
+  background-color: map.get(fluent-ui.$swatch, neutral-background-1);
+
   :global {
     @include fluent-ui.component--styles;
     @include fluent-ui.design--styles();
   }
-
-  color: map.get(fluent-ui.$swatch, neutral-foreground-1);
-  background-color: map.get(fluent-ui.$swatch, neutral-background-3);
 }

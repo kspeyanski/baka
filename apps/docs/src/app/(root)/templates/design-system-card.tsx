@@ -5,6 +5,7 @@ import Link from "next/link";
 
 import { Badge } from "@katana/components/badge";
 import { Card } from "@katana/components/card";
+import { modulesClassNames } from "baka-ui";
 
 export type DesignSystemCardProps = {
   children: React.ReactNode;
@@ -14,19 +15,24 @@ export type DesignSystemCardProps = {
 export const DesignSystemCard = (props: DesignSystemCardProps) => {
   const { released, href, ...other } = props;
 
+  const state = {
+    disabled: !released,
+  };
+
   return (
     <Card
       {...other}
       {...(released
         ? { as: Link, href: href as string }
         : { as: Card, href: undefined as never })}
-      classNames={classNames}
-      state={{
-        disabled: !released,
-      }}
-      className={clsx(props.className, classNames["design-system-card"], {
-        [classNames["state--disabled"]]: !released,
-      })}
+      state={state}
+      className={clsx(
+        props.className,
+        modulesClassNames("design-system-card", classNames, { state }),
+        {
+          [classNames["state--disabled"]]: !released,
+        }
+      )}
     >
       {props.children}
       {!props.released ? (

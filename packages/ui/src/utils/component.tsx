@@ -18,7 +18,7 @@ export type BakaProps<
       as?: T | React.ElementType;
       variant?: BakaDesign[C]["variant"] /*  | string */;
       state?: BakaDesign[C]["state"];
-      classNames?: { [key: string]: string };
+      className?: string;
       ref?: React.Ref<any>;
       _ref?: React.Ref<any>;
     }
@@ -29,7 +29,7 @@ export type BakaProps<
       state?: BakaDesign[B]["state"];
       ref?: React.Ref<any>;
       _ref?: React.Ref<any>;
-      classNames?: { [key: string]: string };
+      className?: string;
       baka: B;
     }
   : {}) &
@@ -38,16 +38,7 @@ export type BakaProps<
 export const Baka = <T extends React.ElementType = "span">(
   props: BakaProps<T> & Baka<keyof BakaDesign>
 ) => {
-  const {
-    ref,
-    _ref,
-    as: Component,
-    variant,
-    state,
-    baka,
-    classNames,
-    ...other
-  } = props;
+  const { ref, _ref, as: Component, variant, state, baka, ...other } = props;
 
   return (
     <Component
@@ -56,9 +47,8 @@ export const Baka = <T extends React.ElementType = "span">(
       className={clsx(
         baka && `baka-${baka}`,
         props.className,
-        baka && classNames?.[baka as string],
-        variantClassNames(variant, classNames),
-        stateClassNames(state, classNames)
+        variantClassNames(variant),
+        stateClassNames(state)
       )}
     />
   );
